@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blocks>
+  <block id="03a51c290895d5f1a6828b0491c2a44a" category="summary">以下是本網站最近的變更。</block>
+  <block id="490414e0366b091220802d406e52c076" category="doc">新功能</block>
+  <block id="8b69c0257aaf35a9ec0a1259d54ff096" category="paragraph">使用這份文件集合、瞭解如何在您的環境中啟用應用程式和工具、以及使用StorageGRID VMware測試功能。您可以在這裡找到範例和食譜、這些範例和食譜將會延伸至產品文件、並提供後續步驟來評估StorageGRID 及整合至NetApp。</block>
+  <block id="b8e7b465df7c5979dc731d06e84ce2cf" category="cell">版本</block>
+  <block id="ad0b6652f18f25a574f9f4900521e06b" category="cell">變更內容</block>
+  <block id="d41d8cd98f00b204e9800998ecf8427e" category="doc"></block>
+  <block id="36552b079970ffb2dd1314115af76c4b" category="paragraph">11.6%</block>
+  <block id="b8c1c014b9752469294df284a3fc13cc" category="paragraph">初始版本。包含StorageGRID 適用於發行版本11.2.11.11.11的指南和已驗證的協力廠商解決方案清單。</block>
+  <block id="213bf2ec1d0bd70bddfd4c935885677a" category="summary">第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.3</block>
+  <block id="0147e507e7b15a9ed1a38c66a279beb6" category="doc">通過驗證的第三方解決方案StorageGRID</block>
+  <block id="7190c305424285fe4256ab8cdf614311" category="paragraph">下列第三方解決方案已通過驗證、可與StorageGRID NetApp 11.3搭配使用。+如果您要尋找的解決方案未列出、請聯絡您的NetApp客戶代表。</block>
+  <block id="ae0059acd69f3c963f558e0836885ebd" category="section-title">第三方解決方案已在StorageGRID NetApp上驗證</block>
+  <block id="76ad060973d3a7496e879a9a4e27c43b" category="paragraph">這些解決方案已與相關合作夥伴共同測試。</block>
+  <block id="84fc43d78afb43b9be9fd32800c39e14" category="list-text">活動</block>
+  <block id="8026ca17ba2e3a987c9fc1ebbfa3b2f2" category="list-text">Cantemo</block>
+  <block id="bfe4a98ea39df43ecba3c8d81fcc406a" category="list-text">Citrix內容協同作業</block>
+  <block id="9f261daecd1acf3f272449558565c275" category="list-text">CommVault 11.</block>
+  <block id="9c7bdce226629cb4a20d49af20efddcf" category="list-text">CTera Portal 6.</block>
+  <block id="845c7d7e641b871eaa30a5ea02be05e5" category="list-text">Dalet</block>
+  <block id="3f781d47f2e5d89a93134863d08f310b" category="list-text">Data Dynamics StorageX</block>
+  <block id="608d7a3725a65397d284fed2077eca9c" category="list-text">定義</block>
+  <block id="7a0544f18be9ec8b7501804c3f19c86c" category="list-text">Interica</block>
+  <block id="04f35663b44ba178a51b9ba61068586f" category="list-text">Komprise</block>
+  <block id="99df5bd357117615d75315f590990b3a" category="list-text">很好</block>
+  <block id="878104a806df63b5f965361247b7a859" category="list-text">Nasuni</block>
+  <block id="14567310e264c20e4722d80d29f2ca18" category="list-text">OpenText文件16.4</block>
+  <block id="a0446088f8be69cb1f7ca15146abf100" category="list-text">使用CyanGate Cloud進行OpenText媒體管理16.5%</block>
+  <block id="3e9ddaaf6a6f980a64ddec983d935475" category="list-text">泛祖拉</block>
+  <block id="10f5ba42ae6dbd321e57bede0c83ec2a" category="list-text">點歸檔閘道2.0</block>
+  <block id="c28db35a9854d4fa7280c032d2eae288" category="list-text">Point Storage Manager 6.4</block>
+  <block id="bc038212039876aff8158c4afb937ef2" category="list-text">Primestream</block>
+  <block id="d36bb4409abcdf753c1103a769bf94a9" category="list-text">Quantum StorNext 5.4.0.1</block>
+  <block id="c758745dbf39c7b4da86cae8edf2ec63" category="list-text">RRubrik CDM 5.0.1 P1-1342</block>
+  <block id="f27bd3342419229be7da8dd9234adbd4" category="list-text">訊號</block>
+  <block id="83b20ea3ae67e47021c38e81e4f589ca" category="list-text">Splunk Smartstore</block>
+  <block id="3c03c9aa39f09aa3bf70c853404ab185" category="list-text">Varish Enterprise 6.0.4</block>
+  <block id="01d16ea73fb659ea507974db4f28b791" category="list-text">Veeam 9.5.4</block>
+  <block id="683c5d7a06c262f5e2e17cbb84869a3d" category="list-text">Veritas Enterprise Vault 11.</block>
+  <block id="1f61ef960fbeb10906bd09932e1faa5e" category="list-text">Veritas Enterprise Vault 12.</block>
+  <block id="aa92d10a39cb2c4707a61d62d73be93f" category="list-text">Veritas NetBackup 8.0</block>
+  <block id="2bfecc5738e4f19170da7b6787f2aac4" category="list-text">維地松</block>
+  <block id="e1b55d6b6904a9bbd61463de2b1306c9" category="summary">第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.5</block>
+  <block id="5c77045b793e49a2c9356629fa42247c" category="doc">通過驗證的第三方解決方案StorageGRID</block>
+  <block id="a3c271786c8eb7cf6e9beebf6c8792f6" category="paragraph">下列第三方解決方案已通過驗證、可搭配StorageGRID 使用+如果您要尋找的解決方案未列出、請聯絡您的NetApp客戶代表。</block>
+  <block id="0f678aab91e44750e132ec71d8e8b27d" category="list-text">Moonwalk通用</block>
+  <block id="e8089c684949d337dcfc2355146ea8ee" category="list-text">OpenText文件21.4</block>
+  <block id="cfbf45bf3636e57e75d2d19e94581808" category="list-text">OpenText InfoArchive 16 EP7</block>
+  <block id="95e97cbf382fde28370be90f19cb74b7" category="list-text">Veeam 11.</block>
+  <block id="6edef17a1a8c1377d059d1da9e0875fa" category="list-text">Vertica 10.x</block>
+  <block id="5c89f8abd30585311811b6067eeaf96d" category="section-title">第三方解決方案已通過StorageGRID 物件鎖定驗證、可在不含物件鎖的情況下在</block>
+  <block id="6876ee74f7cdb6259933dce90e333623" category="summary">第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.2</block>
+  <block id="f0579cc7b6353a01b20e6af293042053" category="doc">通過驗證的第三方解決方案StorageGRID</block>
+  <block id="02baabb078f56a4b2eaed00d5476df83" category="paragraph">下列第三方解決方案已通過驗證、可搭配StorageGRID 使用+如果您要尋找的解決方案未列出、請聯絡您的NetApp客戶代表。</block>
+  <block id="5b334f642369a1ed86af886a70b9a70a" category="summary">第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.4</block>
+  <block id="bf535f2769af42cb4a0ef69bf5605f50" category="doc">通過驗證的第三方解決方案StorageGRID</block>
+  <block id="e9a092b9753e7fc3b79569222be951af" category="paragraph">下列第三方解決方案已通過驗證、可搭配StorageGRID 使用+如果您要尋找的解決方案未列出、請聯絡您的NetApp客戶代表。</block>
+  <block id="598a701d550c449b8c8b6fbf28ac59f7" category="summary">第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.6%</block>
+  <block id="95cf74ab542e1ad06be5bdbad0153b3e" category="doc">通過驗證的第三方解決方案StorageGRID</block>
+  <block id="fbc9e339224fe0b0576e98b4bab07ea8" category="paragraph">下列第三方解決方案已通過驗證、可搭配StorageGRID 使用。+如果您要尋找的解決方案未列出、請聯絡您的NetApp客戶代表。</block>
+  <block id="bb2bd99338b18762ef6953ad2cbfafc7" category="list-text">Apache Kafka</block>
+  <block id="59c21e020bd89c6971219d3b6d98e955" category="list-text">Fujifilm物件歸檔</block>
+  <block id="09af2487255bbc1b9747ab2c0f958375" category="list-text">GitHub企業伺服器</block>
+  <block id="391115de0fbff45e2374fc17057efc2a" category="list-text">IBM FileNet</block>
+  <block id="156393fd2d6d5720c9c89cf61b4b63af" category="list-text">IBM Spectrum Protect Plus</block>
+  <block id="ec8f51b51cf3e627e98adab6a9707073" category="list-text">Microsoft SQL Server巨量資料叢集</block>
+  <block id="003600b94a5f1f52b3d6bc2e8863271a" category="list-text">PixitMedia ngenea</block>
+  <block id="e53636996ad9257c31aa596f6c267dbd" category="list-text">輕鬆儲存</block>
+  <block id="dbaa460bd61bfe1c91c1c136338013e6" category="list-text">Veritas Enterprise Vault 14</block>
+  <block id="f1ef2cbfa857a0d2a7b845499f219ef8" category="list-text">Weka v3.10或更新版本</block>
+  <block id="58440fea435f9474a314a8f58636ba4e" category="list-text">Emam</block>
+  <block id="1c4333b49a7b43ae27f876070a712cb8" category="list-text">CommVault 11功能版本26</block>
+  <block id="d78ff41b8e44ae00b917e9776f3ecd41" category="summary">NetApp與我們的合作夥伴合作、已驗證這些解決方案可搭配StorageGRID 使用。請檢閱本節中的資訊、瞭解哪些解決方案已通過驗證、並在適用的情況下取得其他指示。</block>
+  <block id="4a5b1a544c031534fcf2fa85a625ce63" category="doc">已驗證的協力廠商解決方案：總覽</block>
+  <block id="df245b9cfd302a8af7987f33f6ed60df" category="inline-link">立即成為聯盟合作夥伴</block>
+  <block id="98e55b10201a07cc0419d8c723a34cf1" category="paragraph">與NetApp聯手加速產品組合創新、提高市場知名度、並在您建立經過測試、同級最佳的NetApp解決方案時提高銷售量。<block ref="c243ccaaa8a956e841065a878a76ac60" category="inline-link-rx"></block>。</block>
+  <block id="a1224e8e1d42e54574d1b861a3df5f2f" category="summary">NetApp StorageGRID 支援軟體定義的物件儲存套件、可支援各種公有、私有及混合式多雲端環境的使用案例。利用自動化生命週期管理等領先業界的創新技術、長期儲存、保護及保留非結構化資料、以供多重用途使用。StorageGRID</block>
+  <block id="696ea9ebe2a9f57bb062aba5c1d58b10" category="doc">如何在StorageGRID 您的環境中啟用支援功能</block>
+  <block id="932b23c9adc6de8aea5fed582f4afb76" category="summary">S3cmd是免費的命令列工具和用戶端、適用於S3作業。您可以使用S3cmd測試StorageGRID 及示範S3在支援上存取。</block>
+  <block id="450d1a071fcbc323ff4710aa7452fdd5" category="doc">使用S3cmd測試StorageGRID 及示範S3在支援方面的存取</block>
+  <block id="1905fbd5d74fe86a969eaff7ff00f7fc" category="paragraph">S3cmd是免費的命令列工具和用戶端、適用於S3作業。您可以使用s3cmd測試StorageGRID 及示範S3在支援上存取。</block>
+  <block id="744511f8f2fbc194c76d0d79673bfae6" category="section-title">安裝及設定S3cmd</block>
+  <block id="afb33c859ca6b8231970317fad403dd6" category="inline-link">命令列S3用戶端</block>
+  <block id="43ce8a46c220f7e1200c26cf9fdda89e" category="paragraph">若要在工作站或伺服器上安裝S3cmd、請從下載<block ref="7378b19c1bb6e55a9a8910d8ad3a0679" category="inline-link-rx"></block>。S3cmd會預先安裝在StorageGRID 每個支援的節點上、做為疑難排解的工具。</block>
+  <block id="aeb3ce9dba65427ab03cba1cf27c246b" category="section-title">初始組態步驟</block>
+  <block id="524f45072627111da5b21bda68e3200d" category="list-text">s3cmd --configure</block>
+  <block id="71b08894081527233da8439cba4e157c" category="list-text">僅提供存取金鑰和secret金鑰、其餘部分則保留預設值。</block>
+  <block id="f87598afee396ede6fded5c127f5710b" category="list-text">使用隨附的認證資料來測試存取？[y/n]（是/否）：n（跳過測試、因為測試會失敗）</block>
+  <block id="8f8b232ac491b44abd4e3c73095be26f" category="list-text">儲存設定？[y/N] y</block>
+  <block id="20fc045a3cb98f5d53190a084eab5777" category="list-text">組態已儲存至「/root/.s3cfg」</block>
+  <block id="2a0dc1b5996fa32c9cff4613164a9fa7" category="list-text">在.s3cfg中、將host_base和host_bucket欄位置於"=""符號之後：</block>
+  <block id="d6a40235079422dc94593513bb262a4f" category="list-text">host_base =</block>
+  <block id="deffd87ba6416775ccd717de678a52f6" category="list-text">host_bucket =</block>
+  <block id="0c4b929b440945de149593225ef4d11a" category="admonition">如果您在步驟4中指定host_base和host_bucket、則不需要在CLI中使用--host來指定端點。範例：</block>
+  <block id="24bf95be39d5b143037e293fd845755a" category="section-title">基本命令範例</block>
+  <block id="40ff4deace0a58ba7da244066c61b419" category="list-text">*建立儲存庫：*</block>
+  <block id="2b55d1dacc7066c55f775211c6d2d6fb" category="paragraph">「3cmd MB S3：//s3cmd bucket -host=&lt;終結 點&gt;:&lt;port&gt;-ner-ne-check認證」</block>
+  <block id="b3cfb276af36f62a54a7575fde41c5c3" category="list-text">*列出所有庫位：*</block>
+  <block id="5a9e189ea6aff52db6c42ed8dc13a581" category="paragraph">「3cmd ls --host=&lt;端 點&gt;:&lt;port&gt;---un-check認證」</block>
+  <block id="a500560628b5b26184ccd1c5bb710ad7" category="list-text">*列出所有庫存箱及其內容：*</block>
+  <block id="e39715fa32da966d21a67b6f4b657375" category="paragraph">「3cmd la -host=&lt;終結 點&gt;:&lt;port&gt;-no -check憑證」</block>
+  <block id="a0e8caa1006eb0cb202216f58d3ef3bc" category="list-text">*列出特定儲存區中的物件：*</block>
+  <block id="99cf6d132b68c3ee42ec1c2868670095" category="paragraph">「3cmd ls S3：//&lt;bucket &gt;-host=&lt;終結 點&gt;:&lt;port&gt;-no -check憑證」</block>
+  <block id="1253bae3769a3e203047d32867d8d8b5" category="list-text">*刪除一個桶：*</block>
+  <block id="33baac546bf69d3cba8e4e55809362c2" category="paragraph">「3cmd rb s3：//s3cmd bucket -host=&lt;終結 點&gt;:&lt;port&gt;-ne-ne-check認證」</block>
+  <block id="4baf4031f964504db7c312e4eb5032f9" category="list-text">*放置物件：*</block>
+  <block id="99ada43576cbc748a543ef56c15239fd" category="paragraph">「3cmd PUT &lt;file&gt; S3：//&lt;bucket &gt;-host=&lt;終結 點&gt;:&lt;port&gt;-no -check憑證」</block>
+  <block id="cf50e7bb0c83a17917775f6502fd592c" category="list-text">*取得物件：*</block>
+  <block id="7afaf73cd0748a5fd70da28b10e8f9e3" category="paragraph">「3cmd Get S3：//&lt;bucket &gt;/&lt;object&gt;-host=&lt;終結 點&gt;:&lt;port&gt;-no -check憑證」</block>
+  <block id="11ce41b9c95136feb022ed6b7dc35f56" category="list-text">*刪除物件：*</block>
+  <block id="85977fbb9d2313217f8fcad9ab99ec24" category="paragraph">「3cmd Del S3：//&lt;bucket &gt;/-host=&lt;終結 點&gt;:&lt;port&gt;-no -check認證」</block>
+  <block id="bb59d42d40970acdd091a1d9e3013ed1" category="summary">本指南說明在NetApp StorageGRID 還原上建立具有公用儲存設備的Vertica Eon Mode資料庫的程序。</block>
+  <block id="3944f79e14bd534dce03dc9377e507b2" category="doc">Vertica Eon模式資料庫使用NetApp StorageGRID 功能做為共用儲存設備</block>
+  <block id="0b79795d3efc95b9976c7c5b933afce2" category="section-title">簡介</block>
+  <block id="1351a64c902bed1342b8e0b3b15016e1" category="paragraph">Vertica是分析資料庫管理軟體。它是一款柱式儲存平台、專為處理大量資料而設計、可在傳統的密集環境中、提供極快的查詢效能。Vertica資料庫以兩種模式之一執行：Eon或Enterprise。您可以在內部部署或雲端部署這兩種模式。</block>
+  <block id="0ff6ef083e5937ae37d85f7e32b9c415" category="paragraph">Eon和Enterprise模式在儲存資料的位置上主要有所不同：</block>
+  <block id="742f8282711edec5deb4f1c27cba460b" category="list-text">Eon Mode資料庫使用公用儲存設備來儲存資料。這是Vertica推薦的。</block>
+  <block id="10b13e2ff5733c9c1736ca88a58fce37" category="list-text">企業模式資料庫會將資料儲存在本機的資料庫中、儲存在組成資料庫的節點檔案系統中。</block>
+  <block id="da071698872dd5a11fcfcdc6e87ce00b" category="section-title">Eon Mode架構</block>
+  <block id="eacdb46886950f67125163a0ac7c547b" category="paragraph">Eon Mode將運算資源與資料庫的共用儲存層區隔開來、讓運算和儲存設備能夠分開擴充。Eon Mode中的Vertica經過最佳化、可因應各種工作負載、並使用獨立的運算與儲存資源將其彼此隔離。</block>
+  <block id="c9537751a44904cbd1595766ea947357" category="paragraph">Eon Mode會將資料儲存在稱為公用儲存設備的共用物件儲存區中、S3儲存區是在內部部署或Amazon S3上代管。</block>
+  <block id="ae79effc6d45e14ea71e610bb3d9669c" category="image-alt">Vertica Eon Mode叢集、含公用儲存設備</block>
+  <block id="d9bdcaa0d990474197d196d3848befca" category="section-title">共用儲存設備</block>
+  <block id="f208cb9b2076d8b42eb21a99f5e12b86" category="paragraph">Eon Mode不會在本機儲存資料、而是使用單一共線儲存位置來儲存所有資料和目錄（中繼資料）。公用儲存設備是資料庫的集中式儲存位置、可在資料庫節點之間共用。</block>
+  <block id="d00864c661d9eea6d6bc179f2c282e45" category="paragraph">公用儲存設備具有下列屬性：</block>
+  <block id="e7bc675af5b1688f139c70343df7051b" category="list-text">雲端或內部部署物件儲存設備中的公用儲存設備彈性較高、而且由於儲存設備故障而導致資料遺失的可能性較個別機器上磁碟上的儲存設備來得小。</block>
+  <block id="e1a644db903707c56d177424599944ca" category="list-text">任何資料都可以由任何使用相同路徑的節點讀取。</block>
+  <block id="363e9f9d5ab59fe87846e1fa6280937c" category="list-text">容量不受節點上磁碟空間的限制。</block>
+  <block id="e41c3434b54256834c20bb764ccb3dfb" category="list-text">由於資料是以社群方式儲存、因此您可以彈性擴充叢集、以因應瞬息萬變的需求。如果資料儲存在節點本機上、則新增或移除節點時、需要在節點之間移動大量資料、才能將資料從要移除的節點移出、或移到新建立的節點上。</block>
+  <block id="2aa2d7b479eff89354f5a5d47c966c7b" category="section-title">維修中心</block>
+  <block id="69b552cd0cc8cd7cedbb740166c2b67d" category="paragraph">公用儲存設備的缺點之一、就是速度。從共享雲端位置存取資料的速度比從本機磁碟讀取慢。此外、如果許多節點同時從公用儲存設備讀取資料、則連線至公用儲存設備可能會成為瓶頸。為了改善資料存取速度、Eon Mode資料庫中的節點會維護本機磁碟快取、其中的資料稱為「倉儲」。執行查詢時、節點會先檢查所需的資料是否位於儲存庫中。如果是、則會使用資料的本機複本完成查詢。如果資料不在儲存庫中、節點會從公用儲存設備擷取資料、並將複本儲存在儲存庫中。</block>
+  <block id="adefcaa5a25e4b7dd144fc0f19c1cfcd" category="section-title">NetApp StorageGRID 技術建議</block>
+  <block id="770d5275891c4480deae83e407a6f54f" category="paragraph">Vertica將資料庫資料儲存至物件儲存區、儲存為數千（或數百萬）個壓縮物件（觀察到每個物件的大小為200至500MB）。當使用者執行資料庫查詢時、Vertica會使用位元組範圍Get呼叫、從這些壓縮物件平行擷取所選的資料範圍。每個位元組範圍的Get大約為8KB。</block>
+  <block id="041a4ffdefdbba3e879952330449b52f" category="paragraph">在10TB資料庫倉儲的使用者查詢測試期間、每秒傳送4、000至10、000個Get（位元組範圍Get）要求至網格。使用SG6060應用裝置執行此測試時、雖然每個應用裝置節點的CPU使用率%很低（約20%至30%）、但2/3的CPU使用時間仍在等待I/O在SGF6024上觀察到I/O等待的百分比極低（0%至0.5%）。</block>
+  <block id="ee5b06737289123ef2b5504214d0a959" category="paragraph">由於小IOPS需求高且延遲需求極低（平均應低於0.01秒）、NetApp建議將SFG6024用於物件儲存服務。如果需要SG6060來處理非常大的資料庫大小、客戶應與Vertica客戶團隊合作調整進廠規模、以支援主動查詢的資料集。</block>
+  <block id="69eb0bfa315677fb31292eb1879ef1e2" category="paragraph">對於管理節點和API閘道節點、客戶可以使用SG100或SG1000。選項取決於並行和資料庫大小的使用者查詢要求數量。如果客戶偏好使用協力廠商負載平衡器、NetApp建議使用專屬的負載平衡器來處理高效能需求工作負載。如需StorageGRID 調整規模、請洽詢NetApp客戶團隊。</block>
+  <block id="75a344cafb10d96419edf5a61e63c7c0" category="paragraph">其他StorageGRID 的功能組態建議包括：</block>
+  <block id="5b0c5b5e09678e4458f93ea143915cd4" category="list-text">*網格拓撲*。請勿將SGF6024與同一個網格網站上的其他儲存應用裝置機型混用。如果您偏好使用SG6060來提供長期歸檔保護、請將SGF6024與專屬的網格負載平衡器一起保留在主動式資料庫的網格站台（實體或邏輯站台）中、以提升效能。在同一個站台混合使用不同機型的應用裝置、會降低站台的整體效能。</block>
+  <block id="a8b59be6737824c8ebdf70e871ae770b" category="list-text">*資料保護*。使用Replicate複本以保護資料安全。請勿對使用中的資料庫使用銷毀編碼。客戶可以使用銷毀編碼來長期保護非作用中資料庫。</block>
+  <block id="37b5ca073879940e05a508cb8e173209" category="list-text">*不啟用網格壓縮*。Vertica會先壓縮物件、再儲存至物件儲存。啟用網格壓縮不會進一步節省儲存使用量、也會大幅降低位元組範圍的效能。</block>
+  <block id="e0a0f5ab016a2e63cf33ff41b6c64f8d" category="list-text">* HTTP與HTTPS S3端點連線*。在基準測試期間、我們觀察到使用HTTP S3連線從Vertica叢集到StorageGRID Es負載 平衡器端點時、效能提升約5%。此選項應根據客戶的安全需求而定。</block>
+  <block id="4b28b0ac82f7df42e45ed03d7ec68cbe" category="paragraph">Vertica組態的建議包括：</block>
+  <block id="12e901de5151934289876684be69dbd3" category="list-text">*對於讀寫作業*、會啟用* Vertica資料庫預設的進廠設定（值= 1）。NetApp強烈建議您啟用這些進廠設定、以提升效能。</block>
+  <block id="dd75d17318890d52ab1d8e037befc36f" category="inline-xref">停用串流限制</block>
+  <block id="b5cea23fe7560dccda4bff6fe086b074" category="list-text">*停用串流限制*。如需組態詳細資料、請參閱一節 <block ref="622e251fe1340a5a963a60975f5cfd66" category="inline-xref-macro-rx"></block>。</block>
+  <block id="a49ece59a164bea53c1c444816a1423e" category="section-title">將Eon Mode安裝在內部部署環境中、並將公用儲存設備安裝在StorageGRID 原地</block>
+  <block id="c120fe39689790c17f819d12b1470734" category="inline-link-macro">在內部部署環境中安裝Eon Mode資料庫</block>
+  <block id="60c5f0d9d4093b532349fb2c84a2f907" category="paragraph">以下各節說明將Eon Mode安裝在內部部署環境中、並將公用儲存設備安裝在StorageGRID 原地的程序。設定內部部署簡易儲存服務（S3）相容物件儲存設備的程序、與Vertica指南中的程序類似、 <block ref="291481b0beedb487e265883c3de1da25" category="inline-link-macro-rx"></block>。</block>
+  <block id="18d45b04dd1a7895a2c977550f8911d7" category="paragraph">下列設定用於功能測試：</block>
+  <block id="afdaec41fcd7f8ba541d0750dcbd6960" category="list-text">零點11.4.0.4 StorageGRID</block>
+  <block id="c6624074e9b8a278bfe04013c96fc36e" category="list-text">Vertica 10.1.0</block>
+  <block id="e2faa2feaa265e01fe33c216af9efb3d" category="list-text">三部虛擬機器（VM）搭配CentOS 7.x作業系統、可讓Vertica節點組成叢集。此設定僅適用於功能測試、不適用於Vertica正式作業資料庫叢集。</block>
+  <block id="fe8be754482a7a11d9d5a2d53443cedc" category="paragraph">這三個節點是以安全Shell（SSH）金鑰設定、以便在叢集內的節點之間不需密碼即可執行SSH。</block>
+  <block id="f5d7d5da5cd7e937a30a5f247eee8768" category="section-title">NetApp StorageGRID 產品所需資訊</block>
+  <block id="784d884ec512d4e088d2a6cb0c7a12ec" category="paragraph">若要在StorageGRID 內部部署環境中安裝Eon Mode、並將公用儲存設備安裝在原地、您必須具備下列必要資訊。</block>
+  <block id="9ce37b571d32bd29d59a6463c83b9056" category="list-text">IP位址或StorageGRID 完整網域名稱（FQDN）和端口號。如果您使用的是HTTPS、請使用StorageGRID 在S3端點上實作的自訂憑證授權單位（CA）或自我簽署SSL憑證。</block>
+  <block id="222a56bb23dfff9aa9774dd9c3e4ee56" category="list-text">儲存區名稱。它必須預先存在且為空白。</block>
+  <block id="fdae6c2e4ab36d6033d962c50f414ccb" category="list-text">存取金鑰ID和密碼存取金鑰、並可讀寫儲存區的存取權。</block>
+  <block id="98c67820d16a1b9909ecb5354f6822a6" category="section-title">建立授權檔案以存取S3端點</block>
+  <block id="beaa6107ac08a69977170ef5066ba7d5" category="paragraph">建立存取S3端點的授權檔案時、必須符合下列先決條件：</block>
+  <block id="7a83bfd6cbc9c75248c5c1aa0561e094" category="list-text">已安裝Vertica。</block>
+  <block id="52bb7b8803b5d17a4da99db7aba31c93" category="list-text">叢集已設定、設定並準備好建立資料庫。</block>
+  <block id="aa3fedd0a7a12417c91b0d938a4d2f1d" category="paragraph">若要建立存取S3端點的授權檔案、請遵循下列步驟：</block>
+  <block id="b87e30a2e9d3e21c51073e1db74466e2" category="list-text">登入Vertica節點、執行「admintool」以建立Eon Mode資料庫。</block>
+  <block id="302df0b551a339ce9b649c1c77f6f22f" category="paragraph">預設使用者為「dbadmin」、是在Vertica叢集安裝期間建立的。</block>
+  <block id="32307e5a5d0dcaf9f32db0202471f86a" category="list-text">使用文字編輯器在「/home/DBadmin'」目錄下建立檔案。檔案名稱可以是您想要的任何內容、例如「shg_auth.conf」。</block>
+  <block id="c13f6f849620f8cc13bc4474d9555200" category="list-text">如果S3端點使用標準HTTP連接埠80或HTTPS連接埠443、請跳過連接埠號碼。若要使用HTTPS、請設定下列值：</block>
+  <block id="3068a18f4c22a22b0a2ecd5b1416a5ec" category="list-text">「awsenablehttps = 1」、否則請將值設為「0」。</block>
+  <block id="116bd825db022c3159b1677a3dc64f06" category="list-text">「awsaith =&lt;S3存取金鑰ID&gt;:&lt;秘密存取金鑰&gt;'</block>
+  <block id="1d33a1b42749a2480d0f6640c5ff2e84" category="list-text">「aws端 點=&lt;s/s3 StorageGRID 端點&gt;:&lt;port&gt;'</block>
+  <block id="e6e1ee0e7535b2e405ebb8e300b98120" category="paragraph">若要使用自訂CA或自我簽署的SSL憑證來進行StorageGRID SESS3端點HTTPS連線、請指定憑證的完整檔案路徑和檔名。此檔案必須位於每個Vertica節點上的相同位置、並對所有使用者具有讀取權限。如果StorageGRID 由已知的CA簽署了SESS3端點SSL憑證、請跳過此步驟。</block>
+  <block id="696e259f94c7ad1305f19356063ef22a" category="paragraph">「awscafile =&lt;檔案路徑/檔案名稱&gt;」</block>
+  <block id="0d1ac53170a5118fa04c541efad5bb4d" category="paragraph">例如、請參閱下列範例檔案：</block>
+  <block id="fc77af791d1dc32525fcc72feee625e1" category="admonition">在正式作業環境中、客戶應在StorageGRID 一個S3負載平衡器端點上、實作由已知CA簽署的伺服器憑證。</block>
+  <block id="59826e109f3e784088f86690d77d3668" category="section-title">在所有Vertica節點上選擇一個進廠路徑</block>
+  <block id="b4129381183bb3a2dcc258f9cf71eee3" category="paragraph">在每個節點上為倉儲儲存路徑選擇或建立目錄。您為倉儲儲存路徑參數所提供的目錄必須具有下列項目：</block>
+  <block id="a77408fa769995f6c1b1614db78cd9d3" category="list-text">叢集中所有節點的相同路徑（例如、「/home/DBadmin/depot」）</block>
+  <block id="a3505e1f8f85c906e127d552d198d4ed" category="list-text">DBAdmin使用者可讀取且可寫入</block>
+  <block id="05a29aef1a17d794559074061ce7180e" category="list-text">足夠的儲存容量</block>
+  <block id="a11c22527e5b1ee68fbaab45fce06809" category="inline-link-macro">調整Eon模式資料庫的Vertica叢集規模</block>
+  <block id="00dadf185ad569b9ff9af5c62063d2ec" category="paragraph">根據預設、Vertica會使用60%的檔案系統空間、其中包含用於倉儲儲存設備的目錄。您可以使用「cred_db」命令中的「-kepot-sizes」引數來限制庫房的大小。請參閱 <block ref="5ed72ba4f95868ac00a71daae1b19940" category="inline-link-macro-rx"></block> 文章以瞭解一般的Vertica規模調整準則、或洽詢您的Vertica客戶經理。</block>
+  <block id="298b1561e22818ad31df6e4836a6aca2" category="paragraph">如果不存在「admintools create_db"工具、則會嘗試為您建立一個進廠路徑。</block>
+  <block id="4536a0f0846353aa5de6714204bd897a" category="section-title">建立Eon內部部署資料庫</block>
+  <block id="6ed9ef1283f8a665ad7dbfe450f4616c" category="paragraph">若要建立Eon內部部署資料庫、請遵循下列步驟：</block>
+  <block id="c8fac0ae7f28a985c6f7041e704cb9e9" category="list-text">若要建立資料庫、請使用「admintooles create_db]工具。</block>
+  <block id="ba1f54172ea851b435ebad930979214e" category="paragraph">下列清單提供本範例中使用之引數的簡短說明。如需所有必要和選用引數的詳細說明、請參閱Vertica文件。</block>
+  <block id="d560ea5a8e684843d3e61026f97988ea" category="inline-xref">「建立授權檔案以存取S3端點」</block>
+  <block id="49231ccf7e1f2892d02e363b3996f6b1" category="list-text">-x &lt;在中建立之授權檔案的路徑/檔名 <block ref="ff01d755c02cf9eac8acabe776f4ae31" category="inline-xref-macro-rx"></block> &gt;。</block>
+  <block id="f405bc9fea0f983aec86bf3b39598931" category="paragraph">授權詳細資料會在成功建立後儲存在資料庫內。您可以移除此檔案、以避免公開S3秘密金鑰。</block>
+  <block id="8bb92892cb170f0a2e9faa38b08707d2" category="list-text">公用儲存位置&lt;S3：//storagegrid Bucketname&gt;</block>
+  <block id="730286a138b893db744ec9b6d5eb53cc" category="list-text">s &lt;用於此資料庫的Vertica節點以逗號分隔的清單&gt;</block>
+  <block id="ff3ce7ef8f8faa42ab218e0e6a952005" category="list-text">-d &lt;要建立的資料庫名稱&gt;</block>
+  <block id="cbfebf618a39b6eebd458ebccb35811d" category="list-text">p &lt;要為此新資料庫設定的密碼&gt;。例如、請參閱下列命令範例：</block>
+  <block id="f0f9a3849fe5730a2c9d6f1fec222ca3" category="paragraph">根據資料庫的節點數、建立新資料庫需要幾分鐘的時間。第一次建立資料庫時、系統會提示您接受授權合約。</block>
+  <block id="3b8065a08e54f4e0956f3b822ffb8a91" category="paragraph">例如、請參閱下列授權檔案範例和「create db]命令：</block>
+  <block id="011babd6bb6bec44f7f5c42f6c3e7a38" category="cell">物件大小（位元組）</block>
+  <block id="e6ada8a15e80a48f024520ab8ffb24a5" category="cell">鏟斗/物件金鑰完整路徑</block>
+  <block id="8f283c17785e8043629e6a7e1d721498" category="paragraph">"61歲"</block>
+  <block id="194ed05748ef16c0095eca9bbdccfd15" category="paragraph">「s 3：//Vertica/051/026d63ae9d4a33237bf0e2c2cf2a794a00a0000s000021a07/026d63ae9d4a33237bf0e2c2cf2a794a00a0000a21a07_0_0_0_0.DFS'」</block>
+  <block id="729c949b77c1b640517910da82d0009e" category="paragraph">《145》</block>
+  <block id="02dde8fef0da052a66cc199f0d934f95" category="paragraph">「s 3：//Vertica/2c4/026d63ae9d4a33237bf0e2c2cf2a794a00a000021a3d/026d63ae9d4a33237bf0e2c2c2a794a00a0000a21a3d_0_0.DFs」</block>
+  <block id="436383be1a5ea8f6f9a05e8b93c69d9d" category="paragraph">《146》</block>
+  <block id="70e1bd6136404a49a88f7fb3dd3465c3" category="paragraph">「s 3：//Vertica/33C/026d63ae9d4a33237bf0e2c2cf2a794a00a0000s000021a1d/026d63ae9d4a33237bf0e2c2c2a794a00a0000a21a1d_0_0.dfs」</block>
+  <block id="715eac993d42a26a194f16062429238e" category="paragraph">《40》</block>
+  <block id="29cbdad4e0c6e39f8d84a0d5416eb1e8" category="paragraph">「s 3：//Vertica/382/026d63ae9d4a33237bf0e2c2cf2a794a00a0000s000021a31 / 026d63ae9d4a33237bf0e2c2cf2a794a00a000021a31_0_0_0.DFs」</block>
+  <block id="4ddd669e9e695a865f4ee77b92335a6b" category="paragraph">「s 3：//Vertica/42f/026d63ae9d4a33237bf0e2c2cf2a794a00a0000s000021a21/026d63ae9d4a33237bf0e2c2c2cf2a794a00a0000a21a21a21a21_0_0_0_0.DFS'」</block>
+  <block id="a0531813d4911f4468a61b1a8b8be492" category="paragraph">"34"</block>
+  <block id="f99e684ff65b8e3fa1b1115a8e4f6455" category="paragraph">「s 3：//Vertica/472/026d63ae9d4a33237bf0e2c2cf2a794a00a0000s000021a25/026d63ae9d4a33237bf0e2c2cf2a794a00a000021a25_0_0_0.DFs」</block>
+  <block id="964578668d432e948ebd36046dbb63a0" category="paragraph">《41》</block>
+  <block id="0d8920cf1f46e7225ad12a12aa3ef7fa" category="paragraph">「s 3：//Vertica/476/026d63ae9d4a33237bf0e2c2cf2a794a00a000021a2d/026d63ae9d4a33237bf0e2c2c2cf2a794a00a000021a2a2d_0_0_0_0.DFs」</block>
+  <block id="ee33f05ae2d631fbc7214baa242bbe6b" category="paragraph">「s 3：//Vertica/52A/026d63ae9d4a33237bf0e2c2cf2a794a00a000021a5d/026d63ae9d4a33237bf0e2c2c2a794a00a0000a21a5d_0_0.DFs」</block>
+  <block id="54070e15a029f7447e1ecebc3d82b773" category="paragraph">《131》</block>
+  <block id="66f64ef6cf860c2f0ce6a5a2c23761e3" category="paragraph">「s 3：//Vertica/5d2/026d63ae9d4a33237bf0e2c2cf2a794a00a0000s000021a19/026d63ae9d4a33237bf0e2c2c2a794a00a0000a21a19_0_0_0.DFS'</block>
+  <block id="bd8b3b2174b3dc482b0c5e38e6cddac3" category="paragraph">《91》</block>
+  <block id="162c559c21f5cc69fe9ebd819fde72e2" category="paragraph">「s 3：//Vertica/5f7/026d63ae9d4a33237bf0e2c2cf2a794a00a0000s000021a11/026d63ae9d4a33237bf0e2c2c2a794a00a0000a21a11_0_0_0.DFS'」</block>
+  <block id="dc16a418b068800db4274918cfb8cbd5" category="paragraph">《118》</block>
+  <block id="c891ece8fdff5a56142befae63efdf59" category="paragraph">「s 3：//Vertica/82d/026d63ae9d4a33237bf0e2c2cf2a794a00a0000s000021a15/026d63ae9d4a33237bf0e2c2cf2a794a00a0000a21a15_0_0_0.DFs」</block>
+  <block id="cfcfa2b8b73ab4ebd558c0c1fef3ddb5" category="paragraph">《115》</block>
+  <block id="a153a0e9f0ae1d6ee55d81dc814a6b1a" category="paragraph">「s 3：//Vertica/9a2/026d63ae9d4a33237bf0e2c2cf2a794a00a0000s000021a61/026d63ae9d4a33237bf0e2c2c2a794a00a0000a21a61_0_0_0.DFS'」</block>
+  <block id="df6e76b7db7e1995b581978628f232d2" category="paragraph">《33》</block>
+  <block id="adf4c765585112bb17f45e76f9d9d590" category="paragraph">「s 3：//Vertica/ACD/026d63ae9d4a33237bf0e2c2cf2a794a00a0000s000021a29 / 026d63ae9d4a33237bf0e2c2cf2a794a00a000021a29 _0_0_0.DFS'」</block>
+  <block id="5bad592e6f7fea9a405f17f8f9340030" category="paragraph">《133》</block>
+  <block id="87316eaa24ad32afbe0ef544c6bca09a" category="paragraph">「s 3：//Vertica/b98/ 026d63ae9d4a33237bf0e2c2cf2a794a00a000021a4d/026d63ae9d4a33237bf0e2c2c2a794a00a0000a21a4d_0_0.dfs」</block>
+  <block id="82923f5350a7cf37b21ea38721c005a9" category="paragraph">《38》</block>
+  <block id="614c8126b9e7031460260b44d16aeeee" category="paragraph">「s 3：//Vertica/db3/026d63ae9d4a33237bf0e2c2cf2a794a00a0000s000021a49/ 026d63ae9d4a33237bf0e2c2cf2a794a00a0000a21a49_0_0_0.DFS'」</block>
+  <block id="ccc61782f821297d4d0f1d6adc8c005b" category="paragraph">「s 3：//Vertica/EBA / 026d63ae9d4a33237bf0e2c2cf2a794a00a0000s000021a59/026d63ae9d4a33237bf0e2c2cf2a794a00a0000a21a59_0_0_0.DFs」</block>
+  <block id="0688523b1b9b233c01258f78a3b678d1" category="paragraph">《21521920》</block>
+  <block id="5bd0f2c4067288be395e7abd381a1c08" category="paragraph">「s 3：//Vertica /中繼資料/VMart/Archites/026d63ae9d4a33237bf0e2c2c2c2a794a00a00002152/026d63ae9d4a33237bf0e2c2c2a794a00a0000a0000a0000a2152.tar」</block>
+  <block id="bc9b86685d9566e8f05dc5bf8d3a1fbc" category="paragraph">《6865408》</block>
+  <block id="d38e8ffa6625a5a4b6bad1c1d7382fb5" category="paragraph">「s 3：//Vertica /中繼資料/VMart/Archites/026d63ae9d4a33237bf0e2c2cf2a794a00a000021602/026d63ae9d4a33237bf0e2c2cf2a794a00a0000a0000a2162.tar」</block>
+  <block id="af6664da5e630dd702d05572ececa175" category="paragraph">《204217344》</block>
+  <block id="de27bd64b0a8f6533689f4b16da6bfb0" category="paragraph">「s 3：//Vertica /中繼資料/VMart/Archites/026d63ae9d4a33237bf0e2c2cf2a794a00a000021610/026d63ae9d4a33237bf0e2c2cf2a794a00a0000a0000a21610.tar」</block>
+  <block id="9ef62a917e9958765d5bcb465a51ac57" category="paragraph">《16109056》</block>
+  <block id="3783651d1a6b717d08885cf53bd7d16e" category="paragraph">「s 3：//Vertica /中繼資料/VMart/Archites/026d63ae9d4a33237bf0e2c2cf2a794a00a0000s0000217e0/026d63ae9d4a33237bf0e2c2c2a794a00a0000a0000a0000a217e0.tar」</block>
+  <block id="c3d8042b5920b9834cdc8c607700579b" category="paragraph">《12853248》</block>
+  <block id="cb5e272ca193ebaf253184d8cfc81f6c" category="paragraph">「s 3：//Vertica /中繼資料/VMart/Archites/026d63ae9d4a33237bf0e2c2cf2a794a00a000021800/026d63ae9d4a33237bf0e2c2cf2a794a00a0000a00a00002180.tar」</block>
+  <block id="9f99944286c11b6b1d4ae4f3afeaccce" category="paragraph">《8937984》</block>
+  <block id="5c7d0ca56c0f98a44c9694b3b23638a6" category="paragraph">「s 3：//Vertica /中繼資料/VMart/Archites/026d63ae9d4a33237bf0e2c2cf2a794a00a0000187a/026d63ae9d4a33237bf0e2c2c2a794a00a0000a0000187a.tar]</block>
+  <block id="953a580241e2775e0639090df2123983" category="paragraph">《56260608》</block>
+  <block id="b91fb7e8554567dee7fd85bf527a5d61" category="paragraph">「s 3：//Vertica /中繼資料/VMart/Archites/026d63ae9d4a33237bf0e2c2cf2a794a00a000018b2/026d63ae9d4a33237bf0e2c2c2a794a00a0000a0000a218b2.tar」</block>
+  <block id="2eab01f0a4f4ba0111890349a5f85444" category="paragraph">《53947904》</block>
+  <block id="f27cf13b696134d286beb7542a5b8ee9" category="paragraph">「s 3：//Vertica /中繼資料/VMart/Archites/026d63ae9d4a33237bf0e2c2cf2a794a00a0000219ba/ 026d63ae9d4a33237bf0e2c2cf2a794a00a0000a0000a219ba.tar'」</block>
+  <block id="5b1513e00fa72794bd306e4661c0d8af" category="paragraph">《44932608》</block>
+  <block id="66e66fba54c58c7cfab3b8c11a8b73a3" category="paragraph">「s 3：//Vertica /中繼資料/VMart/Archites/026d63ae9d4a33237bf0e2c2cf2a794a00a00000000219de/026d63ae9d4a33237bf0e2c2cf2a794a00a0000a0000a219de.tar」</block>
+  <block id="82901f02268c81d3e27980ba5e0b77d5" category="paragraph">《256306688》</block>
+  <block id="7914ba13e7d387d65c9411aeea0e0892" category="paragraph">「s 3：//Vertica/mata/VMart/Archites/026d63ae9d4a33237bf0e2c2c2c2a794a00a000021a6e/026d63ae9d4a33237bf0e2c2c2c2a794a00a0000a0000a00a0000a2a6a0000a6a6a6a6a6a6a6ae.tar</block>
+  <block id="bf40bf1f33abeba0c5f6118b0b478254" category="paragraph">《8062464》</block>
+  <block id="89fe14ef338a0aad387cf40439c765d3" category="paragraph">「s 3：//Vertica /中繼資料/VMart/Archites/026d63ae9d4a33237bf0e2c2c2cf2a794a00a000021e34/ 026d63ae9d4a33237bf0e2c2c2a794a00a0000a00a0000a000021e34.tar]</block>
+  <block id="f09043d36889d1d269a7e6511fafff88" category="paragraph">《20024832》</block>
+  <block id="9f4bb57d3119e159eda6dc91b421e12c" category="paragraph">「s 3：//Vertica /中繼資料/VMart/Archites/026d63ae9d4a33237bf0e2c2cf2a794a00a000021e70-026d63ae9d4a33237bf0e2c2c2a794a00a0000a0000a70a.tar]</block>
+  <block id="75dc180047a4a65cc91cdc34bafd5f13" category="paragraph">《104444》</block>
+  <block id="5fe8f5a5faaf24b63d974fff8f45ad49" category="paragraph">「s 3：//Vertica/metadmetada/VMart/叢 集_config.json」</block>
+  <block id="cb455610261549601a968727f75e173c" category="paragraph">《822666》</block>
+  <block id="734d9f32a69fc76666aa927960e1ba72" category="paragraph">s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0016/Catalog/859703b06a3456d95d0be28575a673/nates/c13_13/chkpt_1.cat.gz`</block>
+  <block id="fdbaf1b0ee4e02044e36d36dd4518eb0" category="paragraph">"254"</block>
+  <block id="1fd58d19f264e720bbbb53577d7a2e49" category="paragraph">「s 3：//Vertica /中繼資料/VMart/nodes/v_v_vmart節點0016/Catalog/859703b06a3456d95d0be28575a673/checks/c13_13/completed」</block>
+  <block id="0dde90dd52d8ff73123cc9260d7786ec" category="paragraph">《2958》</block>
+  <block id="13a8345978900e79a14d95d85370d8e4" category="paragraph">「s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0016/Catalog/859703b06a3456d95d0be28573/narates/c2_2/chkpt_1.cat.gz`」</block>
+  <block id="ef3a67b278f31bdbebbe75fa5f8c0d8f" category="paragraph">《231》</block>
+  <block id="6d2efa8379c2fd39a36d84564be5a1b4" category="paragraph">「s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0016/Catalog/859703b06a3456d95d0be28575a673/nates/c2_2/completed」</block>
+  <block id="2912813aa00f32add6928d2cd9f830d6" category="paragraph">《822521》</block>
+  <block id="f141618d089b11b78013a4fad88af223" category="paragraph">「s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0016/Catalog/859703b06a3456d95d0be28573/narates/c4_4/chkpt_1.cat.gz`」</block>
+  <block id="6c6fe7b656c6c32a26871dfb19f4b7b3" category="paragraph">「s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0016/Catalog/859703b06a3456d95d0be28575a673/checks/c4_4/completed」</block>
+  <block id="703d5c404aa85c4c6a2e4cd844293b36" category="paragraph">《746513》</block>
+  <block id="4640693ffd9b0eb61a5ee402925c804c" category="paragraph">「s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0016/Catalog/859703b06a3456d95d0be28575a673/Txnlogs/txn_14_g14.cat`」</block>
+  <block id="bd064eec6e4122c37fd1528794b1faec" category="paragraph">《2596》</block>
+  <block id="6fa963a88e2173bc42c4994cd74cf77e" category="paragraph">「s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0016/Catalog/859703b06a3456d95d0be28575a673/Txnlogs/txn_3_g3.cat.gz`」</block>
+  <block id="f1b0090937d01be346c5db6567a13320" category="paragraph">《821065》</block>
+  <block id="84e5609dfad6367600760692fafa2463" category="paragraph">「s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0016/Catalog/859703b06a3456d95d0be28575a673/Txnlogs/txn_4_g4.cat.gz`」</block>
+  <block id="5b767a2a9f98b85fae682314aaeb580a" category="paragraph">《6440》</block>
+  <block id="738665eaf340c6f336e0ac44a1fbd7f1" category="paragraph">「s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0016/Catalog/859703b06a3456d95d0be28575a673/Txnlogs/txn_5_g5.cat`」</block>
+  <block id="1ff46952208a49a43363ce080cfdfc26" category="paragraph">"8518"</block>
+  <block id="960d9a61ddbe51dee57ad226374094a3" category="paragraph">「s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0016/Catalog/859703b06a3456d95d0be28575a673/Txnlogs/txn_8_g8.cat`」</block>
+  <block id="2911e600bbad981e24b3e2a2b3a03f82" category="paragraph">0</block>
+  <block id="cc11cb8ec5bc5124b58731d343024acf" category="paragraph">「s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0016/Catalog/859703b06a3456d95d0be28575a673/tiered_catalog.cat`」</block>
+  <block id="e5f72d0ac30042b1e1228050cf4db009" category="paragraph">《822922》</block>
+  <block id="fe509c64685e0e86b37d4a4168383981" category="paragraph">「s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0017/Catalog/859703b06a3456d95d0be28573a673/narates/C14_7/chkpt_1.cat.gz`」</block>
+  <block id="c874813a1ab759170832ad00490add5b" category="paragraph">"232"</block>
+  <block id="a7b6a33ea6804bc24f95087a2767144a" category="paragraph">「s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0017/Catalog/859703b06a3456d95d0be28575a673/nates/C14_7/completed」</block>
+  <block id="607ce6df5f7416ceecf46b2565cf78b6" category="paragraph">《822930》</block>
+  <block id="f16dd1621cefe9daf11aa717c6f5ff3c" category="paragraph">s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0017/Catalog/859703b06a3456d95d0be2857a673/Txnlogs/txn_14_g7.cat.gz`</block>
+  <block id="1a4a32022249a74ade4da57bc540ae45" category="paragraph">《755033》</block>
+  <block id="ee70ce19fcb6a37181f0f2a1b295cac2" category="paragraph">s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0017/Catalog/859703b06a3456d95d0be2857a673/Txnlogs/txn_15_g8.cat`</block>
+  <block id="ef88602de03096d5337e01c415fb757e" category="paragraph">s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0017/Catalog/859703b06a3456d95d0be2857a673/tiered_catalog.cat`</block>
+  <block id="cfa501ab966cb7076ab4bea35887c268" category="paragraph">「s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0018/Catalog/859703b06a3456d95d0be28573a673/narates/C14_7/chkpt_1.cat.gz`」</block>
+  <block id="0efaef21765abae97f8823284089d92e" category="paragraph">「s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0018/Catalog/859703b06a3456d95d0be28575a673/nates/C14_7/completed」</block>
+  <block id="f8a27da0cd8f29eeb5dec4c51b6ddaed" category="paragraph">s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0018/Catalog/859703b06a3456d95d0be285775a673/Txnlogs/txn_14_g7.cat.gz`</block>
+  <block id="9137c061f66498d02d0a5dae8cd11fb7" category="paragraph">s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0018/Catalog/859703b06a3456d95d0be285775a673/Txnlogs/txn_15_g8.cat`</block>
+  <block id="6c4e066b2f26281da7b7403d03d8a904" category="paragraph">「s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0018/Catalog/859703b06a3456d95d0be28575a673/tiered_catalog.cat`」</block>
+  <block id="377e8de315163c073e4c65030a631ab8" category="paragraph">此程序以Vertica指南為基礎、適用於其他內部部署物件儲存設備、應適用於StorageGRID 下列項目：</block>
+  <block id="7a62369a8bc7139feef72cf70ca75b13" category="list-text">建立資料庫之後、請將「AWSStreamingConnectionPercentage」組態參數設為「0」、以停用該參數。對於使用公用儲存設備的Eon Mode內部部署安裝、此設定是不必要的。此組態參數可控制VRTica用於串流讀取之物件存放區的連線數目。在雲端環境中、此設定有助於避免物件存放區的串流資料佔用所有可用的檔案處理代碼。它會保留一些檔案處理常用於其他物件存放區作業。由於內部部署物件存放區的延遲很低、因此不需要使用此選項。</block>
+  <block id="9bbb476c1b20d451a6b1efc6d9f3c996" category="list-text">使用「vsql」陳述式來更新參數值。密碼是您在「建立Eon內部部署資料庫」中設定的資料庫密碼。例如、請參閱下列輸出範例：</block>
+  <block id="bbbc233057e904f5095141454e43564f" category="section-title">正在驗證庫房設定</block>
+  <block id="fd9c0f2a65006cc20a093358569ff9c4" category="paragraph">Vertica資料庫預設的進廠設定會啟用（值= 1）以進行讀取和寫入作業。NetApp強烈建議您啟用這些進廠設定、以提升效能。</block>
+  <block id="1844bf3855f7b6c5d660568fcf9d8381" category="section-title">載入範例資料（選用）</block>
+  <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link-macro">請按這裡</block>
+  <block id="6be5fbd5ae75780985c67dc6ceac5c11" category="paragraph">如果此資料庫即將進行測試並移除、您可以將範例資料載入此資料庫進行測試。Vertica隨附範例資料集VMart、可在每個Vertica節點的「/opt/Vertica/examples/VMart_Schema/」下找到。您可以找到此範例資料集的詳細資訊 <block ref="a43712dd91d6373beb0a27dc61f34970" category="inline-link-macro-rx"></block>。</block>
+  <block id="b3b0c649f69631d0d5f8abca04e393df" category="paragraph">請依照下列步驟載入範例資料：</block>
+  <block id="30cd3777be39c484720b1ce07e97b8a4" category="list-text">以DBAdmin身分登入任一Vertica節點：CD /opt/Vertica/examples/VMart_Schema/</block>
+  <block id="7ec0cfc5ec14c9333b6810bbf84fe541" category="list-text">將範例資料載入資料庫、並在子步驟c和d中出現提示時輸入資料庫密碼：</block>
+  <block id="a8900c6772f9006786fee28bf50ff58e" category="list-text">「CD /opt/Vertica/examples/VMart_Schema」</block>
+  <block id="c43a7b61de777223de68bb230032f64f" category="list-text">」</block>
+  <block id="16c970dcd26069436e93acae9cef7ad7" category="list-text">「vsql &lt; vmart定義_schema.sql'</block>
+  <block id="08af76b6687df620bd989c053338f859" category="list-text">「vsql &lt; vmart載入資料.sql'</block>
+  <block id="89e26598cb765dcbe94f71e860e94c64" category="list-text">有多個預先定義的SQL查詢、您可以執行其中一些查詢、以確認測試資料已成功載入資料庫。例如：「vsql &lt; vmart _queries1.sql'</block>
+  <block id="4bb047f8c530785002e490ef17fa725e" category="section-title">何處可找到其他資訊</block>
+  <block id="7d5b957cd473f6eaf5ad335a9c63c4ff" category="paragraph">若要深入瞭解本文所述資訊、請檢閱下列文件和 / 或網站：</block>
+  <block id="dc09a61f5267f59b07d945a7843dd0ff" category="inline-link-macro">NetApp StorageGRID 供應品文件</block>
+  <block id="3bba50322e3e61749a153f6c0f61881b" category="list-text"><block ref="3bba50322e3e61749a153f6c0f61881b" category="inline-link-macro-rx"></block></block>
+  <block id="8a9cd131f57d065d753803a90387c310" category="inline-link-macro">資料表StorageGRID</block>
+  <block id="d6ed371e4ca6112ef8dca75d49381711" category="list-text"><block ref="d6ed371e4ca6112ef8dca75d49381711" category="inline-link-macro-rx"></block></block>
+  <block id="0e25eb5c75f8069f3e7864cc794fc73f" category="inline-link-macro">Vertica 10.1產品文件</block>
+  <block id="8f6785fde2797084dc5e67b73921c890" category="list-text"><block ref="8f6785fde2797084dc5e67b73921c890" category="inline-link-macro-rx"></block></block>
+  <block id="f6a738f75f76f62a241636eca02cd87d" category="section-title">版本歷程記錄</block>
+  <block id="34b6cd75171affba6957e308dcbd92be" category="cell">版本</block>
+  <block id="44749712dbec183e983dcd78a7736c41" category="cell">日期</block>
+  <block id="8002bc13927c65b5f265b031079ce1d4" category="cell">文件版本歷程記錄</block>
+  <block id="3798985ee5e15c84c4263815d5a4d0b7" category="paragraph">1.0版</block>
+  <block id="d802637b72ebddd27cf9b28f9f198763" category="paragraph">2021年9月</block>
+  <block id="ea9349a37bfee247df0f87cbcacca796" category="paragraph">初始版本。</block>
+  <block id="0a7fcea811cb899434230e06e3477b84" category="summary">Hadoop可利用簡單的程式設計架構、在多個電腦叢集之間分散處理大型資料集。Hadoop的設計可從單一伺服器擴充至數千部機器、每部機器均提供本機運算與儲存設備。</block>
+  <block id="e28a2374ec10c84082a75afb2254f4e2" category="doc">使用Cloudera Hadoop S3連接器StorageGRID 搭配使用</block>
+  <block id="69cfaca1831444acadd7835297b7d501" category="paragraph">Hadoop已是資料科學家的最愛、至今已有一段時間。Hadoop可利用簡單的程式設計架構、在多個電腦叢集之間分散處理大型資料集。Hadoop的設計可從單一伺服器擴充至數千部機器、每部機器都擁有本機運算和儲存設備。</block>
+  <block id="ae19997258b86e93601b9072dd73b100" category="section-title">為什麼要使用S3A來執行Hadoop工作流程？</block>
+  <block id="edb332fdf13a795cb04d8673475e7002" category="paragraph">隨著資料量隨著時間成長、使用自己的運算和儲存設備來新增機器的方法變得效率不彰。線性擴充會帶來有效使用資源和管理基礎架構的挑戰。</block>
+  <block id="ab8402eb6a573e76dfe21f21689c9ae9" category="paragraph">為了因應這些挑戰、Hadoop S3用戶端可針對S3物件儲存設備提供高效能I/O。運用S3A實作Hadoop工作流程、有助於將物件儲存設備當作資料儲存庫、並可將運算與儲存設備分開、進而獨立擴充運算與儲存設備。分離運算與儲存設備也能讓您將適當的資源投入運算工作、並根據資料集的大小提供容量。因此、您可以降低Hadoop工作流程的整體TCO。</block>
+  <block id="95c00c41a442070ea0794b977de417b8" category="section-title">設定S3A連接器以使用StorageGRID Sfor</block>
+  <block id="ee68e5b99222bbc29a480fcb0d1d6ee2" category="section-title">先決條件</block>
+  <block id="d26ba44c410bd88ab784003c4e881389" category="list-text">適用於Hadoop S3A連線測試的SS3端點URL、租戶S3存取金鑰及秘密金鑰。StorageGRID</block>
+  <block id="6762ef556fff500baba3e28bdce2febb" category="list-text">叢集中每個主機的Cloudera叢集和root或Sudo權限、可用來安裝Java套件。</block>
+  <block id="0f00c0e9578f0ff277a08d08ef376836" category="paragraph">截至2022年4月為止、Java 11.0.14搭配Cloudera 7.1.7已通過StorageGRID 測試、可搭配使用不過、在新安裝時、Java版本編號可能有所不同。</block>
+  <block id="4064bf12468c8bc6d21b4c1c947f9ed1" category="section-title">安裝Java套件</block>
+  <block id="3408188787a55fb9708798cddbce37b0" category="inline-link">Cloudera支援對照表</block>
+  <block id="e9be8954eba184e4880371339e422a20" category="list-text">請檢查<block ref="31da88a07df8e391e811822caa135aca" category="inline-link-rx"></block> 以取得支援的JDK版本。</block>
+  <block id="162479463df046cb4a74da2008354eed" category="inline-link">Java 11.x套件</block>
+  <block id="4c2d03bf2e98573fa9436705b37a57a1" category="list-text">下載<block ref="60b96115cb33d167b5449475d0ab85e0" category="inline-link-rx"></block> 這與Cloudera叢集作業系統相符。將此套件複製到叢集中的每個主機。在此範例中、rpm套件用於CentOS。</block>
+  <block id="149f40ea9f9ffb02d7eeba792298fe1e" category="list-text">以root身分或使用具有Sudo權限的帳戶登入每個主機。在每個主機上執行下列步驟：</block>
+  <block id="52afb08cb748c04055be489c0b9a888e" category="list-text">安裝套件：</block>
+  <block id="88499cbc0c83e386e53fdb36804337d9" category="list-text">檢查Java的安裝位置。如果安裝了多個版本、請將新安裝的版本設為預設：</block>
+  <block id="b26c64ac085c28a1738346e2ec4d1520" category="list-text">將此行新增至「/etc/profile」結尾。路徑應符合上述選擇的路徑：</block>
+  <block id="5f88743172c002de2f07047875fd2634" category="list-text">執行下列命令、設定檔才會生效：</block>
+  <block id="3659ebed6f89d43e919d92d8a4f7279e" category="section-title">Cloudera HDFS S3組態</block>
+  <block id="4839d2f25cc35b249d5db15efa1afd75" category="paragraph">*步驟*</block>
+  <block id="c1d889a86b4ee1f584c957eb2c6788a5" category="list-text">從Cloudera Manager GUI中、選取叢集&gt; HDFS、然後選取組態。</block>
+  <block id="47f7c5aaea9ec9316850eea3fb28134a" category="list-text">在「Category（類別）」下、選取「Advanced（進階）」、然後向下捲動以找到「Cluster-wide Advanced Configuration Snsetting（安全閥）for core site.xml（叢集範圍內的進階組態片段（安全閥）</block>
+  <block id="0f4af84337510994f3225d2912229b08" category="list-text">按一下（+）符號、然後新增下列值配對。</block>
+  <block id="49ee3087348e8d44e1feda1917443987" category="cell">名稱</block>
+  <block id="689202409e48743b914713f96d93947c" category="cell">價值</block>
+  <block id="7755119082c17ec5a3af74f22d8f3aeb" category="paragraph">fs.s3a.access.key</block>
+  <block id="b7be29f43cb131b105a1709a4f9c9a47" category="paragraph">_&lt;用戶S3存取金鑰、請從StorageGRID SURE&gt;&gt;_取得</block>
+  <block id="cf2f74e5c9b775c0484e6cbc43fad16f" category="paragraph">fs.s3a.secret.key</block>
+  <block id="519b3534e0953e9f790740bb65fa9c85" category="paragraph">_&lt;租 戶S3的機密金鑰來自StorageGRID 於此</block>
+  <block id="44b80c022f07d7386faad66ac455d150" category="paragraph">fs.s3a.connection.sse.enabled</block>
+  <block id="e7c95635ca48bb5a8924d326b1bb75b3" category="paragraph">[true或假]（如果缺少此項目、預設為https）</block>
+  <block id="57f2049492fc15207b8727a44d9de577" category="paragraph">fs.s3a.端 點</block>
+  <block id="62c6bd01433e2f02e630f1c410723151" category="paragraph">_&lt; StorageGRID 支援S3端點：連接埠&gt;_</block>
+  <block id="1a95b45b39a6285f9154d0687dc81b19" category="paragraph">fs.s3a.impl</block>
+  <block id="2227817813f0b981f0f8fdd5a9deaffa" category="paragraph">org.apache.Hadoop。fs.s3a.S3AFileSystem</block>
+  <block id="f5a9c1cd529c584fa53b0a52eb61dcd3" category="paragraph">fs.s3a.path.樣式.access</block>
+  <block id="e935d7bd3d4a49248bd3ef5e65504984" category="paragraph">[true或假]（如果缺少此項目、預設為虛擬主機樣式）</block>
+  <block id="0d5c3854a6a39265583df58f1d37b3a2" category="paragraph">*範例擷取畫面*</block>
+  <block id="b956fcc114b2bdd5a14d25ccea32b2ea" category="image-alt">S3A組態</block>
+  <block id="13a78f349c69274252fa8cde26ca554d" category="list-text">按一下「儲存變更」按鈕。從HDFS功能表列選取過時組態圖示、在下一頁選取重新啟動過時的服務、然後選取立即重新啟動。</block>
+  <block id="1e9d3fb4b7267b5c4de2a7f67956da90" category="image-alt">重新啟動Hadoop過時服務圖示</block>
+  <block id="68dbc18976f73773bc2d5deb27f4780f" category="section-title">測試S3A與StorageGRID Sfe的連線</block>
+  <block id="a13db3eed845386ceaab26fb7644f80a" category="section-title">執行基本連線測試</block>
+  <block id="8a494f649ac7828977d5f96db63466eb" category="paragraph">登入Cloudera叢集中的其中一部主機、然後輸入「Hadoop FS -ls s3a：//_&lt;stucke-name&gt;_/」。</block>
+  <block id="0dfddb891adaa02cdfc088a098890620" category="paragraph">下列範例使用路徑syle搭配預先存在的HDFS測試儲存區和測試物件。</block>
+  <block id="231cf4c70d866b616c21baddaeed0696" category="section-title">疑難排解</block>
+  <block id="d42e8fbcf79f7de1303918aafa7d9fa7" category="section-title">案例1</block>
+  <block id="6dec63b261842f0351dbe18a56aa7703" category="paragraph">使用HTTPS連線StorageGRID 進行更新、並在逾時15分鐘後收到「shipee_fuse」錯誤訊息。</block>
+  <block id="fe585fc6e6e5b4d2d51d9d6e24fe5d87" category="paragraph">*原因：*舊版JRE/JDK,使用過時或不受支援的TLS密碼套件連線StorageGRID 到S不明。</block>
+  <block id="f37ed697750770b7a12ad7e08848a5f2" category="paragraph">*錯誤訊息範例*</block>
+  <block id="2f463c682630a0a4549da5e367566421" category="paragraph">*解析度：*請確定已安裝JDK 11.x或更新版本、並將Java程式庫設為預設值。請參閱 <block ref="16e523618132c52360c79287d334eb35" category="inline-xref-macro-rx"></block> 章節以取得更多資訊。</block>
+  <block id="0f85bc5e180a369ebccc65db2ddf9288" category="section-title">案例2：</block>
+  <block id="2cd1296de7ffb189828b5d1d8f8c74db" category="paragraph">無法連線StorageGRID 至包含錯誤訊息「無法找到有效的認證路徑至要求的目標」的功能。</block>
+  <block id="608bb8a9d2247ad73a54f0b36e35e529" category="paragraph">*原因：* StorageGRID 不受Java程式信任*不支援SS3端點伺服器憑證。</block>
+  <block id="71f31feeda8d8d4f38fbd0e77d82c5a9" category="paragraph">範例錯誤訊息：</block>
+  <block id="3233e5ff1af3df3490648806d2e307fb" category="paragraph">*解決方案：* NetApp建議使用已知公共憑證簽署授權單位所核發的伺服器憑證、以確保驗證安全無虞。或者、將自訂CA或伺服器憑證新增至Java信任存放區。</block>
+  <block id="70135898629d17d48ccbf801de69bd60" category="paragraph">完成下列步驟、將StorageGRID 一套完整的自訂CA或伺服器憑證新增至Java信任存放區。</block>
+  <block id="45eab7349f288790d0a805a261f1e633" category="list-text">備份現有的預設Java cacerts檔案。</block>
+  <block id="96a3c1cb03afb8a8fdc408548dea3311" category="list-text">將StorageGRID S3端點憑證匯入Java信任存放區。</block>
+  <block id="ddbb2c51fdb8d9c867287e4815a4bc07" category="section-title">疑難排解秘訣</block>
+  <block id="92530c0f71b6f0c67f81127b722a268b" category="list-text">增加Hadoop記錄層級以進行偵錯。</block>
+  <block id="7434b0a8c7df6a944a97a97dab787fa2" category="paragraph">'匯出Hadoop根記錄程式= Hadoop root、logger =偵錯、Console '</block>
+  <block id="fb10d0d432199779c224d4da6d5acf10" category="list-text">執行命令、並將記錄訊息引導至error.log。</block>
+  <block id="c774f55d8bba0b0011caed823df573f4" category="paragraph">「Hadoop FS -ls s3a：//_&lt;stucke-name&gt;_&amp;&gt;error.log」</block>
+  <block id="5acb44ecb8d9d7e55b00e2a97ca3c4f5" category="summary">您可在此找到每StorageGRID 個NetApp版本的完整文件。</block>
+  <block id="d55a0f29052225dac98466ee9b92f4a1" category="doc">NetApp StorageGRID 產品文件</block>
+  <block id="22c5de521c44ad2015e5ce711b46bebf" category="paragraph">您可以在StorageGRID 這裡找到每個NetApp版本的完整文件：</block>
+  <block id="dc2c61abf0171b5abd61211f37552e18" category="inline-link">部分11.6% StorageGRID</block>
+  <block id="1f24789c68b06d446e0ebee3e2b81c66" category="list-text"><block ref="1f24789c68b06d446e0ebee3e2b81c66" category="inline-link-rx"></block></block>
+  <block id="c7bb2251d54b13e3891aea37cdb54cd1" category="inline-link">部分11.5 StorageGRID</block>
+  <block id="1a433578de1b07641fbd7e4fa310d058" category="list-text"><block ref="1a433578de1b07641fbd7e4fa310d058" category="inline-link-rx"></block></block>
+  <block id="32e750dc43168f85f193ec7b20f6e5c4" category="inline-link">部分11.4 StorageGRID</block>
+  <block id="ab11b93693987b00bd58948f5b72c34a" category="list-text"><block ref="ab11b93693987b00bd58948f5b72c34a" category="inline-link-rx"></block></block>
+  <block id="37ef4cafeb8ccc9607db85cd3fab57f8" category="inline-link">部分11.3% StorageGRID</block>
+  <block id="c18e44cb0cb6bc2f462d1e006c443b06" category="list-text"><block ref="c18e44cb0cb6bc2f462d1e006c443b06" category="inline-link-rx"></block></block>
+  <block id="13947b810d54d07e62ef2873b8620fe7" category="inline-link">部分11.2 StorageGRID</block>
+  <block id="fa96f2375d9c1354445489d7c5ab86dc" category="list-text"><block ref="fa96f2375d9c1354445489d7c5ab86dc" category="inline-link-rx"></block></block>
+  <block id="7c9bea5c137c35be356406479a949aef" category="summary">物件鎖定提供WORM模型、可防止物件遭到刪除或覆寫。物件鎖定的實作係由Cohasset進行評估、以協助符合法規要求、支援合法持有和符合法規的物件保留模式、以及預設的儲存貯體保留原則。StorageGRID</block>
+  <block id="33978f74a8897c3da7935e1ac3118552" category="doc">測試並示範StorageGRID S3物件鎖定功能</block>
+  <block id="1d1d2f802d9cc6b6eb57739286faf4b3" category="paragraph">物件鎖定提供WORM模型、可防止物件遭到刪除或覆寫。物件鎖定的實作係由Cohasset進行評估、以協助符合法規要求、支援合法持有和符合法規的物件保留模式、以及預設的儲存貯體保留原則。StorageGRID</block>
+  <block id="56971a583f52c8e863bd76946fd7e4df" category="paragraph">本指南將示範S3物件鎖定API。</block>
+  <block id="1e3a85ebb1c233113bf042fe963e7cf5" category="section-title">合法持有</block>
+  <block id="deb6fc774008b995e323cca66b1facaf" category="list-text">物件鎖定合法保留是套用至物件的簡單開啟/關閉狀態。</block>
+  <block id="93c9236e0c41f2878728edae2046ae50" category="list-text">使用Get作業來驗證。</block>
+  <block id="147baac1f38a06bbf4e892a7420f03bb" category="list-text">關閉合法保留</block>
+  <block id="ef1f6350727f7558bf0dcb99de8b43a4" category="section-title">法規遵循模式</block>
+  <block id="ca03998a8a72276e144b390281ede11f" category="list-text">物件保留會以保留直到時間戳記完成。</block>
+  <block id="f50bafdbea3b79e2d9f5fdd9a5add716" category="list-text">確認保留狀態</block>
+  <block id="71b2566ef5a1fcd229a2d9785ed41db7" category="section-title">預設保留</block>
+  <block id="7dd96a99846895f9e3a3b91e8b8ec0fa" category="list-text">設定保留期間（以天數和年數為單位）、並使用「每個物件API」所定義的「保留截止日期」。</block>
+  <block id="25b92ba9ae0e5c3886d5397a33f4ce21" category="list-text">將物件放入儲存區</block>
+  <block id="4aa3f3b4e7b7410ce27736bcc6748358" category="list-text">儲存區上設定的保留持續時間會轉換成物件上的保留時間戳記。</block>
+  <block id="6a0f60b1ed8b19b1d7db3515b6695da6" category="section-title">測試刪除具有定義保留的物件</block>
+  <block id="d0cdc49fa0022b266468f0e306c00e54" category="paragraph">物件鎖定是建置在版本管理之上。保留是在物件的某個版本上定義。如果嘗試刪除已定義保留的物件、但未指定版本、則會建立刪除標記作為物件的目前版本。</block>
+  <block id="42ae4cc4d992b73b098cf1a15b7b156f" category="list-text">刪除已定義保留的物件</block>
+  <block id="80f89ef3a56a59415fb7de5ec8de5095" category="list-text">列出儲存區中的物件</block>
+  <block id="b4f9a7eae41a98dfb0771f92707d7f68" category="list-text">請注意、此物件並未列出。</block>
+  <block id="cc3153459e96342ef7d219589d19f208" category="list-text">列出要查看刪除標記的版本、以及原始鎖定版本</block>
+  <block id="8697c94dccfe3cbc3ee4e7cd58a5022a" category="list-text">刪除物件的鎖定版本</block>
+  <block id="ce2702286f63f4ae6103107902322a34" category="summary">支援的支援功能有許多不同的方法可加密閒置的資料。StorageGRID</block>
+  <block id="9c1f8aaacc1a56ce4e9a0dad8b9f85d5" category="doc">測試並示範StorageGRID 有關支援的S3加密選項</block>
+  <block id="a8e93751c131aa808a9eafa1b8e11286" category="inline-link">檢閱StorageGRID 功能加密方法</block>
+  <block id="d303cdd8f1d3ee1dde4e3ada41998deb" category="paragraph">支援的支援功能有許多不同的方法可加密閒置的資料。StorageGRID若要深入瞭解、請參閱<block ref="54fa7d466db811b97852dfc564ca4383" category="inline-link-rx"></block>。</block>
+  <block id="492f68a8c44fdeeefd5fdfecd42dbccc" category="paragraph">本指南將示範S3 API加密方法。</block>
+  <block id="8851edf36d0b5638c8a4f6ac64923370" category="section-title">伺服器端加密（SSe）</block>
+  <block id="0eb4ff54e584f9eaf62705a77663a748" category="paragraph">使用者可透過sse儲存物件、並使用StorageGRID 由支援的獨特金鑰來加密物件。當物件被要求時、物件會被儲存在StorageGRID 物件中的金鑰解密。</block>
+  <block id="941f37e6c0faf75d7632b45e2853416d" category="section-title">例如</block>
+  <block id="63e43077ce3ba881fa5ae9806e2d3e5f" category="list-text">將物件放入SS</block>
+  <block id="6aa955f0cbda4b4e5c5d34ea6d859a7c" category="list-text">驗證加密的目標</block>
+  <block id="a4214b559bb4db0e923b33d1d6f2d0ff" category="list-text">取得物件</block>
+  <block id="9e334fc718c77d2698ec6aaa3259bb80" category="section-title">使用客戶提供的金鑰進行伺服器端加密（SSE-C）</block>
+  <block id="18bc90d6da56c6a0ca8a43370fb89730" category="paragraph">使用者可透過SSE儲存物件、並使用用戶端隨物件提供的唯一金鑰來加密物件。要求物件時、必須提供相同的金鑰才能解密及傳回物件。</block>
+  <block id="aaf850473d937d172559cb570dab234d" category="section-title">SSE-C範例</block>
+  <block id="1e7708d7f60a3422da31ffb25df4f214" category="list-text">為了測試或示範目的、您可以建立加密金鑰</block>
+  <block id="422423cacc3731aece78081dcce4a364" category="list-text">建立加密金鑰</block>
+  <block id="684f8aafe1c1f1de5e081831230eabd7" category="list-text">使用產生的金鑰放置物件</block>
+  <block id="06154eb3744171105830473b1636041a" category="list-text">物件的前端</block>
+  <block id="e5f9c75d403887203c2b7b0f94663953" category="admonition">如果您未提供加密金鑰、您將會收到「呼叫頭物件作業時發生錯誤（404）：找不到」錯誤訊息。</block>
+  <block id="9dd97e164ee8102cf66ded8b2e6365f9" category="list-text">取得物件</block>
+  <block id="25800fc2c4fb712f003b8dde72f89e9b" category="admonition">如果您未提供加密金鑰、則會在呼叫GetObject作業時收到錯誤訊息「發生錯誤（InvalidRequest）：該物件是使用伺服器端加密的形式儲存。必須提供正確的參數才能擷取物件。"</block>
+  <block id="b7aaef273d10ecbd096947fb1bedf595" category="section-title">儲存區伺服器端加密（SSE-S3）</block>
+  <block id="c61a8c52ec13232670b3fcf3aa61ecb1" category="paragraph">SSE-S3可讓用戶端針對儲存在儲存區中的所有物件、定義預設的加密行為。物件會使用StorageGRID 由支援的獨特金鑰進行加密。當物件被要求時、物件會被儲存在StorageGRID 檔中的金鑰解密。</block>
+  <block id="af888980113838f4be36b5dc77e84a11" category="section-title">Bucket SSE-S3範例</block>
+  <block id="8256c537cf6e9ece3847813951e9fdfb" category="list-text">建立新儲存區並設定預設加密原則</block>
+  <block id="2c63f6f1bb6a77a8a7fd5977aead1d84" category="list-text">建立新的儲存庫</block>
+  <block id="8117fcb97cf86729cfbe315fb7c069c7" category="list-text">將儲存區加密</block>
+  <block id="87edd78cd55896c283c8e2897bc9ba41" category="summary">本指南詳細說明如何使用StorageGRID Amazon OpenSearch Service或內部部署Elasticsearch來設定NetApp的《支援》11.6搜尋 整合服務。</block>
+  <block id="c86030d76e5f59c53ee3bc844dccdbd2" category="doc">設定StorageGRID 搜尋整合服務</block>
+  <block id="f14bf9907ae948f8af2bfd00dbd85f09" category="paragraph">本指南詳細說明如何使用StorageGRID Amazon OpenSearch Service或內部部署Elasticsearch來設定NetApp的《支援》11.6搜尋 整合服務。</block>
+  <block id="24aceb5c24cf5a3bbe879def9dd06dd3" category="paragraph">支援三種平台服務。StorageGRID</block>
+  <block id="fde5ed7646cf684c0972be9a066f6914" category="list-text">*《CloudMirror複寫*》。StorageGRID將StorageGRID 特定物件從靜止庫鏡射到指定的外部目的地。</block>
+  <block id="8e304e3c51ae41ba284a04741c9b3ffd" category="list-text">*通知*。每個儲存區事件通知、可將針對物件執行的特定動作通知傳送至指定的外部Amazon Simple Notification Service（Amazon SNS）。</block>
+  <block id="6829b0de5985e8a1d0e7cdb7a6f93842" category="list-text">*搜尋整合服務*。將Simple Storage Service（S3）物件中繼資料傳送至指定的Elasticsearch索引、您可以在其中使用外部服務來搜尋或分析中繼資料。</block>
+  <block id="95309527f7dabbe3fe32e0802fc9852c" category="inline-link">使用平台服務的考量</block>
+  <block id="a45c124a240baea662f0da5e22df0d82" category="paragraph">平台服務是由S3租戶透過租戶管理程式UI進行設定。如需詳細資訊、請參閱<block ref="4ebe502af7f5bafb1d6a5d8f629eaf76" category="inline-link-rx"></block>。</block>
+  <block id="59544fa9157551ea504a21302a6951ec" category="inline-link">《英文》《英文》（英文）StorageGRID</block>
+  <block id="05cc541a01f9762a12d5264d6eb03ae8" category="paragraph">本文件為的補充說明<block ref="eeb341388640105e8957a286cb4738c0" category="inline-link-rx"></block> 並提供搜尋整合服務的端點和庫位組態逐步指示和範例。此處包含的Amazon Web Services（AWS）或內部部署彈性搜尋設定說明僅供基本測試或示範用途。</block>
+  <block id="615d163ca568994b3435939b26db5805" category="paragraph">對象應熟悉Grid Manager、租戶管理程式、並能存取S3瀏覽器、執行StorageGRID 基本上傳（PUT）和下載（Get）作業、以利進行資訊搜尋整合測試。</block>
+  <block id="f612053df248affdc8387fca6d9bee0a" category="section-title">建立租戶並啟用平台服務</block>
+  <block id="27daf95e5e10f8ac74651d4d9130e719" category="list-text">使用Grid Manager建立S3租戶、輸入顯示名稱、然後選取S3傳輸協定。</block>
+  <block id="fbfe9415a29f758b59248cc814fe3c18" category="list-text">在「權限」頁面上、選取「允許平台服務」選項。如有必要、也可選擇其他權限。</block>
+  <block id="f9472d6ac345c05d3cc61568620086f6" category="image-alt">選取權限快照</block>
+  <block id="9b0222bb86df62edf8f9a4fd84ba7bdf" category="list-text">設定租戶root使用者初始密碼、或者如果已在網格上啟用識別聯盟、請選取哪個聯盟群組具有root存取權限來設定租戶帳戶。</block>
+  <block id="b363f2379a05efb18c601af7e4e70d90" category="list-text">按一下「以root登入」、然後選取「Bucket：Create and Manage Bucket」。</block>
+  <block id="27c6c9b9ce32fafa453c2df32dcbedd9" category="paragraph">這會帶您前往「租戶管理程式」頁面。</block>
+  <block id="9fd75fca62b65c4af75fe743c1571eef" category="list-text">從「租戶管理程式」中、選取「我的存取金鑰」以建立及下載S3存取金鑰、以便日後進行測試。</block>
+  <block id="0ec9b083d174497de65ea36e8f62118c" category="section-title">使用Amazon OpenSearch搜尋整合服務</block>
+  <block id="d3a3d7e6d3be793f5878e195a0502f20" category="section-title">Amazon OpenSearch（前身為Elasticsearch）服務設定</block>
+  <block id="ca543db8f60ee6d618b2fce4e398ff9d" category="inline-xref-macro">搜尋整合服務與內部部署彈性搜尋</block>
+  <block id="91ca81266b2f6987e787fc132213833b" category="paragraph">使用此程序可快速且簡單地設定OpenSearch服務、僅供測試/示範之用。如果您使用內部部署Elasticsearch來搜尋整合服務、請參閱一節 <block ref="7949c0a8df6276ef905e1f32c3cd38da" category="inline-xref-macro-rx"></block>。</block>
+  <block id="7a39dc4b754c9843c8b8e82e129df95a" category="admonition">您必須擁有有效的AWS主控台登入、存取金鑰、秘密存取金鑰、以及訂閱OpenSearch服務的權限。</block>
+  <block id="04465e32e50f755028937109f8195d88" category="inline-link-macro">AWS OpenSearch Service入門</block>
+  <block id="f072124705611ed25ec02b7577163209" category="list-text">依照中的指示建立新網域 <block ref="db5f7712c2bd05f059f1113f251a8653" category="inline-link-macro-rx"></block>（以下項目除外）：</block>
+  <block id="29d9d092d398fb44d9f8798062efa761" category="list-text">步驟4.網域名稱：sgdemo</block>
+  <block id="5ac3c34060203d7e326e3102ecdaba60" category="list-text">步驟10：精細存取控制：取消選取「啟用精細存取控制」選項。</block>
+  <block id="016ccae457dbedb93f0de7d4602d6c4b" category="list-text">步驟12.存取原則：選取「Configure Level Access Policy（設定層級存取原則）」、選取「Json」索引標籤以使用下列範例修改存取原則：</block>
+  <block id="4f6a3e5d8a887d3c8d485fbcacc2fb47" category="list-text">以您自己的AWS身分識別與存取管理（IAM）ID和使用者名稱取代反白顯示的文字。</block>
+  <block id="53e9754db1787f07e19e5680b1b0b11e" category="list-text">將反白顯示的文字（IP位址）取代為您用來存取AWS主控台的本機電腦公用IP位址。</block>
+  <block id="ff323c6f0c5ceb97eed49121babcec0f" category="inline-link"><block ref="ff323c6f0c5ceb97eed49121babcec0f" category="inline-link-rx"></block></block>
+  <block id="b001a21bb86d7507e75c22c5e0711e4d" category="list-text">開啟瀏覽器索引標籤<block ref="d59cf0c4ab596379c6604694ab2ef059" category="inline-link-rx"></block> 尋找您的公有IP。</block>
+  <block id="f8f40f877af3c3d201008b8c5be2c37d" category="image-alt">搜尋整合擷取畫面</block>
+  <block id="29053e2d92070487f785eef51e730dc4" category="list-text">等待15到20分鐘、讓網域變成作用中狀態。</block>
+  <block id="f0eda7032507e6d5560f84391d733351" category="image-alt">正在啟動網域快照</block>
+  <block id="28424454f1de84544a80fe8c1c48775c" category="list-text">按一下OpenSearch儀表板URL、在新索引標籤中開啟網域以存取儀表板。如果發生存取遭拒錯誤、請確認存取原則來源IP位址已正確設定為電腦的公用IP、以允許存取網域儀表板。</block>
+  <block id="b53d0b4902659d8d2f913cad2204dafa" category="list-text">在儀表板歡迎頁面上、選取「自行瀏覽」。從功能表移至「Management（管理）」-&gt;「Dev Tools（開發工具）」</block>
+  <block id="64529406325d80102a66bca5577acc93" category="list-text">在「Dev Tools（開發工具）」-&gt;「Console（主控台）」下、輸入「PUT &lt;index&gt;'（放置&lt;index&gt;'）」、您可以在其中使用索引來儲存StorageGRID 物件中繼資料。我們在下列範例中使用索引名稱「gmeta資料」。按一下小三角符號以執行PUT命令。預期結果會顯示在右側面板上、如下列範例擷取畫面所示。</block>
+  <block id="d109971fa7c388dc06d7b1809b235b8d" category="image-alt">使用PUT命令取得索引快照</block>
+  <block id="e10dd1b001fba4bfb5226f32dff82bfb" category="list-text">確認索引可從sgdomain&gt;索引下的Amazon OpenSearch UI中看到。</block>
+  <block id="efe6f3e30e8b2c5483ffdf27a0654511" category="image-alt">驗證索引快照</block>
+  <block id="2b3c30e7f44f2aac501d2e83c6219832" category="section-title">平台服務端點組態</block>
+  <block id="8c4ec52c2351d47f61041ea0f6d68abc" category="paragraph">若要設定平台服務端點、請遵循下列步驟：</block>
+  <block id="2f79efe541087dee090636fcc45a179f" category="list-text">在租戶管理程式中、前往儲存設備（S3）&gt;平台服務端點。</block>
+  <block id="b34d3c3f94b41d3571f8ca1f3cddd7e5" category="list-text">按一下「Create Endpoint（建立端點）」、輸入下列內容、然後按一下「Continue（繼續）」</block>
+  <block id="a6dbfe22a145135ffcb921b9d47c971b" category="list-text">顯示名稱範例「AWS/OpenSearch」</block>
+  <block id="c8ebb37d076b51461df1832842943a56" category="list-text">「URI」欄位中前面程序步驟2下範例快照中的網域端點。</block>
+  <block id="62ac5878f5ad652b348bf756180bd23b" category="list-text">在之前的程序步驟2中、在「URN」欄位中使用的網域ARN、並在ARN結尾加上「/&lt;index&gt;//_doc'」。</block>
+  <block id="55d2f2cd1ece54b1c4d553e157cfa3a2" category="paragraph">在此範例中、URN會變成「arn:AWS：es：us-east-1:211234567890：domain/sgdemo /sgmeydata//_doc'。</block>
+  <block id="f8a9b600f50cc5b60751952c56d0f3fc" category="image-alt">端點詳細資料快照</block>
+  <block id="3c56a593460a6f84bfc344ffe6150097" category="list-text">若要存取Amazon OpenSearch sgDomain、請選擇「存取金鑰」作為驗證類型、然後輸入Amazon S3存取金鑰和秘密金鑰。若要進入下一頁、請按一下「Continue（繼續）」。</block>
+  <block id="aa0f9a4ba593122d011f03e2316ce19b" category="image-alt">驗證端點連線的快照</block>
+  <block id="d078b4431fcc80fbee2cd9a3c87293b1" category="list-text">若要驗證端點、請選取「使用作業系統CA憑證並測試及建立端點」。如果驗證成功、則會顯示類似下圖的端點畫面。如果驗證失敗、請確認路徑結尾處的URN包含「/&lt;index&gt;//_doc'、而且AWS存取金鑰和秘密金鑰都正確無誤。</block>
+  <block id="fe28f79fc55095a8e58030809820fe42" category="image-alt">平台服務端點快照</block>
+  <block id="9d7ff9ab7c49eef4133e233cbed1198b" category="section-title">內部部署彈性搜尋設定</block>
+  <block id="a7d37b98c9dd326efe3690654fe9d37f" category="paragraph">此程序僅供快速設定內部部署Elasticsearch和Kibana Using Docker、僅供測試之用。如果Elasticsearch和Kibana伺服器已經存在、請前往步驟5。</block>
+  <block id="5061a9f622798427aca0d360cc138888" category="inline-link-macro">Docker安裝程序</block>
+  <block id="d180e3941d65b33ef407bed8ae52ddc8" category="inline-link-macro">CentOS Docker安裝程序</block>
+  <block id="80f7fe607a20803747ad9b40d526935c" category="list-text">請遵循此步驟 <block ref="3b1e055afa87d3b585871c5e6a6e5a09" category="inline-link-macro-rx"></block> 以安裝Docker。我們使用 <block ref="bac8b475dc6eefa0e27bba4925d480b4" category="inline-link-macro-rx"></block> 在此設定中。</block>
+  <block id="8244486218d0bcf97251923ef2f0be45" category="list-text">若要在重新開機後啟動Docker、請輸入下列命令：</block>
+  <block id="2bcd57548845273190401d9ba79767a3" category="list-text">將「VM.max.map_count'」值設為262144：</block>
+  <block id="43433bec04d909d718c7800aa96f1beb" category="list-text">若要在重新開機後保留設定、請輸入下列命令：</block>
+  <block id="67003ee2f4042eb1f705313a4dc58cfd" category="inline-link-macro">彈性搜尋快速入門指南</block>
+  <block id="1c046e86c75e8fd764a3285f110da4d7" category="list-text">請依照 <block ref="f2c2be7ac1a239dac97b7af8519d2c7b" category="inline-link-macro-rx"></block> 自我管理區段、用於安裝及執行Elasticsearch和Kibana泊塢視窗。在此範例中、我們安裝了8.1版。</block>
+  <block id="193e2040e8163613cb1974450d2af29c" category="admonition">記下Elasticsearch所建立的使用者名稱/密碼和權杖、您需要這些資訊來啟動Kibana UI和StorageGRID Esplan端點驗證。</block>
+  <block id="a7d9a6a3c74bd9faac38bc1bb130a796" category="image-alt">搜尋整合彈性搜尋快照</block>
+  <block id="332f50821b852451ef88ea9dbe07a0dc" category="list-text">Kibana Docker容器啟動後、主控台會顯示URL連結「\https://0.0.0.0:5601`」。以URL中的伺服器IP位址取代0：0：0：0。</block>
+  <block id="90ec7e4d1719c2a884a27d95126c0f0f" category="list-text">使用使用者名稱「Elastic」和Elastic在前一個步驟中產生的密碼登入Kibana UI。</block>
+  <block id="9e4e15cd3018d0529612a23324c26d35" category="list-text">首次登入時、請在儀表板歡迎頁面上、選取「自行瀏覽」。從功能表中、選取管理&gt;開發工具。</block>
+  <block id="7ce90614c51c6b29f6b2ef2391c41a72" category="list-text">在Dev Tools Console（開發工具主控台）畫面上、輸入「放置&lt;index&gt;'」、您可以在其中使用此索引來儲存StorageGRID 物件中繼資料。在此範例中、我們使用索引名稱「shgmeta資料」。按一下小三角符號以執行PUT命令。預期結果會顯示在右側面板上、如下列範例擷取畫面所示。</block>
+  <block id="6b2c56310234326372b84f2537bfb34b" category="image-alt">執行PUT命令快照</block>
+  <block id="d2c398101283b85a574ecda90393e5b0" category="paragraph">若要設定平台服務的端點、請遵循下列步驟：</block>
+  <block id="6988d11970dc632c6cbaea778ec31ebd" category="list-text">在租戶管理程式中、前往儲存設備（S3）&gt;平台服務端點</block>
+  <block id="2411ab8836570fc720961d9ca4d31170" category="list-text">顯示名稱範例：「彈性搜尋」</block>
+  <block id="c3ab52d125350a189f9be76434bf5565" category="list-text">URI：https://&lt;elasticsearch-server-ip或hostname&gt;:9200'</block>
+  <block id="97fbbb5c5782ba00d7871db3cbbcaadc" category="list-text">urn:「urn:&lt;soes&gt;:es::::&lt;se-unibe-text&gt;/&lt;index-name&gt;//_doc'、其中index-name是您在Kibana主控台使用的名稱。範例：「urn:local:es：：sgmm/sgmadm/_do'</block>
+  <block id="c21a9f9baede4b3ff45e83c1195d954e" category="image-alt">平台服務端點詳細資料快照</block>
+  <block id="9c530e0250b2365dd2bc6de7cd8226af" category="list-text">選取基本HTTP作為驗證類型、輸入使用者名稱「elastic」和Elasticsearch安裝程序產生的密碼。若要前往下一頁、請按一下「Continue（繼續）」。</block>
+  <block id="90686e747228f4ffd85f26a78549d504" category="image-alt">平台服務端點驗證快照</block>
+  <block id="16dab22118d1bb9c774fc20b7eff75bf" category="list-text">選取「Do Not Verify Certificate and Test and Create Endpoint（不驗證憑證和測試並建立端點）」以驗證端點。如果驗證成功、則會顯示類似下列螢幕快照的端點畫面。如果驗證失敗、請確認URN、URI和使用者名稱/密碼項目正確無誤。</block>
+  <block id="18f6fe973b6c5651f69da53d3aafaf5c" category="image-alt">已成功驗證端點</block>
+  <block id="e20dd85152fb7211af43f55d94499b76" category="section-title">Bucket搜尋整合服務組態</block>
+  <block id="874357ee35df6a54445e352c3dbb57e2" category="paragraph">建立平台服務端點之後、下一步是在資源庫層級設定此服務、以便在物件建立、刪除或更新中繼資料或標記時、將物件中繼資料傳送至定義的端點。</block>
+  <block id="69f509c71b61364d5893d46c8b9dba26" category="paragraph">您可以使用Tenant Manager將自訂StorageGRID 的功能XML套用至儲存庫、以設定搜尋整合、如下所示：</block>
+  <block id="0e9ce58fdfd458e352fcd0b7403656ca" category="list-text">在租戶管理程式中、前往儲存設備（S3）&gt;儲存設備</block>
+  <block id="6492a87a353e042bb5a4f6ac7f70ce04" category="list-text">按一下「Create Bucket（建立儲存區）」、輸入儲存區名稱（例如「shgmadmadgtest-test」）、然後接受預設的「us-east-1」區域。</block>
+  <block id="147431664d9610b7596ebb51b74d698d" category="list-text">按一下「繼續」&gt;「建立工作區」。</block>
+  <block id="cbdfd9b1c3376777ffe0bd1bb6f31691" category="list-text">若要顯示「Bucket Overview」（庫位總覽）頁面、請按一下庫位名稱、然後選取「Platform Services」（平台服務）。</block>
+  <block id="ff02db931d00676bbd2e49c8d66ba260" category="list-text">選取「啟用搜尋整合」對話方塊。在提供的XML方塊中、使用此語法輸入組態XML。</block>
+  <block id="f1c5bfdd87a5f745188dfcf269154c5e" category="paragraph">強調顯示的URN必須符合您所定義的平台服務端點。您可以開啟另一個瀏覽器索引標籤、以存取租戶管理程式、並從定義的平台服務端點複製URN。</block>
+  <block id="ee4590422d317c3015f14170526c3977" category="paragraph">在此範例中、我們沒有使用前置詞、表示此儲存區中每個物件的中繼資料都會傳送到先前定義的Elasticsearch端點。</block>
+  <block id="26add7d33fe03962af376f500b33916e" category="list-text">使用S3瀏覽器以StorageGRID 租戶存取/秘密金鑰連線至功能區、將測試物件上傳至「實元資料測試」儲存區、並將標記或自訂中繼資料新增至物件。</block>
+  <block id="09b447705582a66ef41783e259fb6a78" category="image-alt">上傳測試物件快照</block>
+  <block id="174949bad1f8938630874b6623815f20" category="list-text">使用Kibana UI來驗證物件中繼資料是否已載入sgmeta的索引。</block>
+  <block id="e3fdae847eec4a409ba0a70f299d8ee3" category="list-text">從功能表中、選取管理&gt;開發工具。</block>
+  <block id="d322ac9e51a4b7cf746cfe0af7c0445c" category="list-text">將範例查詢貼到左側的主控台面板、然後按一下三角符號以執行查詢。</block>
+  <block id="49806491d4539bc7e2a5b05d737ab750" category="paragraph">下列範例擷取畫面中的查詢1範例結果顯示四筆記錄。這與儲存區中的物件數量相符。</block>
+  <block id="65201bc39dd240892dab55de46e2a0bb" category="image-alt">查詢1範例結果快照</block>
+  <block id="53573d96c3d967152d1c791a2e79dcb5" category="paragraph">下列螢幕擷取畫面中的查詢2範例結果顯示兩筆標記類型為「jpg」的記錄。</block>
+  <block id="1962b22fc9378586da892a0bc564acda" category="image-alt">查詢2範例</block>
+  <block id="110f5c1e103a95f521005d2b098ea662" category="inline-link">什麼是平台服務</block>
+  <block id="05bcb775989a8e045997b61b4712bd11" category="list-text"><block ref="05bcb775989a8e045997b61b4712bd11" category="inline-link-rx"></block></block>
+  <block id="68482d23bcdb3015258243e1b9aacf51" category="inline-link">供應資料StorageGRID</block>
+  <block id="e33f6ccf77d0d8efe2a762267b6fd088" category="list-text"><block ref="e33f6ccf77d0d8efe2a762267b6fd088" category="inline-link-rx"></block></block>
+  <block id="12934b080defe99c475857cf35fc736b" category="summary">如果您想要將StorageGRID 物件移到外部S3儲存區、可以使用Cloud Storage Pool。外部儲存庫可以屬於Amazon S3（AWS）或Google Cloud。</block>
+  <block id="5726c3e825fdb258e1525c22d51442ea" category="doc">為AWS或Google Cloud建立雲端儲存資源池</block>
+  <block id="a711863513c11f3a6d86294acc7be0ba" category="list-title">您需要的是 #8217 ；需要的是什麼</block>
+  <block id="3ed256c1f351a8fcb6f88836f9344657" category="list-text">已設定好整套功能。StorageGRID</block>
+  <block id="d3c15aac7a26c8e69f0d3a923ebea0d3" category="list-text">您已在AWS或Google Cloud上設定外部S3儲存區。</block>
+  <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">步驟</block>
+  <block id="e0d561a0d43acc9575b7bc753d813e5c" category="list-text">在Grid Manager中、瀏覽至* ILM *&gt;* Storage Pools*。</block>
+  <block id="19ac403a0d6c78e78c0d289e7331185e" category="list-text">在頁面的「Cloud Storage Pools（雲端儲存池）」區段中、選取*「Create*（建立*）」。</block>
+  <block id="d97d852e8166f1982454eda55e5c517b" category="paragraph">「Create Cloud Storage Pool（建立雲端儲存池）」快顯視窗隨即出現。</block>
+  <block id="27bc4f94bb55216da5446bb2fdb8ced0" category="list-text">輸入顯示名稱。</block>
+  <block id="b9a5f574231e2fdc69a9ccace21be039" category="list-text">從「提供者類型」下拉式清單中選取「* Amazon S3 *」。</block>
+  <block id="b99241459e3ab67c1795a54b1eadb85a" category="paragraph">此供應商類型適用於AWS S3或Google Cloud。</block>
+  <block id="28e89d4189931a40a6eaa1548a6f0da4" category="list-text">輸入用於雲端儲存池的S3儲存區URI。</block>
+  <block id="4f2400827753dc0695dede1947e79e86" category="paragraph">允許使用兩種格式：</block>
+  <block id="a0678dbf696ee57402a994b15a017fed" category="paragraph">https://host:port`</block>
+  <block id="bcca4a11cec95b0dcec0633cf0aa2e53" category="paragraph">http://host:port`</block>
+  <block id="773a527b6815140da355b051effea746" category="list-text">輸入S3儲存區名稱。</block>
+  <block id="4bec2393e5f6d93abd85adfa9ee9f170" category="paragraph">您指定的名稱必須與S3儲存區名稱完全相符、否則建立雲端儲存池會失敗。儲存雲端儲存資源池後、您無法變更此值。</block>
+  <block id="d539647e4ced58d3f54c2a4ce23c5708" category="list-text">或者、輸入存取金鑰ID和秘密存取金鑰。</block>
+  <block id="1486b2fc2d7628bc94918b17dd1e2dbc" category="list-text">從下拉列表中選擇* Do Not Verify Certificate *（不驗證證書*）。</block>
+  <block id="4cc186df234138a57b2e8c5d8e5f7f8d" category="list-text">按一下「 * 儲存 * 」。</block>
+  <block id="7c73eae507b98bafb559cd915f7f9750" category="paragraph">確認已為Amazon S3或Google Cloud建立雲端儲存資源池。</block>
+  <block id="b80a3dfef6be295438d7e805b11c4bc9" category="summary">如果您想要將StorageGRID 物件移至外部Azure Container、可以使用Cloud Storage Pool。</block>
+  <block id="749b3ee0b1315337c79533871bba825a" category="doc">為Azure Blob Storage建立雲端儲存資源池</block>
+  <block id="861ae314cc8e000e48d818fcd75a2966" category="paragraph">如果您想要將StorageGRID 物件移至外部Azure容器、可以使用Cloud Storage Pool。</block>
+  <block id="0106fb5b56f13c91c190596b35b034a4" category="list-text">您已設定外部Azure容器。</block>
+  <block id="8bb07513ee1970ee4c61dec825ef35cc" category="list-text">從「供應商類型」下拉式清單中選取「* Azure Blob Storage*」。</block>
+  <block id="fdcdebdb8587867805e6b14c39279411" category="list-text">輸入Azure容器名稱。</block>
+  <block id="d4bed7a2666bc07a1fdf0b1b0a0d76ba" category="paragraph">您指定的名稱必須與Azure容器名稱完全相符、否則建立Cloud Storage Pool將會失敗。儲存雲端儲存資源池後、您無法變更此值。</block>
+  <block id="f7c6315a28b94e99eab96017afd099b2" category="list-text">或者、輸入Azure容器的相關帳戶名稱和帳戶金鑰以進行驗證。</block>
+  <block id="77d01b70f1590b2dce595a6504470002" category="paragraph">確認已為Azure Blob Storage建立雲端儲存資源池。</block>
+  <block id="aaeeb364be922e789a908072881b88ea" category="summary">您可以建立ILM規則、將物件移入雲端儲存池進行備份。</block>
+  <block id="85020881afe59b6c9413c4d50d2a26d0" category="doc">使用雲端儲存資源池進行備份</block>
+  <block id="4b0e54b770307ad63bdf2f9e861d65d8" category="paragraph">您可以建立ILM規則、將物件移入雲端儲存池進行備份。</block>
+  <block id="9c23d5280c083a21f3e88f979b42a529" category="list-text">在Grid Manager中、瀏覽至* ILM *&gt;* Rules *&gt;* Create*。</block>
+  <block id="ce8eebfe6fafce433c006d354edaf1a1" category="list-text">輸入說明。</block>
+  <block id="329e9e5f00527442ffb8ddb0d1d33273" category="list-text">輸入條件以觸發規則。</block>
+  <block id="5a378b18f7bf0c4cabc6c655cd2f535e" category="list-text">單擊 * 下一步 * 。</block>
+  <block id="67e0764defc4dc09f19960feb173f810" category="list-text">將物件複寫到儲存節點。</block>
+  <block id="971a29d2c438993347d735d425c2a162" category="list-text">新增放置規則。</block>
+  <block id="39c7ca89a1c72a8fd424c69cd35616bc" category="list-text">將物件複寫至雲端儲存池</block>
+  <block id="d00aaeae3c5233d689ab6c1fa3391d6c" category="paragraph">確認保留圖顯示儲存在StorageGRID 本機的物件、以及儲存在雲端儲存池中進行備份的物件。</block>
+  <block id="eccd0905bbb9877cfd0ba7f4cc26a3c6" category="paragraph">確認在觸發ILM規則時、Cloud Storage Pool中會存在複本、而且您可以在本機擷取物件、而無需進行物件還原。</block>
+  <block id="c27ce751e131719af380702f6711a49d" category="sidebar">如何啟用StorageGRID 功能</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
+  <block id="3778f3873debfe11e2ace6bb6af1e417" category="sidebar">本文檔StorageGRID</block>
+  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">開始使用</block>
+  <block id="7b99b0e0bb2f7f24ff67fbcc39f899f1" category="sidebar">已驗證的協力廠商解決方案</block>
+  <block id="3b878279a04dc47d60932cb294d96259" category="sidebar">總覽</block>
+  <block id="bc7a074f94cb3e6b09ba943468b03bd0" category="sidebar">產品功能指南</block>
+  <block id="e02e6c7dee6578ec85d1e57d9e5d7505" category="sidebar">為AWS或Google建立雲端儲存資源池</block>
+  <block id="f1f92d294ec1c6f6fdea0f29b7e96f97" category="sidebar">為Azure Blob儲存設備建立雲端儲存資源池</block>
+  <block id="1cf458dbfa770c9c7189b79723753358" category="sidebar">設定搜尋整合服務</block>
+  <block id="408cdd6548bf39b1766ce095fd112e06" category="sidebar">工具與應用程式指南</block>
+  <block id="d83a76224c587ea0af02d9f6d8ee0099" category="sidebar">使用Cloudera Hadoop S3連接器</block>
+  <block id="c305708b9554a582b18cd4563fac118b" category="sidebar">建立具有公用儲存設備的Vertica Eon Mode資料庫</block>
+  <block id="71a42bc38b535445f495ee32a46355ba" category="sidebar">使用S3cmd測試及示範S3存取</block>
+  <block id="e8aaf062a960aeba132419a40c4e85ef" category="sidebar">程序和API範例</block>
+  <block id="a82a0897ec719037339f7e557ccdc5b3" category="sidebar">測試並示範S3加密</block>
+  <block id="d1fc85d07fb8abfaa8142a6bddefd16f" category="sidebar">測試並示範S3物件鎖定</block>
+  <block id="81a123ccab93cd947289b672b0e50348" category="sidebar">示範教學課程</block>
+  <block id="37a22f48989cdc6e7e3429f09be3fc5c" category="sidebar">視頻庫StorageGRID</block>
+  <block id="f8e43c2f779dd11ddf192ae101019ea1" category="sidebar">NetApp學習服務</block>
+  <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">更多資源</block>
+  <block id="5c8fba8e6a4b1c808cb6fcd601dd89ce" category="sidebar">支援頁面StorageGRID</block>
+  <block id="697ea025ecb303d4f40d1bf3a8b4bde0" category="sidebar">NetApp互通性對照表工具IMT （不含）</block>
+  <block id="8ef596bf4eb7277f78ad1d7ad4cc04de" category="sidebar">知識庫StorageGRID</block>
+  <block id="c2d388654878e1108f99fdeaa465fcac" category="sidebar">NetApp部落格</block>
+  <block id="a310588c148d934b9b30c31802d4a30b" category="sidebar">NetApp社群</block>
+  <block id="024f3a8ba5709643c2f09c8eabccae87" category="sidebar">已驗證的第三方解決方案-概述</block>
+  <block id="f4bf6c62a8784f065cebbacf57a1c62c" category="sidebar">測試並示範S3物件鎖定</block>
+</blocks>

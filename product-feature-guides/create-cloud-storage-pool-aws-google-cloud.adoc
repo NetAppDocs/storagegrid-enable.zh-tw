@@ -1,0 +1,51 @@
+---
+permalink: product-feature-guides/create-cloud-storage-pool-aws-google-cloud.html 
+sidebar: sidebar 
+keywords: cloud storage pool, aws, S3, amazon web services, google cloud 
+summary: 如果您想要將StorageGRID 物件移到外部S3儲存區、可以使用Cloud Storage Pool。外部儲存庫可以屬於Amazon S3（AWS）或Google Cloud。 
+---
+= 為AWS或Google Cloud建立雲端儲存資源池
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您想要將StorageGRID 物件移到外部S3儲存區、可以使用Cloud Storage Pool。外部儲存庫可以屬於Amazon S3（AWS）或Google Cloud。
+
+.您需要的是 #8217 ；需要的是什麼
+* 已設定好整套功能。StorageGRID
+* 您已在AWS或Google Cloud上設定外部S3儲存區。
+
+
+.步驟
+. 在Grid Manager中、瀏覽至* ILM *>* Storage Pools*。
+. 在頁面的「Cloud Storage Pools（雲端儲存池）」區段中、選取*「Create*（建立*）」。
++
+「Create Cloud Storage Pool（建立雲端儲存池）」快顯視窗隨即出現。
+
+. 輸入顯示名稱。
+. 從「提供者類型」下拉式清單中選取「* Amazon S3 *」。
++
+此供應商類型適用於AWS S3或Google Cloud。
+
+. 輸入用於雲端儲存池的S3儲存區URI。
++
+允許使用兩種格式：
+
++
+https://host:port`
+
++
+http://host:port`
+
+. 輸入S3儲存區名稱。
++
+您指定的名稱必須與S3儲存區名稱完全相符、否則建立雲端儲存池會失敗。儲存雲端儲存資源池後、您無法變更此值。
+
+. 或者、輸入存取金鑰ID和秘密存取金鑰。
+. 從下拉列表中選擇* Do Not Verify Certificate *（不驗證證書*）。
+. 按一下「 * 儲存 * 」。
+
+
+確認已為Amazon S3或Google Cloud建立雲端儲存資源池。

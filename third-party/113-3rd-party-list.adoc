@@ -1,0 +1,48 @@
+---
+permalink: third-party/113-3rd-party-list.html 
+sidebar: sidebar 
+keywords: 11.3, third-party applications, storagegrid,ISV 
+summary: 第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.3 
+---
+= 通過驗證的第三方解決方案StorageGRID
+:allow-uri-read: 
+
+
+[role="lead"]
+下列第三方解決方案已通過驗證、可與StorageGRID NetApp 11.3搭配使用。+如果您要尋找的解決方案未列出、請聯絡您的NetApp客戶代表。
+
+
+
+== 第三方解決方案已在StorageGRID NetApp上驗證
+
+這些解決方案已與相關合作夥伴共同測試。
+
+* 活動
+* Cantemo
+* Citrix內容協同作業
+* CommVault 11.
+* CTera Portal 6.
+* Dalet
+* Data Dynamics StorageX
+* 定義
+* Interica
+* Komprise
+* 很好
+* Nasuni
+* OpenText文件16.4
+* 使用CyanGate Cloud進行OpenText媒體管理16.5%
+* 泛祖拉
+* 點歸檔閘道2.0
+* Point Storage Manager 6.4
+* Primestream
+* Quantum StorNext 5.4.0.1
+* RRubrik CDM 5.0.1 P1-1342
+* 訊號
+* Splunk Smartstore
+* Varish Enterprise 6.0.4
+* Veeam 9.5.4
+* Veritas Enterprise Vault 11.
+* Veritas Enterprise Vault 12.
+* Veritas NetBackup 8.0
+* 維地松
+

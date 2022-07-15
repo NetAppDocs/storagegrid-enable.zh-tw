@@ -1,0 +1,88 @@
+---
+permalink: tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html 
+sidebar: sidebar 
+keywords: cli, aws, S3, s3cmd, api 
+summary: S3cmd是免費的命令列工具和用戶端、適用於S3作業。您可以使用S3cmd測試StorageGRID 及示範S3在支援上存取。 
+---
+= 使用S3cmd測試StorageGRID 及示範S3在支援方面的存取
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+S3cmd是免費的命令列工具和用戶端、適用於S3作業。您可以使用s3cmd測試StorageGRID 及示範S3在支援上存取。
+
+
+
+== 安裝及設定S3cmd
+
+若要在工作站或伺服器上安裝S3cmd、請從下載 https://s3tools.org/s3cmd["命令列S3用戶端"^]。S3cmd會預先安裝在StorageGRID 每個支援的節點上、做為疑難排解的工具。
+
+
+
+== 初始組態步驟
+
+. s3cmd --configure
+. 僅提供存取金鑰和secret金鑰、其餘部分則保留預設值。
+. 使用隨附的認證資料來測試存取？[y/n]（是/否）：n（跳過測試、因為測試會失敗）
+. 儲存設定？[y/N] y
++
+.. 組態已儲存至「/root/.s3cfg」
+
+
+. 在.s3cfg中、將host_base和host_bucket欄位置於"=""符號之後：
++
+.. host_base =
+.. host_bucket =
+
+
+
+
+====
+
+NOTE: 如果您在步驟4中指定host_base和host_bucket、則不需要在CLI中使用--host來指定端點。範例：
+
+....
+            host_base = 192.168.1.91:8082
+            host_bucket = bucketX.192.168.1.91:8082
+            s3cmd ls s3://bucketX --no-check-certificate
+....
+====
+
+
+== 基本命令範例
+
+* *建立儲存庫：*
++
+「3cmd MB S3：//s3cmd bucket -host=<終結 點>:<port>-ner-ne-check認證」
+
+* *列出所有庫位：*
++
+「3cmd ls --host=<端 點>:<port>---un-check認證」
+
+* *列出所有庫存箱及其內容：*
++
+「3cmd la -host=<終結 點>:<port>-no -check憑證」
+
+* *列出特定儲存區中的物件：*
++
+「3cmd ls S3：//<bucket >-host=<終結 點>:<port>-no -check憑證」
+
+* *刪除一個桶：*
++
+「3cmd rb s3：//s3cmd bucket -host=<終結 點>:<port>-ne-ne-check認證」
+
+* *放置物件：*
++
+「3cmd PUT <file> S3：//<bucket >-host=<終結 點>:<port>-no -check憑證」
+
+* *取得物件：*
++
+「3cmd Get S3：//<bucket >/<object>-host=<終結 點>:<port>-no -check憑證」
+
+* *刪除物件：*
++
+「3cmd Del S3：//<bucket >/-host=<終結 點>:<port>-no -check認證」
+
+

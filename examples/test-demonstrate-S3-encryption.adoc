@@ -1,0 +1,187 @@
+---
+permalink: examples/test-demonstrate-S3-encryption.html 
+sidebar: sidebar 
+keywords: cli, aws, S3, encryption, SSE, SSE-C, SSE-S3, api 
+summary: 支援的支援功能有許多不同的方法可加密閒置的資料。StorageGRID 
+---
+= 測試並示範StorageGRID 有關支援的S3加密選項
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+支援的支援功能有許多不同的方法可加密閒置的資料。StorageGRID若要深入瞭解、請參閱 https://docs.netapp.com/us-en/storagegrid-116/admin/reviewing-storagegrid-encryption-methods.html["檢閱StorageGRID 功能加密方法"^]。
+
+本指南將示範S3 API加密方法。
+
+
+
+== 伺服器端加密（SSe）
+
+使用者可透過sse儲存物件、並使用StorageGRID 由支援的獨特金鑰來加密物件。當物件被要求時、物件會被儲存在StorageGRID 物件中的金鑰解密。
+
+
+
+=== 例如
+
+* 將物件放入SS
++
+[source, console]
+----
+aws s3api put-object --bucket <bucket>  --key <file> --body "<file>" --server-side-encryption AES256 --endpoint-url https://s3.example.com
+----
+* 驗證加密的目標
++
+[source, console]
+----
+aws s3api head-object --bucket <bucket>  --key <file>   --endpoint-url https://s3.example.com
+----
++
+[listing]
+----
+{
+    "AcceptRanges": "bytes",
+    "LastModified": "2022-05-02T19:03:03+00:00",
+    "ContentLength": 47,
+    "ETag": "\"82e8bfb872e778a4687a26e6c0b36bc1\"",
+    "ContentType": "text/plain",
+    "ServerSideEncryption": "AES256",
+    "Metadata": {}
+}
+----
+* 取得物件
++
+[source, console]
+----
+aws s3api get-object --bucket <bucket>  --key <file> <file> --endpoint-url https://s3.example.com
+----
+
+
+
+
+== 使用客戶提供的金鑰進行伺服器端加密（SSE-C）
+
+使用者可透過SSE儲存物件、並使用用戶端隨物件提供的唯一金鑰來加密物件。要求物件時、必須提供相同的金鑰才能解密及傳回物件。
+
+
+
+=== SSE-C範例
+
+* 為了測試或示範目的、您可以建立加密金鑰
++
+** 建立加密金鑰
++
+[source, console]
+----
+openssl enc -aes-128-cbc -pass pass:secret -P`
+----
++
+[listing]
+----
+salt=E9DBB6603C7B3D2A
+key=23832BAC16516152E560F933F261BF03
+iv =71E87C0F6EC3C45921C2754BA131A315
+----
+
+
+* 使用產生的金鑰放置物件
++
+[source, console]
+----
+aws s3api put-object --bucket <bucket> --key <file> --body "file" --sse-customer-algorithm AES256 --sse-customer-key 23832BAC16516152E560F933F261BF03 --endpoint-url https://s3.example.com
+----
+* 物件的前端
++
+[source, console]
+----
+aws s3api head-object --bucket <bucket> --key <file> --sse-customer-algorithm AES256 --sse-customer-key 23832BAC16516152E560F933F261BF03 --endpoint-url https://s3.example.com
+----
++
+[listing]
+----
+            {
+                "AcceptRanges": "bytes",
+                "LastModified": "2022-05-02T19:20:02+00:00",
+                "ContentLength": 47,
+                "ETag": "\"f92ef20ab87e0e13951d9bee862e9f9a\"",
+                "ContentType": "binary/octet-stream",
+                "Metadata": {},
+                "SSECustomerAlgorithm": "AES256",
+                "SSECustomerKeyMD5": "rjGuMdjLpPV1eRuotNaPMQ=="
+            }
+----
+
+
+
+NOTE: 如果您未提供加密金鑰、您將會收到「呼叫頭物件作業時發生錯誤（404）：找不到」錯誤訊息。
+
+* 取得物件
++
+[source, console]
+----
+aws s3api get-object --bucket <bucket> --key <file> <file> --sse-customer-algorithm AES256 --sse-customer-key 23832BAC16516152E560F933F261BF03 --endpoint-url https://s3.example.com
+----
+
+
+
+NOTE: 如果您未提供加密金鑰、則會在呼叫GetObject作業時收到錯誤訊息「發生錯誤（InvalidRequest）：該物件是使用伺服器端加密的形式儲存。必須提供正確的參數才能擷取物件。"
+
+
+
+== 儲存區伺服器端加密（SSE-S3）
+
+SSE-S3可讓用戶端針對儲存在儲存區中的所有物件、定義預設的加密行為。物件會使用StorageGRID 由支援的獨特金鑰進行加密。當物件被要求時、物件會被儲存在StorageGRID 檔中的金鑰解密。
+
+
+
+=== Bucket SSE-S3範例
+
+* 建立新儲存區並設定預設加密原則
++
+** 建立新的儲存庫
++
+[source, console]
+----
+aws s3api create-bucket --bucket <bucket> --region us-east-1 --endpoint-url https://s3.example.com
+----
+** 將儲存區加密
++
+[source, console]
+----
+aws s3api put-bucket-encryption --bucket <bucket> --server-side-encryption-configuration '{"Rules": [{"ApplyServerSideEncryptionByDefault": {"SSEAlgorithm": "AES256"}}]}' --endpoint-url https://s3.example.com
+----
+
+
+* 將物件放入儲存區
++
+[source, console]
+----
+aws s3api put-object --bucket <bucket> --key <file> --body "file" --endpoint-url https://s3.example.com
+----
+* 物件的前端
++
+[source, console]
+----
+aws s3api head-object --bucket <bucket> --key <file> --endpoint-url https://s3.example.com
+----
++
+[listing]
+----
+{
+"AcceptRanges": "bytes",
+"LastModified": "2022-05-02T20:16:23+00:00",
+"ContentLength": 47,
+"ETag": "\"82e8bfb872e778a4687a26e6c0b36bc1\"",
+"ContentType": "binary/octet-stream",
+"ServerSideEncryption": "AES256",
+"Metadata": {}
+}
+----
+* 取得物件
++
+[source, console]
+----
+aws s3api get-object --bucket <bucket>  --key <file> <file> --endpoint-url https://s3.example.com
+----
+

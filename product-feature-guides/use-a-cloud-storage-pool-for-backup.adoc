@@ -1,0 +1,35 @@
+---
+permalink: product-feature-guides/use-a-cloud-storage-pool-for-backup.html 
+sidebar: sidebar 
+keywords: cloud storage pool, backup, ILM, CSP 
+summary: 您可以建立ILM規則、將物件移入雲端儲存池進行備份。 
+---
+= 使用雲端儲存資源池進行備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立ILM規則、將物件移入雲端儲存池進行備份。
+
+.您需要的是 #8217 ；需要的是什麼
+* 已設定好整套功能。StorageGRID
+* 您已設定外部Azure容器。
+
+
+.步驟
+. 在Grid Manager中、瀏覽至* ILM *>* Rules *>* Create*。
+. 輸入說明。
+. 輸入條件以觸發規則。
+. 單擊 * 下一步 * 。
+. 將物件複寫到儲存節點。
+. 新增放置規則。
+. 將物件複寫至雲端儲存池
+. 單擊 * 下一步 * 。
+. 按一下「 * 儲存 * 」。
+
+
+確認保留圖顯示儲存在StorageGRID 本機的物件、以及儲存在雲端儲存池中進行備份的物件。
+
+確認在觸發ILM規則時、Cloud Storage Pool中會存在複本、而且您可以在本機擷取物件、而無需進行物件還原。

@@ -1,0 +1,48 @@
+---
+permalink: product-feature-guides/create-cloud-storage-pool-azure-blob-storage.html 
+sidebar: sidebar 
+keywords: cloud storage pool, azure, microsoft azure, azure blob storage 
+summary: 如果您想要將StorageGRID 物件移至外部Azure Container、可以使用Cloud Storage Pool。 
+---
+= 為Azure Blob Storage建立雲端儲存資源池
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您想要將StorageGRID 物件移至外部Azure容器、可以使用Cloud Storage Pool。
+
+.您需要的是 #8217 ；需要的是什麼
+* 已設定好整套功能。StorageGRID
+* 您已設定外部Azure容器。
+
+
+.步驟
+. 在Grid Manager中、瀏覽至* ILM *>* Storage Pools*。
+. 在頁面的「Cloud Storage Pools（雲端儲存池）」區段中、選取*「Create*（建立*）」。
++
+「Create Cloud Storage Pool（建立雲端儲存池）」快顯視窗隨即出現。
+
+. 輸入顯示名稱。
+. 從「供應商類型」下拉式清單中選取「* Azure Blob Storage*」。
+. 輸入用於雲端儲存池的S3儲存區URI。
++
+允許使用兩種格式：
+
++
+https://host:port`
+
++
+http://host:port`
+
+. 輸入Azure容器名稱。
++
+您指定的名稱必須與Azure容器名稱完全相符、否則建立Cloud Storage Pool將會失敗。儲存雲端儲存資源池後、您無法變更此值。
+
+. 或者、輸入Azure容器的相關帳戶名稱和帳戶金鑰以進行驗證。
+. 從下拉列表中選擇* Do Not Verify Certificate *（不驗證證書*）。
+. 按一下「 * 儲存 * 」。
+
+
+確認已為Azure Blob Storage建立雲端儲存資源池。

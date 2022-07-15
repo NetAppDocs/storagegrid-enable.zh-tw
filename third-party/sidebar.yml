@@ -1,0 +1,17 @@
+---
+section: third-party
+title: 已驗證的協力廠商解決方案
+entries:
+- title: 總覽
+  pdf-filename: 已驗證的第三方解決方案-概述
+  url: "/third-party/index.html"
+- title: 部分11.6% StorageGRID
+  url: "/third-party/116-3rd-party-list.html"
+- title: 部分11.5 StorageGRID
+  url: "/third-party/115-3rd-party-list.html"
+- title: 部分11.4 StorageGRID
+  url: "/third-party/114-3rd-party-list.html"
+- title: 部分11.3% StorageGRID
+  url: "/third-party/113-3rd-party-list.html"
+- title: 部分11.2 StorageGRID
+  url: "/third-party/112-3rd-party-list.html"

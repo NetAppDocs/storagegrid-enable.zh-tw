@@ -1,0 +1,72 @@
+---
+permalink: third-party/116-3rd-party-list.html 
+sidebar: sidebar 
+keywords: 11.6, third-party applications, storagegrid, ISV 
+summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.6%' 
+---
+= 通過驗證的第三方解決方案StorageGRID
+:allow-uri-read: 
+
+
+[role="lead"]
+下列第三方解決方案已通過驗證、可搭配StorageGRID 使用。+如果您要尋找的解決方案未列出、請聯絡您的NetApp客戶代表。
+
+
+
+== 第三方解決方案已在StorageGRID NetApp上驗證
+
+這些解決方案已與相關合作夥伴共同測試。
+
+* 活動
+* Apache Kafka
+* Cantemo
+* Citrix內容協同作業
+* CommVault 11.
+* CTera Portal 6.
+* Dalet
+* Data Dynamics StorageX
+* 定義
+* Fujifilm物件歸檔
+* GitHub企業伺服器
+* IBM FileNet
+* IBM Spectrum Protect Plus
+* Interica
+* Komprise
+* Microsoft SQL Server巨量資料叢集
+* Moonwalk通用
+* 很好
+* Nasuni
+* OpenText文件16.4
+* OpenText文件21.4
+* OpenText InfoArchive 16 EP7
+* 使用CyanGate Cloud進行OpenText媒體管理16.5%
+* 泛祖拉
+* PixitMedia ngenea
+* 點歸檔閘道2.0
+* Point Storage Manager 6.4
+* Primestream
+* Quantum StorNext 5.4.0.1
+* RRubrik CDM 5.0.1 P1-1342
+* 訊號
+* Splunk Smartstore
+* 輕鬆儲存
+* Varish Enterprise 6.0.4
+* Veeam 11.
+* Veritas Enterprise Vault 14
+* Veritas NetBackup 8.0
+* Vertica 10.x
+* 維地松
+* Weka v3.10或更新版本
+* Emam
+
+
+
+
+== 第三方解決方案已通過StorageGRID 物件鎖定驗證、可在不含物件鎖的情況下在
+
+這些解決方案已與相關合作夥伴共同測試。
+
+* CommVault 11功能版本26
+* OpenText文件21.4
+* Veeam 11.
+

@@ -1,0 +1,26 @@
+---
+permalink: whats-new.html 
+sidebar: sidebar 
+keywords: whats new, third-party applications, storagegrid, Guides, cookbooks 
+summary: 以下是本網站最近的變更。 
+---
+= 新功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用這份文件集合、瞭解如何在您的環境中啟用應用程式和工具、以及使用StorageGRID VMware測試功能。您可以在這裡找到範例和食譜、這些範例和食譜將會延伸至產品文件、並提供後續步驟來評估StorageGRID 及整合至NetApp。
+
+[cols="1a,4a"]
+|===
+| 版本 | 變更內容 
+
+
+ a| 
+11.6%
+ a| 
+初始版本。包含StorageGRID 適用於發行版本11.2.11.11.11的指南和已驗證的協力廠商解決方案清單。
+
+|===

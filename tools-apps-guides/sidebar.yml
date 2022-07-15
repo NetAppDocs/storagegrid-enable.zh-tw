@@ -1,0 +1,10 @@
+---
+section: tools-apps-guides
+title: 工具與應用程式指南
+entries:
+- title: 使用Cloudera Hadoop S3連接器
+  url: "/tools-apps-guides/use-cloudera-hadoop-s3a-connector.html"
+- title: 使用S3cmd測試及示範S3存取
+  url: "/tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html"
+- title: 建立具有公用儲存設備的Vertica Eon Mode資料庫
+  url: "/tools-apps-guides/vertica-eon-mode-database-using-netapp-storageGRID.html"
