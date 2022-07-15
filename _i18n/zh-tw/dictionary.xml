@@ -625,4 +625,5 @@
   <block id="a310588c148d934b9b30c31802d4a30b" category="sidebar">NetApp社群</block>
   <block id="024f3a8ba5709643c2f09c8eabccae87" category="sidebar">已驗證的第三方解決方案-概述</block>
   <block id="f4bf6c62a8784f065cebbacf57a1c62c" category="sidebar">測試並示範S3物件鎖定</block>
+  <block id="401b6d44d3c927f0424adce982cc6506" category="list-text">Veritas Enterprise Vault 14.2.2</block>
 </blocks>

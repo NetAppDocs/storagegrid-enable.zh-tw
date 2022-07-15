@@ -49,7 +49,7 @@ homepage:
     - title: 使用雲端儲存資源池進行備份
       url: product-feature-guides/use-a-cloud-storage-pool-for-backup.html
     - title: 設定搜尋整合服務
-      url: "/product_feature_guides/storagegrid-search-integration-service.html"
+      url: "/product-feature-guides/storagegrid-search-integration-service.html"
   - title: 工具與應用程式指南
     links:
     - title: 使用Cloudera Hadoop S3連接器

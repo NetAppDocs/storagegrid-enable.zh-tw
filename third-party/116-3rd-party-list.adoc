@@ -69,4 +69,5 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 * CommVault 11功能版本26
 * OpenText文件21.4
 * Veeam 11.
+* Veritas Enterprise Vault 14.2.2
 
