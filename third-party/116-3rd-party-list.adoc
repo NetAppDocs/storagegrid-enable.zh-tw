@@ -26,6 +26,8 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 * Dalet
 * Data Dynamics StorageX
 * 定義
+* 夢中
+* Emam
 * Fujifilm物件歸檔
 * GitHub企業伺服器
 * IBM FileNet
@@ -46,8 +48,10 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 * Point Storage Manager 6.4
 * Primestream
 * Quantum StorNext 5.4.0.1
+* Reveville v10 build 220706或更新版本
 * RRubrik CDM 5.0.1 P1-1342
 * 訊號
+* 雪片
 * Splunk Smartstore
 * 輕鬆儲存
 * Varish Enterprise 6.0.4
@@ -56,8 +60,8 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 * Veritas NetBackup 8.0
 * Vertica 10.x
 * 維地松
+* Virtalica StorageFabric
 * Weka v3.10或更新版本
-* Emam
 
 
 

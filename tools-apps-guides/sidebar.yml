@@ -8,3 +8,5 @@ entries:
   url: "/tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html"
 - title: 建立具有公用儲存設備的Vertica Eon Mode資料庫
   url: "/tools-apps-guides/vertica-eon-mode-database-using-netapp-storageGRID.html"
+- title: 使用Elasticsearch、Logstash和Kibana進行記錄分析
+  url: "/tools-apps-guides/elk-instructions.html"

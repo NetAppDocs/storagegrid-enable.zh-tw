@@ -7,6 +7,6 @@ entries:
 - title: 為Azure Blob儲存設備建立雲端儲存資源池
   url: "/product-feature-guides/create-cloud-storage-pool-azure-blob-storage.html"
 - title: 使用雲端儲存資源池進行備份
-  url: product-feature-guides/use-a-cloud-storage-pool-for-backup.html
+  url: "/product-feature-guides/use-a-cloud-storage-pool-for-backup.html"
 - title: 設定搜尋整合服務
   url: "/product-feature-guides/storagegrid-search-integration-service.html"

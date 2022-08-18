@@ -49,6 +49,7 @@ summary: 第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.5
 * Veritas NetBackup 8.0
 * Vertica 10.x
 * 維地松
+* Virtalica StorageFabric
 
 
 

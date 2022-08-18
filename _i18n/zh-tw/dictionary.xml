@@ -626,4 +626,62 @@
   <block id="024f3a8ba5709643c2f09c8eabccae87" category="sidebar">已驗證的第三方解決方案-概述</block>
   <block id="f4bf6c62a8784f065cebbacf57a1c62c" category="sidebar">測試並示範S3物件鎖定</block>
   <block id="401b6d44d3c927f0424adce982cc6506" category="list-text">Veritas Enterprise Vault 14.2.2</block>
+  <block id="51e1f53c9c33ce7f260e99f66853181d" category="summary">利用「Sys11.6syslog轉送」功能、您可以設定外部syslog伺服器來收集和分析資訊記錄訊息。StorageGRID StorageGRIDElk（Elasticsearch、Logstash、Kibana）已成為最受歡迎的記錄分析解決方案之一。本文包含Logstash組態範例、可用來篩選及定義記錄訊息模式、Kibana查詢、圖表及儀表板範例、讓您快速開始StorageGRID 進行資訊記錄管理與分析。</block>
+  <block id="ba8b98c81be3d04d10309b1945f41b3c" category="doc">使用elk堆疊進行記錄分析StorageGRID</block>
+  <block id="febdad8f949c4133d32f6ec0e8b0ca1c" category="inline-link">使用elk視訊進行記錄分析StorageGRID</block>
+  <block id="b165bee40a44e630afb8a902059ed458" category="paragraph">利用「靜態11.6syslog轉送」功能、您可以設定外部syslog伺服StorageGRID 器來收集和分析StorageGRID 資訊記錄訊息。Elk（Elasticsearch、Logstash、Kibana）已成為最受歡迎的記錄分析解決方案之一。觀看<block ref="1c3903c549bd0599ac0ebb1c424871aa" category="inline-link-rx"></block> 檢視示範elk組態、以及如何使用它來識別及疑難排解失敗的S3要求。本文提供Logstash組態、Kibana查詢、圖表和儀表板的範例檔案、協助您快速開始StorageGRID 進行資訊記錄管理和分析。</block>
+  <block id="5a2ebfb8baa378cfcfcba58bbb1380c2" category="section-title">需求</block>
+  <block id="b30496f397e70350f3c0324082c41741" category="list-text">SHO11.6.0.2或更高版本StorageGRID</block>
+  <block id="b8dc02d4e6fb27304a65c0d58fbdf121" category="list-text">Elk（Elasticsearch、Logstash和Kibana）7.1x或更新版本已安裝並開始運作</block>
+  <block id="9db4c047fbc2df77e904876ca407a10a" category="section-title">範例檔案</block>
+  <block id="7d62fedde871da77290cb136048ab8ae" category="inline-link-macro">下載Logstash 7.x範例檔案套件</block>
+  <block id="7f736656dd8100c22291010843e5658f" category="list-text"><block ref="f317985ee56adafb12c2258472a6183e" category="inline-link-macro-rx"></block> +* md5 checksum * 148c23d0021d9a4bb4a6c0287464deab +* sha256 checksum * f51ec9e2e3f842d5a7861566b167a561beb4373038b4e7bb3c8b3d522adf2d6</block>
+  <block id="69cc1f5bcff32557cde6f7f5b4b365ed" category="inline-link-macro">下載Logstash 8.x範例檔案套件</block>
+  <block id="a87365d5d3e0619dfacb72153399871c" category="list-text"><block ref="61afb638ef1cfaa2ac62beb76c59b80b" category="inline-link-macro-rx"></block> +* md5 checksum * e11bae3a662f87c310ef363d0fe06835 +* sha256 checksum * 5c670755742cfdfd5aa723a596ba087e0153a65bcaf3934afdb682f61278d</block>
+  <block id="cdcccab01175eb4e232499c66bfa50af" category="section-title">假設</block>
+  <block id="430bacfb127efaca8a86b36b918f14b8" category="paragraph">讀者熟悉StorageGRID 了功能性的技術與操作。</block>
+  <block id="c742c5a36b6307267bb709355feb2c41" category="section-title">指示</block>
+  <block id="eac3387862d4c7d3f970561bfc3f7c02" category="paragraph">由於Grok模式定義的名稱不同、因此提供兩個範例版本。+例如、Logstash組態檔中的SYSLOGBASE-Grok模式會根據安裝的Logstash版本、以不同的方式定義欄位名稱。</block>
+  <block id="4f709f3097a2dcda180a37ee47844c13" category="paragraph">* Logstash 7.17樣本*</block>
+  <block id="4f81ab746526b7ac4b040718ec7acade" category="image-alt">Logstash 7.17範例</block>
+  <block id="91106d0591f097e8bbf222df7706bd2d" category="paragraph">*記錄8.23樣本*</block>
+  <block id="c59ad685927ef7bba94abe95eaa87376" category="image-alt">Logstash 8.23範例</block>
+  <block id="bb8122fb7f8c30744fed84c9462b305d" category="list-text">根據您安裝的elk版本解壓縮提供的範例。+範例資料夾包含兩個Logstash組態範例：+* sglog-2-file.conf：*此組態檔可在StorageGRID 不進行資料轉換的情況下、將不含資料的記錄訊息輸出至Logstash上的檔案。您可以使用此選項來確認Logstash是否接收StorageGRID 到任何消息、或是協助瞭解StorageGRID 哪些是資訊記錄模式。+* sglog-2-es.conf：*此組態檔會StorageGRID 使用各種模式和篩選器來轉換資訊記錄訊息。其中包括範例Drop陳述式、可根據模式或篩選條件來刪除訊息。輸出會傳送至Elasticsearch以進行索引。+根據檔案內的指示自訂所選的組態檔。</block>
+  <block id="3ed4288764d66f2a65f7b85b652b32d3" category="list-text">測試自訂的組態檔：</block>
+  <block id="4c6585842bcd6ea99d8f33b205b2620e" category="paragraph">如果傳回的最後一行與下列行類似、則組態檔沒有語法錯誤：</block>
+  <block id="49e1ff176740ef27a71315d47a28cec0" category="list-text">將自訂的設定檔複製到Logstash伺服器的組態：/etc/logstash/conf.d+如果您尚未在/etc/logstash/logstash.yml中啟用config.reload.automatic、請重新啟動Logstash服務。否則、請等待設定重新載入時間間隔過去。</block>
+  <block id="1e2849b34515b73b14e350b3cfc6a222" category="list-text">檢查/var/log/logstash/logstash-plain.log、確認使用新的組態檔啟動Logstash時沒有錯誤。</block>
+  <block id="25b182c5b3173c341b5471a371174d7d" category="list-text">確認TCP連接埠已啟動並正在偵聽。+在此範例中、使用TCP連接埠5000。</block>
+  <block id="225e60e541052bd49fdac4b77ffecbc9" category="inline-link">示範影片</block>
+  <block id="fa1074da41258119adddd6a31eb40641" category="list-text">從程式管理程式GUI、設定外部syslog伺服器StorageGRID 、將記錄訊息傳送至Logstash。請參閱<block ref="144d48037e96a9804672c6dc7123d436" category="inline-link-rx"></block> 以取得詳細資料。</block>
+  <block id="defe6f8b45f596c620301bef8fdfbee9" category="list-text">您需要在Logstash伺服器上設定或停用防火牆、才能讓StorageGRID 節點連線至定義的TCP連接埠。</block>
+  <block id="9391523be65dad63e7fad8e0d28ee818" category="list-text">從Kibana GUI中、選取「Management（管理）」-&gt;「Dev Tools（開發工具）」。在「主控台」頁面上、執行此「Get」命令、確認已在Elasticsearch上建立新索引。</block>
+  <block id="30d46e8002bdd5c520a62523d772ebca" category="list-text">從Kibana GUI建立索引模式（elk 7.x）或資料檢視（elk 8.x）。</block>
+  <block id="291020c626f44ee2ce32684bc3a13980" category="list-text">從Kibana GUI、在位於上方中心的搜尋方塊中輸入「儲存的物件」。+在「儲存的物件」頁面上、選取「匯入」。在「匯入選項」下、選取「在衝突時要求採取行動」</block>
+  <block id="d5a554fb68642d807aee43887546b43a" category="image-alt">Kibana匯入選項</block>
+  <block id="42451b291f11e82724f65b3c852cca1d" category="paragraph">匯入elk&lt;version&gt;-query-chart-same.ndjson。+當系統提示您解決衝突時、請選取您在步驟8中建立的索引模式或資料檢視。</block>
+  <block id="bc1a8499a0350f03b4ca75964eaad9cb" category="image-alt">Kibana衝突</block>
+  <block id="d304b6866d45389dd644b1c1788bfd5a" category="paragraph">下列Kibana物件會匯入： +*查詢*+*稽核-msg-s3rq-orlm+* bycast記錄S3相關訊息+*記錄層級警告或更新版本+*失敗的安全事件+*圖表*+* S3要求數以bycast.log為基礎+* HTTP狀態代碼+*稽核msg明細按類型+*平均S3回應 時間+*儀表板*+* S3要求儀表板、請使用上述圖表。</block>
+  <block id="367c071ddbe8d1248ceb63f940e9b3cc" category="paragraph">您現在可以StorageGRID 使用Kibana來執行資訊分析。</block>
+  <block id="8cd58c89ff3d51a256ecfe3fe8bab20f" category="section-title">其他資源</block>
+  <block id="925a38c6c8bc1c84ae702d840efa1ef4" category="inline-link">系統記錄101.</block>
+  <block id="43b4ce193ce75a7c51a41a392da0e953" category="list-text"><block ref="43b4ce193ce75a7c51a41a392da0e953" category="inline-link-rx"></block></block>
+  <block id="36df17c33644048e4c07c17be01b2524" category="inline-link">什麼是elk堆疊</block>
+  <block id="2403480f61f37fce13a75f67d092ed18" category="list-text"><block ref="2403480f61f37fce13a75f67d092ed18" category="inline-link-rx"></block></block>
+  <block id="19d3c10a857b63064e06411baf1285b1" category="inline-link">Grok模式清單</block>
+  <block id="7c6102b1302815b75a46740d436c93fc" category="list-text"><block ref="7c6102b1302815b75a46740d436c93fc" category="inline-link-rx"></block></block>
+  <block id="13fc1087c795f112d8979eb5e2780e5c" category="inline-link">Logstash入門指南：Grok</block>
+  <block id="a39eed6135a0acdcad49fe799eb1bd27" category="list-text"><block ref="a39eed6135a0acdcad49fe799eb1bd27" category="inline-link-rx"></block></block>
+  <block id="1482da3b9a25b116ee5827795ac8fbbd" category="inline-link">Logstash的實用指南：syslog深度探討</block>
+  <block id="9a51320cc75988e79a130ea7dc86875c" category="list-text"><block ref="9a51320cc75988e79a130ea7dc86875c" category="inline-link-rx"></block></block>
+  <block id="3a280b4922aa9eb7ce4c328f7f7dbbb3" category="inline-link">Kibana指南–瀏覽文件</block>
+  <block id="ffe5d2718c9048b9edb4a4a97d96e90f" category="list-text"><block ref="ffe5d2718c9048b9edb4a4a97d96e90f" category="inline-link-rx"></block></block>
+  <block id="98d2f29265a464a9765db0d88f294336" category="inline-link">零稽核記錄訊息參考StorageGRID</block>
+  <block id="baba0109751acb7c22b021c76b6d7b51" category="list-text"><block ref="baba0109751acb7c22b021c76b6d7b51" category="inline-link-rx"></block></block>
+  <block id="288e0e9ab8b8ac8737afefecf16f61fd" category="list-text">夢中</block>
+  <block id="e07088b3eedf498bf832f9346b0e3c02" category="list-text">Reveville v10 build 220706或更新版本</block>
+  <block id="edf1439075a83a447fb8b630ddc9c8de" category="list-text">雪片</block>
+  <block id="e6a211de1fc20ed87589cd9c30f29ac3" category="list-text">Virtalica StorageFabric</block>
+  <block id="e2b1887bff53094ff4de31a5b6be8203" category="sidebar">使用Elasticsearch、Logstash和Kibana進行記錄分析</block>
+  <block id="958e51c613c42a5edd4e8f06fad6128b" category="sidebar">使用elk堆疊進行記錄分析| NetApp TV StorageGRID</block>
 </blocks>

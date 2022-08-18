@@ -47,7 +47,7 @@ homepage:
     - title: 為Azure Blob儲存設備建立雲端儲存資源池
       url: "/product-feature-guides/create-cloud-storage-pool-azure-blob-storage.html"
     - title: 使用雲端儲存資源池進行備份
-      url: product-feature-guides/use-a-cloud-storage-pool-for-backup.html
+      url: "/product-feature-guides/use-a-cloud-storage-pool-for-backup.html"
     - title: 設定搜尋整合服務
       url: "/product-feature-guides/storagegrid-search-integration-service.html"
   - title: 工具與應用程式指南
@@ -58,6 +58,8 @@ homepage:
       url: "/tools-apps-guides/vertica-eon-mode-database-using-netapp-storageGRID.html"
     - title: 使用S3cmd測試及示範S3存取
       url: "/tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html"
+    - title: 使用Elasticsearch、Logstash和Kibana進行記錄分析
+      url: "/tools-apps-guides/elk-instructions.html"
   - title: 程序和API範例
     links:
     - title: 測試並示範S3加密
@@ -70,6 +72,8 @@ homepage:
       url: https://www.youtube.com/playlist?list=PLdXI3bZJEw7nh2wGRA65iulXhtXwLiqrY
     - title: NetApp學習服務
       url: https://www.netapp.com/support-and-training/netapp-university/
+    - title: 使用elk堆疊進行記錄分析| NetApp TV StorageGRID
+      url: https://www.netapp.tv/details/29396
   - title: 更多資源
     links:
     - title: 支援頁面StorageGRID

@@ -1,0 +1,125 @@
+---
+permalink: tools-apps-guides/elk-instructions.html 
+sidebar: sidebar 
+keywords: ELK, log analytics, log analysis, StorageGRID troubleshooting 
+summary: 利用「Sys11.6syslog轉送」功能、您可以設定外部syslog伺服器來收集和分析資訊記錄訊息。StorageGRID StorageGRIDElk（Elasticsearch、Logstash、Kibana）已成為最受歡迎的記錄分析解決方案之一。本文包含Logstash組態範例、可用來篩選及定義記錄訊息模式、Kibana查詢、圖表及儀表板範例、讓您快速開始StorageGRID 進行資訊記錄管理與分析。 
+---
+= 使用elk堆疊進行記錄分析StorageGRID
+:allow-uri-read: 
+
+
+[role="lead"]
+利用「靜態11.6syslog轉送」功能、您可以設定外部syslog伺服StorageGRID 器來收集和分析StorageGRID 資訊記錄訊息。Elk（Elasticsearch、Logstash、Kibana）已成為最受歡迎的記錄分析解決方案之一。觀看 https://www.netapp.tv/details/29396["使用elk視訊進行記錄分析StorageGRID"] 檢視示範elk組態、以及如何使用它來識別及疑難排解失敗的S3要求。本文提供Logstash組態、Kibana查詢、圖表和儀表板的範例檔案、協助您快速開始StorageGRID 進行資訊記錄管理和分析。
+
+
+
+== 需求
+
+* SHO11.6.0.2或更高版本StorageGRID
+* Elk（Elasticsearch、Logstash和Kibana）7.1x或更新版本已安裝並開始運作
+
+
+
+
+== 範例檔案
+
+* link:../media/elk-config/elk7-sample.zip["下載Logstash 7.x範例檔案套件"] +* md5 checksum * 148c23d0021d9a4bb4a6c0287464deab +* sha256 checksum * f51ec9e2e3f842d5a7861566b167a561beb4373038b4e7bb3c8b3d522adf2d6
+* link:../media/elk-config/elk8-sample.zip["下載Logstash 8.x範例檔案套件"] +* md5 checksum * e11bae3a662f87c310ef363d0fe06835 +* sha256 checksum * 5c670755742cfdfd5aa723a596ba087e0153a65bcaf3934afdb682f61278d
+
+
+
+
+== 假設
+
+讀者熟悉StorageGRID 了功能性的技術與操作。
+
+
+
+== 指示
+
+由於Grok模式定義的名稱不同、因此提供兩個範例版本。+例如、Logstash組態檔中的SYSLOGBASE-Grok模式會根據安裝的Logstash版本、以不同的方式定義欄位名稱。
+
+[listing]
+----
+match => {"message" => '<%{POSINT:syslog_pri}>%{SYSLOGBASE} %{GREEDYDATA:msg-details}'}
+----
+* Logstash 7.17樣本*
+
+image::../media/elk-config/logstash-7.17.fields-sample.png[Logstash 7.17範例]
+
+*記錄8.23樣本*
+
+image::../media/elk-config/logstash-8.x.fields-sample.png[Logstash 8.23範例]
+
+*步驟*
+
+. 根據您安裝的elk版本解壓縮提供的範例。+範例資料夾包含兩個Logstash組態範例：+* sglog-2-file.conf：*此組態檔可在StorageGRID 不進行資料轉換的情況下、將不含資料的記錄訊息輸出至Logstash上的檔案。您可以使用此選項來確認Logstash是否接收StorageGRID 到任何消息、或是協助瞭解StorageGRID 哪些是資訊記錄模式。+* sglog-2-es.conf：*此組態檔會StorageGRID 使用各種模式和篩選器來轉換資訊記錄訊息。其中包括範例Drop陳述式、可根據模式或篩選條件來刪除訊息。輸出會傳送至Elasticsearch以進行索引。+根據檔案內的指示自訂所選的組態檔。
+. 測試自訂的組態檔：
++
+[listing]
+----
+/usr/share/logstash/bin/logstash --config.test_and_exit -f <config-file-path/file>
+----
++
+如果傳回的最後一行與下列行類似、則組態檔沒有語法錯誤：
+
++
+[listing]
+----
+[LogStash::Runner] runner - Using config.test_and_exit mode. Config Validation Result: OK. Exiting Logstash
+----
+. 將自訂的設定檔複製到Logstash伺服器的組態：/etc/logstash/conf.d+如果您尚未在/etc/logstash/logstash.yml中啟用config.reload.automatic、請重新啟動Logstash服務。否則、請等待設定重新載入時間間隔過去。
++
+[listing]
+----
+ grep reload /etc/logstash/logstash.yml
+# Periodically check if the configuration has changed and reload the pipeline
+config.reload.automatic: true
+config.reload.interval: 5s
+----
+. 檢查/var/log/logstash/logstash-plain.log、確認使用新的組態檔啟動Logstash時沒有錯誤。
+. 確認TCP連接埠已啟動並正在偵聽。+在此範例中、使用TCP連接埠5000。
++
+[listing]
+----
+netstat -ntpa | grep 5000
+tcp6       0      0 :::5000                 :::*                    LISTEN      25744/java
+----
+. 從程式管理程式GUI、設定外部syslog伺服器StorageGRID 、將記錄訊息傳送至Logstash。請參閱 https://www.netapp.tv/details/29396["示範影片"] 以取得詳細資料。
+. 您需要在Logstash伺服器上設定或停用防火牆、才能讓StorageGRID 節點連線至定義的TCP連接埠。
+. 從Kibana GUI中、選取「Management（管理）」->「Dev Tools（開發工具）」。在「主控台」頁面上、執行此「Get」命令、確認已在Elasticsearch上建立新索引。
++
+[listing]
+----
+GET /_cat/indices/*?v=true&s=index
+----
+. 從Kibana GUI建立索引模式（elk 7.x）或資料檢視（elk 8.x）。
+. 從Kibana GUI、在位於上方中心的搜尋方塊中輸入「儲存的物件」。+在「儲存的物件」頁面上、選取「匯入」。在「匯入選項」下、選取「在衝突時要求採取行動」
++
+image::../media/elk-config/kibana-import-options.png[Kibana匯入選項]
+
++
+匯入elk<version>-query-chart-same.ndjson。+當系統提示您解決衝突時、請選取您在步驟8中建立的索引模式或資料檢視。
+
++
+image::../media/elk-config/kibana-import-conflict.png[Kibana衝突]
+
++
+下列Kibana物件會匯入： +*查詢*+*稽核-msg-s3rq-orlm+* bycast記錄S3相關訊息+*記錄層級警告或更新版本+*失敗的安全事件+*圖表*+* S3要求數以bycast.log為基礎+* HTTP狀態代碼+*稽核msg明細按類型+*平均S3回應 時間+*儀表板*+* S3要求儀表板、請使用上述圖表。
+
+
+
+您現在可以StorageGRID 使用Kibana來執行資訊分析。
+
+
+
+== 其他資源
+
+* https://coralogix.com/blog/syslog-101-everything-you-need-to-know-to-get-started/["系統記錄101."]
+* https://www.elastic.co/what-is/elk-stack["什麼是elk堆疊"]
+* https://github.com/hpcugent/logstash-patterns/blob/master/files/grok-patterns["Grok模式清單"]
+* https://logz.io/blog/logstash-grok/["Logstash入門指南：Grok"]
+* https://coralogix.com/blog/a-practical-guide-to-logstash-syslog-deep-dive/["Logstash的實用指南：syslog深度探討"]
+* https://www.elastic.co/guide/en/kibana/master/document-explorer.html["Kibana指南–瀏覽文件"]
+* https://docs.netapp.com/us-en/storagegrid-116/audit/index.html["零稽核記錄訊息參考StorageGRID"]
+
