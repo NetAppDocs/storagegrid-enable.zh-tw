@@ -35,6 +35,7 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 * Interica
 * Komprise
 * Microsoft SQL Server巨量資料叢集
+* 模型9.
 * Moonwalk通用
 * 很好
 * Nasuni
