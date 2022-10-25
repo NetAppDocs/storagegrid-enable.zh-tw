@@ -26,6 +26,7 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 * Dalet
 * Data Dynamics StorageX
 * 定義
+* 磁碟移轉資料
 * 夢中
 * Emam
 * Fujifilm物件歸檔

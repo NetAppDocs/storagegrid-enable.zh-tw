@@ -775,4 +775,5 @@
   <block id="3c381cb8a7d35d21cb305dce81f773fb" category="paragraph">現在我們擁有Prometheus伺服器、可自訂資料保留和儲存容量。有了這項功能、我們就能繼續建立自己的儀表板、並提供與營運最相關的指標。您可以取得更多有關在中收集的Prometheus指標的資訊<block ref="b4322fd604ba4ce3b6c052facca6761f" category="inline-link-rx"></block>。</block>
   <block id="7045f46ad76322e4dc3af49b0bb57c27" category="list-text">模型9.</block>
   <block id="d5b38301ef87d6a23fb50fbf5a064be8" category="list-text">Modzy</block>
+  <block id="d48885bf40ed8b15489c6b02ba7daa08" category="list-text">磁碟移轉資料</block>
 </blocks>
