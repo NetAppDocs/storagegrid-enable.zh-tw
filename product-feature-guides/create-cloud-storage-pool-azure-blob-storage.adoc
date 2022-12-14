@@ -13,7 +13,7 @@ summary: 如果您想要將StorageGRID 物件移至外部Azure Container、可�
 [role="lead"]
 如果您想要將StorageGRID 物件移至外部Azure容器、可以使用Cloud Storage Pool。
 
-.您需要的是 #8217 ；需要的是什麼
+.您需要的產品
 * 已設定好整套功能。StorageGRID
 * 您已設定外部Azure容器。
 
@@ -45,4 +45,5 @@ http://host:port`
 . 按一下「 * 儲存 * 」。
 
 
+.預期結果
 確認已為Azure Blob Storage建立雲端儲存資源池。
