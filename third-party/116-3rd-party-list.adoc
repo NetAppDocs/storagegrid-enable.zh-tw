@@ -78,4 +78,5 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 * OpenText文件21.4
 * Veeam 11.
 * Veritas Enterprise Vault 14.2.2
+* Veritas NetBackup 10.1.1及更新版本
 
