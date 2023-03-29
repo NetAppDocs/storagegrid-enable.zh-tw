@@ -6,3 +6,5 @@ entries:
   url: "/examples/test-demonstrate-S3-encryption.html"
 - title: 測試並示範S3物件鎖定
   url: "/examples/test-demonstrate-S3-object-lock.html"
+- title: 資源庫與群組原則範例
+  url: "/examples/bucket-policy-examples.html"

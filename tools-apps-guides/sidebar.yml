@@ -12,3 +12,5 @@ entries:
   url: "/tools-apps-guides/elk-instructions.html"
 - title: 使用Prometheus和Grafana來延長指標保留時間
   url: "/tools-apps-guides/federate-prometheus.html"
+- title: 設定Datadog以收集StorageGRID 不完整的SNMP指標和陷阱
+  url: "/tools-apps-guides/use-datadog-snmp.html"

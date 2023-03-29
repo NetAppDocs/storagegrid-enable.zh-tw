@@ -1,0 +1,121 @@
+---
+permalink: tools-apps-guides/use-datadog-snmp.html 
+sidebar: sidebar 
+keywords: datadog, snmp 
+summary: 設定Datadog HQ以收集StorageGRID 不完整的SNMP數據和陷阱。 
+---
+= Datadog SNMP組態
+:allow-uri-read: 
+
+
+[role="lead"]
+設定Datadog以收集StorageGRID 不完整的SNMP指標和陷阱。
+
+
+
+== 設定Datadog
+
+Datadog是一套監控解決方案、提供指標、視覺化和警示功能。下列組態是以Linux代理程式7.43.1版實作於Ubuntu 22.04.1主機上、部署於StorageGRID 本機的整個作業系統上。
+
+
+
+=== Datadog設定檔和Traps檔案是從StorageGRID 無法還原的mib檔案產生的
+
+Datadog提供一種方法、可將產品mib檔案轉換成對應SNMP訊息所需的datadog參考檔案。
+
+此支援Datadog Trap解析度對應的支援程序檔會依照所找到的指示產生StorageGRID https://docs.datadoghq.com/network_monitoring/devices/snmp_traps/?tab=yaml["請按這裡"^]。+將此檔案放在/etc/datadog-agent/conf.d/snmp.d/straps_db/+中
+
+* link:../media/datadog/NETAPP-STORAGEGRID-MIB.yml["下載陷阱yaml檔案"] +
++
+** * md5 checksum * 42e27e4210719945a46172b98c379517 +
+** * sha256 checksum * d0fe5c8e6ca3c902d054f85b70a85f928cba8b7c76391d356f05d2cf73b6887+
+
+
+
+
+此支援Datadog指標對應的支援資料檔yaml檔案是依照所找到的指示產生StorageGRID https://datadoghq.dev/integrations-core/tutorials/snmp/introduction/["請按這裡"^]。+將此檔案放在/etc/datadog-agent/conf.d/snmp.d/profile/+中
+
+* link:../media/datadog/netapp-storagegrid.yaml["下載設定檔yaml檔案"] +
++
+** * md5 checksum * 72bb7784f4801adda4e0c3ea77df19a+
+** * sha256 checksum * b6b7fadd33063422a8bb8e39b3ead8ab383449ee0229926eadc85f0087b8cee +
+
+
+
+
+
+
+=== 用於度量的SNMP Datadog組態
+
+可透過兩種方式來管理設定用於度量的SNMP。您可以設定自動探索、方法是提供包含StorageGRID 該系統的網路位址範圍、或定義個別裝置的IP。根據所做的決定、組態位置會有所不同。自動探索是在datadog代理yaml檔案中定義。在SNMP組態yaml檔案中設定明確的裝置定義。以下是相同StorageGRID 的支援系統的各個範例。
+
+
+
+==== 自動探索
+
+組態位於/etc/datadog-agent/datadog.yaml
+
+[source, yaml]
+----
+listeners:
+  - name: snmp
+snmp_listener:
+  workers: 100  # number of workers used to discover devices concurrently
+  discovery_interval: 3600  # interval between each autodiscovery in seconds
+  loader: core  # use core check implementation of SNMP integration. recommended
+  use_device_id_as_hostname: true  # recommended
+  configs:
+    - network_address: 10.0.0.0/24  # CIDR subnet
+      snmp_version: 2
+      port: 161
+      community_string: 'st0r@gegrid'  # enclose with single quote
+      profile: netapp-storagegrid
+----
+
+
+==== 個別裝置
+
+/etc/datadog-agent/conf.d/snmp.d/conf.yaml
+
+[source, yaml]
+----
+init_config:
+  loader: core  # use core check implementation of SNMP integration. recommended
+  use_device_id_as_hostname: true  # recommended
+instances:
+- ip_address: '10.0.0.1'
+  profile: netapp-storagegrid
+  community_string: 'st0r@gegrid'  # enclose with single quote
+- ip_address: '10.0.0.2'
+  profile: netapp-storagegrid
+  community_string: 'st0r@gegrid'
+- ip_address: '10.0.0.3'
+  profile: netapp-storagegrid
+ community_string: 'st0r@gegrid'
+- ip_address: '10.0.0.4'
+  profile: netapp-storagegrid
+  community_string: 'st0r@gegrid'
+----
+
+
+=== 陷阱的SNMP組態
+
+SNMP設陷的組態是在datadog組態yaml檔案/etc/datadog-agent/datadog.yaml中定義
+
+[source, yaml]
+----
+network_devices:
+  namespace:  # optional, defaults to “default”.
+  snmp_traps:
+    enabled: true
+    port: 9162 # on which ports to listen for traps
+    community_strings: # which community strings to allow for v2 traps
+      - st0r@gegrid
+----
+
+
+=== 範例StorageGRID ：SNMP組態
+
+您的S還原 系統中的SNMP代理程式StorageGRID 位於組態索引標籤「監控」欄下。啟用SNMP並輸入所需資訊。如果您要設定設陷、請選取「設陷目的地」、然後為包含設陷組態的Datadog代理主機建立目的地。
+
+image::../media/datadog/sg_snmp_conf.png[SSNMP組態StorageGRID]

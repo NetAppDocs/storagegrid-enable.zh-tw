@@ -50,6 +50,10 @@ homepage:
       url: "/product-feature-guides/use-a-cloud-storage-pool-for-backup.html"
     - title: 設定搜尋整合服務
       url: "/product-feature-guides/storagegrid-search-integration-service.html"
+    - title: 節點複製考量與效能
+      url: "/product-feature-guides/node-clone.html"
+    - title: 如何使用連接埠重新對應
+      url: "/product-feature-guides/port-remap.html"
   - title: 工具與應用程式指南
     links:
     - title: 使用Cloudera Hadoop S3連接器
@@ -62,12 +66,16 @@ homepage:
       url: "/tools-apps-guides/elk-instructions.html"
     - title: 使用Prometheus和Grafana來延長指標保留時間
       url: "/tools-apps-guides/federate-prometheus.html"
+    - title: 設定Datadog以收集StorageGRID 不完整的SNMP指標和陷阱
+      url: "/tools-apps-guides/use-datadog-snmp.html"
   - title: 程序和API範例
     links:
     - title: 測試並示範S3加密
       url: "/examples/test-demonstrate-S3-encryption.html"
     - title: 測試並示範S3物件鎖定
       url: "/examples/test-demonstrate-S3-object-lock.html"
+    - title: 資源庫與群組原則範例
+      url: "/examples/bucket-policy-examples.html"
   - title: 示範教學課程
     links:
     - title: 視頻庫StorageGRID

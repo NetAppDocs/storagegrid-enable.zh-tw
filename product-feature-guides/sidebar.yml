@@ -10,3 +10,7 @@ entries:
   url: "/product-feature-guides/use-a-cloud-storage-pool-for-backup.html"
 - title: 設定搜尋整合服務
   url: "/product-feature-guides/storagegrid-search-integration-service.html"
+- title: 節點複製考量與效能
+  url: "/product-feature-guides/node-clone.html"
+- title: 如何使用連接埠重新對應
+  url: "/product-feature-guides/port-remap.html"

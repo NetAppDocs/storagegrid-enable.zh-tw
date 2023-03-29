@@ -1,0 +1,120 @@
+---
+permalink: examples/bucket-policy-examples.html 
+sidebar: sidebar 
+keywords: iam, bucket policy, group policy, policy 
+summary: 以下是庫位原則和群組原則（IAM原則）的範例。 
+---
+= 範例庫與群組（IAM）原則
+:allow-uri-read: 
+
+
+[role="lead"]
+以下是庫位原則和群組原則（IAM原則）的範例。
+
+
+
+== 群組原則（IAM）
+
+
+
+=== 主目錄樣式庫存取
+
+此原則僅允許使用者存取名為使用者使用者名稱之儲存區中的物件。
+
+[source, json]
+----
+"Statement": [
+    {
+      "Sid": "AllowListBucketOfASpecificUserPrefix",
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::home",
+      "Condition": {
+        "StringLike": {
+          "s3:prefix": "${aws:username}/*"
+        }
+      }
+    },
+    {
+      "Sid": "AllowUserSpecificActionsOnlyInTheSpecificUserPrefix",
+      "Effect": "Allow",
+      "Action": "s3:*Object",
+      "Resource": "arn:aws:s3:::home/?/?/${aws:username}/*"
+    }
+
+  ]
+}
+----
+
+
+=== 拒絕建立物件鎖定儲存區
+
+此原則會限制使用者在庫位上啟用物件鎖定的情況下、建立庫位。
+
+[NOTE]
+====
+此原則並未在StorageGRID SUI中強制執行、只有S3 API才會強制執行。
+
+====
+[source, json]
+----
+{
+    "Statement": [
+        {
+            "Action": "s3:*",
+            "Effect": "Allow",
+            "Resource": "arn:aws:s3:::*"
+        },
+        {
+            "Action": [
+                "s3:PutBucketObjectLockConfiguration",
+                "s3:PutBucketVersioning"
+            ],
+            "Effect": "Deny",
+            "Resource": "arn:aws:s3:::*"
+        }
+    ]
+}
+----
+
+
+=== 將儲存區限制為具有唯讀存取權的單一使用者
+
+此原則可讓單一使用者擁有儲存區的唯讀存取權、並明確地讓Denys存取所有其他使用者。將「拒絕」陳述式分組在原則頂端、是加速評估的好做法。
+
+[source, json]
+----
+{
+    "Statement": [
+        {
+            "Sid": "Deny non user1",
+            "Effect": "Deny",
+            "NotPrincipal": {
+                "AWS": "urn:sgws:identity::34921514133002833665:user/user1"
+            },
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "urn:sgws:s3:::bucket1",
+                "urn:sgws:s3:::bucket1/*"
+            ]
+        },
+        {
+            "Sid": "Allow user1 read access to bucket bucket1",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "urn:sgws:identity::34921514133002833665:user/user1"
+            },
+            "Action": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "urn:sgws:s3:::bucket1",
+                "urn:sgws:s3:::bucket1/*"
+            ]
+        }
+    ]
+}
+----

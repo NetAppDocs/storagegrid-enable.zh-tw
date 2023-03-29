@@ -1,0 +1,99 @@
+# Profile for NetApp StorageGRID.
+
+extends:
+  - _base.yaml
+  - _generic-if.yaml
+  - _generic-tcp.yaml
+  - _generic-udp.yaml
+
+device:
+  vendor: "netapp"
+
+sysobjectid: 1.3.6.1.4.1.789.28669
+
+metrics:
+- MIB: NETAPP-STORAGEGRID-MIB
+  symbol:
+    name: activeAlertCount
+    OID: 1.3.6.1.4.1.789.28669.1.3.0
+    description: The number of active alerts in the activeAlertTable
+- MIB: NETAPP-STORAGEGRID-MIB
+  table:
+    name: activeAlertTable
+    OID: 1.3.6.1.4.1.789.28669.1.4
+    description: A table of active alerts in StorageGRID
+  symbols:
+  - name: activeAlertId
+    OID: 1.3.6.1.4.1.789.28669.1.4.1.1
+    description: The ID of the alert. Only unique in the current set of active alerts.
+  - name: activeAlertName
+    OID: 1.3.6.1.4.1.789.28669.1.4.1.2
+    description: The name of the alert
+  - name: activeAlertInstance
+    OID: 1.3.6.1.4.1.789.28669.1.4.1.3
+    description: The name of the entity that generated the alert, typically the node
+      name
+  - name: activeAlertSeverity
+    OID: 1.3.6.1.4.1.789.28669.1.4.1.4
+    description: The severity of the alert
+  - name: activeAlertStartTime
+    OID: 1.3.6.1.4.1.789.28669.1.4.1.5
+    description: The time the alert was triggered
+  metric_tags:
+  - MIB: NETAPP-STORAGEGRID-MIB
+    tag: activeAlertId
+    table: activeAlertTable
+    column:
+      name: activeAlertId
+      OID: 1.3.6.1.4.1.789.28669.1.4.1.1
+- MIB: NETAPP-STORAGEGRID-MIB
+  table:
+    name: currentAlarmTable
+    OID: 1.3.6.1.4.1.789.28669.1.1
+    description: A table of current alarms in StorageGRID
+  symbols:
+  - name: currentAlarmSourceId
+    OID: 1.3.6.1.4.1.789.28669.1.1.1.1
+    description: The ID of the service that triggered the alarm
+  - name: currentAlarmAttrCode
+    OID: 1.3.6.1.4.1.789.28669.1.1.1.2
+    description: The code of the attribute that triggered the alarm
+  - name: currentAlarmAttrIndex
+    OID: 1.3.6.1.4.1.789.28669.1.1.1.3
+    description: The index of the attribute that triggered the alarm
+  - name: currentAlarmNodeName
+    OID: 1.3.6.1.4.1.789.28669.1.1.1.4
+    description: The name of the node that triggered the alarm
+  - name: currentAlarmSeverity
+    OID: 1.3.6.1.4.1.789.28669.1.1.1.5
+    description: The severity of the alarm
+  - name: currentAlarmTriggerValue
+    OID: 1.3.6.1.4.1.789.28669.1.1.1.6
+    description: The value that triggered the alarm
+  - name: currentAlarmTriggerTime
+    OID: 1.3.6.1.4.1.789.28669.1.1.1.7
+    description: The time the alarm was triggered
+  metric_tags:
+  - MIB: NETAPP-STORAGEGRID-MIB
+    tag: currentAlarmSourceId
+    table: currentAlarmTable
+    column:
+      name: currentAlarmSourceId
+      OID: 1.3.6.1.4.1.789.28669.1.1.1.1
+  - MIB: NETAPP-STORAGEGRID-MIB
+    tag: currentAlarmAttrCode
+    table: currentAlarmTable
+    column:
+      name: currentAlarmAttrCode
+      OID: 1.3.6.1.4.1.789.28669.1.1.1.2
+  - MIB: NETAPP-STORAGEGRID-MIB
+    tag: currentAlarmAttrIndex
+    table: currentAlarmTable
+    column:
+      name: currentAlarmAttrIndex
+      OID: 1.3.6.1.4.1.789.28669.1.1.1.3
+- MIB: NETAPP-STORAGEGRID-MIB
+  symbol:
+    name: currentAlarmCount
+    OID: 1.3.6.1.4.1.789.28669.1.2.0
+    description: The number of current alarms in the currentAlarmTable

@@ -778,4 +778,232 @@
   <block id="d59db7846bd10b6d60d21543df9faa9e" category="list-title">您需要的產品</block>
   <block id="9db3241b54bebb9425e6b4d63d712bb2" category="paragraph-title">預期結果</block>
   <block id="e3cd39cab4140108c69a9666712a418b" category="list-text">Veritas NetBackup 10.1.1及更新版本</block>
+  <block id="bb1497981ff73cef48984bbf2d12f88d" category="summary">設定Datadog HQ以收集StorageGRID 不完整的SNMP數據和陷阱。</block>
+  <block id="1d93d7550158f858bd468fbde662a33b" category="doc">Datadog SNMP組態</block>
+  <block id="eb2afb3c5447bd1a294d03f85bdbf78f" category="paragraph">設定Datadog以收集StorageGRID 不完整的SNMP指標和陷阱。</block>
+  <block id="254e743ae1bb1477fc76b5f265d1b669" category="section-title">設定Datadog</block>
+  <block id="8ba5d4dc38f50df01cecfabd149412dd" category="paragraph">Datadog是一套監控解決方案、提供指標、視覺化和警示功能。下列組態是以Linux代理程式7.43.1版實作於Ubuntu 22.04.1主機上、部署於StorageGRID 本機的整個作業系統上。</block>
+  <block id="44719a19440665d12ba92afc2fa7ee3a" category="section-title">Datadog設定檔和Traps檔案是從StorageGRID 無法還原的mib檔案產生的</block>
+  <block id="af2ae71ceff4ddeec277e30874556f23" category="paragraph">Datadog提供一種方法、可將產品mib檔案轉換成對應SNMP訊息所需的datadog參考檔案。</block>
+  <block id="9555064e7f86713428cb59d575ff3094" category="paragraph">此支援Datadog Trap解析度對應的支援程序檔會依照所找到的指示產生StorageGRID<block ref="f343456bb923e7885796647eeadd3d6e" category="inline-link-rx"></block>。+將此檔案放在/etc/datadog-agent/conf.d/snmp.d/straps_db/+中</block>
+  <block id="75ba4473ac4c25785bc326af04575c33" category="inline-link-macro">下載陷阱yaml檔案</block>
+  <block id="3e53958fa504c3583e8828bcb2bf3916" category="list-text"><block ref="461124e25f1a3166dde077560e5de2e8" category="inline-link-macro-rx"></block> +</block>
+  <block id="f8270aacb253f160ebc0e425a2587b7b" category="list-text">* md5 checksum * 42e27e4210719945a46172b98c379517 +</block>
+  <block id="93d38624cd5c44ecfa7169d96b24a075" category="list-text">* sha256 checksum * d0fe5c8e6ca3c902d054f85b70a85f928cba8b7c76391d356f05d2cf73b6887+</block>
+  <block id="92fd2ccb250e828423815a378d8d3826" category="paragraph">此支援Datadog指標對應的支援資料檔yaml檔案是依照所找到的指示產生StorageGRID<block ref="3045d5a4d00639b5530941114ac5cf83" category="inline-link-rx"></block>。+將此檔案放在/etc/datadog-agent/conf.d/snmp.d/profile/+中</block>
+  <block id="d2dd3c2a17a766ace1b1579f47e2fb56" category="inline-link-macro">下載設定檔yaml檔案</block>
+  <block id="2cfc11f4b4bdccb2c0363e65e6ef371b" category="list-text"><block ref="170544ba2681432bd143113cc39acf47" category="inline-link-macro-rx"></block> +</block>
+  <block id="08a71a3ef2942911802e950874c5f3e5" category="list-text">* md5 checksum * 72bb7784f4801adda4e0c3ea77df19a+</block>
+  <block id="06724753af3a8dde065ac4a183962269" category="list-text">* sha256 checksum * b6b7fadd33063422a8bb8e39b3ead8ab383449ee0229926eadc85f0087b8cee +</block>
+  <block id="445562a58e90a6652889435ed9ad0c4e" category="section-title">用於度量的SNMP Datadog組態</block>
+  <block id="d06e2ca98a9d51ff9586ddb7e12ca3ca" category="paragraph">可透過兩種方式來管理設定用於度量的SNMP。您可以設定自動探索、方法是提供包含StorageGRID 該系統的網路位址範圍、或定義個別裝置的IP。根據所做的決定、組態位置會有所不同。自動探索是在datadog代理yaml檔案中定義。在SNMP組態yaml檔案中設定明確的裝置定義。以下是相同StorageGRID 的支援系統的各個範例。</block>
+  <block id="b5fac60116712074e4581a0451a7d934" category="section-title">自動探索</block>
+  <block id="aa456ba5b2a0193fe062645b5f7e8d06" category="paragraph">組態位於/etc/datadog-agent/datadog.yaml</block>
+  <block id="f3fe7f4238c77636cfd3cb9045c1d862" category="section-title">個別裝置</block>
+  <block id="494f3f84f8f27f7e6a534b587f59eb86" category="paragraph">/etc/datadog-agent/conf.d/snmp.d/conf.yaml</block>
+  <block id="8ee614ce7a2c762cd130b8e12208891f" category="section-title">陷阱的SNMP組態</block>
+  <block id="d22624c97bdf44f40377df61b6463bc6" category="paragraph">SNMP設陷的組態是在datadog組態yaml檔案/etc/datadog-agent/datadog.yaml中定義</block>
+  <block id="629386ff1e9bf6511474fca8de181896" category="section-title">範例StorageGRID ：SNMP組態</block>
+  <block id="2a9f8de2dc701df774b911de893f1dcc" category="paragraph">您的S還原 系統中的SNMP代理程式StorageGRID 位於組態索引標籤「監控」欄下。啟用SNMP並輸入所需資訊。如果您要設定設陷、請選取「設陷目的地」、然後為包含設陷組態的Datadog代理主機建立目的地。</block>
+  <block id="3bcc2a20e293e30e57142a6f40a3f3b9" category="image-alt">SSNMP組態StorageGRID</block>
+  <block id="db5cf800912823f17ae08432336e8fc1" category="summary">如何使用連接埠重新對應。</block>
+  <block id="acaf7e6854a9128b9491ba362d72abd1" category="doc">如何使用連接埠重新對應</block>
+  <block id="f58678d019bf671b6804715b8a92be9f" category="paragraph">基於多種原因、您可能需要重新對應傳入或傳出連接埠。您可能要從舊版CLB負載平衡器服務移至目前的Nginx服務負載平衡器端點、並維持相同的連接埠、以降低對用戶端的影響、希望在管理節點用戶端網路上使用連接埠443、或是為了防火牆限制。</block>
+  <block id="4a0a1689981e56bfe0cae3cedb6a2794" category="section-title">使用連接埠重新對應、將S3用戶端從CLB移轉至NGINX</block>
+  <block id="bbaaf9c22d5e2039997011dbc346f453" category="paragraph">在版本早於StorageGRID 版本的版本中、閘道節點上隨附的負載平衡器服務是連線負載平衡器（CLB）。NetApp推出的NGINX服務是一套功能豐富的整合式解決方案、可用於平衡HTTP流量的負載StorageGRID 。由於目前版本StorageGRID 的不支援CLB服務、因此您無法在新的負載平衡器端點組態中重複使用連接埠8082。若要解決此問題、8082輸入連接埠會重新對應至10443。如此一來、所有進入閘道連接埠8082的HTTPS要求都會跳過CLB服務而重新導向連接埠10443、改為連線至NGINX服務。雖然下列指示適用於VMware、但連接埠重新對應功能適用於所有安裝方法、您也可以使用類似的程序來進行裸機部署和應用裝置。</block>
+  <block id="7726cb4ae51497b918d06ab5c00bcc41" category="section-title">VMware虛擬機器閘道節點部署</block>
+  <block id="32c57c85de9742d548e025b40fcb450b" category="paragraph">下列步驟適用於StorageGRID 以StorageGRID 「VMware vSphere 7」為虛擬機器部署閘道節點或節點的VMware vSphere 7、採用「VMware開放式虛擬化格式」（OVF）。此程序需要銷毀移除VM、並以相同名稱和組態重新部署VM。在開啟VM電源之前、請先變更vApp屬性以重新對應連接埠、然後開啟VM電源、並遵循節點還原程序。</block>
+  <block id="7c8213913912043a5b5fc24ca449cb0c" category="list-text">您正在執行StorageGRID 更新版本的版本</block>
+  <block id="c502d2640b4493815312b1ec133633e4" category="list-text">您已下載StorageGRID 並存取安裝的VMware版本更新檔案。</block>
+  <block id="9c64cd89435575e44f429843d544ef5f" category="list-text">您的vCenter帳戶擁有開機/關機VM、變更VM和vApp設定、從vCenter移除VM、以及依OVF部署VM的權限。</block>
+  <block id="8815fdf6ff2c55e7296dffb2aec14521" category="list-text">您已建立負載平衡器端點</block>
+  <block id="a66196ce653d06d45221584bf8852afb" category="list-text">連接埠已設定為所需的重新導向連接埠</block>
+  <block id="31d78e3c03fd7966ea974e218ee9e7e0" category="list-text">端點SSL憑證與在「組態/伺服器憑證/物件儲存API服務端點伺服器憑證」中安裝的CLB服務相同、否則用戶端就能接受憑證變更。</block>
+  <block id="bcb202433930795c39aeaaaac1732e14" category="section-title">銷毀第一個閘道節點</block>
+  <block id="8b492c89f3e9eadb813da7cd99b82545" category="paragraph">若要銷毀第一個閘道節點、請遵循下列步驟：</block>
+  <block id="9088243625c17cecb6cc9cbb8fab3cdb" category="list-text">如果網格包含多個節點、請選擇要開始使用的閘道節點。</block>
+  <block id="f578499a6a5d4e99e51260ea6f901c94" category="list-text">移除所有DNS循環資源實體或負載平衡器資源池中的節點IP（如果適用）。</block>
+  <block id="7c756592f17f71e15e66ceae005b5721" category="list-text">等待存留時間（TTL）和開啟的工作階段過期。</block>
+  <block id="5c2e6ff175e76bb9e990068801b548a8" category="list-text">關閉VM節點。</block>
+  <block id="478ceb19860ae182e1eebf6d11e90791" category="list-text">從磁碟移除VM節點。</block>
+  <block id="e753b6d0c296afcb396f7c9d7092ef0b" category="section-title">部署替換閘道節點</block>
+  <block id="e9bdcbe25d437987ed75a39aadaaecae" category="paragraph">若要部署替換閘道節點、請依照下列步驟進行：</block>
+  <block id="f02589424168a3ac3057a3a896c3be98" category="list-text">從OVF部署新的VM、從從從支援網站下載的安裝套件中選取.OVF、.mf和.vmdk檔案：</block>
+  <block id="7b22456f38890563bcb235553bd7d9ee" category="list-text">vSphere-gateway.mf</block>
+  <block id="dbdfc6d64b5d051e203939b63154bddb" category="list-text">vSphere-gateway.OVF</block>
+  <block id="67e5f0e53462232f2aa589a464eea4b8" category="list-text">NetApp-SG-11.4.0-20200721.1338.d3969b3.vmdk</block>
+  <block id="579b803b8e20891c89683e797fdbd01f" category="list-text">部署完VM之後、請從VM清單中選取該VM、然後選取Configure（設定）索引標籤vApp Options（vApp選項）。</block>
+  <block id="07ab08f304d7cfe4d3d5ea13bbde9f1d" category="inline-image-macro">vApp選項索引標籤</block>
+  <block id="d24354c28f6eda12a84300886d0bae91" category="paragraph"><block ref="d24354c28f6eda12a84300886d0bae91" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c9fc6d8e3be4de1d4c27b9f0b82c5e2a" category="list-text">向下捲動至「內容」區段、然後選取port_remap_inbound屬性</block>
+  <block id="9e24f5887a5bfec21b66a7a9bf2c2e9e" category="inline-image-macro">連接埠重新對應傳入</block>
+  <block id="b234cd8b9202dfa24815cd14203cde1a" category="paragraph"><block ref="b234cd8b9202dfa24815cd14203cde1a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="44149ca1e58524f8537ae00b2d6e4b99" category="list-text">捲動至「內容」清單頂端、然後按一下「編輯」</block>
+  <block id="fb1b9b4a3c929c6a466a1452400315f4" category="inline-image-macro">編輯按鈕</block>
+  <block id="dcb0bfe5be50507cbd364a2d0fdfd056" category="paragraph"><block ref="dcb0bfe5be50507cbd364a2d0fdfd056" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0e8c86fd50178cb280113dfa414bfaef" category="list-text">選取「Type（類型）」索引標籤、確認已選取「User可設定的使用者」核取方塊、然後按一下「Save（儲存）」。</block>
+  <block id="71f961422f32dab92bd408435e59e11f" category="inline-image-macro">類型索引標籤</block>
+  <block id="9c15e570ff0d3a398f314911048e34f6" category="paragraph"><block ref="9c15e570ff0d3a398f314911048e34f6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="083e7091efe8fb649ee9fb0c0870917c" category="list-text">在「內容」清單的頂端、仍選取「port_remap_inbound」屬性、然後按一下「設定值」。</block>
+  <block id="58a9fe2002d87ad86a952f2aa06b652f" category="inline-image-macro">設定值按鈕</block>
+  <block id="2f4bfe6caa4a2e3bf8657b624787ecf2" category="paragraph"><block ref="2f4bfe6caa4a2e3bf8657b624787ecf2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7cabe4a6c37ea2ab4c5afff39965feca" category="list-text">在「屬性值」欄位中、輸入網路（網格、管理或用戶端）、TCP、原始連接埠（8082）、以及新連接埠（10443）、每個值之間都有「/」、如下所示。</block>
+  <block id="c8e309d9efc8bcc3c0a6de4a0a6bde89" category="inline-image-macro">屬性值</block>
+  <block id="03a85f67d3528d13af543e9104884bf5" category="paragraph"><block ref="03a85f67d3528d13af543e9104884bf5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b755dc1994e1391a0aff77ad323c4d58" category="list-text">如果您使用多個網路、請使用逗號（、）分隔網路字串、例如GRID /TCP/8082/10443、admin/TCP/8082/10443、client/TCP/8082/10443</block>
+  <block id="a053ed3549ecf3e6087e7328aeace847" category="section-title">恢復閘道節點</block>
+  <block id="0e495d4bce7b9fde6238de8cfff28959" category="paragraph">若要恢復閘道節點、請遵循下列步驟：</block>
+  <block id="7679db7e2b0055ab46be43f42a01bf23" category="list-text">瀏覽至Grid Management UI的「維護/恢復」區段。</block>
+  <block id="e46a0719f8df97ff4d12f03dd8ce959c" category="inline-image-macro">維護功能表</block>
+  <block id="6724e2cab4809a16c4c5d1a71c4efc8a" category="paragraph"><block ref="6724e2cab4809a16c4c5d1a71c4efc8a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c086be1149c183dc763a11cf3ad5faea" category="list-text">開啟VM節點電源、並等待節點出現在Grid Management UI的「維護/恢復擱置節點」區段中。</block>
+  <block id="b91ce83799a5a14738726ef1b7dbd9f7" category="inline-image-macro">正在等待恢復</block>
+  <block id="1a47c5b4c56facc13874c121e4100dcc" category="paragraph"><block ref="1a47c5b4c56facc13874c121e4100dcc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bf30086dfd38bd897ca450b6573d0874" category="list-text">在節點恢復之後、IP可以包含在所有DNS循環資源實體或負載平衡器資源池中（如果適用）。</block>
+  <block id="6b6336923a8b76c43c7d0a3bd89a11ce" category="paragraph">現在、連接埠8082上的任何HTTPS工作階段都會移至連接埠10443</block>
+  <block id="eca02f566d0b3032cdf4b10c546bf899" category="section-title">在管理節點上重新對應連接埠443以進行用戶端S3存取</block>
+  <block id="5ed2b115742b0eff3aa61d09c627a761" category="paragraph">針對管理節點、或包含管理節點的HA群組、StorageGRID 在支援系統中的預設組態是將連接埠443和80保留給管理和租戶管理程式UI、無法用於負載平衡器端點。解決方案是使用連接埠重新對應功能、並將傳入連接埠443重新導向至新連接埠、該連接埠將設定為負載平衡器端點。完成此項工作後、用戶端S3流量將可使用連接埠443、網格管理UI只能透過連接埠8443存取、而租戶管理UI只能從連接埠9443存取。重新對應連接埠功能只能在節點安裝時進行設定。若要在網格中實作作用中節點的連接埠重新對應、必須將其重設為預先安裝的狀態。這是一種破壞性程序、其中包括在進行組態變更後進行節點還原。</block>
+  <block id="18c1a696eb608448df297bede4857b98" category="section-title">備份記錄與資料庫</block>
+  <block id="014c03da469f3067ccc3ff9bebacc715" category="paragraph">管理節點包含稽核記錄、Prometheus指標、以及有關屬性、警示和警示的歷史資訊。擁有多個管理節點、代表您擁有此資料的多個複本。如果您的網格中沒有多個管理節點、請務必在結束此程序後恢復節點、然後保留此資料以進行還原。如果網格中有其他管理節點、您可以在恢復程序期間從該節點複製資料。如果網格中沒有其他管理節點、您可以依照下列指示複製資料、然後再銷毀節點。</block>
+  <block id="b51ed4bc19034de7a115af8950bb1e14" category="section-title">複製稽核記錄</block>
+  <block id="b49d416c5f1ef8021854b13b24ab8093" category="list-text">登入管理節點：</block>
+  <block id="c7aa9be1c8fd37c075edba3a4073253f" category="list-text">輸入下列命令：<block ref="893fbdaf85496f428ec5ee3fb396b601" prefix=" " category="inline-code"></block></block>
+  <block id="700a38780f22dd0bcf544970e8d449e6" category="list-text">輸入中所列的密碼<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block> 檔案：</block>
+  <block id="aacfb09e5ff36425a74a452ef6b304fb" category="list-text">輸入下列命令以切換至root：<block ref="305eb7199fe9189e006b2d60d7221664" prefix=" " category="inline-code"></block></block>
+  <block id="d5ed36cf573fac8e8c5a8bb8d1be3d4b" category="list-text">將SSH私密金鑰新增至SSH代理程式。輸入：<block ref="3f7bb7914b751ca9467e926e5ad5c306" prefix=" " category="inline-code"></block></block>
+  <block id="c0e5dff85f9da9a642946e884fdc4f4a" category="list-text">輸入中所列的SSH存取密碼<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block> 檔案：</block>
+  <block id="28a6869f1b6015dcee0791c0407f14b2" category="list-text">建立目錄、將所有稽核記錄檔複製到個別網格節點上的暫用位置、讓我們使用_Storage_node_01_：</block>
+  <block id="0a61743bb33ab598f7fde50d348546b0" category="list-text"><block ref="70a89925f7bd7f97d974d84f8e94caec" prefix="" category="inline-code"></block></block>
+  <block id="a42ba8884ec16cd9952837d8ec5309cc" category="list-text"><block ref="aa394b245c0bf48947593a677f05d8d6" prefix="" category="inline-code"></block></block>
+  <block id="e1083ceccf1ce237984866a9d2fc9267" category="list-text">返回管理節點、停止AMS服務以防止建立新的記錄檔：<block ref="7746f9f32013186f9d484d9201f0ab64" prefix=" " category="inline-code"></block></block>
+  <block id="8acc534ecf057b9ef50d01827f7d07cb" category="list-text">重新命名audit.log檔案、使其不會在複製到恢復的管理節點時覆寫現有檔案。</block>
+  <block id="f2d95467df0c137dbcfd23af2c4ac061" category="list-text">將audit.log重新命名為唯一編號的檔案名稱、例如：youty-mm-dd.txt.1。例如、您可以將稽核記錄檔重新命名為2015-10-25.txt.1</block>
+  <block id="d5ec7f781f03902f72576ed5d4973025" category="list-text">重新啟動AMS服務：<block ref="ae8918f1e1a4da1db2bc24c7571b1a06" prefix=" " category="inline-code"></block></block>
+  <block id="540fe4d620139f77d8a99273336086b6" category="list-text">複製所有稽核記錄檔：<block ref="da5b29edacd9088471c331eb4f58fc3e" prefix=" " category="inline-code"></block></block>
+  <block id="9f195229ea460e36d2a4e12c22a35e14" category="section-title">複製Prometheus資料</block>
+  <block id="cc670fc4a71e44ccb42fd7b0de6174d0" category="admonition">複製Prometheus資料庫可能需要一小時以上的時間。當管理節點上的服務停止時、部分Grid Manager功能將無法使用。</block>
+  <block id="7310684c8dcbbfaabdf20201a8358cd2" category="list-text">建立目錄、將Prometheus資料複製到個別網格節點上的暫用位置、我們將再次使用_Storage_node_01_：</block>
+  <block id="0da0fdfdce25fb3258c8606dd3c98a96" category="list-text">登入儲存節點：</block>
+  <block id="e3e3892db3fe841f9e2b77b7e3818040" category="list-text">輸入下列命令：<block ref="70a89925f7bd7f97d974d84f8e94caec" prefix=" " category="inline-code"></block></block>
+  <block id="f81680a45409f9d92d776cda7d01fffd" category="list-text">mkdir -p /var/local/tmp/Prometheus'</block>
+  <block id="94975e4b13e4b0a18c40a960c94db2a8" category="list-text">輸入下列命令：<block ref="aeb11d865bcf0a27bb503f64cd61cb76" prefix=" " category="inline-code"></block></block>
+  <block id="20d93dfee3e8f8ae30d5b9a4f8efa05b" category="list-text">從管理節點停止Prometheus服務：<block ref="b9b286406d96941553a3bebbe76c28bd" prefix=" " category="inline-code"></block></block>
+  <block id="d12ee7875165dfef46eee53bc35da76b" category="list-text">將Prometheus資料庫從來源管理節點複製到儲存節點備份位置節點：<block ref="598c3ef030113ed40ad1803686162013" prefix=" " category="inline-code"></block></block>
+  <block id="1ed2f8c537da823e46ad98b460d5d692" category="list-text">在來源管理節點上重新啟動Prometheus服務<block ref="b48ed4a1625d38512cd50d69778280dd" prefix="." category="inline-code"></block></block>
+  <block id="ad9f13c5d36c9f45b4e07d4467312b13" category="section-title">備份歷史資訊</block>
+  <block id="40df7a99a836d18d1b5d034d8fcb27a8" category="paragraph">歷史資訊儲存在mySQL資料庫中。若要傾印資料庫複本、您需要NetApp提供的使用者和密碼。如果網格中有其他管理節點、則不需要執行此步驟、而且可在還原程序期間、從其餘的管理節點複製資料庫。</block>
+  <block id="3efbc9cf8ba869958267ac5011fe55e1" category="list-text">停止StorageGRID 管理節點上的支援服務、並啟動NTP和mySQL</block>
+  <block id="71c1a198ee24c736ef0a4a6df4372089" category="list-text">停止所有服務：<block ref="e83661e5ce1c75f30a71cf8416b27985" prefix=" " category="inline-code"></block></block>
+  <block id="02330fc2569188fc76ebc99072cff940" category="list-text">重新啟動NTP服務：<block ref="4c55c6ee391e66baa62612dc411cec8f" prefix=" " category="inline-code"></block>..重新 啟動mySQL服務：<block ref="3cc0f2d0774d9775766d87414c4abca7" prefix=" " category="inline-code"></block></block>
+  <block id="3a690a8e59bdafa2a85ce89baf8e5d01" category="list-text">將MI資料庫傾印至/var/local/tmp</block>
+  <block id="bde616ae3c777920f0bcc1ed12db00d5" category="list-text">輸入下列命令：<block ref="6d6e7f126bda96413a8f3ea19ac835d3" prefix=" " category="inline-code"></block></block>
+  <block id="199d0f3fb4293bac252ec8967ddd7d96" category="list-text">將mySQL傾印檔複製到替代節點、我們將使用_storage節點_01：<block ref="a2fc9066a3870628039495b25ae9a581" prefix=" " category="inline-code"></block></block>
+  <block id="771556d7cb27e2cb35e5f32feb21d918" category="list-text">當您不再需要無密碼存取其他伺服器時、請從SSH代理程式移除私密金鑰。輸入：<block ref="967573583b668b75c5fc1ee963c90dcf" prefix=" " category="inline-code"></block></block>
+  <block id="7d472759bb91ca188e73eca550264098" category="section-title">重新建置管理節點</block>
+  <block id="395778abed17f7247a6f475834cb20b3" category="paragraph">現在您已經備份所有想要的資料、並在網格中的其他管理節點上記錄、或是儲存在暫用位置、現在該重設應用裝置、以便設定連接埠重新對應。</block>
+  <block id="b58725c9e70484536a8104e6968330f9" category="list-text">重設應用裝置會將其恢復為預先安裝的狀態、僅保留主機名稱、IP和網路組態。所有資料都會遺失、這也是我們確保備份任何重要資訊的原因。</block>
+  <block id="570eece822439c557c87aceefc36c83e" category="list-text">輸入下列命令：<block ref="571dba577857f204f77672c0f6ac8adb" prefix=" " category="inline-code"></block></block>
+  <block id="994ff1bbb04f124b59b3dd4a433092d0" category="list-text">經過一段時間之後、裝置將重新開機、您將能夠存取節點pgE UI。</block>
+  <block id="e0c8d6ece2eaab52ccd3626588818424" category="list-text">瀏覽至「Configure Networking（設定網路）」</block>
+  <block id="ef4629263d4d3026510ab03b348385aa" category="inline-image-macro">選取「重新對應連接埠」</block>
+  <block id="2bc8e44de2063c0bd15ca5716f63f7e0" category="paragraph"><block ref="2bc8e44de2063c0bd15ca5716f63f7e0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1d1860aedee67c6087f6eae17d49c67d" category="list-text">選取所需的網路、傳輸協定、方向和連接埠、然後按一下「Add Rule（新增規則）」按鈕。</block>
+  <block id="914553520d8387b82a2e431e0b5e6fa3" category="admonition">重新對應網格網路上的傳入連接埠443、將會中斷安裝和擴充程序。不建議重新對應網格網路上的連接埠443。</block>
+  <block id="9cf22d7237e8977b5bb6bc54a7354822" category="inline-image-macro">新增連接埠重新對應至網路</block>
+  <block id="a93f7571d3de7b14fc5d89b0ece8d2f0" category="paragraph"><block ref="a93f7571d3de7b14fc5d89b0ece8d2f0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1b08be650ccd06f880223bd76fffb99f" category="list-text">其中一個所需的連接埠重新對應已新增、您可以返回主索引標籤、然後按一下「Start Installation（開始安裝）」按鈕。</block>
+  <block id="b8891129cb3bcf5e407a67d926f3bd1e" category="inline-link-macro">產品文件</block>
+  <block id="15f0a90501b756c24e6d343c84e4078a" category="paragraph">您現在可以遵循中的管理節點還原程序 <block ref="c237ceedd52c48d2a2c789bd64cdcbb1" category="inline-link-macro-rx"></block></block>
+  <block id="1adf202b129f9e83a673c523cd7da7db" category="section-title">還原資料庫與記錄</block>
+  <block id="2e81f3580bf75e530e45d917ff610977" category="paragraph">現在管理節點已恢復、您可以還原指標、記錄和歷史資訊。如果網格中有其他管理節點、請遵循 <block ref="c237ceedd52c48d2a2c789bd64cdcbb1" category="inline-link-macro-rx"></block> 使用_Prometheus-clone-db.sh_和_mi-clone-db.sh_指令碼。如果這是您唯一的管理節點、而且您選擇備份此資料、您可以依照下列步驟還原資訊。</block>
+  <block id="2342c57da462f804cdb591ec0ca6ceaa" category="section-title">複製稽核記錄</block>
+  <block id="a2a3a502b45fb89ba1d9303936a7e686" category="list-text">將保留的稽核記錄檔複製到恢復的管理節點：<block ref="6dcbbb26d45053e5f47d0b73dcecfc94" prefix=" " category="inline-code"></block></block>
+  <block id="bb0c9dd565ff22196c9f53b7afafbfe7" category="list-text">為了安全起見、請在確認已成功複製稽核記錄到恢復的管理節點之後、從故障的網格節點刪除這些記錄。</block>
+  <block id="189e459b7ed177b1cc4b563548d35288" category="list-text">更新已恢復管理節點上稽核記錄檔的使用者和群組設定：<block ref="abee3d65b7b57cee8c94fded57a55207" prefix=" " category="inline-code"></block></block>
+  <block id="51e28758f5f753869640ff2adc89a740" category="paragraph">您也必須還原稽核共用的任何既有用戶端存取權。如需詳細資訊、請參閱《關於管理StorageGRID 功能的說明》。</block>
+  <block id="cff2429f8c7d0ffe88a80318e06ad501" category="section-title">還原Prometheus指標</block>
+  <block id="eaa4cd36290d05ba867b2ea202a10368" category="list-text">將Prometheus資料庫從暫用備份位置複製到管理節點：<block ref="718131237ea05acf6992f18ac2f8aedb" prefix=" " category="inline-code"></block></block>
+  <block id="35fbd282b6be1c639d18dbbfee5a515a" category="list-text">確認資料位於正確路徑且完整<block ref="a6e471816e977d8c8b3ad6e50bb665a7" prefix=" " category="inline-code"></block></block>
+  <block id="95851e41012b92671405610713f9be07" category="section-title">還原歷史資訊</block>
+  <block id="2e3176cf0ca0cad27315d04ff4f1f330" category="list-text">從備用節點複製mySQL傾印檔：<block ref="6fea65c037f881565c5d3978a7621ab1" prefix=" " category="inline-code"></block></block>
+  <block id="5d6b7577e78ea8622551d7d8b594739f" category="list-text">丟棄MI資料庫並建立新的空白資料庫：<block ref="3fd0ac1b867547f517ff52c8a34404b7" prefix=" " category="inline-code"></block></block>
+  <block id="04f7cb6c96995efd4544d9aea7d367e7" category="list-text">從資料庫傾印中還原mySQL資料庫：<block ref="f974d0852a2926a4c22e84a291796005" prefix=" " category="inline-code"></block></block>
+  <block id="791d173d918d01c3efa10c1659c765b6" category="list-text">重新啟動所有其他服務<block ref="a43fd6d3adcec2efeeccefc813e98004" prefix=" " category="inline-code"></block></block>
+  <block id="62cd2922fb38a43eb8ae93c468da88ca" category="summary">節點複製效能與最佳實務做法。</block>
+  <block id="747e53224e14f8ffd8f420441eeacdfb" category="doc">節點複製</block>
+  <block id="39d1cd38bd99e33fd79bc582303ae95b" category="paragraph">節點複製考量與效能。</block>
+  <block id="fe01737f428d9c9f4d4b2b11bac8f0ac" category="section-title">節點複製考量</block>
+  <block id="fd9609261971e45a6f20f4eef4e556ec" category="paragraph">節點複製是取代現有應用裝置節點以進行技術更新、增加容量或提升StorageGRID 效能的更快方法。節點複製也有助於使用KMS轉換為節點加密、或將儲存節點從DDP8變更為DDP16。</block>
+  <block id="801e380cd60cbc46ace287ac94d8df7f" category="list-text">來源節點的已用容量與完成複製程序所需的時間無關。節點複製是節點的完整複本、包括節點中的可用空間。</block>
+  <block id="6551b5fd023b8131e66c5c1d8fa14218" category="list-text">來源和目的地應用裝置必須使用相同的PGE版本</block>
+  <block id="0b3c750dc36564d8a9d0f002d6abbb31" category="list-text">目的地節點的容量必須永遠大於來源</block>
+  <block id="aac6d98bf2c7ac3800b9172fc2a67404" category="list-text">請確定新的目的地應用裝置的磁碟機大小大於來源</block>
+  <block id="eeb6a1581fc15133d1c3602cc34fd461" category="list-text">如果目的地應用裝置具有相同大小的磁碟機、且已針對DDP8進行設定、您可以設定DDP16的目的地。如果已針對DDP16設定來源、則無法進行節點複製。</block>
+  <block id="639a958d74ef218710689b55aa4ef73e" category="list-text">從SG5660或SG5760應用裝置改用SG6060應用裝置時、請注意SG5X60有60個容量磁碟機、SG6060只有58個容量磁碟機。</block>
+  <block id="4d1c46cee1bdcec65653b2e2163398e0" category="list-text">在複製程序期間、節點複製程序要求來源節點離線至網格。如果在此期間有其他節點離線、用戶端服務可能會受到影響。</block>
+  <block id="83d1a0f23bb258b2a270a1d6f7ff51d7" category="list-text">儲存節點只能離線15天。如果複製程序預估接近15天或超過15天、請使用擴充與取消委任程序。</block>
+  <block id="efde8725bd1e96e2479c137c19099fae" category="list-text">對於配備擴充櫃的SG6060、您需要將正確的機櫃磁碟機尺寸時間加到基礎應用裝置時間、以獲得完整的完整複製時間。</block>
+  <block id="fec00ca7ab315b679cc642c66a770bd8" category="section-title">節點複製效能預估</block>
+  <block id="517e3359377bb6a7ea9488482299838f" category="paragraph">下表包含節點複製期間的計算預估值。條件各異、*粗體*中的項目可能會超過節點停機的15天上限。</block>
+  <block id="39ab52e8aaafa95380d3f56ccd8095d9" category="section-title">DDP8.</block>
+  <block id="bb4e622c7d3edd2670cd4402fda0dfce" category="section-title">SG5612 -&gt;任何</block>
+  <block id="a88a341631b814f619579143455d7353" category="cell">網路介面速度</block>
+  <block id="690f7bdfae387972bf437193506dbb33" category="cell">4TB磁碟機大小</block>
+  <block id="a6994b6b2103b87f98052b644780d5a0" category="cell">8TB磁碟機大小</block>
+  <block id="7d409920d4d29e64eca4583c4c9878e4" category="cell">10TB磁碟機大小</block>
+  <block id="53a214e589c7b00227e50e2e4652edf7" category="cell">12TB磁碟機大小</block>
+  <block id="315ee247762dbc69dfb6d29e7839c677" category="cell">16TB磁碟機大小</block>
+  <block id="961dc732adc5c5176ec88ea3d066b357" category="cell">18TB磁碟機大小</block>
+  <block id="4ac1352d5b927390a1b2f14dac0647d9" category="paragraph">10Gb</block>
+  <block id="0d730df753ae6a369323fe6dc1641eb2" category="paragraph">1天</block>
+  <block id="2b5c88bc8c875f79745514e9af2f348f" category="paragraph">2天</block>
+  <block id="0f9222aa150538e6d20d3870ea6dec57" category="paragraph">2.5天</block>
+  <block id="14cad5137a2254d53fde198d52e70109" category="paragraph">3天</block>
+  <block id="6c32f983ee38ad5089298aa659cd011c" category="paragraph">4天</block>
+  <block id="a5dffc518be58d2936a993ee100d71b6" category="paragraph">4.5天</block>
+  <block id="e5d3435cf14793a49310fa8d85bcc4a1" category="paragraph">25GB</block>
+  <block id="885e215d2d15d2ac1b34e5b8d416f86a" category="section-title">SG5712 -&gt;任何</block>
+  <block id="97fce1ba98948ee51fbf31978af80696" category="section-title">SG5660 -&gt; SG5760</block>
+  <block id="9958432b6417f293cb0d15128b08e42f" category="paragraph">3天</block>
+  <block id="366adabd6f1babc8138db3063adaf869" category="paragraph">6天</block>
+  <block id="374616a0b786e9bffadc7f28e68d6c59" category="paragraph">7天</block>
+  <block id="51ab732b98b519b5e54ce60864cc8d69" category="paragraph">8.5天</block>
+  <block id="b00a84012a03b35beb30466d8baa4a1c" category="paragraph">11.5天</block>
+  <block id="194ae66ddb8567ab63da3b82c925fa03" category="paragraph">* 13天*</block>
+  <block id="85c75ace300325f8e407a841eb055d37" category="section-title">SG5660 -&gt; SG6060</block>
+  <block id="61cab577ce1bed82e1b5d7caacb7456b" category="paragraph">2.5天</block>
+  <block id="bf30897fe2ce34b7e9f89291e20d9eae" category="paragraph">5.5天</block>
+  <block id="e5fd76b3288061d2c2638ccc41688416" category="paragraph">6.5天</block>
+  <block id="281f41b6564c9e63e16d67b1c07a46e5" category="paragraph">9天</block>
+  <block id="38efedfd69ad005a6e0b0393682636db" category="paragraph">10天</block>
+  <block id="e727fed489e8b7eecf1901196ec3ede9" category="paragraph">2天</block>
+  <block id="6383598717ae8ac458dc988dff77c800" category="paragraph">5天</block>
+  <block id="79e241fd6b320cbb41d67b028ec6f1c0" category="paragraph">8天</block>
+  <block id="c6a6ab48074fa03db6df437c1f27b415" category="section-title">SG5760 -&gt; SG5760</block>
+  <block id="4c0768167e7e249808ed4bd4ad28b2ed" category="section-title">SG5760 -&gt; SG6060</block>
+  <block id="2a8a1b5738432b51afcd4dcbbbfe1434" category="paragraph">1.5天</block>
+  <block id="9e6b8df1cd23e71938af979057e5144a" category="paragraph">3.5天</block>
+  <block id="bf0581629b559d1033e12e37f31bb0d7" category="section-title">SG6060 -&gt; SG6060</block>
+  <block id="7da42b5478786d91e64cb31ec52e2511" category="paragraph">9.5天</block>
+  <block id="d2bfdb3de60e1c2f154e5f9fa5a1dfc1" category="section-title">DDP16</block>
+  <block id="00471150fc4d84adcd57392d7a47a3cb" category="paragraph">3.5天</block>
+  <block id="85ba217056d3540506dc11016ec224e3" category="paragraph">12.5天</block>
+  <block id="69a1b13f0c02f82aace898a3521485c7" category="paragraph">* 14天*</block>
+  <block id="383aea8468a529b339b755e27b1d4668" category="paragraph">7.5天</block>
+  <block id="9ff416b798a88ec4bfb30f4f045aada5" category="paragraph">11天</block>
+  <block id="ed01ec12331788a408398b059da47a39" category="paragraph">10.5天</block>
+  <block id="ec3751d915801591991ca3553c2fa5a7" category="section-title">擴充櫃（在來源應用裝置上的每個機櫃上新增至SG6060以上）</block>
+  <block id="fc1e2d26b4330f83ecfffe3439410229" category="summary">以下是庫位原則和群組原則（IAM原則）的範例。</block>
+  <block id="3f2327c90ede247dca9387ef500bf746" category="doc">範例庫與群組（IAM）原則</block>
+  <block id="640ca9533a2fd150e7d3ed390e2aae66" category="section-title">群組原則（IAM）</block>
+  <block id="06c73db3763c74cabb8ece8e96fe7c5d" category="section-title">主目錄樣式庫存取</block>
+  <block id="0a86daa722ca043525363e55dce2f201" category="paragraph">此原則僅允許使用者存取名為使用者使用者名稱之儲存區中的物件。</block>
+  <block id="8569c05df75ec9b148a67ed5998ad8b0" category="section-title">拒絕建立物件鎖定儲存區</block>
+  <block id="9cea9229d238df9d490e17e9c09f43d4" category="paragraph">此原則會限制使用者在庫位上啟用物件鎖定的情況下、建立庫位。</block>
+  <block id="01a232853896677ed5b2f61bbd35128f" category="paragraph">此原則並未在StorageGRID SUI中強制執行、只有S3 API才會強制執行。</block>
+  <block id="6d16e4029056ceaf0b44cac8903e3f2e" category="section-title">將儲存區限制為具有唯讀存取權的單一使用者</block>
+  <block id="c49b1c74a2176733b070d19773700eb6" category="paragraph">此原則可讓單一使用者擁有儲存區的唯讀存取權、並明確地讓Denys存取所有其他使用者。將「拒絕」陳述式分組在原則頂端、是加速評估的好做法。</block>
+  <block id="a6bea44dd82287d3b479cc898439fad9" category="sidebar">節點複製考量與效能</block>
+  <block id="e5b8a0443d27d612e7426f6f3f8681c2" category="sidebar">設定Datadog以收集StorageGRID 不完整的SNMP指標和陷阱</block>
+  <block id="45c8288f990abd9a185e596536152688" category="sidebar">資源庫與群組原則範例</block>
 </blocks>
