@@ -52,7 +52,7 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 * Primestream
 * Quantum StorNext 5.4.0.1
 * Reveville v10 build 220706或更新版本
-* RRubrik CDM 5.0.1 P1-1342
+* RRubrik CDM
 * 訊號
 * 雪片
 * Splunk Smartstore
