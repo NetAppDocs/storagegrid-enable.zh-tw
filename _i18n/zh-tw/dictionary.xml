@@ -1007,4 +1007,41 @@
   <block id="e5b8a0443d27d612e7426f6f3f8681c2" category="sidebar">設定Datadog以收集StorageGRID 不完整的SNMP指標和陷阱</block>
   <block id="45c8288f990abd9a185e596536152688" category="sidebar">資源庫與群組原則範例</block>
   <block id="38d38399d4a7514463d665125ae50a4a" category="list-text">RRubrik CDM</block>
+  <block id="bd1d0553bdfeecc93cebcd45f1a220e4" category="paragraph">_Aron Klein_</block>
+  <block id="ef5b2819cd8ee32cf57797475fc6ac0b" category="paragraph">_Jonathan Wong _</block>
+  <block id="80c122176ee490cc5a86d6ffa18ab689" category="paragraph">_Angela Cheng</block>
+  <block id="5edf8edbb4c16aa5184e63b04c0b8b6d" category="summary">rclone 是免費的命令列工具和用戶端、適用於 S3 作業。您可以使用 rclone 在 StorageGRID 上移轉、複製及刪除物件資料。</block>
+  <block id="16bf3dc54feeb86e32811292a7567606" category="doc">使用 rclone 在 StorageGRID 上移轉、放置及刪除物件</block>
+  <block id="4518583de94dd09da7a8f8e98ec98386" category="paragraph">_ Siegfried HEPP 和 Aron Klein_</block>
+  <block id="8fc8ce37b13be17581bdf9362c7e50b2" category="paragraph">rclone 是免費的命令列工具和用戶端、適用於 S3 作業。您可以使用 rclone 在 StorageGRID 上移轉、複製及刪除物件資料。RClone 包含刪除貯體的功能、即使沒有清空時也能使用「清除」功能、如下例所示。</block>
+  <block id="9f164cf2b6160300227f2205a159f653" category="section-title">安裝並設定 rclone</block>
+  <block id="15b28fa90c8a5a6ac00ece9ba66eeae6" category="inline-link">rclone.org</block>
+  <block id="e83083612c8ddf007cb8caa33418827b" category="paragraph">若要在工作站或伺服器上安裝 rclone 、請從下載<block ref="f0acc0ee887aaa2a5d3243b99ef89c61" category="inline-link-rx"></block>。</block>
+  <block id="56a18c9d4a7f18e1748b0b69c29deb32" category="list-text">執行組態指令碼或手動建立檔案、以建立 rclone 組態檔案。</block>
+  <block id="f7462963c38129d77cfe3f6482e69de5" category="list-text">在此範例中、我會在 rclone 組態中使用 sgdemo 作為遠端 StorageGRID S3 端點的名稱。</block>
+  <block id="eabd5709e5b0a4a9d5b54bf22cc44a50" category="list-text">建立組態檔 ~/.config/rclon/rclon.conf</block>
+  <block id="f9a8162b486acb9702379c8e1fa2a1f1" category="list-text">執行 rclone 組態</block>
+  <block id="9eb33c118fbc9b4c4465a458a895e11d" category="paragraph">rclone 組態</block>
+  <block id="ed6ca4624754adaba54d04ef934028aa" category="paragraph"><block ref="8849f02c854fae4e8db3cf982392a463" prefix="" category="inline-code"></block></block>
+  <block id="3662b82ef530ede2dfc89054b3f90228" category="paragraph">rclone mkdir sgdemo:test01</block>
+  <block id="cc478f70507e2845eea7acda5a1e3d97" category="paragraph"><block ref="7a0a2cc47bc2173797cdca07f7ce7961" prefix="" category="inline-code"></block></block>
+  <block id="3a47448ae40f440185114cee74d9ad57" category="paragraph">rclone lsd sgdemo ：</block>
+  <block id="a6a1ec9ef284232329c60761299d92b5" category="paragraph"><block ref="1bb219672476df0c884127cb2c99b435" prefix="" category="inline-code"></block></block>
+  <block id="f8ff419b27823d5e2f47e43e8458a894" category="paragraph">rclone ls sgdemo:test01</block>
+  <block id="44f95cde094c17535e0677a82c170389" category="paragraph"><block ref="6f8e32b86b6495270f34c94d9c40c06d" prefix="" category="inline-code"></block></block>
+  <block id="5f8540d79fcfda7fc5196af98412ea5a" category="paragraph">rclone rmdir sgdemo:test02</block>
+  <block id="7bf6bd33aa865e09d1071eac105d8241" category="paragraph"><block ref="9c36dc683788536ec38b4b18c4e890e7" prefix="" category="inline-code"></block></block>
+  <block id="61c9919165544448974ab4891cb075a9" category="paragraph">rclone copy ~/test/testfile.txt sgdemo:test01</block>
+  <block id="cf36fafa2a4e0a666be5d8360acec986" category="paragraph"><block ref="07bb309a38b585baf017ce2b3d19bc16" prefix="" category="inline-code"></block></block>
+  <block id="5cdf35bb0354469c88ad0680d436f795" category="paragraph">rclone copy sgdemo:test01/testfile.txt ~/test/testfileS3.txt</block>
+  <block id="41b29af0a6bf603a1a7df4ea6a955d8e" category="paragraph"><block ref="5229133c5a5c9056642e7d6c5d6826a6" prefix="" category="inline-code"></block></block>
+  <block id="5bae69b23fa6eb68365a36ca366ba1aa" category="paragraph">rclone delete sgdemo:test01/testfile.txt</block>
+  <block id="309340b8067ede7973b30ece050cea91" category="list-text">* 移轉貯體中的物件 *</block>
+  <block id="2a35c17ff4e55ac345ceb8bc98b49b1a" category="paragraph"><block ref="1dc031f75fc4e35b4388fe4839ea5101" prefix="" category="inline-code"></block></block>
+  <block id="7c0bd198fb63fdb5d33f8d9b496bce9e" category="paragraph"><block ref="9904a5fb593cfab861d8aa8dc92c3e01" prefix="" category="inline-code"></block></block>
+  <block id="e75cf8210a46a9e080f01c2646f4cbd1" category="paragraph">rclone sync sgdemo:test01 sgdemo:clone01 --progress</block>
+  <block id="b057c2361d5d0aef24339e9af0a0721d" category="admonition">使用 --Progress 或 -P 顯示工作進度。否則就沒有輸出。</block>
+  <block id="962d558c72bf1abd2cc8b9e5afeb68a3" category="list-text">* 刪除貯體和所有物件內容 *</block>
+  <block id="7e5b74d29f73a6689f5cd32f8ae54eb5" category="paragraph"><block ref="f86e9aa25395ad4bf2f0b9bc89f29ea1" prefix="" category="inline-code"></block></block>
+  <block id="5773479209c86b5b3661ca194636b3ba" category="paragraph">rclone purge sgdemo:test01 --progress</block>
 </blocks>

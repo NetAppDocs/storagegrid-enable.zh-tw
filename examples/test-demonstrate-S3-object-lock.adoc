@@ -6,9 +6,9 @@ summary: 物件鎖定提供WORM模型、可防止物件遭到刪除或覆寫。�
 ---
 = 測試並示範StorageGRID S3物件鎖定功能
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
+
+_Aron Klein_
 
 [role="lead"]
 物件鎖定提供WORM模型、可防止物件遭到刪除或覆寫。物件鎖定的實作係由Cohasset進行評估、以協助符合法規要求、支援合法持有和符合法規的物件保留模式、以及預設的儲存貯體保留原則。StorageGRID

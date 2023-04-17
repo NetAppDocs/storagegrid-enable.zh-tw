@@ -1,0 +1,453 @@
+---
+permalink: tools-apps-guides/use-rclone-migrate-delete.html 
+sidebar: sidebar 
+keywords: cli, aws, S3, rclone, api 
+summary: rclone 是免費的命令列工具和用戶端、適用於 S3 作業。您可以使用 rclone 在 StorageGRID 上移轉、複製及刪除物件資料。 
+---
+= 使用 rclone 在 StorageGRID 上移轉、放置及刪除物件
+:allow-uri-read: 
+
+
+_ Siegfried HEPP 和 Aron Klein_
+
+[role="lead"]
+rclone 是免費的命令列工具和用戶端、適用於 S3 作業。您可以使用 rclone 在 StorageGRID 上移轉、複製及刪除物件資料。RClone 包含刪除貯體的功能、即使沒有清空時也能使用「清除」功能、如下例所示。
+
+
+
+== 安裝並設定 rclone
+
+若要在工作站或伺服器上安裝 rclone 、請從下載 https://rclone.org/downloads/["rclone.org"^]。
+
+
+
+=== 初始組態步驟
+
+. 執行組態指令碼或手動建立檔案、以建立 rclone 組態檔案。
+. 在此範例中、我會在 rclone 組態中使用 sgdemo 作為遠端 StorageGRID S3 端點的名稱。
++
+.. 建立組態檔 ~/.config/rclon/rclon.conf
++
+[source, console]
+----
+    [sgdemo]
+    type = s3
+    provider = Other
+    access_key_id = ABCDEFGH123456789JKL
+    secret_access_key = 123456789ABCDEFGHIJKLMN0123456789PQRST+V
+    endpoint = sgdemo.netapp.com
+----
+.. 執行 rclone 組態
++
+[]
+====
+rclone 組態
+
+....
+2023/04/13 14:22:45 NOTICE: Config file "/root/.config/rclone/rclone.conf" not found - using defaults
+No remotes found - make a new one
+n) New remote
+s) Set configuration password
+q) Quit config
+n/s/q> n
+name> sgdemo
+....
+....
+Option Storage.
+Type of storage to configure.
+Enter a string value. Press Enter for the default ("").
+Choose a number from below, or type in your own value.
+ 1 / 1Fichier
+   \ "fichier"
+ 2 / Alias for an existing remote
+   \ "alias"
+ 3 / Amazon Drive
+   \ "amazon cloud drive"
+ 4 / Amazon S3 Compliant Storage Providers including AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Minio, SeaweedFS, and Tencent COS
+   \ "s3"
+ 5 / Backblaze B2
+   \ "b2"
+ 6 / Better checksums for other remotes
+   \ "hasher"
+ 7 / Box
+   \ "box"
+ 8 / Cache a remote
+   \ "cache"
+ 9 / Citrix Sharefile
+   \ "sharefile"
+10 / Compress a remote
+   \ "compress"
+11 / Dropbox
+   \ "dropbox"
+12 / Encrypt/Decrypt a remote
+   \ "crypt"
+13 / Enterprise File Fabric
+   \ "filefabric"
+14 / FTP Connection
+   \ "ftp"
+15 / Google Cloud Storage (this is not Google Drive)
+   \ "google cloud storage"
+16 / Google Drive
+   \ "drive"
+17 / Google Photos
+   \ "google photos"
+18 / Hadoop distributed file system
+   \ "hdfs"
+19 / Hubic
+   \ "hubic"
+20 / In memory object storage system.
+   \ "memory"
+21 / Jottacloud
+   \ "jottacloud"
+22 / Koofr
+   \ "koofr"
+23 / Local Disk
+   \ "local"
+24 / Mail.ru Cloud
+   \ "mailru"
+25 / Mega
+   \ "mega"
+26 / Microsoft Azure Blob Storage
+   \ "azureblob"
+27 / Microsoft OneDrive
+   \ "onedrive"
+28 / OpenDrive
+   \ "opendrive"
+29 / OpenStack Swift (Rackspace Cloud Files, Memset Memstore, OVH)
+   \ "swift"
+30 / Pcloud
+   \ "pcloud"
+31 / Put.io
+   \ "putio"
+32 / QingCloud Object Storage
+   \ "qingstor"
+33 / SSH/SFTP Connection
+   \ "sftp"
+34 / Sia Decentralized Cloud
+   \ "sia"
+35 / Sugarsync
+   \ "sugarsync"
+36 / Tardigrade Decentralized Cloud Storage
+   \ "tardigrade"
+37 / Transparently chunk/split large files
+   \ "chunker"
+38 / Union merges the contents of several upstream fs
+   \ "union"
+39 / Uptobox
+   \ "uptobox"
+40 / Webdav
+   \ "webdav"
+41 / Yandex Disk
+   \ "yandex"
+42 / Zoho
+   \ "zoho"
+43 / http Connection
+   \ "http"
+44 / premiumize.me
+   \ "premiumizeme"
+45 / seafile
+   \ "seafile"
+....
+ Storage> 4
+....
+Option provider.
+Choose your S3 provider.
+Enter a string value. Press Enter for the default ("").
+Choose a number from below, or type in your own value.
+ 1 / Amazon Web Services (AWS) S3
+   \ "AWS"
+ 2 / Alibaba Cloud Object Storage System (OSS) formerly Aliyun
+   \ "Alibaba"
+ 3 / Ceph Object Storage
+   \ "Ceph"
+ 4 / Digital Ocean Spaces
+   \ "DigitalOcean"
+ 5 / Dreamhost DreamObjects
+   \ "Dreamhost"
+ 6 / IBM COS S3
+   \ "IBMCOS"
+ 7 / Minio Object Storage
+   \ "Minio"
+ 8 / Netease Object Storage (NOS)
+   \ "Netease"
+ 9 / Scaleway Object Storage
+   \ "Scaleway"
+10 / SeaweedFS S3
+   \ "SeaweedFS"
+11 / StackPath Object Storage
+   \ "StackPath"
+12 / Tencent Cloud Object Storage (COS)
+   \ "TencentCOS"
+13 / Wasabi Object Storage
+   \ "Wasabi"
+14 / Any other S3 compatible provider
+   \ "Other"
+provider> 14
+....
+....
+Option env_auth.
+Get AWS credentials from runtime (environment variables or EC2/ECS meta data if no env vars).
+Only applies if access_key_id and secret_access_key is blank.
+Enter a boolean value (true or false). Press Enter for the default ("false").
+Choose a number from below, or type in your own value.
+ 1 / Enter AWS credentials in the next step.
+   \ "false"
+ 2 / Get AWS credentials from the environment (env vars or IAM).
+   \ "true"
+env_auth> 1
+....
+....
+Option access_key_id.
+AWS Access Key ID.
+Leave blank for anonymous access or runtime credentials.
+Enter a string value. Press Enter for the default ("").
+access_key_id> ABCDEFGH123456789JKL
+....
+....
+Option secret_access_key.
+AWS Secret Access Key (password).
+Leave blank for anonymous access or runtime credentials.
+Enter a string value. Press Enter for the default ("").
+secret_access_key> 123456789ABCDEFGHIJKLMN0123456789PQRST+V
+....
+....
+Option region.
+Region to connect to.
+Leave blank if you are using an S3 clone and you don't have a region.
+Enter a string value. Press Enter for the default ("").
+Choose a number from below, or type in your own value.
+   / Use this if unsure.
+ 1 | Will use v4 signatures and an empty region.
+   \ ""
+   / Use this only if v4 signatures don't work.
+ 2 | E.g. pre Jewel/v10 CEPH.
+   \ "other-v2-signature"
+region> 1
+....
+....
+Option endpoint.
+Endpoint for S3 API.
+Required when using an S3 clone.
+Enter a string value. Press Enter for the default ("").
+endpoint> sgdemo.netapp.com
+....
+....
+Option location_constraint.
+Location constraint - must be set to match the Region.
+Leave blank if not sure. Used when creating buckets only.
+Enter a string value. Press Enter for the default ("").
+location_constraint>
+....
+....
+Option acl.
+Canned ACL used when creating buckets and storing or copying objects.
+This ACL is used for creating objects and if bucket_acl isn't set, for creating buckets too.
+For more info visit https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl
+Note that this ACL is applied when server-side copying objects as S3
+doesn't copy the ACL from the source but rather writes a fresh one.
+Enter a string value. Press Enter for the default ("").
+Choose a number from below, or type in your own value.
+   / Owner gets FULL_CONTROL.
+ 1 | No one else has access rights (default).
+   \ "private"
+   / Owner gets FULL_CONTROL.
+ 2 | The AllUsers group gets READ access.
+   \ "public-read"
+   / Owner gets FULL_CONTROL.
+ 3 | The AllUsers group gets READ and WRITE access.
+   | Granting this on a bucket is generally not recommended.
+   \ "public-read-write"
+   / Owner gets FULL_CONTROL.
+ 4 | The AuthenticatedUsers group gets READ access.
+   \ "authenticated-read"
+   / Object owner gets FULL_CONTROL.
+ 5 | Bucket owner gets READ access.
+   | If you specify this canned ACL when creating a bucket, Amazon S3 ignores it.
+   \ "bucket-owner-read"
+   / Both the object owner and the bucket owner get FULL_CONTROL over the object.
+ 6 | If you specify this canned ACL when creating a bucket, Amazon S3 ignores it.
+   \ "bucket-owner-full-control"
+acl>
+....
+....
+Edit advanced config?
+y) Yes
+n) No (default)
+y/n> n
+....
+....
+--------------------
+[sgdemo]
+type = s3
+provider = Other
+access_key_id = ABCDEFGH123456789JKL
+secret_access_key = 123456789ABCDEFGHIJKLMN0123456789PQRST+V
+endpoint = sgdemo.netapp.com:443
+--------------------
+y) Yes this is OK (default)
+e) Edit this remote
+d) Delete this remote
+y/e/d>
+....
+ Current remotes:
+....
+Name                 Type
+====                 ====
+sgdemo               s3
+....
+....
+e) Edit existing remote
+n) New remote
+d) Delete remote
+r) Rename remote
+c) Copy remote
+s) Set configuration password
+q) Quit config
+e/n/d/r/c/s/q> q
+....
+====
+
+
+
+
+
+
+== 基本命令範例
+
+* *建立儲存庫：*
++
+`rclone mkdir remote:bucket`
+
++
+[]
+====
+rclone mkdir sgdemo:test01
+
+====
+* *列出所有庫位：*
++
+`rclone lsd remote:`
+
++
+[]
+====
+rclone lsd sgdemo ：
+
+====
+* *列出特定儲存區中的物件：*
++
+`rclone ls remote:bucket`
+
++
+[]
+====
+rclone ls sgdemo:test01
+
+....
+    65536 TestObject.0
+    65536 TestObject.1
+    65536 TestObject.10
+    65536 TestObject.12
+    65536 TestObject.13
+    65536 TestObject.14
+    65536 TestObject.15
+    65536 TestObject.16
+    65536 TestObject.17
+    65536 TestObject.18
+    65536 TestObject.2
+    65536 TestObject.3
+    65536 TestObject.5
+    65536 TestObject.6
+    65536 TestObject.7
+    65536 TestObject.8
+    65536 TestObject.9
+  33554432 bigobj
+      102 key.json
+       47 locked01.txt
+4294967296 sequential-read.0.0
+       15 test.txt
+      116 version.txt
+....
+====
+* *刪除一個桶：*
++
+`rclone rmdir remote:bucket`
+
++
+[]
+====
+rclone rmdir sgdemo:test02
+
+====
+* *放置物件：*
++
+`rclone copy _filename_ remote:bucket`
+
++
+[]
+====
+rclone copy ~/test/testfile.txt sgdemo:test01
+
+====
+* *取得物件：*
++
+`rclone copy remote:bucket/objectname filename`
+
++
+[]
+====
+rclone copy sgdemo:test01/testfile.txt ~/test/testfileS3.txt
+
+====
+* *刪除物件：*
++
+`rclone delete remote:bucket/objectname`
+
++
+[]
+====
+rclone delete sgdemo:test01/testfile.txt
+
+====
+* * 移轉貯體中的物件 *
++
+`rclone sync source:bucket destination:bucket --progress`
+
++
+`rclone sync source_directory destination:bucket --progress`
+
++
+[]
+====
+rclone sync sgdemo:test01 sgdemo:clone01 --progress
+
+....
+Transferred:   	    4.032 GiB / 4.032 GiB, 100%, 95.484 KiB/s, ETA 0s
+Transferred:           22 / 22, 100%
+Elapsed time:       1m4.2s
+....
+====
++
+
+NOTE: 使用 --Progress 或 -P 顯示工作進度。否則就沒有輸出。
+
+* * 刪除貯體和所有物件內容 *
++
+`rclone purge remote:bucket --progress`
+
++
+[]
+====
+rclone purge sgdemo:test01 --progress
+
+....
+Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                46 / 46, 100%
+Deleted:               23 (files), 1 (dirs)
+Elapsed time:        10.2s
+....
+rclone ls sgdemo:test01
+
+ 2023/04/14 09:40:51 Failed to ls: directory not found
+====
+

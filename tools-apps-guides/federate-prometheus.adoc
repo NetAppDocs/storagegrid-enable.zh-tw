@@ -8,6 +8,8 @@ summary: 本技術報告提供使用StorageGRID 外部Prometheus和Grafana服務
 :allow-uri-read: 
 
 
+_Aron Klein_
+
 [role="lead"]
 本技術報告提供使用StorageGRID 外部Prometheus和Grafana服務設定NetApp供應鏈11.6的詳細說明。
 

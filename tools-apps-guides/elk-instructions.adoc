@@ -8,6 +8,8 @@ summary: 利用「Sys11.6syslog轉送」功能、您可以設定外部syslog伺�
 :allow-uri-read: 
 
 
+_Angela Cheng
+
 [role="lead"]
 利用「靜態11.6syslog轉送」功能、您可以設定外部syslog伺服StorageGRID 器來收集和分析StorageGRID 資訊記錄訊息。Elk（Elasticsearch、Logstash、Kibana）已成為最受歡迎的記錄分析解決方案之一。觀看 https://www.netapp.tv/details/29396["使用elk視訊進行記錄分析StorageGRID"] 檢視示範elk組態、以及如何使用它來識別及疑難排解失敗的S3要求。本文提供Logstash組態、Kibana查詢、圖表和儀表板的範例檔案、協助您快速開始StorageGRID 進行資訊記錄管理和分析。
 

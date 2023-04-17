@@ -8,6 +8,8 @@ summary: 設定Datadog HQ以收集StorageGRID 不完整的SNMP數據和陷阱。
 :allow-uri-read: 
 
 
+_Aron Klein_
+
 [role="lead"]
 設定Datadog以收集StorageGRID 不完整的SNMP指標和陷阱。
 

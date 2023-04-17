@@ -6,9 +6,9 @@ summary: 本指南說明在NetApp StorageGRID 還原上建立具有公用儲存�
 ---
 = Vertica Eon模式資料庫使用NetApp StorageGRID 功能做為共用儲存設備
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
+
+_Angela Cheng
 
 [role="lead"]
 本指南說明在NetApp StorageGRID 還原上建立具有公用儲存設備的Vertica Eon Mode資料庫的程序。

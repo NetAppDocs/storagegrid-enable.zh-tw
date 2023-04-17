@@ -6,9 +6,9 @@ summary: 節點複製效能與最佳實務做法。
 ---
 = 節點複製
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
+
+_Aron Klein_
 
 [role="lead"]
 節點複製考量與效能。

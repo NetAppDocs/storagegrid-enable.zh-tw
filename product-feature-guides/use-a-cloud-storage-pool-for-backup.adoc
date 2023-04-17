@@ -6,9 +6,9 @@ summary: 您可以建立ILM規則、將物件移入雲端儲存池進行備份�
 ---
 = 使用雲端儲存資源池進行備份
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
+
+_Jonathan Wong _
 
 [role="lead"]
 您可以建立ILM規則、將物件移入雲端儲存池進行備份。

@@ -6,9 +6,9 @@ summary: S3cmd是免費的命令列工具和用戶端、適用於S3作業。您�
 ---
 = 使用S3cmd測試StorageGRID 及示範S3在支援方面的存取
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
+
+_Aron Klein_
 
 [role="lead"]
 S3cmd是免費的命令列工具和用戶端、適用於S3作業。您可以使用s3cmd測試StorageGRID 及示範S3在支援上存取。

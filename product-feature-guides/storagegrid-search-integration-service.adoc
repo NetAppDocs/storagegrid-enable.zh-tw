@@ -6,9 +6,9 @@ summary: 本指南詳細說明如何使用StorageGRID Amazon OpenSearch Service�
 ---
 = 設定StorageGRID 搜尋整合服務
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
+
+_Angela Cheng
 
 [role="lead"]
 本指南詳細說明如何使用StorageGRID Amazon OpenSearch Service或內部部署Elasticsearch來設定NetApp的《支援》11.6搜尋 整合服務。
