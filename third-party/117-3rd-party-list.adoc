@@ -9,7 +9,7 @@ summary: 第三方解決方案已通過 StorageGRID 11.7 驗證
 
 
 [role="lead"]
-下列第三方解決方案已通過驗證、可搭配StorageGRID 使用。+如果您要尋找的解決方案未列出、請聯絡您的NetApp客戶代表。
+下列協力廠商解決方案已通過驗證、可搭配 StorageGRID 11.7 使用。+如果您要尋找的解決方案未列出、請聯絡您的NetApp客戶代表。
 
 
 
