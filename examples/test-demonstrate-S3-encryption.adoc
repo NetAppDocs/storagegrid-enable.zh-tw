@@ -11,7 +11,7 @@ summary: 支援的支援功能有許多不同的方法可加密閒置的資料�
 _Aron Klein_
 
 [role="lead"]
-支援的支援功能有許多不同的方法可加密閒置的資料。StorageGRID若要深入瞭解、請參閱 https://docs.netapp.com/us-en/storagegrid-116/admin/reviewing-storagegrid-encryption-methods.html["檢閱StorageGRID 功能加密方法"^]。
+支援的支援功能有許多不同的方法可加密閒置的資料。StorageGRID若要深入瞭解、請參閱 https://["檢閱StorageGRID 功能加密方法"^]。
 
 本指南將示範S3 API加密方法。
 

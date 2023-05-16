@@ -39,8 +39,8 @@ Hadoop已是資料科學家的最愛、至今已有一段時間。Hadoop可利�
 
 === 安裝Java套件
 
-. 請檢查 https://docs.cloudera.com/cdp-private-cloud-upgrade/latest/release-guide/topics/cdpdc-java-requirements.html["Cloudera支援對照表"^] 以取得支援的JDK版本。
-. 下載 https://www.oracle.com/java/technologies/downloads/["Java 11.x套件"^] 這與Cloudera叢集作業系統相符。將此套件複製到叢集中的每個主機。在此範例中、rpm套件用於CentOS。
+. 請檢查 https://["Cloudera支援對照表"^] 以取得支援的JDK版本。
+. 下載 https://["Java 11.x套件"^] 這與Cloudera叢集作業系統相符。將此套件複製到叢集中的每個主機。在此範例中、rpm套件用於CentOS。
 . 以root身分或使用具有Sudo權限的帳戶登入每個主機。在每個主機上執行下列步驟：
 +
 .. 安裝套件：

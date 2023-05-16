@@ -1093,4 +1093,7 @@
   <block id="bda9db150ef3470445a403dda26b131c" category="admonition">如果您需要忽略 SSL 憑證、請使用 --no 檢查憑證。</block>
   <block id="47edbb9e6d6e6e874eb40c274a0e2e0f" category="sidebar">部落格文章</block>
   <block id="3e786c26b331e7dd273f5cb3ee10f59e" category="sidebar">StorageGRID 部落格</block>
+  <block id="85037d90107af2b45fca2bb43a9f291e" category="summary">第三方解決方案已通過 StorageGRID 11.7 驗證</block>
+  <block id="b46c07776ecb7ae8067bc1552a439f7b" category="doc">StorageGRID 11.7 驗證的協力廠商解決方案</block>
+  <block id="9480cbe24fa04a10e30355eb0f12d82c" category="sidebar">StorageGRID 11.7</block>
 </blocks>

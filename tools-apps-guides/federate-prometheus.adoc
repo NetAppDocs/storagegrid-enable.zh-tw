@@ -17,7 +17,7 @@ _Aron Klein_
 
 == 簡介
 
-支援使用Prometheus儲存指標、並透過內建的Grafana儀表板提供這些指標的視覺效果。StorageGRID透過StorageGRID 設定用戶端存取憑證、並為指定的用戶端啟用Prometheus存取、可從功能表安全存取Prometheus指標。目前、保留此度量資料的能力受管理節點的儲存容量限制。為了獲得更長的持續時間、以及建立自訂的這些指標視覺效果、我們將部署新的Prometheus和Grafana伺服器、設定新伺服器、從StorageGRID執行個體中掃描指標、並建立一個儀表板、其中包含對我們來說非常重要的指標。您可以取得更多有關在中收集的Prometheus指標的資訊 https://docs.netapp.com/us-en/storagegrid-116/monitor/commonly-used-prometheus-metrics.html["本文檔StorageGRID"^]。
+支援使用Prometheus儲存指標、並透過內建的Grafana儀表板提供這些指標的視覺效果。StorageGRID透過StorageGRID 設定用戶端存取憑證、並為指定的用戶端啟用Prometheus存取、可從功能表安全存取Prometheus指標。目前、保留此度量資料的能力受管理節點的儲存容量限制。為了獲得更長的持續時間、以及建立自訂的這些指標視覺效果、我們將部署新的Prometheus和Grafana伺服器、設定新伺服器、從StorageGRID執行個體中掃描指標、並建立一個儀表板、其中包含對我們來說非常重要的指標。您可以取得更多有關在中收集的Prometheus指標的資訊 https://["本文檔StorageGRID"^]。
 
 
 
@@ -27,13 +27,13 @@ _Aron Klein_
 
 === 實驗室詳細資料
 
-就本例而言、我將使用所有虛擬機器來StorageGRID 執行VMware 11.6節點、以及使用一個DEBIAN11伺服器。此解決方法介面設定了公開信任的CA憑證。StorageGRID此範例將不會安裝及設定StorageGRID 整個作業系統或是安裝的Debian Linux。您可以使用Prometheus和Grafana所支援的任何Linux風格。Prometheus和Grafana都可以安裝成Docker容器、從來源或預先編譯的二進位檔建置。在此範例中、我會將Prometheus和Grafana二進位檔案直接安裝在同一部的Debian伺服器上。請從下載並遵循基本安裝指示 https://prometheus.io[] 和 https://grafana.com/grafana/[] 分別。
+就本例而言、我將使用所有虛擬機器來StorageGRID 執行VMware 11.6節點、以及使用一個DEBIAN11伺服器。此解決方法介面設定了公開信任的CA憑證。StorageGRID此範例將不會安裝及設定StorageGRID 整個作業系統或是安裝的Debian Linux。您可以使用Prometheus和Grafana所支援的任何Linux風格。Prometheus和Grafana都可以安裝成Docker容器、從來源或預先編譯的二進位檔建置。在此範例中、我會將Prometheus和Grafana二進位檔案直接安裝在同一部的Debian伺服器上。請從下載並遵循基本安裝指示 https://[] 和 https://[] 分別。
 
 
 
 === 設定StorageGRID 驗證以供Prometheus用戶端存取
 
-若要存取StorageGRID儲存的Prometheus指標、您必須使用私密金鑰產生或上傳用戶端憑證、並啟用用戶端的權限。這個介面必須具有SSL憑證。StorageGRID此憑證必須由Prometheus伺服器信任、或是由信任的CA信任、如果是自行簽署、則必須手動信任。若要瞭解更多資訊、請造訪 https://docs.netapp.com/us-en/storagegrid-116/admin/configuring-administrator-client-certificates.html["本文檔StorageGRID"]。
+若要存取StorageGRID儲存的Prometheus指標、您必須使用私密金鑰產生或上傳用戶端憑證、並啟用用戶端的權限。這個介面必須具有SSL憑證。StorageGRID此憑證必須由Prometheus伺服器信任、或是由信任的CA信任、如果是自行簽署、則必須手動信任。若要瞭解更多資訊、請造訪 https://["本文檔StorageGRID"]。
 
 . 在「功能區管理」介面中、選取左下角的「組態」、然後在「安全性」下的第二欄中、按一下「憑證」StorageGRID 。
 . 在「憑證」頁面上、選取「用戶端」索引標籤、然後按一下「新增」按鈕。
@@ -141,7 +141,7 @@ sudo nano /etc/prometheus/prometheus.yml
 ----
 . 插入下列組態。工作名稱可以是您想要的任何內容。將「-targets：[']"（目標：[']"）變更為管理節點的FQDN、如果您變更了憑證名稱和私密金鑰檔名、請更新TLS_config區段以進行比對。然後儲存檔案。如果您的網格管理介面使用自我簽署的憑證、請下載該憑證並將其與具有唯一名稱的用戶端憑證一起放置、然後在TLS_config區段中新增ca_file:/etc/Prometheus/cert /UCERT.pem
 +
-.. 在此範例中、我會收集所有以alertmanager、Cassandra、節點和StorageGRID VMware為開頭的指標。如需有關Prometheus指標的詳細資訊、請參閱 https://docs.netapp.com/us-en/storagegrid-116/monitor/commonly-used-prometheus-metrics.html["本文檔StorageGRID"^]。
+.. 在此範例中、我會收集所有以alertmanager、Cassandra、節點和StorageGRID VMware為開頭的指標。如需有關Prometheus指標的詳細資訊、請參閱 https://["本文檔StorageGRID"^]。
 +
 [source, yaml]
 ----
@@ -251,7 +251,7 @@ Aug 22 15:14:24 aj-deb-prom01 prometheus[6498]: ts=2022-08-22T19:14:24.832Z call
 Aug 22 15:14:24 aj-deb-prom01 prometheus[6498]: ts=2022-08-22T19:14:24.832Z caller=main.go:961 level=info msg="Server is ready to receive web requests."
 Aug 22 15:14:24 aj-deb-prom01 prometheus[6498]: ts=2022-08-22T19:14:24.832Z caller=manager.go:941 level=info component="rule manager" msg="Starting rule manager..."
 ----
-. 您現在應該可以瀏覽至Prometheus伺服器的UI http://Prometheus-server:9090[] 並查看UI
+. 您現在應該可以瀏覽至Prometheus伺服器的UI http://[] 並查看UI
 +
 image::../media/prometheus/prometheus_ui.png[Prometheus UI頁面]
 
@@ -382,4 +382,4 @@ image::../media/prometheus/grafana_panel_edit.png[GRFANA編輯面板]
 
 === 結論
 
-現在我們擁有Prometheus伺服器、可自訂資料保留和儲存容量。有了這項功能、我們就能繼續建立自己的儀表板、並提供與營運最相關的指標。您可以取得更多有關在中收集的Prometheus指標的資訊 https://docs.netapp.com/us-en/storagegrid-116/monitor/commonly-used-prometheus-metrics.html["本文檔StorageGRID"^]。
+現在我們擁有Prometheus伺服器、可自訂資料保留和儲存容量。有了這項功能、我們就能繼續建立自己的儀表板、並提供與營運最相關的指標。您可以取得更多有關在中收集的Prometheus指標的資訊 https://["本文檔StorageGRID"^]。
