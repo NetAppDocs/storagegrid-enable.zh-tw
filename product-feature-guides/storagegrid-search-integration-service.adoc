@@ -24,9 +24,9 @@ _Angela Cheng
 * *搜尋整合服務*。將Simple Storage Service（S3）物件中繼資料傳送至指定的Elasticsearch索引、您可以在其中使用外部服務來搜尋或分析中繼資料。
 
 
-平台服務是由S3租戶透過租戶管理程式UI進行設定。如需詳細資訊、請參閱 https://["使用平台服務的考量"^]。
+平台服務是由S3租戶透過租戶管理程式UI進行設定。如需詳細資訊、請參閱 https://docs.netapp.com/us-en/storagegrid-116/tenant/considerations-for-using-platform-services.html["使用平台服務的考量"^]。
 
-本文件為的補充說明 https://["《英文》《英文》（英文）StorageGRID"^] 並提供搜尋整合服務的端點和庫位組態逐步指示和範例。此處包含的Amazon Web Services（AWS）或內部部署彈性搜尋設定說明僅供基本測試或示範用途。
+本文件為的補充說明 https://docs.netapp.com/us-en/storagegrid-116/tenant/index.html["《英文》《英文》（英文）StorageGRID"^] 並提供搜尋整合服務的端點和庫位組態逐步指示和範例。此處包含的Amazon Web Services（AWS）或內部部署彈性搜尋設定說明僅供基本測試或示範用途。
 
 對象應熟悉Grid Manager、租戶管理程式、並能存取S3瀏覽器、執行StorageGRID 基本上傳（PUT）和下載（Get）作業、以利進行資訊搜尋整合測試。
 
@@ -68,7 +68,7 @@ NOTE: 您必須擁有有效的AWS主控台登入、存取金鑰、秘密存取�
 +
 *** 以您自己的AWS身分識別與存取管理（IAM）ID和使用者名稱取代反白顯示的文字。
 *** 將反白顯示的文字（IP位址）取代為您用來存取AWS主控台的本機電腦公用IP位址。
-*** 開啟瀏覽器索引標籤 https://["https://checkip.amazonaws.com"^] 尋找您的公有IP。
+*** 開啟瀏覽器索引標籤 https://checkip.amazonaws.com/["https://checkip.amazonaws.com"^] 尋找您的公有IP。
 +
 [source, json]
 ----
@@ -321,6 +321,6 @@ image::../media/storagegrid-search-integration-service/sg-sis-query-two-sample.p
 
 若要深入瞭解本文所述資訊、請檢閱下列文件和 / 或網站：
 
-* https://["什麼是平台服務"^]
-* https://["供應資料StorageGRID"^]
+* https://docs.netapp.com/us-en/storagegrid-116/tenant/what-platform-services-are.html["什麼是平台服務"^]
+* https://docs.netapp.com/us-en/storagegrid-116/index.html["供應資料StorageGRID"^]
 

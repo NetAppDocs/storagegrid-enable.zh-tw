@@ -13,9 +13,9 @@ summary: 您可在此找到每StorageGRID 個NetApp版本的完整文件。
 [role="lead"]
 您可以在StorageGRID 這裡找到每個NetApp版本的完整文件：
 
-* https://["部分11.6% StorageGRID"^]
-* https://["部分11.5 StorageGRID"^]
-* https://["部分11.4 StorageGRID"^]
-* https://["部分11.3% StorageGRID"^]
-* https://["部分11.2 StorageGRID"^]
+* https://docs.netapp.com/us-en/storagegrid-116/index.html["部分11.6% StorageGRID"^]
+* https://docs.netapp.com/sgws-115/index.jsp["部分11.5 StorageGRID"^]
+* https://docs.netapp.com/sgws-114/index.jsp["部分11.4 StorageGRID"^]
+* https://docs.netapp.com/sgws-113/index.jsp["部分11.3% StorageGRID"^]
+* https://docs.netapp.com/sgws-112/index.jsp["部分11.2 StorageGRID"^]
 

@@ -25,7 +25,7 @@ Datadog是一套監控解決方案、提供指標、視覺化和警示功能。�
 
 Datadog提供一種方法、可將產品mib檔案轉換成對應SNMP訊息所需的datadog參考檔案。
 
-此支援Datadog Trap解析度對應的支援程序檔會依照所找到的指示產生StorageGRID https://["請按這裡"^]。+將此檔案放在/etc/datadog-agent/conf.d/snmp.d/straps_db/+中
+此支援Datadog Trap解析度對應的支援程序檔會依照所找到的指示產生StorageGRID https://docs.datadoghq.com/network_monitoring/devices/snmp_traps/?tab=yaml["請按這裡"^]。+將此檔案放在/etc/datadog-agent/conf.d/snmp.d/straps_db/+中
 
 * link:../media/datadog/NETAPP-STORAGEGRID-MIB.yml["下載陷阱yaml檔案"] +
 +
@@ -35,7 +35,7 @@ Datadog提供一種方法、可將產品mib檔案轉換成對應SNMP訊息所需
 
 
 
-此支援Datadog指標對應的支援資料檔yaml檔案是依照所找到的指示產生StorageGRID https://["請按這裡"^]。+將此檔案放在/etc/datadog-agent/conf.d/snmp.d/profile/+中
+此支援Datadog指標對應的支援資料檔yaml檔案是依照所找到的指示產生StorageGRID https://datadoghq.dev/integrations-core/tutorials/snmp/introduction/["請按這裡"^]。+將此檔案放在/etc/datadog-agent/conf.d/snmp.d/profile/+中
 
 * link:../media/datadog/netapp-storagegrid.yaml["下載設定檔yaml檔案"] +
 +
