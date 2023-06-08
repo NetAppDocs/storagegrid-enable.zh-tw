@@ -24,6 +24,7 @@ summary: 第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.5
 * CommVault 11.
 * CTera Portal 6.
 * Dalet
+* Datadobi
 * Data Dynamics StorageX
 * 定義
 * Interica

@@ -2,11 +2,11 @@
 settings:
   name: How to enable StorageGRID in your environment
   internal:
-    pdf_enabled: true
-  prod:
     pdf_enabled: false
+    termcheck_enabled: false
+  prod:
+    pdf_enabled: true
     harmony_enabled: false
-  search: storagegrid-116
   langs: zh-tw,us-en,ja-jp,ko-kr,zh-cn,de-de,es-es,fr-fr,it-it
 sidebar:
   entries:
@@ -20,97 +20,3 @@ sidebar:
     url: "/blogs.html"
   - title: 本文檔StorageGRID
     url: "/storagegrid-documentation.html"
-homepage:
-  tiles:
-  - title: 已驗證的協力廠商解決方案
-    links:
-    - title: 總覽
-      url: "/third-party/index.html"
-    - title: StorageGRID 11.7
-      url: "/third-party/117-3rd-party-list.html"
-    - title: 部分11.6% StorageGRID
-      url: "/third-party/116-3rd-party-list.html"
-    - title: 部分11.5 StorageGRID
-      url: "/third-party/115-3rd-party-list.html"
-    - title: 部分11.4 StorageGRID
-      url: "/third-party/114-3rd-party-list.html"
-    - title: 部分11.3% StorageGRID
-      url: "/third-party/113-3rd-party-list.html"
-    - title: 部分11.2 StorageGRID
-      url: "/third-party/112-3rd-party-list.html"
-  - title: 產品功能指南
-    links:
-    - title: 為AWS或Google建立雲端儲存資源池
-      url: "/product-feature-guides/create-cloud-storage-pool-aws-google-cloud.html"
-    - title: 為Azure Blob儲存設備建立雲端儲存資源池
-      url: "/product-feature-guides/create-cloud-storage-pool-azure-blob-storage.html"
-    - title: 使用雲端儲存資源池進行備份
-      url: "/product-feature-guides/use-a-cloud-storage-pool-for-backup.html"
-    - title: 設定搜尋整合服務
-      url: "/product-feature-guides/storagegrid-search-integration-service.html"
-    - title: 節點複製考量與效能
-      url: "/product-feature-guides/node-clone.html"
-    - title: 如何使用連接埠重新對應
-      url: "/product-feature-guides/port-remap.html"
-  - title: 工具與應用程式指南
-    links:
-    - title: 使用Cloudera Hadoop S3連接器
-      url: "/tools-apps-guides/use-cloudera-hadoop-s3a-connector.html"
-    - title: 建立具有公用儲存設備的Vertica Eon Mode資料庫
-      url: "/tools-apps-guides/vertica-eon-mode-database-using-netapp-storageGRID.html"
-    - title: 使用S3cmd測試及示範S3存取
-      url: "/tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html"
-    - title: 使用Elasticsearch、Logstash和Kibana進行記錄分析
-      url: "/tools-apps-guides/elk-instructions.html"
-    - title: 使用Prometheus和Grafana來延長指標保留時間
-      url: "/tools-apps-guides/federate-prometheus.html"
-    - title: 設定Datadog以收集StorageGRID 不完整的SNMP指標和陷阱
-      url: "/tools-apps-guides/use-datadog-snmp.html"
-    - title: 使用 rclone 在 StorageGRID 上移轉、放置及刪除物件
-      url: "/tools-apps-guides/use-rclone-migrate-delete.html"
-  - title: 程序和API範例
-    links:
-    - title: 測試並示範S3加密
-      url: "/examples/test-demonstrate-S3-encryption.html"
-    - title: 測試並示範S3物件鎖定
-      url: "/examples/test-demonstrate-S3-object-lock.html"
-    - title: 資源庫與群組原則範例
-      url: "/examples/bucket-policy-examples.html"
-  - title: 部落格文章
-    links:
-    - title: StorageGRID 部落格
-      url: "/blogs.html"
-  - title: 示範教學課程
-    links:
-    - title: 視頻庫StorageGRID
-      url: https://www.youtube.com/playlist?list=PLdXI3bZJEw7nh2wGRA65iulXhtXwLiqrY
-    - title: NetApp學習服務
-      url: https://www.netapp.com/support-and-training/netapp-university/
-    - title: 使用elk堆疊進行記錄分析| NetApp TV StorageGRID
-      url: https://www.netapp.tv/details/29396
-  - title: 更多資源
-    links:
-    - title: 支援頁面StorageGRID
-      url: https://mysupport.netapp.com/site/products/all/details/5d9f1107e01d9c0001ee50f6/downloads-tab
-    - title: NetApp互通性對照表工具IMT （不含）
-      url: https://mysupport.netapp.com/matrix
-    - title: 知識庫StorageGRID
-      url: https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID
-    - title: NetApp部落格
-      url: https://netapp.com/blog/
-    - title: NetApp社群
-      url: https://community.netapp.com/t5/Object-Storage/bd-p/object-storage
-  - title: 本文檔StorageGRID
-    links:
-    - title: StorageGRID 11.7
-      url: https://docs.netapp.com/us-en/storagegrid-117/index.html
-    - title: 部分11.6% StorageGRID
-      url: https://docs.netapp.com/us-en/storagegrid-116/index.html
-    - title: 部分11.5 StorageGRID
-      url: https://docs.netapp.com/sgws-115/index.jsp
-    - title: 部分11.4 StorageGRID
-      url: https://docs.netapp.com/sgws-114/index.jsp
-    - title: 部分11.3% StorageGRID
-      url: https://docs.netapp.com/sgws-113/index.jsp
-    - title: 部分11.2 StorageGRID
-      url: https://docs.netapp.com/sgws-112/index.jsp
