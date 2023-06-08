@@ -1097,4 +1097,23 @@
   <block id="b46c07776ecb7ae8067bc1552a439f7b" category="doc">StorageGRID 11.7 驗證的協力廠商解決方案</block>
   <block id="9480cbe24fa04a10e30355eb0f12d82c" category="sidebar">StorageGRID 11.7</block>
   <block id="89188812a26ecaeff35e35d0bffb0d62" category="paragraph">下列協力廠商解決方案已通過驗證、可搭配 StorageGRID 11.7 使用。+如果您要尋找的解決方案未列出、請聯絡您的NetApp客戶代表。</block>
+  <block id="08a9313727f7bbd910b58b7b474eefdf" category="list-text">Bridgestor</block>
+  <block id="40ae64b68c5b0e0ae599d76815332612" category="section-title">StorageGRID 支援的協力廠商解決方案</block>
+  <block id="27ef9f8b4c2764f7579e12a741210f85" category="paragraph">這些解決方案已通過測試。</block>
+  <block id="6e9c68d7409676ad81189c7ef5822c3a" category="list-text">歸檔軟體</block>
+  <block id="5d1891a5c99631f59c0a8f3b32a1e1cf" category="list-text">Axis 通訊</block>
+  <block id="ef0aa57a38184a5667aa748dc4019df0" category="list-text">一致性 360</block>
+  <block id="670d48cd026746c6ce7a8b00a2c83978" category="list-text">DataFrameworks</block>
+  <block id="3c5839fdf2b2c6a2442cfa6e74bfe0f2" category="list-text">EcoDigital Diva 平台</block>
+  <block id="6791faed97260b2919c3417535378ee0" category="list-text">Encoding.com</block>
+  <block id="675085b268143e0ab20d246ddf943b45" category="list-text">GE Centricity Enterprise Archive</block>
+  <block id="83b62dfdb6ca9afb88cf0d9d7c17e925" category="list-text">Hyland Acuo</block>
+  <block id="3b4c3720fc990485ac26abd2cc00c4cc" category="list-text">IBM Aspera</block>
+  <block id="753b802ea6930a7aa61f75097ba1fec9" category="list-text">里程碑系統</block>
+  <block id="e67ef9adcaef7f4d9e4a526b051b579a" category="list-text">OnSSI</block>
+  <block id="de41187129b3e57753781b3d1b8b9db0" category="list-text">REACH 引擎</block>
+  <block id="7589966aa63e01bf55855dd27c17dfa1" category="list-text">SilverTrak</block>
+  <block id="a711a341b646257e8c46098745540d38" category="list-text">SoftNAS</block>
+  <block id="2a5e41515ada8ef1147f2dd259b58947" category="list-text">QStar</block>
+  <block id="f1ec21951287a8923728f8f362e49ad5" category="list-text">Velasea</block>
 </blocks>

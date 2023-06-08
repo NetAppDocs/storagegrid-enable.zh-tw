@@ -19,6 +19,7 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 
 * 活動
 * Apache Kafka
+* Bridgestor
 * Cantemo
 * Citrix內容協同作業
 * CommVault 11.
@@ -79,4 +80,29 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 * Veeam 11.
 * Veritas Enterprise Vault 14.2.2
 * Veritas NetBackup 10.1.1及更新版本
+
+
+
+
+== StorageGRID 支援的協力廠商解決方案
+
+這些解決方案已通過測試。
+
+* 歸檔軟體
+* Axis 通訊
+* 一致性 360
+* DataFrameworks
+* EcoDigital Diva 平台
+* Encoding.com
+* Fujifilm物件歸檔
+* GE Centricity Enterprise Archive
+* Hyland Acuo
+* IBM Aspera
+* 里程碑系統
+* OnSSI
+* REACH 引擎
+* SilverTrak
+* SoftNAS
+* QStar
+* Velasea
 
