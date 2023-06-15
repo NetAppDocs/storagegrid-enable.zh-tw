@@ -995,9 +995,7 @@
   <block id="3f2327c90ede247dca9387ef500bf746" category="doc">範例庫與群組（IAM）原則</block>
   <block id="640ca9533a2fd150e7d3ed390e2aae66" category="section-title">群組原則（IAM）</block>
   <block id="06c73db3763c74cabb8ece8e96fe7c5d" category="section-title">主目錄樣式庫存取</block>
-  <block id="0a86daa722ca043525363e55dce2f201" category="paragraph">此原則僅允許使用者存取名為使用者使用者名稱之儲存區中的物件。</block>
   <block id="8569c05df75ec9b148a67ed5998ad8b0" category="section-title">拒絕建立物件鎖定儲存區</block>
-  <block id="9cea9229d238df9d490e17e9c09f43d4" category="paragraph">此原則會限制使用者在庫位上啟用物件鎖定的情況下、建立庫位。</block>
   <block id="01a232853896677ed5b2f61bbd35128f" category="paragraph">此原則並未在StorageGRID SUI中強制執行、只有S3 API才會強制執行。</block>
   <block id="6d16e4029056ceaf0b44cac8903e3f2e" category="section-title">將儲存區限制為具有唯讀存取權的單一使用者</block>
   <block id="c49b1c74a2176733b070d19773700eb6" category="paragraph">此原則可讓單一使用者擁有儲存區的唯讀存取權、並明確地讓Denys存取所有其他使用者。將「拒絕」陳述式分組在原則頂端、是加速評估的好做法。</block>
@@ -1134,4 +1132,11 @@
   <block id="29007b92e2b6688072358d8f25529d24" category="paragraph"><block ref="29007b92e2b6688072358d8f25529d24" category="inline-link-rx"></block></block>
   <block id="d31ba7e4c6f469a6c88f05aac3e0e91c" category="list-text">Datadobi</block>
   <block id="8727881150b0ace8b598a648cdfcd4e1" category="sidebar">NetApp StorageGRID 是一套軟體定義的物件儲存套件、可在公有雲、私有雲和混合式多雲端環境中支援各種使用案例。StorageGRID 提供 Amazon S3 API 的原生支援、並提供領先業界的創新技術、例如自動化生命週期管理、可長期以符合成本效益的方式儲存、保護、保護及保留非結構化資料。</block>
+  <block id="a88f9b6efeacfebaca582083cb9bd819" category="paragraph">此群組原則僅允許使用者存取名為使用者使用者名稱之儲存區中的物件。</block>
+  <block id="a16b735f7d349dcc23b45a7a101460f3" category="paragraph">此群組原則會限制使用者建立在貯體上啟用物件鎖定的貯體。</block>
+  <block id="5ccd1d9b602b536952729ea6084688f1" category="section-title">物件鎖定保留限制</block>
+  <block id="e2fc2c3ef79779a5164b3961924241c1" category="paragraph">此 Bucket 原則將物件鎖定保留期間限制為 10 天或更短</block>
+  <block id="578c6a63b7f6efe56f08f3f9c3c5a690" category="section-title">限制使用者以版本 ID 刪除物件</block>
+  <block id="151d6c6a5174c6a3f739cdb8ec8d1ce5" category="paragraph">此群組原則會限制使用者依照版本 ID 刪除版本管理的物件</block>
+  <block id="d5c59b735ec0b06ade2e2d7c842dfe9e" category="paragraph">此貯體原則會限制使用者（由使用者 ID 「 56622399308951294926 」識別）依版本 ID 刪除版本管理物件</block>
 </blocks>

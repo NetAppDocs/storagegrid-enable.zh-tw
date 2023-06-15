@@ -19,7 +19,7 @@ summary: 以下是庫位原則和群組原則（IAM原則）的範例。
 
 === 主目錄樣式庫存取
 
-此原則僅允許使用者存取名為使用者使用者名稱之儲存區中的物件。
+此群組原則僅允許使用者存取名為使用者使用者名稱之儲存區中的物件。
 
 [source, json]
 ----
@@ -49,7 +49,7 @@ summary: 以下是庫位原則和群組原則（IAM原則）的範例。
 
 === 拒絕建立物件鎖定儲存區
 
-此原則會限制使用者在庫位上啟用物件鎖定的情況下、建立庫位。
+此群組原則會限制使用者建立在貯體上啟用物件鎖定的貯體。
 
 [NOTE]
 ====
@@ -74,6 +74,91 @@ summary: 以下是庫位原則和群組原則（IAM原則）的範例。
             "Resource": "arn:aws:s3:::*"
         }
     ]
+}
+----
+
+
+=== 物件鎖定保留限制
+
+此 Bucket 原則將物件鎖定保留期間限制為 10 天或更短
+
+[source, json]
+----
+{
+ "Version":"2012-10-17",
+ "Id":"CustSetRetentionLimits",
+ "Statement": [
+   {
+    "Sid":"CustSetRetentionPeriod",
+    "Effect":"Deny",
+    "Principal":"*",
+    "Action": [
+      "s3:PutObjectRetention"
+    ],
+    "Resource":"arn:aws:s3:::testlock-01/*",
+    "Condition": {
+      "NumericGreaterThan": {
+        "s3:object-lock-remaining-retention-days":"10"
+      }
+    }
+   }
+  ]
+}
+----
+
+
+=== 限制使用者以版本 ID 刪除物件
+
+此群組原則會限制使用者依照版本 ID 刪除版本管理的物件
+
+[source, json]
+----
+{
+    "Statement": [
+        {
+            "Action": [
+                "s3:DeleteObjectVersion"
+            ],
+            "Effect": "Deny",
+            "Resource": "arn:aws:s3:::*"
+        },
+        {
+            "Action": "s3:*",
+            "Effect": "Allow",
+            "Resource": "arn:aws:s3:::*"
+        }
+    ]
+}
+----
+此貯體原則會限制使用者（由使用者 ID 「 56622399308951294926 」識別）依版本 ID 刪除版本管理物件
+
+[source, json]
+----
+{
+  "Statement": [
+    {
+      "Action": [
+        "s3:DeleteObjectVersion"
+      ],
+      "Effect": "Deny",
+      "Resource": "arn:aws:s3:::verdeny/*",
+      "Principal": {
+        "AWS": [
+          "56622399308951294926"
+        ]
+      }
+    },
+    {
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::verdeny/*",
+      "Principal": {
+        "AWS": [
+          "56622399308951294926"
+        ]
+      }
+    }
+  ]
 }
 ----
 
