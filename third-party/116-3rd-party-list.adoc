@@ -60,7 +60,7 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 * Splunk Smartstore
 * 輕鬆儲存
 * Varish Enterprise 6.0.4
-* Veeam 11.
+* Veeam 12.
 * Veritas Enterprise Vault 14
 * Veritas NetBackup 8.0
 * Vertica 10.x
@@ -78,7 +78,7 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 * CommVault 11功能版本26
 * IBM FileNet
 * OpenText文件21.4
-* Veeam 11.
+* Veeam 12.
 * Veritas Enterprise Vault 14.2.2
 * Veritas NetBackup 10.1.1及更新版本
 

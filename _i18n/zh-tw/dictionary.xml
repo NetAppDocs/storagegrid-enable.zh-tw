@@ -1139,4 +1139,5 @@
   <block id="578c6a63b7f6efe56f08f3f9c3c5a690" category="section-title">限制使用者以版本 ID 刪除物件</block>
   <block id="151d6c6a5174c6a3f739cdb8ec8d1ce5" category="paragraph">此群組原則會限制使用者依照版本 ID 刪除版本管理的物件</block>
   <block id="d5c59b735ec0b06ade2e2d7c842dfe9e" category="paragraph">此貯體原則會限制使用者（由使用者 ID 「 56622399308951294926 」識別）依版本 ID 刪除版本管理物件</block>
+  <block id="c5d41f2814e9eff276a87d54a833d212" category="list-text">Veeam 12.</block>
 </blocks>
