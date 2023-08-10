@@ -18,6 +18,7 @@ summary: 第三方解決方案已通過 StorageGRID 11.7 驗證
 這些解決方案已與相關合作夥伴共同測試。
 
 * 活動
+* Alluxio
 * Apache Kafka
 * Bridgestor
 * Cantemo
@@ -55,10 +56,12 @@ summary: 第三方解決方案已通過 StorageGRID 11.7 驗證
 * Quantum StorNext 5.4.0.1
 * Reveville v10 build 220706或更新版本
 * RRubrik CDM
+* s3a
 * 訊號
 * 雪片
 * Splunk Smartstore
 * 輕鬆儲存
+* Trino
 * Varish Enterprise 6.0.4
 * Veeam 12.
 * Veritas Enterprise Vault 14
