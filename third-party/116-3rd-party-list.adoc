@@ -59,6 +59,7 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 * s3a
 * 訊號
 * 雪片
+* SPECtra Logic on － Prem Glacier
 * Splunk Smartstore
 * 輕鬆儲存
 * Trino
