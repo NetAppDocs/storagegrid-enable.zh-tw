@@ -306,8 +306,6 @@
   <block id="89e26598cb765dcbe94f71e860e94c64" category="list-text">有多個預先定義的SQL查詢、您可以執行其中一些查詢、以確認測試資料已成功載入資料庫。例如：「vsql &lt; vmart _queries1.sql'</block>
   <block id="4bb047f8c530785002e490ef17fa725e" category="section-title">何處可找到其他資訊</block>
   <block id="7d5b957cd473f6eaf5ad335a9c63c4ff" category="paragraph">若要深入瞭解本文所述資訊、請檢閱下列文件和 / 或網站：</block>
-  <block id="dc09a61f5267f59b07d945a7843dd0ff" category="inline-link-macro">NetApp StorageGRID 供應品文件</block>
-  <block id="3bba50322e3e61749a153f6c0f61881b" category="list-text"><block ref="3bba50322e3e61749a153f6c0f61881b" category="inline-link-macro-rx"></block></block>
   <block id="8a9cd131f57d065d753803a90387c310" category="inline-link-macro">資料表StorageGRID</block>
   <block id="d6ed371e4ca6112ef8dca75d49381711" category="list-text"><block ref="d6ed371e4ca6112ef8dca75d49381711" category="inline-link-macro-rx"></block></block>
   <block id="0e25eb5c75f8069f3e7864cc794fc73f" category="inline-link-macro">Vertica 10.1產品文件</block>
@@ -1148,4 +1146,95 @@
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="ddd67082e2bd2747d057fda525754079" category="list-text">SPECtra Logic on － Prem Glacier</block>
+  <block id="2a1ac5be963ebd10913d2ddf30f62e47" category="inline-link-macro">NetApp StorageGRID 11.7 產品文件</block>
+  <block id="14d782d4b4bcaf927ddb317c08f8c416" category="list-text"><block ref="14d782d4b4bcaf927ddb317c08f8c416" category="inline-link-macro-rx"></block></block>
+  <block id="85517cd70ba2a2e551e4f0c99c6e56d7" category="summary">本指南著重於 NetApp StorageGRID 和部分 Veeam 備份與複寫的組態。本白皮書是專為熟悉 Linux 系統、且負責與 Veeam 備份與複寫搭配維護或實作 NetApp StorageGRID 系統的儲存與網路管理員所撰寫。</block>
+  <block id="5a80f6f017611133cae300eeb1b8838f" category="doc">使用 Veeam 備份與複寫進行部署的 StorageGRID 最佳實務做法</block>
+  <block id="118df32a81dd2fdb06e6ccff0f984121" category="paragraph">_Oliver Haensel 和 Aron Klein_</block>
+  <block id="3e8343417cb49b5fac72e19c07a7e1b7" category="paragraph">儲存管理員希望透過解決方案來管理資料的成長、以滿足可用度、快速恢復目標、擴充以滿足需求、並自動化長期保留資料的原則。這些解決方案也應提供防範遺失或惡意攻擊的保護。Veeam 與 NetApp 攜手合作、共同打造結合 Veeam 備份與恢復功能與 NetApp StorageGRID 的資料保護解決方案、以供內部部署物件儲存使用。</block>
+  <block id="cb88016fd6a4561b0ba47d4d2349e01a" category="paragraph">Veeam 與 NetApp StorageGRID 提供易於使用的解決方案、可共同協助滿足全球各地快速資料成長與法規不斷增加的需求。雲端型物件儲存設備的恢復能力、擴充能力、營運效率和成本效益、是備份目標的自然選擇。本文件將針對您的 Veeam 備份解決方案和 StorageGRID 系統的組態提供指引和建議。</block>
+  <block id="3f2a8b3ac5243a078416a91ba12f5677" category="paragraph">Veeam 的物件工作負載會建立大量的小型物件並行置放、刪除及清單作業。啟用不可變性將會增加物件存放區的要求數量、以設定保留和列出版本。備份工作的程序包括寫入每日變更的物件、然後在完成新寫入後、工作將會根據備份的保留原則刪除任何物件。備份工作的排程幾乎總是重疊的。這種重疊會導致大部分的備份時間、由物件存放區上的 50/50 Put / delete 工作負載所組成。在 Veeam 中調整工作時段設定的並行作業數、增加備份工作區塊大小、減少多物件刪除要求中的物件數目、以增加物件大小。 選擇工作完成的最長時間範圍、將可針對效能和成本最佳化解決方案。</block>
+  <block id="65523be105cf410c8f1a0f9075f3e6f7" category="inline-link">Veeam 備份與複寫</block>
+  <block id="392d70ca39f31f10bd637936769788df" category="inline-link">StorageGRID</block>
+  <block id="535647a2a89e3e794f5c415b865cb3b2" category="inline-link">Veeam Ready Object 、 Object Immutable 和 Repository</block>
+  <block id="35fff1030215641180d446636f07b965" category="paragraph">請務必閱讀的產品文件<block ref="011dc6ff3c4a6db4449338299b84c9c4" category="inline-link-rx"></block> 和<block ref="f6f71f61964919c3e794acd51103ea76" category="inline-link-rx"></block> 開始之前。Veeam 提供計算器、用於瞭解 Veeam 基礎架構的規模、以及在調整 StorageGRID 解決方案規模之前應使用的容量需求。請務必在 Veeam Ready 方案網站上查看 Veeam-NetApp 驗證的組態<block ref="27e44db2d47a236831b6854277703ed2" category="inline-link-rx"></block>。</block>
+  <block id="2cc1f5cc43ba172ac443ca2cbdcce2b4" category="section-title">Veeam 組態</block>
+  <block id="8d5d0d535411e895f9d96eda059a901d" category="section-title">建議的版本</block>
+  <block id="e7e23fdc645b150075b11f4c4918739b" category="paragraph">建議您隨時保持最新狀態、並為 Veeam 備份與複寫 12 系統套用最新的 Hotfix 。目前我們建議至少安裝 Veeam 修補程式 P20230718 。</block>
+  <block id="8a30f8c97261f6be55fd4a89233559fc" category="section-title">S3 儲存庫組態</block>
+  <block id="6ee286a7db9c406f8c2971e8ec86b74d" category="paragraph">橫向擴充備份儲存庫（ SOBR ）是 S3 物件儲存的容量層。容量層是主要儲存庫的延伸、提供較長的資料保留期間和較低成本的儲存解決方案。Veeam 可透過 S3 物件鎖定 API 提供不變的功能。Veeam 12 可以在橫向擴充儲存庫中使用多個儲存庫。StorageGRID 對單一貯體中的物件數量或容量沒有限制。使用多個貯體可在備份大型資料集時改善效能、而備份資料可能會在物件中達到 PB 規模。</block>
+  <block id="48911c3ddb06d15c07c25b15627109d6" category="paragraph">視您的特定解決方案和需求規模而定、可能需要限制並行工作。預設設定會指定 2 個儲存庫工作插槽，而每個工作插槽的並行工作插槽限制為 "S3ConturentTaskLimit" 登錄機碼值為 64 。總共 128 個並行執行緒到物件儲存區。這包括「放置」、「取得」和「批次刪除」。建議您在 Veeam 備份達到新備份的穩定狀態並即將過期的備份資料後、選擇一個保守的工作時段限制、以開始調整此值。請與您的 NetApp 客戶團隊合作、適當調整 StorageGRID 系統的規模、以符合所需的時間和效能。若要提供最佳解決方案、可能需要調整工作插槽數量和每個插槽的工作限制。</block>
+  <block id="274d09dbf63a4b2cf6067da7bdccc520" category="section-title">備份工作組態</block>
+  <block id="6859565d94b1aa5262122016e1d0ca31" category="paragraph">Veeam 備份工作可以使用不同的區塊大小選項進行設定、這些選項應該仔細考慮。預設區塊大小為 1MB 、 Veeam 提供的壓縮與重複資料刪除儲存效率可為初始完整備份建立約 500KB 的物件大小、而增量工作則建立 100-200kB 物件。我們可以選擇較大的備份區塊大小、大幅提升效能、並降低物件儲存區的需求。雖然較大的區塊大小可大幅改善物件儲存區效能、但由於儲存效率效能降低、因此可能會增加主要儲存容量需求。建議將備份工作設定為 4 MB 區塊大小、以建立大約 2 MB 的物件來進行完整備份、並將 700kB-1MB 的物件大小用於遞增。客戶甚至可以考慮使用 8 MB 區塊大小來設定備份工作、這樣就能實作「 UISHowLegacyBlockSize 」登錄機碼。</block>
+  <block id="0e71d2971c1d3e37252ab5b94a556ab5" category="paragraph">執行不可變備份時、會使用物件儲存區上的 S3 物件鎖定。不可變選項會產生更多要求、要求物件存放區列出物件並更新保留資料。</block>
+  <block id="2ae57a117ceed123c4f715126adb75bf" category="paragraph">當備份保留過期時、備份工作會處理物件的刪除。Veeam 會將刪除要求傳送至物件存放區、每個要求的多物件刪除要求為 1000 個物件。對於小型解決方案、可能需要使用「 S3MultiObjectDeleteLimit 」登錄機碼來調整、以減少每個要求的物件數量。降低此值將有助於更平均地在 StorageGRID 系統中的節點之間分配刪除要求。建議使用下表中的值作為設定多物件刪除限制的起點。將表格中的值乘以所選應用裝置類型的節點數、即可取得 Veeam 中登錄設定的值。如果此值等於或大於 1000 、則不需要在登錄設定中調整預設值。</block>
+  <block id="f155778379e9bde49e66b15a4cb59aa4" category="cell">應用裝置機型</block>
+  <block id="09e895a7d52e3b7e14028a710c859bf4" category="cell">S3 每個節點的 MultiObjectDeleteLimit</block>
+  <block id="d23f070363a51bb19a371740717fb008" category="cell">SG5712</block>
+  <block id="e369853df766fa44e1ed0ff613f563bd" category="cell">34.</block>
+  <block id="08737855a7278096a93baafac39de5b0" category="cell">SG5760</block>
+  <block id="d09bf41544a3365a46c9077ebb5e35c3" category="cell">75</block>
+  <block id="c69ff1785c16ab7db216e04b62e5ef4f" category="cell">SG6060</block>
+  <block id="3644a684f98ea8fe223c713b77189a77" category="cell">200</block>
+  <block id="6c9a4b7548d56934d30ab02a9a13caf2" category="paragraph">請與您的 NetApp 客戶團隊合作、根據您的特定需求、取得建議的組態。Veeam 組態設定建議包括：</block>
+  <block id="80fb632117c19ac683023299f721dcad" category="list-text">備份工作區塊大小 = 4MB</block>
+  <block id="5a80842ad876afca2599388c0e374483" category="list-text">SOBR 工作插槽限制 = 2-16</block>
+  <block id="4bb90882de8268f14eedce7a49450a9a" category="list-text">多物件刪除限制 = 34-1000</block>
+  <block id="a4bd669931c15a4828a4c38a495d7ff3" category="section-title">StorageGRID 組態</block>
+  <block id="b85a187b18cf0ecaff36c27f7e5e7500" category="paragraph">含最新 Hotfix 的 NetApp StorageGRID 11.6 或 11.7 是 Veeam 部署的建議版本。StorageGRID 11.6.0.11 和 11.7.0.4 中引進許多最佳化功能、對 Veeam 工作負載有幫助。建議您隨時保持最新狀態、並為您的 StorageGRID 系統套用最新的 Hotfix 。</block>
+  <block id="8215067184a09c074108be8e3fbbe725" category="section-title">負載平衡器和 S3 端點組態</block>
+  <block id="923dc06db89bcd66cca887f28c0733c5" category="paragraph">Veeam 要求端點僅透過 HTTPS 連線。Veeam 不支援未加密的連線。SSL 憑證可以是自我簽署的憑證、私密信任的憑證授權單位或公開信任的憑證授權單位。為了確保能持續存取 S3 儲存庫、建議在 HA 組態中至少使用兩個負載平衡器。負載平衡器可以是 StorageGRID 提供的整合式負載平衡器服務、位於每個管理節點和閘道節點、或是第三方解決方案、例如 F5 、 Kemp 、 HAProxy 、 Loadbalanacer.org 等 使用 StorageGRID 負載平衡器可設定流量分類器（ QoS 規則）、以排定 Veeam 工作負載的優先順序、或將 Veeam 限制為不影響 StorageGRID 系統上的高優先順序工作負載。</block>
+  <block id="84ace9fb8e132c96d1dfcd31447efedc" category="section-title">S3時段</block>
+  <block id="55876228853abf632dec9346a4f372ec" category="inline-link">文件</block>
+  <block id="69e163f50758f77f10618e8e4b89f0cb" category="paragraph">StorageGRID 是安全的多租戶儲存系統。建議您為 Veeam 工作負載建立專用租戶。您可以選擇性地指派儲存配額。最佳實務做法是啟用「使用自己的身分識別來源」。使用適當的密碼來保護租戶根目錄管理使用者的安全。Veeam Backup 12 需要 S3 儲存區的一致性。StorageGRID 提供多種在貯體層級設定的一致性選項。對於具有 Veeam 從多個位置存取資料的多站台部署、請選取「 Strong-global 」。如果 Veeam 備份與還原僅發生在單一站台上、則一致性層級應設為「 Strong-site 」。如需更多有關貯體一致性層級的資訊、請參閱<block ref="782397d2a33ccd7da9c1580a84d10f9d" category="inline-link-rx"></block>。若要使用 StorageGRID 進行 Veeam 不可變備份、必須在建立貯體期間、全域啟用 S3 物件鎖定、並在貯體上設定。</block>
+  <block id="2973716716ecfc8cb158222d309c85ff" category="section-title">生命週期管理</block>
+  <block id="1cfb631f44c302a86adda6e45ba24763" category="paragraph">StorageGRID 支援複寫和銷毀編碼、可在 StorageGRID 節點和站台之間提供物件層級保護。銷毀編碼需要至少 200kB 物件大小。Veeam 的預設區塊大小為 1MB 、產生的物件大小通常會低於 Veeam 儲存效率之後的 200 KB 建議最小大小。為了達到解決方案的效能、建議不要使用跨越多個站台的抹除編碼設定檔、除非站台之間的連線能力足以避免增加延遲或限制 StorageGRID 系統的頻寬。在多站台 StorageGRID 系統中、 ILM 規則可設定為在每個站台上儲存單一複本。為了達到極致的耐用性、可設定規則、在每個站台儲存銷毀編碼複本。使用兩個本機複本到 Veeam 備份伺服器是此工作負載最建議的實作方式。</block>
+  <block id="6a91fddc67312e23440e7297f57a6e75" category="section-title">實作重點</block>
+  <block id="0dc64850ea098a695ef04ad4917575f8" category="paragraph">如果需要不可變性、請確保 StorageGRID 系統上已啟用物件鎖定。請在組態 /S3 物件鎖定下的管理 UI 中找到選項。</block>
+  <block id="21e26b17ef37d6789ef963babce3bcf7" category="inline-image-macro">啟用網格寬度物件鎖定</block>
+  <block id="9eb0c7fe294867f4025650c8c0709e57" category="paragraph"><block ref="9eb0c7fe294867f4025650c8c0709e57" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a1d354bcc841b4fd7414aa3b5cc067b9" category="paragraph">建立貯體時、如果要使用此貯體進行不可變備份、請選取「啟用 S3 物件鎖定」。這會自動啟用貯體版本管理。停用預設保留、因為 Veeam 會明確設定物件保留。如果 Veeam 未建立不可變的備份、則不應選取版本設定和 S3 物件鎖定。</block>
+  <block id="a01314a14731335aa7b83dabe139b1bc" category="inline-image-macro">啟用貯體上的物件鎖定</block>
+  <block id="fe418f43b0dec57499cf347d109f86b1" category="paragraph"><block ref="fe418f43b0dec57499cf347d109f86b1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="913ca82ae339f347d099d594b95fc5d0" category="paragraph">建立貯體後、請前往建立之貯體的詳細資料頁面。選取一致性層級。</block>
+  <block id="0bb9673c8d3a007a2aec60e0eb872235" category="inline-image-macro">貯體選項</block>
+  <block id="0bd39904534d738466d23700af014b93" category="paragraph"><block ref="0bd39904534d738466d23700af014b93" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="81f068f3d3e42253d4aad514fd607d9d" category="paragraph">Veeam 需要 S3 儲存區的強大一致性。因此、對於 Veeam 從多個位置存取資料的多站台部署、請選取「 Strong-glob線 」。如果 Veeam 備份與還原僅發生在單一站台上、則一致性層級應設為「 Strong-site 」。儲存變更。</block>
+  <block id="b47fa19cf7fc1f946539cdca83a310f6" category="inline-image-macro">貯體一致性</block>
+  <block id="e60d52b4e43de4ee2416f9b9d4c543ae" category="paragraph"><block ref="e60d52b4e43de4ee2416f9b9d4c543ae" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="33cb018e166847decbe1831bcbda0dfe" category="paragraph">StorageGRID 在每個管理節點和專用閘道節點上提供整合式負載平衡器服務。使用此負載平衡器的眾多優點之一、就是能夠設定流量分類原則（ QoS ）。雖然這些指標主要用於限制應用程式對其他用戶端工作負載的影響、或是優先處理工作負載而非其他工作負載、但它們也提供額外的指標收集、以協助監控。</block>
+  <block id="be01644f81aa9785fd9a47a133f6b06b" category="paragraph">在組態索引標籤中、選取「流量分類」並建立新原則。命名規則、並選取貯體或租戶作為類型。輸入貯體或租戶的名稱。如果需要 QoS 、請設定限制、但對於大多數實作而言、我們只是想增加監控效益、所以請勿設定限制。</block>
+  <block id="ffa056c913f2233a9d6c17d77ec6c2ea" category="inline-image-macro">建立 TC 原則</block>
+  <block id="27b29720bc7935776a8007b13c881a1e" category="paragraph"><block ref="27b29720bc7935776a8007b13c881a1e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="05241239c2e205951eabc51d0b39de96" category="section-title">Veeam</block>
+  <block id="1747f94b0479dd6f64566f9def184149" category="paragraph">視 StorageGRID 應用裝置的型號和數量而定、可能需要選擇並設定貯體上並行作業數量的限制。</block>
+  <block id="e0c5284488d876ff3c0ab4615c30f264" category="inline-image-macro">Veeam 並行工作限制</block>
+  <block id="feb1270f2d249021c93d4845a9be6d8d" category="paragraph"><block ref="feb1270f2d249021c93d4845a9be6d8d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="583ffa11c93d679d28e4223a3a34e9e4" category="paragraph">請依照 Veeam 主控台中備份工作組態的 Veeam 文件、啟動精靈。新增虛擬機器後、請選取 SOBR 儲存庫。</block>
+  <block id="2269301dc6504a2bb4291697a42d6372" category="inline-image-macro">備份工作</block>
+  <block id="f80bb521fa0915867adb4ac2385f431a" category="paragraph"><block ref="f80bb521fa0915867adb4ac2385f431a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="09b5418e51b83d62c4785d219e745382" category="paragraph">按一下「進階設定」、將儲存最佳化設定變更為 4 MB 或更大。應啟用壓縮與重複資料刪除。根據您的需求變更來賓設定、並設定備份工作排程。</block>
+  <block id="1a267127d1c75146fba631f5be6cc720" category="inline-image-macro">自動產生電腦說明的螢幕擷取畫面、寬度 = 320 、高度 = 375</block>
+  <block id="a6b3c8ce8a0f7b47961a71ca8f691360" category="paragraph"><block ref="a6b3c8ce8a0f7b47961a71ca8f691360" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="680a28709f4f4046002e60fa297d351a" category="section-title">監控 StorageGRID</block>
+  <block id="3843e063a231c099f5416c34c95f4042" category="paragraph">若要完整瞭解 Veeam 和 StorageGRID 如何共同執行、您必須等到第一次備份的保留時間過期。直到目前為止、 Veeam 工作負載主要由 Put 作業所組成、而且沒有發生刪除。一旦備份資料過期且正在清理、您現在可以在物件存放區中看到完全一致的使用情形、並視需要在 Veeam 中調整設定。</block>
+  <block id="b2f0530b7f3eff1d4dbe439b30663ed9" category="paragraph">StorageGRID 提供便利的圖表、可監控位於「支援索引標籤度量」頁面中的系統運作。如果建立原則、則主要要查看的儀表板是 S3 概觀、 ILM 和流量分類原則。在 S3 概述儀表板中、您可以找到 S3 作業率、延遲和要求回應的相關資訊。</block>
+  <block id="231b32850a7fef5c4be77eedcd54b7c4" category="inline-image-macro">S3 總覽費率</block>
+  <block id="b5d405519c83b44b871a7fb2a7401500" category="paragraph">查看 S3 速率和作用中要求、您可以瞭解每個節點處理的負載量、以及依類型列出的要求總數。
+<block ref="09a4b2cfcdf675e5f1f1ab0e8d545c44" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1f8f94c350e86ecbf5f8b0933d9dd0b2" category="paragraph">「平均持續時間」圖表顯示每個節點針對每個要求類型所花費的平均時間。這是要求的平均延遲、可能是需要額外調整的好指標、或是 StorageGRID 系統有更多負載的空間。</block>
+  <block id="dfb4d9aca7ff63a8b59297daaa36013e" category="inline-image-macro">S3 總覽持續時間</block>
+  <block id="1be387f78502bd155ac8b9f6243be096" category="paragraph"><block ref="1be387f78502bd155ac8b9f6243be096" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="97e697a60f8fc93ff1b8ab5d2fecf264" category="paragraph">在「完成的申請總數」圖表中、您可以依類型和回應代碼查看申請。如果您看到 200 （正常）以外的回應、這可能表示 StorageGRID 系統負載過大、傳送 503 （減慢）回應、可能需要進行一些額外調整、或是需要時間擴充系統以因應增加的負載。</block>
+  <block id="b49a867e529855d0406df931c97b5128" category="inline-image-macro">S3 概述要求</block>
+  <block id="4d53d2d4fecbf45d3f80638358f5d314" category="paragraph"><block ref="4d53d2d4fecbf45d3f80638358f5d314" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a1350656a4a8103a53007527e1543062" category="paragraph">在 ILM 儀表板中、您可以監控 StorageGRID 系統的刪除效能。StorageGRID 會在每個節點上同時使用同步刪除和非同步刪除、以嘗試最佳化所有要求的整體效能。</block>
+  <block id="2bd51718453d33063e1d9ab37fca0aef" category="inline-image-macro">ILM 刪除</block>
+  <block id="49ce7b2f13d2e86a8ac31b5b7c9f0698" category="paragraph"><block ref="49ce7b2f13d2e86a8ac31b5b7c9f0698" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b95f246819e27a4486f140cce28a5ca9" category="paragraph">有了流量分類原則、我們可以檢視負載平衡器要求處理量、速率、持續時間、以及 Veeam 正在傳送和接收的物件大小的度量。</block>
+  <block id="0163b2e276a1d083b8a419a32c771680" category="inline-image-macro">流量分類原則指標</block>
+  <block id="ed456358a6cded4a701707d28ed42b9c" category="paragraph"><block ref="ed456358a6cded4a701707d28ed42b9c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2c03d0abe3f02a4e8010af61356f3a13" category="paragraph"><block ref="2c03d0abe3f02a4e8010af61356f3a13" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="41626bdee063e6c3bb48894a7b384438" category="list-text"><block ref="81bbc4df100e2c72e0ac40c7f4e45348" category="inline-link-macro-rx"></block></block>
+  <block id="112e3eabbbb552d94c0e006c23999aa3" category="sidebar">使用 StorageGRID 的 Veeam 備份與複寫</block>
 </blocks>

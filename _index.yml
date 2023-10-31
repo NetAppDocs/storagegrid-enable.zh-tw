@@ -49,6 +49,8 @@ indexpage:
       url: "/tools-apps-guides/use-datadog-snmp.html"
     - title: 使用 rclone 在 StorageGRID 上移轉、放置及刪除物件
       url: "/tools-apps-guides/use-rclone-migrate-delete.html"
+    - title: 使用 StorageGRID 的 Veeam 備份與複寫
+      url: "/tools-apps-guides/veeam-br.html"
   - title: 程序和API範例
     links:
     - title: 測試並示範S3加密
