@@ -1,0 +1,94 @@
+---
+permalink: tools-apps-guides/configure-Dremio-StorageGRID.html 
+sidebar: sidebar 
+keywords: Dremio, StorageGRID, lakehouse, object storage, s3 
+summary: 使用 StorageGRID 設定 Dremio 資料來源 
+---
+= 使用 StorageGRID 設定 Dremio 資料來源
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+:firstname:  Angela
+:authorinitials:  C
+:lastname: Cheng 
+:author:  Angela Cheng 
+:authors:  Angela Cheng 
+
+
+[role="lead"]
+Dremio 支援各種資料來源、包括雲端型或內部部署物件儲存。  您可以將 Dremio 設定為使用 StorageGRID 做為物件儲存資料來源。
+
+
+
+== 設定 Dremio 資料來源
+
+
+
+=== 先決條件
+
+* StorageGRID S3 端點 URL 、租戶 S3 存取金鑰 ID 和秘密存取金鑰。
+* StorageGRID 組態建議：停用壓縮（預設為停用）。  +
+Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中擷取不同的位元組範圍。  位元組範圍要求的一般大小為 1MB 。壓縮物件會降低位元組範圍的效能。
+
+
+
+
+=== Dremio 指南
+
+https://docs.dremio.com/current/sonar/data-sources/object/s3/["連線至 Amazon S3 - 設定相容 S3 的儲存設備"^]。
+
+
+
+== 指示
+
+. 在「 Dremio 資料集」頁面上、按一下 + 符號以新增來源、然後選取「 Amazon S3 」。
+. 輸入此新資料來源的名稱、 StorageGRID S3 租戶存取金鑰 ID 和秘密存取金鑰。
+. 如果使用 https 連線至 StorageGRID S3 端點、請勾選「加密連線」方塊。+
+如果為此 S3 端點使用自我簽署的 CA 認證、請遵循 Dremio 指南說明、將此 CA 認證新增至 Dremio 伺服器的 <JAVA_HOME> / JRE/lib/security +
+*範例擷取畫面*
++
+image::../media/dremio/dremio-add-source-general.png[新來源 - 一般]
+
+. 按一下「進階選項」、核取「啟用相容模式」
+. 在連線內容下、按一下 + 新增內容、然後新增這些 s3a 內容。
+. fs.s3a.connection.maximum 預設為 100 。  如果您的 S3 資料集包含 100 個以上欄位的大型 Parquet 檔案、則必須輸入大於 100 的值。  請參閱 Dremio 指南以瞭解此設定。
++
+[cols="2a,3a"]
+|===
+| 名稱 | 價值 
+
+
+ a| 
+fs.s3a.端 點
+ a| 
+_< StorageGRID 支援S3端點：連接埠>_
+
+
+
+ a| 
+fs.s3a.path.樣式.access
+ a| 
+是的
+
+
+
+ a| 
+fs.s3a.connection.maximum
+ a| 
+_< 大於 100>_ 的值
+
+|===
++
+*範例擷取畫面*
+
++
+image::../media/dremio/dremio-add-source-advanced.png[新來源 - 進階選項]
+
+. 根據您的組織或應用程式需求、設定其他 Dremio 選項。
+. 按一下「儲存」按鈕以建立此新資料來源。
+. 成功新增 StorageGRID 資料來源後、左側面板會顯示貯體清單。+
+*範例擷取畫面*
++
+image::../media/dremio/dremio-source-added.png[新增資料來源]
+
+
