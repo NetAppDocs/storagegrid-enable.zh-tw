@@ -101,6 +101,7 @@ summary: 第三方解決方案已通過 StorageGRID 11.7 驗證
 * Encoding.com
 * Fujifilm物件歸檔
 * GE Centricity Enterprise Archive
+* Gitlab
 * Hyland Acuo
 * IBM Aspera
 * 里程碑系統
