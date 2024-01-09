@@ -203,3 +203,74 @@ summary: 以下是庫位原則和群組原則（IAM原則）的範例。
     ]
 }
 ----
+
+
+=== 將群組限制為具有唯讀存取權的單一子目錄（首碼）
+
+此原則可讓群組成員對儲存庫中的子目錄（前置）擁有唯讀存取權。貯體名稱為「 study 」、子目錄為「 study01 」。
+
+[source, json]
+----
+{
+    "Statement": [
+        {
+            "Sid": "AllowUserToSeeBucketListInTheConsole",
+            "Action": [
+                "s3:ListAllMyBuckets"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:s3:::*"
+            ]
+        },
+        {
+            "Sid": "AllowRootAndstudyListingOfBucket",
+            "Action": [
+                "s3:ListBucket"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:s3::: study"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "s3:prefix": [
+                        "",
+                        "study01/"
+                    ],
+                    "s3:delimiter": [
+                        "/"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "AllowListingOfstudy01",
+            "Action": [
+                "s3:ListBucket"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:s3:::study"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "s3:prefix": [
+                        "study01/*"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "AllowAllS3ActionsInstudy01Folder",
+            "Effect": "Allow",
+            "Action": [
+                "s3:Getobject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::study/study01/*"
+            ]
+        }
+    ]
+}
+----

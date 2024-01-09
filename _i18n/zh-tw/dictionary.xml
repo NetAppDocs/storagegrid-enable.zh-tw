@@ -1278,4 +1278,6 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="cda1cacdbb2c1506d847fed8599faa68" category="list-text">11 月 7 日：<block ref="4558e5f7bc147029e407b74c0a6768e6" category="inline-link-rx"></block></block>
   <block id="d8d45aa5142f174e3e83b7f1de8895a1" category="sidebar">使用 StorageGRID 設定 Dremio</block>
   <block id="9792e23419583666b178605decaec552" category="list-text">Gitlab</block>
+  <block id="d2f2caed07026483a659ddedff29363a" category="section-title">將群組限制為具有唯讀存取權的單一子目錄（首碼）</block>
+  <block id="12e569a2475c87038546154b45eafa4f" category="paragraph">此原則可讓群組成員對儲存庫中的子目錄（前置）擁有唯讀存取權。貯體名稱為「 study 」、子目錄為「 study01 」。</block>
 </blocks>
