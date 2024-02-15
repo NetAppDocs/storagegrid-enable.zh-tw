@@ -1280,4 +1280,14 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="9792e23419583666b178605decaec552" category="list-text">Gitlab</block>
   <block id="d2f2caed07026483a659ddedff29363a" category="section-title">將群組限制為具有唯讀存取權的單一子目錄（首碼）</block>
   <block id="12e569a2475c87038546154b45eafa4f" category="paragraph">此原則可讓群組成員對儲存庫中的子目錄（前置）擁有唯讀存取權。貯體名稱為「 study 」、子目錄為「 study01 」。</block>
+  <block id="d40d489ee06ec7f85fb2d17fd332ec2c" category="list-text">AWS 安裝點</block>
+  <block id="dab38c58c86e39075df5ca86464b6e59" category="summary">第三方解決方案已通過 StorageGRID 11.8 驗證</block>
+  <block id="43c9d447791c3e84501a3b86b522a4c1" category="doc">StorageGRID 11.8 驗證的協力廠商解決方案</block>
+  <block id="80880f7955cf3e0bbe904bbb677a357b" category="paragraph">下列協力廠商解決方案已通過驗證、可搭配 StorageGRID 11.8 使用。+
+如果未列出您要尋找的解決方案、請聯絡您的 NetApp 客戶代表。</block>
+  <block id="9283e244bcd98f1bdd350c1b4f2da148" category="inline-link">StorageGRID 應用裝置</block>
+  <block id="eff26b146dbf07b93a3af4954ea77c6d" category="list-text"><block ref="eff26b146dbf07b93a3af4954ea77c6d" category="inline-link-rx"></block></block>
+  <block id="0c116dd1f4daf14c460a0c77a9e0e674" category="inline-link">StorageGRID 11.8</block>
+  <block id="6a9dbde708e64ed0ece8a4d0b0dc1d32" category="list-text"><block ref="6a9dbde708e64ed0ece8a4d0b0dc1d32" category="inline-link-rx"></block></block>
+  <block id="fca3b43498fce810dfcc0f52e38e42a6" category="list-text"><block ref="fca3b43498fce810dfcc0f52e38e42a6" category="inline-link-rx"></block></block>
 </blocks>

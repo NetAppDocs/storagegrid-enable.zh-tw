@@ -1,7 +1,7 @@
 ---
 permalink: storagegrid-documentation.html 
 sidebar: sidebar 
-keywords: storagegrid, 11.6, 11.5, 11.4, 11.3, 11.2 
+keywords: storagegrid, 11.8, 11.7, 11.6, 11.5, 11.4, 11.3, 11.2 
 summary: 您可在此找到每StorageGRID 個NetApp版本的完整文件。 
 ---
 = NetApp StorageGRID 產品文件
@@ -13,6 +13,9 @@ summary: 您可在此找到每StorageGRID 個NetApp版本的完整文件。
 [role="lead"]
 您可以在StorageGRID 這裡找到每個NetApp版本的完整文件：
 
+* https://docs.netapp.com/us-en/storagegrid-appliances/index.html["StorageGRID 應用裝置"]
+* https://docs.netapp.com/us-en/storagegrid-118/index.html["StorageGRID 11.8"^]
+* https://docs.netapp.com/us-en/storagegrid-117/index.html["StorageGRID 11.7"^]
 * https://docs.netapp.com/us-en/storagegrid-116/index.html["部分11.6% StorageGRID"^]
 * https://docs.netapp.com/sgws-115/index.jsp["部分11.5 StorageGRID"^]
 * https://docs.netapp.com/sgws-114/index.jsp["部分11.4 StorageGRID"^]
