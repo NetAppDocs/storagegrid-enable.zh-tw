@@ -5,10 +5,11 @@ keywords: prometheus, on-premises, grafana, metrics
 summary: 本技術報告提供使用StorageGRID 外部Prometheus和Grafana服務設定NetApp供應鏈11.6的詳細說明。 
 ---
 = 使用Prometheus和Grafana來延長指標保留時間
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/prometheus/
 
-
-_Aron Klein_
 
 [role="lead"]
 本技術報告提供使用StorageGRID 外部Prometheus和Grafana服務設定NetApp供應鏈11.6的詳細說明。
@@ -39,11 +40,11 @@ _Aron Klein_
 . 在「憑證」頁面上、選取「用戶端」索引標籤、然後按一下「新增」按鈕。
 . 提供將被授予存取權並使用此憑證的用戶端名稱。按一下「權限」下方的方塊、位於「允許Prometheus」前面、然後按一下「繼續」按鈕。
 +
-image::../media/prometheus/cert_name.png[憑證名稱]
+image::cert_name.png[憑證名稱]
 
 . 如果您有CA簽署的憑證、您可以選取「上傳憑證」的選項按鈕、但在我們的案例中StorageGRID 、我們要選擇「產生憑證」的選項按鈕、讓流程無法產生用戶端憑證。必填欄位將會顯示以供填寫。輸入用戶端伺服器的FQDN、伺服器的IP、主旨及有效天數。然後按一下「產生」按鈕。
 +
-image::../media/prometheus/cert_detail.png[憑證詳細資料]
+image::cert_detail.png[憑證詳細資料]
 
 
 
@@ -53,7 +54,7 @@ image::../media/prometheus/cert_detail.png[憑證詳細資料]
 ====
 . 下載憑證pem檔案和私密金鑰pem檔案。
 +
-image::../media/prometheus/cert_download.png[下載憑證]
+image::cert_download.png[下載憑證]
 
 
 
@@ -253,18 +254,18 @@ Aug 22 15:14:24 aj-deb-prom01 prometheus[6498]: ts=2022-08-22T19:14:24.832Z call
 ----
 . 您現在應該可以瀏覽至Prometheus伺服器的UI http://Prometheus-server:9090[] 並查看UI
 +
-image::../media/prometheus/prometheus_ui.png[Prometheus UI頁面]
+image::prometheus_ui.png[Prometheus UI頁面]
 
 . 在「Status（狀態）」目標下、您可以看到StorageGRID 我們在Prometheus.yml中設定的這個端點的狀態
 +
-image::../media/prometheus/prometheus_targets.png[Prometheus狀態功能表]
+image::prometheus_targets.png[Prometheus狀態功能表]
 
 +
-image::../media/prometheus/prometheus_target_status.png[Prometheus目標頁面]
+image::prometheus_target_status.png[Prometheus目標頁面]
 
 . 在「圖表」頁面上、您可以執行測試查詢、並驗證資料是否已成功擷取。例如、在查詢列中輸入「storagegrid節點_cpu使用率百分比」、然後按一下「執行」按鈕。
 +
-image::../media/prometheus/prometheus_execute.png[執行Prometheus查詢]
+image::prometheus_execute.png[執行Prometheus查詢]
 
 
 
@@ -321,14 +322,14 @@ sudo systemctl enable grafana-server.service
 . Prometheus將是最熱門的資料來源之一。如果不是、請使用搜尋列找出「Prometheus」
 . 輸入Prometheus執行個體的URL、以及符合Prometheus時間間隔的Scp強 檔時間間隔、以設定Prometheus來源。我也停用警示區段、因為我沒有在Prometheus上設定警示管理程式。
 +
-image::../media/prometheus/grafana_prometheus_conf.png[GRafana Prometheus組態]
+image::grafana_prometheus_conf.png[GRafana Prometheus組態]
 
 . 輸入所需的設定後、向下捲動至底部、然後按一下「Save & test（儲存並測試）」。
 . 組態測試成功後、按一下「Explore（瀏覽）」按鈕。
 +
 .. 在「Explore（瀏覽）」視窗中、您可以使用我們使用「storagegrid節點CPU使用率百分比」測試的相同度量、然後按一下「Run query（執行查詢）」按鈕
 +
-image::../media/prometheus/grafana_source_explore.png[GRafana Prometheus指標探索]
+image::grafana_source_explore.png[GRafana Prometheus指標探索]
 
 
 
@@ -338,7 +339,7 @@ image::../media/prometheus/grafana_source_explore.png[GRafana Prometheus指標�
 .. 選取「新增面板」
 .. 選取度量來設定新的面板、我將再次使用「storagegRid_nore_cpu使用率百分比」、輸入面板的標題、展開底部的「選項」、然後將圖例變更為自訂、並輸入「｛｛instance｝｝」以定義節點名稱、並在右窗格的「Standard options」（標準選項）下、將「Unit」設為「siscs/center百（單位）。然後按一下「套用」、將面板儲存至儀表板。
 +
-image::../media/prometheus/grafana_panel_conf.png[設定grafana面板]
+image::grafana_panel_conf.png[設定grafana面板]
 
 
 
@@ -347,31 +348,31 @@ image::../media/prometheus/grafana_panel_conf.png[設定grafana面板]
 .. 從左側窗格的「支援」選項、StorageGRID 然後在「工具」欄底部按一下「指標」。
 .. 在指標中、我要選取中間欄頂端的「Grid（網格）」連結。
 +
-image::../media/prometheus/storagegrid_metrics.png[架構指標StorageGRID]
+image::storagegrid_metrics.png[架構指標StorageGRID]
 
 .. 從網格儀表板中、選取「使用的儲存設備-物件中繼資料」面板。按一下小向下箭頭和面板標題的結尾、即可下拉功能表。在此功能表中、選取「檢查」和「面板Json」。
 +
-image::../media/prometheus/storagegrid_dashboard_insp.png[資訊儀表板StorageGRID]
+image::storagegrid_dashboard_insp.png[資訊儀表板StorageGRID]
 
 .. 複製Json程式碼並關閉視窗。
 +
-image::../media/prometheus/storagegrid_panel_inspect.png[Json StorageGRID]
+image::storagegrid_panel_inspect.png[Json StorageGRID]
 
 .. 在新儀表板中、按一下圖示以新增面板。
 +
-image::../media/prometheus/grafana_add_panel.png[GRafana新增面板]
+image::grafana_add_panel.png[GRafana新增面板]
 
 .. 套用新的面板而不做任何變更
 .. 就像StorageGRID 使用「無縫面板」一樣、請檢查Json。移除所有Json程式碼、然後從StorageGRID 「資訊畫面」中以複製的程式碼加以取代。
 +
-image::../media/prometheus/grafana_panel_inspect.png[GRFANA檢查面板]
+image::grafana_panel_inspect.png[GRFANA檢查面板]
 
 .. 編輯新的面板、右側會顯示移轉訊息、並顯示「移轉」按鈕。按一下按鈕、然後按一下「Apply（套用）」按鈕。
 +
-image::../media/prometheus/grafana_panel_edit_menu.png[grafana編輯面板功能表]
+image::grafana_panel_edit_menu.png[grafana編輯面板功能表]
 
 +
-image::../media/prometheus/grafana_panel_edit.png[GRFANA編輯面板]
+image::grafana_panel_edit.png[GRFANA編輯面板]
 
 
 
@@ -383,3 +384,5 @@ image::../media/prometheus/grafana_panel_edit.png[GRFANA編輯面板]
 === 結論
 
 現在我們擁有Prometheus伺服器、可自訂資料保留和儲存容量。有了這項功能、我們就能繼續建立自己的儀表板、並提供與營運最相關的指標。您可以取得更多有關在中收集的Prometheus指標的資訊 https://docs.netapp.com/us-en/storagegrid-116/monitor/commonly-used-prometheus-metrics.html["本文檔StorageGRID"^]。
+
+_ 作者： Aron Klein_

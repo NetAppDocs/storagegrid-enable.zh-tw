@@ -5,10 +5,11 @@ keywords: ELK, log analytics, log analysis, StorageGRID troubleshooting
 summary: 利用「Sys11.6syslog轉送」功能、您可以設定外部syslog伺服器來收集和分析資訊記錄訊息。StorageGRID StorageGRIDElk（Elasticsearch、Logstash、Kibana）已成為最受歡迎的記錄分析解決方案之一。本文包含Logstash組態範例、可用來篩選及定義記錄訊息模式、Kibana查詢、圖表及儀表板範例、讓您快速開始StorageGRID 進行資訊記錄管理與分析。 
 ---
 = 使用elk堆疊進行記錄分析StorageGRID
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/elk-config/
 
-
-_Angela Cheng
 
 [role="lead"]
 利用「靜態11.6syslog轉送」功能、您可以設定外部syslog伺服StorageGRID 器來收集和分析StorageGRID 資訊記錄訊息。Elk（Elasticsearch、Logstash、Kibana）已成為最受歡迎的記錄分析解決方案之一。觀看 https://www.netapp.tv/details/29396["使用elk視訊進行記錄分析StorageGRID"] 檢視示範elk組態、以及如何使用它來識別及疑難排解失敗的S3要求。本文提供Logstash組態、Kibana查詢、圖表和儀表板的範例檔案、協助您快速開始StorageGRID 進行資訊記錄管理和分析。
@@ -47,11 +48,11 @@ match => {"message" => '<%{POSINT:syslog_pri}>%{SYSLOGBASE} %{GREEDYDATA:msg-det
 ----
 * Logstash 7.17樣本*
 
-image::../media/elk-config/logstash-7.17.fields-sample.png[Logstash 7.17範例]
+image::logstash-7.17.fields-sample.png[Logstash 7.17範例]
 
 *記錄8.23樣本*
 
-image::../media/elk-config/logstash-8.x.fields-sample.png[Logstash 8.23範例]
+image::logstash-8.x.fields-sample.png[Logstash 8.23範例]
 
 *步驟*
 
@@ -98,13 +99,13 @@ GET /_cat/indices/*?v=true&s=index
 . 從Kibana GUI建立索引模式（elk 7.x）或資料檢視（elk 8.x）。
 . 從Kibana GUI、在位於上方中心的搜尋方塊中輸入「儲存的物件」。+在「儲存的物件」頁面上、選取「匯入」。在「匯入選項」下、選取「在衝突時要求採取行動」
 +
-image::../media/elk-config/kibana-import-options.png[Kibana匯入選項]
+image::kibana-import-options.png[Kibana匯入選項]
 
 +
 匯入elk<version>-query-chart-same.ndjson。+當系統提示您解決衝突時、請選取您在步驟8中建立的索引模式或資料檢視。
 
 +
-image::../media/elk-config/kibana-import-conflict.png[Kibana衝突]
+image::kibana-import-conflict.png[Kibana衝突]
 
 +
 下列Kibana物件會匯入： +*查詢*+*稽核-msg-s3rq-orlm+* bycast記錄S3相關訊息+*記錄層級警告或更新版本+*失敗的安全事件+*圖表*+* S3要求數以bycast.log為基礎+* HTTP狀態代碼+*稽核msg明細按類型+*平均S3回應 時間+*儀表板*+* S3要求儀表板、請使用上述圖表。
@@ -125,3 +126,5 @@ image::../media/elk-config/kibana-import-conflict.png[Kibana衝突]
 * https://www.elastic.co/guide/en/kibana/master/document-explorer.html["Kibana指南–瀏覽文件"]
 * https://docs.netapp.com/us-en/storagegrid-116/audit/index.html["零稽核記錄訊息參考StorageGRID"]
 
+
+_ 作者： Angela Cheng _

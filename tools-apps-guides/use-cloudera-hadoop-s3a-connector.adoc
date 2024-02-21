@@ -5,10 +5,11 @@ keywords: hadoop, cloudera, s3a
 summary: Hadoop可利用簡單的程式設計架構、在多個電腦叢集之間分散處理大型資料集。Hadoop的設計可從單一伺服器擴充至數千部機器、每部機器均提供本機運算與儲存設備。 
 ---
 = 使用Cloudera Hadoop S3連接器StorageGRID 搭配使用
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/hadoop-s3a/
 
-
-_Angela Cheng
 
 [role="lead"]
 Hadoop已是資料科學家的最愛、至今已有一段時間。Hadoop可利用簡單的程式設計架構、在多個電腦叢集之間分散處理大型資料集。Hadoop的設計可從單一伺服器擴充至數千部機器、每部機器都擁有本機運算和儲存設備。
@@ -140,11 +141,11 @@ fs.s3a.path.樣式.access
 *範例擷取畫面*
 
 +
-image::../media/hadoop-s3a/hadoop-s3a-configuration.png[S3A組態]
+image::hadoop-s3a-configuration.png[S3A組態]
 
 . 按一下「儲存變更」按鈕。從HDFS功能表列選取過時組態圖示、在下一頁選取重新啟動過時的服務、然後選取立即重新啟動。
 +
-image::../media/hadoop-s3a/hadoop-restart-stale-service-icon.png[重新啟動Hadoop過時服務圖示]
+image::hadoop-restart-stale-service-icon.png[重新啟動Hadoop過時服務圖示]
 
 
 
@@ -255,3 +256,5 @@ keytool -import -trustcacerts -keystore $JAVA_HOME/lib/security/cacerts -storepa
 「Hadoop FS -ls s3a：//_<stucke-name>_&>error.log」
 
 
+
+_ 作者： Angela Cheng _

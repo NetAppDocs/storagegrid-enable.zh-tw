@@ -5,7 +5,10 @@ keywords: iam, bucket policy, group policy, policy
 summary: 以下是庫位原則和群組原則（IAM原則）的範例。 
 ---
 = 範例庫與群組（IAM）原則
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 [role="lead"]

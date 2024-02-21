@@ -5,7 +5,10 @@ keywords: 11.7, third-party applications, storagegrid, ISV
 summary: 第三方解決方案已通過 StorageGRID 11.7 驗證 
 ---
 = StorageGRID 11.7 驗證的協力廠商解決方案
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 [role="lead"]

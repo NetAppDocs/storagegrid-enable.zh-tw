@@ -5,10 +5,11 @@ keywords: cloud storage pool, aws, S3, amazon web services, google cloud
 summary: 如果您想要將StorageGRID 物件移到外部S3儲存區、可以使用Cloud Storage Pool。外部儲存庫可以屬於Amazon S3（AWS）或Google Cloud。 
 ---
 = 為AWS或Google Cloud建立雲端儲存資源池
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
-
-_Jonathan Wong _
 
 [role="lead"]
 如果您想要將StorageGRID 物件移到外部S3儲存區、可以使用Cloud Storage Pool。外部儲存庫可以屬於Amazon S3（AWS）或Google Cloud。
@@ -50,3 +51,5 @@ http://host:port`
 
 .預期結果
 確認已為Amazon S3或Google Cloud建立雲端儲存資源池。
+
+_ 作者： Jonathan Wong _

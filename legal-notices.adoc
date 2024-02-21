@@ -5,6 +5,7 @@ keywords:
 summary:  
 ---
 = 法律聲明
+:hardbreaks:
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

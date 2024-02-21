@@ -5,10 +5,11 @@ keywords: datadog, snmp
 summary: 設定Datadog HQ以收集StorageGRID 不完整的SNMP數據和陷阱。 
 ---
 = Datadog SNMP組態
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/datadog/
 
-
-_Aron Klein_
 
 [role="lead"]
 設定Datadog以收集StorageGRID 不完整的SNMP指標和陷阱。
@@ -120,4 +121,6 @@ network_devices:
 
 您的S還原 系統中的SNMP代理程式StorageGRID 位於組態索引標籤「監控」欄下。啟用SNMP並輸入所需資訊。如果您要設定設陷、請選取「設陷目的地」、然後為包含設陷組態的Datadog代理主機建立目的地。
 
-image::../media/datadog/sg_snmp_conf.png[SSNMP組態StorageGRID]
+image::sg_snmp_conf.png[SSNMP組態StorageGRID]
+
+_ 作者： Aron Klein_

@@ -5,10 +5,11 @@ keywords: cli, aws, S3, rclone, api
 summary: rclone 是免費的命令列工具和用戶端、適用於 S3 作業。您可以使用 rclone 在 StorageGRID 上移轉、複製及刪除物件資料。 
 ---
 = 使用 rclone 在 StorageGRID 上移轉、放置及刪除物件
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
-
-_ Siegfried HEPP 和 Aron Klein_
 
 [role="lead"]
 rclone 是免費的命令列工具和用戶端、適用於 S3 作業。您可以使用 rclone 在 StorageGRID 上移轉、複製及刪除物件資料。RClone 包含刪除貯體的功能、即使沒有清空時也能使用「清除」功能、如下例所示。
@@ -455,3 +456,5 @@ rclone ls sgdemo:test01
  2023/04/14 09:40:51 Failed to ls: directory not found
 ====
 
+
+_ 作者： Siegfried HEPP 和 Aron Klein_

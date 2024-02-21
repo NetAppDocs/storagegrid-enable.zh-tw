@@ -5,10 +5,11 @@ keywords: cloud storage pool, azure, microsoft azure, azure blob storage
 summary: 如果您想要將StorageGRID 物件移至外部Azure Container、可以使用Cloud Storage Pool。 
 ---
 = 為Azure Blob Storage建立雲端儲存資源池
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
-
-_Jonathan Wong _
 
 [role="lead"]
 如果您想要將StorageGRID 物件移至外部Azure容器、可以使用Cloud Storage Pool。
@@ -47,3 +48,5 @@ http://host:port`
 
 .預期結果
 確認已為Azure Blob Storage建立雲端儲存資源池。
+
+_ 作者： Jonathan Wong _

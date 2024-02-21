@@ -5,10 +5,11 @@ keywords: cli, aws, S3, encryption, SSE, SSE-C, SSE-S3, api
 summary: 支援的支援功能有許多不同的方法可加密閒置的資料。StorageGRID 
 ---
 = 測試並示範StorageGRID 有關支援的S3加密選項
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
-
-_Aron Klein_
 
 [role="lead"]
 支援的支援功能有許多不同的方法可加密閒置的資料。StorageGRID若要深入瞭解、請參閱 https://docs.netapp.com/us-en/storagegrid-116/admin/reviewing-storagegrid-encryption-methods.html["檢閱StorageGRID 功能加密方法"^]。
@@ -185,3 +186,5 @@ aws s3api head-object --bucket <bucket> --key <file> --endpoint-url https://s3.e
 aws s3api get-object --bucket <bucket>  --key <file> <file> --endpoint-url https://s3.example.com
 ----
 
+
+_ 作者： Aron Klein_

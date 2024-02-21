@@ -5,6 +5,7 @@ keywords: whats new, third-party applications, storagegrid, Guides, cookbooks
 summary: 以下是本網站最近的變更。 
 ---
 = 新功能
+:hardbreaks:
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

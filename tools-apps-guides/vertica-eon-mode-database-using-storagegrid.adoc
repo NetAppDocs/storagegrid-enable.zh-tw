@@ -5,10 +5,11 @@ keywords: Vertica Eon Mode database
 summary: 本指南說明在NetApp StorageGRID 還原上建立具有公用儲存設備的Vertica Eon Mode資料庫的程序。 
 ---
 = Vertica Eon模式資料庫使用NetApp StorageGRID 功能做為共用儲存設備
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/vertica-eon/
 
-
-_Angela Cheng
 
 [role="lead"]
 本指南說明在NetApp StorageGRID 還原上建立具有公用儲存設備的Vertica Eon Mode資料庫的程序。
@@ -33,7 +34,7 @@ Eon Mode將運算資源與資料庫的共用儲存層區隔開來、讓運算和
 
 Eon Mode會將資料儲存在稱為公用儲存設備的共用物件儲存區中、S3儲存區是在內部部署或Amazon S3上代管。
 
-image::../media/vertica-eon/sg-vertica-eon-mode-cluster-with-communal-storage.png[Vertica Eon Mode叢集、含公用儲存設備]
+image::sg-vertica-eon-mode-cluster-with-communal-storage.png[Vertica Eon Mode叢集、含公用儲存設備]
 
 
 
@@ -714,3 +715,4 @@ DATABASE | UseDepotForWrites | 1
 初始版本。
 
 |===
+_ 作者： Angela Cheng _

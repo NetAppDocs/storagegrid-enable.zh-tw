@@ -5,10 +5,11 @@ keywords: node clone, clone, clone performance, performance
 summary: 節點複製效能與最佳實務做法。 
 ---
 = 節點複製
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
-
-_Aron Klein_
 
 [role="lead"]
 節點複製考量與效能。
@@ -509,3 +510,4 @@ _Aron Klein_
 7天
 
 |===
+_ 作者： Aron Klein_

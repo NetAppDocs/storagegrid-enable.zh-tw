@@ -5,7 +5,10 @@ keywords: 11.6, third-party applications, storagegrid, ISV
 summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.6%' 
 ---
 = 通過驗證的第三方解決方案StorageGRID
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 [role="lead"]
