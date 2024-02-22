@@ -8,7 +8,7 @@ summary: 本指南說明在NetApp StorageGRID 還原上建立具有公用儲存�
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/vertica-eon/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -34,7 +34,7 @@ Eon Mode將運算資源與資料庫的共用儲存層區隔開來、讓運算和
 
 Eon Mode會將資料儲存在稱為公用儲存設備的共用物件儲存區中、S3儲存區是在內部部署或Amazon S3上代管。
 
-image::sg-vertica-eon-mode-cluster-with-communal-storage.png[Vertica Eon Mode叢集、含公用儲存設備]
+image::vertica-eon/sg-vertica-eon-mode-cluster-with-communal-storage.png[Vertica Eon Mode叢集、含公用儲存設備]
 
 
 

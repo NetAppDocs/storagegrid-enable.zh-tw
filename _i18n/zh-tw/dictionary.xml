@@ -1262,8 +1262,8 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="f1b702f1ec8f237dcd7b5c954b6d27b8" category="paragraph">_ 作者： Angela Cheng _</block>
   <block id="3ffee984625220881b57c95936a54d55" category="paragraph">_ 作者： Siegfried HEPP 和 Aron Klein_</block>
   <block id="f2c634ca704e26f96be1723db6dda32a" category="image-alt">自動產生電腦說明的螢幕擷取畫面</block>
-  <block id="54887fd2fb284c696f5a78f49abeb0b0" category="paragraph">查看 S3 速率和作用中要求、您可以瞭解每個節點處理的負載量、以及依類型列出的要求總數。
-影像：： s3_over Rates 。 png[S3 總覽率 ]</block>
   <block id="de8e421137ae87b94e3b716c2ac38854" category="paragraph">_ 作者： Oliver Haensel 和 Aron Klein_</block>
   <block id="9224315283279b10c8f6eac37416df31" category="paragraph">_ 作者： Jonathan Wong _</block>
+  <block id="8cd84a7eff267a91caead66f5ac5a7d2" category="paragraph">查看 S3 速率和作用中要求、您可以瞭解每個節點處理的負載量、以及依類型列出的要求總數。
+影像：： Veeam-bp/s3_over Rates 。 png[S3 總覽費率 ]</block>
 </blocks>

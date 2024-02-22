@@ -20,3 +20,5 @@ sidebar:
     url: "/blogs.html"
   - title: 本文檔StorageGRID
     url: "/storagegrid-documentation.html"
+  - title: 法律聲明
+    url: "/legal-notices.html"

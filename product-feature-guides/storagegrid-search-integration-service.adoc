@@ -8,7 +8,7 @@ summary: 本指南詳細說明如何使用StorageGRID Amazon OpenSearch Service�
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/storagegrid-search-integration-service/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -38,7 +38,7 @@ summary: 本指南詳細說明如何使用StorageGRID Amazon OpenSearch Service�
 . 使用Grid Manager建立S3租戶、輸入顯示名稱、然後選取S3傳輸協定。
 . 在「權限」頁面上、選取「允許平台服務」選項。如有必要、也可選擇其他權限。
 +
-image::sg-sis-select-permissions.png[選取權限快照]
+image::storagegrid-search-integration-service/sg-sis-select-permissions.png[選取權限快照]
 
 . 設定租戶root使用者初始密碼、或者如果已在網格上啟用識別聯盟、請選取哪個聯盟群組具有root存取權限來設定租戶帳戶。
 . 按一下「以root登入」、然後選取「Bucket：Create and Manage Bucket」。
@@ -102,7 +102,7 @@ NOTE: 您必須擁有有效的AWS主控台登入、存取金鑰、秘密存取�
 }
 ----
 +
-image::sg-sis-search-integration-amazon-opensearch.png[搜尋整合擷取畫面]
+image::storagegrid-search-integration-service/sg-sis-search-integration-amazon-opensearch.png[搜尋整合擷取畫面]
 
 
 
@@ -110,17 +110,17 @@ image::sg-sis-search-integration-amazon-opensearch.png[搜尋整合擷取畫面]
 
 . 等待15到20分鐘、讓網域變成作用中狀態。
 +
-image::sg-sis-activating-domain.png[正在啟動網域快照]
+image::storagegrid-search-integration-service/sg-sis-activating-domain.png[正在啟動網域快照]
 
 . 按一下OpenSearch儀表板URL、在新索引標籤中開啟網域以存取儀表板。如果發生存取遭拒錯誤、請確認存取原則來源IP位址已正確設定為電腦的公用IP、以允許存取網域儀表板。
 . 在儀表板歡迎頁面上、選取「自行瀏覽」。從功能表移至「Management（管理）」->「Dev Tools（開發工具）」
 . 在「Dev Tools（開發工具）」->「Console（主控台）」下、輸入「PUT <index>'（放置<index>'）」、您可以在其中使用索引來儲存StorageGRID 物件中繼資料。我們在下列範例中使用索引名稱「gmeta資料」。按一下小三角符號以執行PUT命令。預期結果會顯示在右側面板上、如下列範例擷取畫面所示。
 +
-image::sg-sis-using-put-command-for-index.png[使用PUT命令取得索引快照]
+image::storagegrid-search-integration-service/sg-sis-using-put-command-for-index.png[使用PUT命令取得索引快照]
 
 . 確認索引可從sgdomain>索引下的Amazon OpenSearch UI中看到。
 +
-image::sg-sis-verifying-the-index.png[驗證索引快照]
+image::storagegrid-search-integration-service/sg-sis-verifying-the-index.png[驗證索引快照]
 
 
 
@@ -140,17 +140,17 @@ image::sg-sis-verifying-the-index.png[驗證索引快照]
 在此範例中、URN會變成「arn:AWS：es：us-east-1:211234567890：domain/sgdemo /sgmeydata//_doc'。
 
 +
-image::sg-sis-enter-end-points-details.png[端點詳細資料快照]
+image::storagegrid-search-integration-service/sg-sis-enter-end-points-details.png[端點詳細資料快照]
 
 
 
 . 若要存取Amazon OpenSearch sgDomain、請選擇「存取金鑰」作為驗證類型、然後輸入Amazon S3存取金鑰和秘密金鑰。若要進入下一頁、請按一下「Continue（繼續）」。
 +
-image::sg-sis-authenticate-connections-to-endpoints.png[驗證端點連線的快照]
+image::storagegrid-search-integration-service/sg-sis-authenticate-connections-to-endpoints.png[驗證端點連線的快照]
 
 . 若要驗證端點、請選取「使用作業系統CA憑證並測試及建立端點」。如果驗證成功、則會顯示類似下圖的端點畫面。如果驗證失敗、請確認路徑結尾處的URN包含「/<index>//_doc'、而且AWS存取金鑰和秘密金鑰都正確無誤。
 +
-image::sg-sis-platform-service-endpoints.png[平台服務端點快照]
+image::storagegrid-search-integration-service/sg-sis-platform-service-endpoints.png[平台服務端點快照]
 
 
 
@@ -198,14 +198,14 @@ sudo systemctl start docker
 TIP: 記下Elasticsearch所建立的使用者名稱/密碼和權杖、您需要這些資訊來啟動Kibana UI和StorageGRID Esplan端點驗證。
 
 +
-image::sg-sis-search-integration-elasticsearch.png[搜尋整合彈性搜尋快照]
+image::storagegrid-search-integration-service/sg-sis-search-integration-elasticsearch.png[搜尋整合彈性搜尋快照]
 
 . Kibana Docker容器啟動後、主控台會顯示URL連結「\https://0.0.0.0:5601`」。以URL中的伺服器IP位址取代0：0：0：0。
 . 使用使用者名稱「Elastic」和Elastic在前一個步驟中產生的密碼登入Kibana UI。
 . 首次登入時、請在儀表板歡迎頁面上、選取「自行瀏覽」。從功能表中、選取管理>開發工具。
 . 在Dev Tools Console（開發工具主控台）畫面上、輸入「放置<index>'」、您可以在其中使用此索引來儲存StorageGRID 物件中繼資料。在此範例中、我們使用索引名稱「shgmeta資料」。按一下小三角符號以執行PUT命令。預期結果會顯示在右側面板上、如下列範例擷取畫面所示。
 +
-image::sg-sis-execute-put-command.png[執行PUT命令快照]
+image::storagegrid-search-integration-service/sg-sis-execute-put-command.png[執行PUT命令快照]
 
 
 
@@ -222,17 +222,17 @@ image::sg-sis-execute-put-command.png[執行PUT命令快照]
 ** URI：https://<elasticsearch-server-ip或hostname>:9200'
 ** urn:「urn:<soes>:es::::<se-unibe-text>/<index-name>//_doc'、其中index-name是您在Kibana主控台使用的名稱。範例：「urn:local:es：：sgmm/sgmadm/_do'
 +
-image::sg-sis-platform-service-endpoint-details.png[平台服務端點詳細資料快照]
+image::storagegrid-search-integration-service/sg-sis-platform-service-endpoint-details.png[平台服務端點詳細資料快照]
 
 
 
 . 選取基本HTTP作為驗證類型、輸入使用者名稱「elastic」和Elasticsearch安裝程序產生的密碼。若要前往下一頁、請按一下「Continue（繼續）」。
 +
-image::sg-sis-platform-service-endpoint-authentication-type.png[平台服務端點驗證快照]
+image::storagegrid-search-integration-service/sg-sis-platform-service-endpoint-authentication-type.png[平台服務端點驗證快照]
 
 . 選取「Do Not Verify Certificate and Test and Create Endpoint（不驗證憑證和測試並建立端點）」以驗證端點。如果驗證成功、則會顯示類似下列螢幕快照的端點畫面。如果驗證失敗、請確認URN、URI和使用者名稱/密碼項目正確無誤。
 +
-image::sg-sis-successfully-verified-endpoint.png[已成功驗證端點]
+image::storagegrid-search-integration-service/sg-sis-successfully-verified-endpoint.png[已成功驗證端點]
 
 
 
@@ -271,7 +271,7 @@ image::sg-sis-successfully-verified-endpoint.png[已成功驗證端點]
 ----
 . 使用S3瀏覽器以StorageGRID 租戶存取/秘密金鑰連線至功能區、將測試物件上傳至「實元資料測試」儲存區、並將標記或自訂中繼資料新增至物件。
 +
-image::sg-sis-upload-test-objects.png[上傳測試物件快照]
+image::storagegrid-search-integration-service/sg-sis-upload-test-objects.png[上傳測試物件快照]
 
 . 使用Kibana UI來驗證物件中繼資料是否已載入sgmeta的索引。
 +
@@ -291,7 +291,7 @@ GET sgmetadata/_search
 }
 ----
 +
-image::sg-sis-query1-sample-result.png[查詢1範例結果快照]
+image::storagegrid-search-integration-service/sg-sis-query1-sample-result.png[查詢1範例結果快照]
 
 +
 下列螢幕擷取畫面中的查詢2範例結果顯示兩筆標記類型為「jpg」的記錄。
@@ -310,7 +310,7 @@ GET sgmetadata/_search
 }
 ----
 +
-image::sg-sis-query-two-sample.png[查詢2範例]
+image::storagegrid-search-integration-service/sg-sis-query-two-sample.png[查詢2範例]
 
 
 

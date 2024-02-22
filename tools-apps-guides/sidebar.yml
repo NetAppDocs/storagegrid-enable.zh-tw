@@ -19,4 +19,4 @@ entries:
 - title: 使用 StorageGRID 的 Veeam 備份與複寫
   url: "/tools-apps-guides/veeam-br.html"
 - title: 使用 StorageGRID 設定 Dremio
-  url: "/tools-apps-guides/configure-Dremio-StorageGRID.html"
+  url: "/tools-apps-guides/configure-dremio-storagegrid.html"
