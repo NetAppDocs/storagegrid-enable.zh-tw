@@ -319,9 +319,7 @@
   <block id="ea9349a37bfee247df0f87cbcacca796" category="paragraph">初始版本。</block>
   <block id="0a7fcea811cb899434230e06e3477b84" category="summary">Hadoop可利用簡單的程式設計架構、在多個電腦叢集之間分散處理大型資料集。Hadoop的設計可從單一伺服器擴充至數千部機器、每部機器均提供本機運算與儲存設備。</block>
   <block id="e28a2374ec10c84082a75afb2254f4e2" category="doc">使用Cloudera Hadoop S3連接器StorageGRID 搭配使用</block>
-  <block id="69cfaca1831444acadd7835297b7d501" category="paragraph">Hadoop已是資料科學家的最愛、至今已有一段時間。Hadoop可利用簡單的程式設計架構、在多個電腦叢集之間分散處理大型資料集。Hadoop的設計可從單一伺服器擴充至數千部機器、每部機器都擁有本機運算和儲存設備。</block>
   <block id="ae19997258b86e93601b9072dd73b100" category="section-title">為什麼要使用S3A來執行Hadoop工作流程？</block>
-  <block id="edb332fdf13a795cb04d8673475e7002" category="paragraph">隨著資料量隨著時間成長、使用自己的運算和儲存設備來新增機器的方法變得效率不彰。線性擴充會帶來有效使用資源和管理基礎架構的挑戰。</block>
   <block id="ab8402eb6a573e76dfe21f21689c9ae9" category="paragraph">為了因應這些挑戰、Hadoop S3用戶端可針對S3物件儲存設備提供高效能I/O。運用S3A實作Hadoop工作流程、有助於將物件儲存設備當作資料儲存庫、並可將運算與儲存設備分開、進而獨立擴充運算與儲存設備。分離運算與儲存設備也能讓您將適當的資源投入運算工作、並根據資料集的大小提供容量。因此、您可以降低Hadoop工作流程的整體TCO。</block>
   <block id="95c00c41a442070ea0794b977de417b8" category="section-title">設定S3A連接器以使用StorageGRID Sfor</block>
   <block id="ee68e5b99222bbc29a480fcb0d1d6ee2" category="section-title">先決條件</block>
@@ -1083,7 +1081,6 @@
   <block id="21b17c7b7d71861473c6337e153ea6ea" category="paragraph"><block ref="21b17c7b7d71861473c6337e153ea6ea" category="inline-link-rx"></block></block>
   <block id="29007b92e2b6688072358d8f25529d24" category="paragraph"><block ref="29007b92e2b6688072358d8f25529d24" category="inline-link-rx"></block></block>
   <block id="d31ba7e4c6f469a6c88f05aac3e0e91c" category="list-text">Datadobi</block>
-  <block id="8727881150b0ace8b598a648cdfcd4e1" category="sidebar">NetApp StorageGRID 是一套軟體定義的物件儲存套件、可在公有雲、私有雲和混合式多雲端環境中支援各種使用案例。StorageGRID 提供 Amazon S3 API 的原生支援、並提供領先業界的創新技術、例如自動化生命週期管理、可長期以符合成本效益的方式儲存、保護、保護及保留非結構化資料。</block>
   <block id="a88f9b6efeacfebaca582083cb9bd819" category="paragraph">此群組原則僅允許使用者存取名為使用者使用者名稱之儲存區中的物件。</block>
   <block id="a16b735f7d349dcc23b45a7a101460f3" category="paragraph">此群組原則會限制使用者建立在貯體上啟用物件鎖定的貯體。</block>
   <block id="5ccd1d9b602b536952729ea6084688f1" category="section-title">物件鎖定保留限制</block>
@@ -1266,4 +1263,7 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="9224315283279b10c8f6eac37416df31" category="paragraph">_ 作者： Jonathan Wong _</block>
   <block id="8cd84a7eff267a91caead66f5ac5a7d2" category="paragraph">查看 S3 速率和作用中要求、您可以瞭解每個節點處理的負載量、以及依類型列出的要求總數。
 影像：： Veeam-bp/s3_over Rates 。 png[S3 總覽費率 ]</block>
+  <block id="66dc7cd0b0a02168bc30f9fcad8cdbb3" category="paragraph">Hadoop 一段時間以來一直是資料科學家的最愛。Hadoop可利用簡單的程式設計架構、在多個電腦叢集之間分散處理大型資料集。Hadoop的設計可從單一伺服器擴充至數千部機器、每部機器都擁有本機運算和儲存設備。</block>
+  <block id="afa1796bcfe5f602d94a2ed1d5b82a74" category="paragraph">隨著資料量隨著時間成長、使用自己的運算和儲存設備來新增機器的方法變得效率不彰。線性擴充會在有效使用資源和管理基礎架構方面帶來挑戰。</block>
+  <block id="1ed32842544e52d59a55b4b962d478b4" category="sidebar">NetApp StorageGRID 支援軟體定義的物件儲存套件、可支援各種公有、私有及混合式多雲端環境的使用案例。StorageGRID 提供 Amazon S3 API 的原生支援、並提供領先業界的創新技術、例如自動化生命週期管理、可長期以符合成本效益的方式儲存、保護、保護及保留非結構化資料。</block>
 </blocks>
