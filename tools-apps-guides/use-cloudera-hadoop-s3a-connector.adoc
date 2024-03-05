@@ -141,11 +141,11 @@ fs.s3a.path.樣式.access
 *範例擷取畫面*
 
 +
-image::hadoop-s3a/hadoop-s3a-configuration.png[S3A組態]
+image:hadoop-s3a/hadoop-s3a-configuration.png["S3A組態"]
 
 . 按一下「儲存變更」按鈕。從HDFS功能表列選取過時組態圖示、在下一頁選取重新啟動過時的服務、然後選取立即重新啟動。
 +
-image::hadoop-s3a/hadoop-restart-stale-service-icon.png[重新啟動Hadoop過時服務圖示]
+image:hadoop-s3a/hadoop-restart-stale-service-icon.png["重新啟動Hadoop過時服務圖示"]
 
 
 

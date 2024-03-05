@@ -48,11 +48,11 @@ match => {"message" => '<%{POSINT:syslog_pri}>%{SYSLOGBASE} %{GREEDYDATA:msg-det
 ----
 * Logstash 7.17樣本*
 
-image::elk-config/logstash-7.17.fields-sample.png[Logstash 7.17範例]
+image:elk-config/logstash-7.17.fields-sample.png["Logstash 7.17範例"]
 
 *記錄8.23樣本*
 
-image::elk-config/logstash-8.x.fields-sample.png[Logstash 8.23範例]
+image:elk-config/logstash-8.x.fields-sample.png["Logstash 8.23範例"]
 
 *步驟*
 
@@ -99,13 +99,13 @@ GET /_cat/indices/*?v=true&s=index
 . 從Kibana GUI建立索引模式（elk 7.x）或資料檢視（elk 8.x）。
 . 從Kibana GUI、在位於上方中心的搜尋方塊中輸入「儲存的物件」。+在「儲存的物件」頁面上、選取「匯入」。在「匯入選項」下、選取「在衝突時要求採取行動」
 +
-image::elk-config/kibana-import-options.png[Kibana匯入選項]
+image:elk-config/kibana-import-options.png["Kibana匯入選項"]
 
 +
 匯入elk<version>-query-chart-same.ndjson。+當系統提示您解決衝突時、請選取您在步驟8中建立的索引模式或資料檢視。
 
 +
-image::elk-config/kibana-import-conflict.png[Kibana衝突]
+image:elk-config/kibana-import-conflict.png["Kibana衝突"]
 
 +
 下列Kibana物件會匯入： +*查詢*+*稽核-msg-s3rq-orlm+* bycast記錄S3相關訊息+*記錄層級警告或更新版本+*失敗的安全事件+*圖表*+* S3要求數以bycast.log為基礎+* HTTP狀態代碼+*稽核msg明細按類型+*平均S3回應 時間+*儀表板*+* S3要求儀表板、請使用上述圖表。

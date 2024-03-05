@@ -73,27 +73,27 @@ summary: 如何使用連接埠重新對應。
 
 . 部署完VM之後、請從VM清單中選取該VM、然後選取Configure（設定）索引標籤vApp Options（vApp選項）。
 +
-image::port-remap/vapp_options.png[vApp選項索引標籤]
+image:port-remap/vapp_options.png["vApp選項索引標籤"]
 
 . 向下捲動至「內容」區段、然後選取port_remap_inbound屬性
 +
-image::port-remap/remap_inbound.png[連接埠重新對應傳入]
+image:port-remap/remap_inbound.png["連接埠重新對應傳入"]
 
 . 捲動至「內容」清單頂端、然後按一下「編輯」
 +
-image::port-remap/edit_button.png[編輯按鈕]
+image:port-remap/edit_button.png["編輯按鈕"]
 
 . 選取「Type（類型）」索引標籤、確認已選取「User可設定的使用者」核取方塊、然後按一下「Save（儲存）」。
 +
-image::port-remap/type_tab.png[類型索引標籤]
+image:port-remap/type_tab.png["類型索引標籤"]
 
 . 在「內容」清單的頂端、仍選取「port_remap_inbound」屬性、然後按一下「設定值」。
 +
-image::port-remap/edit_button.png[設定值按鈕]
+image:port-remap/edit_button.png["設定值按鈕"]
 
 . 在「屬性值」欄位中、輸入網路（網格、管理或用戶端）、TCP、原始連接埠（8082）、以及新連接埠（10443）、每個值之間都有「/」、如下所示。
 +
-image::port-remap/value.png[屬性值]
+image:port-remap/value.png["屬性值"]
 
 . 如果您使用多個網路、請使用逗號（、）分隔網路字串、例如GRID /TCP/8082/10443、admin/TCP/8082/10443、client/TCP/8082/10443
 
@@ -106,11 +106,11 @@ image::port-remap/value.png[屬性值]
 
 . 瀏覽至Grid Management UI的「維護/恢復」區段。
 +
-image::port-remap/maint_menu.png[維護功能表]
+image:port-remap/maint_menu.png["維護功能表"]
 
 . 開啟VM節點電源、並等待節點出現在Grid Management UI的「維護/恢復擱置節點」區段中。
 +
-image::port-remap/recover_pend.png[正在等待恢復]
+image:port-remap/recover_pend.png["正在等待恢復"]
 
 +
 [NOTE]
@@ -284,7 +284,7 @@ Initiating a reboot to trigger the StorageGRID Webscale appliance installation w
 . 經過一段時間之後、裝置將重新開機、您將能夠存取節點pgE UI。
 . 瀏覽至「Configure Networking（設定網路）」
 +
-image::port-remap/remap_link.png[選取「重新對應連接埠」]
+image:port-remap/remap_link.png["選取「重新對應連接埠」"]
 
 . 選取所需的網路、傳輸協定、方向和連接埠、然後按一下「Add Rule（新增規則）」按鈕。
 +
@@ -292,7 +292,7 @@ image::port-remap/remap_link.png[選取「重新對應連接埠」]
 NOTE: 重新對應網格網路上的傳入連接埠443、將會中斷安裝和擴充程序。不建議重新對應網格網路上的連接埠443。
 
 +
-image::port-remap/app_remap.png[新增連接埠重新對應至網路]
+image:port-remap/app_remap.png["新增連接埠重新對應至網路"]
 
 . 其中一個所需的連接埠重新對應已新增、您可以返回主索引標籤、然後按一下「Start Installation（開始安裝）」按鈕。
 

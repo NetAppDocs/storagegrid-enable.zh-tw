@@ -115,25 +115,25 @@ StorageGRID 支援複寫和銷毀編碼、可在 StorageGRID 節點和站台之�
 
 如果需要不可變性、請確保 StorageGRID 系統上已啟用物件鎖定。請在組態 /S3 物件鎖定下的管理 UI 中找到選項。
 
-image::veeam-bp/obj_lock_en.png[啟用網格寬度物件鎖定]
+image:veeam-bp/obj_lock_en.png["啟用網格寬度物件鎖定"]
 
 建立貯體時、如果要使用此貯體進行不可變備份、請選取「啟用 S3 物件鎖定」。這會自動啟用貯體版本管理。停用預設保留、因為 Veeam 會明確設定物件保留。如果 Veeam 未建立不可變的備份、則不應選取版本設定和 S3 物件鎖定。
 
-image::veeam-bp/obj_lock_bucket.png[啟用貯體上的物件鎖定]
+image:veeam-bp/obj_lock_bucket.png["啟用貯體上的物件鎖定"]
 
 建立貯體後、請前往建立之貯體的詳細資料頁面。選取一致性層級。
 
-image::veeam-bp/bucket_consist_1.png[貯體選項]
+image:veeam-bp/bucket_consist_1.png["貯體選項"]
 
 Veeam 需要 S3 儲存區的強大一致性。因此、對於 Veeam 從多個位置存取資料的多站台部署、請選取「 Strong-glob線 」。如果 Veeam 備份與還原僅發生在單一站台上、則一致性層級應設為「 Strong-site 」。儲存變更。
 
-image::veeam-bp/bucket_consist_2.png[貯體一致性]
+image:veeam-bp/bucket_consist_2.png["貯體一致性"]
 
 StorageGRID 在每個管理節點和專用閘道節點上提供整合式負載平衡器服務。使用此負載平衡器的眾多優點之一、就是能夠設定流量分類原則（ QoS ）。雖然這些指標主要用於限制應用程式對其他用戶端工作負載的影響、或是優先處理工作負載而非其他工作負載、但它們也提供額外的指標收集、以協助監控。
 
 在組態索引標籤中、選取「流量分類」並建立新原則。命名規則、並選取貯體或租戶作為類型。輸入貯體或租戶的名稱。如果需要 QoS 、請設定限制、但對於大多數實作而言、我們只是想增加監控效益、所以請勿設定限制。
 
-image::veeam-bp/tc_policy.png[建立 TC 原則]
+image:veeam-bp/tc_policy.png["建立 TC 原則"]
 
 
 
@@ -141,15 +141,15 @@ image::veeam-bp/tc_policy.png[建立 TC 原則]
 
 視 StorageGRID 應用裝置的型號和數量而定、可能需要選擇並設定貯體上並行作業數量的限制。
 
-image::veeam-bp/veeam_concur_limit.png[Veeam 並行工作限制]
+image:veeam-bp/veeam_concur_limit.png["Veeam 並行工作限制"]
 
 請依照 Veeam 主控台中備份工作組態的 Veeam 文件、啟動精靈。新增虛擬機器後、請選取 SOBR 儲存庫。
 
-image::veeam-bp/veeam_1.png[備份工作]
+image:veeam-bp/veeam_1.png["備份工作"]
 
 按一下「進階設定」、將儲存最佳化設定變更為 4 MB 或更大。應啟用壓縮與重複資料刪除。根據您的需求變更來賓設定、並設定備份工作排程。
 
-image::veeam-bp/veeam_blk_sz.png[自動產生電腦說明的螢幕擷取畫面,320,375]
+image:veeam-bp/veeam_blk_sz.png["自動產生電腦說明的螢幕擷取畫面、寬度 = 320 、高度 = 375"]
 
 
 
@@ -160,25 +160,25 @@ image::veeam-bp/veeam_blk_sz.png[自動產生電腦說明的螢幕擷取畫面,3
 StorageGRID 提供便利的圖表、可監控位於「支援索引標籤度量」頁面中的系統運作。如果建立原則、則主要要查看的儀表板是 S3 概觀、 ILM 和流量分類原則。在 S3 概述儀表板中、您可以找到 S3 作業率、延遲和要求回應的相關資訊。
 
 查看 S3 速率和作用中要求、您可以瞭解每個節點處理的負載量、以及依類型列出的要求總數。
-影像：： Veeam-bp/s3_over Rates 。 png[S3 總覽費率 ]
+image:veeam-bp/s3_over_rates.png["S3 總覽費率"]
 
 「平均持續時間」圖表顯示每個節點針對每個要求類型所花費的平均時間。這是要求的平均延遲、可能是需要額外調整的好指標、或是 StorageGRID 系統有更多負載的空間。
 
-image::veeam-bp/s3_over_duration.png[S3 總覽持續時間]
+image:veeam-bp/s3_over_duration.png["S3 總覽持續時間"]
 
 在「完成的申請總數」圖表中、您可以依類型和回應代碼查看申請。如果您看到 200 （正常）以外的回應、這可能表示 StorageGRID 系統負載過大、傳送 503 （減慢）回應、可能需要進行一些額外調整、或是需要時間擴充系統以因應增加的負載。
 
-image::veeam-bp/s3_over_requests.png[S3 概述要求]
+image:veeam-bp/s3_over_requests.png["S3 概述要求"]
 
 在 ILM 儀表板中、您可以監控 StorageGRID 系統的刪除效能。StorageGRID 會在每個節點上同時使用同步刪除和非同步刪除、以嘗試最佳化所有要求的整體效能。
 
-image::veeam-bp/ilm_delete.png[ILM 刪除]
+image:veeam-bp/ilm_delete.png["ILM 刪除"]
 
 有了流量分類原則、我們可以檢視負載平衡器要求處理量、速率、持續時間、以及 Veeam 正在傳送和接收的物件大小的度量。
 
-image::veeam-bp/tc_1.png[流量分類原則指標]
+image:veeam-bp/tc_1.png["流量分類原則指標"]
 
-image::veeam-bp/tc_2.png[流量分類原則指標]
+image:veeam-bp/tc_2.png["流量分類原則指標"]
 
 
 

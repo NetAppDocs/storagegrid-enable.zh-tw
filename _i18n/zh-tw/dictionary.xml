@@ -1258,12 +1258,88 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="e9868d7697657696cac82d1e0b5159e2" category="paragraph">_ 作者： Aron Klein_</block>
   <block id="f1b702f1ec8f237dcd7b5c954b6d27b8" category="paragraph">_ 作者： Angela Cheng _</block>
   <block id="3ffee984625220881b57c95936a54d55" category="paragraph">_ 作者： Siegfried HEPP 和 Aron Klein_</block>
-  <block id="f2c634ca704e26f96be1723db6dda32a" category="image-alt">自動產生電腦說明的螢幕擷取畫面</block>
   <block id="de8e421137ae87b94e3b716c2ac38854" category="paragraph">_ 作者： Oliver Haensel 和 Aron Klein_</block>
   <block id="9224315283279b10c8f6eac37416df31" category="paragraph">_ 作者： Jonathan Wong _</block>
-  <block id="8cd84a7eff267a91caead66f5ac5a7d2" category="paragraph">查看 S3 速率和作用中要求、您可以瞭解每個節點處理的負載量、以及依類型列出的要求總數。
-影像：： Veeam-bp/s3_over Rates 。 png[S3 總覽費率 ]</block>
   <block id="66dc7cd0b0a02168bc30f9fcad8cdbb3" category="paragraph">Hadoop 一段時間以來一直是資料科學家的最愛。Hadoop可利用簡單的程式設計架構、在多個電腦叢集之間分散處理大型資料集。Hadoop的設計可從單一伺服器擴充至數千部機器、每部機器都擁有本機運算和儲存設備。</block>
   <block id="afa1796bcfe5f602d94a2ed1d5b82a74" category="paragraph">隨著資料量隨著時間成長、使用自己的運算和儲存設備來新增機器的方法變得效率不彰。線性擴充會在有效使用資源和管理基礎架構方面帶來挑戰。</block>
   <block id="1ed32842544e52d59a55b4b962d478b4" category="sidebar">NetApp StorageGRID 支援軟體定義的物件儲存套件、可支援各種公有、私有及混合式多雲端環境的使用案例。StorageGRID 提供 Amazon S3 API 的原生支援、並提供領先業界的創新技術、例如自動化生命週期管理、可長期以符合成本效益的方式儲存、保護、保護及保留非結構化資料。</block>
+  <block id="6f32459fa210e1c46c9f23d60d9cf385" category="paragraph"><block ref="6f32459fa210e1c46c9f23d60d9cf385" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="16d7910e33afa606ab4d06325717b842" category="paragraph"><block ref="16d7910e33afa606ab4d06325717b842" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4a35b8f9b1e16b9013c14763f02901f8" category="paragraph"><block ref="4a35b8f9b1e16b9013c14763f02901f8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9eb0c7fe294867f4025650c8c0709e57" category="paragraph"><block ref="9eb0c7fe294867f4025650c8c0709e57" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fe418f43b0dec57499cf347d109f86b1" category="paragraph"><block ref="fe418f43b0dec57499cf347d109f86b1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0bd39904534d738466d23700af014b93" category="paragraph"><block ref="0bd39904534d738466d23700af014b93" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e60d52b4e43de4ee2416f9b9d4c543ae" category="paragraph"><block ref="e60d52b4e43de4ee2416f9b9d4c543ae" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="27b29720bc7935776a8007b13c881a1e" category="paragraph"><block ref="27b29720bc7935776a8007b13c881a1e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="feb1270f2d249021c93d4845a9be6d8d" category="paragraph"><block ref="feb1270f2d249021c93d4845a9be6d8d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f80bb521fa0915867adb4ac2385f431a" category="paragraph"><block ref="f80bb521fa0915867adb4ac2385f431a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1a267127d1c75146fba631f5be6cc720" category="inline-image-macro">自動產生電腦說明的螢幕擷取畫面、寬度 = 320 、高度 = 375</block>
+  <block id="a6b3c8ce8a0f7b47961a71ca8f691360" category="paragraph"><block ref="a6b3c8ce8a0f7b47961a71ca8f691360" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="231b32850a7fef5c4be77eedcd54b7c4" category="inline-image-macro">S3 總覽費率</block>
+  <block id="b5d405519c83b44b871a7fb2a7401500" category="paragraph">查看 S3 速率和作用中要求、您可以瞭解每個節點處理的負載量、以及依類型列出的要求總數。
+<block ref="09a4b2cfcdf675e5f1f1ab0e8d545c44" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1be387f78502bd155ac8b9f6243be096" category="paragraph"><block ref="1be387f78502bd155ac8b9f6243be096" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4d53d2d4fecbf45d3f80638358f5d314" category="paragraph"><block ref="4d53d2d4fecbf45d3f80638358f5d314" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="49ce7b2f13d2e86a8ac31b5b7c9f0698" category="paragraph"><block ref="49ce7b2f13d2e86a8ac31b5b7c9f0698" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ed456358a6cded4a701707d28ed42b9c" category="paragraph"><block ref="ed456358a6cded4a701707d28ed42b9c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2c03d0abe3f02a4e8010af61356f3a13" category="paragraph"><block ref="2c03d0abe3f02a4e8010af61356f3a13" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7bc2ba01fc83cc05d6016f2b30e7422b" category="paragraph"><block ref="7bc2ba01fc83cc05d6016f2b30e7422b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3c1f331143452f56b7afe62d4a6a06e8" category="paragraph"><block ref="3c1f331143452f56b7afe62d4a6a06e8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="68da18e5e85ce9599458e49805a7e5f4" category="paragraph"><block ref="68da18e5e85ce9599458e49805a7e5f4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="93fe9fe3a9cc9115f96e0f6c6a6c6558" category="paragraph"><block ref="93fe9fe3a9cc9115f96e0f6c6a6c6558" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4e6fdbd70a6775f5a3d752d7eeb76a0d" category="paragraph"><block ref="4e6fdbd70a6775f5a3d752d7eeb76a0d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2a9e88f736e7ebfb5a81d4293daec053" category="paragraph"><block ref="2a9e88f736e7ebfb5a81d4293daec053" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4a83aa6c03c160879b2b67fdb04895ba" category="paragraph"><block ref="4a83aa6c03c160879b2b67fdb04895ba" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7f6c1fcf38d1a6f4098759a767d190ba" category="paragraph"><block ref="7f6c1fcf38d1a6f4098759a767d190ba" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="edc01fca3972836934d47ea490eba734" category="paragraph"><block ref="edc01fca3972836934d47ea490eba734" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="12540705d8981e3e2f225b1711a20194" category="paragraph"><block ref="12540705d8981e3e2f225b1711a20194" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="eba9b7ec6c45efabece4f0dd90bfab8e" category="paragraph"><block ref="eba9b7ec6c45efabece4f0dd90bfab8e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ce3a2ea3fdc88d2240cf067f9e3bb8ce" category="paragraph"><block ref="ce3a2ea3fdc88d2240cf067f9e3bb8ce" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fc45afe309269e516edf859072e835e7" category="paragraph"><block ref="fc45afe309269e516edf859072e835e7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="afb0a2573d140eda1f27e3e0dba64015" category="paragraph"><block ref="afb0a2573d140eda1f27e3e0dba64015" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8c8d70082e6112e0c8bc6a4fa141a8a7" category="paragraph"><block ref="8c8d70082e6112e0c8bc6a4fa141a8a7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="282adcd20fdfe6e2fc0e90884dc772c0" category="paragraph"><block ref="282adcd20fdfe6e2fc0e90884dc772c0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f4efedc19cac689556be823f3de3dcfe" category="paragraph"><block ref="f4efedc19cac689556be823f3de3dcfe" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2dc24c9519cce6d5072090d71e6b4f70" category="paragraph"><block ref="2dc24c9519cce6d5072090d71e6b4f70" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="871ce6f483851d98a86cb89bcb6b6b0e" category="paragraph"><block ref="871ce6f483851d98a86cb89bcb6b6b0e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8dce7f133eb89fe3e99fd0999c44bf82" category="paragraph"><block ref="8dce7f133eb89fe3e99fd0999c44bf82" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="66476a2b2c744507782e065e99504679" category="paragraph"><block ref="66476a2b2c744507782e065e99504679" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3ebf5702891f15d812d3588ca9ce5b74" category="paragraph"><block ref="3ebf5702891f15d812d3588ca9ce5b74" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="998dfb93fc28b1e3cd5c0ff6f80e41f5" category="paragraph"><block ref="998dfb93fc28b1e3cd5c0ff6f80e41f5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7d357c582321af176fc74f1ddf5aa211" category="paragraph"><block ref="7d357c582321af176fc74f1ddf5aa211" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1b55a28070372e724653dd78fbd8816b" category="paragraph"><block ref="1b55a28070372e724653dd78fbd8816b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a45308928cdb317709d69e1a9d7f54cf" category="inline-link">StorageGRID 上的巨量資料分析： Dremio 的執行速度比 Apache Hive 快 23 倍</block>
+  <block id="5cd5270a0a6ab5cf094bb83c5f8bf9b7" category="list-text">12 月 12 日：<block ref="56387d425a7d1ca386f6000ce26e6a91" category="inline-link-rx"></block></block>
+  <block id="00039cf6e879cf2c96e1147810458aae" category="inline-link">發表 StorageGRID + LakeFS 解決方案簡介</block>
+  <block id="1f40d8850cbf8fe229a58e034f6adca9" category="list-text">2 月 2 日： <block ref="00c18eee7b83b56a4fc536edaabb5a21" category="inline-link-rx"></block></block>
+  <block id="f88708a62cf65a104ede836164d02fab" category="inline-link">StorageGRID 11.8 簡介：增強的安全性、簡易性和使用者體驗</block>
+  <block id="4061f774ad1db1250bbe37897bd6a5d8" category="list-text">2 月 16 日：<block ref="b378392cb8f9d3c27df36a7aee10e61c" category="inline-link-rx"></block></block>
+  <block id="7ed997d0afb0f25bef5074cfbae5d820" category="inline-link">隆重介紹 StorageGRID 11.8</block>
+  <block id="a09da54b6d618967603c3d37d6f28b88" category="list-text">2 月 16 日：<block ref="70310190f4683d95ee6551bded030474" category="inline-link-rx"></block></block>
+  <block id="d24354c28f6eda12a84300886d0bae91" category="paragraph"><block ref="d24354c28f6eda12a84300886d0bae91" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b234cd8b9202dfa24815cd14203cde1a" category="paragraph"><block ref="b234cd8b9202dfa24815cd14203cde1a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dcb0bfe5be50507cbd364a2d0fdfd056" category="paragraph"><block ref="dcb0bfe5be50507cbd364a2d0fdfd056" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9c15e570ff0d3a398f314911048e34f6" category="paragraph"><block ref="9c15e570ff0d3a398f314911048e34f6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2f4bfe6caa4a2e3bf8657b624787ecf2" category="paragraph"><block ref="2f4bfe6caa4a2e3bf8657b624787ecf2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="03a85f67d3528d13af543e9104884bf5" category="paragraph"><block ref="03a85f67d3528d13af543e9104884bf5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6724e2cab4809a16c4c5d1a71c4efc8a" category="paragraph"><block ref="6724e2cab4809a16c4c5d1a71c4efc8a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1a47c5b4c56facc13874c121e4100dcc" category="paragraph"><block ref="1a47c5b4c56facc13874c121e4100dcc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2bc8e44de2063c0bd15ca5716f63f7e0" category="paragraph"><block ref="2bc8e44de2063c0bd15ca5716f63f7e0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a93f7571d3de7b14fc5d89b0ece8d2f0" category="paragraph"><block ref="a93f7571d3de7b14fc5d89b0ece8d2f0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="865bdd362452895283df6a25b595cf8b" category="paragraph"><block ref="865bdd362452895283df6a25b595cf8b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="45f16a43f7407469c60c15677753fe51" category="paragraph"><block ref="45f16a43f7407469c60c15677753fe51" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="17e7998b1bde3096b514d12f2f29fcc1" category="paragraph"><block ref="17e7998b1bde3096b514d12f2f29fcc1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="53b215253a449ba905784e0c81219314" category="paragraph"><block ref="53b215253a449ba905784e0c81219314" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="02610b96236d289b34aabb73ac622a2c" category="paragraph"><block ref="02610b96236d289b34aabb73ac622a2c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f9af426d0a67de800f5a8ace6ebbd63f" category="paragraph"><block ref="f9af426d0a67de800f5a8ace6ebbd63f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3cf2063e321c74d35f814530d79c4f29" category="paragraph"><block ref="3cf2063e321c74d35f814530d79c4f29" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="257a7963c883b90bd7209787e84a2374" category="paragraph"><block ref="257a7963c883b90bd7209787e84a2374" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="df45e8ecb7cc5c7f57ec4d0472d67548" category="paragraph"><block ref="df45e8ecb7cc5c7f57ec4d0472d67548" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bd127a55e93c24713fe9e0920b48b11f" category="paragraph"><block ref="bd127a55e93c24713fe9e0920b48b11f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3caa9b7b3887ce26e534887c7ebcf666" category="paragraph"><block ref="3caa9b7b3887ce26e534887c7ebcf666" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5d5c45ea2d3e96eed9c3b78a4cd9b507" category="paragraph"><block ref="5d5c45ea2d3e96eed9c3b78a4cd9b507" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="822e9391e0b00e652b3d5bfe5d4b103a" category="paragraph"><block ref="822e9391e0b00e652b3d5bfe5d4b103a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="29271d5d57f8d6e8670b7fc88d53d6e8" category="paragraph"><block ref="29271d5d57f8d6e8670b7fc88d53d6e8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cef940a89117c81a10863795c4ddd30e" category="paragraph"><block ref="cef940a89117c81a10863795c4ddd30e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="db42e15c186d3f7b8ba7a666052fc779" category="paragraph"><block ref="db42e15c186d3f7b8ba7a666052fc779" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
