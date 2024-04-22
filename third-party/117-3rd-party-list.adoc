@@ -27,6 +27,7 @@ summary: 第三方解決方案已通過 StorageGRID 11.7 驗證
 * Bridgestor
 * Cantemo
 * Citrix內容協同作業
+* Collibra （ Collibra 資料品質最低版本 2024.02 ）
 * CommVault 11.
 * CTera Portal 6.
 * Dalet

@@ -1,0 +1,147 @@
+---
+permalink: technical-reports/datalake-analytics.html 
+sidebar: sidebar 
+keywords: data lake, on-premises, analytics, storagegrid, object 
+summary: 本報告涵蓋 StorageGRID 上的巨量資料分析。 
+---
+= NetApp StorageGRID 與巨量資料分析
+:allow-uri-read: 
+
+
+
+
+== NetApp StorageGRID 使用案例
+
+NetApp StorageGRID 物件儲存解決方案提供擴充性、資料可用度、安全性及高效能。各種規模的組織、以及各行各業的組織、都會使用 StorageGRID S3 來處理各種使用案例。讓我們來探索一些典型案例：
+
+* 巨量資料分析： * StorageGRID S3 經常用作資料湖、企業可在其中儲存大量結構化和非結構化資料、以便使用 Apache Spark 、 Splunk Smartstore 和 Dremio 等工具進行分析。
+
+* 資料分層： * NetApp 客戶使用 ONTAP 的 FabricPool 功能、在高效能本機層之間自動將資料移至 StorageGRID 。分層可釋放昂貴的 Flash 儲存空間、以儲存熱資料、同時在低成本物件儲存設備上隨時提供冷資料。如此可將效能與節約效益發揮到極致。
+
+* 資料備份與災難恢復： * 企業可以使用 StorageGRID S3 做為可靠且具成本效益的解決方案、在發生災難時備份關鍵資料並加以恢復。
+
+* 應用程式的資料儲存： * StorageGRID S3 可作為應用程式的儲存後端、讓開發人員輕鬆儲存及擷取檔案、影像、影片及其他類型的資料。
+
+* 內容交付： * StorageGRID S3 可用於儲存靜態網站內容、媒體檔案及軟體下載、並提供給全球各地的使用者、運用 StorageGRID 的地理發佈和全球命名空間、提供快速可靠的內容交付。
+
+* 資料分層： * NetApp 客戶使用 ONTAP FabricPool 功能、在高效能本機層之間自動將資料移至 StorageGRID 。分層可釋放昂貴的 Flash 儲存空間、以儲存熱資料、同時讓低成本物件儲存設備隨時可用冷資料。如此可將效能與節約效益發揮到極致。
+
+* 資料歸檔： * StorageGRID 提供不同的儲存類型、並支援分層處理至公有長期低成本儲存選項、因此是歸檔及長期保留資料的理想解決方案、這些資料必須保留以供法規遵循或歷史用途。
+
+* 物件儲存使用案例 *
+
+image:../media/datalake-analytics/image1.png["StorageGRID 使用案例圖表、寬度 = 396 、高度 = 394"]
+
+在上述情況中、巨量資料分析是最熱門的使用案例之一、其使用率也逐漸上升。
+
+
+
+== 為何選擇 StorageGRID 來處理資料湖？
+
+* 更高的協同作業效率：大規模共用多站台、多租戶、並具備業界標準 API 存取功能
+* 降低營運成本：單一、自我修復、自動化橫向擴充架構的操作簡易性
+* 擴充性：與傳統的 Hadoop 和資料倉儲解決方案不同、 StorageGRID S3 物件儲存設備可將儲存設備與運算和資料分離、讓企業能夠隨著成長擴充儲存需求。
+* 耐用性與可靠性： StorageGRID 提供 99.999% 的耐用度、這表示儲存的資料對於資料遺失具有高度抵抗能力。它也提供高可用度、確保資料隨時可供存取。
+* 安全性： StorageGRID 提供各種安全功能、包括加密、存取控制原則、資料生命週期管理、物件鎖定和版本設定、以保護儲存在 S3 儲存區中的資料
+
+
+* StorageGRID S3 資料湖 *
+
+image:../media/datalake-analytics/image2.png["StorageGRID datalake 範例、 width=614 、 height =345"]
+
+
+
+== 哪一個資料倉儲或資料湖最適合搭配 S3 物件儲存設備使用
+
+NetApp 以三種資料倉儲 / 湖屋生態系統（ Hive 、 Delta Lake 和 Dremio ）為基準測試 StorageGRID 。 https://www.dremio.com/wp-content/uploads/2023/02/apache-iceberg-TDG_ER1.pdf?aliId=eyJpIjoieDRUYjFKN2ZMbXhTRnFRWCIsInQiOiJIUUw0djJsWnlJa21iNUsyQURRalNnPT0ifQ%253D%253D["Apache 冰山：最終指南"] 包括資料倉儲和資料湖屋的簡介、以及這兩種架構的優缺點。
+
+* 基準測試工具 - TPC-DS - https://www.tpc.org/tpcds/[]
+* Big Data 生態系統
++
+** 由 5 個 VM 叢集所構成、每個 VM 都有 128G RAM 和 24 個 vCPU 、以及用於系統磁碟的 SSD 儲存設備
+** Hadoop 3.3.5 搭配 Hive 3.1.3 （ 1 個名稱節點 + 4 個資料節點）
+** Delta Lake with Spark 3.2.0 （ 1 位大師 + 4 位員工）和 Hadoop 3.3.5
+** Dremio V23 （ 1 位碩士 + 4 位執行者）
+
+
+* 物件儲存
++
+** NetApp ^ ® ^ StorageGRID ^ ® ^ 11.6 含 3 個 SG6060 + 1 個 SG1000 負載平衡器
+** 物件保護 - 2 份複本
+
+
+* 資料庫大小 1000GB
+* 所有 3 個生態系統都停用快取、以取得每項查詢測試的一致結果。
+
+
+TPC-DS 隨附 99 個複雜的 SQL 查詢、可用於查詢基準測試。我們測量了完成所有 99 項查詢所需的總分鐘數、並將 S3 要求的類型和數量逐一列出、以進一步分析結果。下表顯示所有 99 個查詢的總持續時間、第二個表格則摘要說明每個傳送至 StorageGRID 的生態系統中 S3 要求的數量和類型。
+
+* TPC-DS 查詢結果 *
+
+[cols="35%,20%,23%,22%"]
+|===
+| 生態系統 | Hive | 德爾塔湖 | 夢中 
+
+
+| 儲存層 | NetApp ^ ® ^ StorageGRID ^ ® ^ | NetApp ^ ® ^ StorageGRID ^ ® ^ | NetApp ^ ® ^ StorageGRID ^ ® ^ 
+
+
+| 磁碟機類型 | HDD | HDD | HDD 
+
+
+| 表格格式 | 硬地板 | 硬地板 | 硬地板 ^1^ 
+
+
+| 資料庫大小 | 1000G | 1000G | 1000G 
+
+
+| TPCDS 99 查詢 +
+總分鐘數 | 1084 ^2^ | 55 | 47 
+|===
+^1^ 測試了 Parquet 和 iceberg 表格格式、結果類似。
+
+^2^ Hive 無法完成查詢編號 72 。
+
+* TPC-DS 查詢 - S3 要求明細 *
+
+[cols="24%,24%,27%,25%"]
+|===
+| S3 要求 | Hive | 德爾塔湖 | 夢中 
+
+
+| 取得 | 1,117,184 | 2,074,610 | 4,414,227 
+
+
+| 觀察： +
+全方位實現 | 從 32 MB 物件到 2 KB 到 2 MB 的範圍達到 80% 、每秒 50 到 100 個要求 | 73% 的範圍從 32 MB 物件低於 100KB 、從 1000 到 1400 個要求 / 秒 | 從 256 MB 物件獲得 90% 的 100 萬位元組範圍、 2000 年至 2300 個要求 / 秒 
+
+
+| 列出物件 | 312,053 | 24 、 158 | 240 
+
+
+| 標題 +
+（不存在的物件） | 156,027 | 12 、 103 | 192. 
+
+
+| 標題 +
+（存在的物件） | 982,126. | 922,732. | 1845 
+
+
+| 申請總數 | 2,567,390 | 3 、 033 、 603 | 4,416504.. 
+|===
+從第一張表格中、我們可以看到 Delta Lake 和 Dremio 比 Hive 快得多。從第二個表格中、我們注意到 Hive 傳送了許多 S3 清單物件要求、這在所有物件儲存平台中通常都很慢、尤其是在處理包含許多物件的儲存區時。如此可大幅增加整體查詢持續時間。另一項觀察是 Dremio 能夠同時傳送大量的 GET 要求、每秒 2 、 000 至 2 、 300 個要求、而 Hive 則是每秒 50 至 100 個要求。Hive 和 Hadoop S3A 模擬標準檔案系統、有助於 S3 物件儲存作業緩慢。
+
+搭配 Hive 或 Spark 使用 Hadoop （在 HDFS 或 S3 物件儲存設備上）需要對 Hadoop 和 Hive/Spark 有廣泛的瞭解、以及每項服務的設定如何互動、而且它們有 1000 多種設定。通常、這些設定是相互關聯的、無法單獨變更。要找到最佳的設定和值組合、需要花費大量的時間和精力。
+
+Dremio 是資料湖引擎、使用端點對端 Apache Arrow 來大幅提升查詢效能。Apache Arrow 提供標準化的列式記憶體格式、可實現高效率的資料共享和快速分析。Arrow 採用語言不相關的方法、旨在免除資料序列化和反序列化的需求、改善複雜資料程序和系統之間的效能和互通性。
+
+Dremio 的效能主要是由 Dremio 叢集的運算能力所驅動。雖然 Dremio 使用 Hadoop 的 S3A 連接器進行 S3 物件儲存連線、但 Hadoop 並不需要、而 Dremio 也不使用 Hadoop 的 FS.s3a 設定。如此一來、無需花時間學習和測試各種 Hadoop s3a 設定、即可輕鬆調整 Dremio 效能。
+
+從這個基準測試結果中、我們可以得出結論、針對 S3 型工作負載最佳化的大型資料分析系統是主要的效能因素。Dremio 可最佳化查詢執行、有效運用中繼資料、並提供對 S3 資料的無縫存取、因此相較於使用 S3 儲存設備時的 Hive 、效能更佳。請參閱此 https://docs.netapp.com/us-en/storagegrid-enable/tools-apps-guides/configure-dremio-storagegrid.html["頁面"] 使用 StorageGRID 設定 Dremio S3 資料來源。
+
+請造訪下列連結、深入瞭解 StorageGRID 和 Dremio 如何合作提供現代化且有效率的資料湖基礎架構、以及 NetApp 如何從 Hive + HDFS 移轉至 Dremio + StorageGRID 、大幅提升巨量資料分析效率。
+
+* https://www.netapp.tv/details/31426?mcid=02148179640195118863901007338453703701["利用 NetApp StorageGRID 大幅提升巨量資料的效能"]
+* https://www.netapp.com/media/80932-SB-4236-StorageGRID-Dremio.pdf["StorageGRID 和 Dremio 提供現代化、功能強大且有效率的資料湖基礎架構"]
+* https://youtu.be/Y57Gyj4De2I?si=nwVG5ohCj93TggKS["NetApp 如何透過產品分析重新定義客戶體驗"]
+

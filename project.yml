@@ -17,6 +17,7 @@ sidebar:
   - section: product-feature-guides
   - section: tools-apps-guides
   - section: examples
+  - section: technical-reports
   - title: 部落格文章
     url: "/blogs.html"
   - title: 本文檔StorageGRID

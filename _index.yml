@@ -57,6 +57,14 @@ indexpage:
       url: "/tools-apps-guides/veeam-br.html"
     - title: 使用 StorageGRID 設定 Dremio
       url: "/tools-apps-guides/configure-dremio-storagegrid.html"
+    - title: 使用 StorageGRID 設定 GitLab
+      url: "/tools-apps-guides/integrate-gitlab.html"
+  - title: 技術報告
+    links:
+    - title: NetApp StorageGRID 與 Big Data Analytics
+      url: "/technical-reports/datalake-analytics.html"
+    - title: Hadoop S3A 調校最佳實務做法
+      url: "/technical-reports/s3a-tuning.html"
   - title: 程序和API範例
     links:
     - title: 測試並示範S3加密
