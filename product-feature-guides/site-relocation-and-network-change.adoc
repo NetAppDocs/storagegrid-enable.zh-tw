@@ -1,0 +1,92 @@
+---
+permalink: product-feature-guides/site-relocation-and-network-change.html 
+sidebar: sidebar 
+keywords: relocation move network change 
+summary: 本指南說明在多站台網格中重新定位 StorageGRID 站台的準備和程序。 
+---
+= 網格站台重新配置和站台範圍的網路變更程序
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+本指南說明在多站台網格中重新定位 StorageGRID 站台的準備和程序。您應完全瞭解此程序、並事先規劃、以確保程序順暢、並將客戶中斷的情形降至最低。
+
+如果您需要變更整個 Grid 的 Grid 網路、請參閱
+link:https://docs.netapp.com/us-en/storagegrid-118/maintain/changing-nodes-network-configuration.html["變更網格中所有節點的IP位址"]。
+
+
+
+== 重新部署站台前的考量事項
+
+* 應完成站台移動、所有節點應在 15 天內上線、以避免 Cassandra 資料庫重建。
+link:https://docs.netapp.com/us-en/storagegrid-118/maintain/recovering-storage-node-that-has-been-down-more-than-15-days.html["將儲存節點還原至停機時間超過15天"^]
+* 如果主動式原則中有任何 ILM 規則使用嚴格的擷取行為、如果客戶想要在站台重新定位期間繼續將物件放入 Grid 、請考慮將其變更為平衡或雙重認可。
+* 若為具有 60 個以上磁碟機的儲存設備、切勿在安裝磁碟機的情況下移動機櫃。  標記每個磁碟機、並在包裝 / 搬移之前將其從儲存機櫃中移除。
+* 變更 StorageGRID 應用裝置網格網路 VLAN 可透過管理網路或用戶端網路從遠端執行。  或是計畫到現場、在重新安置之前或之後執行變更。
+* 在放置之前、請檢查客戶應用程式是否使用 head 或取得不存在的物件。如果是、請將貯體一致性變更為 Strong-site 、以避免 HTTP 500 錯誤。  如果您不確定、請查看 S3 概述 Grafana 圖表 * Grid Manager > Support > Metrics * 、將滑鼠移到「完成的申請總數」圖表上。  如果「 Get Object 」（取得物件）或「 404 head 物件」（ 404 頭物件）的數量非常高、則可能有一或多個應用程式使用 head 或 Get non生存 物件。這是累積次數、將滑鼠移到不同的時間軸上以查看差異。
++
+image:site-relocation/s3-completed-request.png["S3 概述 Grafana 圖表範例"]
+
+
+
+
+
+=== 站台重新定位前變更 Grid IP 位址的程序
+
+.步驟
+. 如果在新位置使用新的 Grid 網路子網路、
+link:https://docs.netapp.com/us-en/storagegrid-118/expand/updating-subnets-for-grid-network.htmll["將子網路新增至 Grid 網路子網路清單"^]
+. 登入主要管理節點、使用 change-ip 進行 Grid IP 變更、必須 * 登入 * 登入 * 變更才能關閉節點以進行重新定位。
++
+.. 選擇 2 、然後選擇 1 進行網格 IP 變更
++
+image:site-relocation/ip-change-1.png[""]
+
+.. 選取 5 以顯示變更
++
+image:site-relocation/ip-change-2.png[""]
+
+.. 選取 10 以驗證及套用變更。
++
+image:site-relocation/ip-change-3.png[""]
+
+.. 必須在此步驟中選擇 * 階段 * 。
++
+image:site-relocation/ip-change-4.png[""]
+
+.. 如果上述變更中包含主要管理節點、請輸入 *'A' 以手動重新啟動主要管理節點 *
++
+image:site-relocation/ip-change-5.png[""]
+
+.. 按 ENTER 鍵返回上一個功能表、然後結束 change-IP 介面。
++
+image:site-relocation/ip-change-6.png[""]
+
+
+
+. 從 Grid Manager 下載新的恢復套件。* Grid manager* > * Maintenance * > * Recovery package*
+. 如果 StorageGRID 應用裝置需要變更 VLAN 、請參閱一節 <<應用裝置 VLAN 變更>>。
+. 關閉站台上的所有節點和 / 或應用裝置、必要時標記 / 移除磁碟機、卸載、包裝和移動。
+. 如果您計畫變更管理網路 IP 和 / 或用戶端 VLAN 和 IP 位址、您可以在重新配置後執行變更。
+
+
+
+
+=== 應用裝置 VLAN 變更
+
+下列程序假設您可以遠端存取 StorageGRID 應用裝置的管理員或用戶端網路、以便從遠端執行變更。
+
+.步驟
+. 關閉應用裝置之前、
+link:https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/placing-appliance-into-maintenance-mode.html["將產品置於維護模式"]。
+. 使用瀏覽器存取 StorageGRID 應用裝置安裝程式 GUI https://<admin-or-client-network-ip>:8443[]。  一旦設備開機進入維護模式、就無法使用 Grid IP 做為已就緒的新 Grid IP 。
+. 變更 Grid 網路的 VLAN 。  如果您是透過用戶端網路存取應用裝置、目前無法變更用戶端 VLAN 、您可以在移動後變更。
+. SSH 至應用裝置、並使用「 hutdoown -h now 」關閉節點
+. 在新網站上準備好應用裝置之後、請使用存取 StorageGRID 應用裝置安裝程式 GUI https://<grid-network-ip>:8443[]。  使用 GUI 中的 ping/nmap 工具、確認儲存設備處於最佳狀態、並與其他網格節點進行網路連線。
+. 如果計畫變更用戶端網路 IP 、您可以在此階段變更用戶端 VLAN 。  用戶端網路尚未就緒、除非您在稍後的步驟中使用 change-ip 工具更新用戶端網路 IP 。
+. 結束維護模式。從「the Some Appliance Installer」StorageGRID 選取「*進階*>*重新開機控制器*」、然後選取「*重新開機至StorageGRID *」。
+. 當所有節點都正常運作且 Grid 沒有連線問題時、如有必要、請使用 change-ip 來更新應用裝置管理網路和用戶端網路。
+

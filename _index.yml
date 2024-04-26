@@ -37,6 +37,8 @@ indexpage:
       url: "/product-feature-guides/node-clone.html"
     - title: 如何使用連接埠重新對應
       url: "/product-feature-guides/port-remap.html"
+    - title: 如何重新部署站台及變更網路
+      url: "/product-feature-guides/site-relocation-and-network-change.html"
   - title: 工具與應用程式指南
     links:
     - title: 使用Cloudera Hadoop S3連接器
