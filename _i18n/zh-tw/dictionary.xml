@@ -1202,45 +1202,16 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
 *範例擷取畫面*</block>
   <block id="3b55448bec6300a3af924b399eb26957" category="image-alt">新增資料來源</block>
   <block id="2804a96d012f15794c6aaa8f11797dfc" category="inline-link">隨選實驗室是 StorageGRID 的最佳銷售工具</block>
-  <block id="bd00951af49350539c0b3c83069c10d7" category="list-text">5 月 10 日：<block ref="debc4c6191d7e706232e96c2789d3930" category="inline-link-rx"></block></block>
-  <block id="f831e1930f47c4aab7026c9b3fd8b63a" category="list-text">5 月 24 日：<block ref="efe27e9a7520722932d06c2a314e517b" category="inline-link-rx"></block></block>
   <block id="d2634778cafa4c3045e5e3351c9098fc" category="inline-link">StorageGRID ：儲存及管理內部部署備份與複寫資料</block>
-  <block id="84726e93025c87cd938d691b89d3f639" category="list-text">5 月 26 日：<block ref="919c9f44a16e685bcbda321efc4479b1" category="inline-link-rx"></block></block>
-  <block id="fc1b196880b3fb677bc0664f3b3558dd" category="list-text">6 月 9 日：<block ref="bc61cc71bae06945f8e3338c0faa1d28" category="inline-link-rx"></block></block>
   <block id="f49b908c8064ba5b4ab223b14e8d376a" category="inline-link">查看 StorageGRID 驗證合作夥伴解決方案的不斷成長清單</block>
-  <block id="4e4854ee1dbabb6501c2ad5e2db49e79" category="list-text">7 月 26 日：<block ref="dcc8150a969e49a02dd3cd5f53c489a0" category="inline-link-rx"></block></block>
-  <block id="835d683a9952f5aac9469c1ede8ba395" category="list-text">8 月 5 日：<block ref="262aaa550c02638a3973245ae3d6d03e" category="inline-link-rx"></block></block>
-  <block id="0ca94b4799049f29d9ab6b15cdbdcd9f" category="list-text">8 月 16 日：<block ref="b2f8710f8f504eba14016ef400ef8a20" category="inline-link-rx"></block></block>
-  <block id="4127789560b28b4c403fdfbdfc5eed08" category="list-text">8 月 17 日：<block ref="2cb03523d29d45df344e7e35aeae9b09" category="inline-link-rx"></block></block>
-  <block id="38176191294d1e8ad7a85b48d0817ab6" category="list-text">8 月 23 日：<block ref="e69bd0d41d124ab466e32e26b75521a0" category="inline-link-rx"></block></block>
-  <block id="16d6a17ba907f2aaabc05d0e9374b9e7" category="list-text">9 月 1 日：<block ref="6fba2287f3b879f9355d55f6093dd086" category="inline-link-rx"></block></block>
-  <block id="f448282611ca0fd56d7631be9d78c632" category="list-text">9 月 19 日：<block ref="d3b1520ae76b2d8916030b44fa119b18" category="inline-link-rx"></block></block>
-  <block id="71a7022fb195acbc7636097156a6b24e" category="list-text">9 月 26 日：<block ref="bac8af8866fb18858bb2bc38accfee93" category="inline-link-rx"></block></block>
-  <block id="12b5ffe0dda514d44a5959f0d4ce1565" category="list-text">10 月 5 日：<block ref="743b55649bf0de5fef17881c2182c74e" category="inline-link-rx"></block></block>
-  <block id="0c916e3c762e297dcf2e2fb5fb7d7c57" category="list-text">10 月 5 日：<block ref="7a820536864c4b8ba1158a633db675d7" category="inline-link-rx"></block></block>
-  <block id="7b64a6cb40cb02632443e1013c298656" category="list-text">11 月 7 日：<block ref="c8168f81ebd9cd26583947065ec9bf4e" category="inline-link-rx"></block></block>
-  <block id="6e34863e3dd3ed9c1dbd78f02c8f8e07" category="list-text">11 月 23 日：<block ref="67d6d3a21cc9af1520f991806f578b6b" category="inline-link-rx"></block></block>
-  <block id="92eb8dae85c6ef95da075172842bc3fe" category="list-text">12 月 6 日：<block ref="e235608a45034e1deea87e6e77daddf3" category="inline-link-rx"></block></block>
-  <block id="5651e92851825e5a0e8222e952670765" category="list-text">1 月 16 日：<block ref="68d21b96499b1933cc9fc03f94f1e388" category="inline-link-rx"></block></block>
   <block id="47ac119989829cf384ff1ad266df420f" category="inline-link">StorageGRID S3 物件鎖定已通過驗證、適用於 Veritas NetBackup</block>
-  <block id="dc468876fffa7c2d7c4ed6843ea250d1" category="list-text">1 月 18 日：<block ref="6ea6516d4586962fa5f8e8460c33ccd0" category="inline-link-rx"></block></block>
-  <block id="16a0cfdc7c0bfce417b18af07ddddc59" category="list-text">2 月 14 日：<block ref="276d9658a5f8a049f2dcc595745c0879" category="inline-link-rx"></block></block>
-  <block id="32c5d0704854c4b5e7209732f36776fe" category="list-text">3 月 14 日：<block ref="3c7ed37db994ec363730d455072b8b2b" category="inline-link-rx"></block></block>
   <block id="0883099d6628246c0f3172404097c1d1" category="inline-link">使用 BlueXP 以符合 3 ： 2 ： 1 的備份原則來保護 Epic EHR</block>
-  <block id="aa343baad902cd182f9c8de146e9cef1" category="list-text">3 月 30 日：<block ref="b439a8f44229e6c1e7b2461211f6849b" category="inline-link-rx"></block></block>
-  <block id="da8fd7d6e7f3612bc460f85954532237" category="list-text">3 月 30 日：<block ref="3a37c13e60469949c226e6fe44730d5d" category="inline-link-rx"></block></block>
   <block id="1e81f3787bf865826867c808345c93cf" category="inline-link">StorageGRID 物件儲存系列的新功能</block>
-  <block id="e08d2fc1e7efc48dd610ca33e91f3865" category="list-text">5 月 16 日：<block ref="55400ccf8fd45f41eb658085301654a8" category="inline-link-rx"></block></block>
   <block id="f0d2294cd432ef286ea4c0d40d486219" category="inline-link">介紹 StorageGRID 11.7 和全新的 All Flash 物件儲存設備 SGF6112</block>
-  <block id="96a50e94edaba5ec9fe3b3c43f94ce1a" category="list-text">5 月 16 日：<block ref="822011c4a35ab965678b4e99560374f9" category="inline-link-rx"></block></block>
   <block id="3cc60dd0d810d80d23db5dfe54b351da" category="inline-link">Amazon S3 檔案系統的安裝點現在已成為 GA</block>
-  <block id="5aa7060311e71d085890eeaf60f649b1" category="list-text">8 月 30 日：<block ref="90e42dccda167e27664cb4046795d9d2" category="inline-link-rx"></block></block>
   <block id="dd6f0ba1a70b208ed9294a411ace7f5b" category="inline-link">利用 Cloud Insights 使用 Fluent 位元來監控及收集記錄</block>
-  <block id="c19c164e1f7d2decc0e8ce134540a517" category="list-text">9 月 1 日：<block ref="71f54938bd1ce25b1fc86aa20da828f4" category="inline-link-rx"></block></block>
   <block id="831dc58cce04528855c0f71b7c4c7427" category="inline-link">繼續從 Hadoop ：利用 Dremio 和 StorageGRID 將資料分析現代化</block>
-  <block id="cac309a9762976e1cd514f372dcc5d5d" category="list-text">10 月 17 日：<block ref="64e3b33ccfb012d90bff9bcf09d2035a" category="inline-link-rx"></block></block>
   <block id="0de69010a0b885390944d59945579799" category="inline-link">SPECtra Logic on -Prem Glacier 搭配 StorageGRID</block>
-  <block id="cda1cacdbb2c1506d847fed8599faa68" category="list-text">11 月 7 日：<block ref="4558e5f7bc147029e407b74c0a6768e6" category="inline-link-rx"></block></block>
   <block id="d8d45aa5142f174e3e83b7f1de8895a1" category="sidebar">使用 StorageGRID 設定 Dremio</block>
   <block id="9792e23419583666b178605decaec552" category="list-text">Gitlab</block>
   <block id="d2f2caed07026483a659ddedff29363a" category="section-title">將群組限制為具有唯讀存取權的單一子目錄（首碼）</block>
@@ -1309,13 +1280,9 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="7d357c582321af176fc74f1ddf5aa211" category="paragraph"><block ref="7d357c582321af176fc74f1ddf5aa211" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1b55a28070372e724653dd78fbd8816b" category="paragraph"><block ref="1b55a28070372e724653dd78fbd8816b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a45308928cdb317709d69e1a9d7f54cf" category="inline-link">StorageGRID 上的巨量資料分析： Dremio 的執行速度比 Apache Hive 快 23 倍</block>
-  <block id="5cd5270a0a6ab5cf094bb83c5f8bf9b7" category="list-text">12 月 12 日：<block ref="56387d425a7d1ca386f6000ce26e6a91" category="inline-link-rx"></block></block>
   <block id="00039cf6e879cf2c96e1147810458aae" category="inline-link">發表 StorageGRID + LakeFS 解決方案簡介</block>
-  <block id="1f40d8850cbf8fe229a58e034f6adca9" category="list-text">2 月 2 日： <block ref="00c18eee7b83b56a4fc536edaabb5a21" category="inline-link-rx"></block></block>
   <block id="f88708a62cf65a104ede836164d02fab" category="inline-link">StorageGRID 11.8 簡介：增強的安全性、簡易性和使用者體驗</block>
-  <block id="4061f774ad1db1250bbe37897bd6a5d8" category="list-text">2 月 16 日：<block ref="b378392cb8f9d3c27df36a7aee10e61c" category="inline-link-rx"></block></block>
   <block id="7ed997d0afb0f25bef5074cfbae5d820" category="inline-link">隆重介紹 StorageGRID 11.8</block>
-  <block id="a09da54b6d618967603c3d37d6f28b88" category="list-text">2 月 16 日：<block ref="70310190f4683d95ee6551bded030474" category="inline-link-rx"></block></block>
   <block id="d24354c28f6eda12a84300886d0bae91" category="paragraph"><block ref="d24354c28f6eda12a84300886d0bae91" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b234cd8b9202dfa24815cd14203cde1a" category="paragraph"><block ref="b234cd8b9202dfa24815cd14203cde1a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="dcb0bfe5be50507cbd364a2d0fdfd056" category="paragraph"><block ref="dcb0bfe5be50507cbd364a2d0fdfd056" category="inline-image-macro-rx" type="image"></block></block>
@@ -1578,4 +1545,37 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="fff8d22924e491405ba3026b24555fa6" category="list-text">結束維護模式。從「the Some Appliance Installer」StorageGRID 選取「*進階*&gt;*重新開機控制器*」、然後選取「*重新開機至StorageGRID *」。</block>
   <block id="6668d4dfafe68f86bfe1db4386e9ce7b" category="list-text">當所有節點都正常運作且 Grid 沒有連線問題時、如有必要、請使用 change-ip 來更新應用裝置管理網路和用戶端網路。</block>
   <block id="bae75f6502d7126b5a2837bf5628cab3" category="sidebar">如何重新部署站台及變更網路</block>
+  <block id="d0cf9344ad2e87b19d7ddab6a3a8a65c" category="list-text">2024 年 2 月 16 日：<block ref="b378392cb8f9d3c27df36a7aee10e61c" category="inline-link-rx"></block></block>
+  <block id="b41a18341b59a0683c39812165cc0c0b" category="list-text">2024 年 2 月 16 日：<block ref="70310190f4683d95ee6551bded030474" category="inline-link-rx"></block></block>
+  <block id="d4594ce3b33a972e211fe9682ce3d309" category="list-text">2024 年 2 月 2 日： <block ref="00c18eee7b83b56a4fc536edaabb5a21" category="inline-link-rx"></block></block>
+  <block id="4a9aae048c463acb4451f4593f34edc7" category="list-text">2023 年 12 月 12 日：<block ref="56387d425a7d1ca386f6000ce26e6a91" category="inline-link-rx"></block></block>
+  <block id="00cf44fc2391bf394fabb4544209c638" category="list-text">2023 年 11 月 7 日：<block ref="4558e5f7bc147029e407b74c0a6768e6" category="inline-link-rx"></block></block>
+  <block id="b6b4eb17c420a5edadebf0afe24e7acb" category="list-text">2023 年 10 月 17 日：<block ref="64e3b33ccfb012d90bff9bcf09d2035a" category="inline-link-rx"></block></block>
+  <block id="88bf16cb98ec793a1004c95baddf055c" category="list-text">2023 年 9 月 1 日：<block ref="71f54938bd1ce25b1fc86aa20da828f4" category="inline-link-rx"></block></block>
+  <block id="5e32b061b51843f44671f026cc19eb5b" category="list-text">2023 年 8 月 30 日：<block ref="90e42dccda167e27664cb4046795d9d2" category="inline-link-rx"></block></block>
+  <block id="514ae57ea8dfeb703037a595cd9ab967" category="list-text">2023 年 5 月 16 日：<block ref="822011c4a35ab965678b4e99560374f9" category="inline-link-rx"></block></block>
+  <block id="4c1bd792b536446999d1ff0b4812b39a" category="list-text">2023 年 5 月 16 日：<block ref="55400ccf8fd45f41eb658085301654a8" category="inline-link-rx"></block></block>
+  <block id="e2aca017abaed5b68760a84be22625d0" category="list-text">2023 年 3 月 30 日：<block ref="3a37c13e60469949c226e6fe44730d5d" category="inline-link-rx"></block></block>
+  <block id="80b92583825de655262f5ec03db36d8d" category="list-text">2023 年 3 月 30 日：<block ref="b439a8f44229e6c1e7b2461211f6849b" category="inline-link-rx"></block></block>
+  <block id="fb9c460add81700ce3ddf20b5b36105d" category="list-text">2023 年 3 月 14 日：<block ref="3c7ed37db994ec363730d455072b8b2b" category="inline-link-rx"></block></block>
+  <block id="e725a1c619e4b377a5580a3fd0e904ee" category="list-text">2023 年 2 月 14 日：<block ref="276d9658a5f8a049f2dcc595745c0879" category="inline-link-rx"></block></block>
+  <block id="cb1e1878ece3c2a899fd7db63967b8a8" category="list-text">2023 年 1 月 18 日：<block ref="6ea6516d4586962fa5f8e8460c33ccd0" category="inline-link-rx"></block></block>
+  <block id="75639a2b61decb387fb6bbec29908248" category="list-text">2023 年 1 月 16 日：<block ref="68d21b96499b1933cc9fc03f94f1e388" category="inline-link-rx"></block></block>
+  <block id="cdea5a154b0b0ab86d0d6304a21bda3f" category="list-text">2022 年 12 月 6 日：<block ref="e235608a45034e1deea87e6e77daddf3" category="inline-link-rx"></block></block>
+  <block id="b033dccd559a42657b2fbb03dd21c349" category="list-text">2022 年 11 月 23 日：<block ref="67d6d3a21cc9af1520f991806f578b6b" category="inline-link-rx"></block></block>
+  <block id="26dadc41f3793afcf27dabfc8af82fec" category="list-text">2022 年 11 月 7 日：<block ref="c8168f81ebd9cd26583947065ec9bf4e" category="inline-link-rx"></block></block>
+  <block id="d4100bee1228b39623a887e024f221dd" category="list-text">2022 年 10 月 5 日：<block ref="7a820536864c4b8ba1158a633db675d7" category="inline-link-rx"></block></block>
+  <block id="b8c60e65b22d62c34b439943fbbdf163" category="list-text">2022 年 10 月 5 日：<block ref="743b55649bf0de5fef17881c2182c74e" category="inline-link-rx"></block></block>
+  <block id="835de7846030219d07c670951e6ffb39" category="list-text">2022 年 9 月 26 日：<block ref="bac8af8866fb18858bb2bc38accfee93" category="inline-link-rx"></block></block>
+  <block id="8ada5e40d5c0fc70316a0e89d441d1a1" category="list-text">2022 年 9 月 19 日：<block ref="d3b1520ae76b2d8916030b44fa119b18" category="inline-link-rx"></block></block>
+  <block id="44e29c80530d3eb777674bc8f9d75680" category="list-text">2022 年 9 月 1 日：<block ref="6fba2287f3b879f9355d55f6093dd086" category="inline-link-rx"></block></block>
+  <block id="09022107d504f4c74cd3455382e4a012" category="list-text">2022 年 8 月 23 日：<block ref="e69bd0d41d124ab466e32e26b75521a0" category="inline-link-rx"></block></block>
+  <block id="09b187fdd11bb217e848dcd14054a8bc" category="list-text">2022 年 8 月 17 日：<block ref="2cb03523d29d45df344e7e35aeae9b09" category="inline-link-rx"></block></block>
+  <block id="e2d625e4a07e6ffa9248d3c69031c018" category="list-text">2022 年 8 月 16 日：<block ref="b2f8710f8f504eba14016ef400ef8a20" category="inline-link-rx"></block></block>
+  <block id="b0ddc685f341b24735e60cd237fed6b6" category="list-text">2022 年 8 月 5 日：<block ref="262aaa550c02638a3973245ae3d6d03e" category="inline-link-rx"></block></block>
+  <block id="a84591557fb46548646e42cb2a3cb6a1" category="list-text">2022 年 7 月 26 日：<block ref="dcc8150a969e49a02dd3cd5f53c489a0" category="inline-link-rx"></block></block>
+  <block id="421ad547c6fb8cdc11d0cc80a8ac2a3e" category="list-text">2022 年 6 月 9 日：<block ref="bc61cc71bae06945f8e3338c0faa1d28" category="inline-link-rx"></block></block>
+  <block id="80482345acd37742916c858b1bac3347" category="list-text">2022 年 5 月 26 日：<block ref="919c9f44a16e685bcbda321efc4479b1" category="inline-link-rx"></block></block>
+  <block id="11bd19e0a7faa7e5cb29e2de6e742e74" category="list-text">2022 年 5 月 24 日：<block ref="efe27e9a7520722932d06c2a314e517b" category="inline-link-rx"></block></block>
+  <block id="d915b8cda332d7bea31598a0cc058498" category="list-text">2022 年 5 月 10 日：<block ref="debc4c6191d7e706232e96c2789d3930" category="inline-link-rx"></block></block>
 </blocks>
