@@ -67,6 +67,8 @@ indexpage:
       url: "/technical-reports/datalake-analytics.html"
     - title: Hadoop S3A 調校最佳實務做法
       url: "/technical-reports/s3a-tuning.html"
+    - title: TR-4871 - CommVault 完整備份與還原與 NetApp StorageGRID
+      url: "/technical-reports/tr-4871-commvault.html"
   - title: 程序和API範例
     links:
     - title: 測試並示範S3加密

@@ -5,7 +5,10 @@ keywords: data lake, on-premises, analytics, storagegrid, object
 summary: 本報告涵蓋 StorageGRID 上的巨量資料分析。 
 ---
 = NetApp StorageGRID 與巨量資料分析
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 
@@ -30,7 +33,7 @@ NetApp StorageGRID 物件儲存解決方案提供擴充性、資料可用度、�
 
 * 物件儲存使用案例 *
 
-image:../media/datalake-analytics/image1.png["StorageGRID 使用案例圖表、寬度 = 396 、高度 = 394"]
+image:datalake-analytics/image1.png["StorageGRID 使用案例圖表、寬度 = 396 、高度 = 394"]
 
 在上述情況中、巨量資料分析是最熱門的使用案例之一、其使用率也逐漸上升。
 
@@ -47,7 +50,7 @@ image:../media/datalake-analytics/image1.png["StorageGRID 使用案例圖表、�
 
 * StorageGRID S3 資料湖 *
 
-image:../media/datalake-analytics/image2.png["StorageGRID datalake 範例、 width=614 、 height =345"]
+image:datalake-analytics/image2.png["StorageGRID datalake 範例、 width=614 、 height =345"]
 
 
 

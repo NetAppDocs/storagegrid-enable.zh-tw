@@ -1355,14 +1355,12 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="bcdd4afe5d0cbdf8cc04de0c92ddc7df" category="paragraph">請嘗試兩者、以判斷哪一種最適合您的工作負載和需求。</block>
   <block id="b2272f16c45a7fc4af509338bc22504e" category="paragraph">總結來說、 S3A Commiters 提供解決方案、以因應對 S3 的一致、高效能及可靠輸出承諾這項基本挑戰。其內部設計可確保資料傳輸效率、同時維持資料完整性。</block>
   <block id="81501235b286178b5df292f16c6e8b47" category="inline-image-macro">S3A 選項表</block>
-  <block id="749d1c1d8a18506e442bfbbaec54f349" category="paragraph"><block ref="749d1c1d8a18506e442bfbbaec54f349" category="inline-image-macro-rx" type="image"></block></block>
   <block id="dc1717f3744878e6dbb68b8a22974e06" category="paragraph">* 3.執行緒、連線集區大小和區塊大小 *</block>
   <block id="b35c467aea8fb0e4ad9d636d48d0b8db" category="list-text">每個與單一貯體互動的 *S3A* 用戶端都有其專屬的開放式 HTTP 1.1 連線集區和執行緒、可用於上傳及複製作業。</block>
   <block id="4b7fc1639229d7f089f2e8c85436106e" category="inline-link">您可以調整這些集區大小、以在效能與記憶體 / 執行緒使用量之間取得平衡</block>
   <block id="901a6addd359ee8998a8f1e41f45789f" category="list-text"><block ref="801a4dc74c7b120220c9c416fd446c6b" category="inline-link-rx"></block>。</block>
   <block id="10fbe332f21fbd575e849cde38283e2e" category="list-text">將資料上傳至 S3 時、資料會分成區塊。預設區塊大小為 32 MB 。您可以設定 FS.s3a.block.size 屬性來自訂此值。</block>
   <block id="ffa0e6a713cabf752ba8055eaaede5fc" category="list-text">較大的區塊大小可降低上傳期間管理多個零件的成本、進而改善大型資料上傳的效能。大型資料集的建議值為 256 MB 或更高。</block>
-  <block id="06227b83b2c17941a4d807e7d9b74710" category="paragraph"><block ref="06227b83b2c17941a4d807e7d9b74710" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f40f5a29dd719649854707ad2ed54faa" category="paragraph">*4.多部分上傳 *</block>
   <block id="289795451e85a0a16d75e7868c7480d0" category="paragraph">s3a commiters * Always * 使用 MPU （多部分上傳）將資料上傳至 S3 儲存庫。這是為了允許：工作失敗、工作的投機性執行、以及工作在提交前中止。以下是與多部分上傳相關的一些重要規格：</block>
   <block id="a9da1ffc95aa8035dfd68dae308c2231" category="list-text">最大物件大小： 5 TiB （ TB ）。</block>
@@ -1384,10 +1382,8 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="465c4cf2408ae7723d681a9c8607de37" category="list-text">物件零件會使用 upload-id.</block>
   <block id="265f70ced2325f215340985c129b8fff" category="list-text">上傳所有物件零件後、會傳送完整的多個部分上傳要求與 upload-id.StorageGRID 會從上傳的零件建構物件、用戶端可以存取物件。</block>
   <block id="65638a5ddb2ddbd00963cc5b84f206d1" category="paragraph">如果未成功傳送完整的多部分上傳要求、則零件會留在 StorageGRID 中、不會建立任何物件。當工作中斷、失敗或中止時、就會發生這種情況。零件會保留在網格中、直到多個零件上傳完成或中止、或 StorageGRID 在上傳開始後 15 天內清除這些零件。如果在某個儲存庫中有許多（數十萬到數百萬）進行中的多部分上傳、當 Hadoop 傳送「 list-multify-upload 」（此要求不依上傳 ID 篩選）時、要求可能需要很長時間才能完成或最終逾時。您可以考慮將 FS.s3a.mutlipart.purge 設為 true 、並設定適當的 FS.s3a.multipe.pure.age 值（例如 5 至 7 天、請勿使用 86400 的預設值、即 1 天）。或請 NetApp 支援人員調查情況。</block>
-  <block id="caf1551badab24f35930164061cff3dd" category="paragraph"><block ref="caf1551badab24f35930164061cff3dd" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d9703f8bc6fb70abb3d253a5ded96197" category="paragraph">*5.緩衝區將資料寫入記憶體 *</block>
   <block id="36a89ed4836d3b5b5f59193e28776e5c" category="paragraph">若要提升效能、您可以在將資料上傳至 S3 之前、先緩衝寫入記憶體中的資料。這樣可以減少小寫入次數、並提高效率。</block>
-  <block id="f26f197ffec0d3e726569f182287a9a8" category="paragraph"><block ref="f26f197ffec0d3e726569f182287a9a8" category="inline-image-macro-rx" type="image"></block></block>
   <block id="63d5657772886960693d8740023cf233" category="paragraph">請記住、 S3 和 HDFS 的運作方式各不相同。為了最有效地使用 S3 資源、必須仔細調整 / 測試 / 實驗。</block>
   <block id="38a5cc39717b20b4cde7ce17adfaf8c7" category="summary">本報告涵蓋 StorageGRID 上的巨量資料分析。</block>
   <block id="5d272a32f1e2287537ac7e73dbde5d69" category="doc">NetApp StorageGRID 與巨量資料分析</block>
@@ -1402,7 +1398,6 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="454845c7ca306686c28f96a59487d70c" category="paragraph">* 資料歸檔： * StorageGRID 提供不同的儲存類型、並支援分層處理至公有長期低成本儲存選項、因此是歸檔及長期保留資料的理想解決方案、這些資料必須保留以供法規遵循或歷史用途。</block>
   <block id="a324e6c3bb7d6684738c923e7b52ea98" category="paragraph">* 物件儲存使用案例 *</block>
   <block id="9f79f86c9a539a911125a876ef6a3c2e" category="inline-image-macro">StorageGRID 使用案例圖表、寬度 = 396 、高度 = 394</block>
-  <block id="2ae53f7687415e47352b3c8fdf11602c" category="paragraph"><block ref="2ae53f7687415e47352b3c8fdf11602c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c9e24c78b995a9f99006f7b470383259" category="paragraph">在上述情況中、巨量資料分析是最熱門的使用案例之一、其使用率也逐漸上升。</block>
   <block id="d9adadb4a0063dcb9fae0a43c0073259" category="section-title">為何選擇 StorageGRID 來處理資料湖？</block>
   <block id="20ee9cfabde8b905c9a64689a84b0921" category="list-text">更高的協同作業效率：大規模共用多站台、多租戶、並具備業界標準 API 存取功能</block>
@@ -1412,7 +1407,6 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="6d5424acc89d68777ded882e67fba989" category="list-text">安全性： StorageGRID 提供各種安全功能、包括加密、存取控制原則、資料生命週期管理、物件鎖定和版本設定、以保護儲存在 S3 儲存區中的資料</block>
   <block id="9ed95e053e569a8027874c20fc968fa0" category="paragraph">* StorageGRID S3 資料湖 *</block>
   <block id="16440189dc2ac5b52ea041615f4e3502" category="inline-image-macro">StorageGRID datalake 範例、 width=614 、 height =345</block>
-  <block id="8c6ce2dc10841da36e2b55063b73a29e" category="paragraph"><block ref="8c6ce2dc10841da36e2b55063b73a29e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="bcf6df0d4fc301b73dfb0f84c2b25fca" category="section-title">哪一個資料倉儲或資料湖最適合搭配 S3 物件儲存設備使用</block>
   <block id="f5fb5a608581154f9f31a7efeaf26b22" category="inline-link">Apache 冰山：最終指南</block>
   <block id="961898fd5ba4fc2d612d1c831953550a" category="paragraph">NetApp 以三種資料倉儲 / 湖屋生態系統（ Hive 、 Delta Lake 和 Dremio ）為基準測試 StorageGRID 。<block ref="ea7970154750f3c7264130a8bd2b3dc5" category="inline-link-rx"></block> 包括資料倉儲和資料湖屋的簡介、以及這兩種架構的優缺點。</block>
@@ -1578,4 +1572,248 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="80482345acd37742916c858b1bac3347" category="list-text">2022 年 5 月 26 日：<block ref="919c9f44a16e685bcbda321efc4479b1" category="inline-link-rx"></block></block>
   <block id="11bd19e0a7faa7e5cb29e2de6e742e74" category="list-text">2022 年 5 月 24 日：<block ref="efe27e9a7520722932d06c2a314e517b" category="inline-link-rx"></block></block>
   <block id="d915b8cda332d7bea31598a0cc058498" category="list-text">2022 年 5 月 10 日：<block ref="debc4c6191d7e706232e96c2789d3930" category="inline-link-rx"></block></block>
+  <block id="b595975ee2f837da3fb64fe3e27a04a5" category="paragraph"><block ref="b595975ee2f837da3fb64fe3e27a04a5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="620a43fd755527066fd648aba6f7db92" category="paragraph"><block ref="620a43fd755527066fd648aba6f7db92" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ba62ab536da4018921d932eab137754d" category="paragraph"><block ref="ba62ab536da4018921d932eab137754d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8ba2b9229934ee6fc64c293ea55c00cf" category="paragraph"><block ref="8ba2b9229934ee6fc64c293ea55c00cf" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="51416623000162278c6405b1b5cd833d" category="paragraph"><block ref="51416623000162278c6405b1b5cd833d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2a60f08787dc9ecba98a9ffc064b7ed8" category="paragraph"><block ref="2a60f08787dc9ecba98a9ffc064b7ed8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5a184c0363bb58450e6d7433581fd471" category="summary">本報告說明 CommVault 與 NetApp 共同提供的資料保護解決方案。</block>
+  <block id="354a23ac01ef93911cb9256f86e06159" category="doc">TR-4871 - CommVault 完整備份與還原與 NetApp StorageGRID</block>
+  <block id="cb2418c01859c7704da751aa5a7d2421" category="section-title">解決方案總覽</block>
+  <block id="80a3f83141a9faa5b2c7cd8fe9d282e0" category="paragraph">CommVault 與 NetApp 攜手合作、共同打造共同的資料保護解決方案、結合 CommVault Complete Backup and Recovery for NetApp 軟體與 NetApp StorageGRID 雲端儲存軟體。許多組織想要將儲存設備移轉至雲端、擴充系統、並將長期保留資料的原則自動化。CommVault 完整備份與還原與 NetApp StorageGRID 提供獨特且易於使用的解決方案、可協助您滿足全球快速資料成長與法規不斷增加的需求。雲端型物件儲存設備的恢復能力、擴充能力、營運效率和成本效益、是備份目標的自然選擇。CommVault 與 NetApp 於 2014 年聯合驗證了他們的聯合解決方案、之後更進一步整合了兩種解決方案。全球所有類型的客戶都採用 CommVault 完整備份與還原及 StorageGRID 組合解決方案。</block>
+  <block id="03b34745d3c972ba9412e4898f60977d" category="paragraph">當您使用雲端儲存設備實作 CommVault 完整備份與還原軟體時、您有兩個備份選項：</block>
+  <block id="9eb0111fcb9b869313a8890a31fbe9aa" category="list-text">備份至主要磁碟目標、並將輔助複本備份至雲端儲存設備。</block>
+  <block id="f2236ba3bffef9cf2f2a7237c4487c29" category="list-text">將雲端儲存備份為主要目標。</block>
+  <block id="80457ca0c9c707a381ea0dbbf13a97f8" category="paragraph">過去、雲端或物件儲存設備的效能太低、無法用於主要備份。使用主要磁碟目標可讓客戶加快備份與還原程序、並將輔助複本作為冷備份保留在雲端上。StorageGRID 代表新一代的物件儲存設備。StorageGRID 的效能和處理量都很高、而且效能和靈活度都超越其他物件儲存廠商的要求。</block>
+  <block id="3764fc2dfa1c37293e979fb84f4d57e2" category="paragraph">表 1 列出 StorageGRID 每個備份選項的優點。</block>
+  <block id="b8487d84bdeead48dbf45470a4e20888" category="section-title">表 1 ）主要備份至磁碟加上輔助複本、而非主要備份至 StorageGRID 。</block>
+  <block id="0677b3ba1c3af4912992b290e34bede8" category="cell">主要備份至磁碟、以及輔助複本至 StorageGRID</block>
+  <block id="f0545f8a5027b3947229082e2363e36e" category="cell">主要備份至 StorageGRID</block>
+  <block id="9446a98ad14416153cc4d45ab8b531bf" category="paragraph">效能</block>
+  <block id="bf1e57e2734e41f446afd52e7a01511f" category="paragraph">使用即時掛載或即時恢復、以最快的恢復時間：最適合 Tier0/Tier1 工作負載。</block>
+  <block id="fc436ebe83f8a987f689862b5d1e9416" category="paragraph">無法用於即時掛載或即時恢復作業。適用於串流還原作業和長期保留。</block>
+  <block id="46d93ce059017fe679dc02b4bfab8803" category="paragraph">部署架構</block>
+  <block id="3efb73a8f0efa8cd24dac18e9fdcb90d" category="paragraph">使用所有 Flash 或旋轉磁碟做為第一個備份登陸層。StorageGRID 用作次層。</block>
+  <block id="6a8ffa7403e393a890a078b05f73a63b" category="paragraph">使用 StorageGRID 做為全方位備份目標、簡化部署。</block>
+  <block id="95493dca7eed37cfb9bfd6cc90ef1959" category="paragraph">進階功能（即時還原）</block>
+  <block id="eaa4dc5078017a5c5bebf383ab6f5124" category="paragraph">支援</block>
+  <block id="aa7f77e663b832d5b0e544c5511e680c" category="paragraph">不支援</block>
+  <block id="bf8dd94f74c5878ba969abeeef0286d1" category="section-title">目標對象</block>
+  <block id="749f48d6360a1ae4fb9b6967d682f7ab" category="paragraph">本文檔面向使用 CommVault 和 StorageGRID 備份和恢復解決方案的數據管理員和架構師。</block>
+  <block id="8f4c7939e8a42e023939df947aba54f6" category="section-title">解決方案技術</block>
+  <block id="4e50e1ccf2606dc28761309b196f635e" category="paragraph">經測試的解決方案結合了 CommVault 與 NetApp 解決方案、打造出強大的聯合解決方案。</block>
+  <block id="8de8885619770caac462899bd9ad1a3c" category="paragraph">CommVault 完整備份與還原軟體是一種企業級的整合式資料與資訊管理解決方案、完全以單一平台為基礎、並以統一的程式碼基礎打造而成。其所有功能都會共享後端技術、提供完全整合的資料保護、管理及存取方法所帶來的無與倫比的優勢與效益。本軟體包含可保護、歸檔、分析、複寫及搜尋資料的模組。這些模組共用一組通用的後端服務和進階功能、可彼此順暢互動。此解決方案可解決企業中資料管理的所有層面、同時提供無限的擴充性、以及前所未有的資料與資訊控制能力。</block>
+  <block id="d578ff088a7606a2f2f8b20f068b5b62" category="paragraph">CommVault 軟體平台的主要功能包括：</block>
+  <block id="a9f9086df1d2d57873ce7ad72a8f3503" category="list-text">完整的資料保護解決方案、可支援虛擬與實體伺服器、 NAS 系統、雲端基礎架構及行動裝置上的所有主要作業系統、應用程式及資料庫。</block>
+  <block id="c5eaed381b053e4b3d85d9ab1fb6fa5b" category="list-text">透過單一主控台簡化管理：您可以檢視、管理及存取整個企業的所有功能及所有資料與資訊。</block>
+  <block id="434ac5052bf47ffbe2a46a08caeefbe0" category="list-text">多種保護方法、包括資料備份與歸檔、快照管理、資料複寫、以及電子探索的內容索引。</block>
+  <block id="7317d6c898578da433c127897e9abeac" category="list-text">使用重複資料刪除技術來管理磁碟與雲端儲存設備、實現高效率的儲存管理。</block>
+  <block id="40b8f42feb3b273a69061871959c334b" category="list-text">整合 NetApp 儲存陣列、例如 AFF 、 FAS 、 NetApp HCI 和 E 系列陣列、以及 NetApp SolidFire ^ ® ^ 橫向擴充儲存系統。也與 NetApp Cloud Volumes ONTAP 軟體整合、可在 NetApp 儲存產品組合中、自動建立索引化的應用程式感知 NetApp Snapshot ™複本。</block>
+  <block id="bac96a2448236465a33577db5bbbfafb" category="list-text">完整的虛擬基礎架構管理功能、可支援領先業界的內部部署虛擬 Hypervisor 和公有雲超大規模平台。</block>
+  <block id="79b01f0de034ee56053c5a83bbbbc371" category="list-text">進階安全功能可限制存取關鍵資料、提供精細的管理功能、並為 Active Directory 使用者提供單一登入存取。</block>
+  <block id="7631df1a16e7c86a241133ce56a5626e" category="list-text">原則型資料管理、可讓您根據業務需求（而非實體位置）來管理資料。</block>
+  <block id="dbd89d5407a94aa887d7f9793148af24" category="list-text">頂尖的終端使用者體驗、讓使用者能夠保護、尋找及恢復自己的資料。</block>
+  <block id="c71c3c5075c3ae71dfa4cd9ad0c8f690" category="list-text">API 導向的自動化功能、可讓您使用 vRealize Automation 或 Service Now 等協力廠商工具來管理資料保護與還原作業。</block>
+  <block id="56cc4502e343e76ad448ffe3a05fc18c" category="paragraph">如需支援工作負載的詳細資訊、請參閱<block ref="6c465f42cde4c9569daed31dc24f517e" category="inline-link-rx"></block>。</block>
+  <block id="585473463b3cb51e50ec6023b5b51685" category="paragraph">NetApp StorageGRID 即 CommVault 雲端層是企業混合雲物件儲存解決方案。您可以在多個站台上部署、無論是在特定用途的應用裝置上、或是以軟體定義的部署方式進行部署。StorageGRID 可讓您建立資料管理原則、以決定資料的儲存和保護方式。StorageGRID 會收集您開發及執行原則所需的資訊。它會檢查各種特性和需求、包括效能、耐用性、可用度、地理位置、 壽命和成本。資料在不同位置之間移動時、以及隨著時間的變化、都會受到完整的維護和保護。</block>
+  <block id="f99347a4e5e36d0e5ba4bffb0d1598ab" category="paragraph">StorageGRID 智慧型原則引擎可協助您選擇下列任一選項：</block>
+  <block id="ed1c9e59475f7c0dfda1df3a7da27812" category="list-text">使用抹除編碼在多個站台之間備份資料、以獲得恢復能力。</block>
+  <block id="d470af9a0291f968f65b28b830fc86cd" category="list-text">將物件複製到遠端站台、以將 WAN 延遲和成本降到最低。</block>
+  <block id="7bd9a8aa8ea326b44f2bcde2f3609ff5" category="paragraph">當 StorageGRID 儲存物件時、無論物件位於何處或存在多少份複本、您都能以單一物件的方式存取物件。這種行為對災難恢復至關重要、因為有了這種情況、即使資料的一個備份複本毀損、 StorageGRID 也能還原您的資料。</block>
+  <block id="118e6fb1b88f8c0f0cfd7dee3bf51a37" category="paragraph">在主儲存設備中保留備份資料可能會很昂貴。使用 NetApp StorageGRID 時、您可以將非作用中的備份資料移轉至 StorageGRID 、藉此釋放主儲存設備上的空間、同時享有 StorageGRID 的眾多功能。備份資料的價值會隨著時間而改變、儲存資料的成本也會隨之改變。StorageGRID 可以將主儲存設備的成本降至最低、同時提高資料的耐用度。</block>
+  <block id="b82ecf69498cda86864f62d82c7ccb6b" category="section-title">解決方案設定</block>
+  <block id="a3ad938334ebe31fa6bd5526fdde0c2d" category="paragraph">在實驗室設定中、 StorageGRID 環境包含四個 NetApp StorageGRID SG5712 應用裝置、一個虛擬主要管理節點和一個虛擬閘道節點。SG5712 應用裝置是入門級選項、是一種基礎組態。選擇更高效能的應用裝置選項、例如 NetApp StorageGRID SG5760 或 SG6060 、可提供顯著的效能優勢。請洽詢您的 NetApp StorageGRID 解決方案架構設計師、以取得規模調整協助。</block>
+  <block id="2502d49022714233caf9bb360eed1259" category="paragraph">對於資料保護原則、 StorageGRID 使用整合式生命週期管理（ ILM ）原則來管理及保護資料。ILM 規則會在原則中從上到下進行評估。我們實作了表 2 所示的 ILM 原則。</block>
+  <block id="03b71896a803d1674387b9ace5509c97" category="section-title">表 2 ） StorageGRID ILM 原則。</block>
+  <block id="9bae64ff51701a09557836797ee3739f" category="cell">ILM 規則</block>
+  <block id="619dd4db8171a8f1bf978f44c9cf10c4" category="cell">限定條件</block>
+  <block id="80cb0c66c0080d1e4c291f66705ba62d" category="cell">擷取行為</block>
+  <block id="8143290d673d927f4a362b2726e52d06" category="paragraph">銷毀編碼 2+1</block>
+  <block id="61fed6f594f54558c7a9bc0ac4abb7e5" category="paragraph">超過 200KB 的物件</block>
+  <block id="c6589f5236c0c434d0c63dc5f9a856f2" category="paragraph">平衡</block>
+  <block id="a98f005d5c19a50a6134d6a62274c1f8" category="paragraph">2 複本</block>
+  <block id="3e6defd685231cdd12065add41996c89" category="paragraph">所有物件</block>
+  <block id="dcd8a20c909a5d0bbf6f852d688309cb" category="paragraph">雙重承諾</block>
+  <block id="f2382f08b2b3ae5b16fd3e6a7f6fe40c" category="paragraph">ILM 2 複製規則是預設規則。「刪除編碼 2+1 」規則已套用至此測試、適用於任何 200 KB 或更大的物件。預設規則已套用至小於 200KB 的物件。以這種方式應用規則是 StorageGRID 最佳實務做法。</block>
+  <block id="9fd2a44a56a109ab7ff40317cdd4cc9b" category="inline-link">NetApp 透過 CommVault 實現橫向擴充資料保護</block>
+  <block id="f7d7cdf329bd5cf1893317ad3732d1f7" category="paragraph">如需此測試環境的技術詳細資料、請參閱中的解決方案設計與最佳實務一節<block ref="03ce17f8b5e1206a493f3bd56ef5953d" category="inline-link-rx"></block> 技術報告。</block>
+  <block id="92672a7a2b909945fbfa9f44f057c7a1" category="section-title">規模調整</block>
+  <block id="de6340e74a7b4b37632d447d082a219e" category="paragraph">請洽詢您的 NetApp 資料保護專家、以瞭解您環境的特定規模。NetApp 資料保護專家可使用 CommVault Total Backup Storage Calculator 工具來估計備份基礎架構需求。此工具需要 CommVault 合作夥伴入口網站存取權。如有需要、請註冊以取得存取權。</block>
+  <block id="850723af1b528eaff214961e1477f7f2" category="section-title">CommVault 規模調整輸入</block>
+  <block id="e3b0761b4b3dd1b0a93403608c54ca50" category="paragraph">下列工作可用於執行探索、以調整資料保護解決方案的規模：</block>
+  <block id="3cf303266a00ea5459dd889344aed185" category="list-text">識別需要保護的系統或應用程式 / 資料庫工作負載、以及對應的前端容量（以 TB 為單位）。</block>
+  <block id="a6fc6119f758a2807e997797f666329c" category="list-text">識別需要保護的 VM/ 檔案工作負載和類似的前端容量（ TB ）。</block>
+  <block id="45b2ce852d6ed5f33b77406aac08556c" category="list-text">找出短期和長期的保留要求。</block>
+  <block id="62f64531410b8711dc0f7e3749b00000" category="list-text">識別所識別資料集 / 工作負載的每日變更率 % 。</block>
+  <block id="e20a5b161f3a78a8aa8b41995cb1056f" category="list-text">找出未來 12 、 24 及 36 個月的預測資料成長。</block>
+  <block id="546f4bb0db4eb4c0474451ef4087425b" category="list-text">根據業務需求定義資料保護 / 恢復的 RTO 和 RPO 。</block>
+  <block id="b9b087f8be7670b2ba95f7b2ee0e66c0" category="paragraph">如果有這項資訊可用、就可以完成備份基礎架構規模調整、進而分析所需的儲存容量。</block>
+  <block id="2d782d1c787a750e5ae7cdfbf33e0b65" category="section-title">StorageGRID 規模調整指南</block>
+  <block id="293d59d0c1b3635b7390405d92fee965" category="paragraph">在您執行 NetApp StorageGRID 規模調整之前、請先考量工作負載的下列層面：</block>
+  <block id="b3e1f4c67ee07a73dcdaff1cf34f2640" category="list-text">可用容量</block>
+  <block id="dcd71c3bab40cab965c2424166b5b11d" category="list-text">WORM 模式</block>
+  <block id="af11a561a773e12e2fa9ba93ce506330" category="list-text">平均物件大小</block>
+  <block id="fdfceedcfadaa8fc4e641a9271ff7595" category="list-text">效能要求</block>
+  <block id="e1044b693615d4848c50aa5f02be9315" category="list-text">已套用 ILM 原則</block>
+  <block id="c6e6b34f0e5e37e48be00e166f7bd2cb" category="paragraph">可用容量的數量必須符合您已分層至 StorageGRID 的備份工作負載大小、以及保留排程。</block>
+  <block id="3e5b0f346efbe49d36a724d923e318ba" category="paragraph">WORM 模式是否會啟用？在 CommVault 中啟用 WORM 時、這會在 StorageGRID 上設定物件鎖定。這將增加所需的物件儲存容量。所需容量會因保留期間和每個備份的物件變更數量而異。</block>
+  <block id="74c32df19b25aa02e414011c18db023d" category="paragraph">平均物件大小是一種輸入參數、可協助調整 StorageGRID 環境中的效能大小。CommVault 工作負載使用的平均物件大小取決於備份類型。</block>
+  <block id="a0e738d4eef6a816ac737bf34e54a942" category="paragraph">表 3 依備份類型列出平均物件大小、並說明還原程序從物件存放區讀取的內容。</block>
+  <block id="2333f85cd072d4d90857e142fd494184" category="section-title">表 3 ） CommVault 工作負載物件大小與還原行為。</block>
+  <block id="a09aa546b6aa449c6baf91e8d0ebb636" category="cell">備份類型</block>
+  <block id="f95891c0ab9af9cf4d2eb297027c954d" category="cell">平均物件大小</block>
+  <block id="6dfea787ea9494eca4a1491e9a9cd7e7" category="cell">還原行為</block>
+  <block id="4a5284900affdafea6abfa93ccd8875e" category="paragraph">在 StorageGRID 中製作輔助複本</block>
+  <block id="56aefd6942690fe653a60ce8762c3fae" category="paragraph">32 MB</block>
+  <block id="69a2ecbb677a732e4f381bca77d41617" category="paragraph">完全讀取 32 MB 物件</block>
+  <block id="754b17607005a22396d824adf9193697" category="paragraph">將備份導向 StorageGRID （啟用重複資料刪除）</block>
+  <block id="b097e0a29568c51c88fec3b457c732b6" category="paragraph">8 MB</block>
+  <block id="8ef6bf4afbc7dfa36d2999b2dde70607" category="paragraph">1MB 隨機範圍讀取</block>
+  <block id="243bf10c4e6c1609f52782d457f76156" category="paragraph">將備份導向 StorageGRID （停用重複資料刪除）</block>
+  <block id="abfb05e87809fdb217c3f9c8b7970ce2" category="paragraph">此外、瞭解完整備份和遞增備份的效能需求、有助於判斷 StorageGRID 儲存節點的規模。StorageGRID 資訊生命週期管理（ ILM ）原則資料保護方法可決定儲存 CommVault 備份所需的容量、並影響網格的大小調整。</block>
+  <block id="464eb8c3015571353037cdb21da0f4d1" category="paragraph">StorageGRID ILM 複寫是 StorageGRID 用來儲存物件資料的兩種機制之一。當 StorageGRID 將物件指派給複寫資料的 ILM 規則時、系統會建立物件資料的精確複本、並將複本儲存在儲存節點上。</block>
+  <block id="b6a556e693b6d0301d99a27a637d5a0e" category="paragraph">銷毀編碼是StorageGRID 由程式碼庫用來儲存物件資料的第二種方法。當 StorageGRID 將物件指派給已設定為建立銷毀編碼複本的 ILM 規則時、它會將物件資料分割成資料片段。然後、它會計算額外的同位元檢查片段、並將每個片段儲存在不同的儲存節點上。存取物件時、會使用儲存的片段重新組裝物件。如果資料片段或同位元檢查片段毀損或遺失、抹除編碼演算法可以使用剩餘資料和同位元檢查片段的子集重新建立該片段。</block>
+  <block id="2cbd7f18ab3e999a21c4dba60191a95b" category="paragraph">這兩種機制需要不同的儲存容量、如以下範例所示：</block>
+  <block id="b162424b4a40f919bc77c8a4ada556a5" category="list-text">如果您儲存兩個複寫複本、您的儲存負荷會加倍。</block>
+  <block id="4dcb2b649002340390e73a82e0f53e74" category="list-text">如果您儲存的是 2+1 銷毀編碼複本、您的儲存負荷會增加 1.5 倍。</block>
+  <block id="b3ccf50d91fb7c1b2a91a90b2fdcbc11" category="paragraph">針對測試的解決方案、在單一站台上使用入門級 StorageGRID 部署：</block>
+  <block id="edb52e1c5e94ec07b0da6c55e66a6dc5" category="list-text">管理節點： VMware 虛擬機器（ VM ）</block>
+  <block id="512766f8f9ea73555dd725677342729b" category="list-text">負載平衡器： VMware VM</block>
+  <block id="075742127b6818880333cba369626334" category="list-text">儲存節點： 4 個 SG5712 、含 4TB 磁碟機</block>
+  <block id="48ce2b888edeb7c90c49b7acb217a0da" category="list-text">主要管理節點和閘道節點：具有最低正式作業工作負載需求的 VMware VM</block>
+  <block id="01b3d30d9a73f3002456c96c117546a7" category="paragraph">StorageGRID 也支援協力廠商負載平衡器。</block>
+  <block id="254b8ac10c6e4affc88ed5a3300b91ab" category="paragraph">StorageGRID 通常部署在兩個或多個站台中、其資料保護原則可複寫資料、以防止節點和站台層級的故障。將資料備份到 StorageGRID 後、資料就會受到多個複本或銷毀編碼的保護、這些程式碼可透過演算法來獨立分離及重新組合資料。</block>
+  <block id="adc69293e8fd256b2609664f1e11cb53" category="inline-link">Fusion</block>
+  <block id="f0d97e78bf1c5ff4659d7f868170f3a4" category="paragraph">您可以使用調整大小工具<block ref="8ea841f9b1986a19de18878436c983c7" category="inline-link-rx"></block> 以調整網格大小。</block>
+  <block id="bc967dc2d57e6eff184a821bf7577a80" category="section-title">擴充</block>
+  <block id="900c557ee6849406e1e6f451f65bdde1" category="paragraph">您可以將儲存設備新增至儲存節點、將新的網格節點新增至現有站台、或新增資料中心站台、來擴充 NetApp StorageGRID 系統。您可以在不中斷目前系統運作的情況下執行擴充作業。
+StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載平衡器和管理節點的實體應用裝置、或只是新增其他節點、藉此擴充效能。</block>
+  <block id="87c6a063dd59ec7afe1b7de60674167f" category="inline-link">StorageGRID 11.8 擴充指南</block>
+  <block id="178a2b6eb168714f3392d86f31b81107" category="paragraph">如需擴充 StorageGRID 系統的詳細資訊、請參閱<block ref="ad2f8b162bf757bc05f37ca0091f2d6d" category="inline-link-rx"></block>。</block>
+  <block id="39e0647405a456dbe0f327581e422077" category="section-title">StorageGRID 硬體規格</block>
+  <block id="7ac8ba0d8d9d0dbf967afc44eebecee4" category="paragraph">表 4 說明此測試所使用的 NetApp StorageGRID 硬體。StorageGRID SG5712 應用裝置搭配 10Gbps 網路是入門級選項、代表基本組態。SG5712 也可設定為 25Gbps 網路。</block>
+  <block id="380be67f84564c575abe95593c0c96c3" category="paragraph">選擇更高效能的應用裝置選項、例如 NetApp StorageGRID SG5760 、 SG6060 或所有 Flash SGF6112 應用裝置、可提供顯著的效能優勢。請洽詢您的 NetApp StorageGRID 解決方案架構設計師、以取得規模調整協助。</block>
+  <block id="1c0a4a363a35650f52d2788c8c1e3340" category="section-title">表 4 ） SG5712 硬體規格。</block>
+  <block id="3c02a379965ab0dfcd77b1c484450433" category="cell">硬體</block>
+  <block id="694e8d1f2ee056f98ee488bdc4982d73" category="cell">數量</block>
+  <block id="380dbc8d9d2c8a17f6ebb0b2c62d3e85" category="cell">磁碟</block>
+  <block id="1d9a663a8048fa4c70d3b7da3290365f" category="cell">可用容量</block>
+  <block id="eec89088ee408b80387155272b113256" category="cell">網路</block>
+  <block id="d2d801f305ba0e6fa6a9b891a48ab761" category="paragraph">StorageGRID SG5712 設備</block>
+  <block id="a87ff679a2f3e71d9181a67b7542122c" category="paragraph">4.</block>
+  <block id="a5983f5b9038e27d7801178f702c8ca0" category="paragraph">48 x 4TB （近線 SAS HDD ）</block>
+  <block id="7f070e79f8fb5c07df2dcdedad1d7981" category="paragraph">136TB</block>
+  <block id="11e8c7c9ca2479f825be4a5b2207c2e4" category="paragraph">10Gbps</block>
+  <block id="cbf13ee4de3e188484a6f9e54ec774d4" category="section-title">CommVault 與 StorageGRID 軟體需求</block>
+  <block id="9f06e1bbda93a5691f767c9a6bd5d5cc" category="paragraph">表 5 和表 6 列出了安裝在 VMware 軟體上的 CommVault 和 NetApp StorageGRID 軟體的軟體需求、以供我們測試。安裝了四個 MediaAgent 資料傳輸管理員和一個 CommServe 伺服器。在測試中、我們針對 VMware 基礎架構建置了 10Gbps 網路。</block>
+  <block id="24ab73c686b5112b49ce6f98750612b7" category="section-title">表 5 ） CommVault 軟體總系統需求。</block>
+  <block id="2cb05e4bb7830be982f0922fed86b4cd" category="cell">元件</block>
+  <block id="8a5227cc82d14862956938caffc1acf2" category="cell">資料存放區</block>
+  <block id="6f6cb72d544962fa333e2e34ce64f719" category="cell">尺寸</block>
+  <block id="96b0141273eabab320119c467cdcaf17" category="cell">總計</block>
+  <block id="c7f6eda2b5882630770159be5e3c5a0d" category="cell">所需 IOPS 總計</block>
+  <block id="63a1a7c310d221d52fa70fd4b2069f4f" category="paragraph">CommServe 伺服器</block>
+  <block id="c4ca4238a0b923820dcc509a6f75849b" category="paragraph">1.</block>
+  <block id="17bc10091293fdc562a6db69940ee924" category="paragraph">作業系統</block>
+  <block id="e38c9d3443457efbb3f9e8d08a8b5c5b" category="paragraph">500GB</block>
+  <block id="274b68192b056e268f128ff63bfcd4a4" category="paragraph">不適用</block>
+  <block id="9778840a0100cb30c982876741b0b5a2" category="paragraph">SQL</block>
+  <block id="c5ae3175ae0f68be6c3428dbe833be99" category="paragraph">MediaAgent</block>
+  <block id="c56996cb460ab9ee13fbfb489522cad5" category="paragraph">虛擬 CPU （ vCPU ）</block>
+  <block id="c74d97b01eae257e44aa9d5bade97baf" category="paragraph">16.</block>
+  <block id="ea5d2f1c4608232e07d3aa3d998e5135" category="paragraph">64</block>
+  <block id="e53619c1fe611a51eeeb8d148ba6e532" category="paragraph">RAM</block>
+  <block id="902b52e9ee55baad95374c0815e0d188" category="paragraph">128GB</block>
+  <block id="10a7cdd970fe135cf4f7bb55c0e3b59f" category="paragraph">512</block>
+  <block id="2dc6494faaf47acd40a479d5e8f22eeb" category="paragraph">2TB</block>
+  <block id="84e2027c504e2b4b983e4b5734ad7d5c" category="paragraph">索引快取</block>
+  <block id="42cc03da5dd9834d6beb08900e77d96e" category="paragraph">8TB</block>
+  <block id="4c5da6b5ca9d093be38b4da1035de5ca" category="paragraph">超過 200 個</block>
+  <block id="d02340dc3ba5e6755a60283779457ac6" category="paragraph">DDB</block>
+  <block id="4b68c01a22855e38e3082b749de02ba5" category="paragraph">200 至 80 萬 K</block>
+  <block id="fd5ab623109855762f689a3b63d50d9d" category="paragraph">在測試環境中、在 NetApp E 系列 E2812 儲存陣列上、 VMware 上部署了一個虛擬主要管理節點和一個虛擬閘道節點。每個節點都位於獨立的伺服器上、並具有表 6 所述的最低線上環境需求：</block>
+  <block id="edfcb8c8756d94a5053287cc7c5bb985" category="section-title">表 6 ） StorageGRID 虛擬管理節點和閘道節點的需求。</block>
+  <block id="95363aa90e372ebfaf3970380516572f" category="cell">節點類型</block>
+  <block id="5d56dbd20d9ee1ab8a722ff12e331953" category="cell">VCPU</block>
+  <block id="8c4aa541ee911e8d80451ef8cc304806" category="cell">儲存設備</block>
+  <block id="f7aa6dfb52b6b0d539a8be4872a287f8" category="paragraph">閘道節點</block>
+  <block id="c9f0f895fb98ab9159f51fd0297e236d" category="paragraph">8.</block>
+  <block id="bc7bf06ca2631ef1531ed5dc65a24f74" category="paragraph">24GB</block>
+  <block id="2be1f61edb7b7e4217e348e8d68c3bdb" category="paragraph">適用於作業系統的 100GB LUN</block>
+  <block id="4c80ce09ddde27d3fd5c0bb436bc85b9" category="paragraph">管理節點</block>
+  <block id="c6ab7905f828c85832f97995c1de53c9" category="paragraph">200 GB LUN 用於管理節點表</block>
+  <block id="69108e14aa48ab2bba84a59654aed432" category="paragraph">200 GB LUN 用於管理節點稽核記錄</block>
+  <block id="55d6f03ef9d28326ab829ca5d2678109" category="section-title">與 CommVault 完整備份與還原及 NetApp StorageGRID 一起執行資料保護工作</block>
+  <block id="624726d5ed2d940147c46600099b1b20" category="paragraph">若要使用 CommVault Complete Backup and Recovery for NetApp 來設定 NetApp StorageGRID 、請執行下列步驟、在 CommVault 軟體中將 StorageGRID 新增為雲端程式庫。</block>
+  <block id="98e8e1a08dff2be7e31ea4273d1252cf" category="section-title">使用 NetApp StorageGRID 設定 CommVault</block>
+  <block id="3f139c400a23226143fbb4c472b54b04" category="list-text">登入 CommVault Command Center 。在左側面板上、按一下儲存 &gt; 雲端 &gt; 新增以查看並回應新增雲端對話方塊：</block>
+  <block id="b9693cedb91ba2290fa1e958a43307a7" category="inline-image-macro">新增雲端</block>
+  <block id="d7b2bbcbec44a75a29e4d684f80fbed1" category="paragraph"><block ref="d7b2bbcbec44a75a29e4d684f80fbed1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e7716d81d180918f49287e4cffec864b" category="list-text">針對類型、選取 NetApp StorageGRID 。</block>
+  <block id="f2328e03c7cb647329406eeecccf4cee" category="list-text">對於 MediaAgent 、請選取與雲端程式庫相關的所有項目。</block>
+  <block id="8880a4bf1f03731649f1c0440d513f95" category="list-text">對於伺服器主機、請輸入 StorageGRID 端點的 IP 位址或主機名稱、以及連接埠號碼。</block>
+  <block id="6a0eaeb7d5862ce617029226cd1ddb73" category="inline-link">如何設定負載平衡器端點（連接埠）</block>
+  <block id="a3636f86ff974c19fd6fff205c8e5614" category="paragraph">請依照 StorageGRID 文件中的步驟進行<block ref="1100cc5690fec9e9d1b69376de24b8a1" category="inline-link-rx"></block>。請確定您有一個 HTTPS 連接埠、其中包含自我簽署的憑證、以及 StorageGRID 端點的 IP 位址或網域名稱。</block>
+  <block id="03797fee0986db2f87c5cac8fcdb1dde" category="list-text">如果要使用重複資料刪除功能、請開啟此選項、並提供重複資料刪除資料庫位置的路徑。</block>
+  <block id="7557bd62e953fb4d48f07977151ea94f" category="list-text">按一下儲存。</block>
+  <block id="43f16fcba150904a7bc15439308479cb" category="section-title">以 NetApp StorageGRID 做為主要目標、建立備份計畫</block>
+  <block id="ce43cd7410027d345f9c6f5c79d39d2d" category="list-text">在左側面板上、選取管理 &gt; 計畫以查看並回應「建立伺服器備份計畫」對話方塊。</block>
+  <block id="8280fcbd09b67e4a2a2180030f18ee89" category="inline-image-macro">建立伺服器備份計畫</block>
+  <block id="e6e155a2825afd1e66e915eba6056af0" category="paragraph"><block ref="e6e155a2825afd1e66e915eba6056af0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="35cef3079f40303a520fe4fb98509a28" category="list-text">輸入計畫名稱。</block>
+  <block id="ed9638b797083e4574c1bda37d24d0fc" category="list-text">選取您先前建立的 StorageGRID 簡易儲存服務（ S3 ）儲存備份目的地。</block>
+  <block id="cc10fccab84b1a6fe5a3b014f2ac16fe" category="list-text">輸入您想要的備份保留期間和恢復點目標（ RPO ）。</block>
+  <block id="317c3634f6ad30cd0bc9e98a4725d400" category="section-title">開始備份工作、使用 CommVault 軟體和 StorageGRID 來保護您的工作負載</block>
+  <block id="ba57deab107afb6c3808fe3a667bb7b5" category="paragraph">若要從 CommVault Complete Backup and Recovery to StorageGRID 開始備份工作、請遵循下列步驟：</block>
+  <block id="1e6c34e7c31e91ec0533fdb6b4825478" category="list-text">在 CommVault Command Center 上、瀏覽至「 Protect 」 &gt; 「 Virtualization 」。</block>
+  <block id="33a281881beebd42edbba1170de6ebdb" category="list-text">新增 VMware vCenter Server Hypervisor 。</block>
+  <block id="0582da82b14c1d127296cc0e0c1e593f" category="list-text">按一下您剛新增的 Hypervisor 。</block>
+  <block id="12d1eaf919942bd27fafed65a4eaa44b" category="list-text">按一下「新增 VM 群組」以回應「新增 VM 群組」對話方塊、以便查看您計畫保護的 vCenter 環境。</block>
+  <block id="4316988282aed94dacaa8b4b66bec00b" category="inline-image-macro">新增 VM 群組</block>
+  <block id="5db14a33d51cc3d07064c129a11e4dfb" category="paragraph"><block ref="5db14a33d51cc3d07064c129a11e4dfb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="61febfa4c91db0399b8837e0c209881e" category="list-text">選取資料存放區、 VM 或 VM 集合、然後輸入名稱。</block>
+  <block id="b55f90f1dad898510ca7b78db85ef1b4" category="list-text">選取您在先前工作中建立的備份計畫。</block>
+  <block id="58785b3df6de95af5db042098848d79c" category="list-text">按一下「儲存」以查看您建立的 VM 群組。</block>
+  <block id="2ea49c4e99265736f831cc64151e93cb" category="list-text">在 VM 群組視窗的右上角、選取備份：</block>
+  <block id="1c964f034a0012b392a4cf6b87ac0fba" category="inline-image-macro">VM 群組</block>
+  <block id="b8409b035475aa7ff8ff45771ca8c6f1" category="paragraph"><block ref="b8409b035475aa7ff8ff45771ca8c6f1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f5e3c2bce0112505e3bfead83355284d" category="list-text">選擇 Full （完整）作為備份層級、（選擇性）在備份完成時要求電子郵件、然後按一下 OK （確定）開始備份工作：</block>
+  <block id="eee4c34c5b08e040c0e736a8e298f721" category="inline-image-macro">備份層級</block>
+  <block id="6cc8cde2c84a6c1a21e31318d689c48b" category="paragraph"><block ref="6cc8cde2c84a6c1a21e31318d689c48b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f180b371d83592db209e4e7f07bd7f96" category="list-text">瀏覽至工作摘要頁面以檢視工作計量：</block>
+  <block id="bc2966582cc91a73dfce86d847e8e569" category="inline-image-macro">工作摘要</block>
+  <block id="ce8f9b25ff69c679a10481c883fed679" category="paragraph"><block ref="ce8f9b25ff69c679a10481c883fed679" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="23571a6157715a68dbc83017094ddb4f" category="section-title">基準效能測試</block>
+  <block id="6e861ca3d49a3946d380c959a4a035f6" category="paragraph">表 7 顯示我們的基礎效能測試結果。在「輔助複製」作業中、四個 CommVault MediaAgent 將資料備份到 NetApp AFF A300 系統、並在 NetApp StorageGRID 上建立輔助複本。如需測試設定環境的詳細資訊、請參閱中的解決方案設計與最佳實務一節<block ref="03ce17f8b5e1206a493f3bd56ef5953d" category="inline-link-rx"></block> 技術報告。</block>
+  <block id="225de55f95e8814ef869602a34589cd7" category="paragraph">這些測試是針對 100 個 VM 和 1000 個 VM 執行的、兩者都是以 50/50 混合的 Windows 和 CentOS VM 進行測試。</block>
+  <block id="229f4b7ae2ae04662d95b14f93a7ebe0" category="section-title">表 7 ）基準效能測試。</block>
+  <block id="2a78ed76450c3cb42320882b3e055b31" category="cell">營運</block>
+  <block id="7e1474aa3c4832c1061cf4839e5d5d40" category="cell">備份速度</block>
+  <block id="d9cb8f643ee1e5634cee0a2f4dc3dcde" category="cell">還原速度</block>
+  <block id="770d588cad23e4bf00734e4271f614fd" category="paragraph">輔助複製</block>
+  <block id="1bd5cb95562494b849b4e43073e86dd0" category="paragraph">2 TB/ 小時</block>
+  <block id="6e18c63ab6e3f65e0cacdc25607a044b" category="paragraph">1.27 TB/ 小時</block>
+  <block id="cd8362e2e8655ccb1cee59cfbe698457" category="paragraph">直接往返物件（重複資料刪除開啟）</block>
+  <block id="e8d76835d2ff06b926aad0a1a3abc063" category="paragraph">2.2 TB/ 小時</block>
+  <block id="4cd450a475fe3ee9b59eb120652eeaa9" category="paragraph">1.22 TB/ 小時</block>
+  <block id="6c24655e80561dbbf463d7c411594029" category="paragraph">為了測試停機效能、刪除了 250 萬個物件。如圖 2 和圖 3 所示、刪除工作在 3 小時內完成、並釋放超過 80 TB 的空間。刪除工作於上午 10 ： 30 開始。</block>
+  <block id="4c1a9a798859a7662d448a099c8f19c2" category="section-title">圖 1 ）在 3 小時內刪除 250 萬（ 80 TB ）物件。</block>
+  <block id="05e3d90010c26e3ef8176b0d49eabdb3" category="inline-image-macro">物件</block>
+  <block id="c09d8cd9b39a4736f34838dd7cf3f7a5" category="paragraph"><block ref="c09d8cd9b39a4736f34838dd7cf3f7a5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="18967e6af4f60b163c3348f6c5e180f0" category="section-title">圖 2 ）在 3 小時內釋放 80TB 的儲存空間。</block>
+  <block id="6d2b9f3277e042907d537d8a6101be35" category="inline-image-macro">儲存設備</block>
+  <block id="4fc5dae0e8a159f3d86289050bbd7311" category="paragraph"><block ref="4fc5dae0e8a159f3d86289050bbd7311" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a0b40e1fd7ca1cc5d222d54ea1d246cc" category="section-title">貯體一致性層級建議</block>
+  <block id="8230e2a5dfbb7d3dc9d7837f464a94f4" category="paragraph">NetApp StorageGRID 可讓終端使用者選擇在 Simple Storage Service （ S3 ）貯體中物件上執行作業的一致性層級。</block>
+  <block id="eb668bdb2b4d4ac34c6ad7523c133230" category="paragraph">CommVault MediaAgent 是 CommVault 環境中的資料移動器。在大多數情況下、媒體代理程式都設定為在本機寫入主要 StorageGRID 站台。因此、建議在本機主要站台內建立高度一致性。當您在 StorageGRID 中建立的 CommVault 儲存區上設定一致性層級時、請遵循下列準則。</block>
+  <block id="3ceaa99fe3628c0d4ddb470789b9212d" category="list-text">CommVault 11.0.0 之前的版本 - Service Pack 16.* 在 11.0.0 之前的版本 - Service Pack 16 中、 CommVault 會執行 S3 head 、並在不存在的物件上執行作業、作為還原和修剪程序的一部分。將貯體一致性層級設為強式站台、以達到 CommVault 備份至 StorageGRID 的最佳一致性層級。</block>
+  <block id="9a76294cf4d43d5686590bb6c98a280b" category="list-text">CommVault 11.0.0 版 - Service Pack 16 及更新版本。 * 在 11.0.0 版 - Service Pack 16 及更新版本中、 S3 head 和 Get 作業在不存在的物件上執行的次數會降至最低。將預設的儲存區一致性層級設為「新寫入後讀取」、以確保 CommVault 和 StorageGRID 環境中的高一致性層級。</block>
+  <block id="3887d417240a72ab69f6d0301efd3b2b" category="section-title">何處可找到其他資訊</block>
+  <block id="b69ce771bb450c54c2a29e08595a1621" category="list-text">StorageGRID 11.8 文件中心 +
+<block ref="47ea1c2d0f136bec8b3e66c2121bf70f" category="inline-link-rx"></block></block>
+  <block id="a1b241b7e61d12e641e864fa7e3c7a8e" category="list-text">NetApp 產品文件 +
+<block ref="fa4af55c3fdbce23e96d2cf73261fa5b" category="inline-link-rx"></block></block>
+  <block id="748e9574a05efa0e0738de58c2ff670b" category="list-text">CommVault 說明文件 +
+<block ref="27eb3a3d6ca60f8dbf05e2df1f7e4644" category="inline-link-rx"></block></block>
 </blocks>
