@@ -91,7 +91,7 @@ Veeam 備份工作可以使用不同的區塊大小選項進行設定、這些�
 
 === 負載平衡器和 S3 端點組態
 
-Veeam 要求端點僅透過 HTTPS 連線。Veeam 不支援未加密的連線。SSL 憑證可以是自我簽署的憑證、私密信任的憑證授權單位或公開信任的憑證授權單位。為了確保能持續存取 S3 儲存庫、建議在 HA 組態中至少使用兩個負載平衡器。負載平衡器可以是 StorageGRID 提供的整合式負載平衡器服務、位於每個管理節點和閘道節點、或是第三方解決方案、例如 F5 、 Kemp 、 HAProxy 、 Loadbalanacer.org 等 使用 StorageGRID 負載平衡器可設定流量分類器（ QoS 規則）、以排定 Veeam 工作負載的優先順序、或將 Veeam 限制為不影響 StorageGRID 系統上的高優先順序工作負載。
+Veeam 要求端點僅透過 HTTPS 連線。Veeam 不支援未加密的連線。SSL 憑證可以是自我簽署的憑證、私密信任的憑證授權單位或公開信任的憑證授權單位。為了確保能持續存取 S3 儲存庫、建議在 HA 組態中至少使用兩個負載平衡器。負載平衡器可以是 StorageGRID 提供的整合式負載平衡器服務、位於每個管理節點和閘道節點、或是第三方解決方案、例如 F5 、 Kemp 、 HAProxy 、 Loadbalancer.org 等 使用 StorageGRID 負載平衡器可設定流量分類器（ QoS 規則）、以排定 Veeam 工作負載的優先順序、或將 Veeam 限制為不影響 StorageGRID 系統上的高優先順序工作負載。
 
 
 

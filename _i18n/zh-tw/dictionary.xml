@@ -926,7 +926,6 @@
   <block id="639a958d74ef218710689b55aa4ef73e" category="list-text">從SG5660或SG5760應用裝置改用SG6060應用裝置時、請注意SG5X60有60個容量磁碟機、SG6060只有58個容量磁碟機。</block>
   <block id="4d1c46cee1bdcec65653b2e2163398e0" category="list-text">在複製程序期間、節點複製程序要求來源節點離線至網格。如果在此期間有其他節點離線、用戶端服務可能會受到影響。</block>
   <block id="83d1a0f23bb258b2a270a1d6f7ff51d7" category="list-text">儲存節點只能離線15天。如果複製程序預估接近15天或超過15天、請使用擴充與取消委任程序。</block>
-  <block id="efde8725bd1e96e2479c137c19099fae" category="list-text">對於配備擴充櫃的SG6060、您需要將正確的機櫃磁碟機尺寸時間加到基礎應用裝置時間、以獲得完整的完整複製時間。</block>
   <block id="fec00ca7ab315b679cc642c66a770bd8" category="section-title">節點複製效能預估</block>
   <block id="517e3359377bb6a7ea9488482299838f" category="paragraph">下表包含節點複製期間的計算預估值。條件各異、*粗體*中的項目可能會超過節點停機的15天上限。</block>
   <block id="39ab52e8aaafa95380d3f56ccd8095d9" category="section-title">DDP8.</block>
@@ -946,15 +945,12 @@
   <block id="6c32f983ee38ad5089298aa659cd011c" category="paragraph">4天</block>
   <block id="a5dffc518be58d2936a993ee100d71b6" category="paragraph">4.5天</block>
   <block id="e5d3435cf14793a49310fa8d85bcc4a1" category="paragraph">25GB</block>
-  <block id="885e215d2d15d2ac1b34e5b8d416f86a" category="section-title">SG5712 -&gt;任何</block>
-  <block id="97fce1ba98948ee51fbf31978af80696" category="section-title">SG5660 -&gt; SG5760</block>
   <block id="9958432b6417f293cb0d15128b08e42f" category="paragraph">3天</block>
   <block id="366adabd6f1babc8138db3063adaf869" category="paragraph">6天</block>
   <block id="374616a0b786e9bffadc7f28e68d6c59" category="paragraph">7天</block>
   <block id="51ab732b98b519b5e54ce60864cc8d69" category="paragraph">8.5天</block>
   <block id="b00a84012a03b35beb30466d8baa4a1c" category="paragraph">11.5天</block>
   <block id="194ae66ddb8567ab63da3b82c925fa03" category="paragraph">* 13天*</block>
-  <block id="85c75ace300325f8e407a841eb055d37" category="section-title">SG5660 -&gt; SG6060</block>
   <block id="61cab577ce1bed82e1b5d7caacb7456b" category="paragraph">2.5天</block>
   <block id="bf30897fe2ce34b7e9f89291e20d9eae" category="paragraph">5.5天</block>
   <block id="e5fd76b3288061d2c2638ccc41688416" category="paragraph">6.5天</block>
@@ -963,11 +959,8 @@
   <block id="e727fed489e8b7eecf1901196ec3ede9" category="paragraph">2天</block>
   <block id="6383598717ae8ac458dc988dff77c800" category="paragraph">5天</block>
   <block id="79e241fd6b320cbb41d67b028ec6f1c0" category="paragraph">8天</block>
-  <block id="c6a6ab48074fa03db6df437c1f27b415" category="section-title">SG5760 -&gt; SG5760</block>
-  <block id="4c0768167e7e249808ed4bd4ad28b2ed" category="section-title">SG5760 -&gt; SG6060</block>
   <block id="2a8a1b5738432b51afcd4dcbbbfe1434" category="paragraph">1.5天</block>
   <block id="9e6b8df1cd23e71938af979057e5144a" category="paragraph">3.5天</block>
-  <block id="bf0581629b559d1033e12e37f31bb0d7" category="section-title">SG6060 -&gt; SG6060</block>
   <block id="7da42b5478786d91e64cb31ec52e2511" category="paragraph">9.5天</block>
   <block id="d2bfdb3de60e1c2f154e5f9fa5a1dfc1" category="section-title">DDP16</block>
   <block id="00471150fc4d84adcd57392d7a47a3cb" category="paragraph">3.5天</block>
@@ -976,7 +969,6 @@
   <block id="383aea8468a529b339b755e27b1d4668" category="paragraph">7.5天</block>
   <block id="9ff416b798a88ec4bfb30f4f045aada5" category="paragraph">11天</block>
   <block id="ed01ec12331788a408398b059da47a39" category="paragraph">10.5天</block>
-  <block id="ec3751d915801591991ca3553c2fa5a7" category="section-title">擴充櫃（在來源應用裝置上的每個機櫃上新增至SG6060以上）</block>
   <block id="fc1e2d26b4330f83ecfffe3439410229" category="summary">以下是庫位原則和群組原則（IAM原則）的範例。</block>
   <block id="3f2327c90ede247dca9387ef500bf746" category="doc">範例庫與群組（IAM）原則</block>
   <block id="640ca9533a2fd150e7d3ed390e2aae66" category="section-title">群組原則（IAM）</block>
@@ -1134,7 +1126,6 @@
   <block id="a4bd669931c15a4828a4c38a495d7ff3" category="section-title">StorageGRID 組態</block>
   <block id="b85a187b18cf0ecaff36c27f7e5e7500" category="paragraph">含最新 Hotfix 的 NetApp StorageGRID 11.6 或 11.7 是 Veeam 部署的建議版本。StorageGRID 11.6.0.11 和 11.7.0.4 中引進許多最佳化功能、對 Veeam 工作負載有幫助。建議您隨時保持最新狀態、並為您的 StorageGRID 系統套用最新的 Hotfix 。</block>
   <block id="8215067184a09c074108be8e3fbbe725" category="section-title">負載平衡器和 S3 端點組態</block>
-  <block id="923dc06db89bcd66cca887f28c0733c5" category="paragraph">Veeam 要求端點僅透過 HTTPS 連線。Veeam 不支援未加密的連線。SSL 憑證可以是自我簽署的憑證、私密信任的憑證授權單位或公開信任的憑證授權單位。為了確保能持續存取 S3 儲存庫、建議在 HA 組態中至少使用兩個負載平衡器。負載平衡器可以是 StorageGRID 提供的整合式負載平衡器服務、位於每個管理節點和閘道節點、或是第三方解決方案、例如 F5 、 Kemp 、 HAProxy 、 Loadbalanacer.org 等 使用 StorageGRID 負載平衡器可設定流量分類器（ QoS 規則）、以排定 Veeam 工作負載的優先順序、或將 Veeam 限制為不影響 StorageGRID 系統上的高優先順序工作負載。</block>
   <block id="84ace9fb8e132c96d1dfcd31447efedc" category="section-title">S3時段</block>
   <block id="55876228853abf632dec9346a4f372ec" category="inline-link">文件</block>
   <block id="69e163f50758f77f10618e8e4b89f0cb" category="paragraph">StorageGRID 是安全的多租戶儲存系統。建議您為 Veeam 工作負載建立專用租戶。您可以選擇性地指派儲存配額。最佳實務做法是啟用「使用自己的身分識別來源」。使用適當的密碼來保護租戶根目錄管理使用者的安全。Veeam Backup 12 需要 S3 儲存區的一致性。StorageGRID 提供多種在貯體層級設定的一致性選項。對於具有 Veeam 從多個位置存取資料的多站台部署、請選取「 Strong-global 」。如果 Veeam 備份與還原僅發生在單一站台上、則一致性層級應設為「 Strong-site 」。如需更多有關貯體一致性層級的資訊、請參閱<block ref="782397d2a33ccd7da9c1580a84d10f9d" category="inline-link-rx"></block>。若要使用 StorageGRID 進行 Veeam 不可變備份、必須在建立貯體期間、全域啟用 S3 物件鎖定、並在貯體上設定。</block>
@@ -1816,4 +1807,13 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
 <block ref="fa4af55c3fdbce23e96d2cf73261fa5b" category="inline-link-rx"></block></block>
   <block id="748e9574a05efa0e0738de58c2ff670b" category="list-text">CommVault 說明文件 +
 <block ref="27eb3a3d6ca60f8dbf05e2df1f7e4644" category="inline-link-rx"></block></block>
+  <block id="c4d7e990537b5cabb7c53ef27e8240d3" category="paragraph">Veeam 要求端點僅透過 HTTPS 連線。Veeam 不支援未加密的連線。SSL 憑證可以是自我簽署的憑證、私密信任的憑證授權單位或公開信任的憑證授權單位。為了確保能持續存取 S3 儲存庫、建議在 HA 組態中至少使用兩個負載平衡器。負載平衡器可以是 StorageGRID 提供的整合式負載平衡器服務、位於每個管理節點和閘道節點、或是第三方解決方案、例如 F5 、 Kemp 、 HAProxy 、 Loadbalancer.org 等 使用 StorageGRID 負載平衡器可設定流量分類器（ QoS 規則）、以排定 Veeam 工作負載的優先順序、或將 Veeam 限制為不影響 StorageGRID 系統上的高優先順序工作負載。</block>
+  <block id="2adef84f9348cc9769b8c3e1982c3cb1" category="list-text">若為具有擴充架的 SG6060 或 SG6160 、您需要將適當機櫃磁碟機大小的時間加入基本應用裝置時間、以獲得完整複製時間。</block>
+  <block id="77ffe904133c5c2e3ab960ef54b7be2d" category="section-title">SG5712/SG5812 -&gt; 任何</block>
+  <block id="2060afee4c8201b859d447131ee1434a" category="section-title">SG5660 -&gt; SG5760/SG5860</block>
+  <block id="85b9faf406d03aaecca5e119294ceb1a" category="section-title">SG5660 -&gt; SG6060/SG6160</block>
+  <block id="7d9a95e91e60865aaa29da1eb0f75121" category="section-title">SG5760/SG5860 -&gt; SG5760/SG5860</block>
+  <block id="ab7ccd4f66da0de459e420e05417e0dd" category="section-title">SG5760/SG5860 -&gt; SG6060/SG6160</block>
+  <block id="25b15e92a1710d10f6bca458e130baaa" category="section-title">SG6060/SG6160 -&gt; SG6060/SG6160</block>
+  <block id="6219d1d3d5ac2385dfb8d391122edd3e" category="section-title">擴充機櫃（針對來源應用裝置上的每個機櫃、新增到 SG6060/SG6160 以上）</block>
 </blocks>
