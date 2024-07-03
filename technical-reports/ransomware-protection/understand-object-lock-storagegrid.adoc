@@ -1,0 +1,117 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/ransomware-protection/understand-object-lock-storagegrid.html 
+keywords: object lock, storagegrid 
+summary: 探索 StorageGRID 中的物件鎖定如何提供 WORM 模式來防止資料刪除或覆寫、以及它如何符合法規要求。 
+---
+= 使用物件鎖定的勒索軟體防禦
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+探索 StorageGRID 中的物件鎖定如何提供 WORM 模式來防止資料刪除或覆寫、以及它如何符合法規要求。
+
+物件鎖定提供 WORM 模式、可防止物件遭到刪除或覆寫。StorageGRID 實作物件鎖定 https://www.netapp.com/media/9041-ar-cohasset-netapp-storagegrid-sec-assessment.pdf["Cohasset 已評估"^] 有助於符合法規要求、支援合法持有、符合性模式、以及物件保留的治理模式、以及預設貯體保留原則。您必須啟用物件鎖定、以做為貯體建立和版本設定的一部分。物件的特定版本已鎖定、如果未定義版本 ID 、則保留會置於物件的目前版本上。如果目前版本已設定保留、並嘗試刪除、修改或覆寫物件、則會以刪除標記或物件的新修訂版做為目前版本來建立新版本、 鎖定的版本會保留為非目前版本。對於尚未相容的應用程式、您仍可以使用物件鎖定和儲存在貯體上的預設保留組態。定義組態之後、這會將物件保留套用至置入貯體的每個新物件。只要將應用程式設定為在保留時間過去之前不刪除或覆寫物件、就會生效。
+
+以下是使用物件鎖定 API 的幾個範例：
+
+物件鎖定合法保留是套用至物件的簡單開 / 關狀態。
+
+[listing]
+----
+aws s3api put-object-legal-hold --bucket mybucket --key myfile.txt --legal-hold Status=ON --endpoint-url https://s3.company.com
+
+----
+如果成功、設定合法保留狀態不會傳回任何值、因此可以使用「取得」操作來驗證。
+
+[listing]
+----
+aws s3api get-object-legal-hold --bucket mybucket --key myfile.txt --endpoint-url https://s3.company.com
+{
+    "LegalHold": {
+        "Status": "ON"
+    }
+}
+----
+若要關閉合法保留、請套用關閉狀態。
+
+[listing]
+----
+aws s3api put-object-legal-hold --bucket mybucket --key myfile.txt --legal-hold Status=OFF --endpoint-url https://s3.company.com
+aws s3api get-object-legal-hold --bucket mybucket --key myfile.txt --endpoint-url https://s3.company.com
+{
+    "LegalHold": {
+        "Status": "OFF"
+    }
+}
+
+----
+設定物件保留會以保留到時間戳記完成。
+
+[listing]
+----
+aws s3api put-object-retention --bucket mybucket --key myfile.txt --retention '{"Mode":"COMPLIANCE", "RetainUntilDate": "2022-06-10T16:00:00"}'  --endpoint-url https://s3.company.com
+----
+同樣地、成功後沒有傳回的值、因此您可以使用 GET 通話來驗證保留狀態。
+
+[listing]
+----
+aws s3api get-object-retention --bucket mybucket --key myfile.txt  --endpoint-url https://s3.company.com
+{
+    "Retention": {
+        "Mode": "COMPLIANCE",
+        "RetainUntilDate": "2022-06-10T16:00:00+00:00"
+    }
+----
+在啟用物件鎖定的貯體上放置預設保留、會使用以天和年為單位的保留期間。
+
+[listing]
+----
+aws s3api put-object-lock-configuration --bucket mybucket --object-lock-configuration '{ "ObjectLockEnabled": "Enabled", "Rule": { "DefaultRetention": { "Mode": "COMPLIANCE", "Days": 1 }}}' --endpoint-url https://s3.company.com
+----
+如同大多數的作業一樣、成功時不會傳回任何回應、因此我們可以執行 Get 來驗證組態。
+
+[listing]
+----
+aws s3api get-object-lock-configuration --bucket mybucket --endpoint-url https://s3.company.com
+{
+    "ObjectLockConfiguration": {
+        "ObjectLockEnabled": "Enabled",
+        "Rule": {
+            "DefaultRetention": {
+                "Mode": "COMPLIANCE",
+                "Days": 1
+            }
+        }
+    }
+}
+----
+接下來、您可以在套用保留組態的情況下、將物件放入貯體中。
+
+[listing]
+----
+aws s3 cp myfile.txt s3://mybucket --endpoint-url https://s3.company.com
+----
+Put 作業會傳回回應。
+
+[listing]
+----
+upload: ./myfile.txt to s3://mybucket/myfile.txt
+----
+在保留物件上、上一個範例中、貯體上設定的保留期間會轉換成物件上的保留時間戳記。
+
+[listing]
+----
+aws s3api get-object-retention --bucket mybucket --key myfile.txt --endpoint-url https://s3.company.com
+{
+    "Retention": {
+        "Mode": "COMPLIANCE",
+        "RetainUntilDate": "2022-03-02T15:22:47.202000+00:00"
+    }
+}
+----

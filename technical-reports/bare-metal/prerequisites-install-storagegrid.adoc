@@ -1,0 +1,499 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/bare-metal/prerequisites-install-storagegrid.html 
+keywords: prerequisites, install storagegrid 
+summary: 瞭解部署 StorageGRID 所需的運算、儲存、網路、泊塢視窗和節點需求。 
+---
+= 安裝 StorageGRID 的必要條件
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+瞭解部署 StorageGRID 所需的運算、儲存、網路、泊塢視窗和節點需求。
+
+
+
+== 運算需求
+
+下表列出每種 StorageGRID 節點類型支援的最低資源需求。這些是 StorageGRID 節點所需的最低資源。
+
+[cols="30,35,35"]
+|===
+| 節點類型 | CPU 核心 | RAM 
+
+
+| 管理 | 8. | 24GB 
+
+
+| 儲存設備 | 8. | 24GB 
+
+
+| 閘道 | 8. | 24GB 
+|===
+此外、每個實體 Docker 主機至少應分配 16 GB 的 RAM 、以便正常運作。例如、若要將表格中所述的任何兩項服務一起託管在一個實體 Docker 主機上、您可以進行下列計算：
+
+24 + 24 + 16 = 64GB RAM 和 8 + 8 = 16 核心
+
+由於許多現代伺服器超出這些需求、我們將六個服務（ StorageGRID 容器）合併到三個實體伺服器上。
+
+
+
+== 網路需求
+
+StorageGRID 流量的三種類型包括：
+
+* * 網格流量（必填）。 *在網格中所有節點之間傳輸的內部StorageGRID 不完整流量。
+* * 管理流量（選用）。 *用於系統管理與維護的流量。
+* * 用戶端流量（選用）。 *在外部用戶端應用程式和網格之間傳輸的流量、包括S3和Swift用戶端的所有物件儲存要求。
+
+
+您最多可以設定三個網路、以搭配 StorageGRID 系統使用。每種網路類型都必須位於不重疊的個別子網路上。如果所有節點都位於同一子網路、則不需要閘道位址。
+
+在此評估中、我們會在兩個包含網格和用戶端流量的網路上部署。您可以稍後新增管理網路、以提供額外的功能。
+
+務必將網路一致地對應到所有主機的介面。例如、如果每個節點上有兩個介面、分別是 ens192 和 ens224 、則所有主機上的所有介面都應該對應到相同的網路或 VLAN 。在此安裝中、安裝程式會將這些資料對應至 Docker 容器、將其對應為 eth0@if2 和 eth2@if3 （因為容器內的迴路是 if1 ）、因此一致的模型非常重要。
+
+
+
+=== Docker 網路注意事項
+
+StorageGRID 使用網路的方式與某些 Docker 容器實作方式不同。不使用 Docker （或 Kubernetes 或 swarm ）提供的網路。StorageGRID 實際上會將容器當成 --net=none 、這樣 Docker 就不會對容器進行任何網路連線。當容器被 StorageGRID 服務所衍生出來之後、就會從節點組態檔案中定義的介面建立新的 Macvlan 裝置。該裝置有新的 MAC 位址、可作為獨立的網路裝置、從實體介面接收封包。然後將 Macvlan 裝置移至 Container 命名空間、並重新命名為容器內的 eth0 、 eth1 或 eth2 之一。此時、主機作業系統中不再顯示網路裝置。在我們的範例中、網格網路裝置是 Docker 容器內的 eth0 、用戶端網路是 eth2 。如果我們有管理網路、則該裝置會是容器中的 eth1 。
+
+
+NOTE: 容器網路裝置的新 MAC 位址可能需要在某些網路和虛擬環境中啟用雜亂模式。此模式可讓實體裝置接收和傳送不同於已知實體 MAC 位址的 MAC 位址封包。++ ++ 如果在 VMware vSphere 中執行、您必須接受雜亂模式、 MAC 位址變更、以及在執行 RHEL 時、用於處理 StorageGRID 流量的連接埠群組中的偽造傳輸。大多數情況下、 Ubuntu 或 Debian 都能正常運作、無需進行這些變更。++++
+
+
+
+== 儲存需求
+
+每個節點都需要 SAN 型或本機磁碟裝置、大小如下表所示。
+
+
+NOTE: 表格中的數字是針對每種 StorageGRID 服務類型、而非整個網格或每個實體主機。根據部署選項、我們將在本文件稍後的中、計算每部實體主機的數量 link:prerequisites-install-storagegrid.html#physical-host-layout-and-requirements["實體主機配置與需求"]。++ ++ 安裝程式會在 StorageGRID 容器本身建立標有星號的路徑或檔案系統。管理員不需要手動設定或建立檔案系統、但主機需要區塊裝置才能滿足這些需求。換句話說、區塊裝置應該使用命令來顯示 `lsblk` 、但不要在主機作業系統中格式化或掛載。++++
+
+[cols="15,20,15,15,15,20"]
+|===
+| 節點類型 | LUN 用途 | LUN數量 | LUN 的最小大小 | 需要手動檔案系統 | 建議的節點組態項目 
+
+
+| 全部 | 管理節點系統空間
+`/var/local` （ SSD 在此提供協助） | 每個管理節點各一個 | 90GB | 否 | `BLOCK_DEVICE_VAR_LOCAL = /dev/mapper/ADM-VAR-LOCAL` 
+
+
+| 所有節點 | Docker 儲存池位於
+`/var/lib/docker for container pool` | 每個主機（實體或 VM ）各一個 | 每個容器 100 GB | 是– etx4 | NA –格式化並以主機檔案系統掛載（未對應至容器） 
+
+
+| 管理 | 管理節點稽核記錄（管理容器中的系統資料）
+`/var/local/audit/export` | 每個管理節點各一個 | 200GB | 否 | `BLOCK_DEVICE_AUDIT_LOGS =/dev/mapper/ADM-OS` 
+
+
+| 管理 | 管理節點表（管理容器中的系統資料）
+`/var/local/mysql_ibdata` | 每個管理節點各一個 | 200GB | 否 | `BLOCK_DEVICE_TABLES = /dev/mapper/ADM-MySQL` 
+
+
+| 儲存節點 | 物件儲存（區塊裝置）  `/var/local/rangedb0` （ SSD 在此提供協助）  `/var/local/rangedb1`  `/var/local/rangedb2` | 每個儲存容器三個 | 4000GB | 否 | `BLOCK_DEVICE_RANGEDB_000 = /dev/mapper/SN-Db00
+BLOCK_DEVICE_RANGEDB_001 = /dev/mapper/SN-Db01
+BLOCK_DEVICE_RANGEDB_002 = /dev/mapper/SN-Db02` 
+|===
+在此範例中、下表所示的磁碟大小是每種容器類型所需的。本文件稍後的、中說明每部實體主機的需求 link:prerequisites-install-storagegrid.html#physical-host-layout-and-requirements["實體主機配置與需求"]。
+
+
+
+== 每種容器類型的磁碟大小
+
+
+
+=== 管理容器
+
+[cols="50,50"]
+|===
+| 名稱 | 尺寸（ GiB ） 
+
+
+| Docker 儲存 | 100 （每個容器） 
+
+
+| ADM-OS | 90 
+
+
+| ADM-Audit | 200 
+
+
+| ADM-MySQL | 200 
+|===
+
+
+=== 儲存容器
+
+[cols="50,50"]
+|===
+| 名稱 | 尺寸（ GiB ） 
+
+
+| Docker 儲存 | 100 （每個容器） 
+
+
+| SN-OS | 90 
+
+
+| Rangedb-0 | 4096 
+
+
+| Rangedb-1 | 4096 
+
+
+| Rangedb-2 | 4096 
+|===
+
+
+=== 閘道容器
+
+[cols="50,50"]
+|===
+| 名稱 | 尺寸（ GiB ） 
+
+
+| Docker 儲存 | 100 （每個容器） 
+
+
+| /var/local | 90 
+|===
+
+
+== 實體主機配置與需求
+
+透過結合上表所示的運算和網路需求、您可以獲得一組基本的硬體、以安裝三部具有 16 核心、 64GB RAM 和兩個網路介面的實體（或虛擬）伺服器。如果需要較高的處理量、可以在網格或用戶端網路上連結兩個或更多介面、並在節點組態檔案中使用 VLAN 標記介面、例如 bond0.520 。如果您預期的工作負載會更密集、那麼主機和容器的記憶體就會更多。
+
+如下圖所示、這些伺服器將裝載六個 Docker 容器、每個主機兩個。RAM 的計算方式為每個容器提供 24GB 、主機作業系統本身則提供 16GB 。
+
+image:bare-metal-layout-for-three-hosts.png["三台主機的範例配置。"]
+
+每個實體主機（或 VM ）所需的總 RAM 為 24 x 2 + 16 = 64GB 。下表列出主機 1 、 2 和 3 所需的磁碟儲存設備。
+
+[cols="50,50"]
+|===
+| 主機 1 | 尺寸（ GiB ） 
+
+
+ a| 
+* Docker Store*
+
+
+
+| `/var/lib/docker` （檔案系統） | 200 （ 100 x 2 ） 
+
+
+ a| 
+* 管理容器 *
+
+
+
+| `BLOCK_DEVICE_VAR_LOCAL` | 90 
+
+
+| `BLOCK_DEVICE_AUDIT_LOGS` | 200 
+
+
+| `BLOCK_DEVICE_TABLES` | 200 
+
+
+ a| 
+* 儲存容器 *
+
+
+
+| SN-OS
+`/var/local` （裝置） | 90 
+
+
+| Rangedb-0 （裝置） | 4096 
+
+
+| Rangedb-1 （裝置） | 4096 
+
+
+| Rangedb-2 （裝置） | 4096 
+|===
+[cols="50,50"]
+|===
+| 主機 2. | 尺寸（ GiB ） 
+
+
+ a| 
+* Docker Store*
+
+
+
+| `/var/lib/docker` （共享） | 200 （ 100 x 2 ） 
+
+
+ a| 
+* 閘道容器 *
+
+
+
+| GW-OS *`/var/local` | 100 
+
+
+ a| 
+* 儲存容器 *
+
+
+
+| *`/var/local` | 100 
+
+
+| Rangedb-0 | 4096 
+
+
+| Rangedb-1 | 4096 
+
+
+| Rangedb-2 | 4096 
+|===
+[cols="50,50"]
+|===
+| 主機 3 | 尺寸（ GiB ） 
+
+
+ a| 
+* Docker Store*
+
+
+
+| `/var/lib/docker` （共享） | 200 （ 100 x 2 ） 
+
+
+ a| 
+* 閘道容器 *
+
+
+
+| *`/var/local` | 100 
+
+
+ a| 
+* 儲存容器 *
+
+
+
+| *`/var/local` | 100 
+
+
+| Rangedb-0 | 4096 
+
+
+| Rangedb-1 | 4096 
+
+
+| Rangedb-2 | 4096 
+|===
+Docker 儲存區的計算方式是：每個 /var/local （每個容器）允許 100GB x 兩個容器 = 200GB 。
+
+
+
+== 準備節點
+
+若要準備 StorageGRID 的初始安裝、請先安裝 RHEL 9.2 版並啟用 SSH 。根據最佳實務做法設定網路介面、網路時間傳輸協定（ NTP ）、 DNS 和主機名稱。您至少需要一個已啟用網格網路的網路介面、另一個則需要用戶端網路。如果您使用的是具有 VLAN 標記的介面、請依照下列範例進行設定。否則、簡單的標準網路介面組態就足夠了。
+
+如果您需要在網格網路介面上使用 VLAN 標記、您的組態應該有兩個檔案 `/etc/sysconfig/network-scripts/` 、格式如下：
+
+[listing]
+----
+# cat /etc/sysconfig/network-scripts/ifcfg-enp67s0
+# This is the parent physical device
+TYPE=Ethernet
+BOOTPROTO=none
+DEVICE=enp67s0
+ONBOOT=yes
+# cat /etc/sysconfig/network-scripts/ifcfg-enp67s0.520
+# The actual device that will be used by the storage node file
+DEVICE=enp67s0.520
+BOOTPROTO=none
+NAME=enp67s0.520
+IPADDR=10.10.200.31
+PREFIX=24
+VLAN=yes
+ONBOOT=yes
+----
+本範例假設您的網格網路實體網路裝置是 enp67s0 。它也可以是綁定的設備，例如 bond0 。無論您是使用結合或標準網路介面、如果網路連接埠沒有預設 VLAN 、或是預設 VLAN 沒有與網格網路相關聯、則必須在節點組態檔案中使用 VLAN 標記介面。StorageGRID 容器本身不會取消標記乙太網路框架、因此必須由父作業系統處理。
+
+
+
+== iSCSI 的選用儲存設備設定
+
+如果您不使用 iSCSI 儲存設備、則必須確保 host1 、 host2 和 host3 包含大小足以滿足其需求的區塊裝置。請參閱 link:prerequisites-install-storagegrid.html#disk-sizes-per-container-type["每種容器類型的磁碟大小"] 瞭解 host1 、 host2 和 host3 儲存需求。
+
+若要使用 iSCSI 設定儲存設備、請完成下列步驟：
+
+.步驟
+. 如果您使用外部 iSCSI 儲存設備、例如 NetApp E 系列或 NetApp ONTAP ® 資料管理軟體、請安裝下列套件：
++
+[listing]
+----
+sudo yum install iscsi-initiator-utils
+sudo yum install device-mapper-multipath
+----
+. 在每個主機上找到啟動器 ID 。
++
+[listing]
+----
+# cat /etc/iscsi/initiatorname.iscsi
+InitiatorName=iqn.2006-04.com.example.node1
+----
+. 使用步驟 2 中的啟動器名稱、將儲存裝置上的 LUN （表中所示的數量和大小）對應 link:prerequisites-install-storagegrid.html#storage-requirements["儲存需求"] 至每個儲存節點。
+. 使用探索新建立的 LUN `iscsiadm` 並登入它們。
++
+[listing]
+----
+# iscsiadm -m discovery -t st -p target-ip-address
+# iscsiadm -m node -T iqn.2006-04.com.example:3260 -l
+Logging in to [iface: default, target: iqn.2006-04.com.example:3260, portal: 10.64.24.179,3260] (multiple)
+Login to [iface: default, target: iqn.2006-04.com.example:3260, portal: 10.64.24.179,3260] successful.
+----
++
+
+NOTE: 如需詳細資訊、請參閱 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/osm-create-iscsi-initiator["建立 iSCSI 啟動器"^] Red Hat 客戶入口網站上的。
+
+. 若要顯示多重路徑裝置及其相關的 LUN WWID 、請執行下列命令：
++
+[listing]
+----
+# multipath -ll
+----
++
+如果您不使用 iSCSI 搭配多重路徑裝置、只要以唯一的路徑名稱掛載裝置、即可持續進行裝置變更和重新開機。
+
++
+[listing]
+----
+/dev/disk/by-path/pci-0000:03:00.0-scsi-0:0:1:0
+----
++
+
+TIP: 如果移除或新增裝置、只要使用 `/dev/sdx` 裝置名稱可能會在稍後發生問題。++ ++ 如果您使用多重路徑裝置、請修改 `/etc/multipath.conf` 檔案以使用別名、如下所示。++++
+
++
+
+NOTE: 視配置而定、這些裝置可能出現在所有節點上、也可能不存在。
+
++
+[listing]
+----
+multipaths {
+multipath {
+wwid 36d039ea00005f06a000003c45fa8f3dc
+alias Docker-Store
+}
+multipath {
+wwid 36d039ea00006891b000004025fa8f597
+alias Adm-Audit
+}
+multipath {
+wwid 36d039ea00005f06a000003c65fa8f3f0
+alias Adm-MySQL
+}
+multipath {
+wwid 36d039ea00006891b000004015fa8f58c
+alias Adm-OS
+}
+multipath {
+wwid 36d039ea00005f06a000003c55fa8f3e4
+alias SN-OS
+}
+multipath {
+wwid 36d039ea00006891b000004035fa8f5a2
+alias SN-Db00
+}
+multipath {
+wwid 36d039ea00005f06a000003c75fa8f3fc
+alias SN-Db01
+}
+multipath {
+    wwid 36d039ea00006891b000004045fa8f5af
+alias SN-Db02
+}
+multipath {
+wwid 36d039ea00005f06a000003c85fa8f40a
+alias GW-OS
+}
+}
+----
+
+
+在主機作業系統中安裝 Docker 之前、請先格式化並掛載 LUN 或磁碟備份 `/var/lib/docker`。其他 LUN 是在節點組態檔中定義、直接由 StorageGRID 容器使用。也就是說、它們不會出現在主機作業系統中、它們會出現在容器本身、而這些檔案系統則由安裝程式處理。
+
+如果您使用的是 iSCSI 備份 LUN 、請在您的 fstab 檔案中放入類似以下的內容。如前所述、其他 LUN 不需要掛載於主機作業系統中、但必須顯示為可用的區塊裝置。
+
+[listing]
+----
+/dev/disk/by-path/pci-0000:03:00.0-scsi-0:0:1:0 /var/lib/docker ext4 defaults 0 0
+----
+
+
+== 準備安裝 Docker
+
+若要準備 Docker 安裝、請完成下列步驟：
+
+.步驟
+. 在所有三台主機上的 Docker 儲存磁碟區上建立檔案系統。
++
+[listing]
+----
+# sudo mkfs.ext4 /dev/sd?
+----
++
+如果您使用的 iSCSI 設備具有多路徑功能，請使用 `/dev/mapper/Docker-Store`。
+
+. 建立 Docker 儲存磁碟區裝載點：
++
+[listing]
+----
+# sudo mkdir -p /var/lib/docker
+----
+. 將泊塢視窗儲存容量裝置的類似項目新增至 `/etc/fstab`。
++
+[listing]
+----
+/dev/disk/by-path/pci-0000:03:00.0-scsi-0:0:1:0 /var/lib/docker ext4 defaults 0 0
+----
++
+只有在使用 iSCSI 裝置時、才建議使用下列 `_netdev` 選項。如果您不需要使用本機區塊裝置 `_netdev` `defaults` 、建議您使用。
+
++
+[listing]
+----
+/dev/mapper/Docker-Store /var/lib/docker ext4 _netdev 0 0
+----
+. 掛載新的檔案系統並檢視磁碟使用率。
++
+[listing]
+----
+# sudo mount /var/lib/docker
+[root@host1]# df -h | grep docker
+/dev/sdb 200G 33M 200G 1% /var/lib/docker
+----
+. 基於效能考量、請關閉交換並停用。
++
+[listing]
+----
+$ sudo swapoff --all
+----
+. 若要保留設定、請從 /etc/fstab 移除所有交換項目、例如：
++
+[listing]
+----
+/dev/mapper/rhel-swap swap defaults 0 0
+----
++
+
+NOTE: 如果無法完全停用交換、可能會嚴重降低效能。
+
+. 對節點執行測試重新開機、以確保該 `/var/lib/docker` 磁碟區持續存在、且所有磁碟裝置都會恢復正常。
+

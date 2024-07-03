@@ -1,0 +1,167 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/load-balancer/local-traffic-manager-load-balancer.html 
+keywords: local traffic manager, load balancer 
+summary: 探索本機流量管理負載平衡器的指引、並判斷最佳組態。 
+---
+= 瞭解本機流量管理負載平衡器
+:hardbreaks:
+:allow-uri-read: 
+:experimental: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+探索本機流量管理負載平衡器的指引、並判斷最佳組態。
+
+以下是第三方負載平衡器組態的一般指南。請與負載平衡器管理員合作、為您的環境決定最佳組態。
+
+
+
+== 建立儲存節點資源群組
+
+將 StorageGRID 儲存節點群組至資源集區或服務群組（術語可能與特定負載平衡器不同）。StorageGRID 儲存節點在下列連接埠上呈現 S3 API ：
+
+* S3 HTTPS ： 18082
+* S3 HTTP ： 18084
+
+
+大多數客戶選擇透過標準 HTTPS 和 HTTP 連接埠（ 443 和 80 ）、在虛擬伺服器上呈現 API 。
+
+
+NOTE: 每個 StorageGRID 站台都需要預設的三個儲存節點、其中兩個節點必須正常運作。
+
+
+
+== 健全狀況檢查
+
+協力廠商負載平衡器需要一種方法來判斷每個節點的健全狀況及其接收流量的資格。NetApp 建議使用 HTTP `OPTIONS` 方法來執行健全狀況檢查。負載平衡器會向每個個別的儲存節點發出 HTTP `OPTIONS` 要求、並預期會有 `200` 狀態回應。
+
+如果有任何儲存節點未提供回應、則 `200` 該節點將無法服務儲存要求。您的應用程式和業務需求應決定這些檢查的逾時時間、以及負載平衡器所採取的行動。
+
+例如、如果資料中心 1 的四個儲存節點中有三個關閉、您可能會將所有流量導向資料中心 2 。
+
+建議的輪詢間隔是每秒一次、在三次失敗檢查之後、將節點標示為離線。
+
+
+
+=== S3 健全狀況檢查範例
+
+在以下範例中，我們會傳送 `OPTIONS` 並檢查 `200 OK`。我們使用的 `OPTIONS` 原因是 Amazon S3 ）不支援未經授權的要求。
+
+[listing, subs="verbatim,quotes"]
+----
+##curl -X OPTIONS https://10.63.174.75:18082 --verbose --insecure##
+* Rebuilt URL to: https://10.63.174.75:18082/
+*   Trying 10.63.174.75...
+* TCP_NODELAY set
+* Connected to 10.63.174.75 (10.63.174.75) port 18082 (#0)
+* TLS 1.2 connection using TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+* Server certificate: webscale.stl.netapp.com
+* Server certificate: NetApp Corp Issuing CA 1
+* Server certificate: NetApp Corp Root CA
+> OPTIONS / HTTP/1.1
+> Host: 10.63.174.75:18082
+> User-Agent: curl/7.51.0
+> Accept: */*
+>
+< HTTP/1.1 ##200 OK##
+< Date: Mon, 22 May 2017 15:17:30 GMT
+< Connection: KEEP-ALIVE
+< Server: StorageGRID/10.4.0
+< x-amz-request-id: 3023514741
+----
+
+
+=== 檔案或內容型健全狀況檢查
+
+一般而言、 NetApp 不建議使用檔案型健全狀況檢查。例如、通常會在具有唯讀原則的貯體中建立小型檔案 —`healthcheck.htm`。然後負載平衡器會擷取並評估此檔案。此方法有幾個缺點：
+
+* * 視單一帳戶而定。 *如果擁有該檔案的帳戶已停用、則健全狀況檢查會失敗、而且不會處理任何儲存要求。
+* * 資料保護規則。 *預設的資料保護方案是兩個複本的方法。在此案例中、如果裝載健全狀況檢查檔案的兩個儲存節點無法使用、健全狀況檢查會失敗、而且儲存要求不會傳送至健全的儲存節點、使網格離線。
+* * 稽核記錄檔位。 *負載平衡器每 X 分鐘從每個儲存節點擷取一次檔案、建立許多稽核記錄項目。
+* * 資源密集。 *每隔幾秒從每個節點擷取一次健全狀況檢查檔案、就會消耗網格和網路資源。
+
+
+如果需要內容型健全狀況檢查、請使用專屬租戶搭配專用 S3 儲存區。
+
+
+
+=== 工作階段持續性
+
+工作階段持續性（或黏性）是指允許指定 HTTP 工作階段持續的時間。依預設、儲存節點會在 10 分鐘後捨棄工作階段。較長的持續性可能會導致更好的效能、因為應用程式不需要為每個動作重新建立工作階段、但保持開啟這些工作階段會消耗資源。如果您確定工作負載會受惠、則可以減少第三方負載平衡器上的工作階段持續性。
+
+
+
+== 虛擬代管型定址
+
+虛擬託管樣式現在是 AWS S3 的預設方法、雖然 StorageGRID 和許多應用程式仍支援路徑樣式、但實作虛擬託管式支援是最佳做法。虛擬託管式要求的主機名稱中包含貯體。
+
+若要支援虛擬代管樣式、請執行下列動作：
+
+* 支援萬用字元 DNS 查詢： * .s3.company.com
+* 使用具有主體替代名稱的 SSL 憑證來支援萬用字元： * .s3.company.com 有些客戶已表示對萬用字元憑證的使用有安全顧慮。StorageGRID 持續支援路徑樣式存取、 FabricPool 等重要應用程式也同樣支援路徑樣式存取。也就是說、某些 S3 API 呼叫在沒有虛擬主機支援的情況下失敗或行為不當。
+
+
+
+
+== SSL 終止
+
+第三方負載平衡器上的 SSL 終止有安全效益。如果負載平衡器遭到入侵、網格就會被分割。
+
+支援的組態有三種：
+
+* * SSL 傳遞。 *SSL 憑證會以自訂伺服器憑證形式安裝在 StorageGRID 上。
+* * SSL 終止與重新加密（建議使用） *如果您已經在負載平衡器上執行 SSL 憑證管理、而不是在 StorageGRID 上安裝 SSL 憑證、這可能會很有幫助。此組態提供額外的安全性優點、可將攻擊面限制在負載平衡器上。
+* * 使用 HTTP 終止 SSL 。 *在此組態中、 SSL 會在第三方負載平衡器上終止、而負載平衡器與 StorageGRID 之間的通訊則不會加密、以利用 SSL 卸載（在現代處理器中內嵌 SSL 程式庫、這是有限的效益）。
+
+
+
+
+== 傳遞組態
+
+如果您偏好設定負載平衡器以進行傳遞、則必須在 StorageGRID 上安裝憑證。前往功能表：組態 [ 伺服器憑證 > 物件儲存 API 服務端點伺服器憑證 ] 。
+
+
+
+== 來源用戶端 IP 可見度
+
+StorageGRID 11.4 引進了信任的第三方負載平衡器概念。若要將用戶端應用程式 IP 轉寄至 StorageGRID 、您必須設定此功能。如需詳細資訊、請參閱 https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_configure_StorageGRID_to_work_with_third-party_Layer_7_load_balancers["如何設定 StorageGRID 以搭配第三方第 7 層負載平衡器使用。"^]
+
+若要啟用 XFF 標頭來檢視用戶端應用程式的 IP 、請遵循下列步驟：
+
+.步驟
+. 在稽核記錄中記錄用戶端 IP 。
+. 使用 `aws:SourceIp` S3 儲存區或群組原則。
+
+
+
+
+=== 負載平衡策略
+
+大多數負載平衡解決方案都提供多種負載平衡策略。以下是常見策略：
+
+* * 循環 *通用配戴、但節點數極少、大型傳輸會阻塞單一節點。
+* * 最少連線。 *非常適合小型和混合式物件工作負載、因此所有節點的連線分配均相同。
+
+
+隨著可選擇的儲存節點數量增加、演算法的選擇變得不那麼重要。
+
+
+
+=== 資料路徑
+
+所有資料都會流經本機流量管理器負載平衡器。StorageGRID 不支援直接伺服器路由（ DSR ）。
+
+
+
+==== 驗證連線的發佈
+
+若要驗證您的方法是否在儲存節點之間平均分配負載、請檢查指定站台中每個節點上建立的工作階段：
+
+* * UI 方法。 *前往功能表： Support[ 指標 > S3 概觀 > LDR HTTP 工作階段 ]
+* * 指標 API *使用 `storagegrid_http_sessions_incoming_currently_established`
+

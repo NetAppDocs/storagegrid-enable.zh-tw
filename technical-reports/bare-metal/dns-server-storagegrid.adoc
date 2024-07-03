@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/bare-metal/dns-server-storagegrid.html 
+keywords: dns server, storagegrid 
+summary: 瞭解如何設定 StorageGRID 的 DNS 伺服器。 
+---
+= 指定 StorageGRID 的 DNS 伺服器詳細資料
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+瞭解如何設定 StorageGRID 的 DNS 伺服器。
+
+您必須指定 StorageGRID 系統的 DNS 資訊、才能使用主機名稱而非 IP 位址來存取外部伺服器。
+
+指定 DNS 伺服器資訊可讓您使用完整網域名稱（ FQDN ）主機名稱、而非 IP 位址來接收電子郵件通知和 NetApp AutoSupport ® 訊息。NetApp 建議指定至少兩部 DNS 伺服器。
+
+
+CAUTION: 您應該選取DNS伺服器、以便每個站台在網路中斷時、都能在本機存取。
+
+若要指定 DNS 伺服器資訊、請完成下列步驟：
+
+.步驟
+. 在伺服器 1 文字方塊中、指定 DNS 伺服器的 IP 位址。
+. 如有必要、請按一下最後一個項目旁的加號、以新增更多伺服器。
++
+image:bare-metal-add-more-servers-2.png["裸機新增更多伺服器 -2"]
+
+. 按一下「下一步」
+

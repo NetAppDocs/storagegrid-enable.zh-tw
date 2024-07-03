@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/commvault/s3-consistency-levels.html 
+keywords: Backup, on-premises, commvault, storagegrid, object, S3, WORM 
+summary: 探索客戶與 NetApp IT 實作的 StorageGRID 組態使用案例。 
+---
+= 貯體一致性層級建議
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+NetApp StorageGRID 可讓終端使用者選擇在 Simple Storage Service （ S3 ）貯體中物件上執行作業的一致性層級。
+
+CommVault MediaAgent 是 CommVault 環境中的資料移動器。在大多數情況下、媒體代理程式都設定為在本機寫入主要 StorageGRID 站台。因此、建議在本機主要站台內建立高度一致性。當您在 StorageGRID 中建立的 CommVault 儲存區上設定一致性層級時、請遵循下列準則。
+
+[NOTE]
+====
+如果您的 CommVault 版本早於 11.0.0 - Service Pack 16 、請考慮將 CommVault 升級至最新版本。如果這不是選項、請務必遵循您版本的準則。
+
+====
+* CommVault 11.0.0 之前的版本 - Service Pack 16.* 在 11.0.0 之前的版本 - Service Pack 16 中、 CommVault 會執行 S3 head 、並在不存在的物件上執行作業、作為還原和修剪程序的一部分。將貯體一致性層級設為強式站台、以達到 CommVault 備份至 StorageGRID 的最佳一致性層級。
+* CommVault 11.0.0 版 - Service Pack 16 及更新版本。 * 在 11.0.0 版 - Service Pack 16 及更新版本中、 S3 head 和 Get 作業在不存在的物件上執行的次數會降至最低。將預設的儲存區一致性層級設為「新寫入後讀取」、以確保 CommVault 和 StorageGRID 環境中的高一致性層級。
+

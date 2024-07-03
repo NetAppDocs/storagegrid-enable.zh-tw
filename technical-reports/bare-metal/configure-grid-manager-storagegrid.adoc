@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/bare-metal/configure-grid-manager-storagegrid.html 
+keywords: grid manager, storagegrid 
+summary: 瞭解如何在主要管理節點上的 StorageGRID 中設定 Grid Manager 。 
+---
+= 在 StorageGRID 中設定 Grid Manager
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+瞭解如何在主要管理節點上的 StorageGRID 中設定 Grid Manager 。
+
+從主要管理節點上的 Grid Manager 使用者介面設定 StorageGRID 系統、以完成安裝。
+
+
+
+== 高階步驟
+
+設定網格並完成安裝涉及下列工作：
+
+.步驟
+. <<瀏覽至 Grid Manager>>
+. link:storagegrid-license.html["指定StorageGRID 不含授權的資訊"]
+. link:add-sites-storagegrid.html["新增站台至 StorageGRID"]
+. link:grid-network-subnets-storagegrid.html["指定網格網路子網路"]
+. link:approve-grid-nodes-storagegrid.html["核准擱置的網格節點"]
+. link:ntp-server-storagegrid.html["指定 NTP 伺服器資訊"]
+. link:dns-server-storagegrid.html["指定網域名稱系統伺服器資訊"]
+. link:system-passwords-storagegrid.html["指定StorageGRID 「系統密碼」"]
+. link:review-config-complete-storagegrid-install.html["檢閱組態並完成安裝"]
+
+
+
+
+== 瀏覽至 Grid Manager
+
+使用 Grid Manager 定義設定 StorageGRID 系統所需的所有資訊。
+
+開始之前、必須先部署主要管理節點、並完成初始啟動順序。
+
+若要使用 Grid Manager 來定義資訊、請完成下列步驟。
+
+.步驟
+. 存取 Grid Manager 、網址如下：
++
+[listing]
+----
+https://primary_admin_node_grid_ip
+----
++
+或者、您也可以在連接埠 8443 上存取 Grid Manager 。
+
++
+[listing]
+----
+https://primary_admin_node_ip:8443
+----
+. 按一下「安裝 StorageGRID 系統」。隨即顯示用於設定 StorageGRID 網格的頁面。
+
+
+image:bare-metal-configure-storagegrid-grid.png["裸機組態儲存格網格"]

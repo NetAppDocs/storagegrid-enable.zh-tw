@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/load-balancer/validate-ssl-connection-storagegrid.html 
+keywords: validating ssl connection, storagegrid 
+summary: 瞭解如何在 StorageGRID 中驗證 SSL 連線。 
+---
+= 驗證 StorageGRID 中的 SSL 連線
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+瞭解如何在 StorageGRID 中驗證 SSL 連線。
+
+設定負載平衡器之後、您應該使用 Openssl 和 AWS CLI 等工具來驗證連線。其他應用程式（例如 S3 瀏覽器）可能會忽略 SSL 組態錯誤。

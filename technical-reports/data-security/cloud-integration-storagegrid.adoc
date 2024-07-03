@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/data-security/cloud-integration-storagegrid.html 
+keywords: cloud integration, storagegrid 
+summary: 瞭解 StorageGRID 如何與雲端服務整合。 
+---
+= 雲端整合
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+瞭解 StorageGRID 如何與雲端服務整合。
+
+[cols="30,35,35"]
+|===
+| 功能 | 功能 | 影響 
+
+
+| 以通知為基礎的病毒掃描 | StorageGRID 平台服務支援事件通知。事件通知可與外部雲端運算服務搭配使用、以觸發資料上的病毒掃描工作流程。 | 可讓租戶管理員使用外部雲端運算服務觸發資料的病毒掃描。 
+|===

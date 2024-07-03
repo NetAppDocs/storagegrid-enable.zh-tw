@@ -1,0 +1,113 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/load-balancer/example-configuration-storagegrid.html 
+keywords: example configuration, use cases, storagegrid 
+summary: 探索客戶與 NetApp IT 實作的 StorageGRID 組態使用案例。 
+---
+= 瞭解 StorageGRID 組態的幾個使用案例
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+探索客戶與 NetApp IT 實作的 StorageGRID 組態使用案例。
+
+下列範例說明 StorageGRID 客戶實作的組態、包括 NetApp IT 。
+
+
+
+== F5 BIG-IP 本機流量管理程式狀態檢查監控 S3 貯體
+
+若要設定 F5 BIG-IP 本機流量管理程式健全狀況檢查監控器、請依照下列步驟進行：
+
+.步驟
+. 建立新的監視器。
++
+.. 在 Type （類型）字段中，輸入 `HTTPS`。
+.. 視需要設定時間間隔和逾時。
+.. 在「傳送字串」欄位中、輸入 `OPTIONS / HTTP/1.1\r\n\r\n.` \r\n 為回車； BIG-IP 軟體的不同版本需要零、一或兩組 \r\n 順序。如需更多資訊、請參閱 https://support.f5.com/csp/article/K10655[]。
+.. 在接收字串欄位中、輸入： `HTTP/1.1 200 OK`。
++
+image:load-balancer-monitor-configuration-page.png["監控組態頁面"]
+
+
+
+. 在 " 建立集區 " 中 , 針對所需的每個連接埠建立一個集區。
++
+.. 指派您在上一個步驟中建立的健全狀況監視器。
+.. 選取負載平衡方法。
+.. 選取服務連接埠： 18082 （ S3 ）。
+.. 新增節點。
+
+
+
+
+
+
+== Citrix NetScaler
+
+Citrix NetScaler 會為儲存端點建立虛擬伺服器、並將 StorageGRID 儲存節點稱為應用程式伺服器、然後將其分組至服務。
+
+使用 HTTPS-ECV 健全狀況檢查監視器建立自訂監視器、以使用選項要求和接收來執行建議的健全狀況檢查 `200`。HTTP-ECV 是以傳送字串設定、並驗證接收字串。
+
+有關詳細信息，請參閱 Citrix 文檔 https://docs.citrix.com/en-us/citrix-adc/current-release/load-balancing/load-balancing-builtin-monitors/monitor-ssl-services.html#sample-configuration-for-https-ecv-health-check-monitor["HTTP-ECV 健全狀況檢查監視器的組態範例"^]，。
+
+image:load-balancer-citrix-netscaler-configuration-page.png["Citrix NetScaler Monitor 組態頁面"]
+
+image:load-balancer-configure-monitor.png["Configure-monitor.png"]
+
+
+
+== Loadbalancer.org
+
+Loadbalancer.org 已經與 StorageGRID 進行了自己的整合測試，並提供了廣泛的組態指南： https://pdfs.loadbalancer.org/NetApp_StorageGRID_Deployment_Guide.pdf[]。
+
+
+
+== Kemp
+
+Kemp 已與 StorageGRID 進行了自己的整合測試、並提供廣泛的組態指南： https://kemptechnologies.com/solutions/netapp/[]。
+
+
+
+== HAProxy
+
+將 HAProxy 設定為使用選項要求、並檢查 haproxy.cfg 中健全狀況檢查的 200 狀態回應。您可以將前端的繫結連接埠變更為其他連接埠、例如 443 。
+
+以下是 HAProxy 上 SSL 終止的範例：
+
+[listing]
+----
+frontend s3
+       bind *:443 crt /etc/ssl/server.pem ssl
+       default_backend s3-serve
+rs
+backend s3-servers
+       balance leastconn
+       option httpchk
+       http-check expect status 200
+       server dc1-s1 10.63.174.71:18082 ssl verify none check inter 3000
+       server dc1-s2 10.63.174.72:18082 ssl verify none check inter 3000
+       server dc1-s3 10.63.174.73:18082 ssl verify none check inter 3000
+----
+以下是 SSL 傳遞的範例：
+
+[listing]
+----
+frontend s3
+       mode tcp
+       bind *:443
+       default_backend s3-servers
+backend s3-servers
+       balance leastconn
+       option httpchk
+       http-check expect status 200
+       server dc1-s1 10.63.174.71:18082 check-ssl verify none inter 3000
+       server dc1-s2 10.63.174.72:18082 check-ssl verify none inter 3000
+       server dc1-s3 10.63.174.73:18082 check-ssl verify none inter 3000
+----
+如需 StorageGRID 組態的完整範例、請參閱 https://github.com/NetApp-StorageGRID/HAProxy-Configuration["HAProxy 組態範例"^] GitHub 上的。

@@ -1,0 +1,116 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/commvault/index.html 
+keywords: Backup, on-premises, commvault, storagegrid, object, S3, WORM 
+summary: 探索客戶與 NetApp IT 實作的 StorageGRID 組態使用案例。 
+---
+= 使用 StorageGRID 和 CommVault 備份和恢復資料
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+CommVault 與 NetApp 攜手合作、共同打造共同的資料保護解決方案、結合 CommVault Complete Backup and Recovery for NetApp 軟體與 NetApp StorageGRID 雲端儲存軟體。CommVault 完整備份與還原與 NetApp StorageGRID 提供獨特且易於使用的解決方案、可協助您滿足全球快速資料成長與法規不斷增加的需求。
+
+許多組織想要將儲存設備移轉至雲端、擴充系統、並將長期保留資料的原則自動化。雲端型物件儲存設備的恢復能力、擴充能力、營運效率和成本效益、是備份目標的自然選擇。CommVault 與 NetApp 於 2014 年聯合驗證了他們的聯合解決方案、之後更進一步整合了兩種解決方案。全球所有類型的客戶都採用 CommVault 完整備份與還原及 StorageGRID 組合解決方案。
+
+
+
+== 關於 CommVault 和 StorageGRID
+
+CommVault 完整備份與還原軟體是一種企業級的整合式資料與資訊管理解決方案、完全以單一平台為基礎、並以統一的程式碼基礎打造而成。其所有功能都會共享後端技術、提供完全整合的資料保護、管理及存取方法所帶來的無與倫比的優勢與效益。本軟體包含可保護、歸檔、分析、複寫及搜尋資料的模組。這些模組共用一組通用的後端服務和進階功能、可彼此順暢互動。此解決方案可解決企業中資料管理的所有層面、同時提供無限的擴充性、以及前所未有的資料與資訊控制能力。
+
+NetApp StorageGRID 即 CommVault 雲端層是企業混合雲物件儲存解決方案。您可以在多個站台上部署、無論是在特定用途的應用裝置上、或是以軟體定義的部署方式進行部署。StorageGRID 可讓您建立資料管理原則、以決定資料的儲存和保護方式。StorageGRID 會收集您開發及執行原則所需的資訊。它會檢查各種特性和需求、包括效能、耐用性、可用度、地理位置、 壽命和成本。資料在不同位置之間移動時、以及隨著時間的變化、都會受到完整的維護和保護。
+
+StorageGRID 智慧型原則引擎可協助您選擇下列任一選項：
+
+* 使用抹除編碼在多個站台之間備份資料、以獲得恢復能力。
+* 將物件複製到遠端站台、以將 WAN 延遲和成本降到最低。
+
+
+當 StorageGRID 儲存物件時、無論物件位於何處或存在多少份複本、您都能以單一物件的方式存取物件。這種行為對災難恢復至關重要、因為有了這種情況、即使資料的一個備份複本毀損、 StorageGRID 也能還原您的資料。
+
+在主儲存設備中保留備份資料可能會很昂貴。使用 NetApp StorageGRID 時、您可以將非作用中的備份資料移轉至 StorageGRID 、藉此釋放主儲存設備上的空間、同時享有 StorageGRID 的眾多功能。備份資料的價值會隨著時間而改變、儲存資料的成本也會隨之改變。StorageGRID 可以將主儲存設備的成本降至最低、同時提高資料的耐用度。
+
+
+
+== 主要功能
+
+CommVault 軟體平台的主要功能包括：
+
+* 完整的資料保護解決方案、可支援虛擬與實體伺服器、 NAS 系統、雲端基礎架構及行動裝置上的所有主要作業系統、應用程式及資料庫。
+* 透過單一主控台簡化管理：您可以檢視、管理及存取整個企業的所有功能及所有資料與資訊。
+* 多種保護方法、包括資料備份與歸檔、快照管理、資料複寫、以及電子探索的內容索引。
+* 使用重複資料刪除技術來管理磁碟與雲端儲存設備、實現高效率的儲存管理。
+* 整合 NetApp 儲存陣列、例如 AFF 、 FAS 、 NetApp HCI 和 E 系列陣列、以及 NetApp SolidFire ^ ® ^ 橫向擴充儲存系統。也與 NetApp Cloud Volumes ONTAP 軟體整合、可在 NetApp 儲存產品組合中、自動建立索引化的應用程式感知 NetApp Snapshot ™複本。
+* 完整的虛擬基礎架構管理功能、可支援領先業界的內部部署虛擬 Hypervisor 和公有雲超大規模平台。
+* 進階安全功能可限制存取關鍵資料、提供精細的管理功能、並為 Active Directory 使用者提供單一登入存取。
+* 原則型資料管理、可讓您根據業務需求（而非實體位置）來管理資料。
+* 頂尖的終端使用者體驗、讓使用者能夠保護、尋找及恢復自己的資料。
+* API 導向的自動化功能、可讓您使用 vRealize Automation 或 Service Now 等協力廠商工具來管理資料保護與還原作業。
+
+
+如需支援工作負載的詳細資訊、請造訪 https://www.commvault.com/supported-technologies["CommVault 支援的技術"]。
+
+
+
+== 備份選項
+
+當您使用雲端儲存設備實作 CommVault 完整備份與還原軟體時、您有兩個備份選項：
+
+* 備份至主要磁碟目標、並將輔助複本備份至雲端儲存設備。
+* 將雲端儲存備份為主要目標。
+
+
+過去、雲端或物件儲存設備的效能太低、無法用於主要備份。使用主要磁碟目標可讓客戶加快備份與還原程序、並將輔助複本作為冷備份保留在雲端上。StorageGRID 代表新一代的物件儲存設備。StorageGRID 的效能和處理量都很高、而且效能和靈活度都超越其他物件儲存廠商的要求。
+
+下表列出 StorageGRID 每個備份選項的優點：
+
+[cols="1a,1a,1a"]
+|===
+|  | 主要備份至磁碟、以及輔助複本至 StorageGRID | 主要備份至 StorageGRID 
+
+
+ a| 
+效能
+ a| 
+使用即時掛載或即時恢復、以最快的恢復時間：最適合 Tier0/Tier1 工作負載。
+ a| 
+無法用於即時掛載或即時恢復作業。適用於串流還原作業和長期保留。
+
+
+
+ a| 
+部署架構
+ a| 
+使用所有 Flash 或旋轉磁碟做為第一個備份登陸層。StorageGRID 用作次層。
+ a| 
+使用 StorageGRID 做為全方位備份目標、簡化部署。
+
+
+
+ a| 
+進階功能（即時還原）
+ a| 
+支援
+ a| 
+不支援
+
+|===
+
+
+== 何處可找到其他資訊
+
+若要深入瞭解本文所述資訊、請檢閱下列文件和 / 或網站：
+
+* StorageGRID 11.8 文件中心 +
+https://docs.netapp.com/us-en/storagegrid-118/[]
+* NetApp 產品文件 +
+https://docs.netapp.com[]
+* CommVault 說明文件 +
+https://documentation.commvault.com/2024/essential/index.html[]
+

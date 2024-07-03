@@ -1,0 +1,222 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/commvault/solution-overview.html 
+keywords: Backup, on-premises, commvault, storagegrid, object, S3, WORM 
+summary: 探索客戶與 NetApp IT 實作的 StorageGRID 組態使用案例。 
+---
+= 已測試的解決方案總覽
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+經測試的解決方案結合了 CommVault 與 NetApp 解決方案、打造出強大的聯合解決方案。
+
+
+
+== 解決方案設定
+
+在實驗室設定中、 StorageGRID 環境包含四個 NetApp StorageGRID SG5712 應用裝置、一個虛擬主要管理節點和一個虛擬閘道節點。SG5712 應用裝置是入門級選項、是一種基礎組態。選擇更高效能的應用裝置選項、例如 NetApp StorageGRID SG5760 或 SG6060 、可提供顯著的效能優勢。請洽詢您的 NetApp StorageGRID 解決方案架構設計師、以取得規模調整協助。
+
+對於資料保護原則、 StorageGRID 使用整合式生命週期管理（ ILM ）原則來管理及保護資料。ILM 規則會在原則中從上到下進行評估。我們實作下表所示的 ILM 原則：
+
+[cols="1a,1a,1a"]
+|===
+| ILM 規則 | 限定條件 | 擷取行為 
+
+
+ a| 
+銷毀編碼 2+1
+ a| 
+超過 200KB 的物件
+ a| 
+平衡
+
+
+
+ a| 
+2 複本
+ a| 
+所有物件
+ a| 
+雙重承諾
+
+|===
+ILM 2 複製規則是預設規則。「刪除編碼 2+1 」規則已套用至此測試、適用於任何 200 KB 或更大的物件。預設規則已套用至小於 200KB 的物件。以這種方式應用規則是 StorageGRID 最佳實務做法。
+
+如需此測試環境的技術詳細資料、請參閱中的解決方案設計與最佳實務一節 https://www.netapp.com/us/media/tr-4831.pdf["NetApp 透過 CommVault 實現橫向擴充資料保護"] 技術報告。
+
+
+
+== StorageGRID 硬體規格
+
+下表說明此測試所使用的 NetApp StorageGRID 硬體。StorageGRID SG5712 應用裝置搭配 10Gbps 網路是入門級選項、代表基本組態。SG5712 也可設定為 25Gbps 網路。
+
+[cols="1a,1a,1a,1a,1a"]
+|===
+| 硬體 | 數量 | 磁碟 | 可用容量 | 網路 
+
+
+ a| 
+StorageGRID SG5712 設備
+ a| 
+4.
+ a| 
+48 x 4TB （近線 SAS HDD ）
+ a| 
+136TB
+ a| 
+10Gbps
+
+|===
+選擇更高效能的應用裝置選項、例如 NetApp StorageGRID SG5760 、 SG6060 或所有 Flash SGF6112 應用裝置、可提供顯著的效能優勢。請洽詢您的 NetApp StorageGRID 解決方案架構設計師、以取得規模調整協助。
+
+
+
+== CommVault 與 StorageGRID 軟體需求
+
+下表列出安裝在 VMware 軟體上的 CommVault 和 NetApp StorageGRID 軟體的軟體需求、以供我們測試。安裝了四個 MediaAgent 資料傳輸管理員和一個 CommServe 伺服器。在測試中、我們針對 VMware 基礎架構建置了 10Gbps 網路。下表
+
+下表列出 CommVault 軟體的整體系統需求：
+
+[cols="1a,1a,1a,1a,1a,1a"]
+|===
+| 元件 | 數量 | 資料存放區 | 尺寸 | 總計 | 所需 IOPS 總計 
+
+
+ a| 
+CommServe 伺服器
+ a| 
+1.
+ a| 
+作業系統
+ a| 
+500GB
+ a| 
+500GB
+ a| 
+不適用
+
+
+
+ a| 
+ a| 
+ a| 
+SQL
+ a| 
+500GB
+ a| 
+500GB
+ a| 
+不適用
+
+
+
+ a| 
+MediaAgent
+ a| 
+4.
+ a| 
+虛擬 CPU （ vCPU ）
+ a| 
+16.
+ a| 
+64
+ a| 
+不適用
+
+
+
+ a| 
+ a| 
+ a| 
+RAM
+ a| 
+128GB
+ a| 
+512
+ a| 
+不適用
+
+
+
+ a| 
+ a| 
+ a| 
+作業系統
+ a| 
+500GB
+ a| 
+2TB
+ a| 
+不適用
+
+
+
+ a| 
+ a| 
+ a| 
+索引快取
+ a| 
+2TB
+ a| 
+8TB
+ a| 
+超過 200 個
+
+
+
+ a| 
+ a| 
+ a| 
+DDB
+ a| 
+2TB
+ a| 
+8TB
+ a| 
+200 至 80 萬 K
+
+|===
+在測試環境中、在 NetApp E 系列 E2812 儲存陣列上、 VMware 上部署了一個虛擬主要管理節點和一個虛擬閘道節點。每個節點都位於不同的伺服器上、具有下表所述的最低線上環境需求：
+
+下表列出 StorageGRID 虛擬管理節點和閘道節點的需求：
+
+[cols="1a,1a,1a,1a,1a"]
+|===
+| 節點類型 | 數量 | VCPU | RAM | 儲存設備 
+
+
+ a| 
+閘道節點
+ a| 
+1.
+ a| 
+8.
+ a| 
+24GB
+ a| 
+適用於作業系統的 100GB LUN
+
+
+
+ a| 
+管理節點
+ a| 
+1.
+ a| 
+8.
+ a| 
+24GB
+ a| 
+適用於作業系統的 100GB LUN
+
+200 GB LUN 用於管理節點表
+
+200 GB LUN 用於管理節點稽核記錄
+
+|===

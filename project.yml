@@ -3,7 +3,7 @@ settings:
   name: How to enable StorageGRID in your environment
   search: storagegrid-enable,storagegrid-118,storagegrid-appliances
   internal:
-    pdf_enabled: false
+    pdf_enabled: true
     termcheck_enabled: false
   prod:
     pdf_enabled: true

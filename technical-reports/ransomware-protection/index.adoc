@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/ransomware-protection/index.html 
+keywords: ransomware attacks, storagegrid, best practices 
+summary: 瞭解勒索軟體攻擊、以及如何使用 StorageGRID 安全最佳實務來保護資料。 
+---
+= 保護 StorageGRID S3 物件免受勒索軟體的侵害
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+瞭解勒索軟體攻擊、以及如何使用 StorageGRID 安全最佳實務來保護資料。
+
+勒索軟體攻擊不斷增加。本文件針對如何保護 StorageGRID 上的物件資料提供一些建議。
+
+現今的勒索軟體是資料中心永遠存在的危險。勒索軟體旨在加密資料、使依賴資料的使用者和應用程式無法使用。保護從強化網路和可靠使用者安全實務的一般防禦措施開始、我們必須遵循資料存取安全實務。
+
+勒索軟體是當今最大的安全威脅之一。NetApp StorageGRID 團隊正與我們的客戶合作、以對抗這些威脅。使用物件鎖定和版本設定功能、您可以防範不必要的變更、並從惡意攻擊中恢復。資料安全性是一項多層風險、您的物件儲存設備只是資料中心的一部分。
+
+
+
+== StorageGRID 最佳實務做法
+
+對於 StorageGRID 、安全性最佳實務做法應包括使用 HTTPS 搭配簽署的憑證、以進行管理和物件存取。為應用程式和個人建立專屬的使用者帳戶、請勿使用租戶根帳戶來存取應用程式或存取使用者資料。換句話說、請遵循最低權限原則。使用具有定義身分識別與存取管理（ IAM ）原則的安全性群組來管理使用者權限、以及存取應用程式和使用者專屬的帳戶。有了這些措施、您仍必須確保資料受到保護。在 Simple Storage Service （ S3 ）的情況下、當物件經過修改以加密時、則是透過覆寫原始物件來完成。
+
+
+
+== 防禦方法
+
+S3 API 的主要勒索軟體保護機制是實作物件鎖定。並非所有應用程式都與物件鎖定相容、因此本報告中說明的還有兩個其他選項可保護您的物件：複寫到另一個已啟用版本設定的儲存庫、以及使用 IAM 原則進行版本設定。
+
+
+
+== 何處可找到其他資訊
+
+若要深入瞭解本文所述資訊、請檢閱下列文件和 / 或網站：
+
+* NetApp StorageGRID 文件中心 https://docs.netapp.com/us-en/storagegrid-118/[]
+* NetApp StorageGRID 啟用 https://docs.netapp.com/us-en/storagegrid-enable/[]
+* StorageGRID 文件資源頁面 https://www.netapp.com/data-storage/storagegrid/documentation/[]
+* NetApp 產品文件 https://www.netapp.com/support-and-training/documentation/[]
+

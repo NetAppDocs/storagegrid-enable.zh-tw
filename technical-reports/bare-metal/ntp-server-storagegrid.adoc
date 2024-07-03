@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/bare-metal/ntp-server-storagegrid.html 
+keywords: ntp server , storagegrid 
+summary: 瞭解如何指定 StorageGRID 系統的 NTP 組態資訊、以便讓在不同伺服器上執行的作業保持同步。 
+---
+= 指定 StorageGRID 的 NTP 伺服器詳細資料
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+瞭解如何指定 StorageGRID 系統的 NTP 組態資訊、以便讓在不同伺服器上執行的作業保持同步。
+
+若要避免時間漂移問題、您必須指定第 3 層或更高層的四個外部 NTP 伺服器參考資料。
+
+
+NOTE: 指定外部NTP來源進行正式作業層級StorageGRID 的安裝時、請勿在Windows Server 2016之前的Windows版本上使用Windows Time（W32Time）服務。舊版 Windows 上的時間服務不夠準確、 Microsoft 不支援在 StorageGRID 等要求嚴苛的環境中使用。
+
+外部 NTP 伺服器會由先前指派主要 NTP 角色的節點使用。
+
+
+CAUTION: 在安裝程序中、用戶端網路未提早啟用、無法成為唯一的 NTP 伺服器來源。請確定至少可以透過網格網路或管理網路連線到一個 NTP 伺服器。
+
+若要指定 NTP 伺服器資訊、請完成下列步驟：
+
+.步驟
+. 在伺服器 1 至伺服器 4 文字方塊中、指定至少四個 NTP 伺服器的 IP 位址。
+. 如有必要、請按一下最後一個項目旁的加號、以新增更多伺服器項目。
++
+image:bare-metal-add-server-entries.png["裸機新增伺服器項目"]
+
+. 按一下「下一步」
+

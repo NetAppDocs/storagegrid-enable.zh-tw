@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/bare-metal/install-storagegrid-dependencies.html 
+keywords: install dependencies, storagegrid 
+summary: 瞭解如何安裝 StorageGRID 相依性和套件。 
+---
+= 安裝 StorageGRID 相依性和套件
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+瞭解如何安裝 StorageGRID 相依性和套件。
+
+若要安裝 StorageGRID 相依性和套件、請執行下列命令：
+
+[listing]
+----
+[root@host1 rpms]# yum install -y python-netaddr
+[root@host1 rpms]# rpm -ivh StorageGRID-Webscale-Images-*.rpm
+[root@host1 rpms]# rpm -ivh StorageGRID-Webscale-Service-*.rpm
+----

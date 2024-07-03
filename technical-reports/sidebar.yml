@@ -2,9 +2,136 @@
 section: technical-reports
 title: 技術報告
 entries:
-- title: NetApp StorageGRID 與 Big Data Analytics
+- title: StorageGRID 技術報告簡介
+  url: "/technical-reports/index.html"
+- title: TR-4993 ： NetApp StorageGRID 與巨量資料分析
   url: "/technical-reports/datalake-analytics.html"
-- title: Hadoop S3A 調校
+- title: TR-4994 ： Hadoop S3A 調校
   url: "/technical-reports/s3a-tuning.html"
-- title: TR-4871 - CommVault 完整備份與還原與 NetApp StorageGRID
-  url: "/technical-reports/tr-4871-commvault.html"
+- title: TR-4871 ：使用 CommVault 設定 StorageGRID 進行備份與還原
+  pdf-filename: StorageGRID 備份與還原：使用 CommVault 來儲存及恢復資料
+  entries:
+  - title: 使用 StorageGRID 和 CommVault 備份和恢復資料
+    url: "/technical-reports/commvault/index.html"
+  - title: 已測試的解決方案總覽
+    url: "/technical-reports/commvault/solution-overview.html"
+  - title: StorageGRID 規模調整指南
+    url: "/technical-reports/commvault/sizing.html"
+  - title: 執行資料保護工作
+    url: "/technical-reports/commvault/data-protection-jobs.html"
+  - title: 檢閱基準效能測試
+    url: "/commvault/baseline-performance-tests.html"
+  - title: 貯體一致性層級建議
+    url: "/technical-reports/commvault/s3-consistency-levels.html"
+- title: TR-4626 ：負載平衡器
+  pdf-filename: StorageGRID 負載平衡器 - 協力廠商和全域負載平衡器
+  entries:
+  - title: 將協力廠商負載平衡器搭配 StorageGRID 使用
+    url: "/technical-reports/load-balancer/index.html"
+  - title: 瞭解如何在 StorageGRID 中實作 HTTPS 的 SSL 憑證
+    url: "/technical-reports/load-balancer/ssl-certificates-storagegrid.html"
+  - title: 在 StorageGRID 中設定信任的協力廠商負載平衡器
+    url: "/technical-reports/load-balancer/third-party-load-balancer-configuration.html"
+  - title: 瞭解本機流量管理負載平衡器
+    url: "/technical-reports/load-balancer/local-traffic-manager-load-balancer.html"
+  - title: 瞭解 StorageGRID 組態的幾個使用案例
+    url: "/technical-reports/load-balancer/example-configuration-storagegrid.html"
+  - title: 驗證 StorageGRID 中的 SSL 連線
+    url: "/technical-reports/load-balancer/validate-ssl-connection-storagegrid.html"
+  - title: 瞭解 StorageGRID 的整體負載平衡需求
+    url: "/technical-reports/load-balancer/global-load-balancing-design.html"
+- title: TR-4645 ：安全功能
+  pdf-filename: StorageGRID 11.7 的安全功能 - 保護物件存放區中的資料和中繼資料
+  entries:
+  - title: 保護物件存放區中的 StorageGRID 資料和中繼資料安全
+    url: "/technical-reports/data-security/index.html"
+  - title: 資料存取安全功能
+    url: "/technical-reports/data-security/data-access-security.html"
+  - title: 物件和中繼資料安全性
+    url: "/technical-reports/data-security/object-metadata-security.html"
+  - title: 系統管理安全功能
+    url: "/technical-reports/data-security/administration-security.html"
+  - title: 平台安全功能
+    url: "/technical-reports/data-security/platform-security.html"
+  - title: 雲端整合
+    url: "/technical-reports/data-security/cloud-integration-storagegrid.html"
+- title: TR-4921 ：勒索軟體防禦
+  pdf-filename: StorageGRID 的勒索軟體防護：保護 S3 物件
+  entries:
+  - title: 保護 StorageGRID S3 物件免受勒索軟體的侵害
+    url: "/technical-reports/ransomware-protection/index.html"
+  - title: 使用物件鎖定的勒索軟體防禦
+    url: "/technical-reports/ransomware-protection/understand-object-lock-storagegrid.html"
+  - title: 使用複製的貯體搭配版本管理功能來防範勒索軟體
+    url: "/technical-reports/ransomware-protection/replicate-bucket-versioning-storagegrid.html"
+  - title: 使用具有保護性 IAM 原則的版本管理功能來防範勒索軟體
+    url: "/technical-reports/ransomware-protection/versioning-protective-iam-policy-storagegrid.html"
+- title: TR-4765 ：監控 StorageGRID
+  pdf-filename: 使用外部應用程式監控 StorageGRID
+  entries:
+  - title: StorageGRID 監控簡介
+    url: "/technical-reports/monitor/index.html"
+  - title: 使用 GMI 儀表板來監控 StorageGRID
+    url: "/technical-reports/monitor/getting-started.html"
+  - title: 使用警示來監控 StorageGRID
+    url: "/technical-reports/monitor/alerts-monitoring.html"
+  - title: StorageGRID 中的進階監控功能
+    url: "/technical-reports/monitor/advanced-monitor-storagegrid.html"
+  - title: 使用 StorageGRID 中的 Curl 存取指標
+    url: "/technical-reports/monitor/access-metrics-curl.html"
+  - title: 使用 StorageGRID 中的 Grafana 檢視指標
+    url: "/technical-reports/monitor/grafana-dashboard.html"
+  - title: 在 StorageGRID 中使用流量分類原則
+    url: "/technical-reports/monitor/traffic-classification-policies.html"
+  - title: 使用稽核記錄來監控 StorageGRID
+    url: "/technical-reports/monitor/audit-log-monitoring.html"
+  - title: 使用 StorageGRID 應用程式來執行 Splunk
+    url: "/technical-reports/monitor/storagegrid-app-splunk.html"
+- title: TR-4882 ：安裝 StorageGRID 裸機網格
+  pdf-filename: 在裸機主機上安裝 StorageGRID
+  entries:
+  - title: 安裝 StorageGRID 簡介
+    url: "/technical-reports/bare-metal/index.html"
+  - title: 安裝 StorageGRID 的必要條件
+    url: "/technical-reports/bare-metal/prerequisites-install-storagegrid.html"
+  - title: 安裝 Docker for StorageGRID
+    url: "/technical-reports/bare-metal/install-docker-storagegrid.html"
+  - title: 為 StorageGRID 準備節點組態檔案
+    url: "/technical-reports/bare-metal/node-config-file-storagegrid.html"
+  - title: 安裝 StorageGRID 相依性和套件
+    url: "/technical-reports/bare-metal/install-storagegrid-dependencies.html"
+  - title: 驗證 StorageGRID 組態檔案
+    url: "/technical-reports/bare-metal/validate-storagegrid-config-files.html"
+  - title: 啟動StorageGRID 「支援服務」
+    url: "/technical-reports/bare-metal/start-storagegrid-host-service.html"
+  - title: 在 StorageGRID 中設定 Grid Manager
+    url: "/technical-reports/bare-metal/configure-grid-manager-storagegrid.html"
+  - title: 新增 StorageGRID 授權詳細資料
+    url: "/technical-reports/bare-metal/storagegrid-license.html"
+  - title: 新增站台至 StorageGRID
+    url: "/technical-reports/bare-metal/add-sites-storagegrid.html"
+  - title: 為 StorageGRID 指定網格網路子網路
+    url: "/technical-reports/bare-metal/grid-network-subnets-storagegrid.html"
+  - title: 核准 StorageGRID 的網格節點
+    url: "/technical-reports/bare-metal/approve-grid-nodes-storagegrid.html"
+  - title: 指定 StorageGRID 的 NTP 伺服器詳細資料
+    url: "/technical-reports/bare-metal/ntp-server-storagegrid.html"
+  - title: 指定 StorageGRID 的 DNS 伺服器詳細資料
+    url: "/technical-reports/bare-metal/dns-server-storagegrid.html"
+  - title: 指定 StorageGRID 的系統密碼
+    url: "/technical-reports/bare-metal/system-passwords-storagegrid.html"
+  - title: 檢閱組態並完成 StorageGRID 安裝
+    url: "/technical-reports/bare-metal/review-config-complete-storagegrid-install.html"
+  - title: 升級 StorageGRID 中的裸機節點
+    url: "/technical-reports/bare-metal/upgrading-bare-metal-nodes-storagegrid.html"
+- title: TR-4907 ：使用 Veritas Enterprise Vault 設定 StorageGRID
+  pdf-filename: StorageGRID 災難恢復–使用 Veritas Enterprise Vault 設定 StorageGRID 進行站台容錯移轉
+  entries:
+  - title: 設定 StorageGRID 進行站台容錯移轉簡介
+    url: "/technical-reports/veritas/index.html"
+  - title: 設定 StorageGRID 和 Veritas Enterprise Vault
+    url: "/technical-reports/veritas/configure-storagegrid-enterprise-vault.html"
+  - title: 設定 StorageGRID 以進行 WORM 儲存
+    url: "/technical-reports/veritas/configure-storagegrid-s3-object-lock.html"
+  - title: 設定 StorageGRID 進行災難恢復
+    url: "/technical-reports/veritas/configure-storagegrid-site-failover.html"

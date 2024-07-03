@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/load-balancer/third-party-load-balancer-configuration.html 
+keywords: third-party load balancer, storagegrid 
+summary: 瞭解如何在 StorageGRID 中設定信任的協力廠商負載平衡器。 
+---
+= 在 StorageGRID 中設定信任的協力廠商負載平衡器
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+瞭解如何在 StorageGRID 中設定信任的協力廠商負載平衡器。
+
+如果您使用一或多個外部第 7 層負載平衡器、以及 S3 貯體或群組原則（以 IP 為基礎）、 StorageGRID 必須判斷真正的傳送者 IP 位址。這是透過查看由負載平衡器插入要求的 X-Forwarded-for （ XFF ）標頭來達成的。由於直接傳送至儲存節點的要求很容易偽造 XFF 標頭、因此 StorageGRID 必須確認每個要求都是由信任的第 7 層負載平衡器路由。如果 StorageGRID 無法信任要求的來源、則會忽略 XFF 標頭。網格管理 API 可讓您設定信任的外部第 7 層負載平衡器清單。此全新 API 為私有 API 、未來的 StorageGRID 版本可能會有所變更。如需最新資訊，請參閱知識庫文章 https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_configure_StorageGRID_to_work_with_third-party_Layer_7_load_balancers["如何設定 StorageGRID 以搭配第三方第 7 層負載平衡器使用"^]。

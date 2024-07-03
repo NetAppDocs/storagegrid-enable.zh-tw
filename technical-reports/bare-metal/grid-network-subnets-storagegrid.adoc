@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/bare-metal/grid-network-subnets-storagegrid.html 
+keywords: grid network, subnets ,storagegrid 
+summary: 瞭解如何為 StorageGRID 設定網格網路子網路。 
+---
+= 為 StorageGRID 指定網格網路子網路
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+瞭解如何為 StorageGRID 設定網格網路子網路。
+
+您必須指定網格網路上使用的子網路。
+
+子網路項目包括 StorageGRID 系統中每個站台的網格網路子網路、以及必須透過網格網路存取的任何子網路（例如、裝載 NTP 伺服器的子網路）。
+
+如果您有多個網格子網路、則需要網格網路閘道。指定的所有網格子網路都必須透過此閘道才能連線。
+
+若要指定網格網路子網路、請完成下列步驟：
+
+.步驟
+. 在「子網路 1 」文字方塊中、指定至少一個網格網路的 CIDR 網路位址。
+. 按一下最後一個項目旁的加號、以新增額外的網路項目。如果您已部署至少一個節點、請按一下「探索網格網路子網路」、以自動填入網格網路子網路清單、其中包含已向 Grid Manager 註冊的網格節點所報告的子網路。
++
+image:bare-metal-subnets-grid-network.png["裸機子網路網格網路"]
+
+. 按一下「下一步」
+

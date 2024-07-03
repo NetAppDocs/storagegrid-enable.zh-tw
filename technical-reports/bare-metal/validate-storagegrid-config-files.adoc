@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/bare-metal/validate-storagegrid-config-files.html 
+keywords: config files, storagegrid 
+summary: 瞭解如何驗證 StorageGRID 組態檔案的內容。 
+---
+= 驗證 StorageGRID 組態檔案
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+瞭解如何驗證 StorageGRID 組態檔案的內容。
+
+在中為每個 StorageGRID 節點建立組態檔案之後 `/etc/storagegrid/nodes` 、您必須驗證這些檔案的內容。
+
+若要驗證組態檔的內容、請在每個主機上執行下列命令：
+
+[listing]
+----
+sudo storagegrid node validate all
+----
+如果檔案正確、則每個組態檔案的輸出都會顯示通過：
+
+image:bare-metal-output-shows-passed.png["基座金屬輸出顯示通過"]
+
+如果組態檔案不正確、問題會顯示為警告和錯誤。如果發現任何組態錯誤、您必須先加以修正、才能繼續安裝。
+
+image:bare-metal-output-shows-warning-error.png["基礎金屬輸出 - 顯示警告 - 錯誤"]

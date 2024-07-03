@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/bare-metal/upgrading-bare-metal-nodes-storagegrid.html 
+keywords: bare-metal, upgrade, storagegrid 
+summary: 瞭解 StorageGRID 中裸機節點的升級程序。 
+---
+= 升級 StorageGRID 中的裸機節點
+:allow-uri-read: 
+
+
+[role="lead"]
+瞭解 StorageGRID 中裸機節點的升級程序。
+
+裸機節點的升級程序與應用裝置或 VMware 節點的升級程序不同。在執行裸機節點升級之前、您必須先升級所有主機上的 RPM 檔案、然後才能透過 GUI 執行升級。
+
+[listing]
+----
+[root@host1 rpms]# rpm -Uvh StorageGRID-Webscale-Images-*.rpm
+[root@host1 rpms]# rpm -Uvh StorageGRID-Webscale-Service-*.rpm
+----
+現在您可以透過 GUI 繼續進行軟體升級。

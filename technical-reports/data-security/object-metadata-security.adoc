@@ -1,0 +1,57 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/data-security/object-metadata-security.html 
+keywords: object metadata security, storagegrid 
+summary: 探索 StorageGRID 中的物件和中繼資料安全功能。 
+---
+= 物件和中繼資料安全性
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+探索 StorageGRID 中的物件和中繼資料安全功能。
+
+[cols="20,30a,30,20"]
+|===
+| 功能 | 功能 | 影響 | 法規遵循 
+
+
+| 進階加密標準（ AES ）伺服器端物件加密  a| 
+StorageGRID 提供以 AES 128 和 AES 256 為基礎的伺服器端物件加密。網格管理員可以啟用加密作為全域預設設定。StorageGRID 也支援 S3 x-amz-server-Side 加密標頭、可針對每個物件啟用或停用加密。啟用時、物件會在儲存或在網格節點之間傳輸時加密。
+| 有助於保護物件的儲存和傳輸、不受基礎儲存硬體的影響。 | SEC 規則 17a-4(f) CTFC 1.31(c) - （ d ）（ FINRA ）規則 4511(c) 
+
+
+| 內建金鑰管理  a| 
+啟用加密時、每個物件都會以隨機產生的唯一對稱金鑰進行加密、此金鑰會儲存在 StorageGRID 內部、而不會有外部存取。
+| 無需外部金鑰管理即可加密物件。 |  
+
+
+| 符合聯邦資訊處理標準（ FIPS ） 140-2 標準的加密磁碟  a| 
+SG5712 、 SG5760 、 SG6060 和 SGF6024 StorageGRID 應用裝置提供 FIPS 140-2 相容加密磁碟的選項。磁碟的加密金鑰可由外部 KMIP 伺服器選擇性管理。
+| 可安全儲存系統資料、中繼資料和物件。也提供 StorageGRID 軟體型物件加密、可保護物件的儲存和傳輸。 | SEC 規則 17a-4(f) CTFC 1.31(c) - （ d ）（ FINRA ）規則 4511(c) 
+
+
+| 背景完整性掃描與自我修復  a| 
+StorageGRID 在物件和子物件層級使用雜湊、校驗和循環備援檢查（ CRC ）的互鎖機制、以防止物件在儲存和傳輸時發生資料不一致、竄改或修改。StorageGRID 會自動偵測毀損和竄改的物件並加以取代、同時隔離變更的資料並向管理員發出警示。
+| 讓 Grid 管理員能夠滿足 SLA 、法規及其他資料耐用性相關義務。協助客戶偵測試圖加密、竄改或修改資料的勒索軟體或病毒。 | SEC 規則 17a-4(f) CTFC 1.31(c) - （ d ）（ FINRA ）規則 4511(c) 
+
+
+| 原則型物件放置與保留  a| 
+StorageGRID 可讓 Grid 系統管理員設定 ILM 規則、以指定物件保留、放置、保護、轉換和到期。網格管理員可以設定 StorageGRID 、依其中繼資料篩選物件、並在各種精細度層級套用規則、包括網格範圍、租戶、貯體、金鑰首碼、 以及使用者定義的中繼資料金鑰值配對。StorageGRID 有助於確保物件在整個生命週期內都依照 ILM 規則儲存、除非用戶端明確刪除。
+| 協助強制執行資料放置、保護及保留。協助客戶達成 SLA 、以確保持久性、可用度和效能。 | SEC 規則 17a-4(f) CTFC 1.31(c) - （ d ）（ FINRA ）規則 4511(c) 
+
+
+| 背景中繼資料掃描  a| 
+StorageGRID 會定期掃描背景中的物件中繼資料、以套用 ILM 指定的物件資料放置或保護變更。
+| 協助探索毀損的物件。 |  
+
+
+| 可調一致性  a| 
+租戶可以在貯體層級選擇一致性層級、以確保多站台連線等資源可用。
+| 提供選項、只有在必要數量的站台或資源可用時、才會將寫入內容提交至網格。 |  
+|===
