@@ -2890,4 +2890,19 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="5e9cbbff6e37b7d1a9a0579bcce90f0d" category="sidebar">StorageGRID 災難恢復–使用 Veritas Enterprise Vault 設定 StorageGRID 進行站台容錯移轉</block>
   <block id="ae52e3c45bd713b4082b98c518149807" category="sidebar">設定 StorageGRID 以進行 WORM 儲存</block>
   <block id="654021875452c0979ec25d167125283d" category="sidebar">設定 StorageGRID 進行災難恢復</block>
+  <block id="5795a3af3561471cfdd0a268caf7368a" category="section-title">StorageGRID 支援的關鍵管理程式</block>
+  <block id="fe6eab8e7673d5eb1a0a49056f895bf1" category="list-text">Thales CipherTrust Manager 2.0</block>
+  <block id="1be1b8a1d10784fc59532046a1fee62e" category="list-text">Thales CipherTrust Manager 2.1.</block>
+  <block id="c7c12d4f3f68fcfd6e01c5a9c9cb6be3" category="list-text">Thales CipherTrust Manager 2.2.</block>
+  <block id="07be740d89172b04613b66fbf4493720" category="list-text">Thales CipherTrust Manager 2.3</block>
+  <block id="c937c1e76cb9d940133655488d7c43eb" category="list-text">Thales CipherTrust Manager 2.4.</block>
+  <block id="3b829853ddebde484f648bc5c9ff36cf" category="list-text">Thales CipherTrust Manager 2.8</block>
+  <block id="2db577d75cf947cc8e3715192da24f13" category="list-text">Thales CipherTrust Manager 2.9.</block>
+  <block id="10eb31bcd0e31682a1be9a0888ceb5bc" category="list-text">Entrust KeyControl 10.2.</block>
+  <block id="530ce7b6e1084fa16ad1ed834d4073fe" category="list-text">Hashicorp Vault 1.15.0</block>
+  <block id="d6aec4929de76bf44c7073a73eb7aef4" category="list-text">Thales CipherTrust Manager 2.10</block>
+  <block id="667fb8e439d3dc487e67b38a8abcbde6" category="list-text">Thales CipherTrust Manager 2.11.</block>
+  <block id="5f4d89602a81547894d41dd65645b683" category="list-text">Thales CipherTrust Manager 2.12.</block>
+  <block id="46fad314fdbc03f6e06527dc5732d12d" category="list-text">Thales CipherTrust Manager 2.13</block>
+  <block id="3447b7450cb0c3a342ab8a5c8c53086e" category="list-text">Thales CipherTrust Manager 2.14</block>
 </blocks>

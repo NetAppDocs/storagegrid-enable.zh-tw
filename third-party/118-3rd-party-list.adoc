@@ -118,3 +118,25 @@ summary: 第三方解決方案已通過 StorageGRID 11.8 驗證
 * QStar
 * Velasea
 
+
+
+
+== StorageGRID 支援的關鍵管理程式
+
+這些解決方案已通過測試。
+
+* Entrust KeyControl 10.2.
+* Hashicorp Vault 1.15.0
+* Thales CipherTrust Manager 2.0
+* Thales CipherTrust Manager 2.1.
+* Thales CipherTrust Manager 2.2.
+* Thales CipherTrust Manager 2.3
+* Thales CipherTrust Manager 2.4.
+* Thales CipherTrust Manager 2.8
+* Thales CipherTrust Manager 2.9.
+* Thales CipherTrust Manager 2.10
+* Thales CipherTrust Manager 2.11.
+* Thales CipherTrust Manager 2.12.
+* Thales CipherTrust Manager 2.13
+* Thales CipherTrust Manager 2.14
+
