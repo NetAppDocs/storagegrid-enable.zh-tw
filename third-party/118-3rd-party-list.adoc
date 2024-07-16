@@ -88,6 +88,7 @@ summary: 第三方解決方案已通過 StorageGRID 11.8 驗證
 * CommVault 11功能版本26
 * IBM FileNet
 * OpenText文件21.4
+* Rukrik
 * Veeam 12.
 * Veritas Enterprise Vault 14.2.2
 * Veritas NetBackup 10.1.1及更新版本

@@ -2905,4 +2905,5 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="be89a903679bdf28679c22b4ed6c9806" category="list-text"><block ref="be89a903679bdf28679c22b4ed6c9806" category="inline-link-rx"></block></block>
   <block id="79007772b99cbebaceca4f4abdc9236b" category="paragraph">利用「靜態11.6syslog轉送」功能、您可以設定外部syslog伺服StorageGRID 器來收集和分析StorageGRID 資訊記錄訊息。Elk（Elasticsearch、Logstash、Kibana）已成為最受歡迎的記錄分析解決方案之一。觀看<block ref="a42387db058ee8ea3a8dcc51c8812963" category="inline-link-rx"></block> 以檢視範例 elk 組態、以及如何使用它來識別和疑難排解失敗的 S3 要求。本文提供Logstash組態、Kibana查詢、圖表和儀表板的範例檔案、協助您快速開始StorageGRID 進行資訊記錄管理和分析。</block>
   <block id="31b606c7f1c871f0b8ba92c74d0c9480" category="list-text">從程式管理程式GUI、設定外部syslog伺服器StorageGRID 、將記錄訊息傳送至Logstash。如需詳細資訊、請參閱<block ref="2216f063c2431b11fee834376e17fce1" category="inline-link-rx"></block> 。</block>
+  <block id="4ecf6b273d67f2120caae7734e1fcf14" category="list-text">Rukrik</block>
 </blocks>
