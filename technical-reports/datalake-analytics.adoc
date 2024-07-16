@@ -144,7 +144,7 @@ Dremio 的效能主要是由 Dremio 叢集的運算能力所驅動。雖然 Drem
 
 請造訪下列連結、深入瞭解 StorageGRID 和 Dremio 如何合作提供現代化且有效率的資料湖基礎架構、以及 NetApp 如何從 Hive + HDFS 移轉至 Dremio + StorageGRID 、大幅提升巨量資料分析效率。
 
-* https://www.netapp.tv/details/31426?mcid=02148179640195118863901007338453703701["利用 NetApp StorageGRID 大幅提升巨量資料的效能"]
-* https://www.netapp.com/media/80932-SB-4236-StorageGRID-Dremio.pdf["StorageGRID 和 Dremio 提供現代化、功能強大且有效率的資料湖基礎架構"]
-* https://youtu.be/Y57Gyj4De2I?si=nwVG5ohCj93TggKS["NetApp 如何透過產品分析重新定義客戶體驗"]
+* https://media.netapp.com/video-detail/de55c7b1-eb5e-5b70-8790-1241039209e2/boost-performance-for-your-big-data-with-netapp-storagegrid-1600-1["利用 NetApp StorageGRID 大幅提升巨量資料的效能"^]
+* https://www.netapp.com/media/80932-SB-4236-StorageGRID-Dremio.pdf["StorageGRID 和 Dremio 提供現代化、功能強大且有效率的資料湖基礎架構"^]
+* https://youtu.be/Y57Gyj4De2I?si=nwVG5ohCj93TggKS["NetApp 如何透過產品分析重新定義客戶體驗"^]
 

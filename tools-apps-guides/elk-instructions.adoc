@@ -12,7 +12,7 @@ summary: 利用「Sys11.6syslog轉送」功能、您可以設定外部syslog伺�
 
 
 [role="lead"]
-利用「靜態11.6syslog轉送」功能、您可以設定外部syslog伺服StorageGRID 器來收集和分析StorageGRID 資訊記錄訊息。Elk（Elasticsearch、Logstash、Kibana）已成為最受歡迎的記錄分析解決方案之一。觀看 https://www.netapp.tv/details/29396["使用elk視訊進行記錄分析StorageGRID"] 檢視示範elk組態、以及如何使用它來識別及疑難排解失敗的S3要求。本文提供Logstash組態、Kibana查詢、圖表和儀表板的範例檔案、協助您快速開始StorageGRID 進行資訊記錄管理和分析。
+利用「靜態11.6syslog轉送」功能、您可以設定外部syslog伺服StorageGRID 器來收集和分析StorageGRID 資訊記錄訊息。Elk（Elasticsearch、Logstash、Kibana）已成為最受歡迎的記錄分析解決方案之一。觀看 https://media.netapp.com/video-detail/3d090a61-23d7-5ad7-9746-4cebbb7452fb/storagegrid-log-analysis-using-elk-stack["使用elk視訊進行記錄分析StorageGRID"^] 以檢視範例 elk 組態、以及如何使用它來識別和疑難排解失敗的 S3 要求。本文提供Logstash組態、Kibana查詢、圖表和儀表板的範例檔案、協助您快速開始StorageGRID 進行資訊記錄管理和分析。
 
 
 
@@ -88,7 +88,7 @@ config.reload.interval: 5s
 netstat -ntpa | grep 5000
 tcp6       0      0 :::5000                 :::*                    LISTEN      25744/java
 ----
-. 從程式管理程式GUI、設定外部syslog伺服器StorageGRID 、將記錄訊息傳送至Logstash。請參閱 https://www.netapp.tv/details/29396["示範影片"] 以取得詳細資料。
+. 從程式管理程式GUI、設定外部syslog伺服器StorageGRID 、將記錄訊息傳送至Logstash。如需詳細資訊、請參閱 https://media.netapp.com/video-detail/3d090a61-23d7-5ad7-9746-4cebbb7452fb/storagegrid-log-analysis-using-elk-stack["示範影片"^] 。
 . 您需要在Logstash伺服器上設定或停用防火牆、才能讓StorageGRID 節點連線至定義的TCP連接埠。
 . 從Kibana GUI中、選取「Management（管理）」->「Dev Tools（開發工具）」。在「主控台」頁面上、執行此「Get」命令、確認已在Elasticsearch上建立新索引。
 +
