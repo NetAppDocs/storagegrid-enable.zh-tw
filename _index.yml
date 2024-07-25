@@ -5,6 +5,10 @@ indexpage:
   lead: NetApp StorageGRID 支援軟體定義的物件儲存套件、可支援各種公有、私有及混合式多雲端環境的使用案例。StorageGRID 提供 Amazon
     S3 API 的原生支援、並提供領先業界的創新技術、例如自動化生命週期管理、可長期以符合成本效益的方式儲存、保護、保護及保留非結構化資料。
   tiles:
+  - title: 試用 StorageGRID
+    links:
+    - title: StorageGRID 評估軟體
+      url: "/evaluation-software.html"
   - title: 已驗證的協力廠商解決方案
     links:
     - title: 總覽

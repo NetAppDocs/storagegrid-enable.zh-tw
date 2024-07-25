@@ -13,11 +13,15 @@ sidebar:
   entries:
   - title: 如何啟用StorageGRID 功能
     url: "/index.html"
+  - title: 試用 StorageGRID
+    url: "/evaluation-software.html"
   - section: third-party
   - section: product-feature-guides
   - section: tools-apps-guides
   - section: examples
   - section: technical-reports
+  - title: 試用 StorageGRID
+    url: "/evaluation-software.html"
   - title: 部落格文章
     url: "/blogs.html"
   - title: 本文檔StorageGRID

@@ -2906,4 +2906,26 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="79007772b99cbebaceca4f4abdc9236b" category="paragraph">利用「靜態11.6syslog轉送」功能、您可以設定外部syslog伺服StorageGRID 器來收集和分析StorageGRID 資訊記錄訊息。Elk（Elasticsearch、Logstash、Kibana）已成為最受歡迎的記錄分析解決方案之一。觀看<block ref="a42387db058ee8ea3a8dcc51c8812963" category="inline-link-rx"></block> 以檢視範例 elk 組態、以及如何使用它來識別和疑難排解失敗的 S3 要求。本文提供Logstash組態、Kibana查詢、圖表和儀表板的範例檔案、協助您快速開始StorageGRID 進行資訊記錄管理和分析。</block>
   <block id="31b606c7f1c871f0b8ba92c74d0c9480" category="list-text">從程式管理程式GUI、設定外部syslog伺服器StorageGRID 、將記錄訊息傳送至Logstash。如需詳細資訊、請參閱<block ref="2216f063c2431b11fee834376e17fce1" category="inline-link-rx"></block> 。</block>
   <block id="4ecf6b273d67f2120caae7734e1fcf14" category="list-text">Rukrik</block>
+  <block id="c2d8fc700534345077a260fb9791fba1" category="summary">為潛在客戶存取 StorageGRID 評估軟體的步驟。</block>
+  <block id="bc47929a96a58ef3444da8ba390888bc" category="doc">存取 StorageGRID 評估軟體的步驟</block>
+  <block id="0984c1edd8b74672c83f621be7c2371d" category="paragraph">本指示適用於與 NetApp 合作的 NetApp 銷售人員、合作夥伴和潛在客戶。</block>
+  <block id="d45294caa04dc2a59a6a9779ecb261e1" category="section-title">註冊帳戶</block>
+  <block id="8c41baf1ca98e1184f48c4721d44d431" category="inline-link">NetApp 支援網站</block>
+  <block id="6b2e1d4820e2c64094628af51b07c4ae" category="list-text">使用您的企業電子郵件在上註冊帳戶<block ref="a49f41675f7c48eedf0647a0a62c5043" category="inline-link-rx"></block> 。</block>
+  <block id="c3864a0d9e7266b854aa1d673036710a" category="list-text">如果您已經有帳戶、請繼續下一步。</block>
+  <block id="0fedb2e26434d49a94f9450ce477c3cc" category="list-text">使用建立的帳戶登入。</block>
+  <block id="0c6d9ab23098fd3e876c216fe1ca7ffc" category="inline-link">回報問題</block>
+  <block id="8751d140672b36b77b265c8fe793befc" category="list-text">建立非技術支援案例、將存取層級提升至「潛在客戶」。若要這麼做、請按一下 <block ref="94c9ec214c60b057a12eaba547e0acae" category="inline-link-rx"></block>網站頁尾中的「」連結。</block>
+  <block id="940ab06ee98cba17f3c21dea0e603eb5" category="list-text">選擇「註冊問題」作為意見回饋類別。</block>
+  <block id="c1d4a23af565c411cff6271ce577104f" category="list-text">在「意見」區段中、寫下：「我想讓潛在客戶存取下載 StorageGRID 評估軟體。」</block>
+  <block id="ea7ab0148c9999f65837f6a1483f42ee" category="list-text">提及 NetApp 內部人員的姓名、該人員建議您存取潛在客戶。</block>
+  <block id="ed721060d54c51e35da28db6ea8337ef" category="section-title">下載 StorageGRID</block>
+  <block id="aed8ceb0f85821c90dc49c2c3bf1e494" category="list-text">在您的支援案例經過審查與核准之後、 NetApp 支援人員將透過電子郵件通知您您帳戶已獲授予潛在客戶存取權。</block>
+  <block id="6b387b831a4d44d44954a7effb99b5a1" category="inline-link">StorageGRID 評估軟體</block>
+  <block id="ad33c2b21ecd662fa9473920d4d724a3" category="list-text">下載<block ref="5b76293412a08db37d60e839e13bbf32" category="inline-link-rx"></block>。</block>
+  <block id="9149b5be5a51932ba9646a6a3707055b" category="paragraph">試用版授權檔案位於 zip 檔案中。檔案解壓縮後即為 StorageGRID-Webscale 、 &lt;version&gt; 、 vSphere\NLF000000.txt 。</block>
+  <block id="51b1dd6c5fdbd0546171ebae104eca57" category="paragraph">下載軟體是一種程序、需要採取貿易法規遵循措施、以符合法律要求。為了確保法規遵循、使用者必須先建立帳戶並開啟支援案例、才能取得存取權。這項程序有助於我們維持適當的控制與文件記錄、同時為潛在客戶提供他們所需的正式作業軟體。</block>
+  <block id="c4adfd76b7112414ec7a702816418613" category="paragraph">我們提供「正式作業就緒」版本的 StorageGRID 、這不是開放原始碼或替代版本。請務必注意、 * 除非潛在客戶升級至正式作業授權、否則不提供 * 支援 * 。</block>
+  <block id="f20e94f5bb986812208034209609d5f1" category="paragraph">如有上述步驟的任何問題、請聯絡 StorageGRID.Feedback@netapp.com 。</block>
+  <block id="2988dc07d3c7f2675b337739e6a81ff7" category="sidebar">試用 StorageGRID</block>
 </blocks>
