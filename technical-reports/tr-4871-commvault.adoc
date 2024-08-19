@@ -140,7 +140,7 @@ StorageGRID 智慧型原則引擎可協助您選擇下列任一選項：
 |===
 ILM 2 複製規則是預設規則。「刪除編碼 2+1 」規則已套用至此測試、適用於任何 200 KB 或更大的物件。預設規則已套用至小於 200KB 的物件。以這種方式應用規則是 StorageGRID 最佳實務做法。
 
-如需此測試環境的技術詳細資料、請參閱中的解決方案設計與最佳實務一節 https://www.netapp.com/us/media/tr-4831.pdf["NetApp 透過 CommVault 實現橫向擴充資料保護"] 技術報告。
+如需此測試環境的技術詳細資料、請參閱技術報告中的解決方案設計與最佳實務一節 https://www.netapp.com/pdf.html?item=/media/19372-tr-4831.pdf["NetApp 透過 CommVault 實現橫向擴充資料保護"^] 。
 
 
 
@@ -511,7 +511,7 @@ image:commvault/job-summary.png["工作摘要"]
 
 === 基準效能測試
 
-表 7 顯示我們的基礎效能測試結果。在「輔助複製」作業中、四個 CommVault MediaAgent 將資料備份到 NetApp AFF A300 系統、並在 NetApp StorageGRID 上建立輔助複本。如需測試設定環境的詳細資訊、請參閱中的解決方案設計與最佳實務一節 https://www.netapp.com/us/media/tr-4831.pdf["NetApp 透過 CommVault 實現橫向擴充資料保護"] 技術報告。
+表 7 顯示我們的基礎效能測試結果。在「輔助複製」作業中、四個 CommVault MediaAgent 將資料備份到 NetApp AFF A300 系統、並在 NetApp StorageGRID 上建立輔助複本。如需測試設定環境的詳細資訊、請參閱技術報告中的解決方案設計與最佳實務一節 https://www.netapp.com/pdf.html?item=/media/19372-tr-4831.pdf["NetApp 透過 CommVault 實現橫向擴充資料保護"^] 。
 
 這些測試是針對 100 個 VM 和 1000 個 VM 執行的、兩者都是以 50/50 混合的 Windows 和 CentOS VM 進行測試。
 

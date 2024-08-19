@@ -1768,7 +1768,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="bc2966582cc91a73dfce86d847e8e569" category="inline-image-macro">工作摘要</block>
   <block id="ce8f9b25ff69c679a10481c883fed679" category="paragraph"><block ref="ce8f9b25ff69c679a10481c883fed679" category="inline-image-macro-rx" type="image"></block></block>
   <block id="23571a6157715a68dbc83017094ddb4f" category="section-title">基準效能測試</block>
-  <block id="6e861ca3d49a3946d380c959a4a035f6" category="paragraph">表 7 顯示我們的基礎效能測試結果。在「輔助複製」作業中、四個 CommVault MediaAgent 將資料備份到 NetApp AFF A300 系統、並在 NetApp StorageGRID 上建立輔助複本。如需測試設定環境的詳細資訊、請參閱中的解決方案設計與最佳實務一節<block ref="03ce17f8b5e1206a493f3bd56ef5953d" category="inline-link-rx"></block> 技術報告。</block>
   <block id="225de55f95e8814ef869602a34589cd7" category="paragraph">這些測試是針對 100 個 VM 和 1000 個 VM 執行的、兩者都是以 50/50 混合的 Windows 和 CentOS VM 進行測試。</block>
   <block id="229f4b7ae2ae04662d95b14f93a7ebe0" category="section-title">表 7 ）基準效能測試。</block>
   <block id="2a78ed76450c3cb42320882b3e055b31" category="cell">營運</block>
@@ -2928,4 +2927,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="c4adfd76b7112414ec7a702816418613" category="paragraph">我們提供「正式作業就緒」版本的 StorageGRID 、這不是開放原始碼或替代版本。請務必注意、 * 除非潛在客戶升級至正式作業授權、否則不提供 * 支援 * 。</block>
   <block id="f20e94f5bb986812208034209609d5f1" category="paragraph">如有上述步驟的任何問題、請聯絡 StorageGRID.Feedback@netapp.com 。</block>
   <block id="2988dc07d3c7f2675b337739e6a81ff7" category="sidebar">試用 StorageGRID</block>
+  <block id="af628eae5a4bda33fe7f98b90dfd07ad" category="paragraph">如需此測試環境的技術詳細資料、請參閱技術報告中的解決方案設計與最佳實務一節<block ref="42208ea06469332a89cb87f688663202" category="inline-link-rx"></block> 。</block>
+  <block id="d448077c68c161f782d3bf423a865381" category="paragraph">表 7 顯示我們的基礎效能測試結果。在「輔助複製」作業中、四個 CommVault MediaAgent 將資料備份到 NetApp AFF A300 系統、並在 NetApp StorageGRID 上建立輔助複本。如需測試設定環境的詳細資訊、請參閱技術報告中的解決方案設計與最佳實務一節<block ref="42208ea06469332a89cb87f688663202" category="inline-link-rx"></block> 。</block>
 </blocks>
