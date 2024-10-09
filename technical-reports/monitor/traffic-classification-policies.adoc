@@ -25,20 +25,20 @@ summary: 瞭解如何在 StorageGRID 11.4 中設定及監控流量分類原則�
 . 輸入原則的名稱和說明。
 . 建立相符的規則。
 +
-image:monitor-matching-rule.png["監控相符規則"]
+image:monitor/monitor-matching-rule.png["監控相符規則"]
 
 . 設定限制（選用）。
 +
-image:monitor-limit.png["監控限制"]
+image:monitor/monitor-limit.png["監控限制"]
 
 . 儲存您的原則
 +
-image:monitor-traffic-policy.png["監控流量原則"]
+image:monitor/monitor-traffic-policy.png["監控流量原則"]
 
 +
 若要檢視與您的流量分類原則相關的計量、請選取您的原則、然後按一下度量。系統會產生 Grafana 儀表板、顯示負載平衡器要求流量和平均要求持續時間等資訊。
 
 +
-image:monitor-dashboard-showing-metrics.png["監控儀表板顯示的度量"]
+image:monitor/monitor-dashboard-showing-metrics.png["監控儀表板顯示的度量"]
 
 

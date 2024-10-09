@@ -43,6 +43,8 @@ indexpage:
       url: "/product-feature-guides/port-remap.html"
     - title: 如何重新部署站台及變更網路
       url: "/product-feature-guides/site-relocation-and-network-change.html"
+    - title: 將物件型儲存設備從 ONTAP S3 移轉至 StorageGRID
+      url: "/product-feature-guides/ontap-migrate/index.html"
   - title: 工具與應用程式指南
     links:
     - title: 使用Cloudera Hadoop S3連接器

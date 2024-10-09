@@ -32,7 +32,7 @@ CAUTION: 在安裝程序中、用戶端網路未提早啟用、無法成為唯�
 . 在伺服器 1 至伺服器 4 文字方塊中、指定至少四個 NTP 伺服器的 IP 位址。
 . 如有必要、請按一下最後一個項目旁的加號、以新增更多伺服器項目。
 +
-image:bare-metal-add-server-entries.png["裸機新增伺服器項目"]
+image:bare-metal/bare-metal-add-server-entries.png["裸機新增伺服器項目"]
 
 . 按一下「下一步」
 

@@ -16,7 +16,7 @@ StorageGRID 網格管理介面（ GMI ）儀表板提供 StorageGRID 基礎架�
 
 使用 GMI 儀表板檢查網格的每個核心元件。
 
-image:monitor-storagegrid-gmi-dashboard.png["Monitor-storagegRID GMI-Dashboard"]
+image:monitor/monitor-storagegrid-gmi-dashboard.png["Monitor-storagegRID GMI-Dashboard"]
 
 
 

@@ -32,12 +32,12 @@ NOTE: 如果缺少網格節點、請確認已成功部署。
 
 . 按一下您要核准之擱置節點旁的選項按鈕。
 +
-image:bare-metal-approve-configure-grid-nodes.png["媒體 / 裸機核准設定網格節點"]
+image:bare-metal/bare-metal-approve-configure-grid-nodes.png["媒體 / 裸機核准設定網格節點"]
 
 . 按一下「核准」。
 . 在「一般設定」中、視需要修改下列內容的設定。
 +
-image:bare-metal-admin-node-configuration.png["裸機管理節點組態"]
+image:bare-metal/bare-metal-admin-node-configuration.png["裸機管理節點組態"]
 
 +
 --* 站台 * ：此網格節點的站台系統名稱。
@@ -109,9 +109,9 @@ NOTE: 如果您為管理網路組態選取 DHCP 、並在此處變更值、則�
 
 . 按一下儲存。網格節點項目會移至「核准的節點」清單。
 +
-image:bare-metal-approved-node-list.png["裸機核准的節點清單"]
+image:bare-metal/bare-metal-approved-node-list.png["裸機核准的節點清單"]
 
-. 針對您要核准的每個待定網格節點、重複步驟 1 至 8 。
+. 針對您要核准的每個待定網格節點、重複步驟 1-8 。
 +
 您必須核准網格中所需的所有節點。不過、您可以在按一下「摘要」頁面上的「安裝」之前、隨時返回此頁面。若要修改已核准網格節點的內容、請按一下其選項按鈕、然後按一下編輯。
 

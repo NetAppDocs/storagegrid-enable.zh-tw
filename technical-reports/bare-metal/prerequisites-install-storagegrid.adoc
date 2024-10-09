@@ -172,7 +172,7 @@ BLOCK_DEVICE_RANGEDB_002 = /dev/mapper/SN-Db02`
 
 如下圖所示、這些伺服器將裝載六個 Docker 容器、每個主機兩個。RAM 的計算方式為每個容器提供 24GB 、主機作業系統本身則提供 16GB 。
 
-image:bare-metal-layout-for-three-hosts.png["三台主機的範例配置。"]
+image:bare-metal/bare-metal-layout-for-three-hosts.png["三台主機的範例配置。"]
 
 每個實體主機（或 VM ）所需的總 RAM 為 24 x 2 + 16 = 64GB 。下表列出主機 1 、 2 和 3 所需的磁碟儲存設備。
 

@@ -29,7 +29,7 @@ CAUTION: 您應該選取DNS伺服器、以便每個站台在網路中斷時、�
 . 在伺服器 1 文字方塊中、指定 DNS 伺服器的 IP 位址。
 . 如有必要、請按一下最後一個項目旁的加號、以新增更多伺服器。
 +
-image:bare-metal-add-more-servers-2.png["裸機新增更多伺服器 -2"]
+image:bare-metal/bare-metal-add-more-servers-2.png["裸機新增更多伺服器 -2"]
 
 . 按一下「下一步」
 

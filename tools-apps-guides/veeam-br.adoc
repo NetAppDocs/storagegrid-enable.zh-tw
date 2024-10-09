@@ -34,7 +34,7 @@ Veeam 的物件工作負載會建立大量的小型物件並行置放、刪除�
 
 === 建議的版本
 
-建議您隨時保持最新狀態、並為 Veeam 備份與複寫 12 系統套用最新的 Hotfix 。目前我們建議至少安裝 Veeam 修補程式 P20230718 。
+建議您隨時保持最新狀態、並為 Veeam Backup & Replication 12 或 12.1 系統套用最新的 Hotfix 。目前我們建議您至少安裝 Veeam 12 修補程式 P20230718 。
 
 
 
@@ -85,7 +85,7 @@ Veeam 備份工作可以使用不同的區塊大小選項進行設定、這些�
 
 === 建議的版本
 
-含最新 Hotfix 的 NetApp StorageGRID 11.6 或 11.7 是 Veeam 部署的建議版本。StorageGRID 11.6.0.11 和 11.7.0.4 中引進許多最佳化功能、對 Veeam 工作負載有幫助。建議您隨時保持最新狀態、並為您的 StorageGRID 系統套用最新的 Hotfix 。
+含最新 Hotfix 的 NetApp StorageGRID 11.7 或 11.8 是 Veeam 部署的建議版本。建議您隨時保持最新狀態、並為您的 StorageGRID 系統套用最新的 Hotfix 。
 
 
 
@@ -186,7 +186,7 @@ image:veeam-bp/tc_2.png["流量分類原則指標"]
 
 若要深入瞭解本文所述資訊、請檢閱下列文件和 / 或網站：
 
-* link:https://docs.netapp.com/us-en/storagegrid-117/["NetApp StorageGRID 11.7 產品文件"^]
+* link:https://docs.netapp.com/us-en/storagegrid-118/["NetApp StorageGRID 11.8 產品文件"^]
 * link:https://www.veeam.com/documentation-guides-datasheets.html?productId=8&version=product%3A8%2F221["Veeam 備份與複寫"^]
 
 

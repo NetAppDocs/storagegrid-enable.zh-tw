@@ -21,7 +21,7 @@ summary: 瞭解如何透過 CLI 使用 NetApp StorageGRID 中的 Curl 和授權�
 . 從 GMI 中選取功能表：說明 [API 文件 ] 。
 . 向下捲動至驗證、以尋找授權作業。下列螢幕擷取畫面顯示 POST 方法的參數。
 +
-image:monitor-post-method.png["Monitor-post-method"]
+image:monitor/monitor-post-method.png["Monitor-post-method"]
 
 . 按一下「試試看」、然後使用您的 GMI 使用者名稱和密碼編輯本文。
 . 按一下「執行」。

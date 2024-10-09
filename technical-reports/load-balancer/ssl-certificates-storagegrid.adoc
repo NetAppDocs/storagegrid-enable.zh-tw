@@ -26,4 +26,4 @@ summary: 瞭解在 StorageGRID 中實作 SSL 憑證的重要性和步驟。
 
 SSL 憑證在用戶端負載平衡器 StorageGRID 路徑中的放置位置取決於您需要 SSL 終止的位置。您可以將負載平衡器設定為用戶端的終止端點、然後使用新的 SSL 憑證將負載平衡器重新加密或熱加密至 StorageGRID 連線。或者、您也可以通過流量、讓 StorageGRID 成為 SSL 終止端點。如果負載平衡器是 SSL 終止端點、則該憑證會安裝在負載平衡器上、其中包含 DNS 名稱 /URL 的主體名稱、以及任何其他將用戶端設定為透過負載平衡器連線至 StorageGRID 目標的 URL/DNS 名稱、 包括任何萬用字元名稱。如果負載平衡器設定為通過、則必須在 StorageGRID 中安裝 SSL 憑證。同樣地、憑證必須包含 DNS 名稱 /URL 的主體名稱、以及任何其他設定用戶端透過負載平衡器連線至 StorageGRID 目標的 URL/DNS 名稱、包括任何萬用字元名稱。不需要在憑證中包含個別的儲存節點名稱、只有端點 URL 。
 
-image:load-balancer-certificate-example.png["載入 StorageGRID 的憑證範例"]
+image:load-balancer/load-balancer-certificate-example.png["載入 StorageGRID 的憑證範例"]

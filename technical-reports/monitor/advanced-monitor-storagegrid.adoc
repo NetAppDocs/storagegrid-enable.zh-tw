@@ -21,11 +21,11 @@ summary: 瞭解如何使用度量 API 監控 StorageGRID 。
 
 Prometheus 是一款開放原始碼軟體、用於收集指標。若要透過 GMI 存取 StorageGRID 的內嵌 Prometheus 、請前往功能表： Support[Metrics 。
 
-image:monitor-metrics-page.png["監控指標頁面"]
+image:monitor/monitor-metrics-page.png["監控指標頁面"]
 
 或者、您也可以直接瀏覽至連結。
 
-image:monitor-prometheus-interface.png["Monitor-Prometheus-interface"]
+image:monitor/monitor-prometheus-interface.png["Monitor-Prometheus-interface"]
 
 透過此檢視、您可以存取 Prometheus 介面。從這裡、您可以搜尋可用的指標、甚至是嘗試查詢。
 
@@ -35,7 +35,7 @@ image:monitor-prometheus-interface.png["Monitor-Prometheus-interface"]
 . 開始在查詢文字方塊中輸入。在您輸入時、會列出指標。就我們而言、只有以 StorageGRID 和 Node 為開頭的指標才是重要的。
 . 要查看每個節點的 HTTP 會話數，請鍵入 `storagegrid_http` 並選擇 `storagegrid_http_sessions_incoming_currently_established`。按一下「執行」、以圖表或主控台格式顯示資訊。
 +
-image:monitor-http-sessions.png["Monitor-http-sessions"]
+image:monitor/monitor-http-sessions.png["Monitor-http-sessions"]
 
 
 
@@ -56,13 +56,13 @@ NOTE: 不建議直接連接至我們的 Prometheus 執行個體、因為這需�
 . 從 GMI 中選取功能表：說明 [API 文件 ] 。
 . 向下捲動至指標、然後選取取得 /grid/metric-query 。
 +
-image:monitor-metrics-query.png["監控指標查詢"]
+image:monitor/monitor-metrics-query.png["監控指標查詢"]
 
 +
 回應中包含的資訊與透過 Prometheus URL 查詢所取得的資訊相同。您可以再次看到目前在每個儲存節點上建立的 HTTP 工作階段數目。您也可以下載 JSON 格式的回應、以利閱讀。下圖顯示 Prometheus 查詢回應範例。
 
 +
-image:monitor-sample-prometheus-query-responses.png["Monitor-sample-Prometheus-query-Response.s"]
+image:monitor/monitor-sample-prometheus-query-responses.png["Monitor-sample-Prometheus-query-Response.s"]
 
 
 

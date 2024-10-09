@@ -37,9 +37,6 @@
   <block id="83b20ea3ae67e47021c38e81e4f589ca" category="list-text">Splunk Smartstore</block>
   <block id="3c03c9aa39f09aa3bf70c853404ab185" category="list-text">Varish Enterprise 6.0.4</block>
   <block id="01d16ea73fb659ea507974db4f28b791" category="list-text">Veeam 9.5.4</block>
-  <block id="683c5d7a06c262f5e2e17cbb84869a3d" category="list-text">Veritas Enterprise Vault 11.</block>
-  <block id="1f61ef960fbeb10906bd09932e1faa5e" category="list-text">Veritas Enterprise Vault 12.</block>
-  <block id="aa92d10a39cb2c4707a61d62d73be93f" category="list-text">Veritas NetBackup 8.0</block>
   <block id="2bfecc5738e4f19170da7b6787f2aac4" category="list-text">維地松</block>
   <block id="e1b55d6b6904a9bbd61463de2b1306c9" category="summary">第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.5</block>
   <block id="5c77045b793e49a2c9356629fa42247c" category="doc">通過驗證的第三方解決方案StorageGRID</block>
@@ -67,7 +64,6 @@
   <block id="ec8f51b51cf3e627e98adab6a9707073" category="list-text">Microsoft SQL Server巨量資料叢集</block>
   <block id="003600b94a5f1f52b3d6bc2e8863271a" category="list-text">PixitMedia ngenea</block>
   <block id="e53636996ad9257c31aa596f6c267dbd" category="list-text">輕鬆儲存</block>
-  <block id="dbaa460bd61bfe1c91c1c136338013e6" category="list-text">Veritas Enterprise Vault 14</block>
   <block id="f1ef2cbfa857a0d2a7b845499f219ef8" category="list-text">Weka v3.10或更新版本</block>
   <block id="58440fea435f9474a314a8f58636ba4e" category="list-text">Emam</block>
   <block id="1c4333b49a7b43ae27f876070a712cb8" category="list-text">CommVault 11功能版本26</block>
@@ -618,7 +614,6 @@
   <block id="a310588c148d934b9b30c31802d4a30b" category="sidebar">NetApp社群</block>
   <block id="024f3a8ba5709643c2f09c8eabccae87" category="sidebar">已驗證的第三方解決方案-概述</block>
   <block id="f4bf6c62a8784f065cebbacf57a1c62c" category="sidebar">測試並示範S3物件鎖定</block>
-  <block id="401b6d44d3c927f0424adce982cc6506" category="list-text">Veritas Enterprise Vault 14.2.2</block>
   <block id="51e1f53c9c33ce7f260e99f66853181d" category="summary">利用「Sys11.6syslog轉送」功能、您可以設定外部syslog伺服器來收集和分析資訊記錄訊息。StorageGRID StorageGRIDElk（Elasticsearch、Logstash、Kibana）已成為最受歡迎的記錄分析解決方案之一。本文包含Logstash組態範例、可用來篩選及定義記錄訊息模式、Kibana查詢、圖表及儀表板範例、讓您快速開始StorageGRID 進行資訊記錄管理與分析。</block>
   <block id="ba8b98c81be3d04d10309b1945f41b3c" category="doc">使用elk堆疊進行記錄分析StorageGRID</block>
   <block id="febdad8f949c4133d32f6ec0e8b0ca1c" category="inline-link">使用elk視訊進行記錄分析StorageGRID</block>
@@ -769,7 +764,6 @@
   <block id="d48885bf40ed8b15489c6b02ba7daa08" category="list-text">磁碟移轉資料</block>
   <block id="d59db7846bd10b6d60d21543df9faa9e" category="list-title">您需要的產品</block>
   <block id="9db3241b54bebb9425e6b4d63d712bb2" category="paragraph-title">預期結果</block>
-  <block id="e3cd39cab4140108c69a9666712a418b" category="list-text">Veritas NetBackup 10.1.1及更新版本</block>
   <block id="bb1497981ff73cef48984bbf2d12f88d" category="summary">設定Datadog HQ以收集StorageGRID 不完整的SNMP數據和陷阱。</block>
   <block id="1d93d7550158f858bd468fbde662a33b" category="doc">Datadog SNMP組態</block>
   <block id="eb2afb3c5447bd1a294d03f85bdbf78f" category="paragraph">設定Datadog以收集StorageGRID 不完整的SNMP指標和陷阱。</block>
@@ -1104,7 +1098,6 @@
   <block id="35fff1030215641180d446636f07b965" category="paragraph">請務必閱讀的產品文件<block ref="011dc6ff3c4a6db4449338299b84c9c4" category="inline-link-rx"></block> 和<block ref="f6f71f61964919c3e794acd51103ea76" category="inline-link-rx"></block> 開始之前。Veeam 提供計算器、用於瞭解 Veeam 基礎架構的規模、以及在調整 StorageGRID 解決方案規模之前應使用的容量需求。請務必在 Veeam Ready 方案網站上查看 Veeam-NetApp 驗證的組態<block ref="27e44db2d47a236831b6854277703ed2" category="inline-link-rx"></block>。</block>
   <block id="2cc1f5cc43ba172ac443ca2cbdcce2b4" category="section-title">Veeam 組態</block>
   <block id="8d5d0d535411e895f9d96eda059a901d" category="section-title">建議的版本</block>
-  <block id="e7e23fdc645b150075b11f4c4918739b" category="paragraph">建議您隨時保持最新狀態、並為 Veeam 備份與複寫 12 系統套用最新的 Hotfix 。目前我們建議至少安裝 Veeam 修補程式 P20230718 。</block>
   <block id="8a30f8c97261f6be55fd4a89233559fc" category="section-title">S3 儲存庫組態</block>
   <block id="6ee286a7db9c406f8c2971e8ec86b74d" category="paragraph">橫向擴充備份儲存庫（ SOBR ）是 S3 物件儲存的容量層。容量層是主要儲存庫的延伸、提供較長的資料保留期間和較低成本的儲存解決方案。Veeam 可透過 S3 物件鎖定 API 提供不變的功能。Veeam 12 可以在橫向擴充儲存庫中使用多個儲存庫。StorageGRID 對單一貯體中的物件數量或容量沒有限制。使用多個貯體可在備份大型資料集時改善效能、而備份資料可能會在物件中達到 PB 規模。</block>
   <block id="274d09dbf63a4b2cf6067da7bdccc520" category="section-title">備份工作組態</block>
@@ -1122,7 +1115,6 @@
   <block id="5a80842ad876afca2599388c0e374483" category="list-text">SOBR 工作插槽限制 = 2-16</block>
   <block id="4bb90882de8268f14eedce7a49450a9a" category="list-text">多物件刪除限制 = 34-1000</block>
   <block id="a4bd669931c15a4828a4c38a495d7ff3" category="section-title">StorageGRID 組態</block>
-  <block id="b85a187b18cf0ecaff36c27f7e5e7500" category="paragraph">含最新 Hotfix 的 NetApp StorageGRID 11.6 或 11.7 是 Veeam 部署的建議版本。StorageGRID 11.6.0.11 和 11.7.0.4 中引進許多最佳化功能、對 Veeam 工作負載有幫助。建議您隨時保持最新狀態、並為您的 StorageGRID 系統套用最新的 Hotfix 。</block>
   <block id="8215067184a09c074108be8e3fbbe725" category="section-title">負載平衡器和 S3 端點組態</block>
   <block id="84ace9fb8e132c96d1dfcd31447efedc" category="section-title">S3時段</block>
   <block id="55876228853abf632dec9346a4f372ec" category="inline-link">文件</block>
@@ -1193,7 +1185,6 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="2804a96d012f15794c6aaa8f11797dfc" category="inline-link">隨選實驗室是 StorageGRID 的最佳銷售工具</block>
   <block id="d2634778cafa4c3045e5e3351c9098fc" category="inline-link">StorageGRID ：儲存及管理內部部署備份與複寫資料</block>
   <block id="f49b908c8064ba5b4ab223b14e8d376a" category="inline-link">查看 StorageGRID 驗證合作夥伴解決方案的不斷成長清單</block>
-  <block id="47ac119989829cf384ff1ad266df420f" category="inline-link">StorageGRID S3 物件鎖定已通過驗證、適用於 Veritas NetBackup</block>
   <block id="0883099d6628246c0f3172404097c1d1" category="inline-link">使用 BlueXP 以符合 3 ： 2 ： 1 的備份原則來保護 Epic EHR</block>
   <block id="1e81f3787bf865826867c808345c93cf" category="inline-link">StorageGRID 物件儲存系列的新功能</block>
   <block id="f0d2294cd432ef286ea4c0d40d486219" category="inline-link">介紹 StorageGRID 11.7 和全新的 All Flash 物件儲存設備 SGF6112</block>
@@ -1396,43 +1387,20 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="6d5424acc89d68777ded882e67fba989" category="list-text">安全性： StorageGRID 提供各種安全功能、包括加密、存取控制原則、資料生命週期管理、物件鎖定和版本設定、以保護儲存在 S3 儲存區中的資料</block>
   <block id="9ed95e053e569a8027874c20fc968fa0" category="paragraph">* StorageGRID S3 資料湖 *</block>
   <block id="16440189dc2ac5b52ea041615f4e3502" category="inline-image-macro">StorageGRID datalake 範例、 width=614 、 height =345</block>
-  <block id="bcf6df0d4fc301b73dfb0f84c2b25fca" category="section-title">哪一個資料倉儲或資料湖最適合搭配 S3 物件儲存設備使用</block>
   <block id="f5fb5a608581154f9f31a7efeaf26b22" category="inline-link">Apache 冰山：最終指南</block>
-  <block id="961898fd5ba4fc2d612d1c831953550a" category="paragraph">NetApp 以三種資料倉儲 / 湖屋生態系統（ Hive 、 Delta Lake 和 Dremio ）為基準測試 StorageGRID 。<block ref="ea7970154750f3c7264130a8bd2b3dc5" category="inline-link-rx"></block> 包括資料倉儲和資料湖屋的簡介、以及這兩種架構的優缺點。</block>
   <block id="d74100f8d86dca0577d39ba1e04a17a6" category="list-text">基準測試工具 - TPC-DS -<block ref="d703b8825e30c09e87a04e77b042a1a8" category="inline-link-rx"></block></block>
   <block id="d30ec88779257c0b31627ba4c551888a" category="list-text">Big Data 生態系統</block>
-  <block id="3d8fdb479ba6a1b9cecf651f9b7eea26" category="list-text">由 5 個 VM 叢集所構成、每個 VM 都有 128G RAM 和 24 個 vCPU 、以及用於系統磁碟的 SSD 儲存設備</block>
   <block id="a7bc6add825dafcb28d8468de2244c0e" category="list-text">Hadoop 3.3.5 搭配 Hive 3.1.3 （ 1 個名稱節點 + 4 個資料節點）</block>
   <block id="6b3b732f04270b0bc61c4e04a2f39184" category="list-text">Delta Lake with Spark 3.2.0 （ 1 位大師 + 4 位員工）和 Hadoop 3.3.5</block>
-  <block id="6b18ec7d77a4e9e064cbf7907da0f995" category="list-text">Dremio V23 （ 1 位碩士 + 4 位執行者）</block>
   <block id="670aaecb1a526fbed439dad3ec353a96" category="list-text">物件儲存</block>
-  <block id="2d9b029355e87294061ae6f1de033209" category="list-text">NetApp ^ ® ^ StorageGRID ^ ® ^ 11.6 含 3 個 SG6060 + 1 個 SG1000 負載平衡器</block>
-  <block id="3e02059b0b44d7c31aea68d26d910c82" category="list-text">物件保護 - 2 份複本</block>
   <block id="3cf72a217876a6502e40c6bc45a93c60" category="list-text">資料庫大小 1000GB</block>
-  <block id="8db25bfcdb041c33cb3750cd355e2821" category="list-text">所有 3 個生態系統都停用快取、以取得每項查詢測試的一致結果。</block>
-  <block id="4775694e0c94905d9a80366e4fa7f65a" category="paragraph">TPC-DS 隨附 99 個複雜的 SQL 查詢、可用於查詢基準測試。我們測量了完成所有 99 項查詢所需的總分鐘數、並將 S3 要求的類型和數量逐一列出、以進一步分析結果。下表顯示所有 99 個查詢的總持續時間、第二個表格則摘要說明每個傳送至 StorageGRID 的生態系統中 S3 要求的數量和類型。</block>
-  <block id="6d250f65ee48829b160dce910ccf0190" category="paragraph">* TPC-DS 查詢結果 *</block>
   <block id="47e3170ffb3d6c316975632968933646" category="cell">生態系統</block>
   <block id="c05def664dae0985e5984993db2b69a0" category="cell">Hive</block>
   <block id="e51fc2a250a74f84b11010c0f9316c46" category="cell">德爾塔湖</block>
-  <block id="6f632a1f063dc14df220da8c1d176f38" category="cell">儲存層</block>
-  <block id="49519cec4f69d00412deaceb05c68eb8" category="cell">NetApp ^ ® ^ StorageGRID ^ ® ^</block>
-  <block id="ce1dc110e77caccbe12e51dce2d1c9b7" category="cell">磁碟機類型</block>
-  <block id="9c2dc227590d4220750b52b21b0aeb99" category="cell">HDD</block>
-  <block id="5128c40e9b4875ff6b6f9b08e8d0a03f" category="cell">表格格式</block>
-  <block id="ace780da4816e1e457db8c57d60b5d66" category="cell">硬地板</block>
-  <block id="f49606530a9567c51e160fcce34b8f71" category="cell">硬地板 ^1^</block>
-  <block id="6267eaec7dcff27c3dc9e28ff41252d0" category="cell">資料庫大小</block>
-  <block id="a0b2fbadd5b3ebfe64b31483a2ac8886" category="cell">1000G</block>
   <block id="35b5589d5690d7ef32acf311beb9bbea" category="cell">TPCDS 99 查詢 +
 總分鐘數</block>
-  <block id="d06520689ef9c6002c5ceab8146281f6" category="cell">1084 ^2^</block>
   <block id="b53b3a3d6ab90ce0268229151c9bde11" category="cell">55</block>
   <block id="67c6a1e7ce56d3d6fa748ab6d9af3fd7" category="cell">47</block>
-  <block id="fb9fcf59d7e277fffe7705ce2be3777a" category="paragraph">^1^ 測試了 Parquet 和 iceberg 表格格式、結果類似。</block>
-  <block id="673b0197afb5ff5d157542553d103217" category="paragraph">^2^ Hive 無法完成查詢編號 72 。</block>
-  <block id="95f1998726f8cd4be0aff86865fa8eae" category="paragraph">* TPC-DS 查詢 - S3 要求明細 *</block>
-  <block id="3e197ca7a19378fad3e5581cbd39fb4b" category="cell">S3 要求</block>
   <block id="7528035a93ee69cedb1dbddb2f0bfcc8" category="cell">取得</block>
   <block id="8db7bb1512ff25e1db67c5b9a53f897d" category="cell">1,117,184</block>
   <block id="2569e54b8230d5c2746fa85c61dcf512" category="cell">2,074,610</block>
@@ -1460,12 +1428,7 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="a56d0d38d9846ac044442ecabae19902" category="cell">2,567,390</block>
   <block id="6dfffbda5aeba01126df9439ffbc82a3" category="cell">3 、 033 、 603</block>
   <block id="b0f186b9ad3639a900dc289160a9505b" category="cell">4,416504..</block>
-  <block id="15dc52463e414693d28f722fd4d402db" category="paragraph">從第一張表格中、我們可以看到 Delta Lake 和 Dremio 比 Hive 快得多。從第二個表格中、我們注意到 Hive 傳送了許多 S3 清單物件要求、這在所有物件儲存平台中通常都很慢、尤其是在處理包含許多物件的儲存區時。如此可大幅增加整體查詢持續時間。另一項觀察是 Dremio 能夠同時傳送大量的 GET 要求、每秒 2 、 000 至 2 、 300 個要求、而 Hive 則是每秒 50 至 100 個要求。Hive 和 Hadoop S3A 模擬標準檔案系統、有助於 S3 物件儲存作業緩慢。</block>
-  <block id="5fd92565468cb3e9de156c317d9d5f07" category="paragraph">搭配 Hive 或 Spark 使用 Hadoop （在 HDFS 或 S3 物件儲存設備上）需要對 Hadoop 和 Hive/Spark 有廣泛的瞭解、以及每項服務的設定如何互動、而且它們有 1000 多種設定。通常、這些設定是相互關聯的、無法單獨變更。要找到最佳的設定和值組合、需要花費大量的時間和精力。</block>
-  <block id="8a96077dd21be324029bd1c265c53313" category="paragraph">Dremio 是資料湖引擎、使用端點對端 Apache Arrow 來大幅提升查詢效能。Apache Arrow 提供標準化的列式記憶體格式、可實現高效率的資料共享和快速分析。Arrow 採用語言不相關的方法、旨在免除資料序列化和反序列化的需求、改善複雜資料程序和系統之間的效能和互通性。</block>
-  <block id="dec1fbcbe442f11c3d728feb8041cb00" category="paragraph">Dremio 的效能主要是由 Dremio 叢集的運算能力所驅動。雖然 Dremio 使用 Hadoop 的 S3A 連接器進行 S3 物件儲存連線、但 Hadoop 並不需要、而 Dremio 也不使用 Hadoop 的 FS.s3a 設定。如此一來、無需花時間學習和測試各種 Hadoop s3a 設定、即可輕鬆調整 Dremio 效能。</block>
   <block id="71860c77c6745379b0d44304d66b6a13" category="inline-link">頁面</block>
-  <block id="5db9c9da095f8d74e0628dbbdfdfb825" category="paragraph">從這個基準測試結果中、我們可以得出結論、針對 S3 型工作負載最佳化的大型資料分析系統是主要的效能因素。Dremio 可最佳化查詢執行、有效運用中繼資料、並提供對 S3 資料的無縫存取、因此相較於使用 S3 儲存設備時的 Hive 、效能更佳。請參閱此<block ref="e4ec3c3ef03861ef67845dfb086c7b17" category="inline-link-rx"></block> 使用 StorageGRID 設定 Dremio S3 資料來源。</block>
   <block id="c0c37f88f031a9b491d9a8bbea81dda7" category="paragraph">請造訪下列連結、深入瞭解 StorageGRID 和 Dremio 如何合作提供現代化且有效率的資料湖基礎架構、以及 NetApp 如何從 Hive + HDFS 移轉至 Dremio + StorageGRID 、大幅提升巨量資料分析效率。</block>
   <block id="79304bd05c48f486a8924e2c45f39311" category="inline-link">利用 NetApp StorageGRID 大幅提升巨量資料的效能</block>
   <block id="5683e5844e7df088ba30c5038415b393" category="inline-link">StorageGRID 和 Dremio 提供現代化、功能強大且有效率的資料湖基礎架構</block>
@@ -1536,7 +1499,6 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="80b92583825de655262f5ec03db36d8d" category="list-text">2023 年 3 月 30 日：<block ref="b439a8f44229e6c1e7b2461211f6849b" category="inline-link-rx"></block></block>
   <block id="fb9c460add81700ce3ddf20b5b36105d" category="list-text">2023 年 3 月 14 日：<block ref="3c7ed37db994ec363730d455072b8b2b" category="inline-link-rx"></block></block>
   <block id="e725a1c619e4b377a5580a3fd0e904ee" category="list-text">2023 年 2 月 14 日：<block ref="276d9658a5f8a049f2dcc595745c0879" category="inline-link-rx"></block></block>
-  <block id="cb1e1878ece3c2a899fd7db63967b8a8" category="list-text">2023 年 1 月 18 日：<block ref="6ea6516d4586962fa5f8e8460c33ccd0" category="inline-link-rx"></block></block>
   <block id="75639a2b61decb387fb6bbec29908248" category="list-text">2023 年 1 月 16 日：<block ref="68d21b96499b1933cc9fc03f94f1e388" category="inline-link-rx"></block></block>
   <block id="cdea5a154b0b0ab86d0d6304a21bda3f" category="list-text">2022 年 12 月 6 日：<block ref="e235608a45034e1deea87e6e77daddf3" category="inline-link-rx"></block></block>
   <block id="b033dccd559a42657b2fbb03dd21c349" category="list-text">2022 年 11 月 23 日：<block ref="67d6d3a21cc9af1520f991806f578b6b" category="inline-link-rx"></block></block>
@@ -1814,7 +1776,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="130e1538b9d47c6356996089d17dcc9d" category="list-text">在「站台」頁面上、輸入站台名稱。</block>
   <block id="c197e60a49f72b1ab7f60e3562193354" category="list-text">若要新增其他網站、請按一下最後一個網站項目旁的加號、然後在新的「網站名稱」文字方塊中輸入名稱。根據網格拓撲的需求新增更多站台。您最多可以新增16個站台。</block>
   <block id="1d194d439e614fd5af6d6e0ca435ee48" category="inline-image-macro">裸機附加站台</block>
-  <block id="d8557d40121efd6d540e80f5c9cced74" category="paragraph"><block ref="d8557d40121efd6d540e80f5c9cced74" category="inline-image-macro-rx" type="image"></block></block>
   <block id="dcae96231bba4c35e94accf7724b8cea" category="list-text">按一下「下一步」</block>
   <block id="6e260d6df26abe1d47f9156c30667329" category="summary">瞭解如何檢閱和核准任何加入 StorageGRID 系統的擱置網格節點。</block>
   <block id="20d84da7bdca5a26838fe674351adfa6" category="doc">核准 StorageGRID 的網格節點</block>
@@ -1825,11 +1786,9 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="c17a11a7bd7c8fb88cf892fc290c2512" category="admonition">如果缺少網格節點、請確認已成功部署。</block>
   <block id="d575f8832e003888f4562052cfb3a6f6" category="list-text">按一下您要核准之擱置節點旁的選項按鈕。</block>
   <block id="e7b101119399fe8adb08d34996866226" category="inline-image-macro">媒體 / 裸機核准設定網格節點</block>
-  <block id="f4bbad5fb8d8da659a2ea7831b3202dd" category="paragraph"><block ref="f4bbad5fb8d8da659a2ea7831b3202dd" category="inline-image-macro-rx" type="image"></block></block>
   <block id="06b143508ebbc3dd17cd58c38e7e99d5" category="list-text">按一下「核准」。</block>
   <block id="ae401da0d59e062e16119c35b5533f00" category="list-text">在「一般設定」中、視需要修改下列內容的設定。</block>
   <block id="cf7d82d0beb2aacccbdaf21cf0de1733" category="inline-image-macro">裸機管理節點組態</block>
-  <block id="1ad0e50ba23bf98c71b9cd2012fba1a4" category="paragraph"><block ref="1ad0e50ba23bf98c71b9cd2012fba1a4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7ccb01f3ef7de333bbde0913e8a09b32" category="paragraph">--* 站台 * ：此網格節點的站台系統名稱。</block>
   <block id="22af84ec92b59f976dcfa953d21b6629" category="paragraph">--*Name* ：將指派給節點的主機名稱、以及將在 Grid Manager 中顯示的名稱。名稱預設為您在節點部署期間指定的名稱、但您可以視需要變更名稱。</block>
   <block id="779cbaa6d822c0c104a91d0cf0c9ca90" category="paragraph">--* NTP 角色 * ：網格節點的 NTP 角色。選項包括「自動」、「主要」和「用戶端」。選取「自動」選項會將主要角色指派給管理節點、具有管理網域控制器（ ADC ）服務的儲存節點、閘道節點、以及任何具有非靜態 IP 位址的網格節點。所有其他網格節點都會指派用戶端角色。</block>
@@ -1857,8 +1816,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="af45cd5e2e4530880561b6d95e4074a6" category="list-text">確認您可以設定適當的網路。您應該已經在「IP組態」頁面上填入您提供的資訊。如需更多資訊、請參閱設備的安裝與維護說明。</block>
   <block id="a002eae85e873c5268c60fe47bfc6b3f" category="list-text">按一下儲存。網格節點項目會移至「核准的節點」清單。</block>
   <block id="3a23bcc886bcfcabab3e26790811b8c7" category="inline-image-macro">裸機核准的節點清單</block>
-  <block id="a7b727de0a5f163ad18832a8d6cd3ea9" category="paragraph"><block ref="a7b727de0a5f163ad18832a8d6cd3ea9" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="bfa84570af44d35c7c04b3b0ae0b4894" category="list-text">針對您要核准的每個待定網格節點、重複步驟 1 至 8 。</block>
   <block id="2550c5730e39cc55c59fc87a8a1666bd" category="paragraph">您必須核准網格中所需的所有節點。不過、您可以在按一下「摘要」頁面上的「安裝」之前、隨時返回此頁面。若要修改已核准網格節點的內容、請按一下其選項按鈕、然後按一下編輯。</block>
   <block id="8e60bae5c8b1499a18c917452cad6320" category="list-text">完成網格節點的核准後、請按一下「下一步」。</block>
   <block id="a530b03d96fc151b549eed4cff10416b" category="summary">瞭解如何在主要管理節點上的 StorageGRID 中設定 Grid Manager 。</block>
@@ -1890,7 +1847,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="f2655180d4e4913e2de9f899abe36fd2" category="paragraph">或者、您也可以在連接埠 8443 上存取 Grid Manager 。</block>
   <block id="9b80f8ce4c56dd2fb8430fb78a4d153e" category="list-text">按一下「安裝 StorageGRID 系統」。隨即顯示用於設定 StorageGRID 網格的頁面。</block>
   <block id="93589fdf9fa5ce84e893e5b7d77ef9d6" category="inline-image-macro">裸機組態儲存格網格</block>
-  <block id="b7721b1954bb575aecd8f861f0cd039d" category="paragraph"><block ref="b7721b1954bb575aecd8f861f0cd039d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1f332cbeda33342c070d2097c128d368" category="summary">瞭解如何設定 StorageGRID 的 DNS 伺服器。</block>
   <block id="f8496bcc083f3532921fda775f0a9e82" category="doc">指定 StorageGRID 的 DNS 伺服器詳細資料</block>
   <block id="a3bb8e71a8afb062831a38f0e2de59a5" category="paragraph">您必須指定 StorageGRID 系統的 DNS 資訊、才能使用主機名稱而非 IP 位址來存取外部伺服器。</block>
@@ -1900,7 +1856,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="d0ab55cd4d26d417d0f97408bcc5f697" category="list-text">在伺服器 1 文字方塊中、指定 DNS 伺服器的 IP 位址。</block>
   <block id="1e61bc64ca343d74b34847dd5000dccb" category="list-text">如有必要、請按一下最後一個項目旁的加號、以新增更多伺服器。</block>
   <block id="e2cb07bb2e5da2cf8d592a0018e4b5e7" category="inline-image-macro">裸機新增更多伺服器 -2</block>
-  <block id="ba3aa3377e98498b9b01ba24a802fd7a" category="paragraph"><block ref="ba3aa3377e98498b9b01ba24a802fd7a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3c597fd2b68a32b7f20e77aa59568bbe" category="summary">瞭解如何為 StorageGRID 設定網格網路子網路。</block>
   <block id="b96754e4e112b889e3b65f9796c4feab" category="doc">為 StorageGRID 指定網格網路子網路</block>
   <block id="6092d6c95dc9345e9fc2f9393637366f" category="paragraph">您必須指定網格網路上使用的子網路。</block>
@@ -1910,7 +1865,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="901ad78229e56f3cfe4923cb2fb91cf4" category="list-text">在「子網路 1 」文字方塊中、指定至少一個網格網路的 CIDR 網路位址。</block>
   <block id="5b2e07d1148d69347b968600f2027092" category="list-text">按一下最後一個項目旁的加號、以新增額外的網路項目。如果您已部署至少一個節點、請按一下「探索網格網路子網路」、以自動填入網格網路子網路清單、其中包含已向 Grid Manager 註冊的網格節點所報告的子網路。</block>
   <block id="4b988fcce569f5f8ae3f7bf260e946e2" category="inline-image-macro">裸機子網路網格網路</block>
-  <block id="6b348cb4599b5ceaa81c936234485125" category="paragraph"><block ref="6b348cb4599b5ceaa81c936234485125" category="inline-image-macro-rx" type="image"></block></block>
   <block id="48f6c9d6fba1611dc98c2669925c1099" category="summary">瞭解如何在裸機網格上安裝 StorageGRID 。</block>
   <block id="273f15cc5d5a9b82b3ed937c075f0165" category="doc">安裝 StorageGRID 簡介</block>
   <block id="4bf8c31681edafd88d86ee89bb157c9f" category="paragraph">瞭解如何在裸機主機上安裝 StorageGRID 。</block>
@@ -1964,7 +1918,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="00821ee7fcf45bcd3beba61903d8bb8b" category="list-text">在伺服器 1 至伺服器 4 文字方塊中、指定至少四個 NTP 伺服器的 IP 位址。</block>
   <block id="f9d565da6115b4f886b1206c3cf163bd" category="list-text">如有必要、請按一下最後一個項目旁的加號、以新增更多伺服器項目。</block>
   <block id="87647ffe3f4052667a65d48489aa1861" category="inline-image-macro">裸機新增伺服器項目</block>
-  <block id="9a9b4b2d213e216ec4f66ef07141c9fe" category="paragraph"><block ref="9a9b4b2d213e216ec4f66ef07141c9fe" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1818d7bb505eb0a9356019133c103083" category="summary">瞭解部署 StorageGRID 所需的運算、儲存、網路、泊塢視窗和節點需求。</block>
   <block id="793650804c23880df1a414e076d87de6" category="section-title">運算需求</block>
   <block id="6a2a458810293d5e417a1af6a7ec96c9" category="paragraph">下表列出每種 StorageGRID 節點類型支援的最低資源需求。這些是 StorageGRID 節點所需的最低資源。</block>
@@ -2038,7 +1991,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="7b86d858ba88988d38a0a7691de46189" category="paragraph">透過結合上表所示的運算和網路需求、您可以獲得一組基本的硬體、以安裝三部具有 16 核心、 64GB RAM 和兩個網路介面的實體（或虛擬）伺服器。如果需要較高的處理量、可以在網格或用戶端網路上連結兩個或更多介面、並在節點組態檔案中使用 VLAN 標記介面、例如 bond0.520 。如果您預期的工作負載會更密集、那麼主機和容器的記憶體就會更多。</block>
   <block id="14aa6453547abb65e147f9a63bd00ce5" category="paragraph">如下圖所示、這些伺服器將裝載六個 Docker 容器、每個主機兩個。RAM 的計算方式為每個容器提供 24GB 、主機作業系統本身則提供 16GB 。</block>
   <block id="fdff05307e339d6ad229d46bf6d02b81" category="inline-image-macro">三台主機的範例配置。</block>
-  <block id="93a1c77903ba2b044742253261962120" category="paragraph"><block ref="93a1c77903ba2b044742253261962120" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9dac9fe9f0bf4e5e3c4e4745d1641723" category="paragraph">每個實體主機（或 VM ）所需的總 RAM 為 24 x 2 + 16 = 64GB 。下表列出主機 1 、 2 和 3 所需的磁碟儲存設備。</block>
   <block id="c0cca200fe11cde38a6792401808bf45" category="cell">主機 1</block>
   <block id="bd7aece585ea4045bd93f81c08edca47" category="paragraph">* Docker Store*</block>
@@ -2097,7 +2049,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="04796c10cece5394a89b36c322312d79" category="paragraph">為了確保安裝順利完成、請仔細檢閱您輸入的組態資訊。請遵循下列步驟。</block>
   <block id="f189abc23cbec9c12167097fbc0853c3" category="list-text">檢視摘要頁面。</block>
   <block id="ca47c9063377504722d3477106fd35ae" category="inline-image-macro">裸機摘要頁面</block>
-  <block id="4d359c03c30d23d92dd7b1f2fb862f4a" category="paragraph"><block ref="4d359c03c30d23d92dd7b1f2fb862f4a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="08000e8c53acc4995c5cdb96bd31ada5" category="list-text">確認所有網格組態資訊均正確無誤。使用「摘要」頁面上的「修改」連結、即可返回並修正任何錯誤。</block>
   <block id="bbd6e51dda18896691e705ef7cb6c0e0" category="list-text">按一下「安裝」。</block>
   <block id="f62afe8922852d8719ba26a61eadfa3f" category="admonition">如果節點設定為使用用戶端網路、則當您按一下「安裝」時、該節點的預設閘道會從網格網路切換至用戶端網路。如果連線中斷、請確定您是透過可存取的子網路存取主管理節點。如需詳細資訊、請參閱「網路安裝與配置」。</block>
@@ -2107,10 +2058,8 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="f4d8ae80d397e410789e20f2792f3323" category="admonition">必須保護恢復套件檔案、因為其中包含可用於從StorageGRID 該系統取得資料的加密金鑰和密碼。</block>
   <block id="0ac3f2812dab16d76fa371e221cefe6f" category="list-text">選取「我已成功下載並驗證修復套件檔案」選項、然後按一下「下一步」。</block>
   <block id="0a9b7a08c95bf1a8fbcd52964f597bbb" category="inline-image-macro">裸機下載還原套件</block>
-  <block id="7044d8e51310d80b057f54874177f61a" category="paragraph"><block ref="7044d8e51310d80b057f54874177f61a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e02e133dd983517013e337df1e193b4f" category="paragraph">如果安裝仍在進行中、則會開啟「安裝狀態」頁面。此頁面會指出每個網格節點的安裝進度。</block>
   <block id="eddfe200de58c486f7de9d38ebd8b9b1" category="inline-image-macro">裸機安裝狀態</block>
-  <block id="d4dea791d2998901dbbe06b84d11a728" category="paragraph"><block ref="d4dea791d2998901dbbe06b84d11a728" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d5e898aea811e02df68dafac2216b3b4" category="paragraph">當到達所有網格節點的完整階段時、會開啟 Grid Manager 的登入頁面。</block>
   <block id="e7263461f81beaf38395b626bd9228df" category="list-text">以 root 使用者身分登入 Grid Manager 、並使用您在安裝期間指定的密碼。</block>
   <block id="f6075f705fc7db161a3aee43896cccaa" category="summary">瞭解如何啟動 StorageGRID 主機服務。</block>
@@ -2131,7 +2080,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="138667ce7b68146ab9ef5c9a1fefe55f" category="list-text">單擊瀏覽，找到 NetApp 許可證文件 <block ref="e6d7d9c1b2548b21ac2921378485020b" prefix="(" category="inline-code"></block>），然後單擊打開。授權檔案已驗證、並顯示序號和授權儲存容量。</block>
   <block id="f085047056aeaf0d4f4296e89bc8d874" category="admonition">此產品的安裝歸檔包含免費授權、不提供任何產品的支援權利。StorageGRID您可以更新至安裝後提供支援的授權。</block>
   <block id="069650fe3bf49e5264dd21815df31d3e" category="inline-image-macro">裸機更新授權</block>
-  <block id="35f7a36819e7e86963f64c47182ac313" category="paragraph"><block ref="35f7a36819e7e86963f64c47182ac313" category="inline-image-macro-rx" type="image"></block></block>
   <block id="503ada1cc373e8bb723ff1843faea66e" category="summary">瞭解如何透過設定資源配置密碼和 Grid Management root 使用者密碼來保護 StorageGRID 系統的安全。</block>
   <block id="d75b856b08ec8f2f3d651a18a40a2ea6" category="doc">指定 StorageGRID 的系統密碼</block>
   <block id="27f78ad3a95a795c62c63deddf4ee70d" category="paragraph">若要輸入用來保護 StorageGRID 系統安全的密碼、請依照下列步驟進行：</block>
@@ -2140,7 +2088,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="e3f9ae4173fd7a392b7aec45609983bf" category="list-text">在 Grid Management Root User Password （網格管理根使用者密碼）中、輸入密碼以作為 root 使用者存取 Grid Manager 。</block>
   <block id="92327bac1659a24cea944d48fd3baea6" category="list-text">在確認根使用者密碼中、重新輸入 Grid Manager 密碼。</block>
   <block id="f134973c593ceddee8a64f9c163e99f4" category="inline-image-macro">裸機網格管理員密碼</block>
-  <block id="84e0135b591263bbf8d6398ebef6e56d" category="paragraph"><block ref="84e0135b591263bbf8d6398ebef6e56d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d67e0d50bf955151686170db4b2a685e" category="list-text">如果您為了概念驗證或示範目的而安裝網格、請取消選取「建立隨機命令列密碼」選項。</block>
   <block id="faf54f5c7808a17a3058501f34c61183" category="paragraph">在正式作業部署中、基於安全考量、應一律使用隨機密碼。如果您想使用預設密碼、從命令列使用 root 或 admin 帳戶存取網格節點、請取消選取「僅為展示網格建立隨機命令列密碼」選項。</block>
   <block id="51bd4683761cb1bb8d85278613715f1e" category="admonition">在 Summary （摘要）頁面上單擊 Install （安裝）時，系統將提示您下載 Recovery Package 文件 <block ref="473178645502a5ab705476a4d961c39b" prefix="(" category="inline-code"></block>）。您必須下載此檔案才能完成安裝。存取系統的密碼會儲存在<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block> 包含在恢復套件檔案中的檔案中。</block>
@@ -2154,10 +2101,8 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="7af406a1a11ca43d1f4d41e02bec23aa" category="paragraph">若要驗證組態檔的內容、請在每個主機上執行下列命令：</block>
   <block id="c44d5e58056ae33c255438929de34ea7" category="paragraph">如果檔案正確、則每個組態檔案的輸出都會顯示通過：</block>
   <block id="d9c356a8c2546acdeea9b8b1c15f40d5" category="inline-image-macro">基座金屬輸出顯示通過</block>
-  <block id="2548287ab1648893be76c3ddc6917550" category="paragraph"><block ref="2548287ab1648893be76c3ddc6917550" category="inline-image-macro-rx" type="image"></block></block>
   <block id="90ee582a3c5d5a39be505cb53ef79288" category="paragraph">如果組態檔案不正確、問題會顯示為警告和錯誤。如果發現任何組態錯誤、您必須先加以修正、才能繼續安裝。</block>
   <block id="4354560354d8408d1c18e9c0b355e09d" category="inline-image-macro">基礎金屬輸出 - 顯示警告 - 錯誤</block>
-  <block id="1a1aaa85d1268fe69ba0efc9cd23b71e" category="paragraph"><block ref="1a1aaa85d1268fe69ba0efc9cd23b71e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="040c89d37bea72830f915c730c54a323" category="summary">探索客戶與 NetApp IT 實作的 StorageGRID 組態使用案例。</block>
   <block id="6b3cea9a64792ec5d7e688de3ba29ba0" category="doc">檢閱基準效能測試</block>
   <block id="d49b79b5786df5b1f9fed49f0ba0061f" category="paragraph">在「輔助複製」作業中、四個 CommVault MediaAgent 將資料備份到 NetApp AFF A300 系統、並在 NetApp StorageGRID 上建立輔助複本。如需測試設定環境的詳細資訊、請參閱技術報告中的解決方案設計與最佳實務一節<block ref="03ce17f8b5e1206a493f3bd56ef5953d" category="inline-link-rx"></block> 。</block>
@@ -2448,7 +2393,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="bd181fa499b4297ca0f96b237f19b965" category="list-text">在「傳送字串」欄位中、輸入<block ref="97f7892b24df272e50350757ceb43b37" prefix=" " category="inline-code"></block> \r\n 為回車； BIG-IP 軟體的不同版本需要零、一或兩組 \r\n 順序。如需更多資訊、請參閱<block ref="4852b727b6bde26d63d1e5b08662c2e2" category="inline-link-rx"></block>。</block>
   <block id="902b77afbc5629cc8ee652e06adcac1b" category="list-text">在接收字串欄位中、輸入：<block ref="26c1e7b2e4b9c3ad6ee704fe983ca1d9" prefix=" " category="inline-code"></block>。</block>
   <block id="1334477fa01ccc253171d26254c84e05" category="inline-image-macro">監控組態頁面</block>
-  <block id="e772a0718360d9094e93dafa7d802964" category="paragraph"><block ref="e772a0718360d9094e93dafa7d802964" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f520303aafcd791ddca69170ea616ff7" category="list-text">在 " 建立集區 " 中 , 針對所需的每個連接埠建立一個集區。</block>
   <block id="bca66e85df16d449451771c1dfaa0e04" category="list-text">指派您在上一個步驟中建立的健全狀況監視器。</block>
   <block id="61ca2f0cf79f8dd539c0ade05c7afc1b" category="list-text">選取負載平衡方法。</block>
@@ -2460,9 +2404,7 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="b6e45c53457b3e5a3fb4ff9901c40d5b" category="inline-link">HTTP-ECV 健全狀況檢查監視器的組態範例</block>
   <block id="b32f00d1e6048938e59a0b57c3b8d0f6" category="paragraph">有關詳細信息，請參閱 Citrix 文檔<block ref="9c02ec018ed76228b267d66ae485d4da" category="inline-link-rx"></block>，。</block>
   <block id="880796fcaaa4d949a777ed4943c18341" category="inline-image-macro">Citrix NetScaler Monitor 組態頁面</block>
-  <block id="d5c4b12d1277c9232b4cf6998ad6d5ac" category="paragraph"><block ref="d5c4b12d1277c9232b4cf6998ad6d5ac" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f1a019d81ace49ae05c637e3b257bb30" category="inline-image-macro">Configure-monitor.png</block>
-  <block id="984962d4b4fe1cf099e96cb9325e11a6" category="paragraph"><block ref="984962d4b4fe1cf099e96cb9325e11a6" category="inline-image-macro-rx" type="image"></block></block>
   <block id="713be778c8d38f91dc492a2180ad5e93" category="section-title">Loadbalancer.org</block>
   <block id="c804c2ec3b0c9faa88da01d5d7557790" category="paragraph">Loadbalancer.org 已經與 StorageGRID 進行了自己的整合測試，並提供了廣泛的組態指南：<block ref="03a0be03bae2b471b941b5ca6dcd6c59" category="inline-link-rx"></block>。</block>
   <block id="d46ddb287552508c0c54b94c7dec1628" category="section-title">Kemp</block>
@@ -2477,7 +2419,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="6dc3d5f61c3a6c9b229ed85a045b5e5d" category="doc">瞭解 StorageGRID 的整體負載平衡需求</block>
   <block id="34f6a9aeab830b6ab672e2d23cb23df0" category="paragraph">全域負載平衡需要與 DNS 整合、才能在多個 StorageGRID 站台之間提供智慧型路由。此功能不在 StorageGRID 網域範圍內、必須由第三方解決方案提供、例如先前討論的負載平衡器產品和 / 或 DNS 流量控制解決方案、例如 Infoblox 。這種頂層負載平衡可提供智慧型路由至命名空間中最近的目的地站台、以及中斷偵測和重新導向至命名空間中的下一個站台。典型的 GSLB 實作是由含有站台本機負載平衡器之站台集區的頂層 GSLB 所組成。站台負載平衡器包含本機站台儲存節點的集區。這可以包括用於 GSLB 功能的協力廠商負載平衡器與提供站台本機負載平衡的 StorageGRID 、或是協力廠商的組合、或是先前討論過的許多協力廠商都能同時提供 GSLB 和站台本機負載平衡。</block>
   <block id="598e19149cea7c839958d9b5ebe55aa2" category="inline-image-macro">一般 - GSLB</block>
-  <block id="0cfead2968793dee7be1ab3f93752ea5" category="paragraph"><block ref="0cfead2968793dee7be1ab3f93752ea5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8544d9ff7415a439150dd5b56d854dc3" category="summary">瞭解協力廠商和全域負載平衡器在 StorageGRID 等物件儲存系統中的角色。</block>
   <block id="7c37f16e9cbf7999830f6d447e5139cc" category="doc">將協力廠商負載平衡器搭配 StorageGRID 使用</block>
   <block id="3edd1c33d7ef33f3f2d4bd6d83866d6a" category="paragraph">使用協力廠商負載平衡器實作 NetApp ® StorageGRID ® 的一般指南。</block>
@@ -2487,7 +2428,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="ced6da2d844a75b99ad7de81dfc4b594" category="paragraph">負載平衡器是企業級物件儲存系統（例如 StorageGRID ）的重要元件。StorageGRID 包含多個儲存節點、每個節點都可以呈現給定 StorageGRID 執行個體的整個簡易儲存服務（ S3 ）名稱空間。負載平衡器可建立高可用度的端點、讓我們將 StorageGRID 節點放在後端。StorageGRID 在 S3 相容的物件儲存系統中是獨一無二的、因為它提供自己的負載平衡器、但也支援第三方或一般用途的負載平衡器、例如 F5 、 Citrix NetScaler 、 HA Proxy 、 NGINX 等等。</block>
   <block id="34c95b85eab9d149c0654c4541686dfe" category="paragraph">下圖使用範例 URL/ 完整網域名稱 (FQDN) 「 s3.company.com” 」。負載平衡器會建立一個虛擬 IP （ VIP ）、透過 DNS 解析至 FQDN 、然後將應用程式的任何要求導向至 StorageGRID 節點集區。負載平衡器會在每個節點上執行健全狀況檢查、只會建立與健全節點的連線。</block>
   <block id="4941784a59eb11e9e82511a31694404a" category="inline-image-macro">本機流量管理負載平衡器</block>
-  <block id="4f53fca9881058e8f3fcb7a71c4930f2" category="paragraph"><block ref="4f53fca9881058e8f3fcb7a71c4930f2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1ef102b3c8ff2a21a3fcb109669d2c4b" category="paragraph">圖中顯示 StorageGRID 提供的負載平衡器、但第三方負載平衡器的概念相同。應用程式會使用負載平衡器上的 VIP 建立 HTTP 工作階段、而流量會透過負載平衡器傳遞至儲存節點。根據預設、從應用程式到負載平衡器、從負載平衡器到儲存節點的所有流量都會透過 HTTPS 加密。HTTP 是受支援的選項。</block>
   <block id="d24d04f6bb41a4779a65a52fbb1b6dd6" category="section-title">本機和全域負載平衡器</block>
   <block id="7929df38aedb7ea6e0c08ca19bba1388" category="paragraph">負載平衡器有兩種類型：</block>
@@ -2570,7 +2510,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="f99f5ec7c8468db8426b435e16ded574" category="paragraph">使用自我簽署的憑證需要用戶端信任提供的憑證、而不需要任何 CA 來驗證其真實性。有些應用程式可能不接受自我簽署的憑證、也無法忽略驗證。</block>
   <block id="38a5b90f9a7bf320916ff566cf67a564" category="paragraph">SSL 憑證在用戶端負載平衡器 StorageGRID 路徑中的放置位置取決於您需要 SSL 終止的位置。您可以將負載平衡器設定為用戶端的終止端點、然後使用新的 SSL 憑證將負載平衡器重新加密或熱加密至 StorageGRID 連線。或者、您也可以通過流量、讓 StorageGRID 成為 SSL 終止端點。如果負載平衡器是 SSL 終止端點、則該憑證會安裝在負載平衡器上、其中包含 DNS 名稱 /URL 的主體名稱、以及任何其他將用戶端設定為透過負載平衡器連線至 StorageGRID 目標的 URL/DNS 名稱、 包括任何萬用字元名稱。如果負載平衡器設定為通過、則必須在 StorageGRID 中安裝 SSL 憑證。同樣地、憑證必須包含 DNS 名稱 /URL 的主體名稱、以及任何其他設定用戶端透過負載平衡器連線至 StorageGRID 目標的 URL/DNS 名稱、包括任何萬用字元名稱。不需要在憑證中包含個別的儲存節點名稱、只有端點 URL 。</block>
   <block id="16bb68daba73384a82c256705fe23940" category="inline-image-macro">載入 StorageGRID 的憑證範例</block>
-  <block id="a1829adab5057aab36e7dd7287060a71" category="paragraph"><block ref="a1829adab5057aab36e7dd7287060a71" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a04db2c21d01462f1cae1d4b38f98d8d" category="summary">瞭解如何在 StorageGRID 中設定信任的協力廠商負載平衡器。</block>
   <block id="2c7c333a0f0c1ab6f715438b601fd166" category="doc">在 StorageGRID 中設定信任的協力廠商負載平衡器</block>
   <block id="c6bbdb189be1d0f0a2fa1a1499673e59" category="inline-link">如何設定 StorageGRID 以搭配第三方第 7 層負載平衡器使用</block>
@@ -2585,7 +2524,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="26cc51752576fff1f28165235ec5a4a3" category="list-text">從 GMI 中選取功能表：說明 [API 文件 ] 。</block>
   <block id="582d423c7a52fa2fe26a0d9a1509065f" category="list-text">向下捲動至驗證、以尋找授權作業。下列螢幕擷取畫面顯示 POST 方法的參數。</block>
   <block id="732b4622672af9b45ee02ccc42e301ac" category="inline-image-macro">Monitor-post-method</block>
-  <block id="9e886c1a5434bd9d0e71271df4c2b2e7" category="paragraph"><block ref="9e886c1a5434bd9d0e71271df4c2b2e7" category="inline-image-macro-rx" type="image"></block></block>
   <block id="aa72021339b76cb303ef4aaaa760841d" category="list-text">按一下「試試看」、然後使用您的 GMI 使用者名稱和密碼編輯本文。</block>
   <block id="e3ee8218b1f6b4812ec9cd6f6f55e5bc" category="list-text">按一下「執行」。</block>
   <block id="3b4593aa2662753fd8b1b1e2c2138bc6" category="list-text">複製 Curl 區段中提供的 curl 命令、然後將其貼到終端機視窗中。命令如下所示：</block>
@@ -2600,16 +2538,13 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="d78cb05ef4141e30f21311d8a0ad4d7c" category="section-title">透過 Prometheus 查詢檢視計量 API</block>
   <block id="5777f62f583151ef7c49b156e0aef90f" category="paragraph">Prometheus 是一款開放原始碼軟體、用於收集指標。若要透過 GMI 存取 StorageGRID 的內嵌 Prometheus 、請前往功能表： Support[Metrics 。</block>
   <block id="0bea5c98ba2eef48d7bd8a847691d237" category="inline-image-macro">監控指標頁面</block>
-  <block id="24e9f8195d01ba2d175fb896fad23899" category="paragraph"><block ref="24e9f8195d01ba2d175fb896fad23899" category="inline-image-macro-rx" type="image"></block></block>
   <block id="cf4b35655f5bc5daf680006f1b1ce15e" category="paragraph">或者、您也可以直接瀏覽至連結。</block>
   <block id="833bcd82b8ef62520e5be8f2701347ac" category="inline-image-macro">Monitor-Prometheus-interface</block>
-  <block id="627f995f4bf72b5dbdf164692192d5d6" category="paragraph"><block ref="627f995f4bf72b5dbdf164692192d5d6" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c7f89929fc543735065ba8d00b6e18c3" category="paragraph">透過此檢視、您可以存取 Prometheus 介面。從這裡、您可以搜尋可用的指標、甚至是嘗試查詢。</block>
   <block id="f0f563ade1da817bd8a439292d0e8d3c" category="paragraph">若要進行 Prometheus URL 查詢、請遵循下列步驟：</block>
   <block id="164f408beb950c8617e791861fda776a" category="list-text">開始在查詢文字方塊中輸入。在您輸入時、會列出指標。就我們而言、只有以 StorageGRID 和 Node 為開頭的指標才是重要的。</block>
   <block id="053386f0d5445d6121c8baab8583296f" category="list-text">要查看每個節點的 HTTP 會話數，請鍵入<block ref="81395af7a720741ca394c882a197c66b" prefix=" " category="inline-code"></block> 並選擇<block ref="50ffff513c166e8d2dd4800339157da9" prefix=" " category="inline-code"></block>。按一下「執行」、以圖表或主控台格式顯示資訊。</block>
   <block id="23575e1dc3cfb15deb18275e322e553c" category="inline-image-macro">Monitor-http-sessions</block>
-  <block id="27a68e50a17f186a6bf586c4ab2cbaa5" category="paragraph"><block ref="27a68e50a17f186a6bf586c4ab2cbaa5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="007cc7fa2832e8f022af5678d4379431" category="admonition">您透過此 URL 建立的查詢和圖表不會持續存在。複雜查詢會佔用管理節點上的資源。NetApp 建議您使用此檢視來探索可用的度量。</block>
   <block id="114d8b9251665a84a3c3949c46b6b3a1" category="admonition">不建議直接連接至我們的 Prometheus 執行個體、因為這需要開啟額外的連接埠。建議使用我們的 API 來存取度量、這是一種安全的方法。</block>
   <block id="7d70779a6347af3f7b93052d4e5bd3f0" category="section-title">透過 API 匯出計量</block>
@@ -2617,10 +2552,8 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="e161a976d6ab825ed87cd37d3e7f790b" category="paragraph">若要透過 API 匯出度量、請遵循下列步驟：</block>
   <block id="1e5da00c579a9d593a4dc8fdeebbf0ae" category="list-text">向下捲動至指標、然後選取取得 /grid/metric-query 。</block>
   <block id="ffe2d973e52165efa20480acbec18814" category="inline-image-macro">監控指標查詢</block>
-  <block id="45cb0edb43543240b242bdc0560611a4" category="paragraph"><block ref="45cb0edb43543240b242bdc0560611a4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b6f0f95818bbc67704d1047ffb6d723f" category="paragraph">回應中包含的資訊與透過 Prometheus URL 查詢所取得的資訊相同。您可以再次看到目前在每個儲存節點上建立的 HTTP 工作階段數目。您也可以下載 JSON 格式的回應、以利閱讀。下圖顯示 Prometheus 查詢回應範例。</block>
   <block id="a0508d80e9851dbd1352c1dbe4cac298" category="inline-image-macro">Monitor-sample-Prometheus-query-Response.s</block>
-  <block id="4a3b615092a2d9d5b12a664763ddb41f" category="paragraph"><block ref="4a3b615092a2d9d5b12a664763ddb41f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8b406d1ef5b4e8a5bdd44a92dfd742db" category="admonition">使用 API 的優點是、它可讓您執行驗證的查詢</block>
   <block id="14624ae0105638df9429a5c0a3b15261" category="summary">瞭解如何使用 StorageGRID 中的警示系統來監控問題、管理自訂警示、以及透過 SNMP 或電子郵件延伸警示通知。</block>
   <block id="2e75e86d5ab1f43204d531b899ed8692" category="doc">使用警示來監控 StorageGRID</block>
@@ -2642,7 +2575,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="39b81327c86d279ca5a4de77b6a927a7" category="paragraph">StorageGRID 網格管理介面（ GMI ）儀表板提供 StorageGRID 基礎架構的集中檢視、可讓您監督整個網格的健全狀況、效能和容量。</block>
   <block id="59eb9298b03ce6ca974397e8e2898877" category="paragraph">使用 GMI 儀表板檢查網格的每個核心元件。</block>
   <block id="e10bb47bce8369170055e6153c06dd7b" category="inline-image-macro">Monitor-storagegRID GMI-Dashboard</block>
-  <block id="38374ecc0508697aaa429bb6c71636ed" category="paragraph"><block ref="38374ecc0508697aaa429bb6c71636ed" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e84df7ca41541e6bf514f7b1469d1fc9" category="section-title">您應該定期監控的資訊</block>
   <block id="a936f4db17b50337c719059ebf9bd705" category="inline-link">監控與疑難排解指南</block>
   <block id="38118fa7d20262a8aee8b9506304a278" category="paragraph">此技術報告的上一版本列出了定期檢查的指標與趨勢。這些資訊現在已包含在<block ref="9cfbf35549c931909cca159205c8231f" category="inline-link-rx"></block>中。</block>
@@ -2656,10 +2588,8 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="598dcdb07778ee7be35cb70f33132df4" category="list-text">從 GMI 功能表： Support[ 指標 ] 。</block>
   <block id="8dc71bbaf46676b033897ad3ee641092" category="list-text">在「 Grafana 」區段下、選取「節點」儀表板。</block>
   <block id="6f03fa78a12197917356dfcd4afbd9ab" category="inline-image-macro">監控節點儀表板</block>
-  <block id="865492da633ad2b3014bd31bc828b965" category="paragraph"><block ref="865492da633ad2b3014bd31bc828b965" category="inline-image-macro-rx" type="image"></block></block>
   <block id="fcd3fcf32cd8b9433cdf7272580e9eb2" category="list-text">在 Grafana 中、將主機設定為您要檢視其度量的任何節點。在這種情況下、會選取儲存節點。提供的資訊比下列螢幕擷取畫面更多。</block>
   <block id="6f9b566bf84106070754272dc0b149dc" category="inline-image-macro">Monitor-grafana- 指標</block>
-  <block id="db926601176de8e277e24308ea9e8610" category="paragraph"><block ref="db926601176de8e277e24308ea9e8610" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ca268a6974bf87ebc32af9f071cc48cb" category="summary">深入瞭解 NetApp StorageGRID 、其錯誤狀況、以及如何使用 Splunk 等外部應用程式有效監控。</block>
   <block id="a0c0cdc4f328b27bd17c7ba7acb3b816" category="doc">StorageGRID 監控簡介</block>
   <block id="ee525877dfb65d89a979b93b5bf5836f" category="paragraph">瞭解如何使用 Splunk 等外部應用程式來監控 StorageGRID 系統。</block>
@@ -2688,16 +2618,12 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="29c37d543374c10557413e6541903743" category="list-text">輸入原則的名稱和說明。</block>
   <block id="bb1373c782eeaa4a75814ecc4d060720" category="list-text">建立相符的規則。</block>
   <block id="d1f77d643e48713d15284108e2d2892d" category="inline-image-macro">監控相符規則</block>
-  <block id="a23490256eb63f668d09ae908b564c1e" category="paragraph"><block ref="a23490256eb63f668d09ae908b564c1e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8a9e39209ee3ce8078d159a32779c53f" category="list-text">設定限制（選用）。</block>
   <block id="7912061336d88a40313f1f8ada5bfcc1" category="inline-image-macro">監控限制</block>
-  <block id="dbdb1ea278c900fd78cbddc33af57b57" category="paragraph"><block ref="dbdb1ea278c900fd78cbddc33af57b57" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3b727c8c658892fe06eeaaf4bf43735f" category="list-text">儲存您的原則</block>
   <block id="80d191ed333edf4462cdac0a5abcf6c0" category="inline-image-macro">監控流量原則</block>
-  <block id="03190c047637b3d5f55617fc1d78d10f" category="paragraph"><block ref="03190c047637b3d5f55617fc1d78d10f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="568bfe018800e0496038cca7115baecb" category="paragraph">若要檢視與您的流量分類原則相關的計量、請選取您的原則、然後按一下度量。系統會產生 Grafana 儀表板、顯示負載平衡器要求流量和平均要求持續時間等資訊。</block>
   <block id="ae911ae935b9eff49beadfdf25b5afe6" category="inline-image-macro">監控儀表板顯示的度量</block>
-  <block id="ed2021e9cf9187b97df3b07f79f5b3ab" category="paragraph"><block ref="ed2021e9cf9187b97df3b07f79f5b3ab" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4654119eb3a8fb68470adc28025fd4b3" category="summary">瞭解勒索軟體攻擊、以及如何使用 StorageGRID 安全最佳實務來保護資料。</block>
   <block id="73784bce4aa908b9919866212fd51853" category="doc">保護 StorageGRID S3 物件免受勒索軟體的侵害</block>
   <block id="f784ee965f00ba2af19faeea46ccbae6" category="paragraph">勒索軟體攻擊不斷增加。本文件針對如何保護 StorageGRID 上的物件資料提供一些建議。</block>
@@ -2715,13 +2641,10 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="a16563897828d821edf628dd82945758" category="paragraph">建立來源和目的地儲存區、並使用版本設定目的地之後、您可以設定及啟用複寫、如下所示：</block>
   <block id="be9daa31583599df724c8df59a503c9d" category="list-text">若要設定 CloudMirror 、請為 S3 目的地建立平台服務端點。</block>
   <block id="611b96ea17eadbd463eab3da4b006a08" category="inline-image-macro">勒索軟體保護 - cree-Endpoint</block>
-  <block id="c88d84e75901b97f34db1d63d33cfdd9" category="paragraph"><block ref="c88d84e75901b97f34db1d63d33cfdd9" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c510dab2c8ac5ee4b4411e8a49d4b5d3" category="list-text">在來源貯體上、將複寫設定為使用已設定的端點。</block>
   <block id="805bfc00046708ebf1a16ab68b556a21" category="list-text">建立 ILM 規則以管理儲存配置和版本儲存持續時間管理。在此範例中、會設定要儲存之物件的非最新版本。</block>
   <block id="e0a4f9c43eaf312a13fbe59879babc68" category="inline-image-macro">勒索軟體保護 - cree-ILM 規則</block>
-  <block id="be86a18865c9f883dd0a13ce9a55be31" category="paragraph"><block ref="be86a18865c9f883dd0a13ce9a55be31" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7a24b133e2a2c80e8e545596903ecba1" category="inline-image-macro">勒索軟體保護 - cree-ilm 規則 - 步驟 2</block>
-  <block id="01e57cabe95641a2cfe70c17de67640e" category="paragraph"><block ref="01e57cabe95641a2cfe70c17de67640e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="933502478320f8d29965512cb963bbee" category="paragraph">站台 1 有兩份 30 天的複本。您也可以根據在 ILM 規則中使用擷取時間做為參考時間、來設定物件目前版本的規則、以符合來源貯體儲存持續時間。物件版本的儲存位置可以進行銷毀編碼或複寫。</block>
   <block id="e07a8c072ea1ca6e4d3dcdbd6c83dcef" category="summary">探索 StorageGRID 中的物件鎖定如何提供 WORM 模式來防止資料刪除或覆寫、以及它如何符合法規要求。</block>
   <block id="2d3bfc77a9312b4c20c2c11de2543112" category="doc">使用物件鎖定的勒索軟體防禦</block>
@@ -2743,57 +2666,25 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="865383bbbfa775e3d6b22d489517f4bb" category="paragraph">在不使用物件鎖定或複寫的情況下保護資料的方法、是在貯體上啟用版本設定、並在使用者安全性群組上實作 IAM 原則、以限制使用者管理物件版本的能力。發生攻擊時、會建立新的不良資料版本作為目前版本、而最新的非最新版本則是安全無虞的資料。為了取得資料存取權而遭入侵的帳戶無法刪除或以其他方式變更保護資料的非目前版本、以供日後還原作業使用。如同先前的案例、 ILM 規則會在您選擇的期間內、管理非目前版本的保留。缺點是、仍然可能存在授權帳戶、導致不良攻擊者遭受攻擊、但所有應用程式服務帳戶和使用者都必須設定更具限制性的存取。限制性群組原則必須明確允許您希望使用者或應用程式能夠執行的每個動作、並明確拒絕您不希望使用者或應用程式能夠執行的任何動作。NetApp 不建議使用萬用字元允許、因為未來可能會引進新的動作、而且您會想要控制是否允許或拒絕。對於此解決方案、拒絕清單必須包含 DeleteObjectVersion 、 PuttBucketPolicy 、 DeleteBucketPolicy 、 PuttLifecycleConfiguration 和 PuttBucketVersioning 、以保護貯體和物件版本的版本設定、避免使用者或程式設計上的變更。</block>
   <block id="14721ed09b53cff866a4251ecf8be9ad" category="paragraph">在 StorageGRID 11.7 中、我們推出了新的 S3 群組原則選項「勒索軟體緩解」、以簡化此解決方案的實作。在租戶中建立使用者群組時、選取群組權限之後、您可以看到這個新的選用原則。</block>
   <block id="45e24bd145ccdb664274ea3753a3feb3" category="inline-image-macro">勒索軟體保護 - cree-group</block>
-  <block id="f45e4134d3abb1d61c6013218d4457b5" category="paragraph"><block ref="f45e4134d3abb1d61c6013218d4457b5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="5f1cf2bf2a76a7221d167793f6f1d80f" category="paragraph">以下是群組原則的內容、其中包含明確允許的大部分可用作業、以及最低要求的拒絕。</block>
-  <block id="e5d9ed669a875ccabd1e8a8c7c04f770" category="summary">瞭解如何實作 StorageGRID 11.5 和 Veritas Enterprise Vault 14.1 的基本組態。</block>
-  <block id="7e8829dd017cc9404c7f25866b3e86a4" category="doc">設定 StorageGRID 和 Veritas Enterprise Vault</block>
-  <block id="15f91c60892410037aae4a3942b89ef3" category="paragraph">瞭解如何實作 StorageGRID 11.5 以上版本和 Veritas Enterprise Vault 14.1 以上版本的基本組態。</block>
   <block id="1b46922bca2761ea0a6c327c6ff7fb97" category="paragraph">本組態指南以 StorageGRID 11.5 和 Enterprise Vault 14.1 為基礎。使用 S3 物件鎖定、 StorageGRID 11.6 和 Enterprise Vault 14.2.2 讀取多項（ WORM ）模式儲存設備一次寫入。如需這些準則的詳細資訊、請參閱<block ref="8d80aa7c37bec53b7171a35567fec311" category="inline-link-rx"></block> 頁面或聯絡 StorageGRID 專家。</block>
-  <block id="410b2b2292a95771f2937cbe775c0c8c" category="section-title">設定 StorageGRID 和 Veritas Enterprise Vault 的先決條件</block>
-  <block id="6bfb62af2f92669cbb0dceb633cff716" category="list-text">在使用 Veritas Enterprise Vault 設定 StorageGRID 之前、請先確認下列先決條件：</block>
   <block id="1dd36541ff76792b9a1f4286f706f550" category="admonition">對於 WORM 儲存（物件鎖定）、需要 StorageGRID 11.6 或更高版本。</block>
-  <block id="5dbdaad1c225f81d0b6cccd828811ba5" category="list-text">已安裝 Veritas Enterprise Vault 14.1 或更新版本。</block>
   <block id="d713154cf1f274827caf27a31f82cb45" category="admonition">對於 WORM 儲存（物件鎖定）、需要 Enterprise Vault 14.2.2 版或更新版本。</block>
-  <block id="975881ace9bb68192f0b3671cfc08194" category="list-text">已建立資料保險箱儲存區群組和資料保險箱儲存區。如需詳細資訊、請參閱《 Veritas Enterprise Vault 管理指南》。</block>
   <block id="03c9d88cda3782913d26a1a7bc26f136" category="list-text">已建立 StorageGRID 租戶、存取金鑰、秘密金鑰和貯體。</block>
   <block id="e0824b7fe5042443d6867a035cbc059d" category="list-text">已建立 StorageGRID 負載平衡器端點（ HTTP 或 HTTPS ）。</block>
-  <block id="1b227bc738dba312c115b2a798da234c" category="inline-link">Veritas 知識庫文章</block>
-  <block id="ce87bfd676c54deb8bb2ad274315afd0" category="list-text">如果使用自我簽署的憑證、請將 StorageGRID 自我簽署的 CA 憑證新增至 Enterprise Vault 伺服器。如需詳細資訊，請參閱本<block ref="76ad7647a9a7e6994e89c39886d1900d" category="inline-link-rx"></block>。</block>
-  <block id="588a5d1dc60b0aa2f4fcb2454ef96929" category="list-text">更新並套用最新的 Enterprise Vault 組態檔案、以啟用支援的儲存解決方案、例如 NetApp StorageGRID 。如需詳細資訊，請參閱本<block ref="f0d9a24c875b4e67e4e5822ce9d331e4" category="inline-link-rx"></block>。</block>
-  <block id="e7b058735f0528a37fa7e3d72c81105b" category="section-title">使用 Veritas Enterprise Vault 設定 StorageGRID</block>
-  <block id="2c6b4643bba0ee960cb64248e63df632" category="paragraph">若要使用 Veritas Enterprise Vault 設定 StorageGRID 、請競爭下列步驟：</block>
   <block id="ccfce46e320ba5260f1ee1d4082cf063" category="list-text">啟動 Enterprise Vault Administration 主控台。</block>
-  <block id="b1b7957222336d707a5a9888fc91e7aa" category="inline-image-macro">媒體 / 第三方企業資料保險箱</block>
-  <block id="a5496aaf34f086c2383c3cff608af8d0" category="paragraph"><block ref="a5496aaf34f086c2383c3cff608af8d0" category="inline-image-macro-rx" type="image"></block></block>
   <block id="12b199291b692b06fcee61cbd72a4fe4" category="list-text">在適當的資料保險箱儲存區中建立新的資料保險箱儲存區分割區。展開資料保險箱儲存群組資料夾、然後展開適當的資料保險箱儲存區。在分割區上按一下滑鼠右鍵、然後選取功能表：新增 [ 分割區 ] 。</block>
-  <block id="c07323bf747d0b9a9cb16714b753c529" category="inline-image-macro">媒體 / 第三方企業資料保險箱 -2</block>
-  <block id="7aa44332a8b6b7cf0ecb9a3b98a5ffc7" category="paragraph"><block ref="7aa44332a8b6b7cf0ecb9a3b98a5ffc7" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e0e90cb563fd5221ff22be442b6bdc5c" category="list-text">按照新建分區創建嚮導進行操作。從儲存類型下拉式功能表中、選取 NetApp StorageGRID （ S3 ）。按一下「下一步」</block>
-  <block id="7159f8faf189acce365f122f5c505481" category="inline-image-macro">協力廠商新分割區</block>
-  <block id="dc11d4b85c13dfaa0225db7b97165007" category="paragraph"><block ref="dc11d4b85c13dfaa0225db7b97165007" category="inline-image-macro-rx" type="image"></block></block>
   <block id="507de6a31abd8f6192d0bad8a99c7fa4" category="list-text">取消核取「使用 S3 物件鎖定將資料儲存在 WORM 模式」選項。按一下「下一步」</block>
-  <block id="5d3e3c1b796ba78fc738d21c5b20c300" category="inline-image-macro">協力廠商新分割區 -2</block>
-  <block id="fbdcc01e2f73fd88dac7bf330989cc43" category="paragraph"><block ref="fbdcc01e2f73fd88dac7bf330989cc43" category="inline-image-macro-rx" type="image"></block></block>
   <block id="27297a1fb14386d9429c63e79efd9d13" category="list-text">在連線設定頁面上、提供下列資訊：</block>
   <block id="d407ce3c6418b602c5e62d17e75153e2" category="list-text">存取金鑰ID</block>
   <block id="864021d1cb190319b62722e58e59a8bf" category="list-text">機密存取金鑰</block>
   <block id="32795074a39344590d17540d2b201838" category="list-text">服務主機名稱：確保包含在 StorageGRID 中設定的負載平衡器端點（ LBE ）連接埠（例如： https ： &lt;hostname&gt; ： &lt;LBE_port&gt; ）</block>
-  <block id="668418c943e8a93e8a5e8e778b12d84c" category="list-text">貯體名稱：預先建立的目標貯體名稱。Veritas Enterprise Vault 不會建立貯體。</block>
   <block id="dc0c9174fafe0994fbdccfb9e7717229" category="list-text">貯體區域：<block ref="c800b6d9163b0db7d28f86c1470a9542" prefix=" " category="inline-code"></block> 為預設值。</block>
-  <block id="4ed9838862c15fad65155eb7ac3489cf" category="inline-image-macro">協力廠商新分割區 -3</block>
-  <block id="e85f5d4123f657beca9e8bc0cb177e05" category="paragraph"><block ref="e85f5d4123f657beca9e8bc0cb177e05" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c25b4f67628ba5b52c9f09be180c1934" category="list-text">若要驗證與 StorageGRID 貯體的連線、請按一下測試。確認連線測試成功。按一下確定、然後按下一步。</block>
-  <block id="c4ec4fc9005ebf6a7950942bf7e8c42c" category="inline-image-macro">第三方新分割區 4.</block>
-  <block id="969bc32aee8e2e5998bf61e42e3c7b20" category="paragraph"><block ref="969bc32aee8e2e5998bf61e42e3c7b20" category="inline-image-macro-rx" type="image"></block></block>
   <block id="5e28a4c450ff551f8cb9499edeacde68" category="list-text">StorageGRID 不支援 S3 複寫參數。為了保護您的物件、 StorageGRID 使用資訊生命週期管理（ ILM ）規則來指定資料保護方案 - 多個複本或銷毀編碼。選取「儲存選項」上的「當歸檔檔案存在時」、然後按「下一步」。</block>
-  <block id="067ceb72f9fd41d7203f015a8b1ce92d" category="inline-image-macro">第三方新分割區 - 5.</block>
-  <block id="a06db09bdc6f9f91ebf17ed357dac611" category="paragraph"><block ref="a06db09bdc6f9f91ebf17ed357dac611" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7749207f8271fb7f649b1f3ef39fbf5d" category="list-text">確認摘要頁面上的資訊、然後按一下「完成」。</block>
-  <block id="e494862f16ab010d80d0e60b27fff9f9" category="inline-image-macro">協力廠商新分割區 6</block>
-  <block id="deb1cd22744249d20777daf6b9cc577e" category="paragraph"><block ref="deb1cd22744249d20777daf6b9cc577e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f9bacafb1759e46379558a1bd77251a0" category="list-text">成功建立新的資料保險箱存放區分割區之後、您可以將 StorageGRID 做為主要儲存設備、在 Enterprise Vault 中歸檔、還原及搜尋資料。</block>
-  <block id="c887b40b05aa8614bba35df5ca0bd0b2" category="inline-image-macro">協力廠商新分割區 - 7.</block>
-  <block id="637be4bbe93314a50e97cb40180259d4" category="paragraph"><block ref="637be4bbe93314a50e97cb40180259d4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ba40de2abbe8f22c1ddefaf0652eb8c0" category="summary">瞭解如何使用 S3 物件鎖定來設定 StorageGRID for WORM 儲存設備。</block>
   <block id="316bb55238f2402b36fc9a4ad643a5ad" category="doc">針對 WORM 儲存設定 StorageGRID S3 物件鎖定</block>
   <block id="bb4d69716f1ec83dcb07464a3fd52211" category="section-title">設定 StorageGRID for WORM 儲存設備的必要條件</block>
@@ -2801,30 +2692,18 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="8c870accaec595079cdf496f1793a55e" category="section-title">設定 StorageGRID S3 物件鎖定預設貯體保留</block>
   <block id="30db1e0d890f9510d7b8712976fcb137" category="paragraph">若要設定 StorageGRID S3 物件鎖定預設貯體保留、請完成下列步驟：</block>
   <block id="d24937db40b8a84dc942039cba3a9100" category="list-text">在 StorageGRID 租戶管理器中、建立一個貯體、然後按一下「繼續」</block>
-  <block id="84c6936e36a936d29129d62aa3e022a2" category="inline-image-macro">third-party-create-bucket.png</block>
-  <block id="542e27c3a746dfbecd63aeddb8a575ba" category="paragraph"><block ref="542e27c3a746dfbecd63aeddb8a575ba" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a626ce66e7eaf62b35b215d06cb11fcd" category="list-text">選取「啟用 S3 物件鎖定」選項、然後按一下「建立儲存庫」。</block>
-  <block id="544c4f3a42530afc7a5c657981fdd948" category="inline-image-macro">third-party-create-bucket-2.png</block>
-  <block id="e687d2c87374f8512f0be61fdee6dd4b" category="paragraph"><block ref="e687d2c87374f8512f0be61fdee6dd4b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6caf33ef1cee8f3afaaf1c820d8f1299" category="list-text">建立貯體後、請選擇貯體以檢視貯體選項。展開「 S3 物件鎖定」下拉式選項。</block>
-  <block id="16d90fc1bab16e5f829ed834262c353a" category="inline-image-macro">third-party-overview.png</block>
-  <block id="3de7e2f78fe41f95567e757b3982bb9f" category="paragraph"><block ref="3de7e2f78fe41f95567e757b3982bb9f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6e2728e25476dcd5ed065f06fa9da3a9" category="list-text">在「預設保留」下、選取「啟用」、並將預設保留期間設為 1 天。按一下儲存變更。</block>
-  <block id="d822d6d9d36c3f31678339005766cfa9" category="inline-image-macro">協力廠商 S3 物件鎖定</block>
-  <block id="ad26ce7807792552af53f85b99e59c6b" category="paragraph"><block ref="ad26ce7807792552af53f85b99e59c6b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7d3ee9eb31d48b068ee9afc974c6688e" category="paragraph">現在 Enterprise Vault 已準備好使用儲存 WORM 資料的儲存庫。</block>
   <block id="cdf294cdb11d58c4a1cf6c6b989f7ac0" category="section-title">設定 Enterprise Vault</block>
   <block id="2b8482f3259b54a252e32e6c77841bea" category="paragraph">若要設定 Enterprise Vault 、請完成下列步驟：</block>
   <block id="416206518e27ed2ec8b8e0876078af35" category="inline-link-macro">基本組態</block>
   <block id="0fdd01b1b915af6ef0310b3ded5842a9" category="list-text">重複本節中的步驟 1-3 、 <block ref="b0733c8485b73f6326917495c59e375f" category="inline-link-macro-rx"></block> 但這次請選擇「使用 S3 物件鎖定將資料儲存在 WORM 模式」選項。按一下「下一步」</block>
-  <block id="4f7eaaac29722f070bace92a996eb2cc" category="inline-image-macro">第三方新分割區 8</block>
-  <block id="1d9465d61e1899aa06f61b050e9ee630" category="paragraph"><block ref="1d9465d61e1899aa06f61b050e9ee630" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0b5abcc8070dd573f1f60f2342e139a1" category="list-text">輸入 S3 Bucket 連線設定時、請務必輸入已啟用 S3 物件鎖定預設保留功能的 S3 儲存區名稱。</block>
   <block id="9a5b0fcd0b1275de30e89b6c94f15569" category="list-text">測試連線以驗證設定。</block>
   <block id="b37ab6844ec455af7b65aaae53986022" category="summary">瞭解如何在災難恢復案例中設定 StorageGRID 站台容錯移轉。</block>
   <block id="6b27dcb8002b0f1590dd7594cf75a822" category="doc">設定 StorageGRID 站台容錯移轉以進行災難恢復</block>
-  <block id="be18f5fb99f18a9ae61b9d96e174a4ed" category="paragraph">StorageGRID 架構部署通常是多站台部署。站台可以是主動式主動式或主動式被動式、以供 DR 使用。在 DR 案例中、請確定 Veritas Enterprise Vault 可以維持與其主要儲存設備（ StorageGRID ）的連線、並在站台故障期間繼續擷取及擷取資料。本節提供雙站台主動被動式部署的高階組態指南。 如需這些準則的詳細資訊、請參閱 <block ref="8efc367b31c66b8aa3b87a5daa8b07fa" category="inline-link-macro-rx"></block> 頁面或聯絡 StorageGRID 專家。</block>
-  <block id="525ed0d0c5aabc142d13bc73aca13d33" category="section-title">使用 Veritas Enterprise Vault 設定 StorageGRID 的先決條件</block>
   <block id="0bfe801b13cf3e81901c3410c8570e2e" category="paragraph">設定 StorageGRID 站台容錯移轉之前、請先確認下列先決條件：</block>
   <block id="60ae5f0a3dc3e41cb1a8d17ca4ae3cc4" category="list-text">有兩個站台的 StorageGRID 部署、例如站台 1 和站台 2 。</block>
   <block id="c216325d17aa822764283030cb5baddc" category="list-text">已在每個站台上建立執行負載平衡器服務的管理節點或閘道節點、以進行負載平衡。</block>
@@ -2832,34 +2711,16 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="6e7ba5fe6520e0b407ab10ee11b1d696" category="section-title">設定 StorageGRID 站台容錯移轉</block>
   <block id="308d28d08b7f81ec7b11883d6d4f9102" category="paragraph">若要設定 StorageGRID 站台容錯移轉、請完成下列步驟：</block>
   <block id="921a4d863daf068a5f614c53c331ed7a" category="list-text">若要確保在站台故障期間連線至 StorageGRID 、請設定高可用度（ HA ）群組。從 StorageGRID Grid Manager 介面（ GMI ）、按一下組態、高可用度群組和 + 建立。</block>
-  <block id="ce4a66c5cd1b4d6821c00e75bd4f4451" category="inline-image-macro">協力廠商 cree-high Availability 群組</block>
-  <block id="1c3411ea44ec266135b09b550ce9ea7a" category="paragraph"><block ref="1c3411ea44ec266135b09b550ce9ea7a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="bf2e77e2f5492ada5768dcb61171ca77" category="list-text">輸入所需資訊。按一下「 Select Interfaces 」（選取介面）、同時納入站台 1 和站台 2 的網路介面、其中站台 1 （主要站台）是慣用的主要站台。在同一個子網路中指派虛擬 IP 位址。按一下儲存。</block>
-  <block id="7512ccfcc59360e598f9e84d29033e83" category="inline-image-macro">協力廠商編輯 - 高可用度 - 群組</block>
-  <block id="36b9b9bbb5d9c5aeb291101b9a30856e" category="paragraph"><block ref="36b9b9bbb5d9c5aeb291101b9a30856e" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="65f4937b641d97a80cf0952a5576fa15" category="list-text">此虛擬 IP （ VIP ）位址應與在 Veritas Enterprise Vault 分割區組態期間使用的 S3 主機名稱相關聯。VIP 位址可解析到站台 1 的流量、而在站台 1 故障期間、 VIP 位址會透明地將流量重新路由到站台 2 。</block>
   <block id="b7f012b6955d2acff12a09570fab346e" category="list-text">請確定資料同時複寫到站台 1 和站台 2 。如此一來、如果 Site1 失敗、則物件資料仍可從 Site2 取得。這是透過先設定儲存資源池來完成的。</block>
   <block id="2f8cd206e8f11440f6d566a145683d88" category="paragraph">在 StorageGRID GMI 中、按一下 ILM 、儲存資源池、然後按一下 + Create 。按照精靈的指示、建立兩個儲存資源池：一個用於站台 1 、另一個用於站台 2 。</block>
   <block id="569b553d1a29238d3f49a97309bb7e7f" category="paragraph">儲存資源池是用於定義物件放置的節點邏輯群組</block>
-  <block id="9b540f3416a321be61e365aa13b34abb" category="inline-image-macro">協力廠商儲存池詳細資料網站 1</block>
-  <block id="bb9603d456449340931de70080e1e697" category="paragraph"><block ref="bb9603d456449340931de70080e1e697" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="5c4e94d14a1c112c4a2f1a7e5597d241" category="inline-image-macro">協力廠商儲存池詳細資料網站 2</block>
-  <block id="507391a9f10e21dc963c661728c2b3c1" category="paragraph"><block ref="507391a9f10e21dc963c661728c2b3c1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="08576c5d4b4ca78ca9766ffe2b9fa81f" category="list-text">從 StorageGRID GMI 按一下 ILM 、規則、然後按一下 + 建立。依照精靈的指示、建立 ILM 規則、指定每個站台儲存一個複本的擷取行為為「平衡」。</block>
-  <block id="00edc6a391750ee9d5516a6c4fdca617" category="inline-image-macro">協力廠商儲存池詳細資料網站 3</block>
-  <block id="b0472505c0e5cb9c5557e82d3a91d8c8" category="paragraph"><block ref="b0472505c0e5cb9c5557e82d3a91d8c8" category="inline-image-macro-rx" type="image"></block></block>
   <block id="457cde276ecbe36449d34f4da631a90d" category="list-text">將 ILM 規則新增至 ILM 原則並啟動原則。</block>
   <block id="f2633f86de73d147465e5df7ca640192" category="paragraph">此組態會產生下列結果：</block>
   <block id="457068c4a125d38f71a7790879029a8f" category="list-text">虛擬 S3 端點 IP 、其中站台 1 是主要端點、站台 2 則是次要端點。如果 Site1 發生故障、 VIP 會故障移轉至 Site2 。</block>
-  <block id="b6e1077aef7634269ecd810ef2e145fb" category="list-text">當從 Veritas Enterprise Vault 傳送歸檔資料時、 StorageGRID 會確保一個複本儲存在站台 1 、另一個 DR 複本則儲存在站台 2 。如果 Site1 失敗、 Enterprise Vault 會繼續從 Site2 擷取和擷取。</block>
-  <block id="2717ca8ac1b3b4eb08fdbb363b353437" category="admonition">這兩種組態對 Veritas Enterprise Vault 都是透明的。S3 端點、貯體名稱、存取金鑰等項目都相同。無需重新設定 Veritas Enterprise Vault 分割區上的 S3 連線設定。</block>
-  <block id="6af634f34cbaa9c21ffa52b0fc2e2571" category="summary">瞭解 Veritas Enterprise Vault 如何使用 StorageGRID 做為災難恢復的主要儲存目標。</block>
   <block id="f23ea2f2d2e408d14ea72e7895f24a9b" category="doc">設定 StorageGRID 進行站台容錯移轉簡介</block>
-  <block id="ae1fc32a84d371102898372a310cee7e" category="paragraph">本組態指南提供將 NetApp ® StorageGRID ® 設定為 Veritas Enterprise Vault 主要儲存目標的步驟。同時也說明如何在災難恢復（ DR ）案例中設定 StorageGRID 以進行站台容錯移轉。</block>
   <block id="b240db17f82e985f3d0d364567a003be" category="section-title">參考架構</block>
-  <block id="38b9dc2e7ce28edb104e987ce311dfbc" category="paragraph">StorageGRID 為 Veritas Enterprise Vault 提供內部部署且與 S3 相容的雲端備份目標。下圖說明 Veritas Enterprise Vault 和 StorageGRID 架構。</block>
-  <block id="55a3f9272ed73338bb14bc797ee9e53e" category="inline-image-macro">協力廠商 -Veritas 企業資料保險箱與儲存格 RID 架構</block>
-  <block id="b0c40e63486719b6a10c52db8bedaa98" category="paragraph"><block ref="b0c40e63486719b6a10c52db8bedaa98" category="inline-image-macro-rx" type="image"></block></block>
   <block id="632423b5da71d682caee956a05b4fd2b" category="sidebar">TR-4993 ： NetApp StorageGRID 與 Big Data Analytics</block>
   <block id="73b0d6bd4229ce34d5668acb219b4052" category="sidebar">TR-4994 ： Hadoop S3A 調校最佳實務做法</block>
   <block id="f3bee8cc791d63235a8d1d05244f54b7" category="sidebar">TR-4871 ： CommVault 完整備份與還原與 NetApp StorageGRID</block>
@@ -2867,7 +2728,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="398ab7fa1cdf69da3a866bb409f80421" category="sidebar">TR-4921 ：勒索軟體防禦</block>
   <block id="1cfe9266fd97efe523e3b7ce11ebb1f1" category="sidebar">TR-4765 ：監控 StorageGRID</block>
   <block id="7f3e8b5f38d9b9937162a27e3c86aa63" category="sidebar">TR-4882 ：安裝 StorageGRID 裸機網格</block>
-  <block id="bc667d10ae74e8b726987909cf554a5b" category="sidebar">TR-4907 ：使用 Veritas Enterprise Vault 設定 StorageGRID</block>
   <block id="f3035506aa0c64c91592bc491a349515" category="sidebar">StorageGRID 技術報告簡介</block>
   <block id="7879c124051e0d93a93b1bfe6ea06158" category="sidebar">TR-4993 ： NetApp StorageGRID 與巨量資料分析</block>
   <block id="4f6534c0c689f1866062f2d4e37a0485" category="sidebar">TR-4994 ： Hadoop S3A 調校</block>
@@ -2881,7 +2741,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="70ca7442b81ada7ae57803224dad0c83" category="sidebar">使用 StorageGRID 中的 Grafana 檢視指標</block>
   <block id="57e828039531aa32aed96923380fee16" category="sidebar">在裸機主機上安裝 StorageGRID</block>
   <block id="1d9276cf0fbeb5d3c213ee2bed5d0046" category="sidebar">指定 StorageGRID 的 NTP 伺服器詳細資料</block>
-  <block id="5e9cbbff6e37b7d1a9a0579bcce90f0d" category="sidebar">StorageGRID 災難恢復–使用 Veritas Enterprise Vault 設定 StorageGRID 進行站台容錯移轉</block>
   <block id="ae52e3c45bd713b4082b98c518149807" category="sidebar">設定 StorageGRID 以進行 WORM 儲存</block>
   <block id="654021875452c0979ec25d167125283d" category="sidebar">設定 StorageGRID 進行災難恢復</block>
   <block id="5795a3af3561471cfdd0a268caf7368a" category="section-title">StorageGRID 支援的關鍵管理程式</block>
@@ -2929,4 +2788,370 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="2988dc07d3c7f2675b337739e6a81ff7" category="sidebar">試用 StorageGRID</block>
   <block id="af628eae5a4bda33fe7f98b90dfd07ad" category="paragraph">如需此測試環境的技術詳細資料、請參閱技術報告中的解決方案設計與最佳實務一節<block ref="42208ea06469332a89cb87f688663202" category="inline-link-rx"></block> 。</block>
   <block id="d448077c68c161f782d3bf423a865381" category="paragraph">表 7 顯示我們的基礎效能測試結果。在「輔助複製」作業中、四個 CommVault MediaAgent 將資料備份到 NetApp AFF A300 系統、並在 NetApp StorageGRID 上建立輔助複本。如需測試設定環境的詳細資訊、請參閱技術報告中的解決方案設計與最佳實務一節<block ref="42208ea06469332a89cb87f688663202" category="inline-link-rx"></block> 。</block>
+  <block id="6254689add36612cde2207c4eeb003c9" category="inline-link">StorageGRID S3 物件鎖定已通過驗證、適用於 Veritas NetBackup</block>
+  <block id="a712bd63fac80e1aca62c3ed8e924142" category="list-text">2023 年 1 月 18 日：<block ref="6179dfb2fcec0a08c60e48740241db0a" category="inline-link-rx"></block></block>
+  <block id="14f977b97d7dbd181f04d50ec1ed468e" category="summary">從 ONTAP S3 移轉至 StorageGRID 。</block>
+  <block id="c748d5315fae1e52e5f773402cf3e67c" category="doc">透過將物件型儲存設備從 ONTAP S3 順暢移轉至 StorageGRID 、實現企業級 S3</block>
+  <block id="7b3c0eb00dc33b1a631328955bc9b836" category="section-title">移轉示範</block>
+  <block id="2c5eb617201a058feceb919d646677f1" category="paragraph">這是將使用者和貯體從 ONTAP S3 移轉至 StorageGRID 的示範。</block>
+  <block id="1783e046b7fe7c378da7c227231027e0" category="section-title">移轉 S3 金鑰</block>
+  <block id="edb86190528e859c24c52b1166d4d97c" category="paragraph">對於移轉、大部分時間您都想要移轉使用者的認證、而不是在目的地端產生新的認證。StorageGRID 提供 API 、可將 S3 金鑰匯入使用者。</block>
+  <block id="945e89158728b42e91a54f60d737accb" category="paragraph">登入 StorageGRID 管理 UI （而非租戶管理員 UI ）、開啟「 API 文件」瀏覽器頁面。</block>
+  <block id="9c8536e856e330218749728fda422921" category="inline-image-macro">開啟 API 文件</block>
+  <block id="3506a2e330cc3467a9ad96d0994f1299" category="paragraph"><block ref="3506a2e330cc3467a9ad96d0994f1299" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="41dc275fd67e3aa5346fd71812fb601d" category="paragraph">展開「帳戶」區段、選取「 POST /GRI/account-enable － s3-key-import 」、按一下「 Try it out 」（試用）按鈕、然後按一下「 execute 」（執行）按鈕。</block>
+  <block id="53f9aa67bd72c2cdd9d7a7b1c052ec1c" category="inline-image-macro">啟用 S3 金鑰匯入</block>
+  <block id="7c685a71f19dd935a19a0a88d28cd1b8" category="paragraph"><block ref="7c685a71f19dd935a19a0a88d28cd1b8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="96741f14b1eeac7c6c4d68b472646f40" category="paragraph">現在請在「帳戶」下方向下捲動至「 POST /GRID/accounts/{id}/user/{user_id}/s3-access-keys 」</block>
+  <block id="b50cdc016573ea5afe0879acc5936ff3" category="paragraph">我們將在此輸入先前收集的租戶 ID 和使用者帳戶 ID 。請在 json 方塊中填入 ONTAP 使用者的欄位和金鑰。您可以設定金鑰到期日、或移除「、「 Expires 」（到期日）： 123456789 、然後按一下「 execute （執行）」。</block>
+  <block id="ee83287b94198af6e1adaab7cb856b99" category="inline-image-macro">匯入 S3 金鑰</block>
+  <block id="77e95fb77226dac54e27441c3e4ad1b0" category="paragraph"><block ref="77e95fb77226dac54e27441c3e4ad1b0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3f5ce7271fcf0ca72073075f787f388d" category="paragraph">完成所有使用者金鑰匯入後、您應該停用「帳戶」「 POST /GRI/account-disable-s3-key-import 」中的金鑰匯入功能</block>
+  <block id="417545bdfccc96b32165dda23e4cae49" category="inline-image-macro">停用 S3 金鑰匯入</block>
+  <block id="fe85615f433dcd9f0c52fb145e63e6cd" category="paragraph"><block ref="fe85615f433dcd9f0c52fb145e63e6cd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7ed390d6527135d2c4847cea90fff8fd" category="paragraph">如果我們在租戶管理員 UI 中查看使用者帳戶、就會看到新金鑰已新增。</block>
+  <block id="6c71616b3b352a37f779acd74de2f813" category="inline-image-macro">使用者金鑰</block>
+  <block id="69c1ba0ccf07e95f969128f46a279d12" category="paragraph"><block ref="69c1ba0ccf07e95f969128f46a279d12" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="eb21098d13b81a8ffc4044c79b1490ce" category="section-title">最終切換</block>
+  <block id="95e6ee1587d0ceb3b3f9e4df062bd818" category="paragraph">如果打算將貯體從 ONTAP 永久複製到 StorageGRID 、您可以在此結束。如果這是從 ONTAP S3 移轉至 StorageGRID 、那麼現在正是結束移轉的好時機。</block>
+  <block id="c8d22ed512ddedd9ac3f36314a291bb0" category="paragraph">在 ONTAP 系統管理員中、編輯 S3 群組並將其設定為「 ReadOnlyAccess 」。這將防止使用者再寫入 ONTAP S3 儲存區。</block>
+  <block id="700d575cb12e48533c1f3424c58278a2" category="inline-image-macro">將 ONTAP 群組設定為唯讀</block>
+  <block id="81544e391a684ffda7638a9876ff732c" category="paragraph"><block ref="81544e391a684ffda7638a9876ff732c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="652bf7eb59a04cac2463054dc1c39587" category="paragraph">剩下的只是將 DNS 設定為從 ONTAP 叢集指向 StorageGRID 端點。請確定端點憑證正確無誤、如果您需要虛擬代管樣式要求、請在 StorageGRID 中新增端點網域名稱</block>
+  <block id="39a9f4fb89ab2cddfdb856cb888d5019" category="paragraph"><block ref="39a9f4fb89ab2cddfdb856cb888d5019" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5d68231d18be913f9a645c3c636ab7f0" category="paragraph">您的用戶端可能需要等待 TTL 過期、或是清除 DNS 以解析至新系統、以便測試一切是否正常運作。剩下的只是清理我們用來測試 StorageGRID 資料存取的初始暫存 S3 金鑰（而非匯入的金鑰）、移除 SnapMirror 關聯、以及移除 ONTAP 資料。</block>
+  <block id="2ccd23bbd57324bd4619072b8f8501bc" category="paragraph">_ 作者： Rafael Guedes 和 Aron Klein_</block>
+  <block id="5b66143188e929285ce4259f3cef73f4" category="section-title">填入來源 Bucket</block>
+  <block id="61dd7bb6a68b9468979c9dd027c3c0e7" category="paragraph">讓我們將一些物件放入來源 ONTAP 貯體中。我們將使用 S3 瀏覽器進行此示範、但您可以使用任何您熟悉的工具。</block>
+  <block id="1b176c01bbfcb191297aa148baab6da7" category="paragraph">使用上述建立的 ONTAP 使用者 S3 金鑰、將 S3 瀏覽器設定為連線至 ONTAP 系統。</block>
+  <block id="cb41001b51d0090b7d292134a65aaf4a" category="inline-image-macro">S3 瀏覽器組態</block>
+  <block id="81ce4395cdc6b12d91ae25346528f6e3" category="paragraph"><block ref="81ce4395cdc6b12d91ae25346528f6e3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0c922c601c50c24c7a3dd43d1db08ba1" category="paragraph">現在讓我們將一些檔案上傳至啟用版本控制的儲存庫。</block>
+  <block id="c46a4a4b6181b39a4e9396fad75ec7a2" category="inline-image-macro">按一下上傳</block>
+  <block id="ca5cdcc16ae630e806298b063046f485" category="paragraph"><block ref="ca5cdcc16ae630e806298b063046f485" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1e1612be1f37edad00c8cb80dd90158d" category="inline-image-macro">選取要上傳的檔案</block>
+  <block id="3557157f4c9e7e18f142bc76c34e6bad" category="paragraph"><block ref="3557157f4c9e7e18f142bc76c34e6bad" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="293fc6e4068205eefc9df77baa941b5f" category="inline-image-macro">檔案已上傳</block>
+  <block id="d675998f2d4289e47fe145bb1fd69438" category="paragraph"><block ref="d675998f2d4289e47fe145bb1fd69438" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="90b606ced696b2ed871d1d8a622652e9" category="paragraph">現在讓我們在貯體中建立一些物件版本。</block>
+  <block id="e905c485a94d23f34cf95a215259dc1d" category="paragraph">刪除檔案。</block>
+  <block id="b80b4ad2e703a2f5ddf4eff8e5b57bfb" category="inline-image-macro">刪除檔案</block>
+  <block id="44f25c4b033691468a52cb061d98e30b" category="paragraph"><block ref="44f25c4b033691468a52cb061d98e30b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3984a410dc20249f4a4852b6d78c1277" category="paragraph">上傳已存在於貯體中的檔案、將檔案複製到其本身、然後建立新版本。</block>
+  <block id="62359f48fa5e49e4942386318b168185" category="inline-image-macro">上傳已存在的檔案</block>
+  <block id="4ff9fdbbe683cc44c224b66deb98de1f" category="paragraph"><block ref="4ff9fdbbe683cc44c224b66deb98de1f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="53c26fef5387cf81693d7943b21612a7" category="paragraph">在 S3 瀏覽器中、我們可以檢視剛建立的物件版本。</block>
+  <block id="78427a671180994263dd4cbf23fb350e" category="inline-image-macro">檢視版本</block>
+  <block id="7dd07afda409774ee242c0948ad6383a" category="paragraph"><block ref="7dd07afda409774ee242c0948ad6383a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f0cc421ed326a461c5f0874594d1d240" category="section-title">建立複寫關係</block>
+  <block id="0ed6ca41d82d38f21d992d4aa4bed18f" category="paragraph">讓我們開始將資料從 ONTAP 傳送至 StorageGRID 。</block>
+  <block id="c2020f00595514288b21bfce34022b0c" category="paragraph">在 ONTAP 系統管理員中、瀏覽至「保護 / 概述」。向下捲動至「雲端物件儲存區」、然後按一下「新增」按鈕並選取「 StorageGRID 」。</block>
+  <block id="57252445efd7d3ab6d473d30ed72352f" category="inline-image-macro">ONTAP 保護</block>
+  <block id="0c6ab570024b5f9690d5ddd940442d96" category="paragraph"><block ref="0c6ab570024b5f9690d5ddd940442d96" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0d4b7a7f586d7a5b2b93a96583c3c3d0" category="paragraph">提供名稱和 URL 樣式來輸入 StorageGRID 資訊（本示範將使用 Path-styl URL ）。將物件存放區範圍設定為「 Storage VM 」。</block>
+  <block id="a872e75393e5b7cfee8a70de0ae0bc57" category="inline-image-macro">輸入 StorageGRID 資訊</block>
+  <block id="1b535a08aa91b34200eddd5d2bc9c5f7" category="paragraph"><block ref="1b535a08aa91b34200eddd5d2bc9c5f7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="551f5221c10ec5f7ee2f0b4d61a17bf8" category="paragraph">如果您使用的是 SSL 、請在此處設定負載平衡器端點連接埠、並在 StorageGRID 端點憑證中複製。否則、請取消核取 SSL 方塊、然後在此輸入 HTTP 端點連接埠。</block>
+  <block id="e229a1d7b0308e6585ca1573057494bb" category="paragraph">從上述目的地的 StorageGRID 組態輸入 StorageGRID 使用者 S3 金鑰和儲存格名稱。</block>
+  <block id="18fcda5616e3e713cf27733c1b0c6103" category="paragraph"><block ref="18fcda5616e3e713cf27733c1b0c6103" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a6aeb9bd73491bcf1712de697de6b638" category="paragraph">現在已設定目的地目標、我們可以設定目標的原則設定。展開「本機原則設定」、然後選取「持續」。</block>
+  <block id="88df0c4e805c29553bc039ef84e69340" category="inline-image-macro">本機原則設定</block>
+  <block id="4bbea4d0051ef50dfe8b36e07eef800e" category="paragraph"><block ref="4bbea4d0051ef50dfe8b36e07eef800e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="13a2198af60cd718923f537163dd5412" category="paragraph">編輯持續原則、並將「恢復點目標」從「 1 小時」變更為「 3 秒」。</block>
+  <block id="354d4b16948c7e767e3ce6fb2aa8516e" category="inline-image-macro">本機原則設定編輯</block>
+  <block id="04bf99072ca4977cd92a49e76b37c8b8" category="paragraph"><block ref="04bf99072ca4977cd92a49e76b37c8b8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="865e5172d02296d12d4c3077f7b37073" category="paragraph">現在我們可以設定 SnapMirror 來複寫貯體。</block>
+  <block id="fdf3a76d6e1b2fc248d186dbe429ec20" category="paragraph">SnapMirror create -source-path SV_DEMO ： /bucket/bucket - destination-path sgws_demo ： /objstore - policy Continuous</block>
+  <block id="e8567630fe85d755fed9996bd6f55a0c" category="inline-image-macro">建立 SnapMirror 關係</block>
+  <block id="7ee063ac689e33edf05fa89215b26255" category="paragraph"><block ref="7ee063ac689e33edf05fa89215b26255" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1d8f46cb77f0064dbb97e41792e84703" category="paragraph">此時貯體將在保護的庫位清單中顯示雲端符號。</block>
+  <block id="57c9ce100b486743ab9fff8cc61cbf2c" category="inline-image-macro">鏟斗受到雲端目標的保護</block>
+  <block id="8d3a7d937b6862dbc7e6fc8ae632c722" category="paragraph"><block ref="8d3a7d937b6862dbc7e6fc8ae632c722" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="eb86c505873ad47fa4a174f670d7469f" category="paragraph">如果我們選取貯體並移至「 SnapMirror （ ONTAP 或雲端）」標籤、我們將會看到 SnapMirror 重新出貨狀態。</block>
+  <block id="04eebe2fdfc7eba5901d4d867884daaf" category="inline-image-macro">檢查 SnapMirror 關係</block>
+  <block id="325d40a34e1ca19110896923461f65a8" category="paragraph"><block ref="325d40a34e1ca19110896923461f65a8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="252fa3b3eebd82056be1bab16c67f39e" category="section-title">複寫詳細資料</block>
+  <block id="625d7876e4a4b4d15ac6fdd9b1f95c7c" category="paragraph">我們現在已成功將儲存庫從 ONTAP 複製到 StorageGRID 。但實際複寫的內容是什麼？我們的來源和目的地都是版本化的貯體。舊版是否也會複寫到目的地？如果我們使用 S3 瀏覽器查看 StorageGRID 儲存庫、就會發現現有版本並未複寫、而且刪除的物件不存在、也不會有該物件的刪除標記。我們複製的物件在 StorageGRID 儲存庫中只有 1 個版本。</block>
+  <block id="7654b3c6ecce42bd6d80d3c3eda0d460" category="inline-image-macro">StorageGRID 貯體在初始同步後的 S3 瀏覽器檢視</block>
+  <block id="7360ed33a91141894312965ee102e374" category="paragraph"><block ref="7360ed33a91141894312965ee102e374" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="67d39cdd9eb9df4138519617ca637a14" category="paragraph">在我們的 ONTAP 儲存庫中、讓我們將新版本新增至先前使用的相同物件、並瞭解其複寫方式。</block>
+  <block id="8fb4fd5d2f752fa5f7b226c4d527a69a" category="inline-image-macro">上傳新版本後 ONTAP 儲存庫的 S3 瀏覽器檢視</block>
+  <block id="2ed59d66171d22d74d133c63c225e251" category="paragraph"><block ref="2ed59d66171d22d74d133c63c225e251" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="351c27f6243057013664721b76d198d3" category="paragraph">如果我們看 StorageGRID 一側、我們也看到這個儲存庫中也建立了新版本、但在 SnapMirror 關係之前、卻缺少初始版本。</block>
+  <block id="e9c51f250ae2c68745b305d518c752c8" category="paragraph"><block ref="e9c51f250ae2c68745b305d518c752c8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="085edea4486b9c58286039b2de3e0da8" category="paragraph">這是因為 ONTAP SnapMirror S3 程序只會複寫物件的目前版本。因此我們在 StorageGRID 端建立了一個版本化的貯體、以做為目的地。這樣 StorageGRID 就能維護物件的版本歷程記錄。</block>
+  <block id="a5394f6191bef59bac44916c2ef5ad14" category="section-title">準備 ONTAP</block>
+  <block id="da850783b45b977935f2d31304e870a5" category="paragraph">為了展示用途、我們將建立 SVM 物件儲存區伺服器、使用者、群組、群組原則和儲存區。</block>
+  <block id="aafb42088c8c68e1842dadde9625370b" category="section-title">建立儲存虛擬機器</block>
+  <block id="a180e0d1788e522c9e3007f9463891d1" category="paragraph">在 ONTAP System Manager 中、瀏覽至儲存 VM 、然後新增儲存 VM 。</block>
+  <block id="470a3393e959f3a189834c2a8a7e38ac" category="inline-image-macro">新增SVM</block>
+  <block id="4b5db63d899d14fabaecf07c458ed106" category="paragraph"><block ref="4b5db63d899d14fabaecf07c458ed106" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c5a07e569188d4c87bdc33aa4bc22888" category="paragraph">選取「啟用 S3 」和「啟用 TLS 」核取方塊、然後設定 HTTP （ S ）連接埠。定義 IP 、子網路遮罩、並定義閘道和廣播網域（如果您的環境中未使用預設或必要）。</block>
+  <block id="df05aef739eda5cc136be34597b24d9a" category="inline-image-macro">設定新的 SVM</block>
+  <block id="abe5d2e753bf10753566e313e20dd8be" category="paragraph"><block ref="abe5d2e753bf10753566e313e20dd8be" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7543da458aba2be8e44022f8ff61edc1" category="paragraph">在建立 SVM 的過程中、將會建立使用者。下載此使用者的 S3 金鑰並關閉視窗。</block>
+  <block id="7500624d3292ede4cdd31e43d2ff8c65" category="inline-image-macro">下載 S3 金鑰</block>
+  <block id="afa0ccf6bcc8dfa395e380b0bb87c2cc" category="paragraph"><block ref="afa0ccf6bcc8dfa395e380b0bb87c2cc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3205d46c79d604835a90642c77ed3d72" category="paragraph">建立 SVM 之後、請編輯 SVM 並新增 DNS 設定。</block>
+  <block id="ab77fcf006331856d1c6b528f9fea219" category="inline-image-macro">設定 DNS</block>
+  <block id="3a89c6c94d91b3298a519dab2512852f" category="paragraph"><block ref="3a89c6c94d91b3298a519dab2512852f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2cfea9be4158dc7848cc45788ead4cbc" category="paragraph">定義 DNS 名稱和 IP 。</block>
+  <block id="ea9c1b9d1059e7bba9ae9290a0500dff" category="inline-image-macro">設定 DNS 伺服器</block>
+  <block id="892d3d984b1c02a6dd52c1fcdfff0424" category="paragraph"><block ref="892d3d984b1c02a6dd52c1fcdfff0424" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5ad4fea59478c49704959e0edf00758a" category="section-title">建立 SVM S3 使用者</block>
+  <block id="5aad1eae2b8325639985e48478aac16d" category="paragraph">現在我們可以設定 S3 使用者和群組。編輯 S3 設定。</block>
+  <block id="d3b07e00903941108f0fec78a82a8966" category="inline-image-macro">設定 S3</block>
+  <block id="2d1d9a180589699ff2921b13d35ac9c5" category="paragraph"><block ref="2d1d9a180589699ff2921b13d35ac9c5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7903f9f562fe20e9352ef79291d03baf" category="paragraph">新增使用者。</block>
+  <block id="08ec0f7654cccad69821337b3c47af67" category="inline-image-macro">新增使用者</block>
+  <block id="78aae283d542d8cf187bf641aef50061" category="paragraph"><block ref="78aae283d542d8cf187bf641aef50061" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="69d6084c745c16018f644076d47e62df" category="paragraph">輸入使用者名稱和金鑰到期日。</block>
+  <block id="f358c7744fea47b4bdf515ca606e1570" category="paragraph">下載適用於新使用者的 S3 金鑰。</block>
+  <block id="de32b1bd35a50047cc179f6deaba3fe8" category="inline-image-macro">新使用者 S3 金鑰</block>
+  <block id="45fa7bdf93cb91dd943a187cb2a5c03d" category="paragraph"><block ref="45fa7bdf93cb91dd943a187cb2a5c03d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="398671caeda44244f5153c7dbe9665a3" category="section-title">建立 SVM S3 群組</block>
+  <block id="fb86a24a628266c1afe5c96a8ae7caac" category="paragraph">在 SVM S3 設定的「群組」索引標籤上、新增具有上述建立之使用者和「完整存取」權限的新群組。</block>
+  <block id="d3666b040f101e51f2ec63e2972245f7" category="inline-image-macro">新增 S3 群組</block>
+  <block id="5108782f4b51f14cff0bab234a568697" category="paragraph"><block ref="5108782f4b51f14cff0bab234a568697" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dc28c4546d839545501ba1ac361d079a" category="section-title">建立 SVM S3 儲存區</block>
+  <block id="a35233ef2933210164f63ea2c98a885b" category="paragraph">瀏覽至「鏟斗」區段、然後按一下「 + 新增」按鈕。</block>
+  <block id="299fbfe2cdb9679387811daaf3a0d442" category="inline-image-macro">新增 Bucket</block>
+  <block id="a1984921fedda4350f65c7ebd76836b3" category="paragraph"><block ref="a1984921fedda4350f65c7ebd76836b3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1a78a668508f8dc7e9b29b11fff445e2" category="paragraph">輸入名稱、容量、並取消選取「啟用清單儲存庫存取 ... 」核取方塊、然後按一下「更多選項」按鈕。</block>
+  <block id="2af7572db33e32d97c2a172374697a61" category="paragraph"><block ref="2af7572db33e32d97c2a172374697a61" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="953602c2739e355d7b031c7048d621b1" category="paragraph">在「更多選項」區段中、選取「啟用版本設定」核取方塊、然後按一下「儲存」按鈕。</block>
+  <block id="823e3d309f271d17abda0806debebd13" category="inline-image-macro">啟用版本管理</block>
+  <block id="52c810af819e4fe293f29a8b476f201e" category="paragraph"><block ref="52c810af819e4fe293f29a8b476f201e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="12b0bebdc5fd6d89d65dca8f905b046c" category="paragraph">重複此程序並建立第二個儲存區、但不啟用版本設定。輸入名稱、與貯體 1 的容量相同、並取消選取「啟用 ListBucket 存取 ... 」核取方塊、然後按一下「儲存」按鈕。</block>
+  <block id="d7ee833a734bb3582435c86b1ef4b2d9" category="inline-image-macro">新增貯體二</block>
+  <block id="28a98808203cd08ab1f44fb3be7c4c70" category="paragraph"><block ref="28a98808203cd08ab1f44fb3be7c4c70" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6be12c1b6627a3a9bb2aa4cb185fc866" category="section-title">準備 StorageGRID</block>
+  <block id="9c9f246dc3e4119f5c0f1c814f738dc2" category="paragraph">繼續進行此示範的組態、我們將建立租戶、使用者、安全群組、群組原則和貯體。</block>
+  <block id="393cb18603dfc01f76621e7fa99d7e34" category="section-title">建立租戶</block>
+  <block id="756b2d5b0f7e310581deb6b02911b947" category="paragraph">瀏覽至「租戶」標籤、然後按一下「建立」按鈕</block>
+  <block id="08e9570c93c393f2ec223840c1c187ed" category="inline-image-macro">新增租戶按鈕</block>
+  <block id="88ed9671d8147896ed27652bc742cd36" category="paragraph"><block ref="88ed9671d8147896ed27652bc742cd36" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cd5c40dbc94691aa20e5da986f322339" category="paragraph">填寫租戶提供租戶名稱的詳細資料、選取 S3 作為用戶端類型、不需要配額。無需選取平台服務或允許 S3 選取。您可以選擇使用自己的身分識別來源。設定 root 密碼、然後按一下完成按鈕。</block>
+  <block id="21b4425fcc55a66cff28a256101916d6" category="paragraph">按一下租戶名稱以檢視租戶詳細資料。* 您稍後需要租戶 ID 、請將其複製到 * 。按一下「登入」按鈕。這會將您帶到租戶入口網站登入。儲存 URL 以供未來使用。</block>
+  <block id="120b3f55b543341ae3eb65aa66d41fab" category="inline-image-macro">選取租戶</block>
+  <block id="91645b25c5815c71cd2f5cb6c50c2851" category="paragraph"><block ref="91645b25c5815c71cd2f5cb6c50c2851" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="46458c8f8b233f76c65f13928652d03b" category="paragraph">這會將您帶到租戶入口網站登入。儲存 URL 以供未來使用、然後輸入 root 使用者認證。</block>
+  <block id="914fa618e5db704c65410405b1df86a6" category="inline-image-macro">租戶登入</block>
+  <block id="a016ff6a8701161b71a08e297f187eb6" category="paragraph"><block ref="a016ff6a8701161b71a08e297f187eb6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ba4a9cd6fb5b572946d710f33f0fc386" category="section-title">建立使用者</block>
+  <block id="51e8cab66c71f8d79e6d4fd1dcdde969" category="paragraph">瀏覽至「使用者」標籤並建立新使用者。</block>
+  <block id="6968f54a13a1210fd95b00282bf4714c" category="inline-image-macro">瀏覽至使用者</block>
+  <block id="18a47360ef32adef1d918eabfb601cf0" category="paragraph"><block ref="18a47360ef32adef1d918eabfb601cf0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3ccfd9806bc9889d5c0e4b2f361f54f4" category="inline-image-macro">建立新使用者</block>
+  <block id="1d32fcd034450d4ebf3390b23bb911d8" category="paragraph"><block ref="1d32fcd034450d4ebf3390b23bb911d8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c6086e8a1623c95be5be3d08ed5b94d0" category="paragraph">建立新使用者之後、請按一下使用者名稱以開啟使用者的詳細資料。</block>
+  <block id="8b5dfc9215c2fc5f932c21b6d0ebc76b" category="paragraph">從稍後要使用的 URL 複製使用者 ID 。</block>
+  <block id="7fdef6b904b4c3e44ac8ac680498b585" category="inline-image-macro">複製新 ID</block>
+  <block id="9c3b107cf4e3b9cd613c7ae73f6a04c7" category="paragraph"><block ref="9c3b107cf4e3b9cd613c7ae73f6a04c7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="111d0ae2406ffba81e61eae4abd88478" category="paragraph">若要建立 S3 金鑰、請按一下使用者名稱。</block>
+  <block id="80e223872fabdc66def1d7f6d84eba90" category="inline-image-macro">建立 S3 金鑰</block>
+  <block id="7b714043efafa7cd3253909adeaa05eb" category="paragraph"><block ref="7b714043efafa7cd3253909adeaa05eb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fceda54795e2936815d59a603b141cfd" category="paragraph">選取「存取金鑰」索引標籤、然後按一下「建立金鑰」按鈕。不需要設定到期時間。下載 S3 金鑰、因為一旦關閉視窗、就無法再次擷取這些金鑰。</block>
+  <block id="57622436ec5afc45d57d88509732a0f8" category="inline-image-macro">下載金鑰</block>
+  <block id="4f9d0e4a47e5db245b20e8015d5483c7" category="paragraph"><block ref="4f9d0e4a47e5db245b20e8015d5483c7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="63a7bded731937b2466a7a856f89b5e5" category="section-title">建立安全性群組</block>
+  <block id="85b69a80b60a46ce65a37f198db050d7" category="paragraph">現在請移至「群組」頁面並建立新群組。</block>
+  <block id="e94f58e4efb3f77e13519c199bc52d97" category="inline-image-macro">建立新群組</block>
+  <block id="c7cace6f39583aa80b87737955c7ce6c" category="paragraph"><block ref="c7cace6f39583aa80b87737955c7ce6c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5b9d87901ac015cd0e913a32b7750e7f" category="paragraph">將群組權限設定為唯讀。這是租戶 UI 權限、而非 S3 權限。</block>
+  <block id="f63c2840bbc9107b66637b31a5d83b7d" category="inline-image-macro">設定群組權限</block>
+  <block id="61eb214a9c613b4f9d50d03f9328f9a9" category="paragraph"><block ref="61eb214a9c613b4f9d50d03f9328f9a9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a36618049720e6ba43c39aeb8f3944f8" category="paragraph">S3 權限由群組原則（ IAM 原則）控制。將群組原則設定為自訂、然後將 json 原則貼到方塊中。此原則可讓此群組的使用者列出租戶的貯體、並在名為「 Bucket 」的貯體或名為「 Bucket 」的子資料夾中執行任何 S3 作業。</block>
+  <block id="7ffcbf68734e791cd72723c4954078e9" category="inline-image-macro">定義群組原則</block>
+  <block id="417574f285186847a5cc21d2dc9bb598" category="paragraph"><block ref="417574f285186847a5cc21d2dc9bb598" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="50ba0663e964492af6c417f7d4eb7c56" category="paragraph">最後、將使用者新增至群組並完成。</block>
+  <block id="4e1fd25cbe5209a6e6a9745d4f04f365" category="inline-image-macro">新增使用者至群組</block>
+  <block id="a9ccd02f003e46b00d3a716dcf834823" category="paragraph"><block ref="a9ccd02f003e46b00d3a716dcf834823" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0cc1b9650560b6c78ec6580fd6be669b" category="section-title">建立兩個貯體</block>
+  <block id="254d4d81ebac5c31e21f263ce47c7bf0" category="paragraph">瀏覽至「貯體」標籤、然後按一下「建立貯體」按鈕。</block>
+  <block id="e68caa30e18a2772e791ada342429dc5" category="inline-image-macro">「建立桶」頁面</block>
+  <block id="63337c401341a8003ca291ca9423ea04" category="paragraph"><block ref="63337c401341a8003ca291ca9423ea04" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="95278a2006be88dde456d823cc988fcf" category="paragraph">定義貯體名稱和區域。</block>
+  <block id="f1a6bfffa76920f61aad594fdb6d4ed3" category="paragraph"><block ref="f1a6bfffa76920f61aad594fdb6d4ed3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="902cd2ab3474775e36ce6ac47b4bc8df" category="paragraph">在此第一個儲存庫上啟用版本設定。</block>
+  <block id="bc34f789fb5cbcd94af4d0d494f8ea6d" category="inline-image-macro">設定版本管理</block>
+  <block id="e783640cb4c279880a25388159e378a4" category="paragraph"><block ref="e783640cb4c279880a25388159e378a4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c1053c509b131ad2d2e7358d439718ab" category="paragraph">現在建立第二個儲存區、但未啟用版本設定功能。</block>
+  <block id="c3153d971e754e0e427d68d00ae2c9b0" category="inline-image-macro">建立第二個貯體</block>
+  <block id="f3f081810932233601f313ac610053e4" category="paragraph"><block ref="f3f081810932233601f313ac610053e4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="289a0e5b9a11398ac0c72f14f45cb30b" category="paragraph">請勿在此第二個儲存區上啟用版本設定。</block>
+  <block id="89c44b922ff9edd703a49957f01f0c84" category="inline-image-macro">請勿設定版本設定</block>
+  <block id="515386d5ad040c09a8fe4a0d2d7bab46" category="paragraph"><block ref="515386d5ad040c09a8fe4a0d2d7bab46" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e3276058dd2b8a3501db3ed1cf59e11b" category="paragraph"><block ref="e3276058dd2b8a3501db3ed1cf59e11b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f33f7e4c550d5b049658bb48a6dc3d01" category="paragraph"><block ref="f33f7e4c550d5b049658bb48a6dc3d01" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="900b0263e9b753b83cbaf04a42f90dec" category="paragraph"><block ref="900b0263e9b753b83cbaf04a42f90dec" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6217ffd1eea9981985eb67bb0c9544ef" category="paragraph"><block ref="6217ffd1eea9981985eb67bb0c9544ef" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7f0b6f9e91c398d8a72444fc496f8b15" category="list-text">針對您要核准的每個待定網格節點、重複步驟 1-8 。</block>
+  <block id="c436c7c9f6644d1f59916eb145eccbce" category="paragraph"><block ref="c436c7c9f6644d1f59916eb145eccbce" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cbc2c719a4b646ec1b829378cffbb62c" category="paragraph"><block ref="cbc2c719a4b646ec1b829378cffbb62c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3f22b7f4ed72e66d6e3b89cde323b775" category="paragraph"><block ref="3f22b7f4ed72e66d6e3b89cde323b775" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ad761804c8db2c35db1b04a938fdbc45" category="paragraph"><block ref="ad761804c8db2c35db1b04a938fdbc45" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2505da9cc59525ea8ea38913a61f3d1d" category="paragraph"><block ref="2505da9cc59525ea8ea38913a61f3d1d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="73fabd06e0fa7f38e657122a29a67e63" category="paragraph"><block ref="73fabd06e0fa7f38e657122a29a67e63" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bb697ffd76758d63ea2359b938dec45f" category="paragraph"><block ref="bb697ffd76758d63ea2359b938dec45f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="534c560757a42aaeb317ce7c91023fef" category="paragraph"><block ref="534c560757a42aaeb317ce7c91023fef" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2578e5a28b1f21ed43560903ded7bd2e" category="paragraph"><block ref="2578e5a28b1f21ed43560903ded7bd2e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="54ddba979e33f92dff27be78ae040e96" category="paragraph"><block ref="54ddba979e33f92dff27be78ae040e96" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="230e927ef1cbcfb4706e2ca2fe79b068" category="paragraph"><block ref="230e927ef1cbcfb4706e2ca2fe79b068" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6cfd96f46e0c61db4b057de9b2f02787" category="paragraph"><block ref="6cfd96f46e0c61db4b057de9b2f02787" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7c648110d8b752889f98cd2d87517c0f" category="section-title">以 S3 物件儲存為基準測試資料倉儲和 Lakeouses ：比較研究</block>
+  <block id="3f7d606956bcb4f8b565d2799da4a4e3" category="paragraph">本文提供使用 NetApp StorageGRID 的各種資料倉儲和湖屋生態系統的完整基準。目標是判斷哪一種系統在 S3 物件儲存設備上的效能最佳。請參閱此資訊<block ref="ca1f374596a7de7e13cf95753411f6e0" category="inline-link-rx"></block>、深入瞭解資料流 / 湖屋架構和表格格式（ Parquet 和冰山）。</block>
+  <block id="39b5836a4532001dfbe7e05fb49461e4" category="list-text">VM 叢集、每個都有 128G RAM 和 24 個 vCPU 、系統磁碟的 SSD 儲存設備</block>
+  <block id="37e59045c327c8ae9b2d4f7b4f136217" category="list-text">Dremio V23 （ 1 個 Cordinator + 5 個執行者）</block>
+  <block id="1543c40ac4e68e60ea63a94bfab320ec" category="list-text">Trino v438 （ 1 個協調器 + 5 個員工）</block>
+  <block id="e9940dffc6cb8987f8ea2849d2c81a2c" category="list-text">Starburst v453 （ 1 個 Cordinator + 5 個工作者）</block>
+  <block id="e6626cf4bf50ce440a045708b2e1f1e5" category="list-text">NetApp ^ ® ^ StorageGRID ^ ® ^ 11.8 含 3 個 SG6060 + 1 個 SG1000 負載平衡器</block>
+  <block id="20536af82697c291683798ab540160e0" category="list-text">物件保護 - 2 份複本（結果與 EC 2+1 類似）</block>
+  <block id="b9d35717430d39eef24c76f0c1796c11" category="list-text">每項查詢測試的所有生態系統都會使用「硬碟區」格式停用快取。對於冰山格式、我們比較了 S3 取得要求的數量、以及快取停用和啟用快取的案例之間的查詢時間總計。</block>
+  <block id="cdbfde1ab888a940af383c70c682b87a" category="paragraph">TPC-DS 包含 99 個複雜的 SQL 查詢、專為基準測試而設計。我們測量了執行所有 99 項查詢所需的總時間、並透過檢查 S3 要求的類型和數量來進行詳細分析。我們的測試比較了兩種常用表格格式的效率：拼花地板和冰山。</block>
+  <block id="96e14f82cc6500529b0c04afc6ebafa1" category="paragraph">* 使用 Parquet 資料表格式的 TPC-DS 查詢結果 *</block>
+  <block id="f37fa2c6484789a1a50f7d43e5b6c2df" category="cell">Starburst</block>
+  <block id="c98abcd54e4d3791a1400bab7aa399fe" category="cell">1084^1^</block>
+  <block id="6364d3f0f495b6ab9dcf8d3b5c6e0b01" category="cell">32</block>
+  <block id="33e75ff09dd601bbe69f351039152189" category="cell">28</block>
+  <block id="75b00b5e6500e718036f28f893b7dee1" category="paragraph">S3 要求明細</block>
+  <block id="e1327a62998567085c28d8caac25a097" category="cell">1,504,212</block>
+  <block id="61f6b2bbbbcd552b422c8740065ff520" category="cell">1,495,039</block>
+  <block id="c7eb1fdd90d51dff9000a413a518c83c" category="cell">範圍取得大小：低於 100KB 50% 、約 16% 1 MB 、 27% 2Mb 至 9Mb 、 3500 至 4000 個要求 / 秒</block>
+  <block id="f8bc1fd43d6bb150e5b0b51185508a46" category="cell">範圍取得大小：低於 100KB 50% 、約 16% 1MB 、 27% 2Mb 至 9Mb 、 4000 至 5000 要求 / 秒</block>
+  <block id="e2230b853516e7b05d79744fbd4c9c13" category="cell">509</block>
+  <block id="cfcd208495d565ef66e7dff9f98764da" category="cell">0</block>
+  <block id="a6555d2b06722bde8a106c16e353a06a" category="cell">1,504,721</block>
+  <block id="794b1e43f91a9913da14ea20cd4198c9" category="cell">1,499,551</block>
+  <block id="f1cab053650b93fe71331be2c4c9c40d" category="paragraph">^1^ Hive 無法完成查詢編號 72</block>
+  <block id="2e09f209b7749073d8732d856a6afe12" category="paragraph">* TPC-DS 查詢結果、內含冰山表格格式 *</block>
+  <block id="077385462ac0cf8f7fe1ddb0b3983c42" category="cell">TPCDS 99 查詢 + 總分鐘數（停用快取）</block>
+  <block id="34173cb38f07f89ddbebc2ac9128303f" category="cell">30</block>
+  <block id="b6d767d2f8ed5d21a44b0e5886680cb9" category="cell">22</block>
+  <block id="95df7e4eb2568a2c428c70b695f7cac2" category="cell">TPCDS 99 查詢 + 總分鐘數（啟用快取）</block>
+  <block id="d81fdeb5a429e85d04118048e4b3485d" category="cell">21.5</block>
+  <block id="b7ae258c3f8653133aa9c0c448f67516" category="cell">Get （快取已停用）</block>
+  <block id="3bb0dd7ec24af388f7e49723482fb553" category="cell">2,154,747</block>
+  <block id="817c2a89c3531f80836a2db8d06d85b3" category="cell">938,639</block>
+  <block id="5f4363558dd08c8d9c04d30802266c70" category="cell">931,582</block>
+  <block id="18c14d7f109f020c287a26f7a8f428d4" category="cell">Get （啟用快取）</block>
+  <block id="e3f91fa6ba87f03f3166a20beea1c344" category="cell">5,389</block>
+  <block id="6b11f97cb60ca2cd6f46178c1e7cf4f3" category="cell">30,158</block>
+  <block id="bc06fdbde6a0ac6d6d654b6614f9b5d7" category="cell">3,281</block>
+  <block id="76de71b9903e9b839668c173592c80be" category="cell">範圍取得大小： 67% 1MB 、 15% 100KB 、 10% 500KB 、 3000 - 4000 個要求 / 秒</block>
+  <block id="5819eb0ec4b00d343de26ea1746d62b0" category="cell">範圍取得大小：低於 100KB 42% 、約 17% 1 MB 、 33% 2Mb 至 9Mb 、 3500 至 4000 個要求 / 秒</block>
+  <block id="a6939d8de1e94d811eb67cb92270c822" category="cell">範圍取得大小：低於 100KB 43% 、約 17% 1 MB 、 33% 2Mb 至 9Mb 、 4000 至 5000 個要求 / 秒</block>
+  <block id="46ba9f2a6976570b0353203ec4474217" category="cell">284</block>
+  <block id="e087b5b2372a325fbbc3eb02013bd513" category="cell">1,261</block>
+  <block id="2d6a14455d72488e5e91089f0b50905c" category="cell">要求總數（快取停用）</block>
+  <block id="2096b1864713f451954f320346ec801a" category="cell">2,156,578</block>
+  <block id="bfd8a8a359e411cea773da89ea7b516e" category="cell">939,148</block>
+  <block id="95368980785d6fcc2e447b3569f7e08e" category="cell">932,071</block>
+  <block id="e7c4b70d9a61af19b7bb26b3656a04a7" category="paragraph">如第一張表所示、 Hive 的速度遠低於其他現代資料湖屋生態系統。我們觀察到 Hive 傳送了大量的 S3 清單物件要求、這在所有物件儲存平台上通常都很緩慢、尤其是在處理包含許多物件的貯體時。如此可大幅增加整體查詢持續時間。此外、現代的湖屋生態系統也能同時傳送大量的 GET 要求、每秒可傳送 2 、 000 至 5 、 000 個要求、相較於 Hive 每秒 50 至 100 個要求。與 S3 物件儲存設備互動時、 Hive 和 Hadoop S3A 所提供的標準檔案系統會導致 Hive 速度緩慢。</block>
+  <block id="64e5657b42a88da8f35487a29fd462a0" category="paragraph">搭配 Hive 或 Spark 使用 Hadoop （在 HDFS 或 S3 物件儲存設備上）需要對 Hadoop 和 Hive/Spark 有廣泛的瞭解、同時也需要瞭解每個服務的設定如何互動。它們一起擁有超過 1 、 000 種設定、其中許多是相互關聯的、無法分別變更。尋找設定與值的最佳組合需要大量的時間和精力。</block>
+  <block id="b466c5196d6e79148750db2791c91da3" category="paragraph">比較 Parquet 和冰山結果時、我們發現表格格式是主要的效能因素。從 S3 要求的數量來看、冰山表格格式比 Parquet 更有效率、相較於 Parquet 格式、申請數量減少 35% 至 50% 。</block>
+  <block id="e42410a9640211b1ecea1110a2d993ef" category="paragraph">Dremio 、 Trino 或 Starburst 的效能主要是由叢集的運算能力所驅動。雖然這三個系統都使用 S3A 連接器來連接 S3 物件儲存連線、但它們不需要 Hadoop 、而且這些系統也不使用 Hadoop 的 FS.s3a 設定。如此可簡化效能調校、免除學習和測試各種 Hadoop S3A 設定的需求。</block>
+  <block id="ae292ab8583812dbb91d237b1397afd3" category="paragraph">從這個基準測試結果中、我們可以得出結論、針對 S3 型工作負載最佳化的大型資料分析系統是主要的效能因素。現代化的湖上環境可最佳化查詢執行、有效運用中繼資料、並提供對 S3 資料的無縫存取、因此相較於使用 S3 儲存設備時的 Hive 、效能更佳。</block>
+  <block id="e5a51e32ae018b0fd70ad8a44e42454d" category="paragraph">請參閱此<block ref="e4ec3c3ef03861ef67845dfb086c7b17" category="inline-link-rx"></block>資訊、以使用 StorageGRID 設定 Dremio S3 資料來源。</block>
+  <block id="29ba7c2ce7db44a399c2e6636ce805cf" category="paragraph"><block ref="29ba7c2ce7db44a399c2e6636ce805cf" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="debd8913c08ffb1db2be4aa0bc738660" category="paragraph"><block ref="debd8913c08ffb1db2be4aa0bc738660" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8693d74f9ca58a57f81e33290d37abd5" category="paragraph"><block ref="8693d74f9ca58a57f81e33290d37abd5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="54ec027559e8cb37be54da6a71ba6e63" category="paragraph"><block ref="54ec027559e8cb37be54da6a71ba6e63" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="780ce03a8949a98dc11122083b493ba7" category="paragraph"><block ref="780ce03a8949a98dc11122083b493ba7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0f9b1c23e72398af55f49e1c186c08a1" category="paragraph"><block ref="0f9b1c23e72398af55f49e1c186c08a1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8deceed456e38579761b6f74cb6a622d" category="paragraph"><block ref="8deceed456e38579761b6f74cb6a622d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e4d0bf69638b007cb9a3a5bf173e57ad" category="paragraph"><block ref="e4d0bf69638b007cb9a3a5bf173e57ad" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a92cd8149a6e9e0fcf5b7e6cfd1bbf6a" category="paragraph"><block ref="a92cd8149a6e9e0fcf5b7e6cfd1bbf6a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2ac92ea2fe96038032e77a5244ff8ada" category="paragraph"><block ref="2ac92ea2fe96038032e77a5244ff8ada" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b248313f534e233f9a6155f8a4919aac" category="paragraph"><block ref="b248313f534e233f9a6155f8a4919aac" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8ae78a82d807f1873522dac87932d193" category="paragraph"><block ref="8ae78a82d807f1873522dac87932d193" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c498909fdbe99559943a55360091ec41" category="paragraph"><block ref="c498909fdbe99559943a55360091ec41" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8bae6995b49758e07b2ce0b2ce8c03dd" category="paragraph"><block ref="8bae6995b49758e07b2ce0b2ce8c03dd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7fcb1884a4c99208bc8ce2172ecf5bea" category="paragraph"><block ref="7fcb1884a4c99208bc8ce2172ecf5bea" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a254cd213ae260bb546051560ac3febe" category="paragraph"><block ref="a254cd213ae260bb546051560ac3febe" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="11955bb281ad17761bb704aaa81280c0" category="paragraph"><block ref="11955bb281ad17761bb704aaa81280c0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f17f01baaedf7370779a00e3853677ba" category="paragraph"><block ref="f17f01baaedf7370779a00e3853677ba" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="355dc6b033e8a213d7dae817c6e13b50" category="paragraph"><block ref="355dc6b033e8a213d7dae817c6e13b50" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="78d37a7f254e84c36902ce5704c6ab79" category="paragraph"><block ref="78d37a7f254e84c36902ce5704c6ab79" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5f8d58a12bc433f7b344b7c33f1904e6" category="paragraph"><block ref="5f8d58a12bc433f7b344b7c33f1904e6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="87190992f3ceae55c586605f4aa1de5c" category="paragraph"><block ref="87190992f3ceae55c586605f4aa1de5c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c143bb79bc8328f8a6c0bffcf736eefd" category="paragraph"><block ref="c143bb79bc8328f8a6c0bffcf736eefd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="034ae50adccad2698bbc81fb44360894" category="summary">瞭解如何實作 StorageGRID 11.5 和 Veritas Enterprise Vault 14.1 的基本組態。</block>
+  <block id="72eb1b8133e1520504346d36c5fac9d1" category="doc">設定 StorageGRID 和 Veritas Enterprise Vault</block>
+  <block id="ef4718392779b0750969af799ad151bb" category="paragraph">瞭解如何實作 StorageGRID 11.5 以上版本和 Veritas Enterprise Vault 14.1 以上版本的基本組態。</block>
+  <block id="372d595448d97ec17e5756118c9e3486" category="section-title">設定 StorageGRID 和 Veritas Enterprise Vault 的先決條件</block>
+  <block id="94940e3825739e86d43d20b71a2bdb81" category="list-text">在使用 Veritas Enterprise Vault 設定 StorageGRID 之前、請先確認下列先決條件：</block>
+  <block id="e1b2071d5db8fac237a17040ea82b8ef" category="list-text">已安裝 Veritas Enterprise Vault 14.1 或更新版本。</block>
+  <block id="367e5e1fbaf108d8dbf97e500327dc8b" category="list-text">已建立資料保險箱儲存區群組和資料保險箱儲存區。如需詳細資訊、請參閱《 Veritas Enterprise Vault 管理指南》。</block>
+  <block id="6c73463ffeddef6e57a34a14bafd3419" category="inline-link">Veritas 知識庫文章</block>
+  <block id="ddf1e2343a6c7e2d16b8597f3e961548" category="list-text">如果使用自我簽署的憑證、請將 StorageGRID 自我簽署的 CA 憑證新增至 Enterprise Vault 伺服器。如需詳細資訊，請參閱本<block ref="96b16704d1203901b729f96db3886a57" category="inline-link-rx"></block>。</block>
+  <block id="15022c2cf46544f0b3a7bf0180d8ebe5" category="list-text">更新並套用最新的 Enterprise Vault 組態檔案、以啟用支援的儲存解決方案、例如 NetApp StorageGRID 。如需詳細資訊，請參閱本<block ref="9c1aa3a99115a819862872de47644b63" category="inline-link-rx"></block>。</block>
+  <block id="2b95da50afe417c5fdfe08882fc95a9a" category="section-title">使用 Veritas Enterprise Vault 設定 StorageGRID</block>
+  <block id="5785dc46caf2287e47aa188701676c27" category="paragraph">若要使用 Veritas Enterprise Vault 設定 StorageGRID 、請競爭下列步驟：</block>
+  <block id="e5c9b80471f693a4c039200dd452f7e7" category="inline-image-macro">媒體 /Veritas / Veritas 企業級資料保險箱</block>
+  <block id="1536385a41cec4888a286618d0d7ee3e" category="paragraph"><block ref="1536385a41cec4888a286618d0d7ee3e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2692509554a8301ebc2f9196b6b9e543" category="inline-image-macro">媒體 /Veritas / Veritas 企業版 - 資料保險箱 -2</block>
+  <block id="418979d7615d02076bc62d5b450374e4" category="paragraph"><block ref="418979d7615d02076bc62d5b450374e4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="19d94215e1bbbf668cc58181d0a1d895" category="inline-image-macro">Veritas 新分割區</block>
+  <block id="55eaf5c34b171bde6516f1a74103f3ce" category="paragraph"><block ref="55eaf5c34b171bde6516f1a74103f3ce" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a9b5f6e03ed7ce22016b559be63917ac" category="inline-image-macro">Veritas/Veritas 新分割區 -2</block>
+  <block id="28757f2a18d6cf522e8bb4fc1c67febf" category="paragraph"><block ref="28757f2a18d6cf522e8bb4fc1c67febf" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7455d4ada214bb6150c4ee66c1ab09f0" category="list-text">貯體名稱：預先建立的目標貯體名稱。 Veritas Enterprise Vault 不會建立貯體。</block>
+  <block id="8852ee40f2eb647ba4c5cf75d93a5771" category="inline-image-macro">Veritas / Veritas 新分割區 -3</block>
+  <block id="e5bb5ea5b4f52f12bf40531ebfa8b110" category="paragraph"><block ref="e5bb5ea5b4f52f12bf40531ebfa8b110" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6e898938cfae63ee693fd08b9be8a594" category="inline-image-macro">Veritas / Veritas 新分割區 4</block>
+  <block id="ea846d505fa8c64ca8e878a6bb7d89eb" category="paragraph"><block ref="ea846d505fa8c64ca8e878a6bb7d89eb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b0d36dc673bf1097c502e15527f31976" category="inline-image-macro">Veritas / Veritas 新分割區 5</block>
+  <block id="fe808ac3f774c55de92ec52f7d85a2f8" category="paragraph"><block ref="fe808ac3f774c55de92ec52f7d85a2f8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4de953b055a0d26d8590cf0bcd5bf01c" category="inline-image-macro">Veritas / Veritas 新分割區 -6</block>
+  <block id="41ae360fa86c17098be8743d2d050c92" category="paragraph"><block ref="41ae360fa86c17098be8743d2d050c92" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b6fe3747f6c4d112310386474c670a3f" category="inline-image-macro">Veritas / Veritas 新分割區 - 7.</block>
+  <block id="22b735d20517887fa4f06cf49bd4d449" category="paragraph"><block ref="22b735d20517887fa4f06cf49bd4d449" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3eebf8254fde4e8d2c6a816c4320f21e" category="inline-image-macro">眩暈 / veritas-create-bucket.png</block>
+  <block id="95291b4cdd19db828a0d045364518fbd" category="paragraph"><block ref="95291b4cdd19db828a0d045364518fbd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="094b5581d50a9ae9dfef7ab77a3db688" category="inline-image-macro">眩暈 / veritas-create-bucket-2.png</block>
+  <block id="380edd7a9cba0915b0ad9309b0db539c" category="paragraph"><block ref="380edd7a9cba0915b0ad9309b0db539c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dbfd501fb101bf802a7ee81a1fac837d" category="inline-image-macro">眩暈 / veritas-overview.png</block>
+  <block id="df94ba3f30910a83d6bd5b670f112e3b" category="paragraph"><block ref="df94ba3f30910a83d6bd5b670f112e3b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c921c13e8cd3cb94aadeb8c25da58859" category="inline-image-macro">眩暈 / Veritas - S3 物件鎖定</block>
+  <block id="2c5ae5790fe14e007a8ce6ef21272460" category="paragraph"><block ref="2c5ae5790fe14e007a8ce6ef21272460" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="305ed56e9cc761a6928f149d8a7fed68" category="inline-image-macro">Vertas/Veritas-new-partition-8.</block>
+  <block id="d42aa79a11be13d3f0d5a09babb765cb" category="paragraph"><block ref="d42aa79a11be13d3f0d5a09babb765cb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="64b0c79c0081965bc7ce9c6cc6a3f774" category="paragraph">StorageGRID 架構部署通常是多站台部署。站台可以是主動式主動式或主動式被動式、以供 DR 使用。在 DR 案例中、請確定 Veritas Enterprise Vault 可以維持與其主要儲存設備（ StorageGRID ）的連線、並在站台故障期間繼續擷取及擷取資料。本節提供雙站台主動被動式部署的高階組態指南。 如需這些準則的詳細資訊、請參閱 <block ref="8efc367b31c66b8aa3b87a5daa8b07fa" category="inline-link-macro-rx"></block> 頁面或聯絡 StorageGRID 專家。</block>
+  <block id="fc1d41b2ff28c31ef720aa29cbdb1625" category="section-title">使用 Veritas Enterprise Vault 設定 StorageGRID 的先決條件</block>
+  <block id="568f836336942515cf2ad370aa171e55" category="inline-image-macro">Vertas/Veritas-cree-high Availability 群組</block>
+  <block id="97b5b099aca023f024fd3ca7169b6e8e" category="paragraph"><block ref="97b5b099aca023f024fd3ca7169b6e8e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6a856baab30258bd4bf6b3c8e997af43" category="inline-image-macro">Vertas/Veritas 編輯 - 高可用度群組</block>
+  <block id="d921e5624986d96c28deaf8b0b782be3" category="paragraph"><block ref="d921e5624986d96c28deaf8b0b782be3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e17fb1e3d997076f324b7246b7f7dff3" category="list-text">此虛擬 IP （ VIP ）位址應與在 Veritas Enterprise Vault 分割區組態期間使用的 S3 主機名稱相關聯。VIP 位址可解析到站台 1 的流量、而在站台 1 故障期間、 VIP 位址會透明地將流量重新路由到站台 2 。</block>
+  <block id="0def3d0da889c0e13e06d8e1ff2af9dd" category="inline-image-macro">Vertas/Veritas 儲存池詳細資料網站 1</block>
+  <block id="43ad61add042d6d64a01afe1db28f05c" category="paragraph"><block ref="43ad61add042d6d64a01afe1db28f05c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1c4cb0eddc44a68196819920f522f16a" category="inline-image-macro">Vertas/Veritas 儲存池詳細資料網站 2</block>
+  <block id="f4d48050c229a4cd522d6ca91d710a64" category="paragraph"><block ref="f4d48050c229a4cd522d6ca91d710a64" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="75381ece1664fa46e0387e8b6436f7ea" category="inline-image-macro">Vertas/Veritas 儲存池詳細資料網站 3</block>
+  <block id="3e2cf841de27a979e1d058590ff5e98e" category="paragraph"><block ref="3e2cf841de27a979e1d058590ff5e98e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="419754dcc8bb78c19b08aef3cde80cfb" category="list-text">當從 Veritas Enterprise Vault 傳送歸檔資料時、 StorageGRID 會確保一個複本儲存在站台 1 、另一個 DR 複本則儲存在站台 2 。如果 Site1 失敗、 Enterprise Vault 會繼續從 Site2 擷取和擷取。</block>
+  <block id="32b3440d0a295232731c116fa5442f36" category="admonition">這兩種組態對 Veritas Enterprise Vault 都是透明的。S3 端點、貯體名稱、存取金鑰等項目都相同。無需重新設定 Veritas Enterprise Vault 分割區上的 S3 連線設定。</block>
+  <block id="f5ab4938048291a0a6cd674b47551852" category="summary">瞭解 Veritas Enterprise Vault 如何使用 StorageGRID 做為災難恢復的主要儲存目標。</block>
+  <block id="e4d96bf38daf6358642e31e511c4e3ae" category="paragraph">本組態指南提供將 NetApp ® StorageGRID ® 設定為 Veritas Enterprise Vault 主要儲存目標的步驟。同時也說明如何在災難恢復（ DR ）案例中設定 StorageGRID 以進行站台容錯移轉。</block>
+  <block id="b9faea4479e9fc1bc458b58b8247cda0" category="paragraph">StorageGRID 為 Veritas Enterprise Vault 提供內部部署且與 S3 相容的雲端備份目標。下圖說明 Veritas Enterprise Vault 和 StorageGRID 架構。</block>
+  <block id="055f9879907c22c8cfd3c54bd9f610cb" category="inline-image-macro">Vertas/Veritas - Veritas 企業 - 資料保險箱與 StorageGRID 架構</block>
+  <block id="52cb822768beb11d3d42a3f9b19804d9" category="paragraph"><block ref="52cb822768beb11d3d42a3f9b19804d9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7a14e19b8ee1a0a04a0446df31d46f8c" category="list-text">Veritas Enterprise Vault 11.</block>
+  <block id="6369bbbcf565d042b20a283550fe3ed1" category="list-text">Veritas Enterprise Vault 12.</block>
+  <block id="9d9543f7e1d6b0664f04ff4f8a7c47b9" category="list-text">Veritas NetBackup 8.0</block>
+  <block id="ff5cfc1dbf017ecb8959d053238bf56b" category="list-text">Veritas Enterprise Vault 14.</block>
+  <block id="176411398f4cd808898ca8b28d32a473" category="list-text">Veritas Enterprise Vault 14.2.2</block>
+  <block id="630b3115bbfc0cab3a6c9f0257baa041" category="list-text">Veritas NetBackup 10.1.1 及更新版本</block>
+  <block id="8bab4d54d9f4be0e126140976cdd93e4" category="list-text">彈性搜尋快照（包括凍結層）</block>
+  <block id="f12757e29dee512b70563c66186ae3d8" category="paragraph">建議您隨時保持最新狀態、並為 Veeam Backup &amp; Replication 12 或 12.1 系統套用最新的 Hotfix 。目前我們建議您至少安裝 Veeam 12 修補程式 P20230718 。</block>
+  <block id="d9077bfff46af079bd1370f652df5fc8" category="paragraph">含最新 Hotfix 的 NetApp StorageGRID 11.7 或 11.8 是 Veeam 部署的建議版本。建議您隨時保持最新狀態、並為您的 StorageGRID 系統套用最新的 Hotfix 。</block>
+  <block id="ab04d5a9409dc8a45ac13596c3483cbe" category="inline-link-macro">NetApp StorageGRID 11.8 產品文件</block>
+  <block id="0b27dbe2229bcc6cc460d4c9db01ca59" category="list-text"><block ref="0b27dbe2229bcc6cc460d4c9db01ca59" category="inline-link-macro-rx"></block></block>
+  <block id="734ae27bd626f001863fc96cdf284a4c" category="sidebar">將物件型儲存設備從 ONTAP S3 移轉至 StorageGRID</block>
+  <block id="7278573c930789840fac32f75102c4cb" category="sidebar">TR-4907 ：使用 Veritas Enterprise Vault 設定 StorageGRID</block>
+  <block id="c4661d92ec5bfd72a43733aea8dc23dd" category="sidebar">從 ONTAP S3 移轉至 StorageGRID</block>
+  <block id="d3aa740f8e2398fe1df8b4f9eb4d398c" category="sidebar">填入並複寫貯體</block>
+  <block id="083e747ac97fd71c385f2c89f8eefdb7" category="sidebar">移轉使用者和金鑰、然後轉換</block>
+  <block id="81022eb5da399c3a2fd9f2b07db1afd3" category="sidebar">StorageGRID 災難恢復–使用 Veritas Enterprise Vault 設定 StorageGRID 進行站台容錯移轉</block>
 </blocks>

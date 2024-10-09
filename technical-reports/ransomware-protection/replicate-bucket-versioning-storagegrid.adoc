@@ -22,7 +22,7 @@ StorageGRID CloudMirror 是 StorageGRID 的一個元件、可設定為在物件�
 .步驟
 . 若要設定 CloudMirror 、請為 S3 目的地建立平台服務端點。
 +
-image:ransomware-protection-create-endpoint.png["勒索軟體保護 - cree-Endpoint"]
+image:ransomware/ransomware-protection-create-endpoint.png["勒索軟體保護 - cree-Endpoint"]
 
 . 在來源貯體上、將複寫設定為使用已設定的端點。
 +
@@ -42,10 +42,10 @@ image:ransomware-protection-create-endpoint.png["勒索軟體保護 - cree-Endpo
 ----
 . 建立 ILM 規則以管理儲存配置和版本儲存持續時間管理。在此範例中、會設定要儲存之物件的非最新版本。
 +
-image:ransomware-protection-create-ilm-rule.png["勒索軟體保護 - cree-ILM 規則"]
+image:ransomware/ransomware-protection-create-ilm-rule.png["勒索軟體保護 - cree-ILM 規則"]
 
 +
-image:ransomware-protection-create-ilm-rule-step-2.png["勒索軟體保護 - cree-ilm 規則 - 步驟 2"]
+image:ransomware/ransomware-protection-create-ilm-rule-step-2.png["勒索軟體保護 - cree-ilm 規則 - 步驟 2"]
 
 +
 站台 1 有兩份 30 天的複本。您也可以根據在 ILM 規則中使用擷取時間做為參考時間、來設定物件目前版本的規則、以符合來源貯體儲存持續時間。物件版本的儲存位置可以進行銷毀編碼或複寫。

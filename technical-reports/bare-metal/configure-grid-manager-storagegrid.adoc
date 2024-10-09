@@ -64,4 +64,4 @@ https://primary_admin_node_ip:8443
 . 按一下「安裝 StorageGRID 系統」。隨即顯示用於設定 StorageGRID 網格的頁面。
 
 
-image:bare-metal-configure-storagegrid-grid.png["裸機組態儲存格網格"]
+image:bare-metal/bare-metal-configure-storagegrid-grid.png["裸機組態儲存格網格"]

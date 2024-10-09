@@ -24,7 +24,7 @@ summary: 瞭解如何將站台新增至 StorageGRID 、以提高可靠性和儲�
 . 在「站台」頁面上、輸入站台名稱。
 . 若要新增其他網站、請按一下最後一個網站項目旁的加號、然後在新的「網站名稱」文字方塊中輸入名稱。根據網格拓撲的需求新增更多站台。您最多可以新增16個站台。
 +
-image:bare-metal-add-sites.png["裸機附加站台"]
+image:bare-metal/bare-metal-add-sites.png["裸機附加站台"]
 
 . 按一下「下一步」
 

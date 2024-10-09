@@ -20,7 +20,7 @@ entries:
   - title: 執行資料保護工作
     url: "/technical-reports/commvault/data-protection-jobs.html"
   - title: 檢閱基準效能測試
-    url: "/commvault/baseline-performance-tests.html"
+    url: "/technical-reports/commvault/baseline-performance-tests.html"
   - title: 貯體一致性層級建議
     url: "/technical-reports/commvault/s3-consistency-levels.html"
 - title: TR-4626 ：負載平衡器

@@ -32,7 +32,7 @@ summary: 探索客戶與 NetApp IT 實作的 StorageGRID 組態使用案例。
 .. 在「傳送字串」欄位中、輸入 `OPTIONS / HTTP/1.1\r\n\r\n.` \r\n 為回車； BIG-IP 軟體的不同版本需要零、一或兩組 \r\n 順序。如需更多資訊、請參閱 https://support.f5.com/csp/article/K10655[]。
 .. 在接收字串欄位中、輸入： `HTTP/1.1 200 OK`。
 +
-image:load-balancer-monitor-configuration-page.png["監控組態頁面"]
+image:load-balancer/load-balancer-monitor-configuration-page.png["監控組態頁面"]
 
 
 
@@ -56,9 +56,9 @@ Citrix NetScaler 會為儲存端點建立虛擬伺服器、並將 StorageGRID �
 
 有關詳細信息，請參閱 Citrix 文檔 https://docs.citrix.com/en-us/citrix-adc/current-release/load-balancing/load-balancing-builtin-monitors/monitor-ssl-services.html#sample-configuration-for-https-ecv-health-check-monitor["HTTP-ECV 健全狀況檢查監視器的組態範例"^]，。
 
-image:load-balancer-citrix-netscaler-configuration-page.png["Citrix NetScaler Monitor 組態頁面"]
+image:load-balancer/load-balancer-citrix-netscaler-configuration-page.png["Citrix NetScaler Monitor 組態頁面"]
 
-image:load-balancer-configure-monitor.png["Configure-monitor.png"]
+image:load-balancer/load-balancer-configure-monitor.png["Configure-monitor.png"]
 
 
 

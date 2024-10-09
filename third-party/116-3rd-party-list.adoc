@@ -68,7 +68,7 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 * Trino
 * Varish Enterprise 6.0.4
 * Veeam 12.
-* Veritas Enterprise Vault 14
+* Veritas Enterprise Vault 14.
 * Veritas NetBackup 8.0
 * Vertica 10.x
 * 維地松
@@ -87,7 +87,7 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 * OpenText文件21.4
 * Veeam 12.
 * Veritas Enterprise Vault 14.2.2
-* Veritas NetBackup 10.1.1及更新版本
+* Veritas NetBackup 10.1.1 及更新版本
 
 
 

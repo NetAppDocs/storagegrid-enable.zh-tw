@@ -16,3 +16,16 @@ entries:
   url: "/product-feature-guides/port-remap.html"
 - title: 如何重新部署站台及變更網路
   url: "/product-feature-guides/site-relocation-and-network-change.html"
+- title: 將物件型儲存設備從 ONTAP S3 移轉至 StorageGRID
+  pdf-filename: 將物件型儲存設備從 ONTAP S3 移轉至 StorageGRID
+  entries:
+  - title: 從 ONTAP S3 移轉至 StorageGRID
+    url: "/product-feature-guides/ontap-migrate/index.html"
+  - title: 準備 ONTAP
+    url: "/product-feature-guides/ontap-migrate/preparing-ontap.html"
+  - title: 準備 StorageGRID
+    url: "/product-feature-guides/ontap-migrate/preparing-sg.html"
+  - title: 填入並複寫貯體
+    url: "/product-feature-guides/ontap-migrate/populate-replicate.html"
+  - title: 移轉使用者和金鑰、然後轉換
+    url: "/product-feature-guides/ontap-migrate/migrate-cutover.html"

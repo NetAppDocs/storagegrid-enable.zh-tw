@@ -37,6 +37,7 @@ summary: 第三方解決方案已通過 StorageGRID 11.8 驗證
 * 定義
 * 磁碟移轉資料
 * 夢中
+* 彈性搜尋快照（包括凍結層）
 * Emam
 * Fujifilm物件歸檔
 * GitHub企業伺服器
@@ -67,11 +68,12 @@ summary: 第三方解決方案已通過 StorageGRID 11.8 驗證
 * 雪片
 * SPECtra Logic on － Prem Glacier
 * Splunk Smartstore
+* Starburst
 * 輕鬆儲存
 * Trino
 * Varish Enterprise 6.0.4
 * Veeam 12.
-* Veritas Enterprise Vault 14
+* Veritas Enterprise Vault 14.
 * Veritas NetBackup 8.0
 * Vertica 10.x
 * 維地松
@@ -91,7 +93,7 @@ summary: 第三方解決方案已通過 StorageGRID 11.8 驗證
 * Rukrik
 * Veeam 12.
 * Veritas Enterprise Vault 14.2.2
-* Veritas NetBackup 10.1.1及更新版本
+* Veritas NetBackup 10.1.1 及更新版本
 
 
 
