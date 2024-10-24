@@ -1487,7 +1487,6 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="bae75f6502d7126b5a2837bf5628cab3" category="sidebar">如何重新部署站台及變更網路</block>
   <block id="d0cf9344ad2e87b19d7ddab6a3a8a65c" category="list-text">2024 年 2 月 16 日：<block ref="b378392cb8f9d3c27df36a7aee10e61c" category="inline-link-rx"></block></block>
   <block id="b41a18341b59a0683c39812165cc0c0b" category="list-text">2024 年 2 月 16 日：<block ref="70310190f4683d95ee6551bded030474" category="inline-link-rx"></block></block>
-  <block id="d4594ce3b33a972e211fe9682ce3d309" category="list-text">2024 年 2 月 2 日： <block ref="00c18eee7b83b56a4fc536edaabb5a21" category="inline-link-rx"></block></block>
   <block id="4a9aae048c463acb4451f4593f34edc7" category="list-text">2023 年 12 月 12 日：<block ref="56387d425a7d1ca386f6000ce26e6a91" category="inline-link-rx"></block></block>
   <block id="00cf44fc2391bf394fabb4544209c638" category="list-text">2023 年 11 月 7 日：<block ref="4558e5f7bc147029e407b74c0a6768e6" category="inline-link-rx"></block></block>
   <block id="b6b4eb17c420a5edadebf0afe24e7acb" category="list-text">2023 年 10 月 17 日：<block ref="64e3b33ccfb012d90bff9bcf09d2035a" category="inline-link-rx"></block></block>
@@ -3154,4 +3153,5 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="d3aa740f8e2398fe1df8b4f9eb4d398c" category="sidebar">填入並複寫貯體</block>
   <block id="083e747ac97fd71c385f2c89f8eefdb7" category="sidebar">移轉使用者和金鑰、然後轉換</block>
   <block id="81022eb5da399c3a2fd9f2b07db1afd3" category="sidebar">StorageGRID 災難恢復–使用 Veritas Enterprise Vault 設定 StorageGRID 進行站台容錯移轉</block>
+  <block id="454255deb718c7d2b26df2342f80d3d3" category="list-text">2024 年 2 月 2 日： <block ref="890e1ea9b3a6310b9da56310b581c035" category="inline-link-rx"></block></block>
 </blocks>

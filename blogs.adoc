@@ -16,7 +16,7 @@ summary: 您可以在這裡找到一些 NetApp StorageGRID 部落格。
 
 * 2024 年 2 月 16 日： https://www.netapp.com/blog/storagegrid-11-8-enhanced-security-and-simplicity/["StorageGRID 11.8 簡介：增強的安全性、簡易性和使用者體驗"^]
 * 2024 年 2 月 16 日： https://community.netapp.com/t5/Tech-ONTAP-Blogs/Introducing-StorageGRID-11-8/ba-p/450762["隆重介紹 StorageGRID 11.8"^]
-* 2024 年 2 月 2 日：  https://community.netapp.com/t5/Tech-ONTAP-Blogs/Announcing-the-StorageGRID-lakeFS-Solution-Brief/ba-p/450611["發表 StorageGRID + LakeFS 解決方案簡介"^]
+* 2024 年 2 月 2 日：  https://community.netapp.com/t5/Tech-ONTAP-Blogs/Announcing-the-StorageGRID-lakeFS-Solution-Brief/ba-p/451465["發表 StorageGRID + LakeFS 解決方案簡介"^]
 * 2023 年 12 月 12 日： https://community.netapp.com/t5/Tech-ONTAP-Blogs/Big-data-analytics-on-StorageGRID-Dremio-performs-23-times-faster-than-Apache/ba-p/449695["StorageGRID 上的巨量資料分析： Dremio 的執行速度比 Apache Hive 快 23 倍"^]
 * 2023 年 11 月 7 日： https://community.netapp.com/t5/Tech-ONTAP-Blogs/Spectra-Logic-On-Prem-Glacier-with-StorageGRID/ba-p/448686["SPECtra Logic on -Prem Glacier 搭配 StorageGRID"^]
 * 2023 年 10 月 17 日： https://community.netapp.com/t5/Tech-ONTAP-Blogs/Moving-on-from-Hadoop-Modernizing-Data-Analytics-with-Dremio-and-StorageGRID/ba-p/448335["繼續從 Hadoop ：利用 Dremio 和 StorageGRID 將資料分析現代化"^]
