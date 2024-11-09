@@ -46,8 +46,8 @@ summary: 第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.3
 * Splunk Smartstore
 * Varish Enterprise 6.0.4
 * Veeam 9.5.4
-* Veritas Enterprise Vault 11.
-* Veritas Enterprise Vault 12.
+* Veritas Enterprise Vault 11
+* Veritas Enterprise Vault 12
 * Veritas NetBackup 8.0
 * 維地松
 

@@ -107,8 +107,7 @@ CommVault 軟體平台的主要功能包括：
 
 若要深入瞭解本文所述資訊、請檢閱下列文件和 / 或網站：
 
-* StorageGRID 11.8 文件中心 +
-https://docs.netapp.com/us-en/storagegrid-118/[]
+* StorageGRID 11.9 文件中心 +https://docs.netapp.com/us-en/storagegrid-119/[]
 * NetApp 產品文件 +
 https://docs.netapp.com[]
 * CommVault 說明文件 +

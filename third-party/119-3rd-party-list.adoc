@@ -1,10 +1,10 @@
 ---
-permalink: third-party/116-3rd-party-list.html 
+permalink: third-party/118-3rd-party-list.html 
 sidebar: sidebar 
-keywords: 11.6, third-party applications, storagegrid, ISV 
-summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.6%' 
+keywords: 11.9, third-party applications, storagegrid, ISV 
+summary: 第三方解決方案已通過 StorageGRID 11.9 驗證 
 ---
-= 通過驗證的第三方解決方案StorageGRID
+= StorageGRID 11.9 驗證的協力廠商解決方案
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 
 
 [role="lead"]
-下列第三方解決方案已通過驗證、可搭配StorageGRID 使用。+如果您要尋找的解決方案未列出、請聯絡您的NetApp客戶代表。
+下列協力廠商解決方案已通過驗證、可搭配 StorageGRID 11.9 使用。+如果您要尋找的解決方案未列出、請聯絡您的NetApp客戶代表。
 
 
 
@@ -23,9 +23,11 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 * 活動
 * Alluxio
 * Apache Kafka
+* AWS 安裝點
 * Bridgestor
 * Cantemo
 * Citrix內容協同作業
+* Collibra （ Collibra 資料品質最低版本 2024.02 ）
 * CommVault 11.
 * CTera Portal 6.
 * Dalet
@@ -34,6 +36,7 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 * 定義
 * 磁碟移轉資料
 * 夢中
+* 彈性搜尋快照（包括凍結層）
 * Emam
 * Fujifilm物件歸檔
 * GitHub企業伺服器
@@ -64,11 +67,12 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 * 雪片
 * SPECtra Logic on － Prem Glacier
 * Splunk Smartstore
+* Starburst
 * 輕鬆儲存
 * Trino
 * Varish Enterprise 6.0.4
 * Veeam 12.
-* Veritas Enterprise Vault 14
+* Veritas Enterprise Vault 15.1
 * Veritas NetBackup 8.0
 * Vertica 10.x
 * 維地松
@@ -85,8 +89,9 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 * CommVault 11功能版本26
 * IBM FileNet
 * OpenText文件21.4
+* Rukrik
 * Veeam 12.
-* Veritas Enterprise Vault 14.2.2
+* Veritas Enterprise Vault 15.1
 * Veritas NetBackup 10.1.1及更新版本
 
 
@@ -114,4 +119,26 @@ summary: '第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.
 * SoftNAS
 * QStar
 * Velasea
+
+
+
+
+== StorageGRID 支援的關鍵管理程式
+
+這些解決方案已通過測試。
+
+* Entrust KeyControl 10.2.
+* Hashicorp Vault 1.15.0
+* Thales CipherTrust Manager 2.0
+* Thales CipherTrust Manager 2.1.
+* Thales CipherTrust Manager 2.2.
+* Thales CipherTrust Manager 2.3
+* Thales CipherTrust Manager 2.4.
+* Thales CipherTrust Manager 2.8
+* Thales CipherTrust Manager 2.9.
+* Thales CipherTrust Manager 2.10
+* Thales CipherTrust Manager 2.11.
+* Thales CipherTrust Manager 2.12.
+* Thales CipherTrust Manager 2.13
+* Thales CipherTrust Manager 2.14
 

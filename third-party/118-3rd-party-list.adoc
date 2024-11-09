@@ -1,7 +1,7 @@
 ---
 permalink: third-party/118-3rd-party-list.html 
 sidebar: sidebar 
-keywords: 11.7, third-party applications, storagegrid, ISV 
+keywords: 11.8, third-party applications, storagegrid, ISV 
 summary: 第三方解決方案已通過 StorageGRID 11.8 驗證 
 ---
 = StorageGRID 11.8 驗證的協力廠商解決方案
@@ -73,7 +73,7 @@ summary: 第三方解決方案已通過 StorageGRID 11.8 驗證
 * Trino
 * Varish Enterprise 6.0.4
 * Veeam 12.
-* Veritas Enterprise Vault 14.
+* Veritas Enterprise Vault 15.1
 * Veritas NetBackup 8.0
 * Vertica 10.x
 * 維地松
@@ -92,8 +92,8 @@ summary: 第三方解決方案已通過 StorageGRID 11.8 驗證
 * OpenText文件21.4
 * Rukrik
 * Veeam 12.
-* Veritas Enterprise Vault 14.2.2
-* Veritas NetBackup 10.1.1 及更新版本
+* Veritas Enterprise Vault 15.1
+* Veritas NetBackup 10.1.1及更新版本
 
 
 

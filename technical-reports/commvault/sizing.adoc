@@ -122,6 +122,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
 
 [NOTE]
 ====
-如需擴充 StorageGRID 系統的詳細資訊、請參閱 https://docs.netapp.com/us-en/storagegrid-118/landing-expand/index.html["StorageGRID 11.8 擴充指南"]。
+如需擴充 StorageGRID 系統的詳細資訊，請參閱 https://docs.netapp.com/us-en/storagegrid-119/landing-expand/index.html["StorageGRID 11.9 擴充指南"]。
 
 ====
