@@ -5,6 +5,8 @@ entries:
 - title: 總覽
   pdf-filename: 已驗證的第三方解決方案-概述
   url: "/third-party/index.html"
+- title: StorageGRID 11.9
+  url: "/third-party/119-3rd-party-list.html"
 - title: StorageGRID 11.8
   url: "/third-party/118-3rd-party-list.html"
 - title: StorageGRID 11.7
