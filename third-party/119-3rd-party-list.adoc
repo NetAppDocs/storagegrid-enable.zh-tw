@@ -1,5 +1,5 @@
 ---
-permalink: third-party/118-3rd-party-list.html 
+permalink: third-party/119-3rd-party-list.html 
 sidebar: sidebar 
 keywords: 11.9, third-party applications, storagegrid, ISV 
 summary: 第三方解決方案已通過 StorageGRID 11.9 驗證 
