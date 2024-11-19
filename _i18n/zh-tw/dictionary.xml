@@ -917,11 +917,9 @@
   <block id="eeb6a1581fc15133d1c3602cc34fd461" category="list-text">如果目的地應用裝置具有相同大小的磁碟機、且已針對DDP8進行設定、您可以設定DDP16的目的地。如果已針對DDP16設定來源、則無法進行節點複製。</block>
   <block id="639a958d74ef218710689b55aa4ef73e" category="list-text">從SG5660或SG5760應用裝置改用SG6060應用裝置時、請注意SG5X60有60個容量磁碟機、SG6060只有58個容量磁碟機。</block>
   <block id="4d1c46cee1bdcec65653b2e2163398e0" category="list-text">在複製程序期間、節點複製程序要求來源節點離線至網格。如果在此期間有其他節點離線、用戶端服務可能會受到影響。</block>
-  <block id="83d1a0f23bb258b2a270a1d6f7ff51d7" category="list-text">儲存節點只能離線15天。如果複製程序預估接近15天或超過15天、請使用擴充與取消委任程序。</block>
   <block id="fec00ca7ab315b679cc642c66a770bd8" category="section-title">節點複製效能預估</block>
   <block id="517e3359377bb6a7ea9488482299838f" category="paragraph">下表包含節點複製期間的計算預估值。條件各異、*粗體*中的項目可能會超過節點停機的15天上限。</block>
   <block id="39ab52e8aaafa95380d3f56ccd8095d9" category="section-title">DDP8.</block>
-  <block id="bb4e622c7d3edd2670cd4402fda0dfce" category="section-title">SG5612 -&gt;任何</block>
   <block id="a88a341631b814f619579143455d7353" category="cell">網路介面速度</block>
   <block id="690f7bdfae387972bf437193506dbb33" category="cell">4TB磁碟機大小</block>
   <block id="a6994b6b2103b87f98052b644780d5a0" category="cell">8TB磁碟機大小</block>
@@ -951,12 +949,10 @@
   <block id="e727fed489e8b7eecf1901196ec3ede9" category="paragraph">2天</block>
   <block id="6383598717ae8ac458dc988dff77c800" category="paragraph">5天</block>
   <block id="79e241fd6b320cbb41d67b028ec6f1c0" category="paragraph">8天</block>
-  <block id="2a8a1b5738432b51afcd4dcbbbfe1434" category="paragraph">1.5天</block>
   <block id="9e6b8df1cd23e71938af979057e5144a" category="paragraph">3.5天</block>
   <block id="7da42b5478786d91e64cb31ec52e2511" category="paragraph">9.5天</block>
   <block id="d2bfdb3de60e1c2f154e5f9fa5a1dfc1" category="section-title">DDP16</block>
   <block id="00471150fc4d84adcd57392d7a47a3cb" category="paragraph">3.5天</block>
-  <block id="85ba217056d3540506dc11016ec224e3" category="paragraph">12.5天</block>
   <block id="69a1b13f0c02f82aace898a3521485c7" category="paragraph">* 14天*</block>
   <block id="383aea8468a529b339b755e27b1d4668" category="paragraph">7.5天</block>
   <block id="9ff416b798a88ec4bfb30f4f045aada5" category="paragraph">11天</block>
@@ -1757,7 +1753,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
 <block ref="27eb3a3d6ca60f8dbf05e2df1f7e4644" category="inline-link-rx"></block></block>
   <block id="c4d7e990537b5cabb7c53ef27e8240d3" category="paragraph">Veeam 要求端點僅透過 HTTPS 連線。Veeam 不支援未加密的連線。SSL 憑證可以是自我簽署的憑證、私密信任的憑證授權單位或公開信任的憑證授權單位。為了確保能持續存取 S3 儲存庫、建議在 HA 組態中至少使用兩個負載平衡器。負載平衡器可以是 StorageGRID 提供的整合式負載平衡器服務、位於每個管理節點和閘道節點、或是第三方解決方案、例如 F5 、 Kemp 、 HAProxy 、 Loadbalancer.org 等 使用 StorageGRID 負載平衡器可設定流量分類器（ QoS 規則）、以排定 Veeam 工作負載的優先順序、或將 Veeam 限制為不影響 StorageGRID 系統上的高優先順序工作負載。</block>
   <block id="2adef84f9348cc9769b8c3e1982c3cb1" category="list-text">若為具有擴充架的 SG6060 或 SG6160 、您需要將適當機櫃磁碟機大小的時間加入基本應用裝置時間、以獲得完整複製時間。</block>
-  <block id="77ffe904133c5c2e3ab960ef54b7be2d" category="section-title">SG5712/SG5812 -&gt; 任何</block>
   <block id="2060afee4c8201b859d447131ee1434a" category="section-title">SG5660 -&gt; SG5760/SG5860</block>
   <block id="85b9faf406d03aaecca5e119294ceb1a" category="section-title">SG5660 -&gt; SG6060/SG6160</block>
   <block id="7d9a95e91e60865aaa29da1eb0f75121" category="section-title">SG5760/SG5860 -&gt; SG5760/SG5860</block>
@@ -3139,7 +3134,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="81022eb5da399c3a2fd9f2b07db1afd3" category="sidebar">StorageGRID 災難恢復–使用 Veritas Enterprise Vault 設定 StorageGRID 進行站台容錯移轉</block>
   <block id="454255deb718c7d2b26df2342f80d3d3" category="list-text">2024 年 2 月 2 日： <block ref="890e1ea9b3a6310b9da56310b581c035" category="inline-link-rx"></block></block>
   <block id="038f39e88db40cdb4f2702538c9f7cac" category="inline-link">StorageGRID 11.9</block>
-  <block id="69962f106c568f6867ef85cee5ce38c8" category="list-text"><block ref="69962f106c568f6867ef85cee5ce38c8" category="inline-link-rx"></block></block>
   <block id="c0ffd7598ab1538e87530f78e30ee7a5" category="list-text">StorageGRID 11.9 文件中心 +<block ref="8cd5d43b808eac3380916fd8a7010bbf" category="inline-link-rx"></block></block>
   <block id="023074507079b61efa6f2839e5f70a91" category="inline-link">StorageGRID 11.9 擴充指南</block>
   <block id="f4940e01170c039d45c3e66e940623ae" category="paragraph">如需擴充 StorageGRID 系統的詳細資訊，請參閱<block ref="383fbf920d7819c777fd14de7ab5c076" category="inline-link-rx"></block>。</block>
@@ -3159,4 +3153,15 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="3595748c33defe605c1fdb5ccbf36297" category="paragraph">下列協力廠商解決方案已通過驗證、可搭配 StorageGRID 11.9 使用。+如果您要尋找的解決方案未列出、請聯絡您的NetApp客戶代表。</block>
   <block id="99b12e8f286736e276d9ae9cf6c493e8" category="inline-link-macro">NetApp StorageGRID 11.9 產品文件</block>
   <block id="eeaa535340d552b22fc3654b745ad4ea" category="list-text"><block ref="eeaa535340d552b22fc3654b745ad4ea" category="inline-link-macro-rx"></block></block>
+  <block id="8eabc09dcd3c546f24451cb9bb46605b" category="list-text">11.8 和低：儲存節點只能離線 15 天。如果複製程序預估接近15天或超過15天、請使用擴充與取消委任程序。</block>
+  <block id="4a36d535e0833e25ae3b31be267f49b3" category="list-text">11.9 ： 15 天期限已移除。</block>
+  <block id="69efc448e3120278e1d835f33e96998d" category="section-title">SG5612/SG5712/SG5812 -&gt; 任何</block>
+  <block id="9de59435dd900201845ff6636e7c22f3" category="cell">22TB磁碟機大小</block>
+  <block id="3d429f9f54008f3c07b0c8e6f68efbba" category="paragraph">* 13.5天*</block>
+  <block id="fdc2bc318d59655e7eb479ae1e909603" category="paragraph">* 15.5天*</block>
+  <block id="3787a1468391562e98ddd36a2dde39d1" category="paragraph">* 18.5天*</block>
+  <block id="1fd1f9584361048bdbc61a65caa8c999" category="paragraph">* 12天*</block>
+  <block id="973aefb7cd4fa1181692b6c7dab8336d" category="paragraph">* 12.5天*</block>
+  <block id="19c95a26acdda408cd23f4a3d3816d3a" category="paragraph">* 17天*</block>
+  <block id="83f15d0c42eec3db2e4b64cc94344c40" category="list-text"><block ref="83f15d0c42eec3db2e4b64cc94344c40" category="inline-link-rx"></block></block>
 </blocks>
