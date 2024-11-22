@@ -12,6 +12,8 @@ summary: 本指南著重於 NetApp StorageGRID 和部分 Veeam 備份與複寫�
 
 
 [role="lead"]
+_ 作者： Oliver Haensel 和 Aron Klein_
+
 本指南著重於 NetApp StorageGRID 和部分 Veeam 備份與複寫的組態。本白皮書是專為熟悉 Linux 系統、且負責與 Veeam 備份與複寫搭配維護或實作 NetApp StorageGRID 系統的儲存與網路管理員所撰寫。
 
 
@@ -189,5 +191,3 @@ image:veeam-bp/tc_2.png["流量分類原則指標"]
 * link:https://docs.netapp.com/us-en/storagegrid-119/["NetApp StorageGRID 11.9 產品文件"^]
 * link:https://www.veeam.com/documentation-guides-datasheets.html?productId=8&version=product%3A8%2F221["Veeam 備份與複寫"^]
 
-
-_ 作者： Oliver Haensel 和 Aron Klein_

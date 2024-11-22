@@ -12,6 +12,8 @@ summary: S3cmd是免費的命令列工具和用戶端、適用於S3作業。您�
 
 
 [role="lead"]
+_ 作者： Aron Klein_
+
 S3cmd是免費的命令列工具和用戶端、適用於S3作業。您可以使用s3cmd測試StorageGRID 及示範S3在支援上存取。
 
 
@@ -88,5 +90,3 @@ NOTE: 如果您在步驟4中指定host_base和host_bucket、則不需要在CLI�
 「3cmd Del S3：//<bucket >/-host=<終結 點>:<port>-no -check認證」
 
 
-
-_ 作者： Aron Klein_

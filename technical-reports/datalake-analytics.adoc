@@ -11,6 +11,9 @@ summary: 本報告涵蓋 StorageGRID 上的巨量資料分析。
 :imagesdir: ../media/
 
 
+[role="lead"]
+_ 作者： Angela Cheng _
+
 
 
 == NetApp StorageGRID 使用案例

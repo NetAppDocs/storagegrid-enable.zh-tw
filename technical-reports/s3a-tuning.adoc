@@ -12,6 +12,8 @@ summary: 本報告涵蓋 StorageGRID 的 S3A 調校。
 
 
 [role="lead"]
+_ 作者： Angela Cheng _
+
 Hadoop S3A 連接器可促進 Hadoop 應用程式與 S3 物件儲存之間的順暢互動。調整 Hadoop S3A Connector 是在使用 S3 物件儲存設備時最佳化效能的關鍵。在我們開始調整詳細資料之前、讓我們先基本瞭解 Hadoop 及其元件。
 
 

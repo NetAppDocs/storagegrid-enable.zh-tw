@@ -12,6 +12,8 @@ summary: 支援的支援功能有許多不同的方法可加密閒置的資料�
 
 
 [role="lead"]
+_ 作者： Aron Klein_
+
 支援的支援功能有許多不同的方法可加密閒置的資料。StorageGRID若要深入瞭解、請參閱 https://docs.netapp.com/us-en/storagegrid-116/admin/reviewing-storagegrid-encryption-methods.html["檢閱StorageGRID 功能加密方法"^]。
 
 本指南將示範S3 API加密方法。
@@ -186,5 +188,3 @@ aws s3api head-object --bucket <bucket> --key <file> --endpoint-url https://s3.e
 aws s3api get-object --bucket <bucket>  --key <file> <file> --endpoint-url https://s3.example.com
 ----
 
-
-_ 作者： Aron Klein_

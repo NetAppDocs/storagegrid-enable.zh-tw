@@ -12,6 +12,8 @@ summary: 使用 StorageGRID 設定 Dremio 資料來源
 
 
 [role="lead"]
+_ 作者： Angela Cheng _
+
 Dremio 支援各種資料來源、包括雲端型或內部部署物件儲存。  您可以將 Dremio 設定為使用 StorageGRID 做為物件儲存資料來源。
 
 
@@ -88,5 +90,3 @@ image:dremio/dremio-add-source-advanced.png["新來源 - 進階選項"]
 image:dremio/dremio-source-added.png["新增資料來源"]
 
 
-
-_ 作者： Angela Cheng _

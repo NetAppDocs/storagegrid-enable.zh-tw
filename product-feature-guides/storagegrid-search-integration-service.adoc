@@ -12,7 +12,7 @@ summary: 本指南詳細說明如何使用StorageGRID Amazon OpenSearch Service�
 
 
 [role="lead"]
-本指南詳細說明如何使用StorageGRID Amazon OpenSearch Service或內部部署Elasticsearch來設定NetApp的《支援》11.6搜尋 整合服務。
+本指南提供使用 Amazon OpenSearch 服務或內部部署 Elasticsearch 來設定 NetApp StorageGRID 搜尋整合服務的詳細說明。
 
 
 

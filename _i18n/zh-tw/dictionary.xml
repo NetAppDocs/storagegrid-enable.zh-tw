@@ -442,7 +442,6 @@
   <block id="8117fcb97cf86729cfbe315fb7c069c7" category="list-text">將儲存區加密</block>
   <block id="87edd78cd55896c283c8e2897bc9ba41" category="summary">本指南詳細說明如何使用StorageGRID Amazon OpenSearch Service或內部部署Elasticsearch來設定NetApp的《支援》11.6搜尋 整合服務。</block>
   <block id="c86030d76e5f59c53ee3bc844dccdbd2" category="doc">設定StorageGRID 搜尋整合服務</block>
-  <block id="f14bf9907ae948f8af2bfd00dbd85f09" category="paragraph">本指南詳細說明如何使用StorageGRID Amazon OpenSearch Service或內部部署Elasticsearch來設定NetApp的《支援》11.6搜尋 整合服務。</block>
   <block id="24aceb5c24cf5a3bbe879def9dd06dd3" category="paragraph">支援三種平台服務。StorageGRID</block>
   <block id="fde5ed7646cf684c0972be9a066f6914" category="list-text">*《CloudMirror複寫*》。StorageGRID將StorageGRID 特定物件從靜止庫鏡射到指定的外部目的地。</block>
   <block id="8e304e3c51ae41ba284a04741c9b3ffd" category="list-text">*通知*。每個儲存區事件通知、可將針對物件執行的特定動作通知傳送至指定的外部Amazon Simple Notification Service（Amazon SNS）。</block>
@@ -647,7 +646,6 @@
   <block id="d5a554fb68642d807aee43887546b43a" category="image-alt">Kibana匯入選項</block>
   <block id="42451b291f11e82724f65b3c852cca1d" category="paragraph">匯入elk&lt;version&gt;-query-chart-same.ndjson。+當系統提示您解決衝突時、請選取您在步驟8中建立的索引模式或資料檢視。</block>
   <block id="bc1a8499a0350f03b4ca75964eaad9cb" category="image-alt">Kibana衝突</block>
-  <block id="d304b6866d45389dd644b1c1788bfd5a" category="paragraph">下列Kibana物件會匯入： +*查詢*+*稽核-msg-s3rq-orlm+* bycast記錄S3相關訊息+*記錄層級警告或更新版本+*失敗的安全事件+*圖表*+* S3要求數以bycast.log為基礎+* HTTP狀態代碼+*稽核msg明細按類型+*平均S3回應 時間+*儀表板*+* S3要求儀表板、請使用上述圖表。</block>
   <block id="367c071ddbe8d1248ceb63f940e9b3cc" category="paragraph">您現在可以StorageGRID 使用Kibana來執行資訊分析。</block>
   <block id="8cd58c89ff3d51a256ecfe3fe8bab20f" category="section-title">其他資源</block>
   <block id="925a38c6c8bc1c84ae702d840efa1ef4" category="inline-link">系統記錄101.</block>
@@ -2747,7 +2745,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="2118853f538fca485356f21c05a7d4f8" category="list-text"><block ref="2118853f538fca485356f21c05a7d4f8" category="inline-link-rx"></block></block>
   <block id="22e833c8d6d091d576273597a887e60e" category="list-text"><block ref="22e833c8d6d091d576273597a887e60e" category="inline-link-rx"></block></block>
   <block id="be89a903679bdf28679c22b4ed6c9806" category="list-text"><block ref="be89a903679bdf28679c22b4ed6c9806" category="inline-link-rx"></block></block>
-  <block id="79007772b99cbebaceca4f4abdc9236b" category="paragraph">利用「靜態11.6syslog轉送」功能、您可以設定外部syslog伺服StorageGRID 器來收集和分析StorageGRID 資訊記錄訊息。Elk（Elasticsearch、Logstash、Kibana）已成為最受歡迎的記錄分析解決方案之一。觀看<block ref="a42387db058ee8ea3a8dcc51c8812963" category="inline-link-rx"></block> 以檢視範例 elk 組態、以及如何使用它來識別和疑難排解失敗的 S3 要求。本文提供Logstash組態、Kibana查詢、圖表和儀表板的範例檔案、協助您快速開始StorageGRID 進行資訊記錄管理和分析。</block>
   <block id="31b606c7f1c871f0b8ba92c74d0c9480" category="list-text">從程式管理程式GUI、設定外部syslog伺服器StorageGRID 、將記錄訊息傳送至Logstash。如需詳細資訊、請參閱<block ref="2216f063c2431b11fee834376e17fce1" category="inline-link-rx"></block> 。</block>
   <block id="4ecf6b273d67f2120caae7734e1fcf14" category="list-text">Rukrik</block>
   <block id="c2d8fc700534345077a260fb9791fba1" category="summary">為潛在客戶存取 StorageGRID 評估軟體的步驟。</block>
@@ -3164,4 +3161,10 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="973aefb7cd4fa1181692b6c7dab8336d" category="paragraph">* 12.5天*</block>
   <block id="19c95a26acdda408cd23f4a3d3816d3a" category="paragraph">* 17天*</block>
   <block id="83f15d0c42eec3db2e4b64cc94344c40" category="list-text"><block ref="83f15d0c42eec3db2e4b64cc94344c40" category="inline-link-rx"></block></block>
+  <block id="79f8aaf5f753858807e5b593351a00c9" category="paragraph">本指南提供使用 Amazon OpenSearch 服務或內部部署 Elasticsearch 來設定 NetApp StorageGRID 搜尋整合服務的詳細說明。</block>
+  <block id="1ec648377638e043bfb89eccc1053188" category="inline-link">YouTube 影片</block>
+  <block id="a5e3fa36313df10d074a9fd1034514d3" category="paragraph">使用 StorageGRID 系統記錄轉送功能，您可以設定外部系統記錄伺服器來收集和分析 StorageGRID 記錄訊息。Elk（Elasticsearch、Logstash、Kibana）已成為最受歡迎的記錄分析解決方案之一。觀看<block ref="a42387db058ee8ea3a8dcc51c8812963" category="inline-link-rx"></block> 以檢視範例 elk 組態、以及如何使用它來識別和疑難排解失敗的 S3 要求。StorageGRID 11.9 支援將負載平衡器端點存取記錄匯出至外部 Syslog 伺服器。請觀看此影片<block ref="76980d5900b8bc5b66d872ad50141cf3" category="inline-link-rx"></block>，深入瞭解這項新功能。本文提供Logstash組態、Kibana查詢、圖表和儀表板的範例檔案、協助您快速開始StorageGRID 進行資訊記錄管理和分析。</block>
+  <block id="a3f1428e66932d96ff43f4bf4a938e38" category="inline-link-macro">下載 StorageGRID 11.9 的 Logstash 8.x 範例檔案套件</block>
+  <block id="92648c644fef59d092d8ebc7df369fd8" category="list-text"><block ref="69ef6b23b33f55d10cdea70d6bd19e3d" category="inline-link-macro-rx"></block>+ * MD5 checksum * 41272857c4a54600f95995f6ed74800d + * sha256 checksum * 67048ee8661052719990851e1e1ad960d4902fe537a6e135e8600177188da677c9</block>
+  <block id="52f70839644ed308c4da8e45cf815a31" category="paragraph">匯入下列 Kibana 物件： + * 查詢 bycast.log * + * 稽核 - msg-s3rq-orlm + * 廣播記錄 S3 相關訊息 + * 記錄層級警告或更高 + * 失敗安全事件 + * Ngins-GW 端點存取記錄（僅適用於 elk8-skample-for -sg119.zip ） + * 圖表 * + S3 要求根據上述儀表板的平均回應時間類型 + 回應數 * ，按儀表板數 + msg * ，以追蹤記錄 *</block>
 </blocks>

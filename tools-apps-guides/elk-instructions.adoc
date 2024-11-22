@@ -12,7 +12,9 @@ summary: 利用「Sys11.6syslog轉送」功能、您可以設定外部syslog伺�
 
 
 [role="lead"]
-利用「靜態11.6syslog轉送」功能、您可以設定外部syslog伺服StorageGRID 器來收集和分析StorageGRID 資訊記錄訊息。Elk（Elasticsearch、Logstash、Kibana）已成為最受歡迎的記錄分析解決方案之一。觀看 https://media.netapp.com/video-detail/3d090a61-23d7-5ad7-9746-4cebbb7452fb/storagegrid-log-analysis-using-elk-stack["使用elk視訊進行記錄分析StorageGRID"^] 以檢視範例 elk 組態、以及如何使用它來識別和疑難排解失敗的 S3 要求。本文提供Logstash組態、Kibana查詢、圖表和儀表板的範例檔案、協助您快速開始StorageGRID 進行資訊記錄管理和分析。
+_ 作者： Angela Cheng _
+
+使用 StorageGRID 系統記錄轉送功能，您可以設定外部系統記錄伺服器來收集和分析 StorageGRID 記錄訊息。Elk（Elasticsearch、Logstash、Kibana）已成為最受歡迎的記錄分析解決方案之一。觀看 https://media.netapp.com/video-detail/3d090a61-23d7-5ad7-9746-4cebbb7452fb/storagegrid-log-analysis-using-elk-stack["使用elk視訊進行記錄分析StorageGRID"^] 以檢視範例 elk 組態、以及如何使用它來識別和疑難排解失敗的 S3 要求。StorageGRID 11.9 支援將負載平衡器端點存取記錄匯出至外部 Syslog 伺服器。請觀看此影片 https://youtu.be/hnnT0QqLSgA?si=tDMPc4bdbqumYzFz["YouTube 影片"^]，深入瞭解這項新功能。本文提供Logstash組態、Kibana查詢、圖表和儀表板的範例檔案、協助您快速開始StorageGRID 進行資訊記錄管理和分析。
 
 
 
@@ -28,6 +30,7 @@ summary: 利用「Sys11.6syslog轉送」功能、您可以設定外部syslog伺�
 
 * link:../media/elk-config/elk7-sample.zip["下載Logstash 7.x範例檔案套件"] +* md5 checksum * 148c23d0021d9a4bb4a6c0287464deab +* sha256 checksum * f51ec9e2e3f842d5a7861566b167a561beb4373038b4e7bb3c8b3d522adf2d6
 * link:../media/elk-config/elk8-sample.zip["下載Logstash 8.x範例檔案套件"] +* md5 checksum * e11bae3a662f87c310ef363d0fe06835 +* sha256 checksum * 5c670755742cfdfd5aa723a596ba087e0153a65bcaf3934afdb682f61278d
+* link:../media/elk-config/elk8-sample-for-sg119.zip["下載 StorageGRID 11.9 的 Logstash 8.x 範例檔案套件"]+ * MD5 checksum * 41272857c4a54600f95995f6ed74800d + * sha256 checksum * 67048ee8661052719990851e1e1ad960d4902fe537a6e135e8600177188da677c9
 
 
 
@@ -108,7 +111,7 @@ image:elk-config/kibana-import-options.png["Kibana匯入選項"]
 image:elk-config/kibana-import-conflict.png["Kibana衝突"]
 
 +
-下列Kibana物件會匯入： +*查詢*+*稽核-msg-s3rq-orlm+* bycast記錄S3相關訊息+*記錄層級警告或更新版本+*失敗的安全事件+*圖表*+* S3要求數以bycast.log為基礎+* HTTP狀態代碼+*稽核msg明細按類型+*平均S3回應 時間+*儀表板*+* S3要求儀表板、請使用上述圖表。
+匯入下列 Kibana 物件： + * 查詢 bycast.log * + * 稽核 - msg-s3rq-orlm + * 廣播記錄 S3 相關訊息 + * 記錄層級警告或更高 + * 失敗安全事件 + * Ngins-GW 端點存取記錄（僅適用於 elk8-skample-for -sg119.zip ） + * 圖表 * + S3 要求根據上述儀表板的平均回應時間類型 + 回應數 * ，按儀表板數 + msg * ，以追蹤記錄 *
 
 
 
@@ -126,5 +129,3 @@ image:elk-config/kibana-import-conflict.png["Kibana衝突"]
 * https://www.elastic.co/guide/en/kibana/master/document-explorer.html["Kibana指南–瀏覽文件"]
 * https://docs.netapp.com/us-en/storagegrid-116/audit/index.html["零稽核記錄訊息參考StorageGRID"]
 
-
-_ 作者： Angela Cheng _

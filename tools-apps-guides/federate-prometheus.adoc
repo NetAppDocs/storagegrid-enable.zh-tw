@@ -12,6 +12,8 @@ summary: 本技術報告提供使用StorageGRID 外部Prometheus和Grafana服務
 
 
 [role="lead"]
+_ 作者： Aron Klein_
+
 本技術報告提供使用StorageGRID 外部Prometheus和Grafana服務設定NetApp供應鏈11.6的詳細說明。
 
 
@@ -384,5 +386,3 @@ image:prometheus/grafana_panel_edit.png["GRFANA編輯面板"]
 === 結論
 
 現在我們擁有Prometheus伺服器、可自訂資料保留和儲存容量。有了這項功能、我們就能繼續建立自己的儀表板、並提供與營運最相關的指標。您可以取得更多有關在中收集的Prometheus指標的資訊 https://docs.netapp.com/us-en/storagegrid-116/monitor/commonly-used-prometheus-metrics.html["本文檔StorageGRID"^]。
-
-_ 作者： Aron Klein_
