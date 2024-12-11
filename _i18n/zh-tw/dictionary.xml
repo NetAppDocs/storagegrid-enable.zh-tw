@@ -1368,7 +1368,6 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="4dc7ef59b422ad6beec0dcf560a3fdf9" category="paragraph">* 資料備份與災難恢復： * 企業可以使用 StorageGRID S3 做為可靠且具成本效益的解決方案、在發生災難時備份關鍵資料並加以恢復。</block>
   <block id="b05954e05454ab56e0d356cb4ad49d95" category="paragraph">* 應用程式的資料儲存： * StorageGRID S3 可作為應用程式的儲存後端、讓開發人員輕鬆儲存及擷取檔案、影像、影片及其他類型的資料。</block>
   <block id="5623c900b98e0e5e17c60c75ded947b1" category="paragraph">* 內容交付： * StorageGRID S3 可用於儲存靜態網站內容、媒體檔案及軟體下載、並提供給全球各地的使用者、運用 StorageGRID 的地理發佈和全球命名空間、提供快速可靠的內容交付。</block>
-  <block id="60b72d1ecbd87ac726a3dbb733456c59" category="paragraph">* 資料分層： * NetApp 客戶使用 ONTAP FabricPool 功能、在高效能本機層之間自動將資料移至 StorageGRID 。分層可釋放昂貴的 Flash 儲存空間、以儲存熱資料、同時讓低成本物件儲存設備隨時可用冷資料。如此可將效能與節約效益發揮到極致。</block>
   <block id="454845c7ca306686c28f96a59487d70c" category="paragraph">* 資料歸檔： * StorageGRID 提供不同的儲存類型、並支援分層處理至公有長期低成本儲存選項、因此是歸檔及長期保留資料的理想解決方案、這些資料必須保留以供法規遵循或歷史用途。</block>
   <block id="a324e6c3bb7d6684738c923e7b52ea98" category="paragraph">* 物件儲存使用案例 *</block>
   <block id="9f79f86c9a539a911125a876ef6a3c2e" category="inline-image-macro">StorageGRID 使用案例圖表、寬度 = 396 、高度 = 394</block>
@@ -3011,7 +3010,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="077385462ac0cf8f7fe1ddb0b3983c42" category="cell">TPCDS 99 查詢 + 總分鐘數（停用快取）</block>
   <block id="34173cb38f07f89ddbebc2ac9128303f" category="cell">30</block>
   <block id="b6d767d2f8ed5d21a44b0e5886680cb9" category="cell">22</block>
-  <block id="95df7e4eb2568a2c428c70b695f7cac2" category="cell">TPCDS 99 查詢 + 總分鐘數（啟用快取）</block>
   <block id="d81fdeb5a429e85d04118048e4b3485d" category="cell">21.5</block>
   <block id="b7ae258c3f8653133aa9c0c448f67516" category="cell">Get （快取已停用）</block>
   <block id="3bb0dd7ec24af388f7e49723482fb553" category="cell">2,154,747</block>
@@ -3167,4 +3165,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="a3f1428e66932d96ff43f4bf4a938e38" category="inline-link-macro">下載 StorageGRID 11.9 的 Logstash 8.x 範例檔案套件</block>
   <block id="92648c644fef59d092d8ebc7df369fd8" category="list-text"><block ref="69ef6b23b33f55d10cdea70d6bd19e3d" category="inline-link-macro-rx"></block>+ * MD5 checksum * 41272857c4a54600f95995f6ed74800d + * sha256 checksum * 67048ee8661052719990851e1e1ad960d4902fe537a6e135e8600177188da677c9</block>
   <block id="52f70839644ed308c4da8e45cf815a31" category="paragraph">匯入下列 Kibana 物件： + * 查詢 bycast.log * + * 稽核 - msg-s3rq-orlm + * 廣播記錄 S3 相關訊息 + * 記錄層級警告或更高 + * 失敗安全事件 + * Ngins-GW 端點存取記錄（僅適用於 elk8-skample-for -sg119.zip ） + * 圖表 * + S3 要求根據上述儀表板的平均回應時間類型 + 回應數 * ，按儀表板數 + msg * ，以追蹤記錄 *</block>
+  <block id="975915e0dc64af72667a293b87be5f66" category="cell">TPCDS 99 查詢 + 總分鐘 ^2^ （啟用快取）</block>
+  <block id="a447f0aa56d54d66cf89976cc810a113" category="paragraph">^2^ Trino/Starburst 效能受到運算資源的限制；將更多 RAM 新增至叢集可縮短查詢時間。</block>
 </blocks>
