@@ -8,7 +8,7 @@ summary: 為潛在客戶存取 StorageGRID 評估軟體的步驟。
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 
 [role="lead"]

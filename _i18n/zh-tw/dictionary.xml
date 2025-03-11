@@ -1393,34 +1393,27 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="35b5589d5690d7ef32acf311beb9bbea" category="cell">TPCDS 99 查詢 +
 總分鐘數</block>
   <block id="b53b3a3d6ab90ce0268229151c9bde11" category="cell">55</block>
-  <block id="67c6a1e7ce56d3d6fa748ab6d9af3fd7" category="cell">47</block>
   <block id="7528035a93ee69cedb1dbddb2f0bfcc8" category="cell">取得</block>
   <block id="8db7bb1512ff25e1db67c5b9a53f897d" category="cell">1,117,184</block>
   <block id="2569e54b8230d5c2746fa85c61dcf512" category="cell">2,074,610</block>
-  <block id="7cea2b87e7eb0c4d67994a7b9fa4f3d3" category="cell">4,414,227</block>
   <block id="6f53c4f40f0a0d7fefdb89564ac1c713" category="cell">觀察： +
 全方位實現</block>
   <block id="a9d41bf59f53e6160f0b13f571ea418a" category="cell">從 32 MB 物件到 2 KB 到 2 MB 的範圍達到 80% 、每秒 50 到 100 個要求</block>
   <block id="e0b8bceb4cded5e4c1e2d73d9331f0f7" category="cell">73% 的範圍從 32 MB 物件低於 100KB 、從 1000 到 1400 個要求 / 秒</block>
-  <block id="bfe0f96dc7eb9140699f8fdd7568c553" category="cell">從 256 MB 物件獲得 90% 的 100 萬位元組範圍、 2000 年至 2300 個要求 / 秒</block>
   <block id="0f220d208874b104e26e73ec94b0e690" category="cell">列出物件</block>
   <block id="bfc2dfc2cb23058c08a7d12b5c3abb19" category="cell">312,053</block>
   <block id="0e706da47bd945de88f06af5c56e1e6a" category="cell">24 、 158</block>
-  <block id="335f5352088d7d9bf74191e006d8e24c" category="cell">240</block>
   <block id="c03e2ac569e5aac15b52493eef30e9e7" category="cell">標題 +
 （不存在的物件）</block>
   <block id="b920dc6d7f4f2319e93bdcc850be6166" category="cell">156,027</block>
   <block id="8e43c25a28a92db67de364324cbdf9dd" category="cell">12 、 103</block>
-  <block id="58a2fc6ed39fd083f55d4182bf88826d" category="cell">192.</block>
   <block id="d241bb72f8484e8c12847a1c342893cc" category="cell">標題 +
 （存在的物件）</block>
   <block id="791138a3078a87a630b0ddcc779f5365" category="cell">982,126.</block>
   <block id="41157fd52202414d46b193aa0dc0e7ed" category="cell">922,732.</block>
-  <block id="4a12caac680acef61b9d5542d0bdd153" category="cell">1845</block>
   <block id="645d67b4eb5a0d06bf14fe7a682ced76" category="cell">申請總數</block>
   <block id="a56d0d38d9846ac044442ecabae19902" category="cell">2,567,390</block>
   <block id="6dfffbda5aeba01126df9439ffbc82a3" category="cell">3 、 033 、 603</block>
-  <block id="b0f186b9ad3639a900dc289160a9505b" category="cell">4,416504..</block>
   <block id="71860c77c6745379b0d44304d66b6a13" category="inline-link">頁面</block>
   <block id="c0c37f88f031a9b491d9a8bbea81dda7" category="paragraph">請造訪下列連結、深入瞭解 StorageGRID 和 Dremio 如何合作提供現代化且有效率的資料湖基礎架構、以及 NetApp 如何從 Hive + HDFS 移轉至 Dremio + StorageGRID 、大幅提升巨量資料分析效率。</block>
   <block id="79304bd05c48f486a8924e2c45f39311" category="inline-link">利用 NetApp StorageGRID 大幅提升巨量資料的效能</block>
@@ -1450,17 +1443,11 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
 <block ref="a48adf12485e7e1fabf51f229ceb57fd" category="inline-link-macro-rx"></block></block>
   <block id="a27c73113b9f8b1c8936231a5c6b72db" category="list-text">登入主要管理節點、使用 change-ip 進行 Grid IP 變更、必須 * 登入 * 登入 * 變更才能關閉節點以進行重新定位。</block>
   <block id="e8ebed2710314532bd7421c291775f7a" category="list-text">選擇 2 、然後選擇 1 進行網格 IP 變更</block>
-  <block id="f246621acb182eca202eb998d35a0a71" category="paragraph"><block ref="f246621acb182eca202eb998d35a0a71" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0fc35f100f57d71f3d04d75f8e34db7a" category="list-text">選取 5 以顯示變更</block>
-  <block id="51db02a440736bec001c7d690821ec49" category="paragraph"><block ref="51db02a440736bec001c7d690821ec49" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0db10ef124f48bf74646e51d511e42e7" category="list-text">選取 10 以驗證及套用變更。</block>
-  <block id="ecf8b3b84403afdd8f30ff4ca92df4d0" category="paragraph"><block ref="ecf8b3b84403afdd8f30ff4ca92df4d0" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b535a2204d1cc298ac5c3b36cc8a9249" category="list-text">必須在此步驟中選擇 * 階段 * 。</block>
-  <block id="a8c78f88b73dcaf8b7082c7d8bab4356" category="paragraph"><block ref="a8c78f88b73dcaf8b7082c7d8bab4356" category="inline-image-macro-rx" type="image"></block></block>
   <block id="23e28a352f23f6051ecbe97b0516b42f" category="list-text">如果上述變更中包含主要管理節點、請輸入 *'A' 以手動重新啟動主要管理節點 *</block>
-  <block id="6cfd9d702fc475a31c16db4299ee31a0" category="paragraph"><block ref="6cfd9d702fc475a31c16db4299ee31a0" category="inline-image-macro-rx" type="image"></block></block>
   <block id="355ec7ab5ee5e52899a8a48528d82b93" category="list-text">按 ENTER 鍵返回上一個功能表、然後結束 change-IP 介面。</block>
-  <block id="34efad53185ba8366fcb774fe4502175" category="paragraph"><block ref="34efad53185ba8366fcb774fe4502175" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6a713acf175fd861bbb563ab540a06fe" category="list-text">從 Grid Manager 下載新的恢復套件。* Grid manager* &gt; * Maintenance * &gt; * Recovery package*</block>
   <block id="96557217b00ac75f863bec84c65347bf" category="list-text">如果 StorageGRID 應用裝置需要變更 VLAN 、請參閱一節 <block ref="f1c1d143229526a165bf49ac775d4ecd" category="inline-xref-macro-rx"></block>。</block>
   <block id="26afb12dd81518887c60c85ae47dab08" category="list-text">關閉站台上的所有節點和 / 或應用裝置、必要時標記 / 移除磁碟機、卸載、包裝和移動。</block>
@@ -2984,11 +2971,7 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="7c648110d8b752889f98cd2d87517c0f" category="section-title">以 S3 物件儲存為基準測試資料倉儲和 Lakeouses ：比較研究</block>
   <block id="3f7d606956bcb4f8b565d2799da4a4e3" category="paragraph">本文提供使用 NetApp StorageGRID 的各種資料倉儲和湖屋生態系統的完整基準。目標是判斷哪一種系統在 S3 物件儲存設備上的效能最佳。請參閱此資訊<block ref="ca1f374596a7de7e13cf95753411f6e0" category="inline-link-rx"></block>、深入瞭解資料流 / 湖屋架構和表格格式（ Parquet 和冰山）。</block>
   <block id="39b5836a4532001dfbe7e05fb49461e4" category="list-text">VM 叢集、每個都有 128G RAM 和 24 個 vCPU 、系統磁碟的 SSD 儲存設備</block>
-  <block id="37e59045c327c8ae9b2d4f7b4f136217" category="list-text">Dremio V23 （ 1 個 Cordinator + 5 個執行者）</block>
-  <block id="1543c40ac4e68e60ea63a94bfab320ec" category="list-text">Trino v438 （ 1 個協調器 + 5 個員工）</block>
-  <block id="e9940dffc6cb8987f8ea2849d2c81a2c" category="list-text">Starburst v453 （ 1 個 Cordinator + 5 個工作者）</block>
   <block id="e6626cf4bf50ce440a045708b2e1f1e5" category="list-text">NetApp ^ ® ^ StorageGRID ^ ® ^ 11.8 含 3 個 SG6060 + 1 個 SG1000 負載平衡器</block>
-  <block id="20536af82697c291683798ab540160e0" category="list-text">物件保護 - 2 份複本（結果與 EC 2+1 類似）</block>
   <block id="b9d35717430d39eef24c76f0c1796c11" category="list-text">每項查詢測試的所有生態系統都會使用「硬碟區」格式停用快取。對於冰山格式、我們比較了 S3 取得要求的數量、以及快取停用和啟用快取的案例之間的查詢時間總計。</block>
   <block id="cdbfde1ab888a940af383c70c682b87a" category="paragraph">TPC-DS 包含 99 個複雜的 SQL 查詢、專為基準測試而設計。我們測量了執行所有 99 項查詢所需的總時間、並透過檢查 S3 要求的類型和數量來進行詳細分析。我們的測試比較了兩種常用表格格式的效率：拼花地板和冰山。</block>
   <block id="96e14f82cc6500529b0c04afc6ebafa1" category="paragraph">* 使用 Parquet 資料表格式的 TPC-DS 查詢結果 *</block>
@@ -3008,24 +2991,17 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="f1cab053650b93fe71331be2c4c9c40d" category="paragraph">^1^ Hive 無法完成查詢編號 72</block>
   <block id="2e09f209b7749073d8732d856a6afe12" category="paragraph">* TPC-DS 查詢結果、內含冰山表格格式 *</block>
   <block id="077385462ac0cf8f7fe1ddb0b3983c42" category="cell">TPCDS 99 查詢 + 總分鐘數（停用快取）</block>
-  <block id="34173cb38f07f89ddbebc2ac9128303f" category="cell">30</block>
   <block id="b6d767d2f8ed5d21a44b0e5886680cb9" category="cell">22</block>
   <block id="d81fdeb5a429e85d04118048e4b3485d" category="cell">21.5</block>
   <block id="b7ae258c3f8653133aa9c0c448f67516" category="cell">Get （快取已停用）</block>
-  <block id="3bb0dd7ec24af388f7e49723482fb553" category="cell">2,154,747</block>
   <block id="817c2a89c3531f80836a2db8d06d85b3" category="cell">938,639</block>
   <block id="5f4363558dd08c8d9c04d30802266c70" category="cell">931,582</block>
   <block id="18c14d7f109f020c287a26f7a8f428d4" category="cell">Get （啟用快取）</block>
-  <block id="e3f91fa6ba87f03f3166a20beea1c344" category="cell">5,389</block>
   <block id="6b11f97cb60ca2cd6f46178c1e7cf4f3" category="cell">30,158</block>
   <block id="bc06fdbde6a0ac6d6d654b6614f9b5d7" category="cell">3,281</block>
-  <block id="76de71b9903e9b839668c173592c80be" category="cell">範圍取得大小： 67% 1MB 、 15% 100KB 、 10% 500KB 、 3000 - 4000 個要求 / 秒</block>
   <block id="5819eb0ec4b00d343de26ea1746d62b0" category="cell">範圍取得大小：低於 100KB 42% 、約 17% 1 MB 、 33% 2Mb 至 9Mb 、 3500 至 4000 個要求 / 秒</block>
   <block id="a6939d8de1e94d811eb67cb92270c822" category="cell">範圍取得大小：低於 100KB 43% 、約 17% 1 MB 、 33% 2Mb 至 9Mb 、 4000 至 5000 個要求 / 秒</block>
-  <block id="46ba9f2a6976570b0353203ec4474217" category="cell">284</block>
-  <block id="e087b5b2372a325fbbc3eb02013bd513" category="cell">1,261</block>
   <block id="2d6a14455d72488e5e91089f0b50905c" category="cell">要求總數（快取停用）</block>
-  <block id="2096b1864713f451954f320346ec801a" category="cell">2,156,578</block>
   <block id="bfd8a8a359e411cea773da89ea7b516e" category="cell">939,148</block>
   <block id="95368980785d6fcc2e447b3569f7e08e" category="cell">932,071</block>
   <block id="e7c4b70d9a61af19b7bb26b3656a04a7" category="paragraph">如第一張表所示、 Hive 的速度遠低於其他現代資料湖屋生態系統。我們觀察到 Hive 傳送了大量的 S3 清單物件要求、這在所有物件儲存平台上通常都很緩慢、尤其是在處理包含許多物件的貯體時。如此可大幅增加整體查詢持續時間。此外、現代的湖屋生態系統也能同時傳送大量的 GET 要求、每秒可傳送 2 、 000 至 5 、 000 個要求、相較於 Hive 每秒 50 至 100 個要求。與 S3 物件儲存設備互動時、 Hive 和 Hadoop S3A 所提供的標準檔案系統會導致 Hive 速度緩慢。</block>
@@ -3167,4 +3143,33 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="52f70839644ed308c4da8e45cf815a31" category="paragraph">匯入下列 Kibana 物件： + * 查詢 bycast.log * + * 稽核 - msg-s3rq-orlm + * 廣播記錄 S3 相關訊息 + * 記錄層級警告或更高 + * 失敗安全事件 + * Ngins-GW 端點存取記錄（僅適用於 elk8-skample-for -sg119.zip ） + * 圖表 * + S3 要求根據上述儀表板的平均回應時間類型 + 回應數 * ，按儀表板數 + msg * ，以追蹤記錄 *</block>
   <block id="975915e0dc64af72667a293b87be5f66" category="cell">TPCDS 99 查詢 + 總分鐘 ^2^ （啟用快取）</block>
   <block id="a447f0aa56d54d66cf89976cc810a113" category="paragraph">^2^ Trino/Starburst 效能受到運算資源的限制；將更多 RAM 新增至叢集可縮短查詢時間。</block>
+  <block id="bc2469224adc8a8ee41f7c9d2f89498e" category="inline-image-macro">change-ip 編輯</block>
+  <block id="743a7af3c67be6e10fc77339961e23fb" category="paragraph"><block ref="743a7af3c67be6e10fc77339961e23fb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f9ab05454998236921a6b0e281fae632" category="inline-image-macro">驗證</block>
+  <block id="6e6f4af6899b11671003020ac07a3a96" category="paragraph"><block ref="6e6f4af6899b11671003020ac07a3a96" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3762c8020ba0ce4a7a389025eb72cf94" category="inline-image-macro">階段變更</block>
+  <block id="fbd50b0647972077b13e74d396e8896e" category="paragraph"><block ref="fbd50b0647972077b13e74d396e8896e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a78f24ac183c3cb24df5f184a2e0b46d" category="inline-image-macro">手動重新啟動管理</block>
+  <block id="f8ce374542d0a27e4d8d96c0f7315dc3" category="paragraph"><block ref="f8ce374542d0a27e4d8d96c0f7315dc3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f34e35f25d10586d1af2b8d83719ee5f" category="inline-image-macro">上一個功能表</block>
+  <block id="c38ca150b2bcf962c0873899a514800e" category="paragraph"><block ref="c38ca150b2bcf962c0873899a514800e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a0bfb8e59e6c13fc8d990781f77694fe" category="inline-image-macro">繼續</block>
+  <block id="3211aaa59b164a687021525248c48c20" category="paragraph"><block ref="3211aaa59b164a687021525248c48c20" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="122cfba1930d02037ab442d83e00ecfb" category="list-text">Dremio v25.2 （ 1 名協調員 + 5 名執行者）</block>
+  <block id="ed539d33b6810957992d273d5fe36c89" category="list-text">Trino v438 （ 1 名協調員 + 5 名員工）</block>
+  <block id="8b03eab5bbec674c2055b88603e6b915" category="list-text">Starburst v453 （ 1 名協調員 + 5 名員工）</block>
+  <block id="150169d4934a641a9290023e45d8827c" category="list-text">物件保護 - 2 份複本（結果與 EC 2+1 類似）</block>
+  <block id="19ca14e7ea6328a42e0eb13d585e4c22" category="cell">36</block>
+  <block id="71958970b7dcf9b9a9a0547a08451814" category="cell">3,939,690</block>
+  <block id="21d6b11365dd533455aef1380bc83463" category="cell">從 256 MB 物件獲得 90% 的 100 萬位元組範圍、 2500 年至 3000 個要求 / 秒</block>
+  <block id="da4fb5c6e93e74d3df8527599fa62642" category="cell">120</block>
+  <block id="26657d5ff9020d2abefe558796b99584" category="cell">96</block>
+  <block id="43460f9628a66a0085c583d8246d0d66" category="cell">3,939.906</block>
+  <block id="9b7ed7cdb52b5dffcfa7c7d3a1591cce" category="cell">1,985,922</block>
+  <block id="f0da24bce2825366359f84209912aad9" category="cell">611,347</block>
+  <block id="ffbb0c48a0c397085ed7e56cf32a94ff" category="cell">範圍取得大小： 67% 1MB 、 15% 100KB 、 10% 500KB 、 3500 - 4500 個要求 / 秒</block>
+  <block id="372d3f309fef061977fb2f7ba36d74d2" category="cell">1465</block>
+  <block id="c913303f392ffc643f7240b180602652" category="cell">1464</block>
+  <block id="6cd2cdb0fa97e6793df3667997292b8a" category="cell">3,702</block>
+  <block id="93ee6d81759b8ae556ed02d6b52a3447" category="cell">1,992,553</block>
 </blocks>
