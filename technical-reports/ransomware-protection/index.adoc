@@ -42,6 +42,5 @@ S3 API 的主要勒索軟體保護機制是實作物件鎖定。並非所有應�
 
 * NetApp StorageGRID 文件中心 https://docs.netapp.com/us-en/storagegrid-118/[]
 * NetApp StorageGRID 啟用 https://docs.netapp.com/us-en/storagegrid-enable/[]
-* StorageGRID 文件資源頁面 https://www.netapp.com/data-storage/storagegrid/documentation/[]
 * NetApp 產品文件 https://www.netapp.com/support-and-training/documentation/[]
 

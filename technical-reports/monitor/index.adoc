@@ -41,7 +41,6 @@ StorageGRID 提供優異的文件、深入探討監控主題。本報告假設�
 
 * NetApp StorageGRID 文件中心 https://docs.netapp.com/us-en/storagegrid-118/[]
 * NetApp StorageGRID 啟用 https://docs.netapp.com/us-en/storagegrid-enable/[]
-* StorageGRID 文件資源頁面 https://www.netapp.com/data-storage/storagegrid/documentation/[]
 * NetApp 產品文件 https://www.netapp.com/support-and-training/documentation/[]
 * Splunk 適用的 NetApp StorageGRID 應用程式 https://splunkbase.splunk.com/app/3898/#/details[]
 
