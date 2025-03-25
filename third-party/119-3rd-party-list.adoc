@@ -73,7 +73,7 @@ summary: 第三方解決方案已通過 StorageGRID 11.9 驗證
 * Varish Enterprise 6.0.4
 * Veeam 12.
 * Veritas Enterprise Vault 15.1
-* Veritas NetBackup 8.0
+* Veritas NetBackup 10.1.1及更新版本
 * Vertica 10.x
 * 維地松
 * Virtalica StorageFabric
