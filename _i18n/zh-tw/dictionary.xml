@@ -1850,7 +1850,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="e3581082ba2aa18febff247afdaf6344" category="paragraph">若要深入瞭解本 TR 中所述的資訊、請參閱下列文件資源：</block>
   <block id="d794ca6edf18a97bedb2ad1af37d0c71" category="list-text">NetApp StorageGRID 文件中心 <block ref="47ea1c2d0f136bec8b3e66c2121bf70f" category="inline-link-rx"></block></block>
   <block id="f26db73036faf2fd4369e53f7b67c6e7" category="list-text">NetApp StorageGRID 啟用 <block ref="4d58579ecd86e7d907ec63f13f2199dd" category="inline-link-rx"></block></block>
-  <block id="a3fd6da95928caff4c3eee3c06fd7ad8" category="list-text">StorageGRID 文件資源頁面 <block ref="68d4d5362a15088f2ac3fa494c971af5" category="inline-link-rx"></block></block>
   <block id="8b8bc5296c7be638754abb2f408d2099" category="list-text">NetApp 產品文件 <block ref="3cd8b5fe5ca94a9fdb5caaf96875ef7e" category="inline-link-rx"></block></block>
   <block id="fb0cb3928e42fcd12b5e4d384c0b36e1" category="summary">瞭解如何安裝 Docker for StorageGRID 。</block>
   <block id="4794aa13334c3a67cb956b8bb0b717cc" category="doc">安裝 Docker for StorageGRID</block>
@@ -2739,12 +2738,9 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="d45294caa04dc2a59a6a9779ecb261e1" category="section-title">註冊帳戶</block>
   <block id="8c41baf1ca98e1184f48c4721d44d431" category="inline-link">NetApp 支援網站</block>
   <block id="6b2e1d4820e2c64094628af51b07c4ae" category="list-text">使用您的企業電子郵件在上註冊帳戶<block ref="a49f41675f7c48eedf0647a0a62c5043" category="inline-link-rx"></block> 。</block>
-  <block id="c3864a0d9e7266b854aa1d673036710a" category="list-text">如果您已經有帳戶、請繼續下一步。</block>
-  <block id="0fedb2e26434d49a94f9450ce477c3cc" category="list-text">使用建立的帳戶登入。</block>
   <block id="0c6d9ab23098fd3e876c216fe1ca7ffc" category="inline-link">回報問題</block>
   <block id="8751d140672b36b77b265c8fe793befc" category="list-text">建立非技術支援案例、將存取層級提升至「潛在客戶」。若要這麼做、請按一下 <block ref="94c9ec214c60b057a12eaba547e0acae" category="inline-link-rx"></block>網站頁尾中的「」連結。</block>
   <block id="940ab06ee98cba17f3c21dea0e603eb5" category="list-text">選擇「註冊問題」作為意見回饋類別。</block>
-  <block id="c1d4a23af565c411cff6271ce577104f" category="list-text">在「意見」區段中、寫下：「我想讓潛在客戶存取下載 StorageGRID 評估軟體。」</block>
   <block id="ea7ab0148c9999f65837f6a1483f42ee" category="list-text">提及 NetApp 內部人員的姓名、該人員建議您存取潛在客戶。</block>
   <block id="ed721060d54c51e35da28db6ea8337ef" category="section-title">下載 StorageGRID</block>
   <block id="aed8ceb0f85821c90dc49c2c3bf1e494" category="list-text">在您的支援案例經過審查與核准之後、 NetApp 支援人員將透過電子郵件通知您您帳戶已獲授予潛在客戶存取權。</block>
@@ -3172,4 +3168,7 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="c913303f392ffc643f7240b180602652" category="cell">1464</block>
   <block id="6cd2cdb0fa97e6793df3667997292b8a" category="cell">3,702</block>
   <block id="93ee6d81759b8ae556ed02d6b52a3447" category="cell">1,992,553</block>
+  <block id="45d98cb0c4dacd6be68da4095e1fa5f2" category="list-text">請確定您未使用新建立的帳戶登入。</block>
+  <block id="37ff5d731eafce0bad2c1bdfb0ed1f55" category="list-text">如果您已經有帳戶，請確定您尚未登入，然後繼續下一步。</block>
+  <block id="21c24fa624a44fa1b3fc1c27be1061d5" category="list-text">在「意見」區段中，寫下：「我的帳戶電子郵件地址是 _ 您的電子郵件地址 _ 。我想讓潛在客戶存取下載 StorageGRID 評估軟體。」</block>
 </blocks>

@@ -20,13 +20,13 @@ summary: 為潛在客戶存取 StorageGRID 評估軟體的步驟。
 
 . 使用您的企業電子郵件在上註冊帳戶 https://mysupport.netapp.com/site/user/registration["NetApp 支援網站"] 。
 +
-.. 如果您已經有帳戶、請繼續下一步。
+.. 請確定您未使用新建立的帳戶登入。
+.. 如果您已經有帳戶，請確定您尚未登入，然後繼續下一步。
 
 
-. 使用建立的帳戶登入。
 . 建立非技術支援案例、將存取層級提升至「潛在客戶」。若要這麼做、請按一下 "https://mysupport.netapp.com/site/help?relevanturl=%2Fuser%2Fregistration["回報問題"]網站頁尾中的「」連結。
 . 選擇「註冊問題」作為意見回饋類別。
-. 在「意見」區段中、寫下：「我想讓潛在客戶存取下載 StorageGRID 評估軟體。」
+. 在「意見」區段中，寫下：「我的帳戶電子郵件地址是 _ 您的電子郵件地址 _ 。我想讓潛在客戶存取下載 StorageGRID 評估軟體。」
 +
 .. 提及 NetApp 內部人員的姓名、該人員建議您存取潛在客戶。
 
