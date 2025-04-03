@@ -2,6 +2,8 @@
 section: product-feature-guides
 title: 產品功能指南
 entries:
+- title: 使用 StorageGRID 實現零 RPO
+  url: "/product-feature-guides/achieve-zero-rpo.html"
 - title: 為AWS或Google Cloud建立雲端儲存資源池
   url: "/product-feature-guides/create-cloud-storage-pool-aws-google-cloud.html"
 - title: 為Azure Blob儲存設備建立雲端儲存資源池
