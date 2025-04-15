@@ -2,7 +2,7 @@
 permalink: examples/bucket-policy-examples.html 
 sidebar: sidebar 
 keywords: iam, bucket policy, group policy, policy 
-summary: 以下是庫位原則和群組原則（IAM原則）的範例。 
+summary: 以下是 StorageGRID S3 的原則和權限範例。 
 ---
 = 範例庫與群組（IAM）原則
 :hardbreaks:
@@ -12,8 +12,183 @@ summary: 以下是庫位原則和群組原則（IAM原則）的範例。
 
 
 [role="lead"]
-以下是庫位原則和群組原則（IAM原則）的範例。
+以下是 StorageGRID S3 的原則和權限範例。
 
+
+
+== 原則的結構
+
+在 StorageGRID 中，群組原則與 AWS 使用者（ IAM ） S3 服務原則相同。
+
+StorageGRID 中需要群組原則。擁有 S3 存取金鑰但未指派給使用者群組的使用者，或是指派給群組的使用者，若沒有原則授予某些權限，將無法存取任何資料。
+
+庫位和群組原則共享大部分相同的元素。原則是以 json 格式建置，可使用產生 https://awspolicygen.s3.amazonaws.com/policygen.html["AWS 原則產生器"]
+
+所有原則都會定義影響，行動和資源。貯體原則也會定義主體。
+
+「 * 效果 * 」將是「允許」或「拒絕」要求。* Principal * 是被授與或拒絕其能力的帳戶 / 使用者。這可以定義為萬用字元「 +*++ 」，位在儲存格所在租用戶內的本機或同盟使用者或群組，或是網格中的其他租用戶。使用者或群組可透過名稱或 ID 字串來識別。「 * 行動 * 」是一組 S3 作業正在授予或拒絕給使用者。
+
+
+NOTE: 使用者執行任何 S3 動作時，都需要 S3:ListBucket 動作。
+
+「資源 * 」是被授與或拒絕執行動作的主體所在的貯體或貯體。（可選）當策略操作有效時，可以有 * 條件 * 。
+
+JSON polict 的格式如下所示：
+
+[source, json]
+----
+{
+  "Statement": [
+    {
+      "Sid": "Custom name for this permission",
+      "Effect": "Allow or Deny",
+      "Principal": {
+        "AWS": "arn:aws:iam::Tenant_ID:federated-group/Group_Name",
+        "AWS": "arn:aws:iam::Tenant_ID:group/Group_Name",
+        "AWS": "arn:aws:iam::Tenant_ID::federated-user/User_Name",
+        "AWS": "User_Name"
+      },
+      "Action": [
+        "s3:ListBucket",
+        "s3:Other_Action"
+      ],
+      "Resource": [
+        "arn:aws:s3:::Example_Bucket",
+        "arn:aws:s3:::Example_Bucket/*"
+      ],
+    }
+  ]
+}
+----
+
+
+== 使用 AWS 原則產生器
+
+AWS 原則產生器是一項絕佳工具，可協助您取得 json 程式碼，並取得您嘗試實作的正確格式和資訊。
+
+若要產生 StorageGRID 群組原則的權限： * 選擇原則類型的 IAM 原則。* 選取所需效果的按鈕：「允許」或「拒絕」。最好先以拒絕權限啟動原則，然後在「動作」下拉式清單中新增「允許權限」 * ，然後按一下您要在此權限或「所有動作」方塊中加入的 S3 動作數量旁邊的方塊。* 在「 Amazon 資源名稱（ ARN ）」方塊中輸入貯體路徑。在貯體名稱前加上「 arn:AWS:S3 ：：：：」。例如：「 arn:AWS ： S3 ：：：範本庫位」
+
+image:policy/group-generic.png["產生群組原則"]
+
+若要產生貯體原則的權限： * 針對原則類型選擇 S3 Bucket 原則。* 選取所需效果的按鈕：「允許」或「拒絕」。以拒絕權限啟動原則，然後新增允許權限 * 輸入主體的使用者或群組資訊，是個不錯的做法。* 在「動作」下拉式清單中，按一下您要在此權限或「所有動作」方塊中包含的 S3 動作數量旁邊的方塊。* 在「 Amazon 資源名稱（ ARN ）」方塊中輸入貯體路徑。在貯體名稱前加上「 arn:AWS:S3 ：：：：」。例如：「 arn:AWS ： S3 ：：：範本庫位」
+
+image:policy/bucket-generic.png["產生貯體原則"]
+
+例如，如果您想要產生貯體原則，讓所有使用者都能對貯體中的所有物件執行 GetObject 作業，而只有屬於指定帳戶中「行銷」群組的使用者才可以擁有完整存取權。
+
+* 選取 S3 Bucket Policy 做為原則類型。
+* 選擇「允許」效果
+* 輸入行銷群組資訊 - arn:AWs:iam::95390887230002558202:Federated -group/Marketing
+* 按一下「所有動作」方塊
+* 輸入貯體資訊 - arn:AWS ： S3 ：：：範本貯體， arn:AWS ： S3 ：：：範本貯體 / *
+
+
+image:policy/example-bucket1.png["產生原則中的第一個權限"]
+
+* 按一下「新增說明」按鈕
+
+
+image:policy/permission1.png["所輸入原則的第一個權限"]
+
+* 選擇「允許」效果
+* 輸入每個人的星號 ++*++
+* 按一下「 GetObject 和 ListBucket 動作」旁邊的方塊
+
+
+image:policy/getobject.png["選取 GetObject"] image:policy/listbucket.png["選取 ListBucket"]
+
+* 輸入貯體資訊 - arn:AWS ： S3 ：：：範本貯體， arn:AWS ： S3 ：：：範本貯體 / *
+
+
+image:policy/example-bucket2.png["產生原則中的第二個權限"]
+
+* 按一下「新增說明」按鈕
+
+
+image:policy/permission3.png["原則中的第二個權限"]
+
+* 按一下「產生原則」按鈕，就會出現一個快顯視窗，顯示您產生的原則。
+
+
+image:policy/example-output.png["最終輸出"]
+
+* 複製完整的 json 文字，如下所示：
+
+
+[source, json]
+----
+{
+  "Id": "Policy1744399292233",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1744399152830",
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::examplebucket",
+        "arn:aws:s3:::examplebucket/*"
+      ],
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::95390887230002558202:federated-group/Marketing"
+        ]
+      }
+    },
+    {
+      "Sid": "Stmt1744399280838",
+      "Action": [
+        "s3:GetObject",
+        "s3:ListBucket"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::examplebucket",
+        "arn:aws:s3:::examplebucket/*"
+      ],
+      "Principal": "*"
+    }
+  ]
+}
+----
+此 json 可依原樣使用，也可移除「對帳單」行上方的 ID 和版本行，您可以針對每個權限自訂 Sid ，並針對每個權限設定更有意義的標題，也可以移除這些標題。
+
+例如：
+
+[source, json]
+----
+{
+  "Statement": [
+    {
+      "Sid": "MarketingAllowFull",
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::examplebucket",
+        "arn:aws:s3:::examplebucket/*"
+      ],
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::95390887230002558202:federated-group/Marketing"
+        ]
+      }
+    },
+    {
+      "Sid": "EveryoneReadOnly",
+      "Action": [
+        "s3:GetObject",
+        "s3:ListBucket"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::examplebucket",
+        "arn:aws:s3:::examplebucket/*"
+      ],
+      "Principal": "*"
+    }
+  ]
+}
+----
 
 
 == 群組原則（IAM）
@@ -26,6 +201,7 @@ summary: 以下是庫位原則和群組原則（IAM原則）的範例。
 
 [source, json]
 ----
+{
 "Statement": [
     {
       "Sid": "AllowListBucketOfASpecificUserPrefix",
@@ -133,6 +309,14 @@ summary: 以下是庫位原則和群組原則（IAM原則）的範例。
     ]
 }
 ----
+
+
+== 貯體原則
+
+
+
+=== 限制使用者刪除貯體中的版本化物件
+
 此貯體原則會限制使用者（由使用者 ID 「 56622399308951294926 」識別）依版本 ID 刪除版本管理物件
 
 [source, json]
@@ -178,29 +362,29 @@ summary: 以下是庫位原則和群組原則（IAM原則）的範例。
             "Sid": "Deny non user1",
             "Effect": "Deny",
             "NotPrincipal": {
-                "AWS": "urn:sgws:identity::34921514133002833665:user/user1"
+                "AWS": "arn:aws:iam::34921514133002833665:user/user1"
             },
             "Action": [
                 "s3:*"
             ],
             "Resource": [
-                "urn:sgws:s3:::bucket1",
-                "urn:sgws:s3:::bucket1/*"
+                "arn:aws:s3:::bucket1",
+                "arn:aws:s3:::bucket1/*"
             ]
         },
         {
             "Sid": "Allow user1 read access to bucket bucket1",
             "Effect": "Allow",
             "Principal": {
-                "AWS": "urn:sgws:identity::34921514133002833665:user/user1"
+                "AWS": "arn:aws:iam::34921514133002833665:user/user1"
             },
             "Action": [
                 "s3:GetObject",
                 "s3:ListBucket"
             ],
             "Resource": [
-                "urn:sgws:s3:::bucket1",
-                "urn:sgws:s3:::bucket1/*"
+                "arn:aws:s3:::bucket1",
+                "arn:aws:s3:::bucket1/*"
             ]
         }
     ]

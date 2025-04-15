@@ -955,7 +955,6 @@
   <block id="383aea8468a529b339b755e27b1d4668" category="paragraph">7.5天</block>
   <block id="9ff416b798a88ec4bfb30f4f045aada5" category="paragraph">11天</block>
   <block id="ed01ec12331788a408398b059da47a39" category="paragraph">10.5天</block>
-  <block id="fc1e2d26b4330f83ecfffe3439410229" category="summary">以下是庫位原則和群組原則（IAM原則）的範例。</block>
   <block id="3f2327c90ede247dca9387ef500bf746" category="doc">範例庫與群組（IAM）原則</block>
   <block id="640ca9533a2fd150e7d3ed390e2aae66" category="section-title">群組原則（IAM）</block>
   <block id="06c73db3763c74cabb8ece8e96fe7c5d" category="section-title">主目錄樣式庫存取</block>
@@ -3316,4 +3315,51 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="7cc4c9a02b30d866b86394eea15b8948" category="paragraph">不會中斷其餘站台的營運，也不會遺失資料。</block>
   <block id="3b618de71a72589055ade96a425c83dc" category="paragraph">使用 StorageGRID 達成零恢復點目標（ RPO ）是確保資料在站台發生故障時的持久性和可用度的關鍵目標。透過運用 StorageGRID 強大的複寫策略，包括多站台同步複寫和多網格非同步複寫，組織可以維持不中斷的用戶端作業，並確保多個位置的資料一致性。資訊生命週期管理（ ILM ）原則的實作以及僅中繼資料節點的使用，進一步增強了系統的恢復能力和效能。有了 StorageGRID ，企業就能安心管理資料，因為即使面對複雜的故障情況，資料仍可存取且一致。這種資料管理與複寫的全方位方法，突顯了精密規劃與執行的重要性，使零 RPO 達到零，並保護寶貴資訊。</block>
   <block id="0d97ce62a703399c3d60bf705d897f6e" category="sidebar">使用 StorageGRID 實現零 RPO</block>
+  <block id="53f5b3a7f9ea1c9d994a0314cb5e64b3" category="summary">以下是 StorageGRID S3 的原則和權限範例。</block>
+  <block id="90d9ad7d76b93b29c358b8b9ec19c123" category="section-title">原則的結構</block>
+  <block id="b898664de1cab751d4a02bb107b60657" category="paragraph">在 StorageGRID 中，群組原則與 AWS 使用者（ IAM ） S3 服務原則相同。</block>
+  <block id="6031311f84eb0fc4006dba6fd47125b4" category="paragraph">StorageGRID 中需要群組原則。擁有 S3 存取金鑰但未指派給使用者群組的使用者，或是指派給群組的使用者，若沒有原則授予某些權限，將無法存取任何資料。</block>
+  <block id="8a4af1af804f24fc5095bcb2f05db9c4" category="inline-link">AWS 原則產生器</block>
+  <block id="2bf2ec7dad10916c7d2bbb85d22b8113" category="paragraph">庫位和群組原則共享大部分相同的元素。原則是以 json 格式建置，可使用產生<block ref="b825d77c880bca33764ff404def2b41e" category="inline-link-rx"></block></block>
+  <block id="8efdfc962f00530ec94e00c5411f744c" category="paragraph">所有原則都會定義影響，行動和資源。貯體原則也會定義主體。</block>
+  <block id="036aeedca40738e98fb9980b5c2675af" category="paragraph">「 * 效果 * 」將是「允許」或「拒絕」要求。* Principal * 是被授與或拒絕其能力的帳戶 / 使用者。這可以定義為萬用字元「 +*++ 」，位在儲存格所在租用戶內的本機或同盟使用者或群組，或是網格中的其他租用戶。使用者或群組可透過名稱或 ID 字串來識別。「 * 行動 * 」是一組 S3 作業正在授予或拒絕給使用者。</block>
+  <block id="dba9490f360197ade1689ea1d2889b5c" category="admonition">使用者執行任何 S3 動作時，都需要 S3:ListBucket 動作。</block>
+  <block id="2dc7323af24c93e28f62e0e080730041" category="paragraph">「資源 * 」是被授與或拒絕執行動作的主體所在的貯體或貯體。（可選）當策略操作有效時，可以有 * 條件 * 。</block>
+  <block id="36f00e8d3531c99084ca87022aa829d6" category="paragraph">JSON polict 的格式如下所示：</block>
+  <block id="98d8787db8134942993742f28e6e638e" category="section-title">使用 AWS 原則產生器</block>
+  <block id="7fd5fa9d1e888f7d962c6930557d8e36" category="paragraph">AWS 原則產生器是一項絕佳工具，可協助您取得 json 程式碼，並取得您嘗試實作的正確格式和資訊。</block>
+  <block id="f6491726dbf898b732add834a307f43b" category="paragraph">若要產生 StorageGRID 群組原則的權限： * 選擇原則類型的 IAM 原則。* 選取所需效果的按鈕：「允許」或「拒絕」。最好先以拒絕權限啟動原則，然後在「動作」下拉式清單中新增「允許權限」 * ，然後按一下您要在此權限或「所有動作」方塊中加入的 S3 動作數量旁邊的方塊。* 在「 Amazon 資源名稱（ ARN ）」方塊中輸入貯體路徑。在貯體名稱前加上「 arn:AWS:S3 ：：：：」。例如：「 arn:AWS ： S3 ：：：範本庫位」</block>
+  <block id="718e062190ebd2d06af9dd8203ed28f4" category="inline-image-macro">產生群組原則</block>
+  <block id="64d59d8a48b54673b859830a17697b29" category="paragraph"><block ref="64d59d8a48b54673b859830a17697b29" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="256786720eb690c2f64e17c114bf17e5" category="paragraph">若要產生貯體原則的權限： * 針對原則類型選擇 S3 Bucket 原則。* 選取所需效果的按鈕：「允許」或「拒絕」。以拒絕權限啟動原則，然後新增允許權限 * 輸入主體的使用者或群組資訊，是個不錯的做法。* 在「動作」下拉式清單中，按一下您要在此權限或「所有動作」方塊中包含的 S3 動作數量旁邊的方塊。* 在「 Amazon 資源名稱（ ARN ）」方塊中輸入貯體路徑。在貯體名稱前加上「 arn:AWS:S3 ：：：：」。例如：「 arn:AWS ： S3 ：：：範本庫位」</block>
+  <block id="14171660abb4a2ee309b0743823a5c7f" category="inline-image-macro">產生貯體原則</block>
+  <block id="425e44ca1ca39707f142a937d323dae6" category="paragraph"><block ref="425e44ca1ca39707f142a937d323dae6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="29156a2c2150b23b84a632be436a5710" category="paragraph">例如，如果您想要產生貯體原則，讓所有使用者都能對貯體中的所有物件執行 GetObject 作業，而只有屬於指定帳戶中「行銷」群組的使用者才可以擁有完整存取權。</block>
+  <block id="921689b07a57b0fa31d2494fb915c7db" category="list-text">選取 S3 Bucket Policy 做為原則類型。</block>
+  <block id="d7b02e0e049ce24df9a935a2940a00fd" category="list-text">選擇「允許」效果</block>
+  <block id="7d89c8a4838177ced1c356c2d37451e4" category="list-text">輸入行銷群組資訊 - arn:AWs:iam::95390887230002558202:Federated -group/Marketing</block>
+  <block id="5898b8b3214a7eda5ec51139381547ae" category="list-text">按一下「所有動作」方塊</block>
+  <block id="ad2ad35634584410ebee3433637beb6c" category="list-text">輸入貯體資訊 - arn:AWS ： S3 ：：：範本貯體， arn:AWS ： S3 ：：：範本貯體 / *</block>
+  <block id="0a7accd63ee4c870264f02f6421d9617" category="inline-image-macro">產生原則中的第一個權限</block>
+  <block id="d4c1d59176aacf123e41161ce9410e96" category="paragraph"><block ref="d4c1d59176aacf123e41161ce9410e96" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="68fa75317bcfed78baa03e2f2b83ae57" category="list-text">按一下「新增說明」按鈕</block>
+  <block id="e84bfc2e06bae251ee72785686217d09" category="inline-image-macro">所輸入原則的第一個權限</block>
+  <block id="0fdd83c671ed9daf99837b0f66ac36ac" category="paragraph"><block ref="0fdd83c671ed9daf99837b0f66ac36ac" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6f67c8afea582f827fdb41d346824621" category="list-text">輸入每個人的星號 ++*++</block>
+  <block id="508f06df117d131b64366bd57ab0809f" category="list-text">按一下「 GetObject 和 ListBucket 動作」旁邊的方塊</block>
+  <block id="cd765e1c8e5a8cff4030628217cd7d4f" category="inline-image-macro">選取 GetObject</block>
+  <block id="0b0c29b07240928f597712c00b5a3e0c" category="inline-image-macro">選取 ListBucket</block>
+  <block id="67d428b6bff04d6f87ceace10b541416" category="paragraph"><block ref="c0a2f1f69b7d072695552086af07ce87" category="inline-image-macro-rx" type="image"></block> <block ref="8f6a3aca157815e6a783d7df0e6c7e53" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e89c16f348ca85be6f05423c0774d4c3" category="inline-image-macro">產生原則中的第二個權限</block>
+  <block id="b7a8526776c5f81f21272d11b295af28" category="paragraph"><block ref="b7a8526776c5f81f21272d11b295af28" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="87903e3b9c79fad007dafe94eb14cb05" category="inline-image-macro">原則中的第二個權限</block>
+  <block id="c88a8dc7af1013392a2653edd4bbca6d" category="paragraph"><block ref="c88a8dc7af1013392a2653edd4bbca6d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e246daeb2fe11601d2dbada8c86d9f38" category="list-text">按一下「產生原則」按鈕，就會出現一個快顯視窗，顯示您產生的原則。</block>
+  <block id="a6172ef9c0c0d6ee2dd1c227d6eb5564" category="inline-image-macro">最終輸出</block>
+  <block id="0bceb44ff1eb9e6a0e215b1553460c3a" category="paragraph"><block ref="0bceb44ff1eb9e6a0e215b1553460c3a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2ece48a423395028beafaafaa0b790df" category="list-text">複製完整的 json 文字，如下所示：</block>
+  <block id="077406f0693af9b51bc0c17399e1e41b" category="paragraph">此 json 可依原樣使用，也可移除「對帳單」行上方的 ID 和版本行，您可以針對每個權限自訂 Sid ，並針對每個權限設定更有意義的標題，也可以移除這些標題。</block>
+  <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">例如：</block>
+  <block id="5a804d2999d40df9fee58c79e96c4bc6" category="section-title">貯體原則</block>
+  <block id="1dcc79570a2b49254ef9f7976da24e4d" category="section-title">限制使用者刪除貯體中的版本化物件</block>
 </blocks>
