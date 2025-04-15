@@ -3325,13 +3325,10 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="036aeedca40738e98fb9980b5c2675af" category="paragraph">「 * 效果 * 」將是「允許」或「拒絕」要求。* Principal * 是被授與或拒絕其能力的帳戶 / 使用者。這可以定義為萬用字元「 +*++ 」，位在儲存格所在租用戶內的本機或同盟使用者或群組，或是網格中的其他租用戶。使用者或群組可透過名稱或 ID 字串來識別。「 * 行動 * 」是一組 S3 作業正在授予或拒絕給使用者。</block>
   <block id="dba9490f360197ade1689ea1d2889b5c" category="admonition">使用者執行任何 S3 動作時，都需要 S3:ListBucket 動作。</block>
   <block id="2dc7323af24c93e28f62e0e080730041" category="paragraph">「資源 * 」是被授與或拒絕執行動作的主體所在的貯體或貯體。（可選）當策略操作有效時，可以有 * 條件 * 。</block>
-  <block id="36f00e8d3531c99084ca87022aa829d6" category="paragraph">JSON polict 的格式如下所示：</block>
   <block id="98d8787db8134942993742f28e6e638e" category="section-title">使用 AWS 原則產生器</block>
   <block id="7fd5fa9d1e888f7d962c6930557d8e36" category="paragraph">AWS 原則產生器是一項絕佳工具，可協助您取得 json 程式碼，並取得您嘗試實作的正確格式和資訊。</block>
-  <block id="f6491726dbf898b732add834a307f43b" category="paragraph">若要產生 StorageGRID 群組原則的權限： * 選擇原則類型的 IAM 原則。* 選取所需效果的按鈕：「允許」或「拒絕」。最好先以拒絕權限啟動原則，然後在「動作」下拉式清單中新增「允許權限」 * ，然後按一下您要在此權限或「所有動作」方塊中加入的 S3 動作數量旁邊的方塊。* 在「 Amazon 資源名稱（ ARN ）」方塊中輸入貯體路徑。在貯體名稱前加上「 arn:AWS:S3 ：：：：」。例如：「 arn:AWS ： S3 ：：：範本庫位」</block>
   <block id="718e062190ebd2d06af9dd8203ed28f4" category="inline-image-macro">產生群組原則</block>
   <block id="64d59d8a48b54673b859830a17697b29" category="paragraph"><block ref="64d59d8a48b54673b859830a17697b29" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="256786720eb690c2f64e17c114bf17e5" category="paragraph">若要產生貯體原則的權限： * 針對原則類型選擇 S3 Bucket 原則。* 選取所需效果的按鈕：「允許」或「拒絕」。以拒絕權限啟動原則，然後新增允許權限 * 輸入主體的使用者或群組資訊，是個不錯的做法。* 在「動作」下拉式清單中，按一下您要在此權限或「所有動作」方塊中包含的 S3 動作數量旁邊的方塊。* 在「 Amazon 資源名稱（ ARN ）」方塊中輸入貯體路徑。在貯體名稱前加上「 arn:AWS:S3 ：：：：」。例如：「 arn:AWS ： S3 ：：：範本庫位」</block>
   <block id="14171660abb4a2ee309b0743823a5c7f" category="inline-image-macro">產生貯體原則</block>
   <block id="425e44ca1ca39707f142a937d323dae6" category="paragraph"><block ref="425e44ca1ca39707f142a937d323dae6" category="inline-image-macro-rx" type="image"></block></block>
   <block id="29156a2c2150b23b84a632be436a5710" category="paragraph">例如，如果您想要產生貯體原則，讓所有使用者都能對貯體中的所有物件執行 GetObject 作業，而只有屬於指定帳戶中「行銷」群組的使用者才可以擁有完整存取權。</block>
@@ -3339,7 +3336,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="d7b02e0e049ce24df9a935a2940a00fd" category="list-text">選擇「允許」效果</block>
   <block id="7d89c8a4838177ced1c356c2d37451e4" category="list-text">輸入行銷群組資訊 - arn:AWs:iam::95390887230002558202:Federated -group/Marketing</block>
   <block id="5898b8b3214a7eda5ec51139381547ae" category="list-text">按一下「所有動作」方塊</block>
-  <block id="ad2ad35634584410ebee3433637beb6c" category="list-text">輸入貯體資訊 - arn:AWS ： S3 ：：：範本貯體， arn:AWS ： S3 ：：：範本貯體 / *</block>
   <block id="0a7accd63ee4c870264f02f6421d9617" category="inline-image-macro">產生原則中的第一個權限</block>
   <block id="d4c1d59176aacf123e41161ce9410e96" category="paragraph"><block ref="d4c1d59176aacf123e41161ce9410e96" category="inline-image-macro-rx" type="image"></block></block>
   <block id="68fa75317bcfed78baa03e2f2b83ae57" category="list-text">按一下「新增說明」按鈕</block>
@@ -3353,7 +3349,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="e89c16f348ca85be6f05423c0774d4c3" category="inline-image-macro">產生原則中的第二個權限</block>
   <block id="b7a8526776c5f81f21272d11b295af28" category="paragraph"><block ref="b7a8526776c5f81f21272d11b295af28" category="inline-image-macro-rx" type="image"></block></block>
   <block id="87903e3b9c79fad007dafe94eb14cb05" category="inline-image-macro">原則中的第二個權限</block>
-  <block id="c88a8dc7af1013392a2653edd4bbca6d" category="paragraph"><block ref="c88a8dc7af1013392a2653edd4bbca6d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e246daeb2fe11601d2dbada8c86d9f38" category="list-text">按一下「產生原則」按鈕，就會出現一個快顯視窗，顯示您產生的原則。</block>
   <block id="a6172ef9c0c0d6ee2dd1c227d6eb5564" category="inline-image-macro">最終輸出</block>
   <block id="0bceb44ff1eb9e6a0e215b1553460c3a" category="paragraph"><block ref="0bceb44ff1eb9e6a0e215b1553460c3a" category="inline-image-macro-rx" type="image"></block></block>
@@ -3362,4 +3357,9 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">例如：</block>
   <block id="5a804d2999d40df9fee58c79e96c4bc6" category="section-title">貯體原則</block>
   <block id="1dcc79570a2b49254ef9f7976da24e4d" category="section-title">限制使用者刪除貯體中的版本化物件</block>
+  <block id="264cca27da511b7e4d0a4b8cd5e962f1" category="paragraph">JSON 原則的格式如下：</block>
+  <block id="14b11990a33e1248ae52a06f5174aba0" category="paragraph">若要產生 StorageGRID 群組原則的權限： * 選擇原則類型的 IAM 原則。* 選取所需效果的按鈕：「允許」或「拒絕」。最好先以拒絕權限啟動原則，然後在「動作」下拉式清單中新增「允許權限」 * ，然後按一下您要在此權限或「所有動作」方塊中加入的 S3 動作數量旁邊的方塊。* 在「 Amazon 資源名稱（ ARN ）」方塊中輸入貯體路徑。在貯體名稱前加上「 arn:AWS:S3 ：：：：」。例如："arn:AWS ： S3 ：：： Example_Bucket"</block>
+  <block id="5e90956923e27ad94083a42655710d27" category="paragraph">若要產生貯體原則的權限： * 針對原則類型選擇 S3 Bucket 原則。* 選取所需效果的按鈕：「允許」或「拒絕」。以拒絕權限啟動原則，然後新增允許權限 * 輸入主體的使用者或群組資訊，是個不錯的做法。* 在「動作」下拉式清單中，按一下您要在此權限或「所有動作」方塊中包含的 S3 動作數量旁邊的方塊。* 在「 Amazon 資源名稱（ ARN ）」方塊中輸入貯體路徑。在貯體名稱前加上「 arn:AWS:S3 ：：：：」。例如："arn:AWS ： S3 ：：： Example_Bucket"</block>
+  <block id="6286b2654fd9f607da0c9a689ef54e7c" category="list-text">輸入貯體資訊 - arn:AWS:S3:::example_Bucket,arn:AWS:::::example_Bucket/*</block>
+  <block id="8e42358c3df8a569be04cad92e8b7479" category="paragraph"><block ref="8e42358c3df8a569be04cad92e8b7479" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>

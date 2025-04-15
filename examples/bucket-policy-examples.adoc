@@ -33,7 +33,7 @@ NOTE: 使用者執行任何 S3 動作時，都需要 S3:ListBucket 動作。
 
 「資源 * 」是被授與或拒絕執行動作的主體所在的貯體或貯體。（可選）當策略操作有效時，可以有 * 條件 * 。
 
-JSON polict 的格式如下所示：
+JSON 原則的格式如下：
 
 [source, json]
 ----
@@ -66,11 +66,11 @@ JSON polict 的格式如下所示：
 
 AWS 原則產生器是一項絕佳工具，可協助您取得 json 程式碼，並取得您嘗試實作的正確格式和資訊。
 
-若要產生 StorageGRID 群組原則的權限： * 選擇原則類型的 IAM 原則。* 選取所需效果的按鈕：「允許」或「拒絕」。最好先以拒絕權限啟動原則，然後在「動作」下拉式清單中新增「允許權限」 * ，然後按一下您要在此權限或「所有動作」方塊中加入的 S3 動作數量旁邊的方塊。* 在「 Amazon 資源名稱（ ARN ）」方塊中輸入貯體路徑。在貯體名稱前加上「 arn:AWS:S3 ：：：：」。例如：「 arn:AWS ： S3 ：：：範本庫位」
+若要產生 StorageGRID 群組原則的權限： * 選擇原則類型的 IAM 原則。* 選取所需效果的按鈕：「允許」或「拒絕」。最好先以拒絕權限啟動原則，然後在「動作」下拉式清單中新增「允許權限」 * ，然後按一下您要在此權限或「所有動作」方塊中加入的 S3 動作數量旁邊的方塊。* 在「 Amazon 資源名稱（ ARN ）」方塊中輸入貯體路徑。在貯體名稱前加上「 arn:AWS:S3 ：：：：」。例如："arn:AWS ： S3 ：：： Example_Bucket"
 
 image:policy/group-generic.png["產生群組原則"]
 
-若要產生貯體原則的權限： * 針對原則類型選擇 S3 Bucket 原則。* 選取所需效果的按鈕：「允許」或「拒絕」。以拒絕權限啟動原則，然後新增允許權限 * 輸入主體的使用者或群組資訊，是個不錯的做法。* 在「動作」下拉式清單中，按一下您要在此權限或「所有動作」方塊中包含的 S3 動作數量旁邊的方塊。* 在「 Amazon 資源名稱（ ARN ）」方塊中輸入貯體路徑。在貯體名稱前加上「 arn:AWS:S3 ：：：：」。例如：「 arn:AWS ： S3 ：：：範本庫位」
+若要產生貯體原則的權限： * 針對原則類型選擇 S3 Bucket 原則。* 選取所需效果的按鈕：「允許」或「拒絕」。以拒絕權限啟動原則，然後新增允許權限 * 輸入主體的使用者或群組資訊，是個不錯的做法。* 在「動作」下拉式清單中，按一下您要在此權限或「所有動作」方塊中包含的 S3 動作數量旁邊的方塊。* 在「 Amazon 資源名稱（ ARN ）」方塊中輸入貯體路徑。在貯體名稱前加上「 arn:AWS:S3 ：：：：」。例如："arn:AWS ： S3 ：：： Example_Bucket"
 
 image:policy/bucket-generic.png["產生貯體原則"]
 
@@ -80,7 +80,7 @@ image:policy/bucket-generic.png["產生貯體原則"]
 * 選擇「允許」效果
 * 輸入行銷群組資訊 - arn:AWs:iam::95390887230002558202:Federated -group/Marketing
 * 按一下「所有動作」方塊
-* 輸入貯體資訊 - arn:AWS ： S3 ：：：範本貯體， arn:AWS ： S3 ：：：範本貯體 / *
+* 輸入貯體資訊 - arn:AWS:S3:::example_Bucket,arn:AWS:::::example_Bucket/*
 
 
 image:policy/example-bucket1.png["產生原則中的第一個權限"]
@@ -97,7 +97,7 @@ image:policy/permission1.png["所輸入原則的第一個權限"]
 
 image:policy/getobject.png["選取 GetObject"] image:policy/listbucket.png["選取 ListBucket"]
 
-* 輸入貯體資訊 - arn:AWS ： S3 ：：：範本貯體， arn:AWS ： S3 ：：：範本貯體 / *
+* 輸入貯體資訊 - arn:AWS:S3:::example_Bucket,arn:AWS:::::example_Bucket/*
 
 
 image:policy/example-bucket2.png["產生原則中的第二個權限"]
@@ -105,7 +105,7 @@ image:policy/example-bucket2.png["產生原則中的第二個權限"]
 * 按一下「新增說明」按鈕
 
 
-image:policy/permission3.png["原則中的第二個權限"]
+image:policy/permission2.png["原則中的第二個權限"]
 
 * 按一下「產生原則」按鈕，就會出現一個快顯視窗，顯示您產生的原則。
 
@@ -126,8 +126,8 @@ image:policy/example-output.png["最終輸出"]
       "Action": "s3:*",
       "Effect": "Allow",
       "Resource": [
-        "arn:aws:s3:::examplebucket",
-        "arn:aws:s3:::examplebucket/*"
+        "arn:aws:s3:::example_bucket",
+        "arn:aws:s3:::example_bucket/*"
       ],
       "Principal": {
         "AWS": [
@@ -143,8 +143,8 @@ image:policy/example-output.png["最終輸出"]
       ],
       "Effect": "Allow",
       "Resource": [
-        "arn:aws:s3:::examplebucket",
-        "arn:aws:s3:::examplebucket/*"
+        "arn:aws:s3:::example_bucket",
+        "arn:aws:s3:::example_bucket/*"
       ],
       "Principal": "*"
     }
@@ -164,8 +164,8 @@ image:policy/example-output.png["最終輸出"]
       "Action": "s3:*",
       "Effect": "Allow",
       "Resource": [
-        "arn:aws:s3:::examplebucket",
-        "arn:aws:s3:::examplebucket/*"
+        "arn:aws:s3:::example_bucket",
+        "arn:aws:s3:::example_bucket/*"
       ],
       "Principal": {
         "AWS": [
@@ -181,8 +181,8 @@ image:policy/example-output.png["最終輸出"]
       ],
       "Effect": "Allow",
       "Resource": [
-        "arn:aws:s3:::examplebucket",
-        "arn:aws:s3:::examplebucket/*"
+        "arn:aws:s3:::example_bucket",
+        "arn:aws:s3:::example_bucket/*"
       ],
       "Principal": "*"
     }
