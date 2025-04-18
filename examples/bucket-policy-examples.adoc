@@ -26,10 +26,61 @@ StorageGRID 中需要群組原則。擁有 S3 存取金鑰但未指派給使用�
 
 所有原則都會定義影響，行動和資源。貯體原則也會定義主體。
 
-「 * 效果 * 」將是「允許」或「拒絕」要求。* Principal * 是被授與或拒絕其能力的帳戶 / 使用者。這可以定義為萬用字元「 +*++ 」，位在儲存格所在租用戶內的本機或同盟使用者或群組，或是網格中的其他租用戶。使用者或群組可透過名稱或 ID 字串來識別。「 * 行動 * 」是一組 S3 作業正在授予或拒絕給使用者。
+「 * 效果 * 」將是「允許」或「拒絕」要求。
+
+* 負責人 *
+
+* 僅適用於貯體原則。
+* 主體是被授與或拒絕權限的帳戶 / 使用者。
+* 可定義為：
++
+** 萬用字元 "++*++"
++
+[listing]
+----
+"Principal":"*"
+----
++
+[listing]
+----
+"Principal":{"AWS":"*"}
+----
+** 租戶中所有使用者的租戶 ID （相當於 AWS 帳戶）
++
+[listing]
+----
+"Principal": { "AWS": "27233906934684427525" }
+----
+** 使用者（來自貯體所在租戶內部的本機或聯盟，或網格中的其他租戶）
++
+[listing]
+----
+"Principal": { "AWS": "arn:aws:iam::76233906934699427431:user/tenant1user1" }
+----
++
+[listing]
+----
+"Principal": { "AWS": "arn:aws:iam::27233906934684427525:federated-user/tenant2user1" }
+----
+** 群組（來自貯體所在租戶內部的本機或聯盟群組，或網格中的其他租戶）。
++
+[listing]
+----
+"Principal": { "AWS": "arn:aws:iam::76233906934699427431:group/DevOps"  }
+----
++
+[listing]
+----
+"Principal": { "AWS": "arn:aws:iam::27233906934684427525:federated-group/Managers"  }
+----
 
 
-NOTE: 使用者執行任何 S3 動作時，都需要 S3:ListBucket 動作。
+
+
+「 * 行動 * 」是一組 S3 作業正在授予或拒絕給使用者。
+
+
+NOTE: 對於群組原則，使用者必須執行 S3 ： ListBucket 動作，才能執行任何 S3 動作。
 
 「資源 * 」是被授與或拒絕執行動作的主體所在的貯體或貯體。（可選）當策略操作有效時，可以有 * 條件 * 。
 
@@ -43,10 +94,13 @@ JSON 原則的格式如下：
       "Sid": "Custom name for this permission",
       "Effect": "Allow or Deny",
       "Principal": {
-        "AWS": "arn:aws:iam::Tenant_ID:federated-group/Group_Name",
-        "AWS": "arn:aws:iam::Tenant_ID:group/Group_Name",
-        "AWS": "arn:aws:iam::Tenant_ID::federated-user/User_Name",
-        "AWS": "User_Name"
+        "AWS": [
+          "arn:aws:iam::tenant_ID::user/User_Name",
+          "arn:aws:iam::tenant_ID::federated-user/User_Name",
+          "arn:aws:iam::tenant_ID:group/Group_Name",
+          "arn:aws:iam::tenant_ID:federated-group/Group_Name",
+          "tenant_ID"
+        ]
       },
       "Action": [
         "s3:ListBucket",
@@ -311,87 +365,6 @@ image:policy/example-output.png["最終輸出"]
 ----
 
 
-== 貯體原則
-
-
-
-=== 限制使用者刪除貯體中的版本化物件
-
-此貯體原則會限制使用者（由使用者 ID 「 56622399308951294926 」識別）依版本 ID 刪除版本管理物件
-
-[source, json]
-----
-{
-  "Statement": [
-    {
-      "Action": [
-        "s3:DeleteObjectVersion"
-      ],
-      "Effect": "Deny",
-      "Resource": "arn:aws:s3:::verdeny/*",
-      "Principal": {
-        "AWS": [
-          "56622399308951294926"
-        ]
-      }
-    },
-    {
-      "Action": "s3:*",
-      "Effect": "Allow",
-      "Resource": "arn:aws:s3:::verdeny/*",
-      "Principal": {
-        "AWS": [
-          "56622399308951294926"
-        ]
-      }
-    }
-  ]
-}
-----
-
-
-=== 將儲存區限制為具有唯讀存取權的單一使用者
-
-此原則可讓單一使用者擁有儲存區的唯讀存取權、並明確地讓Denys存取所有其他使用者。將「拒絕」陳述式分組在原則頂端、是加速評估的好做法。
-
-[source, json]
-----
-{
-    "Statement": [
-        {
-            "Sid": "Deny non user1",
-            "Effect": "Deny",
-            "NotPrincipal": {
-                "AWS": "arn:aws:iam::34921514133002833665:user/user1"
-            },
-            "Action": [
-                "s3:*"
-            ],
-            "Resource": [
-                "arn:aws:s3:::bucket1",
-                "arn:aws:s3:::bucket1/*"
-            ]
-        },
-        {
-            "Sid": "Allow user1 read access to bucket bucket1",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::34921514133002833665:user/user1"
-            },
-            "Action": [
-                "s3:GetObject",
-                "s3:ListBucket"
-            ],
-            "Resource": [
-                "arn:aws:s3:::bucket1",
-                "arn:aws:s3:::bucket1/*"
-            ]
-        }
-    ]
-}
-----
-
-
 === 將群組限制為具有唯讀存取權的單一子目錄（首碼）
 
 此原則可讓群組成員對儲存庫中的子目錄（前置）擁有唯讀存取權。貯體名稱為「 study 」、子目錄為「 study01 」。
@@ -459,5 +432,135 @@ image:policy/example-output.png["最終輸出"]
             ]
         }
     ]
+}
+----
+
+
+== 貯體原則
+
+
+
+=== 將儲存區限制為具有唯讀存取權的單一使用者
+
+此原則可讓單一使用者擁有儲存區的唯讀存取權、並明確地讓Denys存取所有其他使用者。將「拒絕」陳述式分組在原則頂端、是加速評估的好做法。
+
+[source, json]
+----
+{
+    "Statement": [
+        {
+            "Sid": "Deny non user1",
+            "Effect": "Deny",
+            "NotPrincipal": {
+                "AWS": "arn:aws:iam::34921514133002833665:user/user1"
+            },
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::bucket1",
+                "arn:aws:s3:::bucket1/*"
+            ]
+        },
+        {
+            "Sid": "Allow user1 read access to bucket bucket1",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::34921514133002833665:user/user1"
+            },
+            "Action": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::bucket1",
+                "arn:aws:s3:::bucket1/*"
+            ]
+        }
+    ]
+}
+----
+
+
+=== 將貯體限制在少數具有唯讀存取權的使用者。
+
+[source, json]
+----
+{
+    "Statement": [
+      {
+        "Sid": "Deny all S3 actions to employees 002-005",
+        "Effect": "deny",
+        "Principal": {
+          "AWS": [
+            "arn:aws:iam::46521514133002703882:user/employee-002",
+            "arn:aws:iam::46521514133002703882:user/employee-003",
+            "arn:aws:iam::46521514133002703882:user/employee-004",
+            "arn:aws:iam::46521514133002703882:user/employee-005"
+          ]
+        },
+        "Action": "*",
+        "Resource": [
+          "arn:aws:s3:::databucket1",
+          "arn:aws:s3:::databucket1/*"
+        ]
+      },
+      {
+        "Sid": "Allow read-only access for employees 002-005",
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": [
+            "arn:aws:iam::46521514133002703882:user/employee-002",
+            "arn:aws:iam::46521514133002703882:user/employee-003",
+            "arn:aws:iam::46521514133002703882:user/employee-004",
+            "arn:aws:iam::46521514133002703882:user/employee-005"
+          ]
+        },
+        "Action": [
+          "s3:GetObject",
+          "s3:GetObjectTagging",
+          "s3:GetObjectVersion"
+        ],
+        "Resource": [
+          "arn:aws:s3:::databucket1",
+          "arn:aws:s3:::databucket1/*"
+        ]
+      }
+    ]
+}
+----
+
+
+=== 限制使用者刪除貯體中的版本化物件
+
+此貯體原則會限制使用者（由使用者 ID 「 56622399308951294926 」識別）依版本 ID 刪除版本管理物件
+
+[source, json]
+----
+{
+  "Statement": [
+    {
+      "Action": [
+        "s3:DeleteObjectVersion"
+      ],
+      "Effect": "Deny",
+      "Resource": "arn:aws:s3:::verdeny/*",
+      "Principal": {
+        "AWS": [
+          "56622399308951294926"
+        ]
+      }
+    },
+    {
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::verdeny/*",
+      "Principal": {
+        "AWS": [
+          "56622399308951294926"
+        ]
+      }
+    }
+  ]
 }
 ----

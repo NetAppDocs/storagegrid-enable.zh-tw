@@ -3322,8 +3322,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="8a4af1af804f24fc5095bcb2f05db9c4" category="inline-link">AWS 原則產生器</block>
   <block id="2bf2ec7dad10916c7d2bbb85d22b8113" category="paragraph">庫位和群組原則共享大部分相同的元素。原則是以 json 格式建置，可使用產生<block ref="b825d77c880bca33764ff404def2b41e" category="inline-link-rx"></block></block>
   <block id="8efdfc962f00530ec94e00c5411f744c" category="paragraph">所有原則都會定義影響，行動和資源。貯體原則也會定義主體。</block>
-  <block id="036aeedca40738e98fb9980b5c2675af" category="paragraph">「 * 效果 * 」將是「允許」或「拒絕」要求。* Principal * 是被授與或拒絕其能力的帳戶 / 使用者。這可以定義為萬用字元「 +*++ 」，位在儲存格所在租用戶內的本機或同盟使用者或群組，或是網格中的其他租用戶。使用者或群組可透過名稱或 ID 字串來識別。「 * 行動 * 」是一組 S3 作業正在授予或拒絕給使用者。</block>
-  <block id="dba9490f360197ade1689ea1d2889b5c" category="admonition">使用者執行任何 S3 動作時，都需要 S3:ListBucket 動作。</block>
   <block id="2dc7323af24c93e28f62e0e080730041" category="paragraph">「資源 * 」是被授與或拒絕執行動作的主體所在的貯體或貯體。（可選）當策略操作有效時，可以有 * 條件 * 。</block>
   <block id="98d8787db8134942993742f28e6e638e" category="section-title">使用 AWS 原則產生器</block>
   <block id="7fd5fa9d1e888f7d962c6930557d8e36" category="paragraph">AWS 原則產生器是一項絕佳工具，可協助您取得 json 程式碼，並取得您嘗試實作的正確格式和資訊。</block>
@@ -3362,4 +3360,16 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="5e90956923e27ad94083a42655710d27" category="paragraph">若要產生貯體原則的權限： * 針對原則類型選擇 S3 Bucket 原則。* 選取所需效果的按鈕：「允許」或「拒絕」。以拒絕權限啟動原則，然後新增允許權限 * 輸入主體的使用者或群組資訊，是個不錯的做法。* 在「動作」下拉式清單中，按一下您要在此權限或「所有動作」方塊中包含的 S3 動作數量旁邊的方塊。* 在「 Amazon 資源名稱（ ARN ）」方塊中輸入貯體路徑。在貯體名稱前加上「 arn:AWS:S3 ：：：：」。例如："arn:AWS ： S3 ：：： Example_Bucket"</block>
   <block id="6286b2654fd9f607da0c9a689ef54e7c" category="list-text">輸入貯體資訊 - arn:AWS:S3:::example_Bucket,arn:AWS:::::example_Bucket/*</block>
   <block id="8e42358c3df8a569be04cad92e8b7479" category="paragraph"><block ref="8e42358c3df8a569be04cad92e8b7479" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e73b44d49494e2ac6f4ce555878eacec" category="paragraph">「 * 效果 * 」將是「允許」或「拒絕」要求。</block>
+  <block id="e3d361dfeb32442ba3887fb26cadd759" category="paragraph">* 負責人 *</block>
+  <block id="7c8bff59dd5d9771fc52f17ce6414420" category="list-text">僅適用於貯體原則。</block>
+  <block id="4a47dee52461b2ce5adaefbba5fc57b0" category="list-text">主體是被授與或拒絕權限的帳戶 / 使用者。</block>
+  <block id="7b0fef71a6a5b6046a79dcb31b7991ec" category="list-text">可定義為：</block>
+  <block id="cdecd059c81b66125ab436ad5ba1f0db" category="list-text">萬用字元 "++*++"</block>
+  <block id="171a87df01e0c7aab0969853c4d63f99" category="list-text">租戶中所有使用者的租戶 ID （相當於 AWS 帳戶）</block>
+  <block id="15ab6cf4100c9219aec62139d8ecadc0" category="list-text">使用者（來自貯體所在租戶內部的本機或聯盟，或網格中的其他租戶）</block>
+  <block id="36bafc76e6f620a3ad8f1ff1389d5aeb" category="list-text">群組（來自貯體所在租戶內部的本機或聯盟群組，或網格中的其他租戶）。</block>
+  <block id="1fb97d2f8d3ea337eb88de35459a8dfa" category="paragraph">「 * 行動 * 」是一組 S3 作業正在授予或拒絕給使用者。</block>
+  <block id="c4b3b18f1ab46adb439794c3e45b0a5a" category="admonition">對於群組原則，使用者必須執行 S3 ： ListBucket 動作，才能執行任何 S3 動作。</block>
+  <block id="21e1d6809aa3d238b83ad7b2536121ce" category="section-title">將貯體限制在少數具有唯讀存取權的使用者。</block>
 </blocks>
