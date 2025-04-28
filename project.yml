@@ -1,7 +1,7 @@
 ---
 settings:
-  name: How to enable StorageGRID in your environment
-  search: storagegrid-enable,storagegrid-118,storagegrid-appliances
+  name: StorageGRID solutions and sesources
+  search: storagegrid-enable,storagegrid,storagegrid-appliances
   internal:
     pdf_enabled: true
     termcheck_enabled: false
@@ -11,7 +11,7 @@ settings:
   langs: zh-tw,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-cn
 sidebar:
   entries:
-  - title: 如何啟用StorageGRID 功能
+  - title: StorageGRID 解決方案與資源
     url: "/index.html"
   - title: 試用 StorageGRID
     url: "/evaluation-software.html"

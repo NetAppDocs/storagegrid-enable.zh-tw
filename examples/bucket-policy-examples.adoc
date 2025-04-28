@@ -2,9 +2,9 @@
 permalink: examples/bucket-policy-examples.html 
 sidebar: sidebar 
 keywords: iam, bucket policy, group policy, policy 
-summary: 以下是 StorageGRID S3 的原則和權限範例。 
+summary: StorageGRID 中的策略和權限。 
 ---
-= 範例庫與群組（IAM）原則
+= StorageGRID 中的原則和權限
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
