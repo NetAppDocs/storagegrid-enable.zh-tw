@@ -1,6 +1,6 @@
 ---
 settings:
-  name: StorageGRID solutions and sesources
+  name: StorageGRID solutions and resources
   search: storagegrid-enable,storagegrid,storagegrid-appliances
   internal:
     pdf_enabled: true
