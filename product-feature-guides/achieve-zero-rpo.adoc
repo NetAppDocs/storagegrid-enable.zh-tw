@@ -20,9 +20,9 @@ summary: 本技術報告概述 StorageGRID 複寫策略的實作，以在站台�
 
 NetApp StorageGRID 是物件型儲存系統，支援業界標準的 Amazon Simple Storage Service （ Amazon S3 ） API 。
 
-StorageGRID 在多個位置提供單一命名空間，並根據資訊生命週期管理原則（ ILM ）提供不同的服務層級。有了這些生命週期原則，您就能在資料生命週期中最佳化資料的位置。
+StorageGRID 在多個位置提供單一命名空間，並根據資訊生命週期管理原則（ ILM ）提供不同的服務層級。透過這些生命週期策略，您可以優化資料在整個生命週期中的儲存位置。
 
-StorageGRID 提供可設定的耐用度，以及您在本機和地理區域分散式解決方案中資料的可用度。無論您的資料是在內部部署或公有雲中，整合式混合雲工作流程都能讓您的企業運用 Amazon Simple Notification Service （ Amazon SNS ）， Google Cloud ， Microsoft Azure Blob ， Amazon S3 Glacier ， Elasticsearch 等雲端服務。
+StorageGRID 提供可設定的耐用度，以及您在本機和地理區域分散式解決方案中資料的可用度。無論您的資料是在本地還是在公有雲中，整合的混合雲工作流程都允許您的企業利用雲端服務，例如 Amazon Simple Notification Service (Amazon SNS)、Google Cloud、Microsoft Azure Blob、Amazon S3 Glacier、Elasticsearch 等。
 
 
 
@@ -30,7 +30,14 @@ StorageGRID 提供可設定的耐用度，以及您在本機和地理區域分�
 
 StorageGRID 可部署最多 3 個儲存節點，單一網格最多可擴充至 200 個節點。單一網格可部署為單一站台，或延伸至 16 個站台。最小的網格是由管理節點和單一站台中的 3 個儲存節點所組成。管理節點包含管理介面，度量和記錄的中央點，並維護 StorageGRID 元件的組態。管理節點也包含用於 S3 API 存取的整合式負載平衡器。StorageGRID 可部署為純軟體， VMware 虛擬機器應用裝置或專為特定用途所打造的應用裝置。
 
-StorageGRID 節點可部署為僅中繼資料節點，以最大化物件數，僅物件儲存節點最大化物件空間，或是結合中繼資料和物件儲存節點來新增物件數和物件空間。每個儲存節點都可擴充至數 PB 容量，以利物件儲存，以數百 PB 的單位提供單一命名空間。StorageGRID 也為 S3 API 作業提供整合式負載平衡器，稱為閘道節點。
+StorageGRID 節點可以部署為：
+
+* 僅元資料節點最大化物件數量
+* 僅儲存物件的節點，最大化物件空間
+* 組合元資料和物件儲存節點，新增物件計數和物件空間
+
+
+每個儲存節點都可擴充至數 PB 容量，以利物件儲存，以數百 PB 的單位提供單一命名空間。StorageGRID 也為 S3 API 作業提供整合式負載平衡器，稱為閘道節點。
 
 image:zero-rpo/delivery-paths.png["StorageGRID 部署選項"]
 
@@ -64,7 +71,7 @@ StorageGRID 包含多層故障網域，可用於決定如何建構解決方案�
 
 物件中繼資料包含下列資訊：
 
-* 系統中繼資料、包括每個物件的唯一 ID （ UUID ）、物件名稱、 S3 貯體名稱、租戶帳戶名稱或 ID 、物件的邏輯大小、物件第一次建立的日期和時間、以及物件上次修改的日期和時間。
+* 系統元數據，包括每個物件的唯一 ID、物件名稱、S3 儲存桶的名稱、租用戶帳戶名稱或 ID、物件的邏輯大小、物件首次建立的日期和時間以及物件最後修改的日期和時間。
 * 每個物件複本或抹除編碼片段的目前儲存位置。
 * 任何與物件相關聯的自訂使用者中繼資料金鑰值配對。
 * 對於 S3 物件，任何與物件相關的物件標籤金鑰值配對

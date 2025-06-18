@@ -3172,11 +3172,8 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="ea76d032379d2a88d28b72edd9e36564" category="paragraph">本技術報告提供完整指南，協助您實作 StorageGRID 複寫策略，以在站台發生故障時達成零的還原點目標（ RPO ）。本文件詳細說明 StorageGRID 的各種部署選項，包括多站台同步複寫和多網格非同步複寫。它說明如何設定 StorageGRID 的資訊生命週期管理（ ILM ）原則，以確保資料在多個位置上的耐用性和可用度。此外，本報告還涵蓋效能考量，故障案例和恢復程序，以維持不中斷的用戶端作業。本文件的目標是提供資訊，以確保資料可存取且一致，即使在站台發生完整故障時，也能同時運用同步與非同步複寫技術。</block>
   <block id="606eab719053286d71dc6722565f39cc" category="section-title">StorageGRID 總覽</block>
   <block id="c72cc4a7cc108f0e65b3b2234a5451f6" category="paragraph">NetApp StorageGRID 是物件型儲存系統，支援業界標準的 Amazon Simple Storage Service （ Amazon S3 ） API 。</block>
-  <block id="cbec9834e0bafd7c4eeaff92edea7bb1" category="paragraph">StorageGRID 在多個位置提供單一命名空間，並根據資訊生命週期管理原則（ ILM ）提供不同的服務層級。有了這些生命週期原則，您就能在資料生命週期中最佳化資料的位置。</block>
-  <block id="92befe296d180941710b2c41a0009334" category="paragraph">StorageGRID 提供可設定的耐用度，以及您在本機和地理區域分散式解決方案中資料的可用度。無論您的資料是在內部部署或公有雲中，整合式混合雲工作流程都能讓您的企業運用 Amazon Simple Notification Service （ Amazon SNS ）， Google Cloud ， Microsoft Azure Blob ， Amazon S3 Glacier ， Elasticsearch 等雲端服務。</block>
   <block id="bbcde1e5e5d61a464205617230c533f9" category="section-title">StorageGRID 擴充</block>
   <block id="755c616499e794de29a6192f733ef343" category="paragraph">StorageGRID 可部署最多 3 個儲存節點，單一網格最多可擴充至 200 個節點。單一網格可部署為單一站台，或延伸至 16 個站台。最小的網格是由管理節點和單一站台中的 3 個儲存節點所組成。管理節點包含管理介面，度量和記錄的中央點，並維護 StorageGRID 元件的組態。管理節點也包含用於 S3 API 存取的整合式負載平衡器。StorageGRID 可部署為純軟體， VMware 虛擬機器應用裝置或專為特定用途所打造的應用裝置。</block>
-  <block id="32bb7324701636fba01565d26f666f9a" category="paragraph">StorageGRID 節點可部署為僅中繼資料節點，以最大化物件數，僅物件儲存節點最大化物件空間，或是結合中繼資料和物件儲存節點來新增物件數和物件空間。每個儲存節點都可擴充至數 PB 容量，以利物件儲存，以數百 PB 的單位提供單一命名空間。StorageGRID 也為 S3 API 作業提供整合式負載平衡器，稱為閘道節點。</block>
   <block id="dd4a2f5270f8e48315da197dfb50c549" category="inline-image-macro">StorageGRID 部署選項</block>
   <block id="85bd86baa435866d317d93d290b94825" category="paragraph"><block ref="85bd86baa435866d317d93d290b94825" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0d98907e79de1d22666f11bfb3d2db3f" category="paragraph">StorageGRID 包含放置在站台拓撲中的節點集合。StorageGRID 中的站台可以是唯一的實體位置，也可以與網格中的其他站台一樣位於共用實體位置，作為邏輯結構。StorageGRID 站台不應跨越多個實體位置。站台代表共用區域網路（ LAN ）基礎架構。</block>
@@ -3193,7 +3190,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="fe6177858a7ffc8599a9d9a1a4ea2f1f" category="list-text">物件中繼資料是指描述物件的任何資訊。</block>
   <block id="5744c4629d3afd78a5fdd52800e97f1c" category="paragraph">利用物件中繼資料來追蹤整個網格中所有物件的位置、並長期管理每個物件的生命週期。StorageGRID</block>
   <block id="63079dc7d4ba0f0950865fd53b883a11" category="paragraph">物件中繼資料包含下列資訊：</block>
-  <block id="3d426a291fd747acbb0b7f735c152ca2" category="list-text">系統中繼資料、包括每個物件的唯一 ID （ UUID ）、物件名稱、 S3 貯體名稱、租戶帳戶名稱或 ID 、物件的邏輯大小、物件第一次建立的日期和時間、以及物件上次修改的日期和時間。</block>
   <block id="e5a918f437a7af27afdce3def49278bc" category="list-text">每個物件複本或抹除編碼片段的目前儲存位置。</block>
   <block id="91b08644ef3e50381478d7f42ab32f1d" category="list-text">任何與物件相關聯的自訂使用者中繼資料金鑰值配對。</block>
   <block id="23f54b9b547ce8f5c783a1d802cf64a9" category="list-text">對於 S3 物件，任何與物件相關的物件標籤金鑰值配對</block>
@@ -3368,8 +3364,62 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="1fb97d2f8d3ea337eb88de35459a8dfa" category="paragraph">「 * 行動 * 」是一組 S3 作業正在授予或拒絕給使用者。</block>
   <block id="c4b3b18f1ab46adb439794c3e45b0a5a" category="admonition">對於群組原則，使用者必須執行 S3 ： ListBucket 動作，才能執行任何 S3 動作。</block>
   <block id="21e1d6809aa3d238b83ad7b2536121ce" category="section-title">將貯體限制在少數具有唯讀存取權的使用者。</block>
-  <block id="bbecdd1fb824778996b46ad8016ff963" category="summary">StorageGRID 中的策略和權限。</block>
   <block id="0e2086a4669036b8a4cdc547c6b73dcf" category="doc">StorageGRID 中的原則和權限</block>
   <block id="71c2cd8c732de893ca91cb987baa1b5c" category="paragraph">所有原則都會定義影響，行動和資源。貯體原則也會定義主體。</block>
   <block id="4acae57d3119f0b81d2bfd14c9585f13" category="sidebar">StorageGRID 解決方案與資源</block>
+  <block id="4e7c8010ebf23d4fb2423e144be51038" category="summary">StorageGRID 中的儲存桶生命週期。</block>
+  <block id="58160f35095d353b329570226a65de25" category="doc">StorageGRID 中的儲存桶生命週期</block>
+  <block id="4aacbdad7d81cd4fe0ad188b4e33394a" category="paragraph">您可以建立S3生命週期組態、以控制何時從StorageGRID 作業系統刪除特定物件。</block>
+  <block id="1dae0e04caca31248eebeab84347dae4" category="section-title">什麼是生命週期配置</block>
+  <block id="7237dbaae1efaf45679f5983bf89ecdb" category="paragraph">生命週期組態是套用至特定S3儲存區中物件的一組規則。每個規則都會指定受影響的物件、以及這些物件何時到期（在特定日期或幾天之後）。</block>
+  <block id="81808f9beff227e55b8eac9c911f81c1" category="paragraph">每個物件都遵循 S3 儲存區生命週期或 ILM 原則的保留設定。當 S3 貯體生命週期設定完成時、生命週期到期動作會覆寫符合貯體生命週期篩選器之物件的 ILM 原則。不符合貯體生命週期篩選器的物件、會使用 ILM 原則的保留設定。如果物件符合貯體生命週期篩選器、且未明確指定到期動作、則不會使用 ILM 原則的保留設定、而且會暗示物件版本會永遠保留。</block>
+  <block id="5abb5a8b4a6970cbd435389007814791" category="paragraph">因此、即使ILM規則中的放置指示仍套用至物件、也可能從網格中移除物件。或者，即使物件的任何 ILM 放置指令已經失效，物件仍可能保留在網格上</block>
+  <block id="f8ddf9feb35885470b54cc7bc6b0c913" category="paragraph">在生命週期組態中、支援多達1、000個生命週期規則。StorageGRID每個規則可包含下列XML元素：</block>
+  <block id="6778b95944fe51e4a619971577ef5ee9" category="list-text">過期：在達到指定日期或達到指定天數時刪除物件、從擷取物件開始算起。</block>
+  <block id="78f9560991f2641b0e0f5ce11d361273" category="list-text">非目前版本過期：在達到指定天數時刪除物件、從物件變成非目前的開始算起。</block>
+  <block id="0422ebe572a6bb9b7e6d689e7fd6f1b7" category="list-text">篩選器（前置、標記）</block>
+  <block id="1486479bc9924fe7efe63a3ddacb2a7b" category="list-text">狀態 *ID</block>
+  <block id="663ef94c78c892b73cc57c0ecf2b8bc6" category="paragraph">支援使用下列庫位作業來管理生命週期組態：StorageGRID</block>
+  <block id="3a176974b22a72a5a81d4903f38c355d" category="list-text">刪除 BucketLifecycle</block>
+  <block id="2f3274ee98c595939f0a90e3b51f7c0d" category="list-text">GetBucketLifecycleConfiguration</block>
+  <block id="f8a8897d1208664862c2552a11f250ca" category="list-text">PuttBucketLifecycleConfiguration</block>
+  <block id="da9d09dc4302766fe82a494820ea3018" category="section-title">生命週期策略的結構</block>
+  <block id="058711a626ab33171f020d2148a6ad18" category="paragraph">建立生命週期組態的第一步、就是建立一個包含一或多個規則的Json檔案。例如、此Json檔案包含三個規則、如下所示：</block>
+  <block id="9d3ce84a95c8d372e271b55abdeaf06d" category="list-text">*規則 1* 僅適用於與前綴 category1/ 相符且 key2 值為 tag2 的物件。 Expiration參數指定與該篩選條件相符的物件將於 2020 年 8 月 22 日午夜到期。</block>
+  <block id="791076664e2f3e1afea280f5a504f6dc" category="list-text">*規則 2* 僅適用於與前綴 category2/ 相符的物件。 Expiration參數指定與篩選器相符的物件將在提取後 100 天過期。</block>
+  <block id="f2c02934edec79173be5544f20f8e6ca" category="admonition">指定天數的規則是相對於擷取物件的時間。如果目前日期超過擷取日期加上天數、則在套用生命週期組態後、部分物件可能會立即從儲存庫中移除。</block>
+  <block id="bf1abd41ac064b250b1363071b9a7195" category="list-text">*規則 3* 僅適用於與前綴 category3/ 相符的物件。 Expiration參數指定符合物件的任何非目前版本將在變為非目前版本後 50 天過期。</block>
+  <block id="896cd69eb75c862798f9e986f848f272" category="section-title">將生命週期組態套用至貯體</block>
+  <block id="991d6fd19e6b04aaab79f243f7231985" category="paragraph">建立生命週期組態檔案之後、您可以發出 PuttBucketLifecycleConfiguration 要求、將其套用至儲存庫。</block>
+  <block id="7d231c64201330534bbc01fac1411591" category="paragraph">此要求會將範例檔案中的生命週期組態套用至名為的貯體中的物件<block ref="323221a74abb3997f4141e6d754bf8dd" prefix=" " category="inline-code"></block>。</block>
+  <block id="ae6b965207cbb3195f9f18ff9567dac2" category="paragraph">若要驗證已成功將生命週期組態套用至貯體、請發出 GetBucketLifecycleConfiguration 要求。例如：</block>
+  <block id="f0a61bf28629288e5dd914027e78d330" category="section-title">標準（非版本化）儲存桶的生命週期策略範例</block>
+  <block id="9c839c4462147cd1a9a164b161c6df71" category="section-title">90 天後刪除對象</block>
+  <block id="1c1edea5b5fb7017df6735caddb036c9" category="paragraph">用例：此策略非常適合管理僅在有限時間內相關的數據，例如臨時文件、日誌或中間處理數據。優點：降低儲存成本並確保儲存桶整潔有序。</block>
+  <block id="a4a5cea738d6da6085c0db896d047001" category="section-title">版本控制儲存桶的生命週期策略範例</block>
+  <block id="5808fc2734abb0c3a63ccb7a2efcb814" category="section-title">10 天後刪除非目前版本</block>
+  <block id="87fe92caedf00fb0d3b95bb0a8947552" category="paragraph">使用案例：此策略有助於管理非當前版本物件的存儲，這些物件會隨著時間的推移而累積並佔用大量空間。優勢：透過僅保留最新版本來優化儲存空間利用率。</block>
+  <block id="01cd1b232ce05d49443051b40a2458d2" category="section-title">保留 5 個非目前版本</block>
+  <block id="f48f877559a5ab472b0c8399aa53ae43" category="paragraph">使用案例：當您想要保留有限數量的先前版本以用於恢復或審計目的時很有用。好處：保留足夠的非當前版本以確保足夠的歷史記錄和復原點。</block>
+  <block id="b36f0366fc8b2a644db0d58b9aec47e6" category="section-title">當不存在其他版本時移除刪除標記</block>
+  <block id="5a07e328951f2e2665da45b3c8611e70" category="paragraph">使用案例：此策略有助於管理所有非目前版本刪除後留下的刪除標記，這些標記會隨著時間的推移而累積。好處：減少不必要的混亂。</block>
+  <block id="e5c835f7c182458dbaf697d1620793b4" category="section-title">30 天後刪除目前版本，60 天後刪除非目前版本，一旦不存在其他版本，則刪除目前版本所建立的刪除標記。</block>
+  <block id="d9b7c27b725dffa7cd5976689726fef1" category="paragraph">使用案例：為目前版本和非目前版本提供完整的生命週期，包括刪除標記。優點：降低儲存成本，確保儲存桶整潔有序，同時保留足夠的恢復點和歷史記錄。</block>
+  <block id="c9aa9a5dfb2480b364bb5845348ff940" category="section-title">刪除沒有其他版本並且已經存在 5 天的標記，為帶有「accounts_ 前綴」的物件保留 4 個非當前版本和至少 30 天的歷史記錄，為所有其他物件版本保留 2 個版本和至少 10 天的歷史記錄。</block>
+  <block id="2c4d4631c1767753478366b0115cd168" category="paragraph">使用案例：為特定物件以及其他物件提供獨特的規則，以管理目前版本和非目前版本（包括刪除標記）的完整生命週期。優點：降低儲存成本，確保儲存桶整潔有序，同時保留足夠的恢復點和歷史記錄，以滿足各種客戶需求。</block>
+  <block id="c662e9fbc7c08f1bf374548d49a19c49" category="list-text">定期檢視和更新生命週期政策，並使其與 ILM 和資料管理目標保持一致。</block>
+  <block id="cc89ccf651eef2154a659615eba6bdf0" category="list-text">在廣泛應用策略之前，先在非生產環境或儲存桶中測試策略，以確保其按預期工作</block>
+  <block id="1472c6bd5c48d6572cc5d6c6830a71cb" category="list-text">使用描述性 ID 作為規則使其更直觀，因為邏輯結構可能變得複雜</block>
+  <block id="9883679d6984fbcf5d5e1eb8a9841a7a" category="list-text">監控這些儲存桶生命週期策略對儲存使用情況和效能的影響，以做出必要的調整。</block>
+  <block id="f69309997a74d84dd39f53923232f102" category="summary">StorageGRID 中的政策與權限。</block>
+  <block id="61e1800dd7d03bc7509039ca51abaa94" category="paragraph">StorageGRID 在多個位置提供單一命名空間，並根據資訊生命週期管理原則（ ILM ）提供不同的服務層級。透過這些生命週期策略，您可以優化資料在整個生命週期中的儲存位置。</block>
+  <block id="ee46b302eeb000f796002cd99f7fccca" category="paragraph">StorageGRID 提供可設定的耐用度，以及您在本機和地理區域分散式解決方案中資料的可用度。無論您的資料是在本地還是在公有雲中，整合的混合雲工作流程都允許您的企業利用雲端服務，例如 Amazon Simple Notification Service (Amazon SNS)、Google Cloud、Microsoft Azure Blob、Amazon S3 Glacier、Elasticsearch 等。</block>
+  <block id="639932e1f3f1e48c7c66a3c0d26d7c95" category="paragraph">StorageGRID 節點可以部署為：</block>
+  <block id="2ef98a36e008b10819c92b90ab9fb134" category="list-text">僅元資料節點最大化物件數量</block>
+  <block id="314be57ec0bf12b0f7b8fad48b9e7d0d" category="list-text">僅儲存物件的節點，最大化物件空間</block>
+  <block id="b67abdd7987281e93fb88e16a9dede52" category="list-text">組合元資料和物件儲存節點，新增物件計數和物件空間</block>
+  <block id="c861ea75c2d08cb58cd0e94b6f5cb1d3" category="paragraph">每個儲存節點都可擴充至數 PB 容量，以利物件儲存，以數百 PB 的單位提供單一命名空間。StorageGRID 也為 S3 API 作業提供整合式負載平衡器，稱為閘道節點。</block>
+  <block id="aae45e5681608077797f9b54c9787cc9" category="list-text">系統元數據，包括每個物件的唯一 ID、物件名稱、S3 儲存桶的名稱、租用戶帳戶名稱或 ID、物件的邏輯大小、物件首次建立的日期和時間以及物件最後修改的日期和時間。</block>
+  <block id="cab3529168145fa0611750088f6b9294" category="sidebar">儲存桶生命週期策略範例</block>
+  <block id="e506f81bec685a8d4212a723ed5e9d67" category="sidebar">儲存桶生命週期策略範例</block>
 </blocks>
