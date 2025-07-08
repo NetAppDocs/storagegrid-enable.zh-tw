@@ -3422,4 +3422,5 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="aae45e5681608077797f9b54c9787cc9" category="list-text">系統元數據，包括每個物件的唯一 ID、物件名稱、S3 儲存桶的名稱、租用戶帳戶名稱或 ID、物件的邏輯大小、物件首次建立的日期和時間以及物件最後修改的日期和時間。</block>
   <block id="cab3529168145fa0611750088f6b9294" category="sidebar">儲存桶生命週期策略範例</block>
   <block id="e506f81bec685a8d4212a723ed5e9d67" category="sidebar">儲存桶生命週期策略範例</block>
+  <block id="0be6d03a29c17471b0414e9b31482b15" category="list-text">IBM 儲存保護</block>
 </blocks>

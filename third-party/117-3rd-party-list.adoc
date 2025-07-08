@@ -42,6 +42,7 @@ summary: 第三方解決方案已通過 StorageGRID 11.7 驗證
 * GitHub企業伺服器
 * IBM FileNet
 * IBM Spectrum Protect Plus
+* IBM 儲存保護
 * Interica
 * Komprise
 * Microsoft SQL Server巨量資料叢集
@@ -87,6 +88,7 @@ summary: 第三方解決方案已通過 StorageGRID 11.7 驗證
 
 * CommVault 11功能版本26
 * IBM FileNet
+* IBM 儲存保護
 * OpenText文件21.4
 * Rukrik
 * Veeam 12.
