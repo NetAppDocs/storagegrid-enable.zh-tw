@@ -1,0 +1,57 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/bare-metal-review-config-complete-storagegrid-install.html 
+keywords: summary page, storagegrid install 
+summary: 瞭解如何驗證網格組態資訊、並完成 StorageGRID 安裝程序。 
+---
+= 檢閱組態並完成 StorageGRID 安裝
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+瞭解如何驗證網格組態資訊、並完成 StorageGRID 安裝程序。
+
+為了確保安裝順利完成、請仔細檢閱您輸入的組態資訊。請遵循下列步驟。
+
+.步驟
+. 檢視摘要頁面。
++
+image:bare-metal/bare-metal-summary-page.png["裸機摘要頁面"]
+
+. 確認所有網格組態資訊均正確無誤。使用「摘要」頁面上的「修改」連結、即可返回並修正任何錯誤。
+. 按一下「安裝」。
++
+
+NOTE: 如果節點設定為使用用戶端網路、則當您按一下「安裝」時、該節點的預設閘道會從網格網路切換至用戶端網路。如果連線中斷、請確定您是透過可存取的子網路存取主管理節點。如需詳細資訊、請參閱「網路安裝與配置」。
+
+. 按一下下載恢復套件。
++
+當安裝過程進入網格拓撲定義點時，系統會提示您下載恢復軟件包文件）並確認您可以訪問此文件的 (`.zip`內容。您必須下載「恢復套件」檔案、以便在一或多個網格節點故障時恢復 StorageGRID 系統。
+
++
+確認您可以擷取檔案內容 `.zip` 、然後將其儲存在兩個安全且獨立的位置。
+
++
+
+CAUTION: 必須保護恢復套件檔案、因為其中包含可用於從StorageGRID 該系統取得資料的加密金鑰和密碼。
+
+. 選取「我已成功下載並驗證修復套件檔案」選項、然後按一下「下一步」。
++
+image:bare-metal/bare-metal-download-recovery-package.png["裸機下載還原套件"]
+
++
+如果安裝仍在進行中、則會開啟「安裝狀態」頁面。此頁面會指出每個網格節點的安裝進度。
+
++
+image:bare-metal/bare-metal-installation-status.png["裸機安裝狀態"]
+
++
+當到達所有網格節點的完整階段時、會開啟 Grid Manager 的登入頁面。
+
+. 以 root 使用者身分登入 Grid Manager 、並使用您在安裝期間指定的密碼。
+

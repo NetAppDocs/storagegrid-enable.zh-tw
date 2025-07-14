@@ -1,0 +1,70 @@
+---
+permalink: technical-reports/monitor-advanced-monitor-storagegrid.html 
+sidebar: sidebar 
+keywords: monitor, storagegrid 
+summary: 瞭解如何使用度量 API 監控 StorageGRID 。 
+---
+= StorageGRID 中的進階監控功能
+:hardbreaks:
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+瞭解如何存取及匯出計量指標、以協助疑難排解問題。
+
+
+
+== 透過 Prometheus 查詢檢視計量 API
+
+Prometheus 是一款開放原始碼軟體、用於收集指標。若要透過 GMI 存取 StorageGRID 的內嵌 Prometheus 、請前往功能表： Support[Metrics 。
+
+image:monitor/monitor-metrics-page.png["監控指標頁面"]
+
+或者、您也可以直接瀏覽至連結。
+
+image:monitor/monitor-prometheus-interface.png["Monitor-Prometheus-interface"]
+
+透過此檢視、您可以存取 Prometheus 介面。從這裡、您可以搜尋可用的指標、甚至是嘗試查詢。
+
+若要進行 Prometheus URL 查詢、請遵循下列步驟：
+
+.步驟
+. 開始在查詢文字方塊中輸入。在您輸入時、會列出指標。就我們而言、只有以 StorageGRID 和 Node 為開頭的指標才是重要的。
+. 要查看每個節點的 HTTP 會話數，請鍵入 `storagegrid_http` 並選擇 `storagegrid_http_sessions_incoming_currently_established`。按一下「執行」、以圖表或主控台格式顯示資訊。
++
+image:monitor/monitor-http-sessions.png["Monitor-http-sessions"]
+
+
+
+
+NOTE: 您透過此 URL 建立的查詢和圖表不會持續存在。複雜查詢會佔用管理節點上的資源。NetApp 建議您使用此檢視來探索可用的度量。
+
+
+NOTE: 不建議直接連接至我們的 Prometheus 執行個體、因為這需要開啟額外的連接埠。建議使用我們的 API 來存取度量、這是一種安全的方法。
+
+
+
+== 透過 API 匯出計量
+
+您也可以透過 StorageGRID 管理 API 存取相同的資料。
+
+若要透過 API 匯出度量、請遵循下列步驟：
+
+. 從 GMI 中選取功能表：說明 [API 文件 ] 。
+. 向下捲動至指標、然後選取取得 /grid/metric-query 。
++
+image:monitor/monitor-metrics-query.png["監控指標查詢"]
+
++
+回應中包含的資訊與透過 Prometheus URL 查詢所取得的資訊相同。您可以再次看到目前在每個儲存節點上建立的 HTTP 工作階段數目。您也可以下載 JSON 格式的回應、以利閱讀。下圖顯示 Prometheus 查詢回應範例。
+
++
+image:monitor/monitor-sample-prometheus-query-responses.png["Monitor-sample-Prometheus-query-Response.s"]
+
+
+
+
+NOTE: 使用 API 的優點是、它可讓您執行驗證的查詢

@@ -1,0 +1,46 @@
+---
+permalink: technical-reports/monitor-index.html 
+sidebar: sidebar 
+keywords: monitoring, storagegrid 
+summary: 深入瞭解 NetApp StorageGRID 、其錯誤狀況、以及如何使用 Splunk 等外部應用程式有效監控。 
+---
+= StorageGRID 監控簡介
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+瞭解如何使用 Splunk 等外部應用程式來監控 StorageGRID 系統。
+
+有效監控 NetApp StorageGRID 物件型儲存設備、可讓管理員快速回應緊急問題、並主動新增資源來處理不斷成長的工作負載。本報告提供如何監控關鍵指標及如何運用外部監控應用程式的一般指引。本指南旨在補充現有的監控與疑難排解指南。
+
+NetApp StorageGRID 部署通常由多個站台和許多節點組成、這些站台和節點可用來建立分散式容錯物件儲存系統。在分散式彈性儲存系統（例如 StorageGRID ）中、當網格繼續正常運作時、發生錯誤狀況是正常現象。身為系統管理員的您所面臨的挑戰、是瞭解錯誤狀況（例如節點停機）的臨界值、以及應該立即解決的問題、而非應該分析的資訊。透過分析 StorageGRID 提供的資料、您可以瞭解工作負載並做出明智的決策、例如何時新增更多資源。
+
+StorageGRID 提供優異的文件、深入探討監控主題。本報告假設您熟悉 StorageGRID 、並已檢閱相關文件。我們不再重複這些資訊、而是參考本指南中的產品文件。StorageGRID 產品文件可在線上取得、並以 PDF 格式提供。
+
+本文件旨在補充產品文件、並討論如何使用外部應用程式（例如 Splunk ）來監控 StorageGRID 系統。
+
+
+
+== 資料來源
+
+若要成功監控 NetApp StorageGRID 、請務必瞭解從何處收集有關 StorageGRID 系統健全狀況和作業的資料。
+
+* * 網路 UI 與儀表板。 *StorageGRID Grid Manager 會以最上層的檢視方式呈現您身為系統管理員、在邏輯簡報中需要看到的資訊。身為管理員、您也可以深入瞭解服務層級的資訊、以進行疑難排解和記錄收集。
+* * 稽核記錄 *StorageGRID 會保留租戶動作（例如放置、取得和刪除）的精細稽核記錄。您也可以追蹤物件的生命週期、從擷取到資料管理規則的應用。
+* * 指標 API *StorageGRID GMI 的基礎是開放式 API 、因為 UI 是 API 導向的。此方法可讓您使用外部監控和分析工具擷取資料。
+
+
+
+
+== 何處可找到其他資訊
+
+若要深入瞭解本文所述資訊、請檢閱下列文件和 / 或網站：
+
+* NetApp StorageGRID 文件中心 https://docs.netapp.com/us-en/storagegrid-118/[]
+* NetApp StorageGRID 啟用 https://docs.netapp.com/us-en/storagegrid-enable/[]
+* NetApp 產品文件 https://www.netapp.com/support-and-training/documentation/[]
+* Splunk 適用的 NetApp StorageGRID 應用程式 https://splunkbase.splunk.com/app/3898/#/details[]
+

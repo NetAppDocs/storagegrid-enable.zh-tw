@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/bare-metal-storagegrid-license.html 
+keywords: license, storagegrid 
+summary: 瞭解如何上傳 StorageGRID 授權檔案。 
+---
+= 新增 StorageGRID 授權詳細資料
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+瞭解如何上傳 StorageGRID 授權檔案。
+
+您必須指定StorageGRID 您的系統名稱、並上傳NetApp提供的授權檔案。
+
+若要指定 StorageGRID 授權資訊、請完成下列步驟：
+
+.步驟
+. 在「授權」頁面的「網格名稱」欄位中、輸入 StorageGRID 系統的名稱。安裝後、名稱會顯示為網格拓撲樹狀結構的最上層。
+. 單擊瀏覽，找到 NetApp 許可證文件 (`NLF-_unique-id_.txt`），然後單擊打開。授權檔案已驗證、並顯示序號和授權儲存容量。
++
+
+NOTE: 此產品的安裝歸檔包含免費授權、不提供任何產品的支援權利。StorageGRID您可以更新至安裝後提供支援的授權。
+
++
+image:bare-metal/bare-metal-update-license.png["裸機更新授權"]
+
+. 按一下「下一步」
+

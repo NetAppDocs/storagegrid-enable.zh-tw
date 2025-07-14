@@ -1,0 +1,21 @@
+---
+permalink: technical-reports/monitor-audit-log-monitoring.html 
+sidebar: sidebar 
+keywords: audit logs, storagegrid 
+summary: 探索如何使用 StorageGRID 稽核記錄、深入瞭解租戶和網格活動、以及如何運用 Splunk 等工具進行記錄分析。 
+---
+= 使用稽核記錄來監控 StorageGRID
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+瞭解如何使用 StorageGRID 稽核記錄、深入瞭解租戶和網格活動、以及如何運用 Splunk 等工具進行記錄分析。
+
+StorageGRID 稽核記錄可讓您收集租戶和網格活動的詳細資訊。稽核記錄可透過 NFS 公開進行分析。如需如何匯出稽核記錄的詳細指示，請參閱《系統管理員指南》。
+
+匯出稽核之後、您可以使用 Splunk 或 Logstash + Elasticsearch 等記錄分析工具來瞭解租戶活動、或建立詳細的計費和計費報告。
+
+StorageGRID 文件中包含稽核訊息的詳細資料。請參閱。 https://docs.netapp.com/us-en/storagegrid-118/audit/audit-messages-main.html["稽核訊息"^]

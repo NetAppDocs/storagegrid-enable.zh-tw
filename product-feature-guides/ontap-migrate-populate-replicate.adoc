@@ -1,0 +1,112 @@
+---
+permalink: product-feature-guides/ontap-migrate-populate-replicate.html 
+sidebar: sidebar 
+keywords: S3, ONTAP S3, ONTAP, StorageGRID, migration 
+summary: 從 ONTAP S3 移轉至 StorageGRID 。 
+---
+= 透過將物件型儲存設備從 ONTAP S3 順暢移轉至 StorageGRID 、實現企業級 S3
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+透過將物件型儲存設備從 ONTAP S3 順暢移轉至 StorageGRID 、實現企業級 S3
+
+
+
+== 填入來源 Bucket
+
+讓我們將一些物件放入來源 ONTAP 貯體中。我們將使用 S3 瀏覽器進行此示範、但您可以使用任何您熟悉的工具。
+
+使用上述建立的 ONTAP 使用者 S3 金鑰、將 S3 瀏覽器設定為連線至 ONTAP 系統。
+
+image:ontap-migrate/ontap-s3browser-conf.png["S3 瀏覽器組態"]
+
+現在讓我們將一些檔案上傳至啟用版本控制的儲存庫。
+
+image:ontap-migrate/ontap-s3browser-upload-01.png["按一下上傳"]
+
+image:ontap-migrate/ontap-s3browser-upload-02.png["選取要上傳的檔案"]
+
+image:ontap-migrate/ontap-s3browser-upload-03.png["檔案已上傳"]
+
+現在讓我們在貯體中建立一些物件版本。
+
+刪除檔案。
+
+image:ontap-migrate/ontap-s3browser-delete.png["刪除檔案"]
+
+上傳已存在於貯體中的檔案、將檔案複製到其本身、然後建立新版本。
+
+image:ontap-migrate/ontap-s3browser-overwrite.png["上傳已存在的檔案"]
+
+在 S3 瀏覽器中、我們可以檢視剛建立的物件版本。
+
+image:ontap-migrate/ontap-s3browser-versions.png["檢視版本"]
+
+
+
+=== 建立複寫關係
+
+讓我們開始將資料從 ONTAP 傳送至 StorageGRID 。
+
+在 ONTAP 系統管理員中、瀏覽至「保護 / 概述」。向下捲動至「雲端物件儲存區」、然後按一下「新增」按鈕並選取「 StorageGRID 」。
+
+image:ontap-migrate/ontap-protection-add-01.png["ONTAP 保護"]
+
+提供名稱和 URL 樣式來輸入 StorageGRID 資訊（本示範將使用 Path-styl URL ）。將物件存放區範圍設定為「 Storage VM 」。
+
+image:ontap-migrate/ontap-protection-configure-01.png["輸入 StorageGRID 資訊"]
+
+如果您使用的是 SSL 、請在此處設定負載平衡器端點連接埠、並在 StorageGRID 端點憑證中複製。否則、請取消核取 SSL 方塊、然後在此輸入 HTTP 端點連接埠。
+
+從上述目的地的 StorageGRID 組態輸入 StorageGRID 使用者 S3 金鑰和儲存格名稱。
+
+image:ontap-migrate/ontap-protection-configure-02.png["輸入 StorageGRID 資訊"]
+
+現在已設定目的地目標、我們可以設定目標的原則設定。展開「本機原則設定」、然後選取「持續」。
+
+image:ontap-migrate/ontap-local-setting.png["本機原則設定"]
+
+編輯持續原則、並將「恢復點目標」從「 1 小時」變更為「 3 秒」。
+
+image:ontap-migrate/ontap-local-edit-01.png["本機原則設定編輯"]
+
+現在我們可以設定 SnapMirror 來複寫貯體。
+
+[]
+====
+SnapMirror create -source-path SV_DEMO ： /bucket/bucket - destination-path sgws_demo ： /objstore - policy Continuous
+
+====
+image:ontap-migrate/ontap-snapmirror-create.png["建立 SnapMirror 關係"]
+
+此時貯體將在保護的庫位清單中顯示雲端符號。
+
+image:ontap-migrate/ontap-bucket-protected.png["鏟斗受到雲端目標的保護"]
+
+如果我們選取貯體並移至「 SnapMirror （ ONTAP 或雲端）」標籤、我們將會看到 SnapMirror 重新出貨狀態。
+
+image:ontap-migrate/ontap-snapmirror-status.png["檢查 SnapMirror 關係"]
+
+
+
+=== 複寫詳細資料
+
+我們現在已成功將儲存庫從 ONTAP 複製到 StorageGRID 。但實際複寫的內容是什麼？我們的來源和目的地都是版本化的貯體。舊版是否也會複寫到目的地？如果我們使用 S3 瀏覽器查看 StorageGRID 儲存庫、就會發現現有版本並未複寫、而且刪除的物件不存在、也不會有該物件的刪除標記。我們複製的物件在 StorageGRID 儲存庫中只有 1 個版本。
+
+image:ontap-migrate/sg-s3browser-initial.png["StorageGRID 貯體在初始同步後的 S3 瀏覽器檢視"]
+
+在我們的 ONTAP 儲存庫中、讓我們將新版本新增至先前使用的相同物件、並瞭解其複寫方式。
+
+image:ontap-migrate/ontap-s3browser-new-rep.png["上傳新版本後 ONTAP 儲存庫的 S3 瀏覽器檢視"]
+
+如果我們看 StorageGRID 一側、我們也看到這個儲存庫中也建立了新版本、但在 SnapMirror 關係之前、卻缺少初始版本。
+
+image:ontap-migrate/sg-s3browser-rep-ver.png["上傳新版本後 ONTAP 儲存庫的 S3 瀏覽器檢視"]
+
+這是因為 ONTAP SnapMirror S3 程序只會複寫物件的目前版本。因此我們在 StorageGRID 端建立了一個版本化的貯體、以做為目的地。這樣 StorageGRID 就能維護物件的版本歷程記錄。
+
+_ 作者： Rafael Guedes 和 Aron Klein_

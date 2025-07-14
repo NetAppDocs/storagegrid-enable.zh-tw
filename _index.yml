@@ -48,7 +48,7 @@ indexpage:
     - title: 如何重新部署站台及變更網路
       url: "/product-feature-guides/site-relocation-and-network-change.html"
     - title: 將物件型儲存設備從 ONTAP S3 移轉至 StorageGRID
-      url: "/product-feature-guides/ontap-migrate/index.html"
+      url: "/product-feature-guides/ontap-migrate-index.html"
   - title: 工具與應用程式指南
     links:
     - title: 使用Cloudera Hadoop S3連接器
@@ -78,17 +78,19 @@ indexpage:
     - title: TR-4994 ： Hadoop S3A 調校最佳實務做法
       url: "/technical-reports/s3a-tuning.html"
     - title: TR-4871 ： CommVault 完整備份與還原與 NetApp StorageGRID
-      url: "/technical-reports/tr-4871-commvault.html"
+      url: "/technical-reports/commvault-index.html"
+    - title: TR-4626 ：負載平衡器
+      url: "/technical-reports/load-balancer-index.html"
     - title: TR-4645 ：安全功能
-      url: "/technical-reports/data-security/index.html"
+      url: "/technical-reports/data-security-index.html"
     - title: TR-4921 ：勒索軟體防禦
-      url: "/technical-reports/ransomware-protection/index.html"
+      url: "/technical-reports/ransomware-protection-index.html"
     - title: TR-4765 ：監控 StorageGRID
-      url: "/technical-reports/monitor/index.html"
+      url: "/technical-reports/monitor-index.html"
     - title: TR-4882 ：安裝 StorageGRID 裸機網格
-      url: "/technical-reports/bare-metal/index.html"
+      url: "/technical-reports/bare-metal-index.html"
     - title: TR-4907 ：使用 Veritas Enterprise Vault 設定 StorageGRID
-      url: "/technical-reports/veritas/index.html"
+      url: "/technical-reports/veritas-index.html"
   - title: 程序和API範例
     links:
     - title: 測試並示範S3加密

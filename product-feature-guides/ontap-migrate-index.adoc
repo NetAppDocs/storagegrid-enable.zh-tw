@@ -1,0 +1,21 @@
+---
+permalink: product-feature-guides/ontap-migrate-index.html 
+sidebar: sidebar 
+keywords: S3, ONTAP S3, ONTAP, StorageGRID, migration 
+summary: 從 ONTAP S3 移轉至 StorageGRID 。 
+---
+= 透過將物件型儲存設備從 ONTAP S3 順暢移轉至 StorageGRID 、實現企業級 S3
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+透過將物件型儲存設備從 ONTAP S3 順暢移轉至 StorageGRID 、實現企業級 S3
+
+
+
+== 移轉示範
+
+這是將使用者和貯體從 ONTAP S3 移轉至 StorageGRID 的示範。

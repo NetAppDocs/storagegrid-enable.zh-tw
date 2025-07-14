@@ -1,0 +1,94 @@
+---
+permalink: technical-reports/veritas-configure-storagegrid-enterprise-vault.html 
+sidebar: sidebar 
+keywords: storagegrid, enterprise vault, configure 
+summary: 瞭解如何實作 StorageGRID 11.5 和 Veritas Enterprise Vault 14.1 的基本組態。 
+---
+= 設定 StorageGRID 和 Veritas Enterprise Vault
+:hardbreaks:
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+瞭解如何實作 StorageGRID 11.5 以上版本和 Veritas Enterprise Vault 14.1 以上版本的基本組態。
+
+本組態指南以 StorageGRID 11.5 和 Enterprise Vault 14.1 為基礎。使用 S3 物件鎖定、 StorageGRID 11.6 和 Enterprise Vault 14.2.2 讀取多項（ WORM ）模式儲存設備一次寫入。如需這些準則的詳細資訊、請參閱 https://docs.netapp.com/us-en/storagegrid-118/["StorageGRID 文件"^] 頁面或聯絡 StorageGRID 專家。
+
+
+
+== 設定 StorageGRID 和 Veritas Enterprise Vault 的先決條件
+
+* 在使用 Veritas Enterprise Vault 設定 StorageGRID 之前、請先確認下列先決條件：
+
+
+
+NOTE: 對於 WORM 儲存（物件鎖定）、需要 StorageGRID 11.6 或更高版本。
+
+* 已安裝 Veritas Enterprise Vault 14.1 或更新版本。
+
+
+
+NOTE: 對於 WORM 儲存（物件鎖定）、需要 Enterprise Vault 14.2.2 版或更新版本。
+
+* 已建立資料保險箱儲存區群組和資料保險箱儲存區。如需詳細資訊、請參閱《 Veritas Enterprise Vault 管理指南》。
+* 已建立 StorageGRID 租戶、存取金鑰、秘密金鑰和貯體。
+* 已建立 StorageGRID 負載平衡器端點（ HTTP 或 HTTPS ）。
+* 如果使用自我簽署的憑證、請將 StorageGRID 自我簽署的 CA 憑證新增至 Enterprise Vault 伺服器。如需詳細資訊，請參閱本 https://www.veritas.com/support/en_US/article.100049744["Veritas 知識庫文章"^]。
+* 更新並套用最新的 Enterprise Vault 組態檔案、以啟用支援的儲存解決方案、例如 NetApp StorageGRID 。如需詳細資訊，請參閱本 https://www.veritas.com/content/support/en_US/article.100039174["Veritas 知識庫文章"^]。
+
+
+
+
+== 使用 Veritas Enterprise Vault 設定 StorageGRID
+
+若要使用 Veritas Enterprise Vault 設定 StorageGRID 、請競爭下列步驟：
+
+.步驟
+. 啟動 Enterprise Vault Administration 主控台。
++
+image:veritas/veritas-enterprise-vault.png["媒體 /Veritas / Veritas 企業級資料保險箱"]
+
+. 在適當的資料保險箱儲存區中建立新的資料保險箱儲存區分割區。展開資料保險箱儲存群組資料夾、然後展開適當的資料保險箱儲存區。在分割區上按一下滑鼠右鍵、然後選取功能表：新增 [ 分割區 ] 。
++
+image:veritas/veritas-enterprise-vault-2.png["媒體 /Veritas / Veritas 企業版 - 資料保險箱 -2"]
+
+. 按照新建分區創建嚮導進行操作。從儲存類型下拉式功能表中、選取 NetApp StorageGRID （ S3 ）。按一下「下一步」
++
+image:veritas/veritas-new-partition.png["Veritas 新分割區"]
+
+. 取消核取「使用 S3 物件鎖定將資料儲存在 WORM 模式」選項。按一下「下一步」
++
+image:veritas/veritas-new-partition-2.png["Veritas/Veritas 新分割區 -2"]
+
+. 在連線設定頁面上、提供下列資訊：
++
+** 存取金鑰ID
+** 機密存取金鑰
+** 服務主機名稱：確保包含在 StorageGRID 中設定的負載平衡器端點（ LBE ）連接埠（例如： https ： <hostname> ： <LBE_port> ）
+** 貯體名稱：預先建立的目標貯體名稱。 Veritas Enterprise Vault 不會建立貯體。
+** 貯體區域： `us-east-1` 為預設值。
++
+image:veritas/veritas-new-partition-3.png["Veritas / Veritas 新分割區 -3"]
+
+
+
+. 若要驗證與 StorageGRID 貯體的連線、請按一下測試。確認連線測試成功。按一下確定、然後按下一步。
++
+image:veritas/veritas-new-partition-4.png["Veritas / Veritas 新分割區 4"]
+
+. StorageGRID 不支援 S3 複寫參數。為了保護您的物件、 StorageGRID 使用資訊生命週期管理（ ILM ）規則來指定資料保護方案 - 多個複本或銷毀編碼。選取「儲存選項」上的「當歸檔檔案存在時」、然後按「下一步」。
++
+image:veritas/veritas-new-partition-5.png["Veritas / Veritas 新分割區 5"]
+
+. 確認摘要頁面上的資訊、然後按一下「完成」。
++
+image:veritas/veritas-new-partition-6.png["Veritas / Veritas 新分割區 -6"]
+
+. 成功建立新的資料保險箱存放區分割區之後、您可以將 StorageGRID 做為主要儲存設備、在 Enterprise Vault 中歸檔、還原及搜尋資料。
++
+image:veritas/veritas-new-partition-7.png["Veritas / Veritas 新分割區 - 7."]
+
+

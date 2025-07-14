@@ -1,0 +1,61 @@
+---
+permalink: product-feature-guides/ontap-migrate-cutover.html 
+sidebar: sidebar 
+keywords: S3, ONTAP S3, ONTAP, StorageGRID, migration 
+summary: 從 ONTAP S3 移轉至 StorageGRID 。 
+---
+= 透過將物件型儲存設備從 ONTAP S3 順暢移轉至 StorageGRID 、實現企業級 S3
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+透過將物件型儲存設備從 ONTAP S3 順暢移轉至 StorageGRID 、實現企業級 S3
+
+
+
+== 移轉 S3 金鑰
+
+對於移轉、大部分時間您都想要移轉使用者的認證、而不是在目的地端產生新的認證。StorageGRID 提供 API 、可將 S3 金鑰匯入使用者。
+
+登入 StorageGRID 管理 UI （而非租戶管理員 UI ）、開啟「 API 文件」瀏覽器頁面。
+
+image:ontap-migrate/sg-api-swagger-link.png["開啟 API 文件"]
+
+展開「帳戶」區段、選取「 POST /GRI/account-enable － s3-key-import 」、按一下「 Try it out 」（試用）按鈕、然後按一下「 execute 」（執行）按鈕。
+
+image:ontap-migrate/sg-import-enable.png["啟用 S3 金鑰匯入"]
+
+現在請在「帳戶」下方向下捲動至「 POST /GRID/accounts/{id}/user/{user_id}/s3-access-keys 」
+
+我們將在此輸入先前收集的租戶 ID 和使用者帳戶 ID 。請在 json 方塊中填入 ONTAP 使用者的欄位和金鑰。您可以設定金鑰到期日、或移除「、「 Expires 」（到期日）： 123456789 、然後按一下「 execute （執行）」。
+
+image:ontap-migrate/sg-import-key.png["匯入 S3 金鑰"]
+
+完成所有使用者金鑰匯入後、您應該停用「帳戶」「 POST /GRI/account-disable-s3-key-import 」中的金鑰匯入功能
+
+image:ontap-migrate/sg-import-disable.png["停用 S3 金鑰匯入"]
+
+如果我們在租戶管理員 UI 中查看使用者帳戶、就會看到新金鑰已新增。
+
+image:ontap-migrate/sg-user-keys.png["使用者金鑰"]
+
+
+
+=== 最終切換
+
+如果打算將貯體從 ONTAP 永久複製到 StorageGRID 、您可以在此結束。如果這是從 ONTAP S3 移轉至 StorageGRID 、那麼現在正是結束移轉的好時機。
+
+在 ONTAP 系統管理員中、編輯 S3 群組並將其設定為「 ReadOnlyAccess 」。這將防止使用者再寫入 ONTAP S3 儲存區。
+
+image:ontap-migrate/ontap-edit-group.png["將 ONTAP 群組設定為唯讀"]
+
+剩下的只是將 DNS 設定為從 ONTAP 叢集指向 StorageGRID 端點。請確定端點憑證正確無誤、如果您需要虛擬代管樣式要求、請在 StorageGRID 中新增端點網域名稱
+
+image:ontap-migrate/sg-endpoint-domain.png["將 ONTAP 群組設定為唯讀"]
+
+您的用戶端可能需要等待 TTL 過期、或是清除 DNS 以解析至新系統、以便測試一切是否正常運作。剩下的只是清理我們用來測試 StorageGRID 資料存取的初始暫存 S3 金鑰（而非匯入的金鑰）、移除 SnapMirror 關聯、以及移除 ONTAP 資料。
+
+_ 作者： Rafael Guedes 和 Aron Klein_

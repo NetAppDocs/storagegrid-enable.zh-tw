@@ -22,12 +22,12 @@ entries:
   pdf-filename: 將物件型儲存設備從 ONTAP S3 移轉至 StorageGRID
   entries:
   - title: 從 ONTAP S3 移轉至 StorageGRID
-    url: "/product-feature-guides/ontap-migrate/index.html"
+    url: "/product-feature-guides/ontap-migrate-index.html"
   - title: 準備 ONTAP
-    url: "/product-feature-guides/ontap-migrate/preparing-ontap.html"
+    url: "/product-feature-guides/ontap-migrate-preparing-ontap.html"
   - title: 準備 StorageGRID
-    url: "/product-feature-guides/ontap-migrate/preparing-sg.html"
+    url: "/product-feature-guides/ontap-migrate-preparing-sg.html"
   - title: 填入並複寫貯體
-    url: "/product-feature-guides/ontap-migrate/populate-replicate.html"
+    url: "/product-feature-guides/ontap-migrate-populate-replicate.html"
   - title: 移轉使用者和金鑰、然後轉換
-    url: "/product-feature-guides/ontap-migrate/migrate-cutover.html"
+    url: "/product-feature-guides/ontap-migrate-cutover.html"

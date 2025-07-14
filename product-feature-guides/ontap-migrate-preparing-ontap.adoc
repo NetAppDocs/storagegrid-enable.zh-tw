@@ -1,0 +1,95 @@
+---
+permalink: product-feature-guides/ontap-migrate-preparing-ontap.html 
+sidebar: sidebar 
+keywords: S3, ONTAP S3, ONTAP, StorageGRID, migration 
+summary: 從 ONTAP S3 移轉至 StorageGRID 。 
+---
+= 透過將物件型儲存設備從 ONTAP S3 順暢移轉至 StorageGRID 、實現企業級 S3
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+透過將物件型儲存設備從 ONTAP S3 順暢移轉至 StorageGRID 、實現企業級 S3
+
+
+
+== 準備 ONTAP
+
+為了展示用途、我們將建立 SVM 物件儲存區伺服器、使用者、群組、群組原則和儲存區。
+
+
+
+==== 建立儲存虛擬機器
+
+在 ONTAP System Manager 中、瀏覽至儲存 VM 、然後新增儲存 VM 。
+
+image:ontap-migrate/ontap-svm-add-01.png["新增SVM"]
+
+選取「啟用 S3 」和「啟用 TLS 」核取方塊、然後設定 HTTP （ S ）連接埠。定義 IP 、子網路遮罩、並定義閘道和廣播網域（如果您的環境中未使用預設或必要）。
+
+image:ontap-migrate/ontap-svm-create-01.png["設定新的 SVM"]
+
+在建立 SVM 的過程中、將會建立使用者。下載此使用者的 S3 金鑰並關閉視窗。
+
+image:ontap-migrate/ontap-s3-key.png["下載 S3 金鑰"]
+
+建立 SVM 之後、請編輯 SVM 並新增 DNS 設定。
+
+image:ontap-migrate/ontap-dns-01.png["設定 DNS"]
+
+定義 DNS 名稱和 IP 。
+
+image:ontap-migrate/ontap-dns-02.png["設定 DNS 伺服器"]
+
+
+
+==== 建立 SVM S3 使用者
+
+現在我們可以設定 S3 使用者和群組。編輯 S3 設定。
+
+image:ontap-migrate/ontap-edit-s3.png["設定 S3"]
+
+新增使用者。
+
+image:ontap-migrate/ontap-user-create-01.png["新增使用者"]
+
+輸入使用者名稱和金鑰到期日。
+
+image:ontap-migrate/ontap-user-create-01.png["新增使用者"]
+
+下載適用於新使用者的 S3 金鑰。
+
+image:ontap-migrate/ontap-user-keys.png["新使用者 S3 金鑰"]
+
+
+
+==== 建立 SVM S3 群組
+
+在 SVM S3 設定的「群組」索引標籤上、新增具有上述建立之使用者和「完整存取」權限的新群組。
+
+image:ontap-migrate/ontap-add-group.png["新增 S3 群組"]
+
+
+
+==== 建立 SVM S3 儲存區
+
+瀏覽至「鏟斗」區段、然後按一下「 + 新增」按鈕。
+
+image:ontap-migrate/ontap-add-bucket-01.png["新增 Bucket"]
+
+輸入名稱、容量、並取消選取「啟用清單儲存庫存取 ... 」核取方塊、然後按一下「更多選項」按鈕。
+
+image:ontap-migrate/ontap-add-bucket-02.png["新增 Bucket"]
+
+在「更多選項」區段中、選取「啟用版本設定」核取方塊、然後按一下「儲存」按鈕。
+
+image:ontap-migrate/ontap-add-bucket-ver-01.png["啟用版本管理"]
+
+重複此程序並建立第二個儲存區、但不啟用版本設定。輸入名稱、與貯體 1 的容量相同、並取消選取「啟用 ListBucket 存取 ... 」核取方塊、然後按一下「儲存」按鈕。
+
+image:ontap-migrate/ontap-add-bucket2-01.png["新增貯體二"]
+
+_ 作者： Rafael Guedes 和 Aron Klein_

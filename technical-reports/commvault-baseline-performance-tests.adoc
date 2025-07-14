@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/commvault-baseline-performance-tests.html 
+keywords: Backup, on-premises, commvault, storagegrid, object, S3, WORM 
+summary: 探索客戶與 NetApp IT 實作的 StorageGRID 組態使用案例。 
+---
+= 檢閱基準效能測試
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+在「輔助複製」作業中、四個 CommVault MediaAgent 將資料備份到 NetApp AFF A300 系統、並在 NetApp StorageGRID 上建立輔助複本。如需測試設定環境的詳細資訊、請參閱技術報告中的解決方案設計與最佳實務一節 https://www.netapp.com/us/media/tr-4831.pdf["NetApp 透過 CommVault 實現橫向擴充資料保護"] 。
+
+這些測試是針對 100 個 VM 和 1000 個 VM 執行的、兩者都是以 50/50 混合的 Windows 和 CentOS VM 進行測試。下表顯示我們的基礎效能測試結果：
+
+[cols="1a,1a,1a"]
+|===
+| 營運 | 備份速度 | 還原速度 
+
+
+ a| 
+輔助複製
+ a| 
+2 TB/ 小時
+ a| 
+1.27 TB/ 小時
+
+
+
+ a| 
+直接往返物件（重複資料刪除開啟）
+ a| 
+2.2 TB/ 小時
+ a| 
+1.22 TB/ 小時
+
+|===
+為了測試停機效能、刪除了 250 萬個物件。如圖 2 和圖 3 所示、刪除工作在 3 小時內完成、並釋放超過 80 TB 的空間。刪除工作於上午 10 ： 30 開始。
+
+.圖 1 ：在 3 小時內刪除 250 萬（ 80 TB ）物件。
+image:commvault/obj-time.png["物件"]
+
+.圖 2 ：在 3 小時內釋放 80TB 的儲存空間。
+image:commvault/storage-time.png["儲存設備"]

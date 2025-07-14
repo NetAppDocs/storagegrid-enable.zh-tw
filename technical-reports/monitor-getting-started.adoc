@@ -1,0 +1,31 @@
+---
+permalink: technical-reports/monitor-getting-started.html 
+sidebar: sidebar 
+keywords: get started, storagegrid 
+summary: 利用 GMI 儀表板開始您的 NetApp StorageGRID 監控過程、提供網格及其核心元件的高階概觀。 
+---
+= 使用 GMI 儀表板來監控 StorageGRID
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID 網格管理介面（ GMI ）儀表板提供 StorageGRID 基礎架構的集中檢視、可讓您監督整個網格的健全狀況、效能和容量。
+
+使用 GMI 儀表板檢查網格的每個核心元件。
+
+image:monitor/monitor-storagegrid-gmi-dashboard.png["Monitor-storagegRID GMI-Dashboard"]
+
+
+
+== 您應該定期監控的資訊
+
+此技術報告的上一版本列出了定期檢查的指標與趨勢。這些資訊現在已包含在 https://docs.netapp.com/us-en/storagegrid-118/landing-monitor-troubleshoot/index.html["監控與疑難排解指南"^]中。
+
+
+
+== 監控儲存設備
+
+此技術報告的舊版會列出監控重要指標的位置、例如物件儲存空間、中繼資料空間、網路資源等。這些資訊現在已包含在 https://docs.netapp.com/us-en/storagegrid-118/landing-monitor-troubleshoot/index.html["監控與疑難排解指南"^]中。

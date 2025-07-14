@@ -1,0 +1,32 @@
+---
+permalink: technical-reports/monitor-grafana-dashboard.html 
+sidebar: sidebar 
+keywords: grafana dashboard, storagegrid 
+summary: 探索如何在 NetApp StorageGRID 中使用 Grafana 進行度量視覺化、包括存取預先建構的儀表板以進行監控和疑難排解。 
+---
+= 使用 StorageGRID 中的 Grafana 儀表板檢視指標
+:hardbreaks:
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+瞭解如何使用 Grafana 介面來視覺化及監控 StorageGRID 資料。
+
+Grafana 是用於度量視覺化的開放原始碼軟體。根據預設、我們已預先建置儀表板、提供有關 StorageGRID 系統的實用且強大的資訊。
+
+這些預先建構的儀表板不僅適用於監控、也適用於疑難排解問題。有些是供技術支援人員使用。例如、若要檢視儲存節點的度量、請遵循下列步驟。
+
+.步驟
+. 從 GMI 功能表： Support[ 指標 ] 。
+. 在「 Grafana 」區段下、選取「節點」儀表板。
++
+image:monitor/monitor-node-dashboard.png["監控節點儀表板"]
+
+. 在 Grafana 中、將主機設定為您要檢視其度量的任何節點。在這種情況下、會選取儲存節點。提供的資訊比下列螢幕擷取畫面更多。
++
+image:monitor/monitor-grafana-metrics.png["Monitor-grafana- 指標"]
+
+

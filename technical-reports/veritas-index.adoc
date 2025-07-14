@@ -1,0 +1,36 @@
+---
+permalink: technical-reports/veritas-index.html 
+sidebar: sidebar 
+keywords: storagegrid, primary storage, configure, veritas, enterprise vault 
+summary: 瞭解 Veritas Enterprise Vault 如何使用 StorageGRID 做為災難恢復的主要儲存目標。 
+---
+= 設定 StorageGRID 進行站台容錯移轉簡介
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+瞭解 Veritas Enterprise Vault 如何使用 StorageGRID 做為災難恢復的主要儲存目標。
+
+本組態指南提供將 NetApp ® StorageGRID ® 設定為 Veritas Enterprise Vault 主要儲存目標的步驟。同時也說明如何在災難恢復（ DR ）案例中設定 StorageGRID 以進行站台容錯移轉。
+
+
+
+== 參考架構
+
+StorageGRID 為 Veritas Enterprise Vault 提供內部部署且與 S3 相容的雲端備份目標。下圖說明 Veritas Enterprise Vault 和 StorageGRID 架構。
+
+image:veritas/veritas-enterprise-vault-and-storagegrid-architecture.png["Vertas/Veritas - Veritas 企業 - 資料保險箱與 StorageGRID 架構"]
+
+
+
+== 何處可找到其他資訊
+
+若要深入瞭解本文所述資訊、請檢閱下列文件和 / 或網站：
+
+* NetApp StorageGRID 文件中心 https://docs.netapp.com/us-en/storagegrid-118/[]
+* NetApp StorageGRID 啟用 https://docs.netapp.com/us-en/storagegrid-enable/[]
+* NetApp 產品文件 https://www.netapp.com/support-and-training/documentation/[]
+

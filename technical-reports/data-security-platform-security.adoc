@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/data-security-platform-security.html 
+keywords: platform security, storagegrid 
+summary: 瞭解 StorageGRID 的平台安全功能。 
+---
+= 平台安全功能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+瞭解 StorageGRID 的平台安全功能。
+
+[cols="20,30a,30,20"]
+|===
+| 功能 | 功能 | 影響 | 法規遵循 
+
+
+| 內部公開金鑰基礎架構（ PKI ）、節點憑證和 TLS  a| 
+StorageGRID 使用內部 PKI 和節點憑證來驗證和加密節點間通訊。節點間通訊受到 TLS 的保護。
+| 協助保護 LAN 或 WAN 上的系統流量、特別是在多站台部署中。 | SEC 規則 17a-4(f) CTFC 1.31(c) - （ d ）（ FINRA ）規則 4511(c) 
+
+
+| 節點防火牆  a| 
+StorageGRID 會自動設定 IP 表格和防火牆規則、以控制傳入和傳出網路流量、以及關閉未使用的連接埠。
+| 協助保護 StorageGRID 系統、資料和中繼資料、防範來路不明的網路流量。 | -- 
+
+
+| 作業系統強化  a| 
+強化 StorageGRID 實體應用裝置和虛擬節點的基礎作業系統；移除不相關的軟體套件。
+| 有助於將潛在的攻擊面降至最低。 | SEC 規則 17a-4(f) CTFC 1.31(c) - （ d ）（ FINRA ）規則 4511(c) 
+
+
+| 定期更新平台和軟體  a| 
+StorageGRID 提供包括作業系統、應用程式二進位檔和軟體更新的一般軟體版本。
+| 協助 StorageGRID 系統以最新的軟體和應用程式二進位檔進行更新。 | -- 
+
+
+| 停用透過安全 Shell （ SSH ）的根登入  a| 
+在所有 StorageGRID 節點上、都會停用透過 SSH 的根登入。SSH 存取使用憑證驗證。
+| 協助客戶防範 root 登入的潛在遠端密碼破解。 | SEC 規則 17a-4(f) CTFC 1.31(c) - （ d ）（ FINRA ）規則 4511(c) 
+
+
+| 自動時間同步  a| 
+StorageGRID 會自動將每個節點的系統時鐘與多個外部時間網路時間傳輸協定（ NTP ）伺服器同步。至少需要四個階層 3 或更新版本的 NTP 伺服器。
+| 確保所有節點的時間參照相同。 | SEC 規則 17a-4(f) CTFC 1.31(c) - （ d ）（ FINRA ）規則 4511(c) 
+
+
+| 獨立的網路、用於用戶端、管理和內部網格流量  a| 
+StorageGRID 軟體節點和硬體應用裝置支援多個虛擬和實體網路介面、讓客戶可以在不同的網路上分隔用戶端、管理和內部網格流量。
+| 允許 Grid 管理員隔離內部和外部網路流量、並透過不同 SLA 的網路提供流量。 | -- 
+
+
+| 多個虛擬 LAN （ VLAN ）介面  a| 
+StorageGRID 支援在 StorageGRID 用戶端和網格網路上設定 VLAN 介面。
+| 允許 Grid 管理員分割和隔離應用程式流量、以確保安全性、靈活度和效能。 |  
+
+
+| 不受信任的用戶端網路  a| 
+不受信任的用戶端網路介面只接受已明確設定為負載平衡器端點的連接埠上的傳入連線。
+| 確保暴露於不受信任網路的介面受到保護。 | -- 
+
+
+| 可設定的防火牆  a| 
+管理管理、網格和用戶端網路的開放和封閉連接埠。
+| 允許網格管理員控制連接埠的存取、並管理核准的裝置對連接埠的存取。 |  
+
+
+| 增強的 SSH 行為  a| 
+將節點升級至 StorageGRID 11.5 時、會產生新的 SSH 主機憑證和主機金鑰。
+| 強化攔截式攻擊防護。 | SEC 規則 17a-4(f) CTFC 1.31(c) - （ d ）（ FINRA ）規則 4511(c) 
+
+
+| 節點加密  a| 
+作為 KMS 主機伺服器加密新功能的一部分、 StorageGRID 應用裝置安裝程式會新增節點加密設定。
+| 此設定必須在裝置安裝的硬體組態階段啟用。 | SEC 規則 17a-4(f) CTFC 1.31(c) - （ d ）（ FINRA ）規則 4511(c) 
+|===

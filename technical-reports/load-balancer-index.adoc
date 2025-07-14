@@ -1,0 +1,79 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/load-balancer-index.html 
+keywords: object storage, load balancer 
+summary: 瞭解協力廠商和全域負載平衡器在 StorageGRID 等物件儲存系統中的角色。 
+---
+= 將協力廠商負載平衡器搭配 StorageGRID 使用
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+瞭解協力廠商和全域負載平衡器在 StorageGRID 等物件儲存系統中的角色。
+
+使用協力廠商負載平衡器實作 NetApp ® StorageGRID ® 的一般指南。
+
+物件儲存是雲端儲存的同義詞、而且正如您所期望的、應用程式會透過 URL 利用雲端儲存位址來處理該儲存。在這個簡單的 URL 之後、 StorageGRID 可以在單一站台或跨地理分佈式站台擴充容量、效能和耐用度。使這種簡易性成爲可能的元件是負載平衡器。
+
+本文件旨在教導 StorageGRID 客戶有關負載平衡器選項的資訊、並提供第三方負載平衡器組態的一般指引。
+
+
+
+== 負載平衡器基礎知識
+
+負載平衡器是企業級物件儲存系統（例如 StorageGRID ）的重要元件。StorageGRID 包含多個儲存節點、每個節點都可以呈現給定 StorageGRID 執行個體的整個簡易儲存服務（ S3 ）名稱空間。負載平衡器可建立高可用度的端點、讓我們將 StorageGRID 節點放在後端。StorageGRID 在 S3 相容的物件儲存系統中是獨一無二的、因為它提供自己的負載平衡器、但也支援第三方或一般用途的負載平衡器、例如 F5 、 Citrix NetScaler 、 HA Proxy 、 NGINX 等等。
+
+下圖使用範例 URL/ 完整網域名稱 (FQDN) 「 s3.company.com” 」。負載平衡器會建立一個虛擬 IP （ VIP ）、透過 DNS 解析至 FQDN 、然後將應用程式的任何要求導向至 StorageGRID 節點集區。負載平衡器會在每個節點上執行健全狀況檢查、只會建立與健全節點的連線。
+
+image:load-balancer/load-balancer-local-traffic-manager-load-balancer.png["本機流量管理負載平衡器"]
+
+圖中顯示 StorageGRID 提供的負載平衡器、但第三方負載平衡器的概念相同。應用程式會使用負載平衡器上的 VIP 建立 HTTP 工作階段、而流量會透過負載平衡器傳遞至儲存節點。根據預設、從應用程式到負載平衡器、從負載平衡器到儲存節點的所有流量都會透過 HTTPS 加密。HTTP 是受支援的選項。
+
+
+
+=== 本機和全域負載平衡器
+
+負載平衡器有兩種類型：
+
+* * 本地交通經理（ LTM ） * 。在單一站台的節點集區上分散連線。
+* * 全球服務負載平衡器（ GSLB ） * 。跨多個站台分散連線、有效平衡 LTM 負載平衡器的負載。將 GSLB 視為智慧型 DNS 伺服器。當用戶端要求 StorageGRID 端點 URL 時、 GSLB 會根據可用度或其他因素（例如、哪個站台可為應用程式提供較低的延遲）、將其解析為 LTM 的 VIP 。雖然永遠需要 LTM 、但根據 StorageGRID 站台數量和應用程式需求、 GSLB 是選用的。
+
+
+
+
+=== StorageGRID 閘道節點負載平衡器與協力廠商負載平衡器的比較
+
+相容於 S3 的物件儲存廠商、 StorageGRID 獨家提供原生負載平衡器、可作為特定用途的應用裝置、 VM 或容器使用。StorageGRID 提供的負載平衡器也稱為閘道節點。
+
+對於尚未擁有負載平衡器（例如 F5 、 Citrix 等）的客戶、執行第三方負載平衡器可能非常複雜。StorageGRID 負載平衡器可大幅簡化負載平衡器作業。
+
+Gateway Node 是企業級、高可用度和高效能負載平衡器。客戶可以選擇在同一個網格中實作閘道節點、協力廠商負載平衡器、甚至兩者。Gateway Node 是本機流量管理程式、而非 GSLB 。
+
+StorageGRID 負載平衡器具有下列優點：
+
+* * 簡易性 * 。資源集區的自動組態、健全狀況檢查、修補和維護、全都由 StorageGRID 管理。
+* * 效能 * 。StorageGRID 負載平衡器專用於 StorageGRID 、因此您不會與其他應用程式競爭頻寬。
+* * 成本 * 。虛擬機器（ VM ）和容器版本均免費提供。
+* * 流量分類 * 。進階流量分類功能可讓 StorageGRID 特定的 QoS 規則與工作負載分析一起使用。
+* * 未來的 StorageGRID 特定功能 * 。StorageGRID 將繼續最佳化負載平衡器、並在即將推出的版本上新增創新功能。
+
+
+如需部署 StorageGRID 閘道節點的詳細資訊，請參閱 https://docs.netapp.com/us-en/storagegrid-117/["本文檔StorageGRID"^]。
+
+
+
+== 何處可找到其他資訊
+
+若要深入瞭解本文所述資訊、請檢閱下列文件和 / 或網站：
+
+* NetApp StorageGRID 文件中心 https://docs.netapp.com/us-en/storagegrid-118/[]
+* NetApp StorageGRID 啟用 https://docs.netapp.com/us-en/storagegrid-enable/[]
+* StorageGRID F5 負載平衡器設計考量 https://www.netapp.com/blog/storagegrid-f5-load-balancer-design-considerations/[]
+* Loadbalancer.org—Load 平衡 NetApp StorageGRID https://www.loadbalancer.org/applications/load-balancing-netapp-storagegrid/[]
+* Kemp —負載平衡 NetApp StorageGRID https://support.kemptechnologies.com/hc/en-us/articles/360045186451-NetApp-StorageGRID[]
+
