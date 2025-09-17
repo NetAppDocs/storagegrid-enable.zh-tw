@@ -3382,4 +3382,39 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="0be6d03a29c17471b0414e9b31482b15" category="list-text">IBM 儲存保護</block>
   <block id="0987bb97934aa3a8ea668bd0c91ce52d" category="sidebar">StorageGRID中的安全功能 - 保護物件儲存中的資料和元數據</block>
   <block id="243c98f4ed7a2d56d634e9cc955fda88" category="sidebar">StorageGRID災難復原 - 使用 Veritas Enterprise Vault 設定StorageGRID進行站點故障轉移</block>
+  <block id="b12c5a1ea2cfdcd9e96af62ad1fff2c7" category="summary">建立 Elasticsearch 快照儲存庫以使用StorageGRID物件儲存的說明。</block>
+  <block id="4f466fb92f96dcdf64e32b3a68249a6a" category="doc">Elasticsearch 快照儲存庫配置</block>
+  <block id="19c69b64ad875941da2ed25675b966b5" category="paragraph">Elasticsearch 支援使用與 AWS S3 相容的物件儲存作為快照儲存庫。本文提供瞭如何使用StorageGRID作為後端物件儲存建立 Elasticsearch S3 快照儲存庫的逐步說明。</block>
+  <block id="593e0b72d2a3823ab9f1704dbeeea1c8" category="list-text">StorageGRID 11.8 或更高版本</block>
+  <block id="51065ec24ee246c3860e0580defca4c6" category="list-text">Elasticsearch 8.x 或更高版本</block>
+  <block id="3212d51fa371e3cef1d789ecfe0afca6" category="paragraph">讀者熟悉StorageGRID和 Elasticsearch 術語和操作。</block>
+  <block id="85c3fd6ac4074bb1ab06b16868d0c009" category="list-text">建立一個StorageGRID桶以用於 Elasticsearch 快照儲存庫。必須啟用儲存桶版本控制。每個儲存庫使用一個儲存桶。不要在多個儲存庫或 Elasticsearch 叢集之間共用一個儲存桶。</block>
+  <block id="8ed3f9dd5d7290bd016b83485c0170a1" category="list-text">將StorageGRID租用戶存取金鑰和金鑰新增至 Elasticsearch 金鑰庫。登入 Elasticsearch 主節點，導航至<block ref="1b2b598aea8f192d3794b0c30af92997" prefix=" " category="inline-code"></block>目錄，並使用<block ref="0bf694e981bb45a58aed7488327af4f3" prefix=" " category="inline-code"></block>新增存取密鑰和密鑰。</block>
+  <block id="5fd300737b7909532dc522634d75def5" category="paragraph">範例命令：</block>
+  <block id="08a6dcd3a697d0604f6f4b47807f6ca0" category="paragraph">若要顯示金鑰，請使用“elasticsearch-keystore show &lt;key-name&gt;”指令。</block>
+  <block id="6806cdb70b916f3b6bb474b9328b08ca" category="list-text">對於多節點 Elasticsearch 集群，在每個節點中重複步驟 2 或查閱 Elasticsearch 文件。</block>
+  <block id="621e717bf791d95428a170667a596197" category="list-text">從 Kibana Web GUI 導航到 Dev Tools Console 頁面並使用<block ref="f6703ca746887e8ad69c184ef80e8ded" prefix=" " category="inline-code"></block>API 將變更套用到每個節點。</block>
+  <block id="9b6e1b5bf3e12eb4e808e1b9701528f4" category="inline-image-macro">reload_secure_settings 範例截圖</block>
+  <block id="c94eb203f327e8a870bff84bf0051606" category="paragraph"><block ref="c94eb203f327e8a870bff84bf0051606" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="59b63a4c7f8e78be87c3100ed37b264a" category="list-text">使用<block ref="14122a9963d2d5fd106baa062ba587b4" prefix=" " category="inline-code"></block>用於建立新快照儲存庫的 API。</block>
+  <block id="98679aa6d08189789aa0c65c691db370" category="paragraph">在此範例中，儲存庫名稱是<block ref="be9022aec77b31961957096c13c23219" prefix=" " category="inline-code"></block>，緩衝區大小與 S3 分段上傳的部分大小相對應。</block>
+  <block id="3c823bd21419d345a9d7d4276488edfb" category="paragraph">預設協定是 HTTPS。若要將 HTTP 與StorageGRID S3 端點一起使用，請新增<block ref="356f3d9b207a577071350c04e64206cb" prefix=" " category="inline-code"></block>到設定。</block>
+  <block id="e09538d2ae213ccd0a221584775b5ca5" category="paragraph">使用步驟1中建立的bucket名稱和步驟2中配置的客戶端名稱。</block>
+  <block id="4faca7afc4d2b0538a33d3192d453ad1" category="inline-image-macro">Elasticsearch API 範例螢幕截圖</block>
+  <block id="175e963c73089d05b73e4053f63b0a3a" category="paragraph"><block ref="175e963c73089d05b73e4053f63b0a3a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="09585352abb495a58301939509e2b605" category="list-text">從 Kibana Web GUI 導覽至 Stack Management &gt; Snapshot and Restore 頁面，選擇 Repositories 標籤。</block>
+  <block id="73f00594e61a1e09208a849e16bedd7d" category="paragraph">按一下儲存庫名稱以查看詳細資訊或修改某些設置，例如每秒最大快照位元組數（預設為每個 Elasticsearch 節點 40 MB/s）。</block>
+  <block id="fc2619b84c9b3173bc9c93dafbf91e8d" category="paragraph">對於此頁面上不可見的設置，請使用<block ref="14122a9963d2d5fd106baa062ba587b4" prefix=" " category="inline-code"></block>開發者工具控制台中的 API 進行變更。</block>
+  <block id="565feae94d4b22672a12be27e4f99c63" category="inline-image-macro">快照儲存庫範例截圖</block>
+  <block id="aac419a72b01b501d95dbe3debe250f2" category="paragraph"><block ref="aac419a72b01b501d95dbe3debe250f2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8d7340f8e7c758cdf4fd4e3455548757" category="list-text">設定儲存桶生命週期策略來管理快照儲存桶中的非目前版本物件。例如，90 天後刪除非目前版本。</block>
+  <block id="5fe1a3050ef9538f4f00d7bf6e4d66b1" category="list-text">Elastic 要求客戶端在使用非 AWS S3 儲存體來儲存快照之前對其進行驗證。</block>
+  <block id="56f4d43e66895a25e9c1e43ca43d69cc" category="paragraph">按照 Elastic 說明驗證設定：</block>
+  <block id="0734208a8b40c0aab9c1218baedefbf1" category="paragraph"><block ref="0734208a8b40c0aab9c1218baedefbf1" category="inline-link-rx"></block></block>
+  <block id="1743c3ed2b99313c86b17e91ff8ae63b" category="list-text">驗證後，請按照 Elasticsearch 指南建立儲存夜間快照的策略。</block>
+  <block id="1d605538b3de6fc7352ff1756867d1b9" category="inline-link">Elasticsearch s3 儲存庫</block>
+  <block id="755c869a02438bc9363beeea0e91da57" category="list-text"><block ref="755c869a02438bc9363beeea0e91da57" category="inline-link-rx"></block></block>
+  <block id="e226403172953bd7e5c34989260a72a8" category="inline-link">如何刪除 S3 版本控制對象</block>
+  <block id="e35c2c56a508398c870b7b6e9e717abf" category="list-text"><block ref="e35c2c56a508398c870b7b6e9e717abf" category="inline-link-rx"></block></block>
+  <block id="29b6d470059c168ae42b0d8923792ea7" category="sidebar">建立 Elasticsearch 快照儲存庫的說明</block>
 </blocks>
