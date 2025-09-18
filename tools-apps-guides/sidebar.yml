@@ -10,8 +10,6 @@ entries:
   url: "/tools-apps-guides/vertica-eon-mode-database-using-storagegrid.html"
 - title: 使用Elasticsearch、Logstash和Kibana進行記錄分析
   url: "/tools-apps-guides/elk-instructions.html"
-- title: 建立 Elasticsearch 快照儲存庫的說明
-  url: "/tools-apps-guides/elasticsearch-snapshot-configuration.html"
 - title: 使用Prometheus和Grafana來延長指標保留時間
   url: "/tools-apps-guides/federate-prometheus.html"
 - title: 設定Datadog以收集StorageGRID 不完整的SNMP指標和陷阱
