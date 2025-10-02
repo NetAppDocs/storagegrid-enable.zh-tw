@@ -223,13 +223,15 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
   "Rules": [
     {
       "ID": "Delete current version",
+      "Filter": {},
       "Status": "Enabled",
       "Expiration": {
         "Days": 30
-      },
+      }
     },
     {
       "ID": "noncurrent version retention",
+      "Filter": {},
       "Status": "Enabled",
       "NoncurrentVersionExpiration": {
         "NoncurrentDays": 60
@@ -237,6 +239,7 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
     },
     {
       "ID": "Markers",
+      "Filter": {},
       "Status": "Enabled",
       "Expiration": {
         "ExpiredObjectDeleteMarker": true
@@ -247,7 +250,7 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 ----
 
 
-=== 刪除沒有其他版本並且已經存在 5 天的標記，為帶有「accounts_ 前綴」的物件保留 4 個非當前版本和至少 30 天的歷史記錄，為所有其他物件版本保留 2 個版本和至少 10 天的歷史記錄。
+=== 刪除沒有其他版本的刪除標記，為帶有「accounts_ 前綴」的物件保留 4 個非當前版本和至少 30 天的歷史記錄，為所有其他物件版本保留 2 個版本和至少 10 天的歷史記錄。
 
 使用案例：為特定物件以及其他物件提供獨特的規則，以管理目前版本和非目前版本（包括刪除標記）的完整生命週期。優點：降低儲存成本，確保儲存桶整潔有序，同時保留足夠的恢復點和歷史記錄，以滿足各種客戶需求。
 
@@ -257,25 +260,24 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
   "Rules": [
     {
       "ID": "Markers",
+      "Filter": {},
       "Status": "Enabled",
       "Expiration": {
-        "Days": 5,
         "ExpiredObjectDeleteMarker": true
-      },
+      }
     },
     {
       "ID": "accounts version retention",
+      "Filter": {"Prefix":"account_"},
       "Status": "Enabled",
       "NoncurrentVersionExpiration": {
         "NewerNoncurrentVersions": 4,
         "NoncurrentDays": 30
-      },
-      "Filter": {
-          "Prefix":"account_"
       }
     },
     {
       "ID": "noncurrent version retention",
+      "Filter": {},
       "Status": "Enabled",
       "NoncurrentVersionExpiration": {
         "NewerNoncurrentVersions": 2,

@@ -28,6 +28,8 @@ entries:
   entries:
   - title: 將協力廠商負載平衡器搭配 StorageGRID 使用
     url: "/technical-reports/load-balancer-index.html"
+  - title: 了解StorageGRID負載平衡器的作用
+    url: "/technical-reports/load-balancer-storagegrid.html"
   - title: 瞭解如何在 StorageGRID 中實作 HTTPS 的 SSL 憑證
     url: "/technical-reports/load-balancer-ssl-certificates-storagegrid.html"
   - title: 在 StorageGRID 中設定信任的協力廠商負載平衡器
@@ -66,6 +68,8 @@ entries:
     url: "/technical-reports/ransomware-protection-replicate-bucket-versioning-storagegrid.html"
   - title: 使用具有保護性 IAM 原則的版本管理功能來防範勒索軟體
     url: "/technical-reports/ransomware-protection-versioning-protective-iam-policy-storagegrid.html"
+  - title: 使用分支儲存桶進行勒索軟體防禦調查
+    url: "/technical-reports/ransomware-protection-investigate-branch-buckets.html"
 - title: TR-4765 ：監控 StorageGRID
   pdf-filename: 使用外部應用程式監控 StorageGRID
   entries:

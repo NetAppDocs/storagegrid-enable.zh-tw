@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/load-balancer-storagegrid.html 
+keywords: object storage, load balancer 
+summary: 了解StorageGRID負載平衡器的作用。 
+---
+= 使用StorageGRID負載平衡器
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+了解StorageGRID網關節點負載平衡器的作用。
+
+實作NetApp® StorageGRID® 網關節點的一般指南。
+
+
+
+== StorageGRID 閘道節點負載平衡器與協力廠商負載平衡器的比較
+
+相容於 S3 的物件儲存廠商、 StorageGRID 獨家提供原生負載平衡器、可作為特定用途的應用裝置、 VM 或容器使用。StorageGRID 提供的負載平衡器也稱為閘道節點。
+
+對於尚未擁有負載平衡器（例如 F5 、 Citrix 等）的客戶、執行第三方負載平衡器可能非常複雜。StorageGRID 負載平衡器可大幅簡化負載平衡器作業。
+
+Gateway Node 是企業級、高可用度和高效能負載平衡器。客戶可以選擇在同一個網格中實作閘道節點、協力廠商負載平衡器、甚至兩者。Gateway Node 是本機流量管理程式、而非 GSLB 。
+
+StorageGRID 負載平衡器具有下列優點：
+
+* * 簡易性 * 。資源集區的自動組態、健全狀況檢查、修補和維護、全都由 StorageGRID 管理。
+* *表現*。  StorageGRID負載平衡器專用於StorageGRID，可提供高效能緩存，您不會與其他應用程式爭奪頻寬。
+* * 成本 * 。虛擬機器（ VM ）和容器版本均免費提供。
+* * 流量分類 * 。進階流量分類功能可讓 StorageGRID 特定的 QoS 規則與工作負載分析一起使用。
+* * 未來的 StorageGRID 特定功能 * 。StorageGRID 將繼續最佳化負載平衡器、並在即將推出的版本上新增創新功能。
+
+
+作為StorageGRID的整合節點，本地流量管理器能夠使用進階健康檢查根據儲存節點健康狀況、負載和資源可用性來分配請求。此外，當站點之間的StorageGRID連結成本設定為「0」時，它還能夠在多個站點之間分配負載。如果儲存節點不可用但網關節點在站點中可用，則負載將自動定向到網格中的另一個站點。
+
+網關節點的負載平衡器快取功能旨在為某些工作負載（例如 AI 訓練）提供顯著的效能改進，這些工作負載在處理資料的過程中會多次重新讀取資料集。快取網關節點還可以部署在與網格其餘部分物理遠離的位置，從而在某些工作負載下實現更好的效能並降低 WAN 網路利用率。快取以讀回模式運行，其中寫入不會被緩存，也不會修改快取的狀態。每個快取網關獨立於任何其他快取網關節點運作。
+
+有關部署StorageGRID網關節點的詳細信息，請參閱 https://docs.netapp.com/us-en/storagegrid/["本文檔StorageGRID"^]。

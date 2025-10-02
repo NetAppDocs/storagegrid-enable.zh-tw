@@ -43,8 +43,6 @@ indexpage:
       url: "/product-feature-guides/storagegrid-search-integration-service.html"
     - title: 節點複製考量與效能
       url: "/product-feature-guides/node-clone.html"
-    - title: 如何使用連接埠重新對應
-      url: "/product-feature-guides/port-remap.html"
     - title: 如何重新部署站台及變更網路
       url: "/product-feature-guides/site-relocation-and-network-change.html"
     - title: 將物件型儲存設備從 ONTAP S3 移轉至 StorageGRID

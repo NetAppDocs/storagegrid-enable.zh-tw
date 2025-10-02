@@ -1,7 +1,7 @@
 ---
 permalink: tools-apps-guides/veeam-br.html 
 sidebar: sidebar 
-keywords: veeam,backup,veeam12,veeam11, 
+keywords: veeam,backup,veeam13,veeam12,veeam11 
 summary: 本指南著重於 NetApp StorageGRID 和部分 Veeam 備份與複寫的組態。本白皮書是專為熟悉 Linux 系統、且負責與 Veeam 備份與複寫搭配維護或實作 NetApp StorageGRID 系統的儲存與網路管理員所撰寫。 
 ---
 = 使用 Veeam 備份與複寫進行部署的 StorageGRID 最佳實務做法
@@ -26,7 +26,7 @@ Veeam 與 NetApp StorageGRID 提供易於使用的解決方案、可共同協助
 
 Veeam 的物件工作負載會建立大量的小型物件並行置放、刪除及清單作業。啟用不可變性將會增加物件存放區的要求數量、以設定保留和列出版本。備份工作的程序包括寫入每日變更的物件、然後在完成新寫入後、工作將會根據備份的保留原則刪除任何物件。備份工作的排程幾乎總是重疊的。這種重疊會導致大部分的備份時間、由物件存放區上的 50/50 Put / delete 工作負載所組成。在 Veeam 中調整工作時段設定的並行作業數、增加備份工作區塊大小、減少多物件刪除要求中的物件數目、以增加物件大小。 選擇工作完成的最長時間範圍、將可針對效能和成本最佳化解決方案。
 
-請務必閱讀的產品文件 https://www.veeam.com/documentation-guides-datasheets.html?productId=8&version=product%3A8%2F221["Veeam 備份與複寫"^] 和 https://docs.netapp.com/us-en/storagegrid-117/["StorageGRID"^] 開始之前。Veeam 提供計算器、用於瞭解 Veeam 基礎架構的規模、以及在調整 StorageGRID 解決方案規模之前應使用的容量需求。請務必在 Veeam Ready 方案網站上查看 Veeam-NetApp 驗證的組態 https://www.veeam.com/alliance-partner-technical-programs.html?alliancePartner=netapp1&page=1["Veeam Ready Object 、 Object Immutable 和 Repository"^]。
+請務必閱讀產品文檔 https://www.veeam.com/documentation-guides-datasheets.html?productId=8&version=product%3A8%2F221["Veeam 備份與複寫"^]和 https://docs.netapp.com/us-en/storagegrid/["StorageGRID"^]在你開始之前。 Veeam 提供了計算器，用於了解 Veeam 基礎架構的大小和容量需求，這些計算器應在確定StorageGRID解決方案的大小之前使用。請務必在 Veeam Ready Program 網站上查看 Veeam- NetApp驗證的配置，以了解 https://www.veeam.com/alliance-partner-technical-programs.html?alliancePartner=netapp1&page=1["Veeam Ready Object 、 Object Immutable 和 Repository"^]。
 
 
 
@@ -87,7 +87,7 @@ Veeam 備份工作可以使用不同的區塊大小選項進行設定、這些�
 
 === 建議的版本
 
-含最新 Hotfix 的 NetApp StorageGRID 11.7 或 11.8 是 Veeam 部署的建議版本。建議您隨時保持最新狀態、並為您的 StorageGRID 系統套用最新的 Hotfix 。
+對於 Veeam 部署，建議使用具有最新修補程式的NetApp StorageGRID 11.9 或 12.0 版本。始終建議保持最新狀態並為StorageGRID系統應用最新的修補程式。
 
 
 
@@ -99,13 +99,64 @@ Veeam 要求端點僅透過 HTTPS 連線。Veeam 不支援未加密的連線。S
 
 === S3時段
 
-StorageGRID 是安全的多租戶儲存系統。建議您為 Veeam 工作負載建立專用租戶。您可以選擇性地指派儲存配額。最佳實務做法是啟用「使用自己的身分識別來源」。使用適當的密碼來保護租戶根目錄管理使用者的安全。Veeam Backup 12 需要 S3 儲存區的一致性。StorageGRID 提供多種在貯體層級設定的一致性選項。對於具有 Veeam 從多個位置存取資料的多站台部署、請選取「 Strong-global 」。如果 Veeam 備份與還原僅發生在單一站台上、則一致性層級應設為「 Strong-site 」。如需更多有關貯體一致性層級的資訊、請參閱 https://docs.netapp.com/us-en/storagegrid-117/s3/consistency-controls.html["文件"]。若要使用 StorageGRID 進行 Veeam 不可變備份、必須在建立貯體期間、全域啟用 S3 物件鎖定、並在貯體上設定。
+StorageGRID是一個安全的多租戶儲存系統。建議為 Veeam 工作負載建立專用租用戶。可以選擇分配儲存配額。作為最佳實踐，啟用「使用自己的身分來源」。使用適當的密碼保護租用戶根管理使用者。  Veeam Backup 12 要求 S3 儲存桶具有強一致性。 StorageGRID提供在儲存桶層級配置的多個一致性選項。對於 Veeam 從多個位置存取資料的多站點部署，請選擇「strong-global」。如果 Veeam 備份和還原僅在單一網站進行，則一致性等級應設定為「strong-site」。有關存儲桶一致性級別的更多信息，請查看 https://docs.netapp.com/us-en/storagegrid/s3/consistency-controls.html["文件"]。若要使用StorageGRID進行 Veeam 不變性備份，必須在全域啟用 S3 物件鎖，並在儲存桶建立期間在儲存體桶上進行設定。
 
 
 
 === 生命週期管理
 
 StorageGRID 支援複寫和銷毀編碼、可在 StorageGRID 節點和站台之間提供物件層級保護。銷毀編碼需要至少 200kB 物件大小。Veeam 的預設區塊大小為 1MB 、產生的物件大小通常會低於 Veeam 儲存效率之後的 200 KB 建議最小大小。為了達到解決方案的效能、建議不要使用跨越多個站台的抹除編碼設定檔、除非站台之間的連線能力足以避免增加延遲或限制 StorageGRID 系統的頻寬。在多站台 StorageGRID 系統中、 ILM 規則可設定為在每個站台上儲存單一複本。為了達到極致的耐用性、可設定規則、在每個站台儲存銷毀編碼複本。使用兩個本機複本到 Veeam 備份伺服器是此工作負載最建議的實作方式。
+
+
+
+=== 刪除效能
+
+Veeam 提供刪除請求率調整和備份刪除過程的調度。為了進一步調整刪除效能，您可以停用同步刪除並讓 ILM 掃描器管理物件的最終刪除。
+
+停用同步刪除的步驟
+
+. 開啟StorageGRID網格管理器。
+. 在右上角，選擇問號，然後選擇 API 文件。
+. 在右上角，點擊私有 API 文件頁面連結。
+. 擴展 ilm-advanced。
+. 選擇 GET ilm-advanced。
+. 選擇“試用”，然後“執行”。
+. 查看響應結果。
++
+.. 如果值為空，則表示正在使用預設的 ilm-advanced 值。
+.. 如果值不為空，則表示自訂 ILM 高階值正在使用中。複製「資料」之後的所有輸出：，從 { 開始直到倒數第二個 }。
++
+... 將其保存在某些文字編輯器中。
++
+回應範例：
+
++
+image:veeam-bp/get_ilm_adv_before.png["取得 ILM-Advanced 輸出"]
+
+
+
+
+
+. 選擇 PUT ilm-advanced。
+. 選擇「試用」開始編輯 API 主體。
++
+.. 預設情況下，API 主體將包含預設值，而不包含任何先前配置的自訂值。這就是為什麼執行步驟 5-7 非常重要的原因。
+
+
+. 如果在步驟 5-7 中發現非預設值，則以步驟 7 中儲存的輸出取代 API 主體。。否則，如果步驟 5-7 中的值為空，則保留 API 主體不變。
+. 在API主體框中調整以下參數：
++
+.. 將同步值設定為false。
++
+API 正文範例：
+
++
+image:veeam-bp/put_ilm_adv.png["PUT ILM-進階輸入"]
+
+
+
+. 完成後，選擇執行
+
 
 
 
@@ -188,6 +239,6 @@ image:veeam-bp/tc_2.png["流量分類原則指標"]
 
 若要深入瞭解本文所述資訊、請檢閱下列文件和 / 或網站：
 
-* link:https://docs.netapp.com/us-en/storagegrid-119/["NetApp StorageGRID 11.9 產品文件"^]
+* link:https://docs.netapp.com/us-en/storagegrid/["NetApp StorageGRID產品文檔"^]
 * link:https://www.veeam.com/documentation-guides-datasheets.html?productId=8&version=product%3A8%2F221["Veeam 備份與複寫"^]
 

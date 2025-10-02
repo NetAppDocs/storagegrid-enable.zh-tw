@@ -788,119 +788,7 @@
   <block id="629386ff1e9bf6511474fca8de181896" category="section-title">範例StorageGRID ：SNMP組態</block>
   <block id="2a9f8de2dc701df774b911de893f1dcc" category="paragraph">您的S還原 系統中的SNMP代理程式StorageGRID 位於組態索引標籤「監控」欄下。啟用SNMP並輸入所需資訊。如果您要設定設陷、請選取「設陷目的地」、然後為包含設陷組態的Datadog代理主機建立目的地。</block>
   <block id="3bcc2a20e293e30e57142a6f40a3f3b9" category="image-alt">SSNMP組態StorageGRID</block>
-  <block id="db5cf800912823f17ae08432336e8fc1" category="summary">如何使用連接埠重新對應。</block>
-  <block id="acaf7e6854a9128b9491ba362d72abd1" category="doc">如何使用連接埠重新對應</block>
-  <block id="f58678d019bf671b6804715b8a92be9f" category="paragraph">基於多種原因、您可能需要重新對應傳入或傳出連接埠。您可能要從舊版CLB負載平衡器服務移至目前的Nginx服務負載平衡器端點、並維持相同的連接埠、以降低對用戶端的影響、希望在管理節點用戶端網路上使用連接埠443、或是為了防火牆限制。</block>
-  <block id="4a0a1689981e56bfe0cae3cedb6a2794" category="section-title">使用連接埠重新對應、將S3用戶端從CLB移轉至NGINX</block>
-  <block id="bbaaf9c22d5e2039997011dbc346f453" category="paragraph">在版本早於StorageGRID 版本的版本中、閘道節點上隨附的負載平衡器服務是連線負載平衡器（CLB）。NetApp推出的NGINX服務是一套功能豐富的整合式解決方案、可用於平衡HTTP流量的負載StorageGRID 。由於目前版本StorageGRID 的不支援CLB服務、因此您無法在新的負載平衡器端點組態中重複使用連接埠8082。若要解決此問題、8082輸入連接埠會重新對應至10443。如此一來、所有進入閘道連接埠8082的HTTPS要求都會跳過CLB服務而重新導向連接埠10443、改為連線至NGINX服務。雖然下列指示適用於VMware、但連接埠重新對應功能適用於所有安裝方法、您也可以使用類似的程序來進行裸機部署和應用裝置。</block>
-  <block id="7726cb4ae51497b918d06ab5c00bcc41" category="section-title">VMware虛擬機器閘道節點部署</block>
-  <block id="32c57c85de9742d548e025b40fcb450b" category="paragraph">下列步驟適用於StorageGRID 以StorageGRID 「VMware vSphere 7」為虛擬機器部署閘道節點或節點的VMware vSphere 7、採用「VMware開放式虛擬化格式」（OVF）。此程序需要銷毀移除VM、並以相同名稱和組態重新部署VM。在開啟VM電源之前、請先變更vApp屬性以重新對應連接埠、然後開啟VM電源、並遵循節點還原程序。</block>
-  <block id="7c8213913912043a5b5fc24ca449cb0c" category="list-text">您正在執行StorageGRID 更新版本的版本</block>
-  <block id="c502d2640b4493815312b1ec133633e4" category="list-text">您已下載StorageGRID 並存取安裝的VMware版本更新檔案。</block>
-  <block id="9c64cd89435575e44f429843d544ef5f" category="list-text">您的vCenter帳戶擁有開機/關機VM、變更VM和vApp設定、從vCenter移除VM、以及依OVF部署VM的權限。</block>
-  <block id="8815fdf6ff2c55e7296dffb2aec14521" category="list-text">您已建立負載平衡器端點</block>
-  <block id="a66196ce653d06d45221584bf8852afb" category="list-text">連接埠已設定為所需的重新導向連接埠</block>
-  <block id="31d78e3c03fd7966ea974e218ee9e7e0" category="list-text">端點SSL憑證與在「組態/伺服器憑證/物件儲存API服務端點伺服器憑證」中安裝的CLB服務相同、否則用戶端就能接受憑證變更。</block>
-  <block id="bcb202433930795c39aeaaaac1732e14" category="section-title">銷毀第一個閘道節點</block>
-  <block id="8b492c89f3e9eadb813da7cd99b82545" category="paragraph">若要銷毀第一個閘道節點、請遵循下列步驟：</block>
-  <block id="9088243625c17cecb6cc9cbb8fab3cdb" category="list-text">如果網格包含多個節點、請選擇要開始使用的閘道節點。</block>
-  <block id="f578499a6a5d4e99e51260ea6f901c94" category="list-text">移除所有DNS循環資源實體或負載平衡器資源池中的節點IP（如果適用）。</block>
-  <block id="7c756592f17f71e15e66ceae005b5721" category="list-text">等待存留時間（TTL）和開啟的工作階段過期。</block>
-  <block id="5c2e6ff175e76bb9e990068801b548a8" category="list-text">關閉VM節點。</block>
-  <block id="478ceb19860ae182e1eebf6d11e90791" category="list-text">從磁碟移除VM節點。</block>
-  <block id="e753b6d0c296afcb396f7c9d7092ef0b" category="section-title">部署替換閘道節點</block>
-  <block id="e9bdcbe25d437987ed75a39aadaaecae" category="paragraph">若要部署替換閘道節點、請依照下列步驟進行：</block>
-  <block id="f02589424168a3ac3057a3a896c3be98" category="list-text">從OVF部署新的VM、從從從支援網站下載的安裝套件中選取.OVF、.mf和.vmdk檔案：</block>
-  <block id="7b22456f38890563bcb235553bd7d9ee" category="list-text">vSphere-gateway.mf</block>
-  <block id="dbdfc6d64b5d051e203939b63154bddb" category="list-text">vSphere-gateway.OVF</block>
-  <block id="67e5f0e53462232f2aa589a464eea4b8" category="list-text">NetApp-SG-11.4.0-20200721.1338.d3969b3.vmdk</block>
-  <block id="579b803b8e20891c89683e797fdbd01f" category="list-text">部署完VM之後、請從VM清單中選取該VM、然後選取Configure（設定）索引標籤vApp Options（vApp選項）。</block>
-  <block id="07ab08f304d7cfe4d3d5ea13bbde9f1d" category="inline-image-macro">vApp選項索引標籤</block>
-  <block id="c9fc6d8e3be4de1d4c27b9f0b82c5e2a" category="list-text">向下捲動至「內容」區段、然後選取port_remap_inbound屬性</block>
-  <block id="9e24f5887a5bfec21b66a7a9bf2c2e9e" category="inline-image-macro">連接埠重新對應傳入</block>
-  <block id="44149ca1e58524f8537ae00b2d6e4b99" category="list-text">捲動至「內容」清單頂端、然後按一下「編輯」</block>
-  <block id="fb1b9b4a3c929c6a466a1452400315f4" category="inline-image-macro">編輯按鈕</block>
-  <block id="0e8c86fd50178cb280113dfa414bfaef" category="list-text">選取「Type（類型）」索引標籤、確認已選取「User可設定的使用者」核取方塊、然後按一下「Save（儲存）」。</block>
-  <block id="71f961422f32dab92bd408435e59e11f" category="inline-image-macro">類型索引標籤</block>
-  <block id="083e7091efe8fb649ee9fb0c0870917c" category="list-text">在「內容」清單的頂端、仍選取「port_remap_inbound」屬性、然後按一下「設定值」。</block>
-  <block id="58a9fe2002d87ad86a952f2aa06b652f" category="inline-image-macro">設定值按鈕</block>
-  <block id="7cabe4a6c37ea2ab4c5afff39965feca" category="list-text">在「屬性值」欄位中、輸入網路（網格、管理或用戶端）、TCP、原始連接埠（8082）、以及新連接埠（10443）、每個值之間都有「/」、如下所示。</block>
-  <block id="c8e309d9efc8bcc3c0a6de4a0a6bde89" category="inline-image-macro">屬性值</block>
-  <block id="b755dc1994e1391a0aff77ad323c4d58" category="list-text">如果您使用多個網路、請使用逗號（、）分隔網路字串、例如GRID /TCP/8082/10443、admin/TCP/8082/10443、client/TCP/8082/10443</block>
-  <block id="a053ed3549ecf3e6087e7328aeace847" category="section-title">恢復閘道節點</block>
-  <block id="0e495d4bce7b9fde6238de8cfff28959" category="paragraph">若要恢復閘道節點、請遵循下列步驟：</block>
-  <block id="7679db7e2b0055ab46be43f42a01bf23" category="list-text">瀏覽至Grid Management UI的「維護/恢復」區段。</block>
-  <block id="e46a0719f8df97ff4d12f03dd8ce959c" category="inline-image-macro">維護功能表</block>
-  <block id="c086be1149c183dc763a11cf3ad5faea" category="list-text">開啟VM節點電源、並等待節點出現在Grid Management UI的「維護/恢復擱置節點」區段中。</block>
-  <block id="b91ce83799a5a14738726ef1b7dbd9f7" category="inline-image-macro">正在等待恢復</block>
-  <block id="bf30086dfd38bd897ca450b6573d0874" category="list-text">在節點恢復之後、IP可以包含在所有DNS循環資源實體或負載平衡器資源池中（如果適用）。</block>
-  <block id="6b6336923a8b76c43c7d0a3bd89a11ce" category="paragraph">現在、連接埠8082上的任何HTTPS工作階段都會移至連接埠10443</block>
-  <block id="eca02f566d0b3032cdf4b10c546bf899" category="section-title">在管理節點上重新對應連接埠443以進行用戶端S3存取</block>
-  <block id="5ed2b115742b0eff3aa61d09c627a761" category="paragraph">針對管理節點、或包含管理節點的HA群組、StorageGRID 在支援系統中的預設組態是將連接埠443和80保留給管理和租戶管理程式UI、無法用於負載平衡器端點。解決方案是使用連接埠重新對應功能、並將傳入連接埠443重新導向至新連接埠、該連接埠將設定為負載平衡器端點。完成此項工作後、用戶端S3流量將可使用連接埠443、網格管理UI只能透過連接埠8443存取、而租戶管理UI只能從連接埠9443存取。重新對應連接埠功能只能在節點安裝時進行設定。若要在網格中實作作用中節點的連接埠重新對應、必須將其重設為預先安裝的狀態。這是一種破壞性程序、其中包括在進行組態變更後進行節點還原。</block>
-  <block id="18c1a696eb608448df297bede4857b98" category="section-title">備份記錄與資料庫</block>
-  <block id="014c03da469f3067ccc3ff9bebacc715" category="paragraph">管理節點包含稽核記錄、Prometheus指標、以及有關屬性、警示和警示的歷史資訊。擁有多個管理節點、代表您擁有此資料的多個複本。如果您的網格中沒有多個管理節點、請務必在結束此程序後恢復節點、然後保留此資料以進行還原。如果網格中有其他管理節點、您可以在恢復程序期間從該節點複製資料。如果網格中沒有其他管理節點、您可以依照下列指示複製資料、然後再銷毀節點。</block>
-  <block id="b51ed4bc19034de7a115af8950bb1e14" category="section-title">複製稽核記錄</block>
-  <block id="b49d416c5f1ef8021854b13b24ab8093" category="list-text">登入管理節點：</block>
-  <block id="c7aa9be1c8fd37c075edba3a4073253f" category="list-text">輸入下列命令：<block ref="893fbdaf85496f428ec5ee3fb396b601" prefix=" " category="inline-code"></block></block>
-  <block id="700a38780f22dd0bcf544970e8d449e6" category="list-text">輸入中所列的密碼<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block> 檔案：</block>
-  <block id="aacfb09e5ff36425a74a452ef6b304fb" category="list-text">輸入下列命令以切換至root：<block ref="305eb7199fe9189e006b2d60d7221664" prefix=" " category="inline-code"></block></block>
-  <block id="d5ed36cf573fac8e8c5a8bb8d1be3d4b" category="list-text">將SSH私密金鑰新增至SSH代理程式。輸入：<block ref="3f7bb7914b751ca9467e926e5ad5c306" prefix=" " category="inline-code"></block></block>
-  <block id="c0e5dff85f9da9a642946e884fdc4f4a" category="list-text">輸入中所列的SSH存取密碼<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block> 檔案：</block>
-  <block id="28a6869f1b6015dcee0791c0407f14b2" category="list-text">建立目錄、將所有稽核記錄檔複製到個別網格節點上的暫用位置、讓我們使用_Storage_node_01_：</block>
-  <block id="0a61743bb33ab598f7fde50d348546b0" category="list-text"><block ref="70a89925f7bd7f97d974d84f8e94caec" prefix="" category="inline-code"></block></block>
-  <block id="a42ba8884ec16cd9952837d8ec5309cc" category="list-text"><block ref="aa394b245c0bf48947593a677f05d8d6" prefix="" category="inline-code"></block></block>
-  <block id="e1083ceccf1ce237984866a9d2fc9267" category="list-text">返回管理節點、停止AMS服務以防止建立新的記錄檔：<block ref="7746f9f32013186f9d484d9201f0ab64" prefix=" " category="inline-code"></block></block>
-  <block id="8acc534ecf057b9ef50d01827f7d07cb" category="list-text">重新命名audit.log檔案、使其不會在複製到恢復的管理節點時覆寫現有檔案。</block>
-  <block id="f2d95467df0c137dbcfd23af2c4ac061" category="list-text">將audit.log重新命名為唯一編號的檔案名稱、例如：youty-mm-dd.txt.1。例如、您可以將稽核記錄檔重新命名為2015-10-25.txt.1</block>
-  <block id="d5ec7f781f03902f72576ed5d4973025" category="list-text">重新啟動AMS服務：<block ref="ae8918f1e1a4da1db2bc24c7571b1a06" prefix=" " category="inline-code"></block></block>
-  <block id="540fe4d620139f77d8a99273336086b6" category="list-text">複製所有稽核記錄檔：<block ref="da5b29edacd9088471c331eb4f58fc3e" prefix=" " category="inline-code"></block></block>
-  <block id="9f195229ea460e36d2a4e12c22a35e14" category="section-title">複製Prometheus資料</block>
-  <block id="cc670fc4a71e44ccb42fd7b0de6174d0" category="admonition">複製Prometheus資料庫可能需要一小時以上的時間。當管理節點上的服務停止時、部分Grid Manager功能將無法使用。</block>
-  <block id="7310684c8dcbbfaabdf20201a8358cd2" category="list-text">建立目錄、將Prometheus資料複製到個別網格節點上的暫用位置、我們將再次使用_Storage_node_01_：</block>
-  <block id="0da0fdfdce25fb3258c8606dd3c98a96" category="list-text">登入儲存節點：</block>
-  <block id="e3e3892db3fe841f9e2b77b7e3818040" category="list-text">輸入下列命令：<block ref="70a89925f7bd7f97d974d84f8e94caec" prefix=" " category="inline-code"></block></block>
-  <block id="f81680a45409f9d92d776cda7d01fffd" category="list-text">mkdir -p /var/local/tmp/Prometheus'</block>
-  <block id="94975e4b13e4b0a18c40a960c94db2a8" category="list-text">輸入下列命令：<block ref="aeb11d865bcf0a27bb503f64cd61cb76" prefix=" " category="inline-code"></block></block>
-  <block id="20d93dfee3e8f8ae30d5b9a4f8efa05b" category="list-text">從管理節點停止Prometheus服務：<block ref="b9b286406d96941553a3bebbe76c28bd" prefix=" " category="inline-code"></block></block>
-  <block id="d12ee7875165dfef46eee53bc35da76b" category="list-text">將Prometheus資料庫從來源管理節點複製到儲存節點備份位置節點：<block ref="598c3ef030113ed40ad1803686162013" prefix=" " category="inline-code"></block></block>
-  <block id="1ed2f8c537da823e46ad98b460d5d692" category="list-text">在來源管理節點上重新啟動Prometheus服務<block ref="b48ed4a1625d38512cd50d69778280dd" prefix="." category="inline-code"></block></block>
-  <block id="ad9f13c5d36c9f45b4e07d4467312b13" category="section-title">備份歷史資訊</block>
-  <block id="40df7a99a836d18d1b5d034d8fcb27a8" category="paragraph">歷史資訊儲存在mySQL資料庫中。若要傾印資料庫複本、您需要NetApp提供的使用者和密碼。如果網格中有其他管理節點、則不需要執行此步驟、而且可在還原程序期間、從其餘的管理節點複製資料庫。</block>
-  <block id="3efbc9cf8ba869958267ac5011fe55e1" category="list-text">停止StorageGRID 管理節點上的支援服務、並啟動NTP和mySQL</block>
-  <block id="71c1a198ee24c736ef0a4a6df4372089" category="list-text">停止所有服務：<block ref="e83661e5ce1c75f30a71cf8416b27985" prefix=" " category="inline-code"></block></block>
-  <block id="02330fc2569188fc76ebc99072cff940" category="list-text">重新啟動NTP服務：<block ref="4c55c6ee391e66baa62612dc411cec8f" prefix=" " category="inline-code"></block>..重新 啟動mySQL服務：<block ref="3cc0f2d0774d9775766d87414c4abca7" prefix=" " category="inline-code"></block></block>
-  <block id="3a690a8e59bdafa2a85ce89baf8e5d01" category="list-text">將MI資料庫傾印至/var/local/tmp</block>
-  <block id="bde616ae3c777920f0bcc1ed12db00d5" category="list-text">輸入下列命令：<block ref="6d6e7f126bda96413a8f3ea19ac835d3" prefix=" " category="inline-code"></block></block>
-  <block id="199d0f3fb4293bac252ec8967ddd7d96" category="list-text">將mySQL傾印檔複製到替代節點、我們將使用_storage節點_01：<block ref="a2fc9066a3870628039495b25ae9a581" prefix=" " category="inline-code"></block></block>
-  <block id="771556d7cb27e2cb35e5f32feb21d918" category="list-text">當您不再需要無密碼存取其他伺服器時、請從SSH代理程式移除私密金鑰。輸入：<block ref="967573583b668b75c5fc1ee963c90dcf" prefix=" " category="inline-code"></block></block>
-  <block id="7d472759bb91ca188e73eca550264098" category="section-title">重新建置管理節點</block>
-  <block id="395778abed17f7247a6f475834cb20b3" category="paragraph">現在您已經備份所有想要的資料、並在網格中的其他管理節點上記錄、或是儲存在暫用位置、現在該重設應用裝置、以便設定連接埠重新對應。</block>
-  <block id="b58725c9e70484536a8104e6968330f9" category="list-text">重設應用裝置會將其恢復為預先安裝的狀態、僅保留主機名稱、IP和網路組態。所有資料都會遺失、這也是我們確保備份任何重要資訊的原因。</block>
-  <block id="570eece822439c557c87aceefc36c83e" category="list-text">輸入下列命令：<block ref="571dba577857f204f77672c0f6ac8adb" prefix=" " category="inline-code"></block></block>
-  <block id="994ff1bbb04f124b59b3dd4a433092d0" category="list-text">經過一段時間之後、裝置將重新開機、您將能夠存取節點pgE UI。</block>
-  <block id="e0c8d6ece2eaab52ccd3626588818424" category="list-text">瀏覽至「Configure Networking（設定網路）」</block>
-  <block id="ef4629263d4d3026510ab03b348385aa" category="inline-image-macro">選取「重新對應連接埠」</block>
-  <block id="1d1860aedee67c6087f6eae17d49c67d" category="list-text">選取所需的網路、傳輸協定、方向和連接埠、然後按一下「Add Rule（新增規則）」按鈕。</block>
-  <block id="914553520d8387b82a2e431e0b5e6fa3" category="admonition">重新對應網格網路上的傳入連接埠443、將會中斷安裝和擴充程序。不建議重新對應網格網路上的連接埠443。</block>
-  <block id="9cf22d7237e8977b5bb6bc54a7354822" category="inline-image-macro">新增連接埠重新對應至網路</block>
-  <block id="1b08be650ccd06f880223bd76fffb99f" category="list-text">其中一個所需的連接埠重新對應已新增、您可以返回主索引標籤、然後按一下「Start Installation（開始安裝）」按鈕。</block>
   <block id="b8891129cb3bcf5e407a67d926f3bd1e" category="inline-link-macro">產品文件</block>
-  <block id="15f0a90501b756c24e6d343c84e4078a" category="paragraph">您現在可以遵循中的管理節點還原程序 <block ref="c237ceedd52c48d2a2c789bd64cdcbb1" category="inline-link-macro-rx"></block></block>
-  <block id="1adf202b129f9e83a673c523cd7da7db" category="section-title">還原資料庫與記錄</block>
-  <block id="2e81f3580bf75e530e45d917ff610977" category="paragraph">現在管理節點已恢復、您可以還原指標、記錄和歷史資訊。如果網格中有其他管理節點、請遵循 <block ref="c237ceedd52c48d2a2c789bd64cdcbb1" category="inline-link-macro-rx"></block> 使用_Prometheus-clone-db.sh_和_mi-clone-db.sh_指令碼。如果這是您唯一的管理節點、而且您選擇備份此資料、您可以依照下列步驟還原資訊。</block>
-  <block id="2342c57da462f804cdb591ec0ca6ceaa" category="section-title">複製稽核記錄</block>
-  <block id="a2a3a502b45fb89ba1d9303936a7e686" category="list-text">將保留的稽核記錄檔複製到恢復的管理節點：<block ref="6dcbbb26d45053e5f47d0b73dcecfc94" prefix=" " category="inline-code"></block></block>
-  <block id="bb0c9dd565ff22196c9f53b7afafbfe7" category="list-text">為了安全起見、請在確認已成功複製稽核記錄到恢復的管理節點之後、從故障的網格節點刪除這些記錄。</block>
-  <block id="189e459b7ed177b1cc4b563548d35288" category="list-text">更新已恢復管理節點上稽核記錄檔的使用者和群組設定：<block ref="abee3d65b7b57cee8c94fded57a55207" prefix=" " category="inline-code"></block></block>
-  <block id="51e28758f5f753869640ff2adc89a740" category="paragraph">您也必須還原稽核共用的任何既有用戶端存取權。如需詳細資訊、請參閱《關於管理StorageGRID 功能的說明》。</block>
-  <block id="cff2429f8c7d0ffe88a80318e06ad501" category="section-title">還原Prometheus指標</block>
-  <block id="eaa4cd36290d05ba867b2ea202a10368" category="list-text">將Prometheus資料庫從暫用備份位置複製到管理節點：<block ref="718131237ea05acf6992f18ac2f8aedb" prefix=" " category="inline-code"></block></block>
-  <block id="35fbd282b6be1c639d18dbbfee5a515a" category="list-text">確認資料位於正確路徑且完整<block ref="a6e471816e977d8c8b3ad6e50bb665a7" prefix=" " category="inline-code"></block></block>
-  <block id="95851e41012b92671405610713f9be07" category="section-title">還原歷史資訊</block>
-  <block id="2e3176cf0ca0cad27315d04ff4f1f330" category="list-text">從備用節點複製mySQL傾印檔：<block ref="6fea65c037f881565c5d3978a7621ab1" prefix=" " category="inline-code"></block></block>
-  <block id="5d6b7577e78ea8622551d7d8b594739f" category="list-text">丟棄MI資料庫並建立新的空白資料庫：<block ref="3fd0ac1b867547f517ff52c8a34404b7" prefix=" " category="inline-code"></block></block>
-  <block id="04f7cb6c96995efd4544d9aea7d367e7" category="list-text">從資料庫傾印中還原mySQL資料庫：<block ref="f974d0852a2926a4c22e84a291796005" prefix=" " category="inline-code"></block></block>
-  <block id="791d173d918d01c3efa10c1659c765b6" category="list-text">重新啟動所有其他服務<block ref="a43fd6d3adcec2efeeccefc813e98004" prefix=" " category="inline-code"></block></block>
   <block id="62cd2922fb38a43eb8ae93c468da88ca" category="summary">節點複製效能與最佳實務做法。</block>
   <block id="747e53224e14f8ffd8f420441eeacdfb" category="doc">節點複製</block>
   <block id="39d1cd38bd99e33fd79bc582303ae95b" category="paragraph">節點複製考量與效能。</block>
@@ -1085,7 +973,6 @@
   <block id="65523be105cf410c8f1a0f9075f3e6f7" category="inline-link">Veeam 備份與複寫</block>
   <block id="392d70ca39f31f10bd637936769788df" category="inline-link">StorageGRID</block>
   <block id="535647a2a89e3e794f5c415b865cb3b2" category="inline-link">Veeam Ready Object 、 Object Immutable 和 Repository</block>
-  <block id="35fff1030215641180d446636f07b965" category="paragraph">請務必閱讀的產品文件<block ref="011dc6ff3c4a6db4449338299b84c9c4" category="inline-link-rx"></block> 和<block ref="f6f71f61964919c3e794acd51103ea76" category="inline-link-rx"></block> 開始之前。Veeam 提供計算器、用於瞭解 Veeam 基礎架構的規模、以及在調整 StorageGRID 解決方案規模之前應使用的容量需求。請務必在 Veeam Ready 方案網站上查看 Veeam-NetApp 驗證的組態<block ref="27e44db2d47a236831b6854277703ed2" category="inline-link-rx"></block>。</block>
   <block id="2cc1f5cc43ba172ac443ca2cbdcce2b4" category="section-title">Veeam 組態</block>
   <block id="8d5d0d535411e895f9d96eda059a901d" category="section-title">建議的版本</block>
   <block id="8a30f8c97261f6be55fd4a89233559fc" category="section-title">S3 儲存庫組態</block>
@@ -1108,7 +995,6 @@
   <block id="8215067184a09c074108be8e3fbbe725" category="section-title">負載平衡器和 S3 端點組態</block>
   <block id="84ace9fb8e132c96d1dfcd31447efedc" category="section-title">S3時段</block>
   <block id="55876228853abf632dec9346a4f372ec" category="inline-link">文件</block>
-  <block id="69e163f50758f77f10618e8e4b89f0cb" category="paragraph">StorageGRID 是安全的多租戶儲存系統。建議您為 Veeam 工作負載建立專用租戶。您可以選擇性地指派儲存配額。最佳實務做法是啟用「使用自己的身分識別來源」。使用適當的密碼來保護租戶根目錄管理使用者的安全。Veeam Backup 12 需要 S3 儲存區的一致性。StorageGRID 提供多種在貯體層級設定的一致性選項。對於具有 Veeam 從多個位置存取資料的多站台部署、請選取「 Strong-global 」。如果 Veeam 備份與還原僅發生在單一站台上、則一致性層級應設為「 Strong-site 」。如需更多有關貯體一致性層級的資訊、請參閱<block ref="782397d2a33ccd7da9c1580a84d10f9d" category="inline-link-rx"></block>。若要使用 StorageGRID 進行 Veeam 不可變備份、必須在建立貯體期間、全域啟用 S3 物件鎖定、並在貯體上設定。</block>
   <block id="2973716716ecfc8cb158222d309c85ff" category="section-title">生命週期管理</block>
   <block id="1cfb631f44c302a86adda6e45ba24763" category="paragraph">StorageGRID 支援複寫和銷毀編碼、可在 StorageGRID 節點和站台之間提供物件層級保護。銷毀編碼需要至少 200kB 物件大小。Veeam 的預設區塊大小為 1MB 、產生的物件大小通常會低於 Veeam 儲存效率之後的 200 KB 建議最小大小。為了達到解決方案的效能、建議不要使用跨越多個站台的抹除編碼設定檔、除非站台之間的連線能力足以避免增加延遲或限制 StorageGRID 系統的頻寬。在多站台 StorageGRID 系統中、 ILM 規則可設定為在每個站台上儲存單一複本。為了達到極致的耐用性、可設定規則、在每個站台儲存銷毀編碼複本。使用兩個本機複本到 Veeam 備份伺服器是此工作負載最建議的實作方式。</block>
   <block id="6a91fddc67312e23440e7297f57a6e75" category="section-title">實作重點</block>
@@ -1253,16 +1139,6 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="00039cf6e879cf2c96e1147810458aae" category="inline-link">發表 StorageGRID + LakeFS 解決方案簡介</block>
   <block id="f88708a62cf65a104ede836164d02fab" category="inline-link">StorageGRID 11.8 簡介：增強的安全性、簡易性和使用者體驗</block>
   <block id="7ed997d0afb0f25bef5074cfbae5d820" category="inline-link">隆重介紹 StorageGRID 11.8</block>
-  <block id="d24354c28f6eda12a84300886d0bae91" category="paragraph"><block ref="d24354c28f6eda12a84300886d0bae91" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="b234cd8b9202dfa24815cd14203cde1a" category="paragraph"><block ref="b234cd8b9202dfa24815cd14203cde1a" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="dcb0bfe5be50507cbd364a2d0fdfd056" category="paragraph"><block ref="dcb0bfe5be50507cbd364a2d0fdfd056" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="9c15e570ff0d3a398f314911048e34f6" category="paragraph"><block ref="9c15e570ff0d3a398f314911048e34f6" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="2f4bfe6caa4a2e3bf8657b624787ecf2" category="paragraph"><block ref="2f4bfe6caa4a2e3bf8657b624787ecf2" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="03a85f67d3528d13af543e9104884bf5" category="paragraph"><block ref="03a85f67d3528d13af543e9104884bf5" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="6724e2cab4809a16c4c5d1a71c4efc8a" category="paragraph"><block ref="6724e2cab4809a16c4c5d1a71c4efc8a" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="1a47c5b4c56facc13874c121e4100dcc" category="paragraph"><block ref="1a47c5b4c56facc13874c121e4100dcc" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="2bc8e44de2063c0bd15ca5716f63f7e0" category="paragraph"><block ref="2bc8e44de2063c0bd15ca5716f63f7e0" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="a93f7571d3de7b14fc5d89b0ece8d2f0" category="paragraph"><block ref="a93f7571d3de7b14fc5d89b0ece8d2f0" category="inline-image-macro-rx" type="image"></block></block>
   <block id="865bdd362452895283df6a25b595cf8b" category="paragraph"><block ref="865bdd362452895283df6a25b595cf8b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="45f16a43f7407469c60c15677753fe51" category="paragraph"><block ref="45f16a43f7407469c60c15677753fe51" category="inline-image-macro-rx" type="image"></block></block>
   <block id="17e7998b1bde3096b514d12f2f29fcc1" category="paragraph"><block ref="17e7998b1bde3096b514d12f2f29fcc1" category="inline-image-macro-rx" type="image"></block></block>
@@ -2090,7 +1966,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="9942fce998f0b0d862b20be8a42ff934" category="cell">允許 Grid 管理員管理管理員使用者和群組的存取控制。</block>
   <block id="4cad14bededdb563df770bfc3c540115" category="cell">分散式稽核記錄</block>
   <block id="7ade29c578c3d1571a9a046883efe0ed" category="paragraph">StorageGRID 提供內建的分散式稽核記錄基礎架構、可擴充至多達 16 個站台的數百個節點。StorageGRID 軟體節點會產生稽核訊息、這些訊息會透過備援稽核轉送系統傳輸、最後會擷取到一或多個稽核記錄儲存庫中。稽核訊息會擷取物件層級精細度的事件、例如用戶端啟動的 S3 API 作業、 ILM 的物件生命週期事件、背景物件健全狀況檢查、以及從管理 UI 或 API 所做的組態變更。</block>
-  <block id="5501b37af5f22aca0fe768f97426e4c3" category="paragraph">稽核記錄可透過 CIFS 或 NFS 從管理節點匯出、讓 Splunk 和 elk 等工具能夠記錄稽核訊息。稽核訊息有四種類型：</block>
   <block id="7483d9bdb3975c2dc4c182437bb694a4" category="list-text">系統稽核訊息</block>
   <block id="0f4511940e0cd310266a29e9b461e173" category="list-text">物件儲存稽核訊息</block>
   <block id="34088c40fc8a2267586c38cbb1723388" category="list-text">HTTP 傳輸協定稽核訊息</block>
@@ -2143,7 +2018,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="fbca494608a7316d7e4aa6c4683cfc68" category="list-text">ECDHE-ECDSA-CHACHA20-POLY1305</block>
   <block id="a6d6322eb07cc3c297ac472e6fcf4c27" category="list-text">ECDHE-RSA-CHACHA20-POLY1305</block>
   <block id="6e32c1287aa4f229067eaef76ad63327" category="paragraph">支援 TLS v1.2 與 1.3 。</block>
-  <block id="be74196f2c234809a4947513f55a8af5" category="paragraph">不再支援 SSLv3 、 TLS v1.1 及更早版本。</block>
   <block id="c7b07a7ebdf337ae1378b0072987f991" category="cell">讓用戶端和 StorageGRID 能夠識別和驗證彼此、並與機密性和資料完整性進行通訊。確保使用最新的 TLS 版本。密碼現在可在組態 / 安全性設定下進行設定</block>
   <block id="6c4306aab65ea68e521b0cde733e6f58" category="cell">可設定的伺服器憑證（負載平衡器端點）</block>
   <block id="c0ac81f384caa4ceb7f9e336f5fd60f3" category="paragraph">網格管理員可以設定負載平衡器端點來產生或使用伺服器憑證。</block>
@@ -2207,7 +2081,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="4c09768521a2b8d071ec184101026f0b" category="list-text">平台安全功能</block>
   <block id="bd3813fae65cb7c59dcb2440c1767ac0" category="inline-link">StorageGRID 強化指南</block>
   <block id="a0a2b190d72ee4645ce0b2c9bb0daaac" category="inline-link">StorageGRID 文件</block>
-  <block id="0f07f6589b07549f758f58cff19d1ae8" category="paragraph">本白皮書旨在提供安全性資料表、並未詳細說明如何設定系統、以支援中列舉的預設未設定的安全性功能。<block ref="a8889d4963e33bc8feee06ac02912ffa" category="inline-link-rx"></block>可在正式頁面上<block ref="8d80aa7c37bec53b7171a35567fec311" category="inline-link-rx"></block> 找到。</block>
   <block id="0c39f21f8929ee8b7354d8a05b4f2494" category="inline-link">NetApp 產品安全性弱點回應與通知原則</block>
   <block id="e49b7c4182308a3c27dbec32987e8e67" category="paragraph">除了本報告中所述的功能外， StorageGRID 還遵循<block ref="304cf4448819c099eaccd4f8123ab72d" category="inline-link-rx"></block>。報告的弱點會根據產品安全性事件回應程序進行驗證及回應。</block>
   <block id="23e21fdb0716a632da9ef25685dbc487" category="paragraph">NetApp StorageGRID 為要求嚴苛的企業物件儲存使用案例提供進階安全功能。</block>
@@ -2300,8 +2173,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="77d3a2aa3ace89769c7000c9ff0fbc33" category="paragraph">管理管理、網格和用戶端網路的開放和封閉連接埠。</block>
   <block id="76057cb1a942a10a1c814ef26644d04a" category="cell">允許網格管理員控制連接埠的存取、並管理核准的裝置對連接埠的存取。</block>
   <block id="d4988ead674101baad112a63743a2a90" category="cell">增強的 SSH 行為</block>
-  <block id="cd5528ec1d42717a5a54ed1ec3c7235b" category="paragraph">將節點升級至 StorageGRID 11.5 時、會產生新的 SSH 主機憑證和主機金鑰。</block>
-  <block id="11b82c0c383478059e3312f6a2c9d4c4" category="cell">強化攔截式攻擊防護。</block>
   <block id="e1a64d42ff187e4fae5c35973efe7842" category="cell">節點加密</block>
   <block id="44e5f619c850028058ea9f33d77d3189" category="paragraph">作為 KMS 主機伺服器加密新功能的一部分、 StorageGRID 應用裝置安裝程式會新增節點加密設定。</block>
   <block id="bb4fa26d9532e5da4f8e902beb9711c3" category="cell">此設定必須在裝置安裝的硬體組態階段啟用。</block>
@@ -2365,11 +2236,9 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="237e90320edbf098bc62e0161517b6da" category="paragraph">Gateway Node 是企業級、高可用度和高效能負載平衡器。客戶可以選擇在同一個網格中實作閘道節點、協力廠商負載平衡器、甚至兩者。Gateway Node 是本機流量管理程式、而非 GSLB 。</block>
   <block id="36685bb356ea7da456ace20502e454bb" category="paragraph">StorageGRID 負載平衡器具有下列優點：</block>
   <block id="9bc8bba0abbc122de22d748ff08b19f6" category="list-text">* 簡易性 * 。資源集區的自動組態、健全狀況檢查、修補和維護、全都由 StorageGRID 管理。</block>
-  <block id="5de0527bb678c4839b7a7514acd707e1" category="list-text">* 效能 * 。StorageGRID 負載平衡器專用於 StorageGRID 、因此您不會與其他應用程式競爭頻寬。</block>
   <block id="692af6e70011627635f367e5950c9f9b" category="list-text">* 成本 * 。虛擬機器（ VM ）和容器版本均免費提供。</block>
   <block id="9c3101f6b24804233b40ae6450fa1503" category="list-text">* 流量分類 * 。進階流量分類功能可讓 StorageGRID 特定的 QoS 規則與工作負載分析一起使用。</block>
   <block id="38c8ceefadaf4e89ae919f5a807ea085" category="list-text">* 未來的 StorageGRID 特定功能 * 。StorageGRID 將繼續最佳化負載平衡器、並在即將推出的版本上新增創新功能。</block>
-  <block id="7302dd9b1eb0aec4bf1250e7f29bf191" category="paragraph">如需部署 StorageGRID 閘道節點的詳細資訊，請參閱<block ref="babf3072d9403ab5e1ffb9e4bb9a27cb" category="inline-link-rx"></block>。</block>
   <block id="84005d607f0a93e852033c0b519062be" category="list-text">StorageGRID F5 負載平衡器設計考量 <block ref="d95e85e5d4376a35e480ee8024e749b5" category="inline-link-rx"></block></block>
   <block id="5846f1f21b96d1c9adc26d24e614abde" category="list-text">Loadbalancer.org—Load 平衡 NetApp StorageGRID <block ref="dd7f3d493284188c8c1493c8c18338b0" category="inline-link-rx"></block></block>
   <block id="af8fdca32c51642ca8690dcf5f1416f5" category="list-text">Kemp —負載平衡 NetApp StorageGRID <block ref="fb965c799555a65bc346633ea438a59b" category="inline-link-rx"></block></block>
@@ -2590,7 +2459,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="342e456d8956d624a6bc2bd15db54a7a" category="summary">瞭解如何啟用貯體的版本設定功能、並在 StorageGRID 中的使用者安全性群組上實作 IAM 原則、以保護您的資料。</block>
   <block id="c3c2efe1bc77ac368b03118b030e960b" category="doc">使用具有保護性 IAM 原則的版本管理功能來防範勒索軟體</block>
   <block id="865383bbbfa775e3d6b22d489517f4bb" category="paragraph">在不使用物件鎖定或複寫的情況下保護資料的方法、是在貯體上啟用版本設定、並在使用者安全性群組上實作 IAM 原則、以限制使用者管理物件版本的能力。發生攻擊時、會建立新的不良資料版本作為目前版本、而最新的非最新版本則是安全無虞的資料。為了取得資料存取權而遭入侵的帳戶無法刪除或以其他方式變更保護資料的非目前版本、以供日後還原作業使用。如同先前的案例、 ILM 規則會在您選擇的期間內、管理非目前版本的保留。缺點是、仍然可能存在授權帳戶、導致不良攻擊者遭受攻擊、但所有應用程式服務帳戶和使用者都必須設定更具限制性的存取。限制性群組原則必須明確允許您希望使用者或應用程式能夠執行的每個動作、並明確拒絕您不希望使用者或應用程式能夠執行的任何動作。NetApp 不建議使用萬用字元允許、因為未來可能會引進新的動作、而且您會想要控制是否允許或拒絕。對於此解決方案、拒絕清單必須包含 DeleteObjectVersion 、 PuttBucketPolicy 、 DeleteBucketPolicy 、 PuttLifecycleConfiguration 和 PuttBucketVersioning 、以保護貯體和物件版本的版本設定、避免使用者或程式設計上的變更。</block>
-  <block id="14721ed09b53cff866a4251ecf8be9ad" category="paragraph">在 StorageGRID 11.7 中、我們推出了新的 S3 群組原則選項「勒索軟體緩解」、以簡化此解決方案的實作。在租戶中建立使用者群組時、選取群組權限之後、您可以看到這個新的選用原則。</block>
   <block id="45e24bd145ccdb664274ea3753a3feb3" category="inline-image-macro">勒索軟體保護 - cree-group</block>
   <block id="5f1cf2bf2a76a7221d167793f6f1d80f" category="paragraph">以下是群組原則的內容、其中包含明確允許的大部分可用作業、以及最低要求的拒絕。</block>
   <block id="1b46922bca2761ea0a6c327c6ff7fb97" category="paragraph">本組態指南以 StorageGRID 11.5 和 Enterprise Vault 14.1 為基礎。使用 S3 物件鎖定、 StorageGRID 11.6 和 Enterprise Vault 14.2.2 讀取多項（ WORM ）模式儲存設備一次寫入。如需這些準則的詳細資訊、請參閱<block ref="8d80aa7c37bec53b7171a35567fec311" category="inline-link-rx"></block> 頁面或聯絡 StorageGRID 專家。</block>
@@ -3046,7 +2914,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="52cb822768beb11d3d42a3f9b19804d9" category="paragraph"><block ref="52cb822768beb11d3d42a3f9b19804d9" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8bab4d54d9f4be0e126140976cdd93e4" category="list-text">彈性搜尋快照（包括凍結層）</block>
   <block id="f12757e29dee512b70563c66186ae3d8" category="paragraph">建議您隨時保持最新狀態、並為 Veeam Backup &amp; Replication 12 或 12.1 系統套用最新的 Hotfix 。目前我們建議您至少安裝 Veeam 12 修補程式 P20230718 。</block>
-  <block id="d9077bfff46af079bd1370f652df5fc8" category="paragraph">含最新 Hotfix 的 NetApp StorageGRID 11.7 或 11.8 是 Veeam 部署的建議版本。建議您隨時保持最新狀態、並為您的 StorageGRID 系統套用最新的 Hotfix 。</block>
   <block id="734ae27bd626f001863fc96cdf284a4c" category="sidebar">將物件型儲存設備從 ONTAP S3 移轉至 StorageGRID</block>
   <block id="7278573c930789840fac32f75102c4cb" category="sidebar">TR-4907 ：使用 Veritas Enterprise Vault 設定 StorageGRID</block>
   <block id="c4661d92ec5bfd72a43733aea8dc23dd" category="sidebar">從 ONTAP S3 移轉至 StorageGRID</block>
@@ -3057,9 +2924,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="c0ffd7598ab1538e87530f78e30ee7a5" category="list-text">StorageGRID 11.9 文件中心 +<block ref="8cd5d43b808eac3380916fd8a7010bbf" category="inline-link-rx"></block></block>
   <block id="023074507079b61efa6f2839e5f70a91" category="inline-link">StorageGRID 11.9 擴充指南</block>
   <block id="f4940e01170c039d45c3e66e940623ae" category="paragraph">如需擴充 StorageGRID 系統的詳細資訊，請參閱<block ref="383fbf920d7819c777fd14de7ab5c076" category="inline-link-rx"></block>。</block>
-  <block id="56a72c05a4e2e9d60f84e7af8a5efaa8" category="paragraph">這是 NetApp ® StorageGRID ® 中許多安全功能的總覽、涵蓋資料存取、物件和中繼資料、管理存取權和平台安全性。此更新已更新為包含 StorageGRID 11.9 所發佈的最新功能。</block>
-  <block id="78c953ee6a7bceaa8f9e31793e0d9600" category="paragraph">本白皮書概述 StorageGRID 11.9 中的許多安全功能、分為五大類：</block>
-  <block id="14898bc1984707385c6d2c37b2a3b038" category="list-text">StorageGRID 11.9 文件頁面 <block ref="8cd5d43b808eac3380916fd8a7010bbf" category="inline-link-rx"></block></block>
   <block id="7519ba71db8577a641b71a19274cb841" category="paragraph">SG5812 、 SG5860 、 SG6160 和 SGF6024 StorageGRID 應用裝置提供 FIPS 140-2 相容加密磁碟的選項。磁碟的加密金鑰可由外部 KMIP 伺服器選擇性管理。</block>
   <block id="683c5d7a06c262f5e2e17cbb84869a3d" category="list-text">Veritas Enterprise Vault 11</block>
   <block id="1f61ef960fbeb10906bd09932e1faa5e" category="list-text">Veritas Enterprise Vault 12</block>
@@ -3071,8 +2935,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="2a9dd9956ef5047e090fb4fd428760da" category="summary">第三方解決方案已通過 StorageGRID 11.9 驗證</block>
   <block id="24da911d0ea6052fda1a360f3d8d20d2" category="doc">StorageGRID 11.9 驗證的協力廠商解決方案</block>
   <block id="3595748c33defe605c1fdb5ccbf36297" category="paragraph">下列協力廠商解決方案已通過驗證、可搭配 StorageGRID 11.9 使用。+如果您要尋找的解決方案未列出、請聯絡您的NetApp客戶代表。</block>
-  <block id="99b12e8f286736e276d9ae9cf6c493e8" category="inline-link-macro">NetApp StorageGRID 11.9 產品文件</block>
-  <block id="eeaa535340d552b22fc3654b745ad4ea" category="list-text"><block ref="eeaa535340d552b22fc3654b745ad4ea" category="inline-link-macro-rx"></block></block>
   <block id="8eabc09dcd3c546f24451cb9bb46605b" category="list-text">11.8 和低：儲存節點只能離線 15 天。如果複製程序預估接近15天或超過15天、請使用擴充與取消委任程序。</block>
   <block id="4a36d535e0833e25ae3b31be267f49b3" category="list-text">11.9 ： 15 天期限已移除。</block>
   <block id="69efc448e3120278e1d835f33e96998d" category="section-title">SG5612/SG5712/SG5812 -&gt; 任何</block>
@@ -3130,10 +2992,8 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="606eab719053286d71dc6722565f39cc" category="section-title">StorageGRID 總覽</block>
   <block id="c72cc4a7cc108f0e65b3b2234a5451f6" category="paragraph">NetApp StorageGRID 是物件型儲存系統，支援業界標準的 Amazon Simple Storage Service （ Amazon S3 ） API 。</block>
   <block id="bbcde1e5e5d61a464205617230c533f9" category="section-title">StorageGRID 擴充</block>
-  <block id="755c616499e794de29a6192f733ef343" category="paragraph">StorageGRID 可部署最多 3 個儲存節點，單一網格最多可擴充至 200 個節點。單一網格可部署為單一站台，或延伸至 16 個站台。最小的網格是由管理節點和單一站台中的 3 個儲存節點所組成。管理節點包含管理介面，度量和記錄的中央點，並維護 StorageGRID 元件的組態。管理節點也包含用於 S3 API 存取的整合式負載平衡器。StorageGRID 可部署為純軟體， VMware 虛擬機器應用裝置或專為特定用途所打造的應用裝置。</block>
   <block id="dd4a2f5270f8e48315da197dfb50c549" category="inline-image-macro">StorageGRID 部署選項</block>
   <block id="85bd86baa435866d317d93d290b94825" category="paragraph"><block ref="85bd86baa435866d317d93d290b94825" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="0d98907e79de1d22666f11bfb3d2db3f" category="paragraph">StorageGRID 包含放置在站台拓撲中的節點集合。StorageGRID 中的站台可以是唯一的實體位置，也可以與網格中的其他站台一樣位於共用實體位置，作為邏輯結構。StorageGRID 站台不應跨越多個實體位置。站台代表共用區域網路（ LAN ）基礎架構。</block>
   <block id="5fe7ceee115a9c6a5098f4b8d993a001" category="section-title">StorageGRID 和故障網域</block>
   <block id="cc017dc38b9da09729ae8c729e948fa9" category="paragraph">StorageGRID 包含多層故障網域，可用於決定如何建構解決方案，如何儲存資料，以及應將資料儲存在何處，以降低故障風險。</block>
   <block id="d0e2405e072da330a6fd0837dc950f91" category="list-text">網格層級：由多個站台組成的網格可能會發生站台故障或隔離，而可存取的站台可以繼續作為網格運作。</block>
@@ -3155,8 +3015,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="a60b56c4fc355f3dd23a1f66e3cc0b5f" category="paragraph">物件中繼資料可自訂且可擴充、使應用程式更靈活地使用。如需 StorageGRID 儲存物件中繼資料的方式及位置的詳細資訊，請前往<block ref="7d35d2baf4d39208e4f52175d4b30104" category="inline-link-rx"></block>。</block>
   <block id="2fd9637c3fe0d3bb7ddefe22d29b5161" category="paragraph">StorageGRID 的資訊生命週期管理（ ILM ）系統用於協調 StorageGRID 系統中所有物件資料的放置，持續時間和擷取行為。ILM 規則決定 StorageGRID 如何使用物件的複本來儲存物件，或是在節點和站台之間對物件進行銷毀編碼。此 ILM 系統負責在網格內保持物件資料一致性。</block>
   <block id="3e0ffdae9ade6fb4ba3c7757872545dd" category="section-title">銷毀編碼</block>
-  <block id="6a1b88df9e7ce6f4d8c68b64e37b48f7" category="paragraph">StorageGRID 提供在多個層級上抹除程式碼資料的功能。使用 StorageGRID 應用裝置，我們會在所有磁碟機上，清除儲存在每個節點上的資料，並提供 RAID 保護，防止多個磁碟故障造成資料遺失或中斷。此外， StorageGRID 可以使用抹除編碼配置，在站台內的節點之間儲存物件資料，或透過 StorageGRID 的 ILM 規則，在 StorageGRID 系統中的 3 個或更多站台之間散佈物件資料。</block>
-  <block id="ce26d290a7ad5461c7db7c9f572cbf6e" category="paragraph">抹除編碼提供的儲存配置可因應節點故障而產生彈性，而且成本較低，複寫作業也能相同，而且成本較高。只要符合儲存資料區塊所需的最小節點數，所有 StorageGRID 銷毀編碼配置都可部署在單一站台上。這表示如果 EC 方案為 4+2 ，則至少需要 6 個節點才能接收資料。</block>
   <block id="5f0f078ae521e0d3741dba78138df5b3" category="inline-image-macro">物件可用的 StorageGRID 抹除編碼配置</block>
   <block id="72518f32cd962986699fa5a6be8e80cc" category="paragraph"><block ref="72518f32cd962986699fa5a6be8e80cc" category="inline-image-macro-rx" type="image"></block></block>
   <block id="5fd5fbe5a78d14f16b7509bba2aece7a" category="section-title">中繼資料一致性</block>
@@ -3165,7 +3023,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="201f092d3f717ae191dd3f1a8fbfe160" category="paragraph">StorageGRID 提供的貯體一致性選項包括：</block>
   <block id="34d51dd8353a96472efa22d6a61f77ac" category="list-text">* 全部 * ：提供最高等級的一致性。網格中的所有節點都會立即接收資料，否則要求將會失敗。</block>
   <block id="23cf7178bab8a1e4584c67dbdc4d19df" category="list-text">*Strong-globall* ：保證所有網站上所有用戶端要求的寫入後讀取一致性。</block>
-  <block id="7aaffb3ad0912e8eb5a9c4cec3e5a008" category="list-text">*Strong-globall-V2* ：保證所有站台的所有用戶端要求都能在寫入後讀取一致性。如果能達成中繼資料複本仲裁，則可為多個節點或甚至是站台故障提供一致性。例如，至少必須從 3 站台網格製作 5 個複本，且站台內最多有 3 個複本。</block>
   <block id="9b2e1b371e348127ef43740bbc2f852d" category="list-text">*Strong-site* ：保證網站內所有用戶端要求的寫入後讀取一致性。</block>
   <block id="75d41ce194701530c0861e0d0a3cd8f5" category="list-text">* 新寫入後讀取 * （預設）：提供新物件的寫入後讀取一致性，以及物件更新的最終一致性。提供高可用度與資料保護保證。建議大多數情況下使用。</block>
   <block id="c0a48852ac050900e86f2edb977893ac" category="list-text">* 可用 * ：提供新物件和物件更新的最終一致性。對於 S3 貯體、請僅視需要使用（例如、包含很少讀取的記錄值之貯體、或用於對不存在的金鑰執行 head 或 Get 作業）。S3 FabricPool 儲存區不支援。</block>
@@ -3178,25 +3035,20 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="1c72ef556b5fc669fadc14ae383d37cf" category="section-title">負載平衡</block>
   <block id="babc08c413a52242b7d338a9958eddf7" category="paragraph">StorageGRID 可透過整合式閘道節點，外部 3^rd^ 協力廠商負載平衡器， DNS 循環配置資源，或直接部署至儲存節點，以進行用戶端存取。您可以在站台中部署多個閘道節點，並在高可用度群組中進行設定，以在閘道節點中斷時提供自動容錯移轉和容錯回復。您可以在解決方案中結合負載平衡方法，為解決方案中的所有站台提供單一存取點。</block>
   <block id="0c1ba34ce07cdb4dcf9dfb6117dce295" category="paragraph">根據預設，閘道節點會在閘道節點所在站台的儲存節點之間平衡負載。StorageGRID 可設定為允許閘道節點使用多個站台的節點來平衡負載。此組態會增加這些站台之間的延遲，以回應用戶端要求的延遲。只有當用戶端可以接受總延遲時，才應設定此選項。</block>
-  <block id="f3c0323bfba5176c17ba03d7e1e209fe" category="section-title">如何使用 StorageGRID 實現零 RPO</block>
   <block id="434ca8d9b2383ed26fb519f93dc2bb36" category="paragraph">若要在物件儲存系統中實現零恢復點目標（ RPO ），在故障發生時必須：</block>
   <block id="e01ab96fbda93c5ece52f522eb9e97ee" category="list-text">中繼資料和物件內容都同步，而且被視為一致的</block>
   <block id="855d870be57ab487bc6c3c7dd6177ade" category="list-text">即使發生故障，物件內容仍可存取。</block>
-  <block id="6c0174c8b8cbb7a219a10507875285a8" category="paragraph">對於多站台部署而言，強式 Global V2 是首選的一致性模式，可確保中繼資料在所有站台之間同步，因此必須符合零 RPO 需求。</block>
   <block id="3144181f53a9b5a1f7faaa68687ce053" category="paragraph">儲存系統中的物件是根據資訊生命週期管理（ ILM ）規則來儲存，這些規則決定資料在整個生命週期內的儲存方式和位置。對於同步複寫，您可以考慮嚴格執行或平衡執行。</block>
   <block id="ba76eb24bf3904a1670b5bea1f9b483c" category="list-text">零 RPO 必須嚴格執行這些 ILM 規則，因為它能確保物件置於定義的位置，不會有任何延遲或後退，維持資料可用度和一致性。</block>
   <block id="d30ec037efde149da7fc42696aac2a3a" category="list-text">StorageGRID 的 ILM Balance 擷取行為可在高可用度與恢復能力之間取得平衡，讓使用者即使在站台發生故障時也能繼續擷取資料。</block>
   <block id="3e1fd95f52676bdecea3672d3961028d" category="inline-link">StorageGRID 負載平衡器技術報告</block>
-  <block id="ce322fffc75130170ab180743b2c6065" category="paragraph">或者，結合本機和全域負載平衡，確保 RTO 為零。若要確保不中斷的用戶端存取，需要平衡用戶端要求的負載。StorageGRID 解決方案可在每個站台中包含許多閘道節點和高可用度群組。為了讓任何站台中的用戶端即使在站台故障時也能不中斷存取，您應該將外部負載平衡解決方案與 StorageGRID 閘道節點一起設定。設定閘道節點高可用度群組來管理每個站台內的負載，並使用外部負載平衡器來平衡高可用度群組之間的負載。外部負載平衡器必須設定為執行健全狀況檢查，以確保只將要求傳送至營運站台。有關使用 StorageGRID 進行負載平衡的詳細信息，請參閱<block ref="587298665ed077e05405d60ca7617c92" category="inline-link-rx"></block>。</block>
   <block id="e4762672cea35184546255f4bc047ef9" category="section-title">跨多個站台進行同步部署</block>
-  <block id="bb169ed40d921649a3e48315ffe0da2b" category="paragraph">* 多站台解決方案： * StorageGRID 可讓您在網格內的多個站台之間同步複寫物件。藉由設定平衡或嚴格行為的資訊生命週期管理（ ILM ）規則，物件會立即放置在指定的位置。將貯體一致性層級設定為 Strong Global v2 ，也能確保同步中繼資料複寫。StorageGRID 使用單一全域命名空間，將物件放置位置儲存為中繼資料，因此每個節點都能知道所有複本或銷毀編碼片段的位置。如果無法從提出要求的站台擷取物件，則會自動從遠端站台擷取物件，而不需要進行容錯移轉程序。</block>
   <block id="20ad983ec7a3dd64983a01c7f378bd37" category="paragraph">一旦故障解決，就不需要手動進行容錯回復。複寫效能取決於網路處理量最低，延遲最高，效能最低的站台。站台效能是根據節點數量， CPU 核心數和速度，記憶體，磁碟機數量和磁碟機類型而定。</block>
   <block id="7d2fae5e9880cd64b52738dc8b8e93d5" category="paragraph">* 多網格解決方案： * StorageGRID 可以使用跨網格複寫（ CGR ），在多個 StorageGRID 系統之間複寫租戶，使用者和貯體。CGR 可將選取的資料延伸至超過 16 個站台，增加物件儲存區的可用容量，並提供災難恢復。使用 CGR 複寫貯體包括物件，物件版本和中繼資料，可以是雙向或單向的。恢復點目標（ RPO ）取決於每個 StorageGRID 系統的效能，以及它們之間的網路連線。</block>
   <block id="a2b0a13c1adfa7d77b6aa19eb9f9f08f" category="paragraph">* 摘要： *</block>
   <block id="b0ce1d579493e334271a3fd059b9fee8" category="list-text">網格內複寫包括同步和非同步複寫，可透過 ILM 擷取行為和中繼資料一致性控制進行設定。</block>
   <block id="1011324ed3564a620bc5485d84c2022b" category="list-text">網格間複寫僅為非同步複寫。</block>
   <block id="3eb3b2b49a459eec5258a23b3937ec50" category="section-title">單一網格多站台部署</block>
-  <block id="1169c6a70e81f4b5a6e6e12213d36685" category="paragraph">在下列案例中， StorageGRID 解決方案會設定選用的外部負載平衡器，以管理對整合式負載平衡器高可用度群組的要求。除了 RPO 為零之外，這也能達到零的 RTO 。ILM 的組態為平衡擷取保護，可用於同步放置。每個貯體都針對 3 個或更多站台的網格設定強大的全球 v2 一致性模型，並針對 3 個以上的站台設定強大的全球一致性。</block>
   <block id="18b742c71481166d728314dedbf8266d" category="paragraph">在雙站台 StorageGRID 解決方案中，每個物件至少有兩個複本或 3 個 EC 區塊，所有中繼資料有 6 個複本。故障恢復後，中斷的更新會自動同步至恢復的站台 / 節點。只有 2 個站台，在故障情況下，不可能達到零 RPO ，而超出整個站台損失。</block>
   <block id="ea45bf8dbcdbd39284bd9bf6e419d8c1" category="inline-image-macro">雙站台 StorageGRID 系統</block>
   <block id="3d6a8c14b8eb946f5a4a31a10e28d011" category="paragraph"><block ref="3d6a8c14b8eb946f5a4a31a10e28d011" category="inline-image-macro-rx" type="image"></block></block>
@@ -3237,7 +3089,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="a832d31461ba76ddc892c57841a52f92" category="paragraph">隔離站台的作業將會中斷，但不會遺失資料</block>
   <block id="7e285c7404a1098df2068ce3cd5b70db" category="paragraph">不會中斷其餘站台的作業，也不會遺失資料</block>
   <block id="15fd08e71edb235c1f3886027abe22b0" category="section-title">多站台多網格部署</block>
-  <block id="2c37dd132c24b43b4d878f8f7677f4a7" category="paragraph">若要新增額外的備援層，此案例將採用兩個 StorageGRID 叢集，並使用跨網格複寫來保持同步。對於此解決方案，每個 StorageGRID 叢集都有三個站台。兩個站台將用於物件儲存和中繼資料，而第三個站台則僅用於中繼資料。這兩個系統都會設定平衡的 ILM 規則，以便在兩個資料站台中的每個站台使用銷毀編碼來同步儲存物件。儲存區將以強大的全球 v2 一致性模式進行設定。每個網格都會在每個儲存區上設定雙向跨網格複寫。這可在區域之間提供非同步複寫。您也可以實作全域負載平衡器，以管理對兩個 StorageGRID 系統的整合式負載平衡器高可用度群組的要求，以達到零 RPO 。</block>
   <block id="96045b1c0304cef753cc8d0ef8b0f5d4" category="paragraph">此解決方案將使用四個位置，分為兩個區域。區域 1 將包含網格 1 的 2 個儲存網站，做為區域的主要網格，以及網格 2 的中繼資料網站。區域 2 將包含網格 2 的 2 個儲存網站，做為區域的主要網格，以及網格 1 的中繼資料網站。在每個區域中，相同的位置可以容納該區域主要網格的儲存網站，以及其他區域網格的中繼資料唯一網站。只使用中繼資料節點做為第三個站台，可提供中繼資料所需的一致性，而不會複製該位置中物件的儲存。</block>
   <block id="54c747b99263ca48f4db2b58d9d3ecee" category="inline-image-macro">四站台多網格解決方案</block>
   <block id="dad1ee0a1e6aa5bf9d0878e758839b27" category="paragraph"><block ref="dad1ee0a1e6aa5bf9d0878e758839b27" category="inline-image-macro-rx" type="image"></block></block>
@@ -3362,7 +3213,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="5a07e328951f2e2665da45b3c8611e70" category="paragraph">使用案例：此策略有助於管理所有非目前版本刪除後留下的刪除標記，這些標記會隨著時間的推移而累積。好處：減少不必要的混亂。</block>
   <block id="e5c835f7c182458dbaf697d1620793b4" category="section-title">30 天後刪除目前版本，60 天後刪除非目前版本，一旦不存在其他版本，則刪除目前版本所建立的刪除標記。</block>
   <block id="d9b7c27b725dffa7cd5976689726fef1" category="paragraph">使用案例：為目前版本和非目前版本提供完整的生命週期，包括刪除標記。優點：降低儲存成本，確保儲存桶整潔有序，同時保留足夠的恢復點和歷史記錄。</block>
-  <block id="c9aa9a5dfb2480b364bb5845348ff940" category="section-title">刪除沒有其他版本並且已經存在 5 天的標記，為帶有「accounts_ 前綴」的物件保留 4 個非當前版本和至少 30 天的歷史記錄，為所有其他物件版本保留 2 個版本和至少 10 天的歷史記錄。</block>
   <block id="2c4d4631c1767753478366b0115cd168" category="paragraph">使用案例：為特定物件以及其他物件提供獨特的規則，以管理目前版本和非目前版本（包括刪除標記）的完整生命週期。優點：降低儲存成本，確保儲存桶整潔有序，同時保留足夠的恢復點和歷史記錄，以滿足各種客戶需求。</block>
   <block id="c662e9fbc7c08f1bf374548d49a19c49" category="list-text">定期檢視和更新生命週期政策，並使其與 ILM 和資料管理目標保持一致。</block>
   <block id="cc89ccf651eef2154a659615eba6bdf0" category="list-text">在廣泛應用策略之前，先在非生產環境或儲存桶中測試策略，以確保其按預期工作</block>
@@ -3375,46 +3225,122 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="2ef98a36e008b10819c92b90ab9fb134" category="list-text">僅元資料節點最大化物件數量</block>
   <block id="314be57ec0bf12b0f7b8fad48b9e7d0d" category="list-text">僅儲存物件的節點，最大化物件空間</block>
   <block id="b67abdd7987281e93fb88e16a9dede52" category="list-text">組合元資料和物件儲存節點，新增物件計數和物件空間</block>
-  <block id="c861ea75c2d08cb58cd0e94b6f5cb1d3" category="paragraph">每個儲存節點都可擴充至數 PB 容量，以利物件儲存，以數百 PB 的單位提供單一命名空間。StorageGRID 也為 S3 API 作業提供整合式負載平衡器，稱為閘道節點。</block>
   <block id="aae45e5681608077797f9b54c9787cc9" category="list-text">系統元數據，包括每個物件的唯一 ID、物件名稱、S3 儲存桶的名稱、租用戶帳戶名稱或 ID、物件的邏輯大小、物件首次建立的日期和時間以及物件最後修改的日期和時間。</block>
   <block id="cab3529168145fa0611750088f6b9294" category="sidebar">儲存桶生命週期策略範例</block>
   <block id="e506f81bec685a8d4212a723ed5e9d67" category="sidebar">儲存桶生命週期策略範例</block>
   <block id="0be6d03a29c17471b0414e9b31482b15" category="list-text">IBM 儲存保護</block>
   <block id="0987bb97934aa3a8ea668bd0c91ce52d" category="sidebar">StorageGRID中的安全功能 - 保護物件儲存中的資料和元數據</block>
   <block id="243c98f4ed7a2d56d634e9cc955fda88" category="sidebar">StorageGRID災難復原 - 使用 Veritas Enterprise Vault 設定StorageGRID進行站點故障轉移</block>
-  <block id="b12c5a1ea2cfdcd9e96af62ad1fff2c7" category="summary">建立 Elasticsearch 快照儲存庫以使用StorageGRID物件儲存的說明。</block>
-  <block id="4f466fb92f96dcdf64e32b3a68249a6a" category="doc">Elasticsearch 快照儲存庫配置</block>
-  <block id="19c69b64ad875941da2ed25675b966b5" category="paragraph">Elasticsearch 支援使用與 AWS S3 相容的物件儲存作為快照儲存庫。本文提供瞭如何使用StorageGRID作為後端物件儲存建立 Elasticsearch S3 快照儲存庫的逐步說明。</block>
-  <block id="593e0b72d2a3823ab9f1704dbeeea1c8" category="list-text">StorageGRID 11.8 或更高版本</block>
-  <block id="51065ec24ee246c3860e0580defca4c6" category="list-text">Elasticsearch 8.x 或更高版本</block>
-  <block id="3212d51fa371e3cef1d789ecfe0afca6" category="paragraph">讀者熟悉StorageGRID和 Elasticsearch 術語和操作。</block>
-  <block id="85c3fd6ac4074bb1ab06b16868d0c009" category="list-text">建立一個StorageGRID桶以用於 Elasticsearch 快照儲存庫。必須啟用儲存桶版本控制。每個儲存庫使用一個儲存桶。不要在多個儲存庫或 Elasticsearch 叢集之間共用一個儲存桶。</block>
-  <block id="8ed3f9dd5d7290bd016b83485c0170a1" category="list-text">將StorageGRID租用戶存取金鑰和金鑰新增至 Elasticsearch 金鑰庫。登入 Elasticsearch 主節點，導航至<block ref="1b2b598aea8f192d3794b0c30af92997" prefix=" " category="inline-code"></block>目錄，並使用<block ref="0bf694e981bb45a58aed7488327af4f3" prefix=" " category="inline-code"></block>新增存取密鑰和密鑰。</block>
-  <block id="5fd300737b7909532dc522634d75def5" category="paragraph">範例命令：</block>
-  <block id="08a6dcd3a697d0604f6f4b47807f6ca0" category="paragraph">若要顯示金鑰，請使用“elasticsearch-keystore show &lt;key-name&gt;”指令。</block>
-  <block id="6806cdb70b916f3b6bb474b9328b08ca" category="list-text">對於多節點 Elasticsearch 集群，在每個節點中重複步驟 2 或查閱 Elasticsearch 文件。</block>
-  <block id="621e717bf791d95428a170667a596197" category="list-text">從 Kibana Web GUI 導航到 Dev Tools Console 頁面並使用<block ref="f6703ca746887e8ad69c184ef80e8ded" prefix=" " category="inline-code"></block>API 將變更套用到每個節點。</block>
-  <block id="9b6e1b5bf3e12eb4e808e1b9701528f4" category="inline-image-macro">reload_secure_settings 範例截圖</block>
-  <block id="c94eb203f327e8a870bff84bf0051606" category="paragraph"><block ref="c94eb203f327e8a870bff84bf0051606" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="59b63a4c7f8e78be87c3100ed37b264a" category="list-text">使用<block ref="14122a9963d2d5fd106baa062ba587b4" prefix=" " category="inline-code"></block>用於建立新快照儲存庫的 API。</block>
-  <block id="98679aa6d08189789aa0c65c691db370" category="paragraph">在此範例中，儲存庫名稱是<block ref="be9022aec77b31961957096c13c23219" prefix=" " category="inline-code"></block>，緩衝區大小與 S3 分段上傳的部分大小相對應。</block>
-  <block id="3c823bd21419d345a9d7d4276488edfb" category="paragraph">預設協定是 HTTPS。若要將 HTTP 與StorageGRID S3 端點一起使用，請新增<block ref="356f3d9b207a577071350c04e64206cb" prefix=" " category="inline-code"></block>到設定。</block>
-  <block id="e09538d2ae213ccd0a221584775b5ca5" category="paragraph">使用步驟1中建立的bucket名稱和步驟2中配置的客戶端名稱。</block>
-  <block id="4faca7afc4d2b0538a33d3192d453ad1" category="inline-image-macro">Elasticsearch API 範例螢幕截圖</block>
-  <block id="175e963c73089d05b73e4053f63b0a3a" category="paragraph"><block ref="175e963c73089d05b73e4053f63b0a3a" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="09585352abb495a58301939509e2b605" category="list-text">從 Kibana Web GUI 導覽至 Stack Management &gt; Snapshot and Restore 頁面，選擇 Repositories 標籤。</block>
-  <block id="73f00594e61a1e09208a849e16bedd7d" category="paragraph">按一下儲存庫名稱以查看詳細資訊或修改某些設置，例如每秒最大快照位元組數（預設為每個 Elasticsearch 節點 40 MB/s）。</block>
-  <block id="fc2619b84c9b3173bc9c93dafbf91e8d" category="paragraph">對於此頁面上不可見的設置，請使用<block ref="14122a9963d2d5fd106baa062ba587b4" prefix=" " category="inline-code"></block>開發者工具控制台中的 API 進行變更。</block>
-  <block id="565feae94d4b22672a12be27e4f99c63" category="inline-image-macro">快照儲存庫範例截圖</block>
-  <block id="aac419a72b01b501d95dbe3debe250f2" category="paragraph"><block ref="aac419a72b01b501d95dbe3debe250f2" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="8d7340f8e7c758cdf4fd4e3455548757" category="list-text">設定儲存桶生命週期策略來管理快照儲存桶中的非目前版本物件。例如，90 天後刪除非目前版本。</block>
-  <block id="5fe1a3050ef9538f4f00d7bf6e4d66b1" category="list-text">Elastic 要求客戶端在使用非 AWS S3 儲存體來儲存快照之前對其進行驗證。</block>
-  <block id="56f4d43e66895a25e9c1e43ca43d69cc" category="paragraph">按照 Elastic 說明驗證設定：</block>
-  <block id="0734208a8b40c0aab9c1218baedefbf1" category="paragraph"><block ref="0734208a8b40c0aab9c1218baedefbf1" category="inline-link-rx"></block></block>
-  <block id="1743c3ed2b99313c86b17e91ff8ae63b" category="list-text">驗證後，請按照 Elasticsearch 指南建立儲存夜間快照的策略。</block>
-  <block id="1d605538b3de6fc7352ff1756867d1b9" category="inline-link">Elasticsearch s3 儲存庫</block>
-  <block id="755c869a02438bc9363beeea0e91da57" category="list-text"><block ref="755c869a02438bc9363beeea0e91da57" category="inline-link-rx"></block></block>
-  <block id="e226403172953bd7e5c34989260a72a8" category="inline-link">如何刪除 S3 版本控制對象</block>
-  <block id="e35c2c56a508398c870b7b6e9e717abf" category="list-text"><block ref="e35c2c56a508398c870b7b6e9e717abf" category="inline-link-rx"></block></block>
-  <block id="29b6d470059c168ae42b0d8923792ea7" category="sidebar">建立 Elasticsearch 快照儲存庫的說明</block>
+  <block id="6296eecae5fd6a7ad4c379ebb94e6ecf" category="section-title">刪除沒有其他版本的刪除標記，為帶有「accounts_ 前綴」的物件保留 4 個非當前版本和至少 30 天的歷史記錄，為所有其他物件版本保留 2 個版本和至少 10 天的歷史記錄。</block>
+  <block id="3c8cdd15a6a530650da7bd29f3a5558a" category="paragraph">最小StorageGRID部署由單一站點中的一個管理節點和 3 個儲存節點組成。單一網格最多可以成長到 220 個節點。  StorageGRID可以部署為單一站點，也可以擴展到 16 個站點。</block>
+  <block id="fc7ef6488361c9c97f3d756ad91297b1" category="paragraph">管理節點包含管理介面、指標和日誌記錄的中心點，並維護StorageGRID元件的配置。管理節點還包含用於 S3 API 存取的整合負載平衡器。</block>
+  <block id="e75c00df26f576c96bb2702f9c563c20" category="paragraph">StorageGRID可部署為純軟體、VMware 虛擬機器設備或專用設備。</block>
+  <block id="ef0ee1bddd52d01db041108f1228135e" category="paragraph">每個儲存節點都可以擴展到多 PB 容量，用於物件存儲，從而允許單一命名空間擁有數百 PB 的容量。  StorageGRID也為 S3 API 操作提供了一個稱為網關節點的整合式負載平衡器。</block>
+  <block id="c79c68e59ac4365a8f57819778c2d079" category="paragraph">StorageGRID由放置在站點拓撲中的節點集合組成。  StorageGRID中的站點可以是唯一的實體位置，也可以作為邏輯結構與網格中的其他站點位於共用的實體位置。 StorageGRID站點不應跨越多個實體位置。站點代表共用的區域網路 (LAN) 基礎架構和故障域。</block>
+  <block id="d0351f8bc75f9766fc04d15d94a8bd0b" category="paragraph">StorageGRID提供在節點層級和磁碟機層級擦除程式碼資料的能力。使用StorageGRID設備，我們對每個節點上儲存在該節點內所有磁碟機上的資料進行擦除編碼，從而提供本機保護，防止多個磁碟故障導致資料遺失或中斷。驅動器故障的重建在節點本地進行，不需要透過網路複製資料。</block>
+  <block id="111ff3048a18a746f2160bb022a17ec3" category="paragraph">此外， StorageGRID設備使用擦除編碼方案將物件資料儲存在站點內的節點上，或分佈在StorageGRID系統中的 3 個或更多站點上，儘管 StorageGRID 的 ILM 規則可防止節點故障。</block>
+  <block id="6538e063b9a1941823d45adc0387aa3f" category="paragraph">擦除編碼提供了一種能夠以較低的開銷抵禦節點和站點故障的儲存佈局，而複製可以做同樣的事情，但開銷較大。只要滿足儲存資料塊所需的最小節點數，所有StorageGRID擦除編碼方案都可以部署在單一站點中。這意味著對於 4+2 的 EC 方案，至少需要 6 個節點可用於接收資料。</block>
+  <block id="9be7d4cba47d08188ba121bdcfbf06f8" category="list-text">*Quorum Strong-global*：保證所有網站上所有客戶端請求的讀寫一致性。如果可以實現元資料副本仲裁，則可以為多個節點甚至站點故障提供一致性。</block>
+  <block id="c56dabcab7c66e3a31beb8e5ec75bc45" category="list-text">QUORUM 一致性定義為儲存節點元資料副本的仲裁，其中每個站點有 3 個元資料副本。計算方法如下：1+((N*3)/2)，其中 N 為站點總數</block>
+  <block id="d063e8f08673adc8df1fe6cec7b7a7bc" category="list-text">例如，3 站點網格必須至少製作 5 個副本，每個站點最多可製作 3 個副本。</block>
+  <block id="f8dd54c357440b879a762147dcc0262d" category="paragraph">透過結合本地和全域負載平衡，可以確保實現零 RTO。確保客戶端存取不間斷需要對客戶端請求進行負載平衡。 StorageGRID解決方案可以在每個站點包含許多網關節點和高可用性群組。為了即使在站點發生故障時也能為任何站點中的用戶端提供不間斷的訪問，您應該結合StorageGRID網關配置外部負載平衡解決方案。配置管理每個站點內負載的網關節點高可用性群組，並使用外部負載平衡器在高可用性群組之間平衡負載。必須配置外部負載平衡器來執行健康檢查，以確保請求僅傳送到操作站點。有關使用StorageGRID進行負載平衡的更多信息，請參閱<block ref="587298665ed077e05405d60ca7617c92" category="inline-link-rx"></block>。</block>
+  <block id="08b7575fdd3926665d85a59b0d1eb1e5" category="section-title">StorageGRID的零 RPO 要求</block>
+  <block id="2cc7dacd3d9a578262f5166ed6f8429b" category="paragraph">對於多站點部署，Quorum Strong Global 是首選的一致性模型，可確保元資料在所有站點之間同步，這對於滿足零 RPO 要求至關重要。</block>
+  <block id="4340156e4c2f48db5faf8fe946b7b76c" category="paragraph">*多站點解決方案：* StorageGRID可讓您在網格內的多個站點之間同步複製物件。透過設定具有平衡或嚴格行為的資訊生命週期管理 (ILM) 規則，物件會立即放置在指定位置。將儲存桶一致性等級配置為 Quorum Strong Global 也將確保同步元資料複製。 StorageGRID使用單一全域命名空間，將物件放置位置儲存為元數據，因此每個節點都知道所有副本或擦除編碼片段的位置。如果無法從發出請求的站點檢索對象，則將自動從遠端站點檢索該對象，而無需故障轉移程序。</block>
+  <block id="47c37215042d2824804cb9bd9bd0b409" category="paragraph">在下列場景中， StorageGRID解決方案配置了一個可選的外部負載平衡器，用於管理整合負載平衡器高可用性群組的請求。這樣，除了 RPO 為零之外，RTO 也將為零。 ILM 配置了平衡攝取保護以實現同步放置。對於 3 個或更多站點的網格，每個儲存桶都配置有 Quorum Strong Global 一致性模型，對於少於 3 個站點的網格，則配置有強 Global 一致性。</block>
+  <block id="8865f9fe613497bf0177e03d609c23d2" category="paragraph">為了新增額外的冗餘層，此場景將採用兩個StorageGRID叢集並使用跨網格複製來保持它們同步。對於此解決方案，每個StorageGRID叢集將有三個站點。兩個站點將用於物件儲存和元數據，而第三個站點將僅用於元數據。兩個系統都將配置平衡的 ILM 規則，以使用擦除編碼在兩個資料站點中同步儲存物件。儲存桶將採用 Quorum Strong Global 一致性模型進行設定。每個網格將在每個儲存桶上配置雙向跨網格複製。這提供了區域之間的非同步複製。可以選擇實作全域負載平衡器來管理兩個StorageGRID系統的整合負載平衡器高可用性群組的請求，以實現零 RPO。</block>
+  <block id="80f1c748a0e0ce55abcb6571bb430d38" category="paragraph">審計日誌可以透過 syslog 匯出，從而允許 Splunk 和 ELK 等工具挖掘審計訊息。審計訊息有四種類型：</block>
+  <block id="34da6679711f958e925f9b135997bbba" category="paragraph">審計日誌可以儲存在 S3 儲存桶中，以便長期保留和應用程式存取。</block>
+  <block id="8a6d1da4da283463469d80cd3a03e70d" category="paragraph">不支援 SSLv3、TLS v1.1 及更早版本。</block>
+  <block id="b472ab52bbb1bf27e4d30952e0d93291" category="cell">S3 安全性令牌服務 API AssumeRole</block>
+  <block id="d7c92f3c62d1251924360af4e82d842d" category="paragraph">StorageGRID支援 S3 STS API AssumeRole 提供具有縮小範圍的權限和有限持續時間的臨時安全憑證（存取金鑰 ID、秘密存取金鑰、會話令牌）。作為 AssumeRole API 的一部分，支援內嵌會話策略來進一步限制會話期間的權限。</block>
+  <block id="a42e53932e7e4ca2e68771173b58e9a1" category="cell">允許租用戶管理員提供對對象資料的安全臨時存取。</block>
+  <block id="7ba6eb634dd2e14688216874c0948a82" category="cell">簡單通知服務</block>
+  <block id="4cc0e4135a8a14dd55b6d591b3859050" category="paragraph">StorageGRID支援在物件存取時發送通知。支援以下事件類型：</block>
+  <block id="f18474be111c11ab6946f63a162f4cd2" category="list-text">s3：物件創建：</block>
+  <block id="22ca04de8880493b82e694905d2e3ecd" category="list-text">s3：物件創建：放置</block>
+  <block id="6270e13ce10a7553cf9717d3e43c1e81" category="list-text">s3：物件創建：發布</block>
+  <block id="1c046f991953c487543f9d5461c3a33e" category="list-text">s3：物件創建：複製</block>
+  <block id="26a4b507dd307fcecbadc197c0f6ba1d" category="list-text">s3：物件創建：完成分段上傳</block>
+  <block id="e254b3f77b71347c9487915489c78b92" category="list-text">s3：物件已移除：</block>
+  <block id="92e11e248126840c9818cb2844cc1ac8" category="list-text">s3：物件已移除：刪除</block>
+  <block id="f73ef6dd45a5ab94cc9218d0ffda5e05" category="list-text">s3：物件已移除：刪除標記已建立</block>
+  <block id="e90a72500c4d1f3ab225a227685b31fa" category="list-text">s3：對象恢復：發布</block>
+  <block id="2f33844f212a352a95db6f713ee3f108" category="cell">允許租用戶管理員監控對象的存取</block>
+  <block id="5ed4c951c2f6b21ee65df32f5429c783" category="paragraph">這是NetApp® StorageGRID® 中眾多安全功能的概述，涵蓋資料存取、物件和元資料、管理存取和平台安全。它已更新，包含StorageGRID 12.0 發布的最新功能。</block>
+  <block id="4eedb574ce06ca213a4bffe0c12cbb10" category="paragraph">本文概述了StorageGRID 12.0 中的眾多安全功能，分為五類：</block>
+  <block id="6ab7fc204366ec430677c503c0bb6a7d" category="paragraph">本文旨在成為一份安全資料表——它沒有詳細說明如何配置系統以支援其中列舉的預設未配置的安全功能。這<block ref="f76c786b517b7674c638d6afcda1fc54" category="inline-link-rx"></block>可在官方<block ref="3947e7ce29c19e596cfc10021764eecc" category="inline-link-rx"></block>頁。</block>
+  <block id="590222d2d71fadfed7385b1469159973" category="list-text">StorageGRID文件頁面<block ref="6a57442f297e8ec0c1048139bce9d672" category="inline-link-rx"></block></block>
+  <block id="371c5f54c95e37b2abae0e77fb2ef9bc" category="cell">符合聯邦資訊處理標準 (FIPS) 140-3 的節點加密</block>
+  <block id="57b9582e844c9483060c5042354c5d19" category="paragraph">SG5812、SG5860、SG6160、SGF6112、SG1100 和 SG110 StorageGRID設備提供符合 FIPS 140-3 的節點加密選項。節點的加密金鑰由外部 KMIP 伺服器管理。</block>
+  <block id="a9c91ca5c1602db9207831013c78a8de" category="paragraph">安裝前預設禁用 SSH。在預設狀態下，僅在連結本機管理連接埠位址上啟用 SSH 存取。管理者和 root 使用者密碼設定為裝置計算控制器序號。僅允許在序列控制台和圖形控制台（BMC KVM）上登入。任何網路連接埠上的 SSH 均已停用。</block>
+  <block id="51685ae54bd8a3c18299b293c266ee8d" category="cell">增強網路存取保護。</block>
+  <block id="7a93a4ac4fc2f15a2cac6a95da23a725" category="list-text">NetApp StorageGRID文檔中心<block ref="6a57442f297e8ec0c1048139bce9d672" category="inline-link-rx"></block></block>
+  <block id="40a08577ed1f8291ee7537f82f7ea087" category="summary">了解StorageGRID負載平衡器的作用。</block>
+  <block id="7a683cd53df48368c020a023e1decaa3" category="doc">使用StorageGRID負載平衡器</block>
+  <block id="da65080e4e002693d9cccb3b4b29504c" category="paragraph">了解StorageGRID網關節點負載平衡器的作用。</block>
+  <block id="c37ec16f9cbe25122d138ee64be2febb" category="paragraph">實作NetApp® StorageGRID® 網關節點的一般指南。</block>
+  <block id="03e91b160efe47ab88aa21988320814b" category="list-text">*表現*。  StorageGRID負載平衡器專用於StorageGRID，可提供高效能緩存，您不會與其他應用程式爭奪頻寬。</block>
+  <block id="19f703e9c9d81a8c2224b478bb57a46f" category="paragraph">作為StorageGRID的整合節點，本地流量管理器能夠使用進階健康檢查根據儲存節點健康狀況、負載和資源可用性來分配請求。此外，當站點之間的StorageGRID連結成本設定為「0」時，它還能夠在多個站點之間分配負載。如果儲存節點不可用但網關節點在站點中可用，則負載將自動定向到網格中的另一個站點。</block>
+  <block id="20cf0b6891cb2cac3c2821be0ca10aa1" category="paragraph">網關節點的負載平衡器快取功能旨在為某些工作負載（例如 AI 訓練）提供顯著的效能改進，這些工作負載在處理資料的過程中會多次重新讀取資料集。快取網關節點還可以部署在與網格其餘部分物理遠離的位置，從而在某些工作負載下實現更好的效能並降低 WAN 網路利用率。快取以讀回模式運行，其中寫入不會被緩存，也不會修改快取的狀態。每個快取網關獨立於任何其他快取網關節點運作。</block>
+  <block id="fdd579632336464b40d6c17618ea98c2" category="paragraph">有關部署StorageGRID網關節點的詳細信息，請參閱<block ref="ef280a4ff91c726704f40692a4ba0779" category="inline-link-rx"></block>。</block>
+  <block id="2735e9b942d9e03093b046affde90c88" category="summary">探索如何使用分支儲存桶來調查和補救勒索軟體攻擊。</block>
+  <block id="7a3de6f3ef535f61c2ab3c312265716a" category="doc">勒索軟體調查和補救</block>
+  <block id="5fc3b357b1d717af828e2f0b8e8d1b63" category="paragraph">了解如何使用StorageGRID在可能發生勒索軟體攻擊後調查和修復儲存桶。</block>
+  <block id="fb02d1fdd97c1de37e79fe677705abdc" category="paragraph">在StorageGRID 12.0 中，新增了新的分支儲存桶功能，以擴展版本控制對於勒索軟體防禦的實用性。分支儲存桶提供對儲存桶中物件的訪問，因為這些物件在某個時間存在，但前提是它們仍然存在於儲存桶中。只能為啟用版本控制的基本儲存桶建立分支儲存桶。</block>
+  <block id="0377e64a065dd79e3c3b0136f2fc2dff" category="paragraph">這意味著如果您懷疑發生了勒索軟體攻擊，您可以建立一個讀/寫或只讀分支儲存桶，其中包含初始攻擊之前存在的所有物件和版本。您可以使用此分支儲存桶與基本儲存桶內容進行比較，以確定哪些物件發生了變更以及該變更是否為攻擊的一部分。您也可以使用分支儲存桶，在調查攻擊的同時使用乾淨的分支繼續客戶端操作。</block>
+  <block id="df25ab47e49ab21cf419efd4a8e7b62a" category="section-title">建立分支儲存桶</block>
+  <block id="6c1041a4887aae2ad770b1e75f8f2983" category="list-text">導航至基本儲存桶詳細資料頁面和分支標籤以建立分支儲存桶。</block>
+  <block id="31553973e75afadef1e506173b4d873a" category="inline-image-macro">勒索軟體保護分支創建</block>
+  <block id="c5d6037516fe29058c5b7e2c3bc7e44e" category="paragraph"><block ref="c5d6037516fe29058c5b7e2c3bc7e44e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b1514db09ecbf355f7540c3d5a8aa846" category="list-text">點擊「建立分支儲存桶」按鈕後，將開啟一個彈出窗口，其中預先填寫了與基本儲存桶關聯的區域的詳情。</block>
+  <block id="7da04a7704046d4f8a062b2b4ef21a39" category="list-text">在時間之前提供分支儲存桶名稱，並選擇要建立的分支儲存桶類型。</block>
+  <block id="4b637ff87338ace222bcd324c92c412d" category="inline-image-macro">勒索軟體保護分支定義</block>
+  <block id="032d078608542d6a5aaba483321a6836" category="paragraph"><block ref="032d078608542d6a5aaba483321a6836" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="823c94c4aec3d62c3b9c583beff41e2d" category="paragraph">在租用戶管理 UI 中建立儲存桶時，您可以啟用物件鎖定並配置預設保留模式和保留期限。配置後，這將為提取到該儲存桶的每個物件設定最小物件鎖定保留。</block>
+  <block id="23bb66f33d7708fb4737c9abcb7c0036" category="inline-image-macro">桶預設保留</block>
+  <block id="652e1506e67f41d4092152b43c706a46" category="paragraph"><block ref="652e1506e67f41d4092152b43c706a46" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c2c748e97c9533bd396acbf6942e8d3c" category="paragraph">在StorageGRID中，S3 群組原則選項「勒索軟體緩解」使得實施此解決方案變得更加容易。在租用戶中建立使用者群組時，選擇群組權限後，可以看到這個可選策略。</block>
+  <block id="566d95c279a994cefc195a3bc6feda02" category="list-text">Couchbase 企業分析 2.0</block>
+  <block id="7e9347093bb8278ac869aa31a11a218b" category="list-text">Entrust 加密安全平台 v10.4.5</block>
+  <block id="268b0a8477c2af1e3b3d3310770f2fac" category="list-text">Thales CipherTrust Manager 2.15</block>
+  <block id="6019daac696a31bfa7cd07a318eef4ab" category="list-text">Thales CipherTrust Manager 2.16</block>
+  <block id="9f5bec1f26dbecbef32d6666b34e94ce" category="list-text">泰雷茲密碼信任管理器 2.20</block>
+  <block id="a0494c9ba8489e20c81a8ea6e4148087" category="summary">經過StorageGRID 12.0 驗證的第三方解決方案</block>
+  <block id="6cc606f14656cbb442a63e4161acdda1" category="doc">StorageGRID 12.0 經過驗證的第三方解決方案</block>
+  <block id="4d593b1c9d376d70df101d733ef0edeb" category="paragraph">以下第三方解決方案已驗證可與StorageGRID 12.0 搭配使用。  + 如果您要尋找的解決方案未列出，請聯絡您的NetApp客戶代表。</block>
+  <block id="1ff1ecc0a00db8ce6a45cf5a59758ae8" category="list-text">Hashicorp Vault 1.20.2</block>
+  <block id="3d86333b4e6bf41c7f72c11dab395ada" category="paragraph">請務必閱讀產品文檔<block ref="011dc6ff3c4a6db4449338299b84c9c4" category="inline-link-rx"></block>和<block ref="95586e7e210cd866b1b3ef439db8269a" category="inline-link-rx"></block>在你開始之前。 Veeam 提供了計算器，用於了解 Veeam 基礎架構的大小和容量需求，這些計算器應在確定StorageGRID解決方案的大小之前使用。請務必在 Veeam Ready Program 網站上查看 Veeam- NetApp驗證的配置，以了解<block ref="27e44db2d47a236831b6854277703ed2" category="inline-link-rx"></block>。</block>
+  <block id="069753b99e74f90808529a7c5d7daf12" category="paragraph">對於 Veeam 部署，建議使用具有最新修補程式的NetApp StorageGRID 11.9 或 12.0 版本。始終建議保持最新狀態並為StorageGRID系統應用最新的修補程式。</block>
+  <block id="c6694e6a36a82baef605b65840d528d3" category="paragraph">StorageGRID是一個安全的多租戶儲存系統。建議為 Veeam 工作負載建立專用租用戶。可以選擇分配儲存配額。作為最佳實踐，啟用「使用自己的身分來源」。使用適當的密碼保護租用戶根管理使用者。  Veeam Backup 12 要求 S3 儲存桶具有強一致性。 StorageGRID提供在儲存桶層級配置的多個一致性選項。對於 Veeam 從多個位置存取資料的多站點部署，請選擇「strong-global」。如果 Veeam 備份和還原僅在單一網站進行，則一致性等級應設定為「strong-site」。有關存儲桶一致性級別的更多信息，請查看<block ref="471b795f7b9c4f86c52c352a67c7fe9d" category="inline-link-rx"></block>。若要使用StorageGRID進行 Veeam 不變性備份，必須在全域啟用 S3 物件鎖，並在儲存桶建立期間在儲存體桶上進行設定。</block>
+  <block id="959e62b9b0fc1c666b21eed72b447f73" category="section-title">刪除效能</block>
+  <block id="b82bdbce10c1a5ad6c2782c029d8f5b3" category="paragraph">Veeam 提供刪除請求率調整和備份刪除過程的調度。為了進一步調整刪除效能，您可以停用同步刪除並讓 ILM 掃描器管理物件的最終刪除。</block>
+  <block id="9db01025c7dd770b62aa490b84f26dbf" category="paragraph">停用同步刪除的步驟</block>
+  <block id="40a34fdb345c60d9e52d2fdec4de960b" category="list-text">開啟StorageGRID網格管理器。</block>
+  <block id="a848fe820455053fa78fa430e53d18b7" category="list-text">在右上角，選擇問號，然後選擇 API 文件。</block>
+  <block id="0fee86ef6ab6f938fb7221dfb48b1920" category="list-text">在右上角，點擊私有 API 文件頁面連結。</block>
+  <block id="10d835ec2403204843587df738547692" category="list-text">擴展 ilm-advanced。</block>
+  <block id="935395acb0b3321fd683c55572f853b7" category="list-text">選擇 GET ilm-advanced。</block>
+  <block id="bdf9196159f6cefb95abcc700d206bd5" category="list-text">選擇“試用”，然後“執行”。</block>
+  <block id="89443af1b0e5a52dc078333bbcf54440" category="list-text">查看響應結果。</block>
+  <block id="a8525aee7f3ded6528728b159a94a020" category="list-text">如果值為空，則表示正在使用預設的 ilm-advanced 值。</block>
+  <block id="5122601686c64464c580425383abbb4b" category="list-text">如果值不為空，則表示自訂 ILM 高階值正在使用中。複製「資料」之後的所有輸出：，從 { 開始直到倒數第二個 }。</block>
+  <block id="9cb167e16de1fef5285e447cd76e428f" category="list-text">將其保存在某些文字編輯器中。</block>
+  <block id="8a651b733e43788e6c813c286a2ed976" category="paragraph">回應範例：</block>
+  <block id="4391ba15907eebfee0adf806a8dcbb57" category="inline-image-macro">取得 ILM-Advanced 輸出</block>
+  <block id="02375d3ba30ad7e7b6188a3fb7c50253" category="paragraph"><block ref="02375d3ba30ad7e7b6188a3fb7c50253" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="da3b3fa74a3f59673b176777e92c53e6" category="list-text">選擇 PUT ilm-advanced。</block>
+  <block id="e583677d0f863f776cc7eb3375dd1db8" category="list-text">選擇「試用」開始編輯 API 主體。</block>
+  <block id="f4dec7b03d22b22be9339cb385c8bda7" category="list-text">預設情況下，API 主體將包含預設值，而不包含任何先前配置的自訂值。這就是為什麼執行步驟 5-7 非常重要的原因。</block>
+  <block id="1826c2320ed102476fc8639274457faa" category="list-text">如果在步驟 5-7 中發現非預設值，則以步驟 7 中儲存的輸出取代 API 主體。。否則，如果步驟 5-7 中的值為空，則保留 API 主體不變。</block>
+  <block id="db20741d4a0fd79377176d9f0c27a449" category="list-text">在API主體框中調整以下參數：</block>
+  <block id="c70ee322074c7ff069e47bdf277b0bc9" category="list-text">將同步值設定為false。</block>
+  <block id="39f16eed664a0d14ca7eed8168c925c9" category="paragraph">API 正文範例：</block>
+  <block id="a28845646bec2b91f9f274834f0d50a3" category="inline-image-macro">PUT ILM-進階輸入</block>
+  <block id="2ddf65edc50439641a52e9989d183b78" category="paragraph"><block ref="2ddf65edc50439641a52e9989d183b78" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fdeb9c6d7926c26919e743680495686d" category="list-text">完成後，選擇執行</block>
+  <block id="6ec8fe59ca5dd4f7e220fd8d487c1089" category="inline-link-macro">NetApp StorageGRID產品文檔</block>
+  <block id="2abc8e3d38a540d69dd7d82668037370" category="list-text"><block ref="2abc8e3d38a540d69dd7d82668037370" category="inline-link-macro-rx"></block></block>
+  <block id="f7dcf34d77dc4c11838f7765c7dcd650" category="sidebar">了解StorageGRID負載平衡器的作用</block>
+  <block id="afe2571f5b9a6df9bd38c515313c5337" category="sidebar">使用分支儲存桶進行勒索軟體防禦調查</block>
 </blocks>

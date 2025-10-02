@@ -16,11 +16,11 @@ summary: 探索 StorageGRID 物件儲存解決方案的整合式安全功能。
 [role="lead"]
 探索 StorageGRID 物件儲存解決方案的整合式安全功能。
 
-這是 NetApp ® StorageGRID ® 中許多安全功能的總覽、涵蓋資料存取、物件和中繼資料、管理存取權和平台安全性。此更新已更新為包含 StorageGRID 11.9 所發佈的最新功能。
+這是NetApp® StorageGRID® 中眾多安全功能的概述，涵蓋資料存取、物件和元資料、管理存取和平台安全。它已更新，包含StorageGRID 12.0 發布的最新功能。
 
 安全性是 NetApp StorageGRID 物件儲存解決方案不可或缺的一部分。安全性特別重要、因為許多適合物件儲存的豐富內容資料類型、本質上也很敏感、而且必須遵守法規與法規。隨著 StorageGRID 功能不斷進化、軟體提供許多安全功能、對於保護組織的安全狀態和協助組織遵循業界最佳實務實務非常寶貴。
 
-本白皮書概述 StorageGRID 11.9 中的許多安全功能、分為五大類：
+本文概述了StorageGRID 12.0 中的眾多安全功能，分為五類：
 
 * 資料存取安全功能
 * 物件和中繼資料安全功能
@@ -29,7 +29,7 @@ summary: 探索 StorageGRID 物件儲存解決方案的整合式安全功能。
 * 雲端整合
 
 
-本白皮書旨在提供安全性資料表、並未詳細說明如何設定系統、以支援中列舉的預設未設定的安全性功能。 https://docs.netapp.com/us-en/storagegrid-118/harden/index.html["StorageGRID 強化指南"^]可在正式頁面上 https://docs.netapp.com/us-en/storagegrid-118/["StorageGRID 文件"^] 找到。
+本文旨在成為一份安全資料表——它沒有詳細說明如何配置系統以支援其中列舉的預設未配置的安全功能。這 https://docs.netapp.com/us-en/storagegrid/harden/index.html["StorageGRID 強化指南"^]可在官方 https://docs.netapp.com/us-en/storagegrid/["StorageGRID 文件"^]頁。
 
 除了本報告中所述的功能外， StorageGRID 還遵循 https://www.netapp.com/us/legal/vulnerability-response.aspx["NetApp 產品安全性弱點回應與通知原則"^]。報告的弱點會根據產品安全性事件回應程序進行驗證及回應。
 
@@ -42,7 +42,7 @@ NetApp StorageGRID 為要求嚴苛的企業物件儲存使用案例提供進階�
 若要深入瞭解本文所述資訊、請檢閱下列文件和 / 或網站：
 
 * NetApp StorageGRID ： SEC 17a-4(f) 、 FINRA 4511 （ c ）和 CFTC 1.31 （ c ） - （ d ）法規遵循評估 https://www.netapp.com/media/9041-ar-cohasset-netapp-storagegrid-sec-assessment.pdf[]
-* StorageGRID 11.9 文件頁面 https://docs.netapp.com/us-en/storagegrid-119/[]
+* StorageGRID文件頁面https://docs.netapp.com/us-en/storagegrid/[]
 * NetApp 產品文件 https://www.netapp.com/support-and-training/documentation/[]
 
 
