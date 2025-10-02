@@ -3343,4 +3343,5 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="2abc8e3d38a540d69dd7d82668037370" category="list-text"><block ref="2abc8e3d38a540d69dd7d82668037370" category="inline-link-macro-rx"></block></block>
   <block id="f7dcf34d77dc4c11838f7765c7dcd650" category="sidebar">了解StorageGRID負載平衡器的作用</block>
   <block id="afe2571f5b9a6df9bd38c515313c5337" category="sidebar">使用分支儲存桶進行勒索軟體防禦調查</block>
+  <block id="1b0f701303c9287515b1ad814889dfbb" category="sidebar">StorageGRID 12.0</block>
 </blocks>
