@@ -381,15 +381,10 @@
   <block id="d55a0f29052225dac98466ee9b92f4a1" category="doc">NetApp StorageGRID 產品文件</block>
   <block id="22c5de521c44ad2015e5ce711b46bebf" category="paragraph">您可以在StorageGRID 這裡找到每個NetApp版本的完整文件：</block>
   <block id="dc2c61abf0171b5abd61211f37552e18" category="inline-link">部分11.6% StorageGRID</block>
-  <block id="1f24789c68b06d446e0ebee3e2b81c66" category="list-text"><block ref="1f24789c68b06d446e0ebee3e2b81c66" category="inline-link-rx"></block></block>
   <block id="c7bb2251d54b13e3891aea37cdb54cd1" category="inline-link">部分11.5 StorageGRID</block>
-  <block id="1a433578de1b07641fbd7e4fa310d058" category="list-text"><block ref="1a433578de1b07641fbd7e4fa310d058" category="inline-link-rx"></block></block>
   <block id="32e750dc43168f85f193ec7b20f6e5c4" category="inline-link">部分11.4 StorageGRID</block>
-  <block id="ab11b93693987b00bd58948f5b72c34a" category="list-text"><block ref="ab11b93693987b00bd58948f5b72c34a" category="inline-link-rx"></block></block>
   <block id="37ef4cafeb8ccc9607db85cd3fab57f8" category="inline-link">部分11.3% StorageGRID</block>
-  <block id="c18e44cb0cb6bc2f462d1e006c443b06" category="list-text"><block ref="c18e44cb0cb6bc2f462d1e006c443b06" category="inline-link-rx"></block></block>
   <block id="13947b810d54d07e62ef2873b8620fe7" category="inline-link">部分11.2 StorageGRID</block>
-  <block id="fa96f2375d9c1354445489d7c5ab86dc" category="list-text"><block ref="fa96f2375d9c1354445489d7c5ab86dc" category="inline-link-rx"></block></block>
   <block id="7c9bea5c137c35be356406479a949aef" category="summary">物件鎖定提供WORM模型、可防止物件遭到刪除或覆寫。物件鎖定的實作係由Cohasset進行評估、以協助符合法規要求、支援合法持有和符合法規的物件保留模式、以及預設的儲存貯體保留原則。StorageGRID</block>
   <block id="33978f74a8897c3da7935e1ac3118552" category="doc">測試並示範StorageGRID S3物件鎖定功能</block>
   <block id="1d1d2f802d9cc6b6eb57739286faf4b3" category="paragraph">物件鎖定提供WORM模型、可防止物件遭到刪除或覆寫。物件鎖定的實作係由Cohasset進行評估、以協助符合法規要求、支援合法持有和符合法規的物件保留模式、以及預設的儲存貯體保留原則。StorageGRID</block>
@@ -1080,8 +1075,6 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="9283e244bcd98f1bdd350c1b4f2da148" category="inline-link">StorageGRID 應用裝置</block>
   <block id="eff26b146dbf07b93a3af4954ea77c6d" category="list-text"><block ref="eff26b146dbf07b93a3af4954ea77c6d" category="inline-link-rx"></block></block>
   <block id="0c116dd1f4daf14c460a0c77a9e0e674" category="inline-link">StorageGRID 11.8</block>
-  <block id="6a9dbde708e64ed0ece8a4d0b0dc1d32" category="list-text"><block ref="6a9dbde708e64ed0ece8a4d0b0dc1d32" category="inline-link-rx"></block></block>
-  <block id="fca3b43498fce810dfcc0f52e38e42a6" category="list-text"><block ref="fca3b43498fce810dfcc0f52e38e42a6" category="inline-link-rx"></block></block>
   <block id="e9868d7697657696cac82d1e0b5159e2" category="paragraph">_ 作者： Aron Klein_</block>
   <block id="f1b702f1ec8f237dcd7b5c954b6d27b8" category="paragraph">_ 作者： Angela Cheng _</block>
   <block id="3ffee984625220881b57c95936a54d55" category="paragraph">_ 作者： Siegfried HEPP 和 Aron Klein_</block>
@@ -2945,7 +2938,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="1fd1f9584361048bdbc61a65caa8c999" category="paragraph">* 12天*</block>
   <block id="973aefb7cd4fa1181692b6c7dab8336d" category="paragraph">* 12.5天*</block>
   <block id="19c95a26acdda408cd23f4a3d3816d3a" category="paragraph">* 17天*</block>
-  <block id="83f15d0c42eec3db2e4b64cc94344c40" category="list-text"><block ref="83f15d0c42eec3db2e4b64cc94344c40" category="inline-link-rx"></block></block>
   <block id="79f8aaf5f753858807e5b593351a00c9" category="paragraph">本指南提供使用 Amazon OpenSearch 服務或內部部署 Elasticsearch 來設定 NetApp StorageGRID 搜尋整合服務的詳細說明。</block>
   <block id="1ec648377638e043bfb89eccc1053188" category="inline-link">YouTube 影片</block>
   <block id="a5e3fa36313df10d074a9fd1034514d3" category="paragraph">使用 StorageGRID 系統記錄轉送功能，您可以設定外部系統記錄伺服器來收集和分析 StorageGRID 記錄訊息。Elk（Elasticsearch、Logstash、Kibana）已成為最受歡迎的記錄分析解決方案之一。觀看<block ref="a42387db058ee8ea3a8dcc51c8812963" category="inline-link-rx"></block> 以檢視範例 elk 組態、以及如何使用它來識別和疑難排解失敗的 S3 要求。StorageGRID 11.9 支援將負載平衡器端點存取記錄匯出至外部 Syslog 伺服器。請觀看此影片<block ref="76980d5900b8bc5b66d872ad50141cf3" category="inline-link-rx"></block>，深入瞭解這項新功能。本文提供Logstash組態、Kibana查詢、圖表和儀表板的範例檔案、協助您快速開始StorageGRID 進行資訊記錄管理和分析。</block>
@@ -2988,7 +2980,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="21c24fa624a44fa1b3fc1c27be1061d5" category="list-text">在「意見」區段中，寫下：「我的帳戶電子郵件地址是 _ 您的電子郵件地址 _ 。我想讓潛在客戶存取下載 StorageGRID 評估軟體。」</block>
   <block id="39d3f037c74b725c5adc98d16fbec2f8" category="summary">本技術報告概述 StorageGRID 複寫策略的實作，以在站台發生故障時達成 0 的恢復點目標（ RPO ）。</block>
   <block id="810a30cfe50c0f270cee71b650ceffd6" category="doc">使用 StorageGRID 實現零 RPO ：完整的多站台複寫指南</block>
-  <block id="ea76d032379d2a88d28b72edd9e36564" category="paragraph">本技術報告提供完整指南，協助您實作 StorageGRID 複寫策略，以在站台發生故障時達成零的還原點目標（ RPO ）。本文件詳細說明 StorageGRID 的各種部署選項，包括多站台同步複寫和多網格非同步複寫。它說明如何設定 StorageGRID 的資訊生命週期管理（ ILM ）原則，以確保資料在多個位置上的耐用性和可用度。此外，本報告還涵蓋效能考量，故障案例和恢復程序，以維持不中斷的用戶端作業。本文件的目標是提供資訊，以確保資料可存取且一致，即使在站台發生完整故障時，也能同時運用同步與非同步複寫技術。</block>
   <block id="606eab719053286d71dc6722565f39cc" category="section-title">StorageGRID 總覽</block>
   <block id="c72cc4a7cc108f0e65b3b2234a5451f6" category="paragraph">NetApp StorageGRID 是物件型儲存系統，支援業界標準的 Amazon Simple Storage Service （ Amazon S3 ） API 。</block>
   <block id="bbcde1e5e5d61a464205617230c533f9" category="section-title">StorageGRID 擴充</block>
@@ -3003,14 +2994,11 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="9b5561f349b0418797ca7104c00c80b4" category="section-title">物件資料和中繼資料</block>
   <block id="fb56e39711fbf97f3cff481cefe05b4f" category="paragraph">使用物件儲存時、儲存單元是物件、而非檔案或區塊。不同於檔案系統或區塊儲存設備的樹狀階層、物件儲存設備會以無結構化的平面配置來組織資料。物件儲存設備可將資料的實體位置與用來儲存及擷取該資料的方法分離。</block>
   <block id="0f2657877abfd62c76270fc9fefa04e5" category="paragraph">物件型儲存系統中的每個物件都有兩個部分：物件資料和物件中繼資料。</block>
-  <block id="3e02806edf9cf9fe11e3ce2756d6b716" category="list-text">物件資料代表實際的基礎資料，例如照片，影片或醫療記錄。</block>
   <block id="fe6177858a7ffc8599a9d9a1a4ea2f1f" category="list-text">物件中繼資料是指描述物件的任何資訊。</block>
   <block id="5744c4629d3afd78a5fdd52800e97f1c" category="paragraph">利用物件中繼資料來追蹤整個網格中所有物件的位置、並長期管理每個物件的生命週期。StorageGRID</block>
   <block id="63079dc7d4ba0f0950865fd53b883a11" category="paragraph">物件中繼資料包含下列資訊：</block>
-  <block id="e5a918f437a7af27afdce3def49278bc" category="list-text">每個物件複本或抹除編碼片段的目前儲存位置。</block>
   <block id="91b08644ef3e50381478d7f42ab32f1d" category="list-text">任何與物件相關聯的自訂使用者中繼資料金鑰值配對。</block>
   <block id="23f54b9b547ce8f5c783a1d802cf64a9" category="list-text">對於 S3 物件，任何與物件相關的物件標籤金鑰值配對</block>
-  <block id="3dbdb43407d55e92a14a85f1d6388c70" category="list-text">對於分段物件和多部分物件、區段識別碼和資料大小。</block>
   <block id="e6ae6f0a4a18ef27ea21dbe9449108a4" category="inline-link">管理物件中繼資料儲存</block>
   <block id="a60b56c4fc355f3dd23a1f66e3cc0b5f" category="paragraph">物件中繼資料可自訂且可擴充、使應用程式更靈活地使用。如需 StorageGRID 儲存物件中繼資料的方式及位置的詳細資訊，請前往<block ref="7d35d2baf4d39208e4f52175d4b30104" category="inline-link-rx"></block>。</block>
   <block id="2fd9637c3fe0d3bb7ddefe22d29b5161" category="paragraph">StorageGRID 的資訊生命週期管理（ ILM ）系統用於協調 StorageGRID 系統中所有物件資料的放置，持續時間和擷取行為。ILM 規則決定 StorageGRID 如何使用物件的複本來儲存物件，或是在節點和站台之間對物件進行銷毀編碼。此 ILM 系統負責在網格內保持物件資料一致性。</block>
@@ -3022,23 +3010,17 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="7f96c68c60ab5bbabacca964ae3b8ed1" category="paragraph">預設一致性是在全網格層級定義。使用者可以隨時變更貯體層級的一致性。</block>
   <block id="201f092d3f717ae191dd3f1a8fbfe160" category="paragraph">StorageGRID 提供的貯體一致性選項包括：</block>
   <block id="34d51dd8353a96472efa22d6a61f77ac" category="list-text">* 全部 * ：提供最高等級的一致性。網格中的所有節點都會立即接收資料，否則要求將會失敗。</block>
-  <block id="23cf7178bab8a1e4584c67dbdc4d19df" category="list-text">*Strong-globall* ：保證所有網站上所有用戶端要求的寫入後讀取一致性。</block>
   <block id="9b2e1b371e348127ef43740bbc2f852d" category="list-text">*Strong-site* ：保證網站內所有用戶端要求的寫入後讀取一致性。</block>
   <block id="75d41ce194701530c0861e0d0a3cd8f5" category="list-text">* 新寫入後讀取 * （預設）：提供新物件的寫入後讀取一致性，以及物件更新的最終一致性。提供高可用度與資料保護保證。建議大多數情況下使用。</block>
   <block id="c0a48852ac050900e86f2edb977893ac" category="list-text">* 可用 * ：提供新物件和物件更新的最終一致性。對於 S3 貯體、請僅視需要使用（例如、包含很少讀取的記錄值之貯體、或用於對不存在的金鑰執行 head 或 Get 作業）。S3 FabricPool 儲存區不支援。</block>
   <block id="2656a89324be33e667f0895f0c93e2fb" category="section-title">物件資料一致性</block>
   <block id="1f49fb5ccaeb19371716c5dcf6ebba64" category="paragraph">雖然中繼資料會在站台內及站台之間自動複寫，但物件資料儲存位置的決策取決於您。物件資料可以儲存在站台內和跨站台的複本中，在站台內或跨站台進行銷毀編碼，或是組合或複本，以及銷毀編碼儲存配置。ILM 規則可套用至所有物件，或僅篩選至特定物件，貯體或租戶。ILM 規則定義物件的儲存方式，複本和 / 或銷毀編碼，物件在這些位置儲存的時間，複本或銷毀編碼配置的數量應變更，或位置應隨著時間而變更。</block>
   <block id="6f3609d6439df769d705e58886d0a612" category="paragraph">每個 ILM 規則都會設定三種擷取行為之一來保護物件：雙重認可，平衡或嚴格。</block>
-  <block id="936750596dd5725d654d59c663df965a" category="paragraph">雙重認可選項會立即在網格中的任何兩個不同儲存節點上製作兩份複本，並將要求傳回給用戶端。節點選擇會在要求的站台內嘗試，但在某些情況下可能會使用另一個站台的節點。物件會新增至 ILM 佇列，以便根據 ILM 規則進行評估和放置。</block>
-  <block id="1ab2be0a3696e2c2b0b8bd09470e4fd1" category="paragraph">平衡選項會立即根據 ILM 原則評估物件，並在將要求成功傳回用戶端之前同步放置物件。如果因停機或儲存設備不足而無法立即符合 ILM 規則以符合放置要求，則會改用雙重提交。問題解決後， ILM 會根據定義的規則自動放置物件。</block>
-  <block id="2215555fc86a611cd3e2dd4bc4066aff" category="paragraph">Strict 選項會立即根據 ILM 原則評估物件，並在將要求成功傳回用戶端之前同步放置物件。如果因停機或儲存設備不足而無法立即符合 ILM 規則，以符合放置要求，則要求將會失敗，用戶端將需要重試。</block>
   <block id="1c72ef556b5fc669fadc14ae383d37cf" category="section-title">負載平衡</block>
   <block id="babc08c413a52242b7d338a9958eddf7" category="paragraph">StorageGRID 可透過整合式閘道節點，外部 3^rd^ 協力廠商負載平衡器， DNS 循環配置資源，或直接部署至儲存節點，以進行用戶端存取。您可以在站台中部署多個閘道節點，並在高可用度群組中進行設定，以在閘道節點中斷時提供自動容錯移轉和容錯回復。您可以在解決方案中結合負載平衡方法，為解決方案中的所有站台提供單一存取點。</block>
-  <block id="0c1ba34ce07cdb4dcf9dfb6117dce295" category="paragraph">根據預設，閘道節點會在閘道節點所在站台的儲存節點之間平衡負載。StorageGRID 可設定為允許閘道節點使用多個站台的節點來平衡負載。此組態會增加這些站台之間的延遲，以回應用戶端要求的延遲。只有當用戶端可以接受總延遲時，才應設定此選項。</block>
   <block id="434ca8d9b2383ed26fb519f93dc2bb36" category="paragraph">若要在物件儲存系統中實現零恢復點目標（ RPO ），在故障發生時必須：</block>
   <block id="e01ab96fbda93c5ece52f522eb9e97ee" category="list-text">中繼資料和物件內容都同步，而且被視為一致的</block>
   <block id="855d870be57ab487bc6c3c7dd6177ade" category="list-text">即使發生故障，物件內容仍可存取。</block>
-  <block id="3144181f53a9b5a1f7faaa68687ce053" category="paragraph">儲存系統中的物件是根據資訊生命週期管理（ ILM ）規則來儲存，這些規則決定資料在整個生命週期內的儲存方式和位置。對於同步複寫，您可以考慮嚴格執行或平衡執行。</block>
   <block id="ba76eb24bf3904a1670b5bea1f9b483c" category="list-text">零 RPO 必須嚴格執行這些 ILM 規則，因為它能確保物件置於定義的位置，不會有任何延遲或後退，維持資料可用度和一致性。</block>
   <block id="d30ec037efde149da7fc42696aac2a3a" category="list-text">StorageGRID 的 ILM Balance 擷取行為可在高可用度與恢復能力之間取得平衡，讓使用者即使在站台發生故障時也能繼續擷取資料。</block>
   <block id="3e1fd95f52676bdecea3672d3961028d" category="inline-link">StorageGRID 負載平衡器技術報告</block>
@@ -3049,16 +3031,12 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="b0ce1d579493e334271a3fd059b9fee8" category="list-text">網格內複寫包括同步和非同步複寫，可透過 ILM 擷取行為和中繼資料一致性控制進行設定。</block>
   <block id="1011324ed3564a620bc5485d84c2022b" category="list-text">網格間複寫僅為非同步複寫。</block>
   <block id="3eb3b2b49a459eec5258a23b3937ec50" category="section-title">單一網格多站台部署</block>
-  <block id="18b742c71481166d728314dedbf8266d" category="paragraph">在雙站台 StorageGRID 解決方案中，每個物件至少有兩個複本或 3 個 EC 區塊，所有中繼資料有 6 個複本。故障恢復後，中斷的更新會自動同步至恢復的站台 / 節點。只有 2 個站台，在故障情況下，不可能達到零 RPO ，而超出整個站台損失。</block>
   <block id="ea45bf8dbcdbd39284bd9bf6e419d8c1" category="inline-image-macro">雙站台 StorageGRID 系統</block>
   <block id="3d6a8c14b8eb946f5a4a31a10e28d011" category="paragraph"><block ref="3d6a8c14b8eb946f5a4a31a10e28d011" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f510bd2ad54651fe5fdf2ba313fa7e94" category="paragraph">在三個以上站台的 StorageGRID 解決方案中，每個物件至少有 3 個複本或 3 個 EC 區塊，所有中繼資料有 9 個複本。故障恢復後，中斷的更新會自動同步至恢復的站台 / 節點。有了三個以上的站台，就能達到零 RPO 。</block>
   <block id="5fe817ef605904371e41e6113fe6648d" category="inline-image-macro">三站台 StorageGRID 系統</block>
   <block id="9a4f522f8b89c72d7c30c89d4a032d91" category="paragraph"><block ref="9a4f522f8b89c72d7c30c89d4a032d91" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a7037a59646209bbbc4c7d0db625f106" category="paragraph">多站台故障案例</block>
   <block id="e139a585510a502bbf1841cf589f5086" category="cell">故障</block>
-  <block id="afd872554f9681235471a2c5883b0d6c" category="cell">2 站台結果</block>
-  <block id="58dff619f0bd9804be1692a0d0966f7e" category="cell">3 個以上的網站結果</block>
   <block id="64b99653800cfbabb38664b747ab2e15" category="cell">單節點磁碟機故障</block>
   <block id="55e72c5da46cbe937d4e50af7f3af3fb" category="cell">每個應用裝置使用多個磁碟群組，每個群組至少可維持 1 個磁碟機故障，而不會中斷或遺失資料。</block>
   <block id="dd83dd9b74267310c6c462ca4b20837d" category="cell">單一站台發生單一節點故障</block>
@@ -3069,25 +3047,15 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="869217d84c1d082654dddf1286388adf" category="cell">作業會導向所有其他站台，並保持不中斷且不會遺失資料。</block>
   <block id="23d194cbaea547a93ca3ed3bf8ff8c2d" category="cell">在多個站台發生單一節點故障</block>
   <block id="982425d0b8d4c79df7b4e61bc8f0908c" category="paragraph">在下列情況下不會中斷或遺失資料：</block>
-  <block id="ec173baf3623010a67af1cb0befd6e44" category="list-text">網格中至少存在一個複本</block>
   <block id="9636cc5c20fef7cd2a97760c5bfb72e5" category="list-text">網格中有足夠的 EC 區塊</block>
   <block id="5fafe5331ccf1a9f240018258ab857f4" category="paragraph">若發生下列情況，作業中斷及資料遺失風險：</block>
-  <block id="8508c1de63d092545ea7ac8b64f188a3" category="list-text">複本不存在</block>
   <block id="d8d38aa1b3bfeb8de5a355a0e159518b" category="list-text">EC Chucks 不足</block>
   <block id="002796052352c300893e7cea45483eee" category="list-text">沒有足夠的 EC Chucks 來擷取物件</block>
   <block id="197a78fa8f3bc319da86384db97d8b45" category="cell">單一站台故障</block>
-  <block id="6502d7867cfa9f73685c72f1ab1a97f3" category="cell">用戶端作業將會中斷，直到故障解決為止，或是將貯體一致性降低至強式站台或更低站台，以使作業成功，但不會遺失資料。</block>
   <block id="6dd78db15f76edcd689c5f34b1a044ac" category="cell">單一站台加上單一節點故障</block>
-  <block id="4ae6253dd23ad200eac56c1ae66c57ce" category="cell">用戶端作業將會中斷，直到故障解決為止，或是將貯體一致性降低至新寫入後讀取或更低，以使作業成功且可能遺失資料。</block>
   <block id="d7daa36acb9042a724041fb6a618e414" category="cell">單一站台加上每個剩餘站台的節點</block>
-  <block id="606a4088cd9679be9ab9565a53f94f98" category="cell">如果無法達到中繼資料複本仲裁，且資料可能遺失，作業將會中斷。</block>
   <block id="f11f682e7973cb21186b5b560ca1ae7e" category="cell">多站台故障</block>
-  <block id="fce0d087275e60042477aa5199ce1011" category="cell">如果至少有 1 個站台無法完整恢復，則不會遺失任何營運站台保留的資料。</block>
-  <block id="4a80a85cf7dcccd203aa17cad8b32f61" category="cell">如果無法達到中繼資料複本仲裁，作業將會中斷。只要至少保留 1 個站台，就不會遺失任何資料。</block>
   <block id="a2fc7edce2b8d377a5db40f745cd186e" category="cell">站台的網路隔離</block>
-  <block id="6ce70a008903356746c99f083916cf62" category="cell">用戶端作業將會中斷，直到故障解決為止，或是將貯體一致性降低至強式站台或更低站台，以使作業成功，但不會遺失資料</block>
-  <block id="a832d31461ba76ddc892c57841a52f92" category="paragraph">隔離站台的作業將會中斷，但不會遺失資料</block>
-  <block id="7e285c7404a1098df2068ce3cd5b70db" category="paragraph">不會中斷其餘站台的作業，也不會遺失資料</block>
   <block id="15fd08e71edb235c1f3886027abe22b0" category="section-title">多站台多網格部署</block>
   <block id="96045b1c0304cef753cc8d0ef8b0f5d4" category="paragraph">此解決方案將使用四個位置，分為兩個區域。區域 1 將包含網格 1 的 2 個儲存網站，做為區域的主要網格，以及網格 2 的中繼資料網站。區域 2 將包含網格 2 的 2 個儲存網站，做為區域的主要網格，以及網格 1 的中繼資料網站。在每個區域中，相同的位置可以容納該區域主要網格的儲存網站，以及其他區域網格的中繼資料唯一網站。只使用中繼資料節點做為第三個站台，可提供中繼資料所需的一致性，而不會複製該位置中物件的儲存。</block>
   <block id="54c747b99263ca48f4db2b58d9d3ecee" category="inline-image-macro">四站台多網格解決方案</block>
@@ -3221,7 +3189,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="f69309997a74d84dd39f53923232f102" category="summary">StorageGRID 中的政策與權限。</block>
   <block id="61e1800dd7d03bc7509039ca51abaa94" category="paragraph">StorageGRID 在多個位置提供單一命名空間，並根據資訊生命週期管理原則（ ILM ）提供不同的服務層級。透過這些生命週期策略，您可以優化資料在整個生命週期中的儲存位置。</block>
   <block id="ee46b302eeb000f796002cd99f7fccca" category="paragraph">StorageGRID 提供可設定的耐用度，以及您在本機和地理區域分散式解決方案中資料的可用度。無論您的資料是在本地還是在公有雲中，整合的混合雲工作流程都允許您的企業利用雲端服務，例如 Amazon Simple Notification Service (Amazon SNS)、Google Cloud、Microsoft Azure Blob、Amazon S3 Glacier、Elasticsearch 等。</block>
-  <block id="639932e1f3f1e48c7c66a3c0d26d7c95" category="paragraph">StorageGRID 節點可以部署為：</block>
   <block id="2ef98a36e008b10819c92b90ab9fb134" category="list-text">僅元資料節點最大化物件數量</block>
   <block id="314be57ec0bf12b0f7b8fad48b9e7d0d" category="list-text">僅儲存物件的節點，最大化物件空間</block>
   <block id="b67abdd7987281e93fb88e16a9dede52" category="list-text">組合元資料和物件儲存節點，新增物件計數和物件空間</block>
@@ -3232,22 +3199,18 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="0987bb97934aa3a8ea668bd0c91ce52d" category="sidebar">StorageGRID中的安全功能 - 保護物件儲存中的資料和元數據</block>
   <block id="243c98f4ed7a2d56d634e9cc955fda88" category="sidebar">StorageGRID災難復原 - 使用 Veritas Enterprise Vault 設定StorageGRID進行站點故障轉移</block>
   <block id="6296eecae5fd6a7ad4c379ebb94e6ecf" category="section-title">刪除沒有其他版本的刪除標記，為帶有「accounts_ 前綴」的物件保留 4 個非當前版本和至少 30 天的歷史記錄，為所有其他物件版本保留 2 個版本和至少 10 天的歷史記錄。</block>
-  <block id="3c8cdd15a6a530650da7bd29f3a5558a" category="paragraph">最小StorageGRID部署由單一站點中的一個管理節點和 3 個儲存節點組成。單一網格最多可以成長到 220 個節點。  StorageGRID可以部署為單一站點，也可以擴展到 16 個站點。</block>
   <block id="fc7ef6488361c9c97f3d756ad91297b1" category="paragraph">管理節點包含管理介面、指標和日誌記錄的中心點，並維護StorageGRID元件的配置。管理節點還包含用於 S3 API 存取的整合負載平衡器。</block>
   <block id="e75c00df26f576c96bb2702f9c563c20" category="paragraph">StorageGRID可部署為純軟體、VMware 虛擬機器設備或專用設備。</block>
   <block id="ef0ee1bddd52d01db041108f1228135e" category="paragraph">每個儲存節點都可以擴展到多 PB 容量，用於物件存儲，從而允許單一命名空間擁有數百 PB 的容量。  StorageGRID也為 S3 API 操作提供了一個稱為網關節點的整合式負載平衡器。</block>
   <block id="c79c68e59ac4365a8f57819778c2d079" category="paragraph">StorageGRID由放置在站點拓撲中的節點集合組成。  StorageGRID中的站點可以是唯一的實體位置，也可以作為邏輯結構與網格中的其他站點位於共用的實體位置。 StorageGRID站點不應跨越多個實體位置。站點代表共用的區域網路 (LAN) 基礎架構和故障域。</block>
   <block id="d0351f8bc75f9766fc04d15d94a8bd0b" category="paragraph">StorageGRID提供在節點層級和磁碟機層級擦除程式碼資料的能力。使用StorageGRID設備，我們對每個節點上儲存在該節點內所有磁碟機上的資料進行擦除編碼，從而提供本機保護，防止多個磁碟故障導致資料遺失或中斷。驅動器故障的重建在節點本地進行，不需要透過網路複製資料。</block>
   <block id="111ff3048a18a746f2160bb022a17ec3" category="paragraph">此外， StorageGRID設備使用擦除編碼方案將物件資料儲存在站點內的節點上，或分佈在StorageGRID系統中的 3 個或更多站點上，儘管 StorageGRID 的 ILM 規則可防止節點故障。</block>
-  <block id="6538e063b9a1941823d45adc0387aa3f" category="paragraph">擦除編碼提供了一種能夠以較低的開銷抵禦節點和站點故障的儲存佈局，而複製可以做同樣的事情，但開銷較大。只要滿足儲存資料塊所需的最小節點數，所有StorageGRID擦除編碼方案都可以部署在單一站點中。這意味著對於 4+2 的 EC 方案，至少需要 6 個節點可用於接收資料。</block>
   <block id="9be7d4cba47d08188ba121bdcfbf06f8" category="list-text">*Quorum Strong-global*：保證所有網站上所有客戶端請求的讀寫一致性。如果可以實現元資料副本仲裁，則可以為多個節點甚至站點故障提供一致性。</block>
   <block id="c56dabcab7c66e3a31beb8e5ec75bc45" category="list-text">QUORUM 一致性定義為儲存節點元資料副本的仲裁，其中每個站點有 3 個元資料副本。計算方法如下：1+((N*3)/2)，其中 N 為站點總數</block>
   <block id="d063e8f08673adc8df1fe6cec7b7a7bc" category="list-text">例如，3 站點網格必須至少製作 5 個副本，每個站點最多可製作 3 個副本。</block>
-  <block id="f8dd54c357440b879a762147dcc0262d" category="paragraph">透過結合本地和全域負載平衡，可以確保實現零 RTO。確保客戶端存取不間斷需要對客戶端請求進行負載平衡。 StorageGRID解決方案可以在每個站點包含許多網關節點和高可用性群組。為了即使在站點發生故障時也能為任何站點中的用戶端提供不間斷的訪問，您應該結合StorageGRID網關配置外部負載平衡解決方案。配置管理每個站點內負載的網關節點高可用性群組，並使用外部負載平衡器在高可用性群組之間平衡負載。必須配置外部負載平衡器來執行健康檢查，以確保請求僅傳送到操作站點。有關使用StorageGRID進行負載平衡的更多信息，請參閱<block ref="587298665ed077e05405d60ca7617c92" category="inline-link-rx"></block>。</block>
   <block id="08b7575fdd3926665d85a59b0d1eb1e5" category="section-title">StorageGRID的零 RPO 要求</block>
   <block id="2cc7dacd3d9a578262f5166ed6f8429b" category="paragraph">對於多站點部署，Quorum Strong Global 是首選的一致性模型，可確保元資料在所有站點之間同步，這對於滿足零 RPO 要求至關重要。</block>
   <block id="4340156e4c2f48db5faf8fe946b7b76c" category="paragraph">*多站點解決方案：* StorageGRID可讓您在網格內的多個站點之間同步複製物件。透過設定具有平衡或嚴格行為的資訊生命週期管理 (ILM) 規則，物件會立即放置在指定位置。將儲存桶一致性等級配置為 Quorum Strong Global 也將確保同步元資料複製。 StorageGRID使用單一全域命名空間，將物件放置位置儲存為元數據，因此每個節點都知道所有副本或擦除編碼片段的位置。如果無法從發出請求的站點檢索對象，則將自動從遠端站點檢索該對象，而無需故障轉移程序。</block>
-  <block id="47c37215042d2824804cb9bd9bd0b409" category="paragraph">在下列場景中， StorageGRID解決方案配置了一個可選的外部負載平衡器，用於管理整合負載平衡器高可用性群組的請求。這樣，除了 RPO 為零之外，RTO 也將為零。 ILM 配置了平衡攝取保護以實現同步放置。對於 3 個或更多站點的網格，每個儲存桶都配置有 Quorum Strong Global 一致性模型，對於少於 3 個站點的網格，則配置有強 Global 一致性。</block>
   <block id="8865f9fe613497bf0177e03d609c23d2" category="paragraph">為了新增額外的冗餘層，此場景將採用兩個StorageGRID叢集並使用跨網格複製來保持它們同步。對於此解決方案，每個StorageGRID叢集將有三個站點。兩個站點將用於物件儲存和元數據，而第三個站點將僅用於元數據。兩個系統都將配置平衡的 ILM 規則，以使用擦除編碼在兩個資料站點中同步儲存物件。儲存桶將採用 Quorum Strong Global 一致性模型進行設定。每個網格將在每個儲存桶上配置雙向跨網格複製。這提供了區域之間的非同步複製。可以選擇實作全域負載平衡器來管理兩個StorageGRID系統的整合負載平衡器高可用性群組的請求，以實現零 RPO。</block>
   <block id="80f1c748a0e0ce55abcb6571bb430d38" category="paragraph">審計日誌可以透過 syslog 匯出，從而允許 Splunk 和 ELK 等工具挖掘審計訊息。審計訊息有四種類型：</block>
   <block id="34da6679711f958e925f9b135997bbba" category="paragraph">審計日誌可以儲存在 S3 儲存桶中，以便長期保留和應用程式存取。</block>
@@ -3344,4 +3307,43 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="f7dcf34d77dc4c11838f7765c7dcd650" category="sidebar">了解StorageGRID負載平衡器的作用</block>
   <block id="afe2571f5b9a6df9bd38c515313c5337" category="sidebar">使用分支儲存桶進行勒索軟體防禦調查</block>
   <block id="1b0f701303c9287515b1ad814889dfbb" category="sidebar">StorageGRID 12.0</block>
+  <block id="1477486e7b73a50110a7e1174a0a9e63" category="paragraph">本技術報告全面指導如何實施StorageGRID複製策略，以在站點發生故障時實現復原點目標 (RPO) 為零。該文件詳細介紹了StorageGRID的各種部署選項，包括多站點同步複製和多網格非同步複製。它解釋如何設定StorageGRID資訊生命週期管理 (ILM) 策略，以確保跨多個位置的資料持久性和可用性。此外，該報告還涵蓋了效能考量、故障場景和恢復流程，以維持不間斷的客戶營運。本文檔的目標是提供相關信息，以確保即使在站點完全發生故障的情況下，數據仍然可訪問且一致，方法是利用同步和異步複製技術。</block>
+  <block id="beae719565120c3029e58b8cc07ab0bd" category="paragraph">最小的StorageGRID部署包括一個管理節點和 3 個儲存節點，位於同一個站點內。單一網格最多可以發展到 220 個節點。StorageGRID可以部署為單一站點，也可以擴展到 16 個站點。</block>
+  <block id="7cc586f564adeb8c0359665929373f00" category="paragraph">儲存節點可以部署為：</block>
+  <block id="ba32bedc804e7bb6a5923493262a3ade" category="list-text">物件數據代表實際的基礎數據，例如照片、影片或醫療記錄。</block>
+  <block id="5137a04d33fb42650e67ff12f6a52d8e" category="list-text">每個物件的副本或糾刪碼片段的目前儲存位置。</block>
+  <block id="d0736e890c24259e81073f666695f227" category="list-text">對於分段對象和多部分對象，段標識符和資料大小。</block>
+  <block id="1bef005b9a6c5e01ff03054f34bc5beb" category="paragraph">糾刪碼提供了一種儲存佈局，該佈局能夠抵禦節點和站點故障，並且開銷比複製更低。只要滿足儲存資料區塊所需的最小節點數，所有StorageGRID糾刪碼方案都可以在單一網站中部署。這意味著對於 4+2 的 EC 方案，至少需要 6 個節點來接收資料。</block>
+  <block id="d5766766c59e3d9af63d1473c5ce1b5f" category="list-text">*強全球化*：</block>
+  <block id="6f4a5fbbb3a2d6cc42df99ed00253a1e" category="list-text">*Legacy Strong Global*：確保所有網站上所有用戶端要求的讀寫一致性。</block>
+  <block id="8190cb8fa846c6397a4098016aae607b" category="list-text">對於所有從 11.9 或更早版本升級到 12.0 且未手動更改為新的 Quorum Strong Global 的系統，這是預設行為。</block>
+  <block id="333bd85e6baadc6b1c15e6e34746ceab" category="list-text">這是所有新安裝的 12.0 或更高版本系統的預設行為。</block>
+  <block id="cef7f629c1a1cd896339f424fa22bb83" category="paragraph">雙重提交選項會立即在網格中的任兩個不同的儲存節點上建立兩個副本，並將請求成功傳回給客戶端。節點選擇將首先在請求站點內進行，但在某些情況下可能會使用其他站點的節點。該物件被添加到 ILM 隊列中，以便根據 ILM 規則進行評估和放置。</block>
+  <block id="26c7ee8e48bb07eea6962a93bcc2320a" category="paragraph">平衡選項會立即根據 ILM 策略評估對象，並在向客戶端返回請求成功之前同步放置對象。如果由於故障或儲存空間不足而無法立即滿足放置要求，則將改用雙重提交。問題解決後，ILM 將根據定義的規則自動放置物件。</block>
+  <block id="0364e24f1eb145592ee0b598b8005735" category="paragraph">嚴格選項會立即根據 ILM 策略評估對象，並在向客戶端返回請求成功之前同步放置對象。如果由於中斷或儲存空間不足而無法立即滿足 ILM 規則，則請求將失敗，用戶端需要重試。</block>
+  <block id="7eaf1a666369158296b99d1bae924fb9" category="paragraph">預設情況下，網關節點將平衡其所在站點內各個儲存節點之間的負載。StorageGRID可以設定為允許網關節點使用來自多個站點的節點來平衡負載。這種配置會將這些站點之間的延遲添加到客戶端請求的回應延遲中。只有當客戶可以接受總延遲時，才應進行此配置。</block>
+  <block id="b88fa163d4922e884e42d91e1ba6ae64" category="paragraph">透過本地和全域負載平衡相結合，可以確保 RTO 為零。確保客戶端不間斷存取需要對客戶端請求進行負載平衡。StorageGRID解決方案可在每個站點包含多個網關節點和高可用性群組。為了確保即使在站點發生故障的情況下，客戶端也能在任何站點獲得不間斷的訪問，您應該配置外部負載平衡解決方案，並將其與StorageGRID網關節點結合使用。設定網關高可用性群組，以管理每個站點內的負載，並使用外部負載平衡器在高可用性群組之間平衡負載。必須設定外部負載平衡器以執行健康檢查，以確保請求僅傳送到正在執行的網站。有關使用StorageGRID進行負載平衡的更多信息，請參閱<block ref="587298665ed077e05405d60ca7617c92" category="inline-link-rx"></block>。</block>
+  <block id="aeaea368f9c7df971b29e4e113b40910" category="paragraph">儲存系統中的物件是根據資訊生命週期管理 (ILM) 規則進行儲存的，這些規則規定了資料在其整個生命週期中如何以及在哪裡儲存。對於同步複製，可以考慮嚴格執行或平衡執行。</block>
+  <block id="e90289fd7decc74e13e03b1552c30be4" category="paragraph">在下列場景中， StorageGRID解決方案配置了一個可選的外部負載平衡器，用於管理整合負載平衡器高可用性群組的請求。這將實現零 RTO 和零 RPO。ILM 配置了平衡攝取保護，用於同步放置。每個儲存桶都配置了適用於 3 個或更多網站的網格的 Quorum 版本的強全域一致性模型，以及適用於 2 個網站的 Legacy 版本的強全域一致性模型。</block>
+  <block id="3fa7a1aaa876241f03f99e54b9155fea" category="paragraph">*情境一：*</block>
+  <block id="18a1bb675a43c43a3dfde79cc13f84b7" category="paragraph">在雙站點StorageGRID解決方案中，每個物件至少有兩個副本，所有元資料至少有 6 個副本。故障復原後，中斷期間的更新將自動同步到已復原的網站/節點。只有 2 個站點，在站點完全遺失以外的故障情況下，不太可能實現零 RPO。</block>
+  <block id="5ab17dee3d885984e1cdcd607277ac4e" category="paragraph">*情境二：*</block>
+  <block id="cd26f9cc5a308ec85764b3e36bb2f272" category="paragraph">在擁有三個或更多站點的StorageGRID解決方案中，每個物件至少有 3 個副本或 3 個 EC 區塊，所有元資料至少有 9 個副本。故障復原後，中斷期間的更新將自動同步到已復原的網站/節點。如果擁有三個或更多站點，則有可能實現零 RPO。</block>
+  <block id="9ab046a736c89c63a7db90494ae7ec75" category="cell">雙站點成果 + 傳承強大的全球</block>
+  <block id="26c449ea48832ca48a6548bc31d96fd0" category="cell">3 個或更多站點結果 + 法定人數強全球</block>
+  <block id="1c78a7597bcf74fe02547feb0063affe" category="list-text">網格中至少存在一個副本。</block>
+  <block id="00316d3bc04dc064cd3719dd912d32a4" category="list-text">沒有副本</block>
+  <block id="452168b286824cfe8e53ad1f5dda59bd" category="list-text">網格中至少存在一個副本。</block>
+  <block id="7d9747ca777716a4392358b7427ff5c6" category="cell">部分客戶端操作將會中斷，直到故障解決。GET 和 HEAD 操作將繼續進行，不會中斷。在此故障狀態下，將儲存桶一致性降低到新寫入後讀取或更低，以繼續不間斷地執行操作。</block>
+  <block id="36746a7eba38843cafcb9e3af5dea3db" category="cell">部分客戶端操作將會中斷，直到故障解決為止。HEAD 的運作將持續進行，不會中斷。如果存在副本或足夠的 EC 資料塊，GET 操作將繼續進行，不會中斷。在此故障狀態下，將儲存桶一致性降低到新寫入後讀取或更低，以繼續不間斷地執行操作。</block>
+  <block id="82ce0367a6b3a5de26a62e29a5365b42" category="cell">營運未中斷，資料未遺失。根據副本數量，可能出現資料遺失。局部糾刪碼可以防止資料遺失。</block>
+  <block id="c28323ab18ce37f5ece09594b9447122" category="cell">只有兩個網站。請參閱：單站點加單節點。</block>
+  <block id="7b51ff758c223274f7c344f394bdeda8" category="cell">如果元資料副本法定人數無法滿足要求，則營運將會中斷。在此故障狀態下，將儲存桶一致性降低到新寫入後讀取或更低，以繼續不間斷地執行操作。根據副本數量，永久性故障可能導致資料遺失。局部糾刪碼可以防止資料遺失。</block>
+  <block id="e94aef628672e9a1bcce72cde6e78e6a" category="cell">所有營運場所均已關閉。如果至少一個站點無法完全恢復，則資料將會遺失。</block>
+  <block id="27feead84299db9e58532f6d84c4af73" category="cell">如果元資料副本法定人數無法滿足要求，則營運將會中斷。在此故障狀態下，將儲存桶一致性降低到新寫入後讀取或更低，以繼續不間斷地執行操作。如果剩餘的糾刪碼區塊不足，則可能導致永久性故障，造成資料遺失。本機糾刪碼或資料複製可以防止資料遺失。</block>
+  <block id="d7292a790103a969be501696ea11a6e3" category="cell">客戶端操作將中斷，直到故障解決為止。在此故障狀態下，將儲存桶一致性降低到新寫入後讀取或更低，以繼續不間斷地執行操作。無資料遺失</block>
+  <block id="ae95111240ddd68d1051a50fed4ad211" category="cell">該孤立站點的運作將受到影響，但不會出現資料遺失。在此故障狀態下，將儲存桶一致性降低到新寫入後讀取或更低，以繼續不間斷地執行操作。其餘站點的營運未受影響，數據也未遺失。</block>
+  <block id="fbca66120bd7d47e4ed9cae5a0bde635" category="inline-link">StorageGRID軟體 11.5 - 12.0</block>
+  <block id="5934c3c1836e9997b4dabf8595c341fc" category="list-text"><block ref="5934c3c1836e9997b4dabf8595c341fc" category="inline-link-rx"></block></block>
+  <block id="79770fd4c42ac1be271a3e3ea7399421" category="sidebar">StorageGRID 11.5-12.0</block>
 </blocks>

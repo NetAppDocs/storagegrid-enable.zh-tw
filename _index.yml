@@ -131,17 +131,5 @@ indexpage:
     links:
     - title: StorageGRID 應用裝置
       url: https://docs.netapp.com/us-en/storagegrid-appliances/index.html
-    - title: StorageGRID 11.8
-      url: https://docs.netapp.com/us-en/storagegrid-118/index.html
-    - title: StorageGRID 11.7
-      url: https://docs.netapp.com/us-en/storagegrid-117/index.html
-    - title: 部分11.6% StorageGRID
-      url: https://docs.netapp.com/us-en/storagegrid-116/index.html
-    - title: 部分11.5 StorageGRID
-      url: https://docs.netapp.com/sgws-115/index.jsp
-    - title: 部分11.4 StorageGRID
-      url: https://docs.netapp.com/sgws-114/index.jsp
-    - title: 部分11.3% StorageGRID
-      url: https://docs.netapp.com/sgws-113/index.jsp
-    - title: 部分11.2 StorageGRID
-      url: https://docs.netapp.com/sgws-112/index.jsp
+    - title: StorageGRID 11.5-12.0
+      url: https://docs.netapp.com/us-en/storagegrid/index.html
