@@ -2,7 +2,7 @@
 permalink: tools-apps-guides/federate-prometheus.html 
 sidebar: sidebar 
 keywords: prometheus, on-premises, grafana, metrics 
-summary: 本技術報告提供使用StorageGRID 外部Prometheus和Grafana服務設定NetApp供應鏈11.6的詳細說明。 
+summary: 本技術報告提供了配置NetApp StorageGRID與外部 Prometheus 和 Grafana 服務的詳細說明。 
 ---
 = 使用Prometheus和Grafana來延長指標保留時間
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 本技術報告提供使用StorageGRID 外部Prometheus和Grafana服務
 [role="lead"]
 _ 作者： Aron Klein_
 
-本技術報告提供使用StorageGRID 外部Prometheus和Grafana服務設定NetApp供應鏈11.6的詳細說明。
+本技術報告提供了配置NetApp StorageGRID與外部 Prometheus 和 Grafana 服務的詳細說明。
 
 
 
