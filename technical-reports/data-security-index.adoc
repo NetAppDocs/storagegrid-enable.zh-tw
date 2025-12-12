@@ -42,6 +42,9 @@ NetApp StorageGRID 為要求嚴苛的企業物件儲存使用案例提供進階�
 若要深入瞭解本文所述資訊、請檢閱下列文件和 / 或網站：
 
 * NetApp StorageGRID ： SEC 17a-4(f) 、 FINRA 4511 （ c ）和 CFTC 1.31 （ c ） - （ d ）法規遵循評估 https://www.netapp.com/media/9041-ar-cohasset-netapp-storagegrid-sec-assessment.pdf[]
+* NetApp StorageGRID NIST FIPS 140-3 核心加密認證 https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/5097[]
+* NetApp StorageGRID NIST SP 800-90B 熵認證 https://csrc.nist.gov/projects/cryptographic-module-validation-program/entropy-validations/certificate/223[]
+* NetApp StorageGRID加拿大網路安全中心通用準則認證 https://www.commoncriteriaportal.org/nfs/ccpfiles/files/epfiles/565-LSS%20CT%20v1.0.pdf[]
 * StorageGRID文件頁面https://docs.netapp.com/us-en/storagegrid/[]
 * NetApp 產品文件 https://www.netapp.com/support-and-training/documentation/[]
 
