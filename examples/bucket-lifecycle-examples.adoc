@@ -171,7 +171,7 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 ----
 
 
-=== 保留 5 個非目前版本
+=== 保留 5 個非最新版本，並在 90 天後刪除
 
 使用案例：當您想要保留有限數量的先前版本以用於恢復或審計目的時很有用。好處：保留足夠的非當前版本以確保足夠的歷史記錄和復原點。
 
@@ -184,12 +184,16 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 		"Filter": {},
 		"Status": "Enabled"，
 		"NoncurrentVersionExpiration": {
-		  	"NewerNoncurrentVersions": 5
+		  	"NewerNoncurrentVersions": 5,
+        	"NoncurrentDays": 90
 	    }
     }
 	]
 }
 ----
+
+NOTE: 您必須將 *NoncurrentDays* 與 *NewerNoncurrentVersions* 一起使用。
+
 
 
 === 當不存在其他版本時移除刪除標記
