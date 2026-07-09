@@ -20,12 +20,14 @@ image:monitor/monitor-storagegrid-gmi-dashboard.png["Monitor-storagegRID GMI-Das
 
 
 
+[[information-that-you-should-monitor-regularly]]
 == 您應該定期監控的資訊
 
 此技術報告的上一版本列出了定期檢查的指標與趨勢。這些資訊現在已包含在 https://docs.netapp.com/us-en/storagegrid-118/landing-monitor-troubleshoot/index.html["監控與疑難排解指南"^]中。
 
 
 
+[[monitor-storage]]
 == 監控儲存設備
 
 此技術報告的舊版會列出監控重要指標的位置、例如物件儲存空間、中繼資料空間、網路資源等。這些資訊現在已包含在 https://docs.netapp.com/us-en/storagegrid-118/landing-monitor-troubleshoot/index.html["監控與疑難排解指南"^]中。

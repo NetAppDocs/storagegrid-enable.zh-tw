@@ -18,6 +18,7 @@ _ 作者： Angela Cheng _
 
 
 
+[[requirements]]
 == 需求
 
 * SHO11.6.0.2或更高版本StorageGRID
@@ -26,6 +27,7 @@ _ 作者： Angela Cheng _
 
 
 
+[[sample-files]]
 == 範例檔案
 
 * link:../media/elk-config/elk7-sample.zip["下載Logstash 7.x範例檔案套件"] +* md5 checksum * 148c23d0021d9a4bb4a6c0287464deab +* sha256 checksum * f51ec9e2e3f842d5a7861566b167a561beb4373038b4e7bb3c8b3d522adf2d6
@@ -35,12 +37,14 @@ _ 作者： Angela Cheng _
 
 
 
+[[assumption]]
 == 假設
 
 讀者熟悉StorageGRID 了功能性的技術與操作。
 
 
 
+[[instruction]]
 == 指示
 
 由於Grok模式定義的名稱不同、因此提供兩個範例版本。+例如、Logstash組態檔中的SYSLOGBASE-Grok模式會根據安裝的Logstash版本、以不同的方式定義欄位名稱。
@@ -119,11 +123,12 @@ image:elk-config/kibana-import-conflict.png["Kibana衝突"]
 
 
 
+[[additional-resources]]
 == 其他資源
 
 * https://coralogix.com/blog/syslog-101-everything-you-need-to-know-to-get-started/["系統記錄101."]
 * https://www.elastic.co/what-is/elk-stack["什麼是elk堆疊"]
-* https://github.com/hpcugent/logstash-patterns/blob/master/files/grok-patterns["Grok模式清單"]
+* https://github.com/hpcugent/logstash-patterns/["Grok 模式"]
 * https://logz.io/blog/logstash-grok/["Logstash入門指南：Grok"]
 * https://coralogix.com/blog/a-practical-guide-to-logstash-syslog-deep-dive/["Logstash的實用指南：syslog深度探討"]
 * https://www.elastic.co/guide/en/kibana/master/document-explorer.html["Kibana指南–瀏覽文件"]

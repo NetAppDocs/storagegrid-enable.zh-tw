@@ -323,7 +323,6 @@
   <block id="0f00c0e9578f0ff277a08d08ef376836" category="paragraph">截至2022年4月為止、Java 11.0.14搭配Cloudera 7.1.7已通過StorageGRID 測試、可搭配使用不過、在新安裝時、Java版本編號可能有所不同。</block>
   <block id="4064bf12468c8bc6d21b4c1c947f9ed1" category="section-title">安裝Java套件</block>
   <block id="3408188787a55fb9708798cddbce37b0" category="inline-link">Cloudera支援對照表</block>
-  <block id="e9be8954eba184e4880371339e422a20" category="list-text">請檢查<block ref="31da88a07df8e391e811822caa135aca" category="inline-link-rx"></block> 以取得支援的JDK版本。</block>
   <block id="162479463df046cb4a74da2008354eed" category="inline-link">Java 11.x套件</block>
   <block id="4c2d03bf2e98573fa9436705b37a57a1" category="list-text">下載<block ref="60b96115cb33d167b5449475d0ab85e0" category="inline-link-rx"></block> 這與Cloudera叢集作業系統相符。將此套件複製到叢集中的每個主機。在此範例中、rpm套件用於CentOS。</block>
   <block id="149f40ea9f9ffb02d7eeba792298fe1e" category="list-text">以root身分或使用具有Sudo權限的帳戶登入每個主機。在每個主機上執行下列步驟：</block>
@@ -645,8 +644,6 @@
   <block id="43b4ce193ce75a7c51a41a392da0e953" category="list-text"><block ref="43b4ce193ce75a7c51a41a392da0e953" category="inline-link-rx"></block></block>
   <block id="36df17c33644048e4c07c17be01b2524" category="inline-link">什麼是elk堆疊</block>
   <block id="2403480f61f37fce13a75f67d092ed18" category="list-text"><block ref="2403480f61f37fce13a75f67d092ed18" category="inline-link-rx"></block></block>
-  <block id="19d3c10a857b63064e06411baf1285b1" category="inline-link">Grok模式清單</block>
-  <block id="7c6102b1302815b75a46740d436c93fc" category="list-text"><block ref="7c6102b1302815b75a46740d436c93fc" category="inline-link-rx"></block></block>
   <block id="13fc1087c795f112d8979eb5e2780e5c" category="inline-link">Logstash入門指南：Grok</block>
   <block id="a39eed6135a0acdcad49fe799eb1bd27" category="list-text"><block ref="a39eed6135a0acdcad49fe799eb1bd27" category="inline-link-rx"></block></block>
   <block id="1482da3b9a25b116ee5827795ac8fbbd" category="inline-link">Logstash的實用指南：syslog深度探討</block>
@@ -1303,8 +1300,6 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="c8d25296b6242f878bcc65b3463a9213" category="paragraph"><block ref="c8d25296b6242f878bcc65b3463a9213" category="inline-image-macro-rx" type="image"></block></block>
   <block id="91ecbe84c3a3b51ceb6c3c1c46fe828e" category="section-title">站台重新定位前變更 Grid IP 位址的程序</block>
   <block id="7ce3d8dcf98150ca295b4e8b4a175d28" category="inline-link-macro">將子網路新增至 Grid 網路子網路清單</block>
-  <block id="ef79c64bf374a8f7d8f11ddac8bac6ea" category="list-text">如果在新位置使用新的 Grid 網路子網路、
-<block ref="a48adf12485e7e1fabf51f229ceb57fd" category="inline-link-macro-rx"></block></block>
   <block id="a27c73113b9f8b1c8936231a5c6b72db" category="list-text">登入主要管理節點、使用 change-ip 進行 Grid IP 變更、必須 * 登入 * 登入 * 變更才能關閉節點以進行重新定位。</block>
   <block id="e8ebed2710314532bd7421c291775f7a" category="list-text">選擇 2 、然後選擇 1 進行網格 IP 變更</block>
   <block id="0fc35f100f57d71f3d04d75f8e34db7a" category="list-text">選取 5 以顯示變更</block>
@@ -1411,8 +1406,6 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
   <block id="3e6defd685231cdd12065add41996c89" category="paragraph">所有物件</block>
   <block id="dcd8a20c909a5d0bbf6f852d688309cb" category="paragraph">雙重承諾</block>
   <block id="f2382f08b2b3ae5b16fd3e6a7f6fe40c" category="paragraph">ILM 2 複製規則是預設規則。「刪除編碼 2+1 」規則已套用至此測試、適用於任何 200 KB 或更大的物件。預設規則已套用至小於 200KB 的物件。以這種方式應用規則是 StorageGRID 最佳實務做法。</block>
-  <block id="9fd2a44a56a109ab7ff40317cdd4cc9b" category="inline-link">NetApp 透過 CommVault 實現橫向擴充資料保護</block>
-  <block id="f7d7cdf329bd5cf1893317ad3732d1f7" category="paragraph">如需此測試環境的技術詳細資料、請參閱中的解決方案設計與最佳實務一節<block ref="03ce17f8b5e1206a493f3bd56ef5953d" category="inline-link-rx"></block> 技術報告。</block>
   <block id="de6340e74a7b4b37632d447d082a219e" category="paragraph">請洽詢您的 NetApp 資料保護專家、以瞭解您環境的特定規模。NetApp 資料保護專家可使用 CommVault Total Backup Storage Calculator 工具來估計備份基礎架構需求。此工具需要 CommVault 合作夥伴入口網站存取權。如有需要、請註冊以取得存取權。</block>
   <block id="e3b0761b4b3dd1b0a93403608c54ca50" category="paragraph">下列工作可用於執行探索、以調整資料保護解決方案的規模：</block>
   <block id="3cf303266a00ea5459dd889344aed185" category="list-text">識別需要保護的系統或應用程式 / 資料庫工作負載、以及對應的前端容量（以 TB 為單位）。</block>
@@ -1558,8 +1551,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="9a76294cf4d43d5686590bb6c98a280b" category="list-text">CommVault 11.0.0 版 - Service Pack 16 及更新版本。 * 在 11.0.0 版 - Service Pack 16 及更新版本中、 S3 head 和 Get 作業在不存在的物件上執行的次數會降至最低。將預設的儲存區一致性層級設為「新寫入後讀取」、以確保 CommVault 和 StorageGRID 環境中的高一致性層級。</block>
   <block id="a1b241b7e61d12e641e864fa7e3c7a8e" category="list-text">NetApp 產品文件 +
 <block ref="fa4af55c3fdbce23e96d2cf73261fa5b" category="inline-link-rx"></block></block>
-  <block id="748e9574a05efa0e0738de58c2ff670b" category="list-text">CommVault 說明文件 +
-<block ref="27eb3a3d6ca60f8dbf05e2df1f7e4644" category="inline-link-rx"></block></block>
   <block id="c4d7e990537b5cabb7c53ef27e8240d3" category="paragraph">Veeam 要求端點僅透過 HTTPS 連線。Veeam 不支援未加密的連線。SSL 憑證可以是自我簽署的憑證、私密信任的憑證授權單位或公開信任的憑證授權單位。為了確保能持續存取 S3 儲存庫、建議在 HA 組態中至少使用兩個負載平衡器。負載平衡器可以是 StorageGRID 提供的整合式負載平衡器服務、位於每個管理節點和閘道節點、或是第三方解決方案、例如 F5 、 Kemp 、 HAProxy 、 Loadbalancer.org 等 使用 StorageGRID 負載平衡器可設定流量分類器（ QoS 規則）、以排定 Veeam 工作負載的優先順序、或將 Veeam 限制為不影響 StorageGRID 系統上的高優先順序工作負載。</block>
   <block id="2adef84f9348cc9769b8c3e1982c3cb1" category="list-text">若為具有擴充架的 SG6060 或 SG6160 、您需要將適當機櫃磁碟機大小的時間加入基本應用裝置時間、以獲得完整複製時間。</block>
   <block id="2060afee4c8201b859d447131ee1434a" category="section-title">SG5660 -&gt; SG5760/SG5860</block>
@@ -1624,20 +1615,12 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="bbe6f3db45c1fda11072f0bdaf823ba8" category="paragraph">設定網格並完成安裝涉及下列工作：</block>
   <block id="65fab22305d638277fe08fef3e3b4d40" category="list-text"><block ref="4843c82971df81e97aef3855873b7087" category="inline-xref-macro-rx"></block></block>
   <block id="b2d5dc59664ac0d21bcbd5dded69a0fb" category="inline-link-macro">指定StorageGRID 不含授權的資訊</block>
-  <block id="dc62a6bae0942d98774fbcedfe04d566" category="list-text"><block ref="dc62a6bae0942d98774fbcedfe04d566" category="inline-link-macro-rx"></block></block>
-  <block id="1a5870eb36e857189f184d5f320d0181" category="list-text"><block ref="1a5870eb36e857189f184d5f320d0181" category="inline-link-macro-rx"></block></block>
   <block id="abe15e0952653cec6327bae5b3790c92" category="inline-link-macro">指定網格網路子網路</block>
-  <block id="3071b864ee51f7743885151b146d1382" category="list-text"><block ref="3071b864ee51f7743885151b146d1382" category="inline-link-macro-rx"></block></block>
   <block id="f0f514dbb09f4d2c0f2f9870207e96c6" category="inline-link-macro">核准擱置的網格節點</block>
-  <block id="445d704adaa37eeca0880c16cf11c040" category="list-text"><block ref="445d704adaa37eeca0880c16cf11c040" category="inline-link-macro-rx"></block></block>
   <block id="346b0f799d5824e6ef646274dd79d1fb" category="inline-link-macro">指定 NTP 伺服器資訊</block>
-  <block id="92aab28741bfbfe48d3fc128eec45691" category="list-text"><block ref="92aab28741bfbfe48d3fc128eec45691" category="inline-link-macro-rx"></block></block>
   <block id="40f40c958ca771e7e2179dfe775df77a" category="inline-link-macro">指定網域名稱系統伺服器資訊</block>
-  <block id="32461cb1ffaecdbafa915e26f11613aa" category="list-text"><block ref="32461cb1ffaecdbafa915e26f11613aa" category="inline-link-macro-rx"></block></block>
   <block id="b681141cbe056ed6a1df3d88efd6f872" category="inline-link-macro">指定StorageGRID 「系統密碼」</block>
-  <block id="a4f57a2832f1ed9a4d6b154ee41a87c7" category="list-text"><block ref="a4f57a2832f1ed9a4d6b154ee41a87c7" category="inline-link-macro-rx"></block></block>
   <block id="9d6fe38c7ad959d5754500d24c1a8ecc" category="inline-link-macro">檢閱組態並完成安裝</block>
-  <block id="6ddb52602061bc71bd9227b0e708c9a3" category="list-text"><block ref="6ddb52602061bc71bd9227b0e708c9a3" category="inline-link-macro-rx"></block></block>
   <block id="b9b271fd480a768b1af9a1c33cd4a85b" category="section-title">瀏覽至 Grid Manager</block>
   <block id="42b1b6d90a33a9440dc019fd997cd7b4" category="paragraph">使用 Grid Manager 定義設定 StorageGRID 系統所需的所有資訊。</block>
   <block id="9fade4bc71a9b26db45e715f017d00c2" category="paragraph">開始之前、必須先部署主要管理節點、並完成初始啟動順序。</block>
@@ -1670,7 +1653,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="dbf88cfc0b0d656a966a6413296090cd" category="paragraph">TR-4882 提供實用的逐步指示集、可產生 NetApp StorageGRID 正常運作的安裝。安裝可能位於裸機上、或是在 Red Hat Enterprise Linux （ RHEL ）上執行的虛擬機器（ VM ）上。方法是以建議的配置和儲存組態、在三部實體（或虛擬）機器上執行六個 StorageGRID 容器化服務的「 opinioned 」（意見化）安裝。有些客戶可能會發現依照此 TR 的範例部署、較容易瞭解部署程序。</block>
   <block id="53721259d4f70a6e22df4cf50cb6a007" category="paragraph">如需更深入瞭解 StorageGRID 及安裝程序、請參閱<block ref="138cb63445270d21525dcce6de5e7942" category="inline-link-rx"></block> 產品文件中的 [ 安裝、升級及 Hotfix StorageGRID ] 。</block>
   <block id="a65c073029a2585f51e608ca137bdfa6" category="inline-link-macro">安裝 StorageGRID 的必要條件</block>
-  <block id="ee6027960e010f4085d66014d7765ecd" category="paragraph">在開始部署之前，讓我們先來看看 NetApp StorageGRID 軟體的運算、儲存和網路需求。StorageGRID 在 Podman 或 Docker 內以容器化服務的形式執行。在此模型中、有些需求是指主機作業系統（裝載 Docker 的作業系統、執行 StorageGRID 軟體）。而且有些資源會直接分配給每個主機內執行的 Docker 容器。在這項部署中、為了將硬體使用量最大化、我們會為每部實體主機部署兩項服務。如需更多資訊、請繼續下一節 <block ref="dbd241ef02e4fbb756d3e4613e476d0c" category="inline-link-macro-rx"></block>。</block>
   <block id="ce29edc154956369d79ff8276cf747b1" category="paragraph">此 TR 中概述的步驟會導致在六個裸機主機上執行 StorageGRID 安裝。您現在有一個工作網格和用戶端網路、在大多數測試案例中都很實用。</block>
   <block id="e3581082ba2aa18febff247afdaf6344" category="paragraph">若要深入瞭解本 TR 中所述的資訊、請參閱下列文件資源：</block>
   <block id="d794ca6edf18a97bedb2ad1af37d0c71" category="list-text">NetApp StorageGRID 文件中心 <block ref="47ea1c2d0f136bec8b3e66c2121bf70f" category="inline-link-rx"></block></block>
@@ -1740,7 +1722,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="41b36522e1e1020bad35b072e2f4caeb" category="section-title">儲存需求</block>
   <block id="caf25f834fd33813cb804fde9406ddf4" category="paragraph">每個節點都需要 SAN 型或本機磁碟裝置、大小如下表所示。</block>
   <block id="4491ed1f1284f730663a34bc001e9d82" category="inline-link-macro">實體主機配置與需求</block>
-  <block id="755122cb8b85d1b9d1d35543370e43b4" category="admonition">表格中的數字是針對每種 StorageGRID 服務類型、而非整個網格或每個實體主機。根據部署選項、我們將在本文件稍後的中、計算每部實體主機的數量 <block ref="010aeaa454c3e87113c61b2c557145c0" category="inline-link-macro-rx"></block>。++ ++ 安裝程式會在 StorageGRID 容器本身建立標有星號的路徑或檔案系統。管理員不需要手動設定或建立檔案系統、但主機需要區塊裝置才能滿足這些需求。換句話說、區塊裝置應該使用命令來顯示<block ref="9d3de2981a7628c02076a5a69f0d0007" prefix=" " category="inline-code"></block> 、但不要在主機作業系統中格式化或掛載。++++</block>
   <block id="553ce76e41b15044745c302f9ec38760" category="cell">LUN 用途</block>
   <block id="0af38a14209cc9bc1b292891a3e005da" category="cell">LUN數量</block>
   <block id="33979902172af2154a44822727bfd415" category="cell">LUN 的最小大小</block>
@@ -1768,7 +1749,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="9cdde8629f3f819484f7c5b58e83930b" category="cell">每個儲存容器三個</block>
   <block id="357015f8d2535e72e491b099c91834f8" category="cell">4000GB</block>
   <block id="950e2aab71ade2dc91b16bb393adcc5f" category="cell"><block ref="d0974677d2a5b3fe1667da308c12469e" prefix="" category="inline-code"></block></block>
-  <block id="171a11a3a2ace52e1a9680ec72263a41" category="paragraph">在此範例中、下表所示的磁碟大小是每種容器類型所需的。本文件稍後的、中說明每部實體主機的需求 <block ref="010aeaa454c3e87113c61b2c557145c0" category="inline-link-macro-rx"></block>。</block>
   <block id="6f4a8f20fa0947e6bb3d27cc47c04327" category="section-title">每種容器類型的磁碟大小</block>
   <block id="97deb65a12dea6a246eb4c828e56f81f" category="section-title">管理容器</block>
   <block id="edbef67b0ae5d71ef92b4e5942caef7a" category="cell">尺寸（ GiB ）</block>
@@ -1816,11 +1796,9 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="9b27d9e9f79842f85553a61769a1a94f" category="paragraph">如果您需要在網格網路介面上使用 VLAN 標記、您的組態應該有兩個檔案<block ref="c2cf612c92facc5f4b080c83ed51c2bf" prefix=" " category="inline-code"></block> 、格式如下：</block>
   <block id="d1b8b08b5c4160c1393cad2570dee70f" category="paragraph">本範例假設您的網格網路實體網路裝置是 enp67s0 。它也可以是綁定的設備，例如 bond0 。無論您是使用結合或標準網路介面、如果網路連接埠沒有預設 VLAN 、或是預設 VLAN 沒有與網格網路相關聯、則必須在節點組態檔案中使用 VLAN 標記介面。StorageGRID 容器本身不會取消標記乙太網路框架、因此必須由父作業系統處理。</block>
   <block id="82c43a9353f8eb3d67bb2fa843431d9c" category="section-title">iSCSI 的選用儲存設備設定</block>
-  <block id="e14b9c03f9cc5e502bd12475b5f4271c" category="paragraph">如果您不使用 iSCSI 儲存設備、則必須確保 host1 、 host2 和 host3 包含大小足以滿足其需求的區塊裝置。請參閱 <block ref="3ee5a0cacaa11ad486947ccabaf35f08" category="inline-link-macro-rx"></block> 瞭解 host1 、 host2 和 host3 儲存需求。</block>
   <block id="b39c8876d75a7ff82cd7d801fc50615a" category="paragraph">若要使用 iSCSI 設定儲存設備、請完成下列步驟：</block>
   <block id="a22fa689c8174cfc9a1ca77de9134e9e" category="list-text">如果您使用外部 iSCSI 儲存設備、例如 NetApp E 系列或 NetApp ONTAP ® 資料管理軟體、請安裝下列套件：</block>
   <block id="befe75f3c360b54481aaca87a16ea6b1" category="list-text">在每個主機上找到啟動器 ID 。</block>
-  <block id="70ffd3788b6da8ce47eff9a3038a3669" category="list-text">使用步驟 2 中的啟動器名稱、將儲存裝置上的 LUN （表中所示的數量和大小）對應 <block ref="b931fdace7da701b108de4525e5832b6" category="inline-link-macro-rx"></block> 至每個儲存節點。</block>
   <block id="19279b693608729771b2f460a14af491" category="list-text">使用探索新建立的 LUN<block ref="f88921f58beaaae5bcb9dffac54bf5ad" prefix=" " category="inline-code"></block> 並登入它們。</block>
   <block id="c0ee487fb85ee9bf09fcbe0e0d7e2337" category="inline-link">建立 iSCSI 啟動器</block>
   <block id="e296dadeb4bfa1168294b7371b696946" category="admonition">如需詳細資訊、請參閱<block ref="7faa6525557fc7fd919d1d5540c263b0" category="inline-link-rx"></block> Red Hat 客戶入口網站上的。</block>
@@ -1903,7 +1881,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="4354560354d8408d1c18e9c0b355e09d" category="inline-image-macro">基礎金屬輸出 - 顯示警告 - 錯誤</block>
   <block id="040c89d37bea72830f915c730c54a323" category="summary">探索客戶與 NetApp IT 實作的 StorageGRID 組態使用案例。</block>
   <block id="6b3cea9a64792ec5d7e688de3ba29ba0" category="doc">檢閱基準效能測試</block>
-  <block id="d49b79b5786df5b1f9fed49f0ba0061f" category="paragraph">在「輔助複製」作業中、四個 CommVault MediaAgent 將資料備份到 NetApp AFF A300 系統、並在 NetApp StorageGRID 上建立輔助複本。如需測試設定環境的詳細資訊、請參閱技術報告中的解決方案設計與最佳實務一節<block ref="03ce17f8b5e1206a493f3bd56ef5953d" category="inline-link-rx"></block> 。</block>
   <block id="56e8d1153024dce00f7f403984ee3961" category="paragraph">這些測試是針對 100 個 VM 和 1000 個 VM 執行的、兩者都是以 50/50 混合的 Windows 和 CentOS VM 進行測試。下表顯示我們的基礎效能測試結果：</block>
   <block id="416a13b2b42415edb291a65945b1bb85" category="paragraph-title">圖 1 ：在 3 小時內刪除 250 萬（ 80 TB ）物件。</block>
   <block id="de5b3f7c60647bd68a8d18a9a017432e" category="paragraph-title">圖 2 ：在 3 小時內釋放 80TB 的儲存空間。</block>
@@ -2232,7 +2209,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="9c3101f6b24804233b40ae6450fa1503" category="list-text">* 流量分類 * 。進階流量分類功能可讓 StorageGRID 特定的 QoS 規則與工作負載分析一起使用。</block>
   <block id="38c8ceefadaf4e89ae919f5a807ea085" category="list-text">* 未來的 StorageGRID 特定功能 * 。StorageGRID 將繼續最佳化負載平衡器、並在即將推出的版本上新增創新功能。</block>
   <block id="84005d607f0a93e852033c0b519062be" category="list-text">StorageGRID F5 負載平衡器設計考量 <block ref="d95e85e5d4376a35e480ee8024e749b5" category="inline-link-rx"></block></block>
-  <block id="5846f1f21b96d1c9adc26d24e614abde" category="list-text">Loadbalancer.org—Load 平衡 NetApp StorageGRID <block ref="dd7f3d493284188c8c1493c8c18338b0" category="inline-link-rx"></block></block>
   <block id="af8fdca32c51642ca8690dcf5f1416f5" category="list-text">Kemp —負載平衡 NetApp StorageGRID <block ref="fb965c799555a65bc346633ea438a59b" category="inline-link-rx"></block></block>
   <block id="c8516ee2c182bb804cdaf1cef683a7c5" category="summary">探索本機流量管理負載平衡器的指引、並判斷最佳組態。</block>
   <block id="5cb57a8e98262e7f15746e1841dbbae5" category="doc">瞭解本機流量管理負載平衡器</block>
@@ -2317,7 +2293,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="a2050b63d73bc4aa8080dc5a78e9df9e" category="admonition">如果您的 GMI 密碼包含特殊字元、請記得使用 \ 來轉義特殊字元。例如、請更換！ 使用！</block>
   <block id="d0091ffabd8a5951ade89029dee45269" category="list-text">執行上述 cURL 命令後、輸出會提供授權權杖、如下例所示：</block>
   <block id="c4c0bac50c4fd5e17677cabb1fe78a5b" category="inline-link-macro">StorageGRID 中的進階監控功能</block>
-  <block id="a6b1960b13e563d852f0a623a6a4b50e" category="paragraph">現在您可以使用授權權杖字串、透過 Curl 存取度量。存取計量的程序類似於一節中的步驟 <block ref="e252bc019813f3e66a7ae7f9c0ce4e99" category="inline-link-macro-rx"></block>。不過、為了進行示範、我們會在「度量」類別中顯示「取得 /grid/metric-labels/{label}/values 」的範例。</block>
   <block id="cdc100e5f716cb082e925903180eaafe" category="list-text">例如、下列具有上述授權權杖的 Curl 命令會在 StorageGRID 中列出站台名稱。</block>
   <block id="6100a428d2b7ee39cb431e0e5ea5306f" category="paragraph">Curl 命令將產生下列輸出：</block>
   <block id="5204e8903c6bcc04b3dd578223392ce0" category="summary">瞭解如何使用度量 API 監控 StorageGRID 。</block>
@@ -2485,7 +2460,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="cdf294cdb11d58c4a1cf6c6b989f7ac0" category="section-title">設定 Enterprise Vault</block>
   <block id="2b8482f3259b54a252e32e6c77841bea" category="paragraph">若要設定 Enterprise Vault 、請完成下列步驟：</block>
   <block id="416206518e27ed2ec8b8e0876078af35" category="inline-link-macro">基本組態</block>
-  <block id="0fdd01b1b915af6ef0310b3ded5842a9" category="list-text">重複本節中的步驟 1-3 、 <block ref="b0733c8485b73f6326917495c59e375f" category="inline-link-macro-rx"></block> 但這次請選擇「使用 S3 物件鎖定將資料儲存在 WORM 模式」選項。按一下「下一步」</block>
   <block id="0b5abcc8070dd573f1f60f2342e139a1" category="list-text">輸入 S3 Bucket 連線設定時、請務必輸入已啟用 S3 物件鎖定預設保留功能的 S3 儲存區名稱。</block>
   <block id="9a5b0fcd0b1275de30e89b6c94f15569" category="list-text">測試連線以驗證設定。</block>
   <block id="b37ab6844ec455af7b65aaae53986022" category="summary">瞭解如何在災難恢復案例中設定 StorageGRID 站台容錯移轉。</block>
@@ -2779,7 +2753,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="230e927ef1cbcfb4706e2ca2fe79b068" category="paragraph"><block ref="230e927ef1cbcfb4706e2ca2fe79b068" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6cfd96f46e0c61db4b057de9b2f02787" category="paragraph"><block ref="6cfd96f46e0c61db4b057de9b2f02787" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7c648110d8b752889f98cd2d87517c0f" category="section-title">以 S3 物件儲存為基準測試資料倉儲和 Lakeouses ：比較研究</block>
-  <block id="3f7d606956bcb4f8b565d2799da4a4e3" category="paragraph">本文提供使用 NetApp StorageGRID 的各種資料倉儲和湖屋生態系統的完整基準。目標是判斷哪一種系統在 S3 物件儲存設備上的效能最佳。請參閱此資訊<block ref="ca1f374596a7de7e13cf95753411f6e0" category="inline-link-rx"></block>、深入瞭解資料流 / 湖屋架構和表格格式（ Parquet 和冰山）。</block>
   <block id="39b5836a4532001dfbe7e05fb49461e4" category="list-text">VM 叢集、每個都有 128G RAM 和 24 個 vCPU 、系統磁碟的 SSD 儲存設備</block>
   <block id="e6626cf4bf50ce440a045708b2e1f1e5" category="list-text">NetApp ^ ® ^ StorageGRID ^ ® ^ 11.8 含 3 個 SG6060 + 1 個 SG1000 負載平衡器</block>
   <block id="b9d35717430d39eef24c76f0c1796c11" category="list-text">每項查詢測試的所有生態系統都會使用「硬碟區」格式停用快取。對於冰山格式、我們比較了 S3 取得要求的數量、以及快取停用和啟用快取的案例之間的查詢時間總計。</block>
@@ -2874,29 +2847,9 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="41ae360fa86c17098be8743d2d050c92" category="paragraph"><block ref="41ae360fa86c17098be8743d2d050c92" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b6fe3747f6c4d112310386474c670a3f" category="inline-image-macro">Veritas / Veritas 新分割區 - 7.</block>
   <block id="22b735d20517887fa4f06cf49bd4d449" category="paragraph"><block ref="22b735d20517887fa4f06cf49bd4d449" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="3eebf8254fde4e8d2c6a816c4320f21e" category="inline-image-macro">眩暈 / veritas-create-bucket.png</block>
-  <block id="95291b4cdd19db828a0d045364518fbd" category="paragraph"><block ref="95291b4cdd19db828a0d045364518fbd" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="094b5581d50a9ae9dfef7ab77a3db688" category="inline-image-macro">眩暈 / veritas-create-bucket-2.png</block>
-  <block id="380edd7a9cba0915b0ad9309b0db539c" category="paragraph"><block ref="380edd7a9cba0915b0ad9309b0db539c" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="dbfd501fb101bf802a7ee81a1fac837d" category="inline-image-macro">眩暈 / veritas-overview.png</block>
-  <block id="df94ba3f30910a83d6bd5b670f112e3b" category="paragraph"><block ref="df94ba3f30910a83d6bd5b670f112e3b" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="c921c13e8cd3cb94aadeb8c25da58859" category="inline-image-macro">眩暈 / Veritas - S3 物件鎖定</block>
-  <block id="2c5ae5790fe14e007a8ce6ef21272460" category="paragraph"><block ref="2c5ae5790fe14e007a8ce6ef21272460" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="305ed56e9cc761a6928f149d8a7fed68" category="inline-image-macro">Vertas/Veritas-new-partition-8.</block>
-  <block id="d42aa79a11be13d3f0d5a09babb765cb" category="paragraph"><block ref="d42aa79a11be13d3f0d5a09babb765cb" category="inline-image-macro-rx" type="image"></block></block>
   <block id="64b0c79c0081965bc7ce9c6cc6a3f774" category="paragraph">StorageGRID 架構部署通常是多站台部署。站台可以是主動式主動式或主動式被動式、以供 DR 使用。在 DR 案例中、請確定 Veritas Enterprise Vault 可以維持與其主要儲存設備（ StorageGRID ）的連線、並在站台故障期間繼續擷取及擷取資料。本節提供雙站台主動被動式部署的高階組態指南。 如需這些準則的詳細資訊、請參閱 <block ref="8efc367b31c66b8aa3b87a5daa8b07fa" category="inline-link-macro-rx"></block> 頁面或聯絡 StorageGRID 專家。</block>
   <block id="fc1d41b2ff28c31ef720aa29cbdb1625" category="section-title">使用 Veritas Enterprise Vault 設定 StorageGRID 的先決條件</block>
-  <block id="568f836336942515cf2ad370aa171e55" category="inline-image-macro">Vertas/Veritas-cree-high Availability 群組</block>
-  <block id="97b5b099aca023f024fd3ca7169b6e8e" category="paragraph"><block ref="97b5b099aca023f024fd3ca7169b6e8e" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="6a856baab30258bd4bf6b3c8e997af43" category="inline-image-macro">Vertas/Veritas 編輯 - 高可用度群組</block>
-  <block id="d921e5624986d96c28deaf8b0b782be3" category="paragraph"><block ref="d921e5624986d96c28deaf8b0b782be3" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e17fb1e3d997076f324b7246b7f7dff3" category="list-text">此虛擬 IP （ VIP ）位址應與在 Veritas Enterprise Vault 分割區組態期間使用的 S3 主機名稱相關聯。VIP 位址可解析到站台 1 的流量、而在站台 1 故障期間、 VIP 位址會透明地將流量重新路由到站台 2 。</block>
-  <block id="0def3d0da889c0e13e06d8e1ff2af9dd" category="inline-image-macro">Vertas/Veritas 儲存池詳細資料網站 1</block>
-  <block id="43ad61add042d6d64a01afe1db28f05c" category="paragraph"><block ref="43ad61add042d6d64a01afe1db28f05c" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="1c4cb0eddc44a68196819920f522f16a" category="inline-image-macro">Vertas/Veritas 儲存池詳細資料網站 2</block>
-  <block id="f4d48050c229a4cd522d6ca91d710a64" category="paragraph"><block ref="f4d48050c229a4cd522d6ca91d710a64" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="75381ece1664fa46e0387e8b6436f7ea" category="inline-image-macro">Vertas/Veritas 儲存池詳細資料網站 3</block>
-  <block id="3e2cf841de27a979e1d058590ff5e98e" category="paragraph"><block ref="3e2cf841de27a979e1d058590ff5e98e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="419754dcc8bb78c19b08aef3cde80cfb" category="list-text">當從 Veritas Enterprise Vault 傳送歸檔資料時、 StorageGRID 會確保一個複本儲存在站台 1 、另一個 DR 複本則儲存在站台 2 。如果 Site1 失敗、 Enterprise Vault 會繼續從 Site2 擷取和擷取。</block>
   <block id="32b3440d0a295232731c116fa5442f36" category="admonition">這兩種組態對 Veritas Enterprise Vault 都是透明的。S3 端點、貯體名稱、存取金鑰等項目都相同。無需重新設定 Veritas Enterprise Vault 分割區上的 S3 連線設定。</block>
   <block id="f5ab4938048291a0a6cd674b47551852" category="summary">瞭解 Veritas Enterprise Vault 如何使用 StorageGRID 做為災難恢復的主要儲存目標。</block>
@@ -2913,7 +2866,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="083e747ac97fd71c385f2c89f8eefdb7" category="sidebar">移轉使用者和金鑰、然後轉換</block>
   <block id="454255deb718c7d2b26df2342f80d3d3" category="list-text">2024 年 2 月 2 日： <block ref="890e1ea9b3a6310b9da56310b581c035" category="inline-link-rx"></block></block>
   <block id="038f39e88db40cdb4f2702538c9f7cac" category="inline-link">StorageGRID 11.9</block>
-  <block id="c0ffd7598ab1538e87530f78e30ee7a5" category="list-text">StorageGRID 11.9 文件中心 +<block ref="8cd5d43b808eac3380916fd8a7010bbf" category="inline-link-rx"></block></block>
   <block id="023074507079b61efa6f2839e5f70a91" category="inline-link">StorageGRID 11.9 擴充指南</block>
   <block id="f4940e01170c039d45c3e66e940623ae" category="paragraph">如需擴充 StorageGRID 系統的詳細資訊，請參閱<block ref="383fbf920d7819c777fd14de7ab5c076" category="inline-link-rx"></block>。</block>
   <block id="7519ba71db8577a641b71a19274cb841" category="paragraph">SG5812 、 SG5860 、 SG6160 和 SGF6024 StorageGRID 應用裝置提供 FIPS 140-2 相容加密磁碟的選項。磁碟的加密金鑰可由外部 KMIP 伺服器選擇性管理。</block>
@@ -3453,4 +3405,48 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="61826214d6f329493990f2d79416585b" category="section-title">保留 5 個非最新版本，並在 90 天後刪除</block>
   <block id="d05c8031e45ddabc741886852f07058f" category="admonition">您必須將 *NoncurrentDays* 與 *NewerNoncurrentVersions* 一起使用。</block>
   <block id="86d838f00c97c2ca905dc97a413d1ea7" category="list-text">IBM Storage Deep Archive 1.3</block>
+  <block id="c6bf43b8e3878138ca807f5a012a7f8f" category="list-text">如果新位置將使用新的 Grid 網路子網路，<block ref="20625f7d4a19c0d62d7c0d2f15cb46ea" category="inline-link-macro-rx"></block></block>
+  <block id="709822c3fe8a896fbbbde856d4a8c511" category="list-text"><block ref="709822c3fe8a896fbbbde856d4a8c511" category="inline-link-macro-rx"></block></block>
+  <block id="0d3f7dd7ceb1738d8c6755cac25e6129" category="list-text"><block ref="0d3f7dd7ceb1738d8c6755cac25e6129" category="inline-link-macro-rx"></block></block>
+  <block id="edbb87ee4d966bfd0e53f7ee76a20edf" category="list-text"><block ref="edbb87ee4d966bfd0e53f7ee76a20edf" category="inline-link-macro-rx"></block></block>
+  <block id="c05d96eb8789000e6ee7e4a9af0b9ab8" category="list-text"><block ref="c05d96eb8789000e6ee7e4a9af0b9ab8" category="inline-link-macro-rx"></block></block>
+  <block id="d9a90afafa882a13b70649b568c6088d" category="list-text"><block ref="d9a90afafa882a13b70649b568c6088d" category="inline-link-macro-rx"></block></block>
+  <block id="87a729ea1697dbdb380b42e6f5486a48" category="list-text"><block ref="87a729ea1697dbdb380b42e6f5486a48" category="inline-link-macro-rx"></block></block>
+  <block id="b7266e1336a7e560f84b0e59cf34a708" category="list-text"><block ref="b7266e1336a7e560f84b0e59cf34a708" category="inline-link-macro-rx"></block></block>
+  <block id="6856cda392381358080a0cb4d3e0f99b" category="list-text"><block ref="6856cda392381358080a0cb4d3e0f99b" category="inline-link-macro-rx"></block></block>
+  <block id="d3b0d4c5bc1c075d95609a741d0d465a" category="paragraph">在開始部署之前，我們先來了解 NetApp StorageGRID 軟體的運算、儲存和網路需求。StorageGRID 以容器化服務的形式在 Podman 或 Docker 中執行。在這種模式下，部分需求與主機作業系統相關（即執行 StorageGRID 軟體的 Docker 所在的作業系統）。而部分資源則直接分配給每個主機上執行的 Docker 容器。為了最大限度地利用硬體資源，在本次部署中，我們為每個實體主機部署了兩個服務。如需更多資訊，請繼續閱讀下一節 <block ref="5df9866ae8d578b01efcbc8f3c8e96d4" category="inline-link-macro-rx"></block>。</block>
+  <block id="705111bc6c853544ae6d9e2beaeeed7c" category="admonition">表格中的數字是針對每種 StorageGRID 服務類型，而非整個網格或每個實體主機。我們將根據部署選項，在本文件後續部分計算每個實體主機的數字<block ref="4ddf418e2c006c7428da34b533dc1387" category="inline-link-macro-rx"></block>。++ ++ 標有星號的路徑或檔案系統將由安裝程式在 StorageGRID 容器中建立。管理員無需手動設定或建立檔案系統，但主機需要區塊裝置來滿足這些要求。換句話說，區塊裝置應透過命令 <block ref="9d3de2981a7628c02076a5a69f0d0007" prefix=" " category="inline-code"></block> 顯示，但不得在主機作業系統中格式化或掛載。++ ++</block>
+  <block id="99e95c56ffec1a95040e8724ae1ce355" category="paragraph">在本例中、下表所示的磁碟大小是每種容器類型所需的磁碟大小。每台實體主機的需求說明請參閱本文件後面的 <block ref="4ddf418e2c006c7428da34b533dc1387" category="inline-link-macro-rx"></block>。</block>
+  <block id="b1aef9fb23ab7bbf0adedd264d4d7fce" category="paragraph">如果您未使用 iSCSI 儲存，則必須確保 host1、host2 和 host3 包含足夠容量的區塊裝置以滿足其需求。請參閱 <block ref="cf0eb65dc73481fac8bfe3bbd069a721" category="inline-link-macro-rx"></block> 以了解 host1、host2 和 host3 的儲存需求。</block>
+  <block id="ef6138cdfd088835ff40ee41b8e6ed37" category="list-text">使用步驟 2 中的啟動器名稱，將儲存裝置上的 LUN （<block ref="7e4b187db3f6670860d98f3596b3fdcb" category="inline-link-macro-rx"></block> 表中顯示的數量和大小）對應到每個儲存節點。</block>
+  <block id="8ead8a33d3bc467a3ea00b73b214f500" category="paragraph">在輔助副本作業中，四個 Commvault MediaAgents 將資料備份到 NetApp AFF A300 系統，並在 NetApp StorageGRID 上建立了一個輔助副本。</block>
+  <block id="7b066a53382b883fd1eff6ef0b6ba8ed" category="list-text">StorageGRID 11.9 文件中心 + <block ref="6a57442f297e8ec0c1048139bce9d672" category="inline-link-rx"></block></block>
+  <block id="30002530dd9d601ecfd25a0f9db45aac" category="list-text">Commvault 文件 + <block ref="e95efabe50ab92e4e6c01005628c651c" category="inline-link-rx"></block></block>
+  <block id="c595219c0ed8ec59057d33c30bc5dc10" category="paragraph">本文使用 NetApp StorageGRID 對各種資料倉儲和湖倉式儲存生態系統進行了全面的基準測試。目標是確定哪個系統在 S3 物件儲存方面效能最佳。請參閱此<block ref="c3c3137daa53bef038cd79c515f7a456" category="inline-link-rx"></block>以了解更多關於資料倉儲/湖倉式儲存架構和表格式（Parquet 和 Iceberg）的資訊。</block>
+  <block id="895e351c0837e8e1603831896d6eff24" category="list-text">Loadbalancer.org—負載平衡 NetApp StorageGRID <block ref="0daf5e2b69f614a44c5f349c4458af38" category="inline-link-rx"></block></block>
+  <block id="4e9aec4caf563076c3e5a362fb3ffa9c" category="paragraph">現在您可以使用授權權杖字串透過 cURL 存取指標。存取指標的過程與第 <block ref="370a8c788bfc0d36ebdde42d5a0e61ed" category="inline-link-macro-rx"></block> 節的步驟類似。但是，為了示範目的，我們展示一個範例，其中在「指標」類別中選擇了 GET /grid/metric-labels/{label}/values。</block>
+  <block id="bba97812b5b364c799918082c0382688" category="inline-image-macro">veritas/veritas-create-bucket.png</block>
+  <block id="5478aec58cd50a76fe7b0ac2dc424663" category="paragraph"><block ref="5478aec58cd50a76fe7b0ac2dc424663" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3af07c1332ec0aab0ab6da0d4d2d723f" category="inline-image-macro">veritas/veritas-create-bucket-2.png</block>
+  <block id="f58437cdc1aaeca345f639ae65f7cb23" category="paragraph"><block ref="f58437cdc1aaeca345f639ae65f7cb23" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b47b12ef2b509779a75e657d45b63ea9" category="inline-image-macro">veritas/veritas-overview.png</block>
+  <block id="288a7d7e6e21cabf0543d55ccfbe1114" category="paragraph"><block ref="288a7d7e6e21cabf0543d55ccfbe1114" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3f0a3f283f988102d45aca2522cb89d1" category="inline-image-macro">veritas/veritas-s3-object-lock</block>
+  <block id="0583733b7d6246ae5d47ec1a2e4c1f31" category="paragraph"><block ref="0583733b7d6246ae5d47ec1a2e4c1f31" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ad840a8e919810d635e77fa47810bd24" category="list-text">重複該<block ref="f3b70564fd788b01ce68413d8d426d59" category="inline-link-macro-rx"></block>部分中的步驟 1-3，但這次選擇「使用 S3 物件鎖定以 WORM 模式儲存資料」選項。按一下「下一步」。</block>
+  <block id="a67cc23c648b2fb6f549d6e1045f865a" category="inline-image-macro">veritas/veritas-new-partition-8</block>
+  <block id="092d07a7856c1ea2f502eabe489c1f58" category="paragraph"><block ref="092d07a7856c1ea2f502eabe489c1f58" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="21ef9da97ba98f947cbe7aa2fbc41291" category="inline-image-macro">veritas/veritas-create-high-availability-group</block>
+  <block id="48f85c57c79af0f59e7ff051172c2e60" category="paragraph"><block ref="48f85c57c79af0f59e7ff051172c2e60" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="603d4f6f10337aacf1c98717c87c8529" category="inline-image-macro">veritas/veritas-edit-high-availability-group</block>
+  <block id="50a1f4d0589db23fc3168f427581845f" category="paragraph"><block ref="50a1f4d0589db23fc3168f427581845f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="261c5485d002b582ff949d08a9b5bb78" category="inline-image-macro">veritas/veritas-storage-pool-details-site-1</block>
+  <block id="7fc86c8fe93a9509f0fb971e5f53850f" category="paragraph"><block ref="7fc86c8fe93a9509f0fb971e5f53850f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="80e28232182a336f895806a362b7e6c2" category="inline-image-macro">veritas/veritas-storage-pool-details-site-2</block>
+  <block id="fbb8ad7ecf708634cfcf4a975518dc2c" category="paragraph"><block ref="fbb8ad7ecf708634cfcf4a975518dc2c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="aa9e51529c8ac5c2f32b35f355d26fd5" category="inline-image-macro">veritas/veritas-storage-pool-details-site-3</block>
+  <block id="d6a0fcf55dacc59635ca11a700f5260a" category="paragraph"><block ref="d6a0fcf55dacc59635ca11a700f5260a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="752f1428ccb77ac410289e9262b0f4bf" category="inline-link">Grok 模式</block>
+  <block id="dfa155e02e6c42536eddd788adeb1c4b" category="list-text"><block ref="dfa155e02e6c42536eddd788adeb1c4b" category="inline-link-rx"></block></block>
+  <block id="84a0efed1747839817563f400c91817f" category="list-text">請檢查<block ref="fcf7e9838328c10505637416c290aabd" category="inline-link-rx"></block>以取得支援的 JDK 版本。</block>
 </blocks>

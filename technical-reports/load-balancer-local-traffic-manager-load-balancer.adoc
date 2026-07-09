@@ -21,6 +21,7 @@ summary: 探索本機流量管理負載平衡器的指引、並判斷最佳組�
 
 
 
+[[create-a-resource-group-of-storage-nodes]]
 == 建立儲存節點資源群組
 
 將 StorageGRID 儲存節點群組至資源集區或服務群組（術語可能與特定負載平衡器不同）。StorageGRID 儲存節點在下列連接埠上呈現 S3 API ：
@@ -36,6 +37,7 @@ NOTE: 每個 StorageGRID 站台都需要預設的三個儲存節點、其中兩�
 
 
 
+[[health-check]]
 == 健全狀況檢查
 
 協力廠商負載平衡器需要一種方法來判斷每個節點的健全狀況及其接收流量的資格。NetApp 建議使用 HTTP `OPTIONS` 方法來執行健全狀況檢查。負載平衡器會向每個個別的儲存節點發出 HTTP `OPTIONS` 要求、並預期會有 `200` 狀態回應。
@@ -48,6 +50,7 @@ NOTE: 每個 StorageGRID 站台都需要預設的三個儲存節點、其中兩�
 
 
 
+[[s3-health-check-example]]
 === S3 健全狀況檢查範例
 
 在以下範例中，我們會傳送 `OPTIONS` 並檢查 `200 OK`。我們使用的 `OPTIONS` 原因是 Amazon S3 ）不支援未經授權的要求。
@@ -76,6 +79,7 @@ NOTE: 每個 StorageGRID 站台都需要預設的三個儲存節點、其中兩�
 ----
 
 
+[[file-or-content-based-health-checks]]
 === 檔案或內容型健全狀況檢查
 
 一般而言、 NetApp 不建議使用檔案型健全狀況檢查。例如、通常會在具有唯讀原則的貯體中建立小型檔案 —`healthcheck.htm`。然後負載平衡器會擷取並評估此檔案。此方法有幾個缺點：
@@ -90,12 +94,14 @@ NOTE: 每個 StorageGRID 站台都需要預設的三個儲存節點、其中兩�
 
 
 
+[[session-persistence]]
 === 工作階段持續性
 
 工作階段持續性（或黏性）是指允許指定 HTTP 工作階段持續的時間。依預設、儲存節點會在 10 分鐘後捨棄工作階段。較長的持續性可能會導致更好的效能、因為應用程式不需要為每個動作重新建立工作階段、但保持開啟這些工作階段會消耗資源。如果您確定工作負載會受惠、則可以減少第三方負載平衡器上的工作階段持續性。
 
 
 
+[[virtual-hosted-style-addressing]]
 == 虛擬代管型定址
 
 虛擬託管樣式現在是 AWS S3 的預設方法、雖然 StorageGRID 和許多應用程式仍支援路徑樣式、但實作虛擬託管式支援是最佳做法。虛擬託管式要求的主機名稱中包含貯體。
@@ -108,6 +114,7 @@ NOTE: 每個 StorageGRID 站台都需要預設的三個儲存節點、其中兩�
 
 
 
+[[ssl-termination]]
 == SSL 終止
 
 第三方負載平衡器上的 SSL 終止有安全效益。如果負載平衡器遭到入侵、網格就會被分割。
@@ -121,12 +128,14 @@ NOTE: 每個 StorageGRID 站台都需要預設的三個儲存節點、其中兩�
 
 
 
+[[pass-through-configuration]]
 == 傳遞組態
 
 如果您偏好設定負載平衡器以進行傳遞、則必須在 StorageGRID 上安裝憑證。前往功能表：組態 [ 伺服器憑證 > 物件儲存 API 服務端點伺服器憑證 ] 。
 
 
 
+[[source-client-ip-visibility]]
 == 來源用戶端 IP 可見度
 
 StorageGRID 11.4 引進了信任的第三方負載平衡器概念。若要將用戶端應用程式 IP 轉寄至 StorageGRID 、您必須設定此功能。如需詳細資訊、請參閱 https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_configure_StorageGRID_to_work_with_third-party_Layer_7_load_balancers["如何設定 StorageGRID 以搭配第三方第 7 層負載平衡器使用。"^]
@@ -140,6 +149,7 @@ StorageGRID 11.4 引進了信任的第三方負載平衡器概念。若要將用
 
 
 
+[[load-balancing-strategies]]
 === 負載平衡策略
 
 大多數負載平衡解決方案都提供多種負載平衡策略。以下是常見策略：
@@ -152,6 +162,7 @@ StorageGRID 11.4 引進了信任的第三方負載平衡器概念。若要將用
 
 
 
+[[data-path]]
 === 資料路徑
 
 所有資料都會流經本機流量管理器負載平衡器。StorageGRID 不支援直接伺服器路由（ DSR ）。

@@ -16,6 +16,7 @@ summary: 從 ONTAP S3 移轉至 StorageGRID 。
 
 
 
+[[migration-demo]]
 == 移轉示範
 
 這是將使用者和貯體從 ONTAP S3 移轉至 StorageGRID 的示範。

@@ -20,6 +20,7 @@ _ 作者： Aron Klein_
 
 
 
+[[legal-hold]]
 == 合法持有
 
 * 物件鎖定合法保留是套用至物件的簡單開啟/關閉狀態。
@@ -68,6 +69,7 @@ aws s3api get-object-legal-hold --bucket <bucket> --key <file> --endpoint-url ht
 
 
 
+[[compliance-mode]]
 == 法規遵循模式
 
 * 物件保留會以保留直到時間戳記完成。
@@ -97,6 +99,7 @@ aws s3api get-object-retention --bucket <bucket> --key <file> --endpoint-url htt
 
 
 
+[[default-retention]]
 == 預設保留
 
 * 設定保留期間（以天數和年數為單位）、並使用「每個物件API」所定義的「保留截止日期」。
@@ -152,6 +155,7 @@ aws s3api get-object-retention --bucket <bucket> --key <file> --endpoint-url htt
 
 
 
+[[test-deleting-an-object-with-a-defined-retention]]
 == 測試刪除具有定義保留的物件
 
 物件鎖定是建置在版本管理之上。保留是在物件的某個版本上定義。如果嘗試刪除已定義保留的物件、但未指定版本、則會建立刪除標記作為物件的目前版本。

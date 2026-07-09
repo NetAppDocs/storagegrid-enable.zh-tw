@@ -18,6 +18,7 @@ summary: 探索客戶與 NetApp IT 實作的 StorageGRID 組態使用案例。
 
 
 
+[[commvault-sizing-inputs]]
 == CommVault 規模調整輸入
 
 下列工作可用於執行探索、以調整資料保護解決方案的規模：
@@ -34,6 +35,7 @@ summary: 探索客戶與 NetApp IT 實作的 StorageGRID 組態使用案例。
 
 
 
+[[storagegrid-sizing-guidance]]
 == StorageGRID 規模調整指南
 
 在您執行 NetApp StorageGRID 規模調整之前、請先考量工作負載的下列層面：
@@ -115,6 +117,7 @@ StorageGRID 通常部署在兩個或多個站台中、其資料保護原則可�
 
 
 
+[[scaling]]
 == 擴充
 
 您可以將儲存設備新增至儲存節點、將新的網格節點新增至現有站台、或新增資料中心站台、來擴充 NetApp StorageGRID 系統。您可以在不中斷目前系統運作的情況下執行擴充作業。

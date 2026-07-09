@@ -16,6 +16,7 @@ summary: 從 ONTAP S3 移轉至 StorageGRID 。
 
 
 
+[[populate-the-source-bucket]]
 == 填入來源 Bucket
 
 讓我們將一些物件放入來源 ONTAP 貯體中。我們將使用 S3 瀏覽器進行此示範、但您可以使用任何您熟悉的工具。
@@ -48,6 +49,7 @@ image:ontap-migrate/ontap-s3browser-versions.png["檢視版本"]
 
 
 
+[[establish-the-replication-relationship]]
 === 建立複寫關係
 
 讓我們開始將資料從 ONTAP 傳送至 StorageGRID 。
@@ -93,6 +95,7 @@ image:ontap-migrate/ontap-snapmirror-status.png["檢查 SnapMirror 關係"]
 
 
 
+[[the-replication-details]]
 === 複寫詳細資料
 
 我們現在已成功將儲存庫從 ONTAP 複製到 StorageGRID 。但實際複寫的內容是什麼？我們的來源和目的地都是版本化的貯體。舊版是否也會複寫到目的地？如果我們使用 S3 瀏覽器查看 StorageGRID 儲存庫、就會發現現有版本並未複寫、而且刪除的物件不存在、也不會有該物件的刪除標記。我們複製的物件在 StorageGRID 儲存庫中只有 1 個版本。

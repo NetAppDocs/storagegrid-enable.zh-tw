@@ -13,6 +13,7 @@ summary: 本報告涵蓋 StorageGRID 上的巨量資料分析。
 
 
 
+[[netapp-storagegrid-use-cases]]
 == NetApp StorageGRID 使用案例
 
 NetApp StorageGRID 物件儲存解決方案提供擴充性、資料可用度、安全性及高效能。各種規模的組織、以及各行各業的組織、都會使用 StorageGRID S3 來處理各種使用案例。讓我們來探索一些典型案例：
@@ -37,6 +38,7 @@ image:datalake-analytics/image1.png["StorageGRID 使用案例圖表、寬度 = 3
 
 
 
+[[why-storagegrid-for-data-lakes]]
 == 為何選擇 StorageGRID 來處理資料湖？
 
 * 更高的協同作業效率：大規模共用多站台、多租戶、並具備業界標準 API 存取功能
@@ -52,9 +54,10 @@ image:datalake-analytics/image2.png["StorageGRID datalake 範例、 width=614 �
 
 
 
+[[benchmarking-data-warehouses-and-lakehouses-with-s3-object-storage-a-comparative-study]]
 == 以 S3 物件儲存為基準測試資料倉儲和 Lakeouses ：比較研究
 
-本文提供使用 NetApp StorageGRID 的各種資料倉儲和湖屋生態系統的完整基準。目標是判斷哪一種系統在 S3 物件儲存設備上的效能最佳。請參閱此資訊https://www.dremio.com/wp-content/uploads/2023/02/apache-Iceberg-TDG_ER1.pdf?aliId=eyJpIjoieDRUYjFKN2ZMbXhTRnFRWCIsInQiOiJIUUw0djJsWnlJa21iNUsyQURRalNnPT0ifQ%253D%253D["Apache 冰山：最終指南"]、深入瞭解資料流 / 湖屋架構和表格格式（ Parquet 和冰山）。
+本文使用 NetApp StorageGRID 對各種資料倉儲和湖倉式儲存生態系統進行了全面的基準測試。目標是確定哪個系統在 S3 物件儲存方面效能最佳。請參閱此https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html["Apache 冰山：最終指南"]以了解更多關於資料倉儲/湖倉式儲存架構和表格式（Parquet 和 Iceberg）的資訊。
 
 * 基準測試工具 - TPC-DS - https://www.tpc.org/tpcds/[]
 * Big Data 生態系統

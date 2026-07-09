@@ -16,6 +16,7 @@ summary: StorageGRID 中的政策與權限。
 
 
 
+[[the-structure-of-a-policy]]
 == 原則的結構
 
 在 StorageGRID 中，群組原則與 AWS 使用者（ IAM ） S3 服務原則相同。
@@ -116,6 +117,7 @@ JSON 原則的格式如下：
 ----
 
 
+[[using-the-aws-policy-generator]]
 == 使用 AWS 原則產生器
 
 AWS 原則產生器是一項絕佳工具，可協助您取得 json 程式碼，並取得您嘗試實作的正確格式和資訊。
@@ -245,10 +247,12 @@ image:policy/example-output.png["最終輸出"]
 ----
 
 
+[[group-policies-iam]]
 == 群組原則（IAM）
 
 
 
+[[home-directory-style-bucket-access]]
 === 主目錄樣式庫存取
 
 此群組原則僅允許使用者存取名為使用者使用者名稱之儲存區中的物件。
@@ -280,6 +284,7 @@ image:policy/example-output.png["最終輸出"]
 ----
 
 
+[[deny-object-lock-bucket-creation]]
 === 拒絕建立物件鎖定儲存區
 
 此群組原則會限制使用者建立在貯體上啟用物件鎖定的貯體。
@@ -311,6 +316,7 @@ image:policy/example-output.png["最終輸出"]
 ----
 
 
+[[object-lock-retention-limit]]
 === 物件鎖定保留限制
 
 此 Bucket 原則將物件鎖定保留期間限制為 10 天或更短
@@ -340,6 +346,7 @@ image:policy/example-output.png["最終輸出"]
 ----
 
 
+[[restrict-users-from-deleting-objects-by-versionid]]
 === 限制使用者以版本 ID 刪除物件
 
 此群組原則會限制使用者依照版本 ID 刪除版本管理的物件
@@ -365,6 +372,7 @@ image:policy/example-output.png["最終輸出"]
 ----
 
 
+[[restrict-a-group-to-single-subdirectory-prefix-with-read-only-access]]
 === 將群組限制為具有唯讀存取權的單一子目錄（首碼）
 
 此原則可讓群組成員對儲存庫中的子目錄（前置）擁有唯讀存取權。貯體名稱為「 study 」、子目錄為「 study01 」。
@@ -436,10 +444,12 @@ image:policy/example-output.png["最終輸出"]
 ----
 
 
+[[bucket-policies]]
 == 貯體原則
 
 
 
+[[restrict-bucket-to-single-user-with-read-only-access]]
 === 將儲存區限制為具有唯讀存取權的單一使用者
 
 此原則可讓單一使用者擁有儲存區的唯讀存取權、並明確地讓Denys存取所有其他使用者。將「拒絕」陳述式分組在原則頂端、是加速評估的好做法。
@@ -482,6 +492,7 @@ image:policy/example-output.png["最終輸出"]
 ----
 
 
+[[restrict-a-bucket-to-a-few-users-with-read-only-access]]
 === 將貯體限制在少數具有唯讀存取權的使用者。
 
 [source, json]
@@ -531,6 +542,7 @@ image:policy/example-output.png["最終輸出"]
 ----
 
 
+[[restrict-user-deletes-of-versioned-objects-in-a-bucket]]
 === 限制使用者刪除貯體中的版本化物件
 
 此貯體原則會限制使用者（由使用者 ID 「 56622399308951294926 」識別）依版本 ID 刪除版本管理物件

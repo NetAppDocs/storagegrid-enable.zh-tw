@@ -16,6 +16,7 @@ summary: 本指南詳細說明如何使用StorageGRID Amazon OpenSearch Service�
 
 
 
+[[introduction]]
 == 簡介
 
 支援三種平台服務。StorageGRID
@@ -33,6 +34,7 @@ summary: 本指南詳細說明如何使用StorageGRID Amazon OpenSearch Service�
 
 
 
+[[create-tenant-and-enable-platform-services]]
 == 建立租戶並啟用平台服務
 
 . 使用Grid Manager建立S3租戶、輸入顯示名稱、然後選取S3傳輸協定。
@@ -50,10 +52,12 @@ image:storagegrid-search-integration-service/sg-sis-select-permissions.png["選�
 
 
 
+[[search-integration-services-with-amazon-opensearch]]
 == 使用Amazon OpenSearch搜尋整合服務
 
 
 
+[[amazon-opensearch-formerly-elasticsearch-service-setup]]
 === Amazon OpenSearch（前身為Elasticsearch）服務設定
 
 使用此程序可快速且簡單地設定OpenSearch服務、僅供測試/示範之用。如果您使用內部部署Elasticsearch來搜尋整合服務、請參閱一節 xref:search-integration-services-with-on-premises-elasticsearch[搜尋整合服務與內部部署彈性搜尋]。
@@ -126,6 +130,7 @@ image:storagegrid-search-integration-service/sg-sis-verifying-the-index.png["驗
 
 
 
+[[platform-services-endpoint-configuration]]
 == 平台服務端點組態
 
 若要設定平台服務端點、請遵循下列步驟：
@@ -156,10 +161,12 @@ image:storagegrid-search-integration-service/sg-sis-platform-service-endpoints.p
 
 
 
+[[search-integration-services-with-on-premises-elasticsearch]]
 == 搜尋整合服務與內部部署彈性搜尋
 
 
 
+[[on-premises-elasticsearch-setup]]
 === 內部部署彈性搜尋設定
 
 此程序僅供快速設定內部部署Elasticsearch和Kibana Using Docker、僅供測試之用。如果Elasticsearch和Kibana伺服器已經存在、請前往步驟5。
@@ -211,6 +218,7 @@ image:storagegrid-search-integration-service/sg-sis-execute-put-command.png["執
 
 
 
+[[platform-services-endpoint-configuration]]
 == 平台服務端點組態
 
 若要設定平台服務的端點、請遵循下列步驟：
@@ -238,6 +246,7 @@ image:storagegrid-search-integration-service/sg-sis-successfully-verified-endpoi
 
 
 
+[[bucket-search-integration-service-configuration]]
 == Bucket搜尋整合服務組態
 
 建立平台服務端點之後、下一步是在資源庫層級設定此服務、以便在物件建立、刪除或更新中繼資料或標記時、將物件中繼資料傳送至定義的端點。
@@ -318,6 +327,7 @@ image:storagegrid-search-integration-service/sg-sis-query-two-sample.png["查詢
 
 
 
+[[where-to-find-additional-information]]
 == 何處可找到其他資訊
 
 若要深入瞭解本文所述資訊、請檢閱下列文件和 / 或網站：

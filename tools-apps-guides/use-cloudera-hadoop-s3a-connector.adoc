@@ -18,6 +18,7 @@ Hadoop 一段時間以來一直是資料科學家的最愛。Hadoop可利用簡�
 
 
 
+[[why-use-s3a-for-hadoop-workflows]]
 == 為什麼要使用S3A來執行Hadoop工作流程？
 
 隨著資料量隨著時間成長、使用自己的運算和儲存設備來新增機器的方法變得效率不彰。線性擴充會在有效使用資源和管理基礎架構方面帶來挑戰。
@@ -26,10 +27,12 @@ Hadoop 一段時間以來一直是資料科學家的最愛。Hadoop可利用簡�
 
 
 
+[[configure-s3a-connector-to-use-storagegrid]]
 == 設定S3A連接器以使用StorageGRID Sfor
 
 
 
+[[prerequisites]]
 === 先決條件
 
 * 適用於Hadoop S3A連線測試的SS3端點URL、租戶S3存取金鑰及秘密金鑰。StorageGRID
@@ -40,9 +43,10 @@ Hadoop 一段時間以來一直是資料科學家的最愛。Hadoop可利用簡�
 
 
 
+[[install-java-package]]
 === 安裝Java套件
 
-. 請檢查 https://docs.cloudera.com/cdp-private-cloud-upgrade/latest/release-guide/topics/cdpdc-java-requirements.html["Cloudera支援對照表"^] 以取得支援的JDK版本。
+. 請檢查 https://docs.cloudera.com/cdp-private-cloud-upgrade/latest/upgrade/topics/cdpdc-java-requirements.html["Cloudera支援對照表"^]以取得支援的 JDK 版本。
 . 下載 https://www.oracle.com/java/technologies/downloads/["Java 11.x套件"^] 這與Cloudera叢集作業系統相符。將此套件複製到叢集中的每個主機。在此範例中、rpm套件用於CentOS。
 . 以root身分或使用具有Sudo權限的帳戶登入每個主機。在每個主機上執行下列步驟：
 +
@@ -85,6 +89,7 @@ source /etc/profile
 
 
 
+[[cloudera-hdfs-s3a-configuration]]
 === Cloudera HDFS S3組態
 
 *步驟*
@@ -153,10 +158,12 @@ image:hadoop-s3a/hadoop-restart-stale-service-icon.png["重新啟動Hadoop過時
 
 
 
+[[test-s3a-connection-to-storagegrid]]
 == 測試S3A與StorageGRID Sfe的連線
 
 
 
+[[perform-basic-connection-test]]
 === 執行基本連線測試
 
 登入Cloudera叢集中的其中一部主機、然後輸入「Hadoop FS -ls s3a：//_<stucke-name>_/」。
@@ -178,6 +185,7 @@ Found 1 items
 ----
 
 
+[[troubleshooting]]
 === 疑難排解
 
 

@@ -18,6 +18,7 @@ Hadoop S3A 連接器可促進 Hadoop 應用程式與 S3 物件儲存之間的順
 
 
 
+[[what-is-hadoop]]
 == 什麼是 Hadoop ？
 
 * Hadoop * 是功能強大的開放原始碼架構、專為處理大規模資料處理與儲存而設計。它可跨電腦叢集進行分散式儲存和平行處理。
@@ -31,6 +32,7 @@ Hadoop 的三個核心元件為：
 
 
 
+[[hadoop-hdfs-and-s3a-connector]]
 == Hadoop HDFS 和 S3A 接頭
 
 HDFS 是 Hadoop 生態系統的重要元件、在高效率的巨量資料處理中扮演重要角色。HDFS 提供可靠的儲存與管理功能。它可確保平行處理和最佳化的資料儲存、進而加快資料存取和分析速度。
@@ -43,6 +45,7 @@ HDFS 是 Hadoop 生態系統的重要元件、在高效率的巨量資料處理�
 
 
 
+[[hadoop-s3a-connector-tuning]]
 == Hadoop S3A 接頭調校
 
 S3 的行為與 HDFS 不同、有些為了保留檔案系統外觀的嘗試則不佳。為了最有效地使用 S3 資源、必須仔細調整 / 測試 / 實驗。

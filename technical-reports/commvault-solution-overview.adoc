@@ -18,6 +18,7 @@ summary: 探索客戶與 NetApp IT 實作的 StorageGRID 組態使用案例。
 
 
 
+[[solution-setup]]
 == 解決方案設定
 
 在實驗室設定中、 StorageGRID 環境包含四個 NetApp StorageGRID SG5712 應用裝置、一個虛擬主要管理節點和一個虛擬閘道節點。SG5712 應用裝置是入門級選項、是一種基礎組態。選擇更高效能的應用裝置選項、例如 NetApp StorageGRID SG5760 或 SG6060 、可提供顯著的效能優勢。請洽詢您的 NetApp StorageGRID 解決方案架構設計師、以取得規模調整協助。
@@ -48,10 +49,9 @@ summary: 探索客戶與 NetApp IT 實作的 StorageGRID 組態使用案例。
 |===
 ILM 2 複製規則是預設規則。「刪除編碼 2+1 」規則已套用至此測試、適用於任何 200 KB 或更大的物件。預設規則已套用至小於 200KB 的物件。以這種方式應用規則是 StorageGRID 最佳實務做法。
 
-如需此測試環境的技術詳細資料、請參閱中的解決方案設計與最佳實務一節 https://www.netapp.com/us/media/tr-4831.pdf["NetApp 透過 CommVault 實現橫向擴充資料保護"] 技術報告。
 
 
-
+[[storagegrid-hardware-specifications]]
 == StorageGRID 硬體規格
 
 下表說明此測試所使用的 NetApp StorageGRID 硬體。StorageGRID SG5712 應用裝置搭配 10Gbps 網路是入門級選項、代表基本組態。SG5712 也可設定為 25Gbps 網路。
@@ -77,6 +77,7 @@ StorageGRID SG5712 設備
 
 
 
+[[commvault-and-storagegrid-software-requirements]]
 == CommVault 與 StorageGRID 軟體需求
 
 下表列出安裝在 VMware 軟體上的 CommVault 和 NetApp StorageGRID 軟體的軟體需求、以供我們測試。安裝了四個 MediaAgent 資料傳輸管理員和一個 CommServe 伺服器。在測試中、我們針對 VMware 基礎架構建置了 10Gbps 網路。下表

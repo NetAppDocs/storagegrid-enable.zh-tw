@@ -16,6 +16,7 @@ summary: 第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.3
 
 
 
+[[third-party-solutions-validated-on-storagegrid]]
 == 第三方解決方案已在StorageGRID NetApp上驗證
 
 這些解決方案已與相關合作夥伴共同測試。
@@ -54,6 +55,7 @@ summary: 第三方解決方案已通過StorageGRID 驗證、適用於NetApp 11.3
 
 
 
+[[third-party-solutions-supported-on-storagegrid]]
 == StorageGRID 支援的協力廠商解決方案
 
 這些解決方案已通過測試。

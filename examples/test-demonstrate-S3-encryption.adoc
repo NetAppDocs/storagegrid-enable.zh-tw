@@ -20,12 +20,14 @@ _ 作者： Aron Klein_
 
 
 
+[[server-side-encryption-sse]]
 == 伺服器端加密（SSe）
 
 使用者可透過sse儲存物件、並使用StorageGRID 由支援的獨特金鑰來加密物件。當物件被要求時、物件會被儲存在StorageGRID 物件中的金鑰解密。
 
 
 
+[[sse-example]]
 === 例如
 
 * 將物件放入SS
@@ -63,12 +65,14 @@ aws s3api get-object --bucket <bucket>  --key <file> <file> --endpoint-url https
 
 
 
+[[server-side-encryption-with-customer-provided-keys-sse-c]]
 == 使用客戶提供的金鑰進行伺服器端加密（SSE-C）
 
 使用者可透過SSE儲存物件、並使用用戶端隨物件提供的唯一金鑰來加密物件。要求物件時、必須提供相同的金鑰才能解密及傳回物件。
 
 
 
+[[sse-c-example]]
 === SSE-C範例
 
 * 為了測試或示範目的、您可以建立加密金鑰
@@ -132,12 +136,14 @@ NOTE: 如果您未提供加密金鑰、則會在呼叫GetObject作業時收到�
 
 
 
+[[bucket-server-side-encryption-sse-s3]]
 == 儲存區伺服器端加密（SSE-S3）
 
 SSE-S3可讓用戶端針對儲存在儲存區中的所有物件、定義預設的加密行為。物件會使用StorageGRID 由支援的獨特金鑰進行加密。當物件被要求時、物件會被儲存在StorageGRID 檔中的金鑰解密。
 
 
 
+[[bucket-sse-s3-example]]
 === Bucket SSE-S3範例
 
 * 建立新儲存區並設定預設加密原則

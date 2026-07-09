@@ -20,6 +20,7 @@ summary: 探索客戶與 NetApp IT 實作的 StorageGRID 組態使用案例。
 
 
 
+[[f5-big-ip-local-traffic-manager-health-check-monitor-for-s3-bucket]]
 == F5 BIG-IP 本機流量管理程式狀態檢查監控 S3 貯體
 
 若要設定 F5 BIG-IP 本機流量管理程式健全狀況檢查監控器、請依照下列步驟進行：
@@ -48,6 +49,7 @@ image:load-balancer/load-balancer-monitor-configuration-page.png["監控組態�
 
 
 
+[[citrix-netscaler]]
 == Citrix NetScaler
 
 Citrix NetScaler 會為儲存端點建立虛擬伺服器、並將 StorageGRID 儲存節點稱為應用程式伺服器、然後將其分組至服務。
@@ -62,18 +64,21 @@ image:load-balancer/load-balancer-configure-monitor.png["Configure-monitor.png"]
 
 
 
+[[loadbalancer-org]]
 == Loadbalancer.org
 
 Loadbalancer.org 已經與 StorageGRID 進行了自己的整合測試，並提供了廣泛的組態指南： https://pdfs.loadbalancer.org/NetApp_StorageGRID_Deployment_Guide.pdf[]。
 
 
 
+[[kemp]]
 == Kemp
 
 Kemp 已與 StorageGRID 進行了自己的整合測試、並提供廣泛的組態指南： https://kemptechnologies.com/solutions/netapp/[]。
 
 
 
+[[haproxy]]
 == HAProxy
 
 將 HAProxy 設定為使用選項要求、並檢查 haproxy.cfg 中健全狀況檢查的 200 狀態回應。您可以將前端的繫結連接埠變更為其他連接埠、例如 443 。

@@ -19,6 +19,7 @@ link:https://docs.netapp.com/us-en/storagegrid-118/maintain/changing-nodes-netwo
 
 
 
+[[considerations-before-site-relocation]]
 == 重新部署站台前的考量事項
 
 * 應完成站台移動、所有節點應在 15 天內上線、以避免 Cassandra 資料庫重建。
@@ -34,11 +35,11 @@ image:site-relocation/s3-completed-request.png["S3 概述 Grafana 圖表範例"]
 
 
 
+[[procedure-to-change-grid-ip-address-before-site-relocation]]
 === 站台重新定位前變更 Grid IP 位址的程序
 
 .步驟
-. 如果在新位置使用新的 Grid 網路子網路、
-link:https://docs.netapp.com/us-en/storagegrid-118/expand/updating-subnets-for-grid-network.htmll["將子網路新增至 Grid 網路子網路清單"^]
+. 如果新位置將使用新的 Grid 網路子網路，link:https://docs.netapp.com/us-en/storagegrid/expand/updating-subnets-for-grid-network.html["將子網路新增至 Grid 網路子網路清單"^]
 . 登入主要管理節點、使用 change-ip 進行 Grid IP 變更、必須 * 登入 * 登入 * 變更才能關閉節點以進行重新定位。
 +
 .. 選擇 2 、然後選擇 1 進行網格 IP 變更
@@ -75,6 +76,7 @@ image:site-relocation/ip-change-6.png["繼續"]
 
 
 
+[[appliance-vlan-change]]
 === 應用裝置 VLAN 變更
 
 下列程序假設您可以遠端存取 StorageGRID 應用裝置的管理員或用戶端網路、以便從遠端執行變更。

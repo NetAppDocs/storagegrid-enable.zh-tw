@@ -18,6 +18,7 @@ summary: 瞭解部署 StorageGRID 所需的運算、儲存、網路、泊塢視�
 
 
 
+[[compute-requirements]]
 == 運算需求
 
 下表列出每種 StorageGRID 節點類型支援的最低資源需求。這些是 StorageGRID 節點所需的最低資源。
@@ -43,6 +44,7 @@ summary: 瞭解部署 StorageGRID 所需的運算、儲存、網路、泊塢視�
 
 
 
+[[networking-requirements]]
 == 網路需求
 
 StorageGRID 流量的三種類型包括：
@@ -60,6 +62,7 @@ StorageGRID 流量的三種類型包括：
 
 
 
+[[note-on-docker-networking]]
 === Docker 網路注意事項
 
 StorageGRID 使用網路的方式與某些 Docker 容器實作方式不同。不使用 Docker （或 Kubernetes 或 swarm ）提供的網路。StorageGRID 實際上會將容器當成 --net=none 、這樣 Docker 就不會對容器進行任何網路連線。當容器被 StorageGRID 服務所衍生出來之後、就會從節點組態檔案中定義的介面建立新的 Macvlan 裝置。該裝置有新的 MAC 位址、可作為獨立的網路裝置、從實體介面接收封包。然後將 Macvlan 裝置移至 Container 命名空間、並重新命名為容器內的 eth0 、 eth1 或 eth2 之一。此時、主機作業系統中不再顯示網路裝置。在我們的範例中、網格網路裝置是 Docker 容器內的 eth0 、用戶端網路是 eth2 。如果我們有管理網路、則該裝置會是容器中的 eth1 。
@@ -69,12 +72,13 @@ NOTE: 容器網路裝置的新 MAC 位址可能需要在某些網路和虛擬環
 
 
 
+[[storage-requirements]]
 == 儲存需求
 
 每個節點都需要 SAN 型或本機磁碟裝置、大小如下表所示。
 
 
-NOTE: 表格中的數字是針對每種 StorageGRID 服務類型、而非整個網格或每個實體主機。根據部署選項、我們將在本文件稍後的中、計算每部實體主機的數量 link:prerequisites-install-storagegrid.html#physical-host-layout-and-requirements["實體主機配置與需求"]。++ ++ 安裝程式會在 StorageGRID 容器本身建立標有星號的路徑或檔案系統。管理員不需要手動設定或建立檔案系統、但主機需要區塊裝置才能滿足這些需求。換句話說、區塊裝置應該使用命令來顯示 `lsblk` 、但不要在主機作業系統中格式化或掛載。++++
+NOTE: 表格中的數字是針對每種 StorageGRID 服務類型，而非整個網格或每個實體主機。我們將根據部署選項，在本文件後續部分計算每個實體主機的數字link:bare-metal-prerequisites-install-storagegrid.html#physical-host-layout-and-requirements["實體主機配置與需求"]。++ ++ 標有星號的路徑或檔案系統將由安裝程式在 StorageGRID 容器中建立。管理員無需手動設定或建立檔案系統，但主機需要區塊裝置來滿足這些要求。換句話說，區塊裝置應透過命令  `lsblk` 顯示，但不得在主機作業系統中格式化或掛載。++ ++
 
 [cols="15,20,15,15,15,20"]
 |===
@@ -101,14 +105,16 @@ NOTE: 表格中的數字是針對每種 StorageGRID 服務類型、而非整個�
 BLOCK_DEVICE_RANGEDB_001 = /dev/mapper/SN-Db01
 BLOCK_DEVICE_RANGEDB_002 = /dev/mapper/SN-Db02` 
 |===
-在此範例中、下表所示的磁碟大小是每種容器類型所需的。本文件稍後的、中說明每部實體主機的需求 link:prerequisites-install-storagegrid.html#physical-host-layout-and-requirements["實體主機配置與需求"]。
+在本例中、下表所示的磁碟大小是每種容器類型所需的磁碟大小。每台實體主機的需求說明請參閱本文件後面的 link:bare-metal-prerequisites-install-storagegrid.html#physical-host-layout-and-requirements["實體主機配置與需求"]。
 
 
 
+[[disk-sizes-per-container-type]]
 == 每種容器類型的磁碟大小
 
 
 
+[[admin-container]]
 === 管理容器
 
 [cols="50,50"]
@@ -129,6 +135,7 @@ BLOCK_DEVICE_RANGEDB_002 = /dev/mapper/SN-Db02`
 |===
 
 
+[[storage-container]]
 === 儲存容器
 
 [cols="50,50"]
@@ -152,6 +159,7 @@ BLOCK_DEVICE_RANGEDB_002 = /dev/mapper/SN-Db02`
 |===
 
 
+[[gateway-container]]
 === 閘道容器
 
 [cols="50,50"]
@@ -166,6 +174,7 @@ BLOCK_DEVICE_RANGEDB_002 = /dev/mapper/SN-Db02`
 |===
 
 
+[[physical-host-layout-and-requirements]]
 == 實體主機配置與需求
 
 透過結合上表所示的運算和網路需求、您可以獲得一組基本的硬體、以安裝三部具有 16 核心、 64GB RAM 和兩個網路介面的實體（或虛擬）伺服器。如果需要較高的處理量、可以在網格或用戶端網路上連結兩個或更多介面、並在節點組態檔案中使用 VLAN 標記介面、例如 bond0.520 。如果您預期的工作負載會更密集、那麼主機和容器的記憶體就會更多。
@@ -298,6 +307,7 @@ Docker 儲存區的計算方式是：每個 /var/local （每個容器）允許 
 
 
 
+[[preparing-the-nodes]]
 == 準備節點
 
 若要準備 StorageGRID 的初始安裝、請先安裝 RHEL 9.2 版並啟用 SSH 。根據最佳實務做法設定網路介面、網路時間傳輸協定（ NTP ）、 DNS 和主機名稱。您至少需要一個已啟用網格網路的網路介面、另一個則需要用戶端網路。如果您使用的是具有 VLAN 標記的介面、請依照下列範例進行設定。否則、簡單的標準網路介面組態就足夠了。
@@ -326,9 +336,10 @@ ONBOOT=yes
 
 
 
+[[optional-storage-setup-with-iscsi]]
 == iSCSI 的選用儲存設備設定
 
-如果您不使用 iSCSI 儲存設備、則必須確保 host1 、 host2 和 host3 包含大小足以滿足其需求的區塊裝置。請參閱 link:prerequisites-install-storagegrid.html#disk-sizes-per-container-type["每種容器類型的磁碟大小"] 瞭解 host1 、 host2 和 host3 儲存需求。
+如果您未使用 iSCSI 儲存，則必須確保 host1、host2 和 host3 包含足夠容量的區塊裝置以滿足其需求。請參閱 link:bare-metal-prerequisites-install-storagegrid.html#disk-sizes-per-container-type["每種容器類型的磁碟大小"] 以了解 host1、host2 和 host3 的儲存需求。
 
 若要使用 iSCSI 設定儲存設備、請完成下列步驟：
 
@@ -347,7 +358,7 @@ sudo yum install device-mapper-multipath
 # cat /etc/iscsi/initiatorname.iscsi
 InitiatorName=iqn.2006-04.com.example.node1
 ----
-. 使用步驟 2 中的啟動器名稱、將儲存裝置上的 LUN （表中所示的數量和大小）對應 link:prerequisites-install-storagegrid.html#storage-requirements["儲存需求"] 至每個儲存節點。
+. 使用步驟 2 中的啟動器名稱，將儲存裝置上的 LUN （link:bare-metal-prerequisites-install-storagegrid.html#storage-requirements["儲存需求"] 表中顯示的數量和大小）對應到每個儲存節點。
 . 使用探索新建立的 LUN `iscsiadm` 並登入它們。
 +
 [listing]
@@ -437,6 +448,7 @@ alias GW-OS
 ----
 
 
+[[preparing-for-docker-installation]]
 == 準備安裝 Docker
 
 若要準備 Docker 安裝、請完成下列步驟：

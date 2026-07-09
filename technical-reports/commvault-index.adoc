@@ -20,6 +20,7 @@ CommVault 與 NetApp 攜手合作、共同打造共同的資料保護解決方�
 
 
 
+[[about-commvault-and-storagegrid]]
 == 關於 CommVault 和 StorageGRID
 
 CommVault 完整備份與還原軟體是一種企業級的整合式資料與資訊管理解決方案、完全以單一平台為基礎、並以統一的程式碼基礎打造而成。其所有功能都會共享後端技術、提供完全整合的資料保護、管理及存取方法所帶來的無與倫比的優勢與效益。本軟體包含可保護、歸檔、分析、複寫及搜尋資料的模組。這些模組共用一組通用的後端服務和進階功能、可彼此順暢互動。此解決方案可解決企業中資料管理的所有層面、同時提供無限的擴充性、以及前所未有的資料與資訊控制能力。
@@ -38,6 +39,7 @@ StorageGRID 智慧型原則引擎可協助您選擇下列任一選項：
 
 
 
+[[key-features]]
 == 主要功能
 
 CommVault 軟體平台的主要功能包括：
@@ -58,6 +60,7 @@ CommVault 軟體平台的主要功能包括：
 
 
 
+[[backup-options]]
 == 備份選項
 
 當您使用雲端儲存設備實作 CommVault 完整備份與還原軟體時、您有兩個備份選項：
@@ -103,13 +106,13 @@ CommVault 軟體平台的主要功能包括：
 |===
 
 
+[[where-to-find-additional-information]]
 == 何處可找到其他資訊
 
 若要深入瞭解本文所述資訊、請檢閱下列文件和 / 或網站：
 
-* StorageGRID 11.9 文件中心 +https://docs.netapp.com/us-en/storagegrid-119/[]
+* StorageGRID 11.9 文件中心 + https://docs.netapp.com/us-en/storagegrid/[]
 * NetApp 產品文件 +
 https://docs.netapp.com[]
-* CommVault 說明文件 +
-https://documentation.commvault.com/2024/essential/index.html[]
+* Commvault 文件 + https://documentation.commvault.com/2024e/software/index.html[]
 

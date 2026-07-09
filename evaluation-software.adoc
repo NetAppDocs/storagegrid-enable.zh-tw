@@ -16,6 +16,7 @@ summary: 為潛在客戶存取 StorageGRID 評估軟體的步驟。
 
 
 
+[[register-for-an-account]]
 == 註冊帳戶
 
 . 使用您的企業電子郵件在上註冊帳戶 https://mysupport.netapp.com/site/user/registration["NetApp 支援網站"] 。
@@ -35,6 +36,7 @@ summary: 為潛在客戶存取 StorageGRID 評估軟體的步驟。
 
 
 
+[[download-storagegrid]]
 == 下載 StorageGRID
 
 . 在您的支援案例經過審查與核准之後、 NetApp 支援人員將透過電子郵件通知您您帳戶已獲授予潛在客戶存取權。

@@ -18,6 +18,7 @@ StorageGRID 架構部署通常是多站台部署。站台可以是主動式主�
 
 
 
+[[prerequisites-to-configure-storagegrid-with-veritas-enterprise-vault]]
 == 使用 Veritas Enterprise Vault 設定 StorageGRID 的先決條件
 
 設定 StorageGRID 站台容錯移轉之前、請先確認下列先決條件：
@@ -29,6 +30,7 @@ StorageGRID 架構部署通常是多站台部署。站台可以是主動式主�
 
 
 
+[[configure-storagegrid-site-failover]]
 == 設定 StorageGRID 站台容錯移轉
 
 若要設定 StorageGRID 站台容錯移轉、請完成下列步驟：
@@ -36,11 +38,11 @@ StorageGRID 架構部署通常是多站台部署。站台可以是主動式主�
 .步驟
 . 若要確保在站台故障期間連線至 StorageGRID 、請設定高可用度（ HA ）群組。從 StorageGRID Grid Manager 介面（ GMI ）、按一下組態、高可用度群組和 + 建立。
 +
-image:vertias/veritas-create-high-availability-group.png["Vertas/Veritas-cree-high Availability 群組"]
+image:veritas/veritas-create-high-availability-group.png["veritas/veritas-create-high-availability-group"]
 
 . 輸入所需資訊。按一下「 Select Interfaces 」（選取介面）、同時納入站台 1 和站台 2 的網路介面、其中站台 1 （主要站台）是慣用的主要站台。在同一個子網路中指派虛擬 IP 位址。按一下儲存。
 +
-image:veritas/veritas-edit-high-availability-group.png["Vertas/Veritas 編輯 - 高可用度群組"]
+image:veritas/veritas-edit-high-availability-group.png["veritas/veritas-edit-high-availability-group"]
 
 . 此虛擬 IP （ VIP ）位址應與在 Veritas Enterprise Vault 分割區組態期間使用的 S3 主機名稱相關聯。VIP 位址可解析到站台 1 的流量、而在站台 1 故障期間、 VIP 位址會透明地將流量重新路由到站台 2 。
 . 請確定資料同時複寫到站台 1 和站台 2 。如此一來、如果 Site1 失敗、則物件資料仍可從 Site2 取得。這是透過先設定儲存資源池來完成的。
@@ -51,14 +53,14 @@ image:veritas/veritas-edit-high-availability-group.png["Vertas/Veritas 編輯 - 
 儲存資源池是用於定義物件放置的節點邏輯群組
 
 +
-image:veritas/veritas-storage-pool-details-site-1.png["Vertas/Veritas 儲存池詳細資料網站 1"]
+image:veritas/veritas-storage-pool-details-site-1.png["veritas/veritas-storage-pool-details-site-1"]
 
 +
-image:veritas/veritas-storage-pool-details-site-2.png["Vertas/Veritas 儲存池詳細資料網站 2"]
+image:veritas/veritas-storage-pool-details-site-2.png["veritas/veritas-storage-pool-details-site-2"]
 
 . 從 StorageGRID GMI 按一下 ILM 、規則、然後按一下 + 建立。依照精靈的指示、建立 ILM 規則、指定每個站台儲存一個複本的擷取行為為「平衡」。
 +
-image:veritas/veritas-storage-pool-details-site-3.png["Vertas/Veritas 儲存池詳細資料網站 3"]
+image:veritas/veritas-storage-pool-details-site-3.png["veritas/veritas-storage-pool-details-site-3"]
 
 . 將 ILM 規則新增至 ILM 原則並啟動原則。
 

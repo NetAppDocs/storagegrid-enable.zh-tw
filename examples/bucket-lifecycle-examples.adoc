@@ -16,6 +16,7 @@ summary: StorageGRID 中的儲存桶生命週期。
 
 
 
+[[what-is-a-lifecycle-configuration]]
 == 什麼是生命週期配置
 
 生命週期組態是套用至特定S3儲存區中物件的一組規則。每個規則都會指定受影響的物件、以及這些物件何時到期（在特定日期或幾天之後）。
@@ -41,6 +42,7 @@ summary: StorageGRID 中的儲存桶生命週期。
 
 
 
+[[structure-of-a-lifecycle-policy]]
 == 生命週期策略的結構
 
 建立生命週期組態的第一步、就是建立一個包含一或多個規則的Json檔案。例如、此Json檔案包含三個規則、如下所示：
@@ -101,6 +103,7 @@ CAUTION: 指定天數的規則是相對於擷取物件的時間。如果目前�
 ----
 
 
+[[apply-lifecycle-configuration-to-bucket]]
 == 將生命週期組態套用至貯體
 
 建立生命週期組態檔案之後、您可以發出 PuttBucketLifecycleConfiguration 要求、將其套用至儲存庫。
@@ -121,10 +124,12 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 ----
 
 
+[[example-lifecycle-policies-for-standard-non-versioned-buckets]]
 == 標準（非版本化）儲存桶的生命週期策略範例
 
 
 
+[[delete-objects-after-90-days]]
 === 90 天後刪除對象
 
 用例：此策略非常適合管理僅在有限時間內相關的數據，例如臨時文件、日誌或中間處理數據。優點：降低儲存成本並確保儲存桶整潔有序。
@@ -146,10 +151,12 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 ----
 
 
+[[example-lifecycle-policies-for-versioned-buckets]]
 == 版本控制儲存桶的生命週期策略範例
 
 
 
+[[delete-noncurrent-versions-after-10-days]]
 === 10 天後刪除非目前版本
 
 使用案例：此策略有助於管理非當前版本物件的存儲，這些物件會隨著時間的推移而累積並佔用大量空間。優勢：透過僅保留最新版本來優化儲存空間利用率。
@@ -171,6 +178,7 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 ----
 
 
+[[keep-5-noncurrent-versions-and-delete-after-90-days]]
 === 保留 5 個非最新版本，並在 90 天後刪除
 
 使用案例：當您想要保留有限數量的先前版本以用於恢復或審計目的時很有用。好處：保留足夠的非當前版本以確保足夠的歷史記錄和復原點。
@@ -196,6 +204,7 @@ NOTE: 您必須將 *NoncurrentDays* 與 *NewerNoncurrentVersions* 一起使用�
 
 
 
+[[remove-delete-markers-when-no-other-versions-exist]]
 === 當不存在其他版本時移除刪除標記
 
 使用案例：此策略有助於管理所有非目前版本刪除後留下的刪除標記，這些標記會隨著時間的推移而累積。好處：減少不必要的混亂。
@@ -217,6 +226,7 @@ NOTE: 您必須將 *NoncurrentDays* 與 *NewerNoncurrentVersions* 一起使用�
 ----
 
 
+[[delete-current-versions-after-30-days-delete-non-current-versions-after-60-days-and-remove-the-delete-markers-created-by-the-current-version-delete-once-no-other-versions-exist]]
 === 30 天後刪除目前版本，60 天後刪除非目前版本，一旦不存在其他版本，則刪除目前版本所建立的刪除標記。
 
 使用案例：為目前版本和非目前版本提供完整的生命週期，包括刪除標記。優點：降低儲存成本，確保儲存桶整潔有序，同時保留足夠的恢復點和歷史記錄。
@@ -254,6 +264,7 @@ NOTE: 您必須將 *NoncurrentDays* 與 *NewerNoncurrentVersions* 一起使用�
 ----
 
 
+[[remove-delete-markers-that-have-no-other-versions-retain-4-non-current-versions-and-at-least-30-days-worth-of-history-for-objects-with-the-accounts-prefix-and-keep-2-versions-and-at-least-10-days-worth-of-history-for-all-other-object-versions]]
 === 刪除沒有其他版本的刪除標記，為帶有「accounts_ 前綴」的物件保留 4 個非當前版本和至少 30 天的歷史記錄，為所有其他物件版本保留 2 個版本和至少 10 天的歷史記錄。
 
 使用案例：為特定物件以及其他物件提供獨特的規則，以管理目前版本和非目前版本（包括刪除標記）的完整生命週期。優點：降低儲存成本，確保儲存桶整潔有序，同時保留足夠的恢復點和歷史記錄，以滿足各種客戶需求。
@@ -293,6 +304,7 @@ NOTE: 您必須將 *NoncurrentDays* 與 *NewerNoncurrentVersions* 一起使用�
 ----
 
 
+[[conclusion]]
 == 結論
 
 * 定期檢視和更新生命週期政策，並使其與 ILM 和資料管理目標保持一致。

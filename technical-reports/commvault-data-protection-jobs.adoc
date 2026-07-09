@@ -18,6 +18,7 @@ summary: 探索客戶與 NetApp IT 實作的 StorageGRID 組態使用案例。
 
 
 
+[[step-1-configure-commvault-with-storagegrid]]
 == 步驟 1 ：使用 StorageGRID 設定 CommVault
 
 .步驟
@@ -37,6 +38,7 @@ image:commvault/add-cloud.png["新增雲端"]
 
 
 
+[[step-2-create-a-backup-plan-with-storagegrid-as-the-primary-target]]
 == 步驟 2 ：以 StorageGRID 作為主要目標、建立備份計畫
 
 .步驟
@@ -52,6 +54,7 @@ image:commvault/create-server.png["建立伺服器備份計畫"]
 
 
 
+[[step-3-start-a-backup-job-to-protect-your-workloads]]
 == 步驟 3 ：開始備份工作以保護您的工作負載
 
 .步驟

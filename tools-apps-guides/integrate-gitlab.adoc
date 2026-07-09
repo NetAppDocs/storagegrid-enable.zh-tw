@@ -18,6 +18,7 @@ NetApp 已使用 GitLab 測試 StorageGRID 。請參閱以下 GitLab 組態範�
 
 
 
+[[object-storage-connection-example]]
 == 物件儲存連線範例
 
 對於 Linux 套件安裝、這是的範例 `connection` 合併表單中的設定。編輯 `/etc/gitlab/gitlab.rb` 然後新增下列行、以您要的值取代：

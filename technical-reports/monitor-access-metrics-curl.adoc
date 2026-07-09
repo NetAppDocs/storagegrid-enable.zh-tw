@@ -42,7 +42,7 @@ NOTE: 如果您的 GMI 密碼包含特殊字元、請記得使用 \ 來轉義特
 {"responseTime":"2020-06-03T00:12:17.031Z","status":"success","apiVersion":"3.2","data":"8a1e528d-18a7-4283-9a5e-b2e6d731e0b2"}
 ----
 +
-現在您可以使用授權權杖字串、透過 Curl 存取度量。存取計量的程序類似於一節中的步驟 link:advanced-monitor-storagegrid.html#export-metrics-through-the-api["StorageGRID 中的進階監控功能"]。不過、為了進行示範、我們會在「度量」類別中顯示「取得 /grid/metric-labels/{label}/values 」的範例。
+現在您可以使用授權權杖字串透過 cURL 存取指標。存取指標的過程與第 link:monitoradvanced-monitor-storagegrid.html#export-metrics-through-the-api["StorageGRID 中的進階監控功能"] 節的步驟類似。但是，為了示範目的，我們展示一個範例，其中在「指標」類別中選擇了 GET /grid/metric-labels/{label}/values。
 
 . 例如、下列具有上述授權權杖的 Curl 命令會在 StorageGRID 中列出站台名稱。
 +

@@ -17,6 +17,7 @@ summary: 瞭解如何使用度量 API 監控 StorageGRID 。
 
 
 
+[[view-metrics-api-through-a-prometheus-query]]
 == 透過 Prometheus 查詢檢視計量 API
 
 Prometheus 是一款開放原始碼軟體、用於收集指標。若要透過 GMI 存取 StorageGRID 的內嵌 Prometheus 、請前往功能表： Support[Metrics 。
@@ -47,6 +48,7 @@ NOTE: 不建議直接連接至我們的 Prometheus 執行個體、因為這需�
 
 
 
+[[export-metrics-through-the-api]]
 == 透過 API 匯出計量
 
 您也可以透過 StorageGRID 管理 API 存取相同的資料。

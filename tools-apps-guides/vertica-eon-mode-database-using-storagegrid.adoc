@@ -18,6 +18,7 @@ _ 作者： Angela Cheng _
 
 
 
+[[introduction]]
 == 簡介
 
 Vertica是分析資料庫管理軟體。它是一款柱式儲存平台、專為處理大量資料而設計、可在傳統的密集環境中、提供極快的查詢效能。Vertica資料庫以兩種模式之一執行：Eon或Enterprise。您可以在內部部署或雲端部署這兩種模式。
@@ -30,6 +31,7 @@ Eon和Enterprise模式在儲存資料的位置上主要有所不同：
 
 
 
+[[eon-mode-architecture]]
 === Eon Mode架構
 
 Eon Mode將運算資源與資料庫的共用儲存層區隔開來、讓運算和儲存設備能夠分開擴充。Eon Mode中的Vertica經過最佳化、可因應各種工作負載、並使用獨立的運算與儲存資源將其彼此隔離。
@@ -40,6 +42,7 @@ image:vertica-eon/sg-vertica-eon-mode-cluster-with-communal-storage.png["Vertica
 
 
 
+[[communal-storage]]
 === 共用儲存設備
 
 Eon Mode不會在本機儲存資料、而是使用單一共線儲存位置來儲存所有資料和目錄（中繼資料）。公用儲存設備是資料庫的集中式儲存位置、可在資料庫節點之間共用。
@@ -54,12 +57,14 @@ Eon Mode不會在本機儲存資料、而是使用單一共線儲存位置來儲
 
 
 
+[[the-depot]]
 === 維修中心
 
 公用儲存設備的缺點之一、就是速度。從共享雲端位置存取資料的速度比從本機磁碟讀取慢。此外、如果許多節點同時從公用儲存設備讀取資料、則連線至公用儲存設備可能會成為瓶頸。為了改善資料存取速度、Eon Mode資料庫中的節點會維護本機磁碟快取、其中的資料稱為「倉儲」。執行查詢時、節點會先檢查所需的資料是否位於儲存庫中。如果是、則會使用資料的本機複本完成查詢。如果資料不在儲存庫中、節點會從公用儲存設備擷取資料、並將複本儲存在儲存庫中。
 
 
 
+[[netapp-storagegrid-recommendations]]
 == NetApp StorageGRID 技術建議
 
 Vertica將資料庫資料儲存至物件儲存區、儲存為數千（或數百萬）個壓縮物件（觀察到每個物件的大小為200至500MB）。當使用者執行資料庫查詢時、Vertica會使用位元組範圍Get呼叫、從這些壓縮物件平行擷取所選的資料範圍。每個位元組範圍的Get大約為8KB。
@@ -86,6 +91,7 @@ Vertica組態的建議包括：
 
 
 
+[[installing-eon-mode-on-premises-with-communal-storage-on-storagegrid]]
 == 將Eon Mode安裝在內部部署環境中、並將公用儲存設備安裝在StorageGRID 原地
 
 以下各節說明將Eon Mode安裝在內部部署環境中、並將公用儲存設備安裝在StorageGRID 原地的程序。設定內部部署簡易儲存服務（S3）相容物件儲存設備的程序、與Vertica指南中的程序類似、 link:https://www.vertica.com/docs/10.1.x/HTML/Content/Authoring/InstallationGuide/EonOnPrem/InstallingEonOnPremiseWithMinio.htm?tocpath=Installing%20Vertica%7CInstalling%20Vertica%20For%20Eon%20Mode%20on-Premises%7C_____2["在內部部署環境中安裝Eon Mode資料庫"^]。
@@ -101,6 +107,7 @@ Vertica組態的建議包括：
 
 
 
+[[information-required-from-netapp-storagegrid]]
 === NetApp StorageGRID 產品所需資訊
 
 若要在StorageGRID 內部部署環境中安裝Eon Mode、並將公用儲存設備安裝在原地、您必須具備下列必要資訊。
@@ -112,6 +119,8 @@ Vertica組態的建議包括：
 
 
 
+[[creating-an-authorization-file-to-access-the-s3-endpoint]]
+[[createauthorization]]
 === 建立授權檔案以存取S3端點
 
 建立存取S3端點的授權檔案時、必須符合下列先決條件：
@@ -159,6 +168,7 @@ NOTE: 在正式作業環境中、客戶應在StorageGRID 一個S3負載平衡器
 
 
 
+[[choosing-a-depot-path-on-all-vertica-nodes]]
 === 在所有Vertica節點上選擇一個進廠路徑
 
 在每個節點上為倉儲儲存路徑選擇或建立目錄。您為倉儲儲存路徑參數所提供的目錄必須具有下列項目：
@@ -176,6 +186,7 @@ NOTE: 在正式作業環境中、客戶應在StorageGRID 一個S3負載平衡器
 
 
 
+[[creating-the-eon-on-premises-database]]
 === 建立Eon內部部署資料庫
 
 若要建立Eon內部部署資料庫、請遵循下列步驟：
@@ -638,6 +649,8 @@ s 3：//Vertica /中繼資料/VMart/nodes/v_vmart節點0018/Catalog/859703b06a34
 |===
 
 
+[[disabling-streaming-limitations]]
+[[Streamlimitations]]
 === 停用串流限制
 
 此程序以Vertica指南為基礎、適用於其他內部部署物件儲存設備、應適用於StorageGRID 下列項目：
@@ -659,6 +672,7 @@ dbadmin=> \q
 ----
 
 
+[[verifying-depot-settings]]
 === 正在驗證庫房設定
 
 Vertica資料庫預設的進廠設定會啟用（值= 1）以進行讀取和寫入作業。NetApp強烈建議您啟用這些進廠設定、以提升效能。
@@ -671,6 +685,7 @@ DATABASE | UseDepotForWrites | 1
 ----
 
 
+[[loading-sample-data-optional]]
 === 載入範例資料（選用）
 
 如果此資料庫即將進行測試並移除、您可以將範例資料載入此資料庫進行測試。Vertica隨附範例資料集VMart、可在每個Vertica節點的「/opt/Vertica/examples/VMart_Schema/」下找到。您可以找到此範例資料集的詳細資訊 link:https://www.vertica.com/docs/10.1.x/HTML/Content/Authoring/GettingStartedGuide/IntroducingVMart/IntroducingVMart.htm?zoom_highlight=VMart["請按這裡"^]。
@@ -691,6 +706,7 @@ DATABASE | UseDepotForWrites | 1
 
 
 
+[[where-to-find-additional-information]]
 == 何處可找到其他資訊
 
 若要深入瞭解本文所述資訊、請檢閱下列文件和 / 或網站：
@@ -702,6 +718,7 @@ DATABASE | UseDepotForWrites | 1
 
 
 
+[[version-history]]
 == 版本歷程記錄
 
 [cols="1a,1a,2a"]

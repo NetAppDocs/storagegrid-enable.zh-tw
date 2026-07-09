@@ -16,6 +16,7 @@ summary: 從 ONTAP S3 移轉至 StorageGRID 。
 
 
 
+[[migrate-s3-keys]]
 == 移轉 S3 金鑰
 
 對於移轉、大部分時間您都想要移轉使用者的認證、而不是在目的地端產生新的認證。StorageGRID 提供 API 、可將 S3 金鑰匯入使用者。
@@ -44,6 +45,7 @@ image:ontap-migrate/sg-user-keys.png["使用者金鑰"]
 
 
 
+[[the-final-cut-over]]
 === 最終切換
 
 如果打算將貯體從 ONTAP 永久複製到 StorageGRID 、您可以在此結束。如果這是從 ONTAP S3 移轉至 StorageGRID 、那麼現在正是結束移轉的好時機。

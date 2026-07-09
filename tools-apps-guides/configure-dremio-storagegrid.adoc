@@ -18,10 +18,12 @@ Dremio 支援各種資料來源、包括雲端型或內部部署物件儲存。 
 
 
 
+[[configure-dremio-data-source]]
 == 設定 Dremio 資料來源
 
 
 
+[[prerequisites]]
 === 先決條件
 
 * StorageGRID S3 端點 URL 、租戶 S3 存取金鑰 ID 和秘密存取金鑰。
@@ -31,12 +33,14 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
 
 
 
+[[dremio-guide]]
 === Dremio 指南
 
 https://docs.dremio.com/current/sonar/data-sources/object/s3/["連線至 Amazon S3 - 設定相容 S3 的儲存設備"^]。
 
 
 
+[[instruction]]
 == 指示
 
 . 在「 Dremio 資料集」頁面上、按一下 + 符號以新增來源、然後選取「 Amazon S3 」。

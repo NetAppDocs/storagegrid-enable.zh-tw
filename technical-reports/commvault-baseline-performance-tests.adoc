@@ -14,7 +14,7 @@ summary: 探索客戶與 NetApp IT 實作的 StorageGRID 組態使用案例。
 
 
 [role="lead"]
-在「輔助複製」作業中、四個 CommVault MediaAgent 將資料備份到 NetApp AFF A300 系統、並在 NetApp StorageGRID 上建立輔助複本。如需測試設定環境的詳細資訊、請參閱技術報告中的解決方案設計與最佳實務一節 https://www.netapp.com/us/media/tr-4831.pdf["NetApp 透過 CommVault 實現橫向擴充資料保護"] 。
+在輔助副本作業中，四個 Commvault MediaAgents 將資料備份到 NetApp AFF A300 系統，並在 NetApp StorageGRID 上建立了一個輔助副本。
 
 這些測試是針對 100 個 VM 和 1000 個 VM 執行的、兩者都是以 50/50 混合的 Windows 和 CentOS VM 進行測試。下表顯示我們的基礎效能測試結果：
 

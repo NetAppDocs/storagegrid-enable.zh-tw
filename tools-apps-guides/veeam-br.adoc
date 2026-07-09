@@ -18,6 +18,7 @@ _ 作者： Oliver Haensel 和 Aron Klein_
 
 
 
+[[overview]]
 == 總覽
 
 儲存管理員希望透過解決方案來管理資料的成長、以滿足可用度、快速恢復目標、擴充以滿足需求、並自動化長期保留資料的原則。這些解決方案也應提供防範遺失或惡意攻擊的保護。Veeam 與 NetApp 攜手合作、共同打造結合 Veeam 備份與恢復功能與 NetApp StorageGRID 的資料保護解決方案、以供內部部署物件儲存使用。
@@ -30,16 +31,19 @@ Veeam 的物件工作負載會建立大量的小型物件並行置放、刪除�
 
 
 
+[[veeam-configuration]]
 == Veeam 組態
 
 
 
+[[recommended-version]]
 === 建議的版本
 
 建議您隨時保持最新狀態、並為 Veeam Backup & Replication 12 或 12.1 系統套用最新的 Hotfix 。目前我們建議您至少安裝 Veeam 12 修補程式 P20230718 。
 
 
 
+[[s3-repository-configuration]]
 === S3 儲存庫組態
 
 橫向擴充備份儲存庫（ SOBR ）是 S3 物件儲存的容量層。容量層是主要儲存庫的延伸、提供較長的資料保留期間和較低成本的儲存解決方案。Veeam 可透過 S3 物件鎖定 API 提供不變的功能。Veeam 12 可以在橫向擴充儲存庫中使用多個儲存庫。StorageGRID 對單一貯體中的物件數量或容量沒有限制。使用多個貯體可在備份大型資料集時改善效能、而備份資料可能會在物件中達到 PB 規模。
@@ -48,6 +52,7 @@ Veeam 的物件工作負載會建立大量的小型物件並行置放、刪除�
 
 
 
+[[backup-job-configuration]]
 === 備份工作組態
 
 Veeam 備份工作可以使用不同的區塊大小選項進行設定、這些選項應該仔細考慮。預設區塊大小為 1MB 、 Veeam 提供的壓縮與重複資料刪除儲存效率可為初始完整備份建立約 500KB 的物件大小、而增量工作則建立 100-200kB 物件。我們可以選擇較大的備份區塊大小、大幅提升效能、並降低物件儲存區的需求。雖然較大的區塊大小可大幅改善物件儲存區效能、但由於儲存效率效能降低、因此可能會增加主要儲存容量需求。建議將備份工作設定為 4 MB 區塊大小、以建立大約 2 MB 的物件來進行完整備份、並將 700kB-1MB 的物件大小用於遞增。客戶甚至可以考慮使用 8 MB 區塊大小來設定備份工作、這可在 Veeam 支援的協助下啟用。
@@ -81,34 +86,40 @@ Veeam 備份工作可以使用不同的區塊大小選項進行設定、這些�
 ====
 
 
+[[storagegrid-configuration]]
 == StorageGRID 組態
 
 
 
+[[recommended-version]]
 === 建議的版本
 
 對於 Veeam 部署，建議使用具有最新修補程式的NetApp StorageGRID 11.9 或 12.0 版本。始終建議保持最新狀態並為StorageGRID系統應用最新的修補程式。
 
 
 
+[[load-balancer-and-s3-endpoint-configuration]]
 === 負載平衡器和 S3 端點組態
 
 Veeam 要求端點僅透過 HTTPS 連線。Veeam 不支援未加密的連線。SSL 憑證可以是自我簽署的憑證、私密信任的憑證授權單位或公開信任的憑證授權單位。為了確保能持續存取 S3 儲存庫、建議在 HA 組態中至少使用兩個負載平衡器。負載平衡器可以是 StorageGRID 提供的整合式負載平衡器服務、位於每個管理節點和閘道節點、或是第三方解決方案、例如 F5 、 Kemp 、 HAProxy 、 Loadbalancer.org 等 使用 StorageGRID 負載平衡器可設定流量分類器（ QoS 規則）、以排定 Veeam 工作負載的優先順序、或將 Veeam 限制為不影響 StorageGRID 系統上的高優先順序工作負載。
 
 
 
+[[s3-bucket]]
 === S3時段
 
 StorageGRID是一個安全的多租戶儲存系統。建議為 Veeam 工作負載建立專用租用戶。可以選擇分配儲存配額。作為最佳實踐，啟用「使用自己的身分來源」。使用適當的密碼保護租用戶根管理使用者。  Veeam Backup 12 要求 S3 儲存桶具有強一致性。 StorageGRID提供在儲存桶層級配置的多個一致性選項。對於 Veeam 從多個位置存取資料的多站點部署，請選擇「strong-global」。如果 Veeam 備份和還原僅在單一網站進行，則一致性等級應設定為「strong-site」。有關存儲桶一致性級別的更多信息，請查看 https://docs.netapp.com/us-en/storagegrid/s3/consistency-controls.html["文件"]。若要使用StorageGRID進行 Veeam 不變性備份，必須在全域啟用 S3 物件鎖，並在儲存桶建立期間在儲存體桶上進行設定。
 
 
 
+[[lifecycle-management]]
 === 生命週期管理
 
 StorageGRID 支援複寫和銷毀編碼、可在 StorageGRID 節點和站台之間提供物件層級保護。銷毀編碼需要至少 200kB 物件大小。Veeam 的預設區塊大小為 1MB 、產生的物件大小通常會低於 Veeam 儲存效率之後的 200 KB 建議最小大小。為了達到解決方案的效能、建議不要使用跨越多個站台的抹除編碼設定檔、除非站台之間的連線能力足以避免增加延遲或限制 StorageGRID 系統的頻寬。在多站台 StorageGRID 系統中、 ILM 規則可設定為在每個站台上儲存單一複本。為了達到極致的耐用性、可設定規則、在每個站台儲存銷毀編碼複本。使用兩個本機複本到 Veeam 備份伺服器是此工作負載最建議的實作方式。
 
 
 
+[[delete-performance]]
 === 刪除效能
 
 Veeam 提供刪除請求率調整和備份刪除過程的調度。為了進一步調整刪除效能，您可以停用同步刪除並讓 ILM 掃描器管理物件的最終刪除。
@@ -160,10 +171,12 @@ image:veeam-bp/put_ilm_adv.png["PUT ILM-進階輸入"]
 
 
 
+[[implementation-key-points]]
 == 實作重點
 
 
 
+[[storagegrid]]
 === StorageGRID
 
 如果需要不可變性、請確保 StorageGRID 系統上已啟用物件鎖定。請在組態 /S3 物件鎖定下的管理 UI 中找到選項。
@@ -190,6 +203,7 @@ image:veeam-bp/tc_policy.png["建立 TC 原則"]
 
 
 
+[[veeam]]
 === Veeam
 
 視 StorageGRID 應用裝置的型號和數量而定、可能需要選擇並設定貯體上並行作業數量的限制。
@@ -206,6 +220,7 @@ image:veeam-bp/veeam_blk_sz.png["自動產生電腦說明的螢幕擷取畫面�
 
 
 
+[[monitoring-storagegrid]]
 == 監控 StorageGRID
 
 若要完整瞭解 Veeam 和 StorageGRID 如何共同執行、您必須等到第一次備份的保留時間過期。直到目前為止、 Veeam 工作負載主要由 Put 作業所組成、而且沒有發生刪除。一旦備份資料過期且正在清理、您現在可以在物件存放區中看到完全一致的使用情形、並視需要在 Veeam 中調整設定。
@@ -235,6 +250,7 @@ image:veeam-bp/tc_2.png["流量分類原則指標"]
 
 
 
+[[where-to-find-additional-information]]
 == 何處可找到其他資訊
 
 若要深入瞭解本文所述資訊、請檢閱下列文件和 / 或網站：

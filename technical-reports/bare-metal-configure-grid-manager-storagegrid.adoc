@@ -20,24 +20,26 @@ summary: 瞭解如何在主要管理節點上的 StorageGRID 中設定 Grid Mana
 
 
 
+[[high-level-steps]]
 == 高階步驟
 
 設定網格並完成安裝涉及下列工作：
 
 .步驟
 . <<瀏覽至 Grid Manager>>
-. link:storagegrid-license.html["指定StorageGRID 不含授權的資訊"]
-. link:add-sites-storagegrid.html["新增站台至 StorageGRID"]
-. link:grid-network-subnets-storagegrid.html["指定網格網路子網路"]
-. link:approve-grid-nodes-storagegrid.html["核准擱置的網格節點"]
-. link:ntp-server-storagegrid.html["指定 NTP 伺服器資訊"]
-. link:dns-server-storagegrid.html["指定網域名稱系統伺服器資訊"]
-. link:system-passwords-storagegrid.html["指定StorageGRID 「系統密碼」"]
-. link:review-config-complete-storagegrid-install.html["檢閱組態並完成安裝"]
+. link:bare-metal-storagegrid-license.html["指定StorageGRID 不含授權的資訊"]
+. link:bare-metal-add-sites-storagegrid.html["新增站台至 StorageGRID"]
+. link:bare-metal-grid-network-subnets-storagegrid.html["指定網格網路子網路"]
+. link:bare-metal-approve-grid-nodes-storagegrid.html["核准擱置的網格節點"]
+. link:bare-metal-ntp-server-storagegrid.html["指定 NTP 伺服器資訊"]
+. link:bare-metal-dns-server-storagegrid.html["指定網域名稱系統伺服器資訊"]
+. link:bare-metal-system-passwords-storagegrid.html["指定StorageGRID 「系統密碼」"]
+. link:bare-metal-review-config-complete-storagegrid-install.html["檢閱組態並完成安裝"]
 
 
 
 
+[[navigate-to-grid-manager]]
 == 瀏覽至 Grid Manager
 
 使用 Grid Manager 定義設定 StorageGRID 系統所需的所有資訊。

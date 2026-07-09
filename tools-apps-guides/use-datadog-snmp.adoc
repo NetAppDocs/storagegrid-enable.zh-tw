@@ -18,12 +18,14 @@ _ 作者： Aron Klein_
 
 
 
+[[configure-datadog]]
 == 設定Datadog
 
 Datadog是一套監控解決方案、提供指標、視覺化和警示功能。下列組態是以Linux代理程式7.43.1版實作於Ubuntu 22.04.1主機上、部署於StorageGRID 本機的整個作業系統上。
 
 
 
+[[datadog-profile-and-trap-files-generated-from-storagegrid-mib-file]]
 === Datadog設定檔和Traps檔案是從StorageGRID 無法還原的mib檔案產生的
 
 Datadog提供一種方法、可將產品mib檔案轉換成對應SNMP訊息所需的datadog參考檔案。
@@ -50,6 +52,7 @@ Datadog提供一種方法、可將產品mib檔案轉換成對應SNMP訊息所需
 
 
 
+[[snmp-datadog-configuration-for-metrics]]
 === 用於度量的SNMP Datadog組態
 
 可透過兩種方式來管理設定用於度量的SNMP。您可以設定自動探索、方法是提供包含StorageGRID 該系統的網路位址範圍、或定義個別裝置的IP。根據所做的決定、組態位置會有所不同。自動探索是在datadog代理yaml檔案中定義。在SNMP組態yaml檔案中設定明確的裝置定義。以下是相同StorageGRID 的支援系統的各個範例。
@@ -103,6 +106,7 @@ instances:
 ----
 
 
+[[snmp-configuration-for-traps]]
 === 陷阱的SNMP組態
 
 SNMP設陷的組態是在datadog組態yaml檔案/etc/datadog-agent/datadog.yaml中定義
@@ -119,6 +123,7 @@ network_devices:
 ----
 
 
+[[example-storagegrid-snmp-configuration]]
 === 範例StorageGRID ：SNMP組態
 
 您的S還原 系統中的SNMP代理程式StorageGRID 位於組態索引標籤「監控」欄下。啟用SNMP並輸入所需資訊。如果您要設定設陷、請選取「設陷目的地」、然後為包含設陷組態的Datadog代理主機建立目的地。

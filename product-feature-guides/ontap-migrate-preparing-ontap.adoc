@@ -16,6 +16,7 @@ summary: 從 ONTAP S3 移轉至 StorageGRID 。
 
 
 
+[[preparing-ontap]]
 == 準備 ONTAP
 
 為了展示用途、我們將建立 SVM 物件儲存區伺服器、使用者、群組、群組原則和儲存區。

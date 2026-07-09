@@ -18,22 +18,26 @@ _ 作者： Aron Klein_
 
 
 
+[[introduction]]
 == 簡介
 
 支援使用Prometheus儲存指標、並透過內建的Grafana儀表板提供這些指標的視覺效果。StorageGRID透過StorageGRID 設定用戶端存取憑證、並為指定的用戶端啟用Prometheus存取、可從功能表安全存取Prometheus指標。目前、保留此度量資料的能力受管理節點的儲存容量限制。為了獲得更長的持續時間、以及建立自訂的這些指標視覺效果、我們將部署新的Prometheus和Grafana伺服器、設定新伺服器、從StorageGRID執行個體中掃描指標、並建立一個儀表板、其中包含對我們來說非常重要的指標。您可以取得更多有關在中收集的Prometheus指標的資訊 https://docs.netapp.com/us-en/storagegrid-116/monitor/commonly-used-prometheus-metrics.html["本文檔StorageGRID"^]。
 
 
 
+[[federate-prometheus]]
 == 聯盟Prometheus
 
 
 
+[[lab-details]]
 === 實驗室詳細資料
 
 就本例而言、我將使用所有虛擬機器來StorageGRID 執行VMware 11.6節點、以及使用一個DEBIAN11伺服器。此解決方法介面設定了公開信任的CA憑證。StorageGRID此範例將不會安裝及設定StorageGRID 整個作業系統或是安裝的Debian Linux。您可以使用Prometheus和Grafana所支援的任何Linux風格。Prometheus和Grafana都可以安裝成Docker容器、從來源或預先編譯的二進位檔建置。在此範例中、我會將Prometheus和Grafana二進位檔案直接安裝在同一部的Debian伺服器上。請從下載並遵循基本安裝指示 https://prometheus.io[] 和 https://grafana.com/grafana/[] 分別。
 
 
 
+[[configure-storagegrid-for-prometheus-client-access]]
 === 設定StorageGRID 驗證以供Prometheus用戶端存取
 
 若要存取StorageGRID儲存的Prometheus指標、您必須使用私密金鑰產生或上傳用戶端憑證、並啟用用戶端的權限。這個介面必須具有SSL憑證。StorageGRID此憑證必須由Prometheus伺服器信任、或是由信任的CA信任、如果是自行簽署、則必須手動信任。若要瞭解更多資訊、請造訪 https://docs.netapp.com/us-en/storagegrid-116/admin/configuring-administrator-client-certificates.html["本文檔StorageGRID"]。
@@ -66,6 +70,7 @@ image:prometheus/cert_download.png["下載憑證"]
 ====
 
 
+[[prepare-the-linux-server-for-prometheus-installation]]
 === 準備Linux伺服器以進行Prometheus安裝
 
 在安裝Prometheus之前、我想要讓Prometheus使用者、目錄結構做好準備、並設定度量儲存位置的容量。
@@ -112,6 +117,7 @@ UUID=9af2c5a3-bfc2-4ec1-85d9-ebab850bb4a1 /var/lib/prometheus	ext4	defaults	0	0
 
 
 
+[[install-and-configure-prometheus]]
 === 安裝及設定Prometheus
 
 現在伺服器已經準備好、我可以開始安裝Prometheus並設定服務。
@@ -273,12 +279,14 @@ image:prometheus/prometheus_execute.png["執行Prometheus查詢"]
 
 
 
+[[install-and-configure-grafana]]
 == 安裝及設定Grafana
 
 現在Prometheus已經安裝完成且正常運作、我們可以繼續安裝Grafana並設定儀表板
 
 
 
+[[grafana-instalation]]
 === Grafana安裝
 
 . 安裝最新的Grafana企業版
@@ -316,6 +324,7 @@ sudo systemctl enable grafana-server.service
 
 
 
+[[create-a-grafana-dashboard-for-storagegrid]]
 === 建立Grafana儀表板StorageGRID 以利執行
 
 在安裝並執行Grafana和Prometheus之後、現在正是建立資料來源並建置儀表板來連接兩者的好時機
@@ -383,6 +392,7 @@ image:prometheus/grafana_panel_edit.png["GRFANA編輯面板"]
 
 
 
+[[conclusion]]
 === 結論
 
 現在我們擁有Prometheus伺服器、可自訂資料保留和儲存容量。有了這項功能、我們就能繼續建立自己的儀表板、並提供與營運最相關的指標。您可以取得更多有關在中收集的Prometheus指標的資訊 https://docs.netapp.com/us-en/storagegrid-116/monitor/commonly-used-prometheus-metrics.html["本文檔StorageGRID"^]。

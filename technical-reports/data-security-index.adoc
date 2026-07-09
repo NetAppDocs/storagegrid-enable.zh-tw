@@ -37,6 +37,7 @@ NetApp StorageGRID 為要求嚴苛的企業物件儲存使用案例提供進階�
 
 
 
+[[where-to-find-additional-information]]
 == 何處可找到其他資訊
 
 若要深入瞭解本文所述資訊、請檢閱下列文件和 / 或網站：
@@ -51,6 +52,7 @@ NetApp StorageGRID 為要求嚴苛的企業物件儲存使用案例提供進階�
 
 
 
+[[terms-and-acronyms]]
 == 詞彙與縮寫
 
 本節提供文件中所用術語的定義。

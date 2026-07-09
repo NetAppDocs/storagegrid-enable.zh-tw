@@ -18,12 +18,14 @@ rclone 是免費的命令列工具和用戶端、適用於 S3 作業。您可以
 
 
 
+[[install-and-configure-rclone]]
 == 安裝並設定 rclone
 
 若要在工作站或伺服器上安裝 rclone 、請從下載 https://rclone.org/downloads/["rclone.org"^]。
 
 
 
+[[initial-configuration-steps]]
 === 初始組態步驟
 
 . 執行組態指令碼或手動建立檔案、以建立 rclone 組態檔案。
@@ -315,6 +317,7 @@ e/n/d/r/c/s/q> q
 
 
 
+[[basic-command-examples]]
 == 基本命令範例
 
 * *建立儲存庫：*

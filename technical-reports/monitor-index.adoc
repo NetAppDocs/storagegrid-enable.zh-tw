@@ -24,6 +24,7 @@ StorageGRID 提供優異的文件、深入探討監控主題。本報告假設�
 
 
 
+[[data-sources]]
 == 資料來源
 
 若要成功監控 NetApp StorageGRID 、請務必瞭解從何處收集有關 StorageGRID 系統健全狀況和作業的資料。
@@ -35,6 +36,7 @@ StorageGRID 提供優異的文件、深入探討監控主題。本報告假設�
 
 
 
+[[where-to-find-additional-information]]
 == 何處可找到其他資訊
 
 若要深入瞭解本文所述資訊、請檢閱下列文件和 / 或網站：

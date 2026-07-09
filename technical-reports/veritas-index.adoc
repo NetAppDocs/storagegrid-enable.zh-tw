@@ -18,6 +18,7 @@ summary: 瞭解 Veritas Enterprise Vault 如何使用 StorageGRID 做為災難�
 
 
 
+[[reference-architecture]]
 == 參考架構
 
 StorageGRID 為 Veritas Enterprise Vault 提供內部部署且與 S3 相容的雲端備份目標。下圖說明 Veritas Enterprise Vault 和 StorageGRID 架構。
@@ -26,6 +27,7 @@ image:veritas/veritas-enterprise-vault-and-storagegrid-architecture.png["Vertas/
 
 
 
+[[where-to-find-additional-information]]
 == 何處可找到其他資訊
 
 若要深入瞭解本文所述資訊、請檢閱下列文件和 / 或網站：

@@ -16,6 +16,7 @@ summary: 從 ONTAP S3 移轉至 StorageGRID 。
 
 
 
+[[preparing-storagegrid]]
 == 準備 StorageGRID
 
 繼續進行此示範的組態、我們將建立租戶、使用者、安全群組、群組原則和貯體。
