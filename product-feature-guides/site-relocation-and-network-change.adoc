@@ -86,7 +86,7 @@ image:site-relocation/ip-change-6.png["繼續"]
 link:https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/placing-appliance-into-maintenance-mode.html["將產品置於維護模式"]。
 . 使用瀏覽器存取 StorageGRID 應用裝置安裝程式 GUI https://<admin-or-client-network-ip>:8443[]。  一旦設備開機進入維護模式、就無法使用 Grid IP 做為已就緒的新 Grid IP 。
 . 變更 Grid 網路的 VLAN 。  如果您是透過用戶端網路存取應用裝置、目前無法變更用戶端 VLAN 、您可以在移動後變更。
-. SSH 至應用裝置、並使用「 hutdoown -h now 」關閉節點
+. 使用 SSH 連接到應用裝置，然後使用 'shutdown -h now' 關閉節點。
 . 在新網站上準備好應用裝置之後、請使用存取 StorageGRID 應用裝置安裝程式 GUI https://<grid-network-ip>:8443[]。  使用 GUI 中的 ping/nmap 工具、確認儲存設備處於最佳狀態、並與其他網格節點進行網路連線。
 . 如果計畫變更用戶端網路 IP 、您可以在此階段變更用戶端 VLAN 。  用戶端網路尚未就緒、除非您在稍後的步驟中使用 change-ip 工具更新用戶端網路 IP 。
 . 結束維護模式。從「the Some Appliance Installer」StorageGRID 選取「*進階*>*重新開機控制器*」、然後選取「*重新開機至StorageGRID *」。

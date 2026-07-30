@@ -1318,7 +1318,6 @@ Dremio 使用位元組範圍 GET 、在查詢期間同時從同一個物件中�
 <block ref="1d36a7361466de3adde00ce864c41474" category="inline-link-macro-rx"></block>。</block>
   <block id="24377316ae141b63c8170119bbfe4239" category="list-text">使用瀏覽器存取 StorageGRID 應用裝置安裝程式 GUI<block ref="41c0f2506f64eaa17788753cf29de6aa" category="inline-link-rx"></block>。  一旦設備開機進入維護模式、就無法使用 Grid IP 做為已就緒的新 Grid IP 。</block>
   <block id="fe21d31242c56f4eee91182bd1268a5a" category="list-text">變更 Grid 網路的 VLAN 。  如果您是透過用戶端網路存取應用裝置、目前無法變更用戶端 VLAN 、您可以在移動後變更。</block>
-  <block id="293c5807e9e9ab4b268fd617e8e5a56d" category="list-text">SSH 至應用裝置、並使用「 hutdoown -h now 」關閉節點</block>
   <block id="1c33a8d84128bb59ae10a50b662e3a98" category="list-text">在新網站上準備好應用裝置之後、請使用存取 StorageGRID 應用裝置安裝程式 GUI<block ref="fba5b5bfbff166288edb187e140418b2" category="inline-link-rx"></block>。  使用 GUI 中的 ping/nmap 工具、確認儲存設備處於最佳狀態、並與其他網格節點進行網路連線。</block>
   <block id="786f3a0a71ff6ad9513f86143e55c1ce" category="list-text">如果計畫變更用戶端網路 IP 、您可以在此階段變更用戶端 VLAN 。  用戶端網路尚未就緒、除非您在稍後的步驟中使用 change-ip 工具更新用戶端網路 IP 。</block>
   <block id="fff8d22924e491405ba3026b24555fa6" category="list-text">結束維護模式。從「the Some Appliance Installer」StorageGRID 選取「*進階*&gt;*重新開機控制器*」、然後選取「*重新開機至StorageGRID *」。</block>
@@ -3080,9 +3079,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="6286b2654fd9f607da0c9a689ef54e7c" category="list-text">輸入貯體資訊 - arn:AWS:S3:::example_Bucket,arn:AWS:::::example_Bucket/*</block>
   <block id="8e42358c3df8a569be04cad92e8b7479" category="paragraph"><block ref="8e42358c3df8a569be04cad92e8b7479" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e73b44d49494e2ac6f4ce555878eacec" category="paragraph">「 * 效果 * 」將是「允許」或「拒絕」要求。</block>
-  <block id="e3d361dfeb32442ba3887fb26cadd759" category="paragraph">* 負責人 *</block>
-  <block id="7c8bff59dd5d9771fc52f17ce6414420" category="list-text">僅適用於貯體原則。</block>
-  <block id="4a47dee52461b2ce5adaefbba5fc57b0" category="list-text">主體是被授與或拒絕權限的帳戶 / 使用者。</block>
   <block id="7b0fef71a6a5b6046a79dcb31b7991ec" category="list-text">可定義為：</block>
   <block id="cdecd059c81b66125ab436ad5ba1f0db" category="list-text">萬用字元 "++*++"</block>
   <block id="171a87df01e0c7aab0969853c4d63f99" category="list-text">租戶中所有使用者的租戶 ID （相當於 AWS 帳戶）</block>
@@ -3449,4 +3445,14 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="752f1428ccb77ac410289e9262b0f4bf" category="inline-link">Grok 模式</block>
   <block id="dfa155e02e6c42536eddd788adeb1c4b" category="list-text"><block ref="dfa155e02e6c42536eddd788adeb1c4b" category="inline-link-rx"></block></block>
   <block id="84a0efed1747839817563f400c91817f" category="list-text">請檢查<block ref="fcf7e9838328c10505637416c290aabd" category="inline-link-rx"></block>以取得支援的 JDK 版本。</block>
+  <block id="21dbdbd408dc522ecd721e90c94e9967" category="paragraph">主體：</block>
+  <block id="9acd284dbac66e7a5cc77ba3fa4c2c0e" category="list-text">僅適用於儲存桶原則</block>
+  <block id="061ca9ee2cc478226335cb4781f7e748" category="list-text">主體是指被授予或拒絕權限的帳戶/使用者。</block>
+  <block id="c29108426bf99e785055bc2e1d798efd" category="paragraph"><block ref="6c9750b480cd2664d899f8d80fda410e" prefix="" category="inline-code"></block>符合所有請求，包括匿名（未簽署）請求。</block>
+  <block id="a45bf7d8bfe94f3161df646dd349474b" category="paragraph"><block ref="2397070036b52932d72a0d05561ff357" prefix="" category="inline-code"></block> 符合任何已驗證的身分或使用者（不符合匿名請求）</block>
+  <block id="162795027699751a53c17a76654ff03a" category="list-text">使用 SSH 連接到應用裝置，然後使用 'shutdown -h now' 關閉節點。</block>
+  <block id="524b3666d2b57a265288b4605c4f63dd" category="summary">已驗證適用於 StorageGRID 12.1 的第三方解決方案</block>
+  <block id="0abd84cfb134f23ccdf2dace5cdafdf0" category="paragraph">以下第三方解決方案已驗證可與 StorageGRID 12.1 搭配使用。+ 如果您要尋找的解決方案未列出，請聯絡您的 NetApp 帳戶代表。</block>
+  <block id="f480816d606925917374f2fbcc635e8f" category="list-text">Hashicorp Vault 1.21.1</block>
+  <block id="8f58f72ce7022a4fdfe329ca00a2e451" category="list-text">Thales CipherTrust Manager 2.21</block>
 </blocks>

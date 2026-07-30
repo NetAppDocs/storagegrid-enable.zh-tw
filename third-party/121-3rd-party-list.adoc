@@ -1,0 +1,140 @@
+---
+permalink: third-party/120-3rd-party-list.html 
+sidebar: sidebar 
+keywords: 12.1, third-party applications, storagegrid, ISV 
+summary: 已驗證適用於 StorageGRID 12.1 的第三方解決方案 
+---
+= StorageGRID 12.0 經過驗證的第三方解決方案
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+以下第三方解決方案已驗證可與 StorageGRID 12.1 搭配使用。+ 如果您要尋找的解決方案未列出，請聯絡您的 NetApp 帳戶代表。
+
+
+
+[[third-party-solutions-validated-on-storagegrid]]
+== 第三方解決方案已在StorageGRID NetApp上驗證
+
+這些解決方案已與相關合作夥伴共同測試。
+
+* 活動
+* Alluxio
+* Apache Kafka
+* AWS 安裝點
+* Bridgestor
+* Cantemo
+* Citrix內容協同作業
+* Collibra （ Collibra 資料品質最低版本 2024.02 ）
+* CommVault 11.
+* Couchbase 企業分析 2.0
+* CTera Portal 6.
+* Dalet
+* Datadobi
+* Data Dynamics StorageX
+* 定義
+* 磁碟移轉資料
+* 夢中
+* 彈性搜尋快照（包括凍結層）
+* Emam
+* Fujifilm物件歸檔
+* GitHub企業伺服器
+* IBM Storage Deep Archive 1.3
+* IBM FileNet
+* IBM 儲存保護
+* Interica
+* Komprise
+* Microsoft SQL Server巨量資料叢集
+* 模型9.
+* Modzy
+* Moonwalk通用
+* 很好
+* Nasuni
+* OpenText文件16.4
+* OpenText文件21.4
+* OpenText InfoArchive 16 EP7
+* 使用CyanGate Cloud進行OpenText媒體管理16.5%
+* 泛祖拉
+* PixitMedia ngenea
+* 點歸檔閘道2.0
+* Point Storage Manager 6.4
+* Primestream
+* Quantum StorNext 5.4.0.1
+* Reveville v10 build 220706或更新版本
+* RRubrik CDM
+* s3a
+* 訊號
+* 雪片
+* SPECtra Logic on － Prem Glacier
+* Splunk Smartstore
+* Starburst
+* 輕鬆儲存
+* Trino
+* Varish Enterprise 6.0.4
+* Veeam 12.
+* Veritas Enterprise Vault 15.1
+* Veritas NetBackup 10.1.1及更新版本
+* Vertica 10.x
+* 維地松
+* Virtalica StorageFabric
+* Weka v3.10或更新版本
+
+
+
+
+[[third-party-solutions-validated-on-storagegrid-with-object-lock]]
+== 第三方解決方案已通過StorageGRID 物件鎖定驗證、可在不含物件鎖的情況下在
+
+這些解決方案已與相關合作夥伴共同測試。
+
+* CommVault 11功能版本26
+* IBM FileNet
+* IBM 儲存保護
+* OpenText文件21.4
+* Rukrik
+* Veeam 12.
+* Veritas Enterprise Vault 15.1
+* Veritas NetBackup 10.1.1及更新版本
+
+
+
+
+[[third-party-solutions-supported-on-storagegrid]]
+== StorageGRID 支援的協力廠商解決方案
+
+這些解決方案已通過測試。
+
+* 歸檔軟體
+* Axis 通訊
+* 一致性 360
+* DataFrameworks
+* EcoDigital Diva 平台
+* Encoding.com
+* Fujifilm物件歸檔
+* GE Centricity Enterprise Archive
+* Gitlab
+* Hyland Acuo
+* IBM Aspera
+* 里程碑系統
+* OnSSI
+* REACH 引擎
+* SilverTrak
+* SoftNAS
+* QStar
+* Velasea
+
+
+
+
+[[key-managers-supported-on-storagegrid]]
+== StorageGRID 支援的關鍵管理程式
+
+這些解決方案已通過測試。
+
+* Entrust 加密安全平台 v10.4.5
+* Hashicorp Vault 1.21.1
+* Thales CipherTrust Manager 2.21
+

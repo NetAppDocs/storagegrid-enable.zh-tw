@@ -25,6 +25,9 @@ NetApp 已使用 GitLab 測試 StorageGRID 。請參閱以下 GitLab 組態範�
 
 [source]
 ----
+# Workaround for unexpected EOF errors with strict OpenSSL 3 / external services
+gitlab_rails['env'] = { 'SSL_IGNORE_UNEXPECTED_EOF' => '1' }
+
 # Consolidated object storage configuration
 gitlab_rails['object_store']['enabled'] = true
 gitlab_rails['object_store']['proxy_download'] = true
