@@ -1,5 +1,5 @@
 ---
-permalink: third-party/120-3rd-party-list.html 
+permalink: third-party/121-3rd-party-list.html 
 sidebar: sidebar 
 keywords: 12.1, third-party applications, storagegrid, ISV 
 summary: 已驗證適用於 StorageGRID 12.1 的第三方解決方案 
