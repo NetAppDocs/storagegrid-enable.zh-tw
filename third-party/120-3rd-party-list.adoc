@@ -80,7 +80,7 @@ summary: 經過StorageGRID 12.0 驗證的第三方解決方案
 * Vertica 10.x
 * 維地松
 * Virtalica StorageFabric
-* Weka v3.10或更新版本
+* WEKA v3.10 或更新版本
 
 
 

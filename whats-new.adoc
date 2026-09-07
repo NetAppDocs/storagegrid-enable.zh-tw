@@ -8,7 +8,7 @@ summary: 以下是本網站最近的變更。
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 
 [role="lead"]

@@ -3456,4 +3456,5 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="f480816d606925917374f2fbcc635e8f" category="list-text">Hashicorp Vault 1.21.1</block>
   <block id="8f58f72ce7022a4fdfe329ca00a2e451" category="list-text">Thales CipherTrust Manager 2.21</block>
   <block id="b0ff3f641f5c47519d662ddd7719ff87" category="sidebar">StorageGRID 12.1</block>
+  <block id="147e111488eb55eac75032941f65577f" category="list-text">WEKA v3.10 或更新版本</block>
 </blocks>
