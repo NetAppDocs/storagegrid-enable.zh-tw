@@ -3457,4 +3457,5 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="8f58f72ce7022a4fdfe329ca00a2e451" category="list-text">Thales CipherTrust Manager 2.21</block>
   <block id="b0ff3f641f5c47519d662ddd7719ff87" category="sidebar">StorageGRID 12.1</block>
   <block id="147e111488eb55eac75032941f65577f" category="list-text">WEKA v3.10 或更新版本</block>
+  <block id="7408450fc527ea7cf95ee02a041a379b" category="paragraph">大資料分析是基於物件儲存的資料湖最常見的使用案例之一。在選擇分析平台時，了解資料倉儲和資料湖倉技術如何與 S3 物件儲存互動，有助於最佳化效能、擴充性和作業效率。StorageGRID 為分析工作負載提供與 S3 相容的物件儲存，包括 Apache Spark、Dremio、Trino 和 Starburst 等平台。</block>
 </blocks>

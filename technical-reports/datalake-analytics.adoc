@@ -11,6 +11,9 @@ summary: 本報告涵蓋 StorageGRID 上的巨量資料分析。
 :imagesdir: ../media/
 
 
+[role="lead"]
+大資料分析是基於物件儲存的資料湖最常見的使用案例之一。在選擇分析平台時，了解資料倉儲和資料湖倉技術如何與 S3 物件儲存互動，有助於最佳化效能、擴充性和作業效率。StorageGRID 為分析工作負載提供與 S3 相容的物件儲存，包括 Apache Spark、Dremio、Trino 和 Starburst 等平台。
+
 
 
 [[netapp-storagegrid-use-cases]]
