@@ -696,7 +696,6 @@
   <block id="1c83729b0147981bd53a386123e950b2" category="list-text">請插入下列行、並記下#--storage．tsdb.retitation.times=1y#、將度量資料的保留時間設為1年。或者、您也可以使用#-storage、tsdb、retrite.size=300GiB#來根據儲存限制來保留基礎資料。這是唯一可設定保留指標的位置。</block>
   <block id="c44e8fe3436b496aa03fa98464a357bb" category="list-text">重新載入systemd服務以註冊新的Prometheus服務。然後啟動並啟用Prometheus服務。</block>
   <block id="a95dc294578d84798aa85e589b1d7169" category="list-text">檢查服務是否正常運作</block>
-  <block id="efb4923d4171f8bbe31a74fc17e7a4ea" category="list-text">您現在應該可以瀏覽至Prometheus伺服器的UI<block ref="9c036ae021e9b80558a889223ee0da28" category="inline-link-rx"></block> 並查看UI</block>
   <block id="6246893720a6bc3db5f56c322fc01d95" category="image-alt">Prometheus UI頁面</block>
   <block id="bc9d8c8501595ac689577e371305dd0c" category="list-text">在「Status（狀態）」目標下、您可以看到StorageGRID 我們在Prometheus.yml中設定的這個端點的狀態</block>
   <block id="ef446049ce3cd8c094f34cb3047e10d7" category="image-alt">Prometheus狀態功能表</block>
@@ -710,7 +709,6 @@
   <block id="2b486298e7630814372aec36baee859f" category="list-text">為穩定版本新增此儲存庫：</block>
   <block id="166a21daf7286fbeb21167b5802de660" category="list-text">新增儲存庫之後。</block>
   <block id="2557b3cde7450f332315bc10e61bdba8" category="list-text">重新載入systemd服務以登錄新的grafana服務。然後啟動並啟用Grafana服務。</block>
-  <block id="c96bdac515037faefe395a7292cce691" category="list-text">Grafana現已安裝並執行。當您開啟瀏覽器以存取HTTP：//Prometheus-server:3000時、您將會看到Grafana登入頁面。</block>
   <block id="b5ed0857233fefc7884d300cb79511cc" category="list-text">預設的登入認證為admin/admin、您應該在提示時設定新密碼。</block>
   <block id="a201e49270e34f12f6f8e8e17b7f63b4" category="section-title">建立Grafana儀表板StorageGRID 以利執行</block>
   <block id="8fa4555fc2e45c8e0b51029500b0ed27" category="paragraph">在安裝並執行Grafana和Prometheus之後、現在正是建立資料來源並建置儀表板來連接兩者的好時機</block>
@@ -2050,7 +2048,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="bd3813fae65cb7c59dcb2440c1767ac0" category="inline-link">StorageGRID 強化指南</block>
   <block id="a0a2b190d72ee4645ce0b2c9bb0daaac" category="inline-link">StorageGRID 文件</block>
   <block id="0c39f21f8929ee8b7354d8a05b4f2494" category="inline-link">NetApp 產品安全性弱點回應與通知原則</block>
-  <block id="e49b7c4182308a3c27dbec32987e8e67" category="paragraph">除了本報告中所述的功能外， StorageGRID 還遵循<block ref="304cf4448819c099eaccd4f8123ab72d" category="inline-link-rx"></block>。報告的弱點會根據產品安全性事件回應程序進行驗證及回應。</block>
   <block id="23e21fdb0716a632da9ef25685dbc487" category="paragraph">NetApp StorageGRID 為要求嚴苛的企業物件儲存使用案例提供進階安全功能。</block>
   <block id="3bdba8537a031ec25e6ed46ff2e22424" category="list-text">NetApp StorageGRID ： SEC 17a-4(f) 、 FINRA 4511 （ c ）和 CFTC 1.31 （ c ） - （ d ）法規遵循評估 <block ref="dc6d251ee495c96de57ac351b8ca3a6f" category="inline-link-rx"></block></block>
   <block id="682026a33ae6dd46be9dad491b716b01" category="section-title">詞彙與縮寫</block>
@@ -2823,8 +2820,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="e1b2071d5db8fac237a17040ea82b8ef" category="list-text">已安裝 Veritas Enterprise Vault 14.1 或更新版本。</block>
   <block id="367e5e1fbaf108d8dbf97e500327dc8b" category="list-text">已建立資料保險箱儲存區群組和資料保險箱儲存區。如需詳細資訊、請參閱《 Veritas Enterprise Vault 管理指南》。</block>
   <block id="6c73463ffeddef6e57a34a14bafd3419" category="inline-link">Veritas 知識庫文章</block>
-  <block id="ddf1e2343a6c7e2d16b8597f3e961548" category="list-text">如果使用自我簽署的憑證、請將 StorageGRID 自我簽署的 CA 憑證新增至 Enterprise Vault 伺服器。如需詳細資訊，請參閱本<block ref="96b16704d1203901b729f96db3886a57" category="inline-link-rx"></block>。</block>
-  <block id="15022c2cf46544f0b3a7bf0180d8ebe5" category="list-text">更新並套用最新的 Enterprise Vault 組態檔案、以啟用支援的儲存解決方案、例如 NetApp StorageGRID 。如需詳細資訊，請參閱本<block ref="9c1aa3a99115a819862872de47644b63" category="inline-link-rx"></block>。</block>
   <block id="2b95da50afe417c5fdfe08882fc95a9a" category="section-title">使用 Veritas Enterprise Vault 設定 StorageGRID</block>
   <block id="5785dc46caf2287e47aa188701676c27" category="paragraph">若要使用 Veritas Enterprise Vault 設定 StorageGRID 、請競爭下列步驟：</block>
   <block id="e5c9b80471f693a4c039200dd452f7e7" category="inline-image-macro">媒體 /Veritas / Veritas 企業級資料保險箱</block>
@@ -3420,7 +3415,6 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="30002530dd9d601ecfd25a0f9db45aac" category="list-text">Commvault 文件 + <block ref="e95efabe50ab92e4e6c01005628c651c" category="inline-link-rx"></block></block>
   <block id="c595219c0ed8ec59057d33c30bc5dc10" category="paragraph">本文使用 NetApp StorageGRID 對各種資料倉儲和湖倉式儲存生態系統進行了全面的基準測試。目標是確定哪個系統在 S3 物件儲存方面效能最佳。請參閱此<block ref="c3c3137daa53bef038cd79c515f7a456" category="inline-link-rx"></block>以了解更多關於資料倉儲/湖倉式儲存架構和表格式（Parquet 和 Iceberg）的資訊。</block>
   <block id="895e351c0837e8e1603831896d6eff24" category="list-text">Loadbalancer.org—負載平衡 NetApp StorageGRID <block ref="0daf5e2b69f614a44c5f349c4458af38" category="inline-link-rx"></block></block>
-  <block id="4e9aec4caf563076c3e5a362fb3ffa9c" category="paragraph">現在您可以使用授權權杖字串透過 cURL 存取指標。存取指標的過程與第 <block ref="370a8c788bfc0d36ebdde42d5a0e61ed" category="inline-link-macro-rx"></block> 節的步驟類似。但是，為了示範目的，我們展示一個範例，其中在「指標」類別中選擇了 GET /grid/metric-labels/{label}/values。</block>
   <block id="bba97812b5b364c799918082c0382688" category="inline-image-macro">veritas/veritas-create-bucket.png</block>
   <block id="5478aec58cd50a76fe7b0ac2dc424663" category="paragraph"><block ref="5478aec58cd50a76fe7b0ac2dc424663" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3af07c1332ec0aab0ab6da0d4d2d723f" category="inline-image-macro">veritas/veritas-create-bucket-2.png</block>
@@ -3458,4 +3452,10 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="b0ff3f641f5c47519d662ddd7719ff87" category="sidebar">StorageGRID 12.1</block>
   <block id="147e111488eb55eac75032941f65577f" category="list-text">WEKA v3.10 或更新版本</block>
   <block id="7408450fc527ea7cf95ee02a041a379b" category="paragraph">大資料分析是基於物件儲存的資料湖最常見的使用案例之一。在選擇分析平台時，了解資料倉儲和資料湖倉技術如何與 S3 物件儲存互動，有助於最佳化效能、擴充性和作業效率。StorageGRID 為分析工作負載提供與 S3 相容的物件儲存，包括 Apache Spark、Dremio、Trino 和 Starburst 等平台。</block>
+  <block id="d77c7fe571d64360574a008fef027611" category="paragraph">除了本報告中描述的功能外， StorageGRID 也遵循 <block ref="4c5cf57627dd488a7f6d94df4e8db4eb" category="inline-link-rx"></block>。已報告的漏洞將根據產品安全性事件回應流程進行驗證和回應。</block>
+  <block id="8bda80a292ea4d1faa5345b4f4e1573e" category="paragraph">現在您可以使用授權權杖字串透過 cURL 存取指標。存取指標的過程與第 <block ref="e8dade55d94bbf79f5a9e0d60e8b9163" category="inline-link-macro-rx"></block> 節的步驟類似。但是，為了示範目的，我們展示一個範例，其中在「指標」類別中選擇了 GET /grid/metric-labels/{label}/values。</block>
+  <block id="0ce920314adee107ea9f4715efc55472" category="list-text">如果使用自簽章憑證，請將 StorageGRID 自簽章 CA 憑證新增至 Enterprise Vault 伺服器。如需詳細資訊，請參閱此<block ref="56b9bfe01d3cf04b3f107f3f8178a5e6" category="inline-link-rx"></block>。</block>
+  <block id="77a99c68d4a1bcc489efaedf2f81d8ac" category="list-text">更新並套用最新的 Enterprise Vault 組態檔案，以啟用受支援的儲存設備解決方案，例如 NetApp StorageGRID。如需詳細資訊，請參閱此<block ref="5906a7358f9e1d2351926b6621eb4acd" category="inline-link-rx"></block>。</block>
+  <block id="00a090a871a0df6adc9219e75e6aed51" category="list-text">現在您應該能夠瀏覽至 prometheus 伺服器的 UI \http://&lt;prometheus-server-ip&gt;:9090 並看到 UI</block>
+  <block id="973ed7db4a25bc3f01fccde97b27c7a1" category="list-text">Grafana 現在已安裝並執行中。當您開啟瀏覽器前往 \http://&lt;prometheus-server-ip&gt;:3000 時，將會看到 Grafana 登入頁面。</block>
 </blocks>

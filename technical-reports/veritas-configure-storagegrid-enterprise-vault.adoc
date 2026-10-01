@@ -37,8 +37,8 @@ NOTE: 對於 WORM 儲存（物件鎖定）、需要 Enterprise Vault 14.2.2 版�
 * 已建立資料保險箱儲存區群組和資料保險箱儲存區。如需詳細資訊、請參閱《 Veritas Enterprise Vault 管理指南》。
 * 已建立 StorageGRID 租戶、存取金鑰、秘密金鑰和貯體。
 * 已建立 StorageGRID 負載平衡器端點（ HTTP 或 HTTPS ）。
-* 如果使用自我簽署的憑證、請將 StorageGRID 自我簽署的 CA 憑證新增至 Enterprise Vault 伺服器。如需詳細資訊，請參閱本 https://www.veritas.com/support/en_US/article.100049744["Veritas 知識庫文章"^]。
-* 更新並套用最新的 Enterprise Vault 組態檔案、以啟用支援的儲存解決方案、例如 NetApp StorageGRID 。如需詳細資訊，請參閱本 https://www.veritas.com/content/support/en_US/article.100039174["Veritas 知識庫文章"^]。
+* 如果使用自簽章憑證，請將 StorageGRID 自簽章 CA 憑證新增至 Enterprise Vault 伺服器。如需詳細資訊，請參閱此 https://supportenterprisevault.cloud.com/support-home/kbsearch/article?articleNumber=100049744["Veritas 知識庫文章"^]。
+* 更新並套用最新的 Enterprise Vault 組態檔案，以啟用受支援的儲存設備解決方案，例如 NetApp StorageGRID。如需詳細資訊，請參閱此 https://supportenterprisevault.cloud.com/support-home/kbsearch/article?articleNumber=100039174["Veritas 知識庫文章"^]。
 
 
 

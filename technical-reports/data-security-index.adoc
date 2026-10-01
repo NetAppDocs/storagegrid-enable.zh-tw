@@ -31,7 +31,7 @@ summary: 探索 StorageGRID 物件儲存解決方案的整合式安全功能。
 
 本文旨在成為一份安全資料表——它沒有詳細說明如何配置系統以支援其中列舉的預設未配置的安全功能。這 https://docs.netapp.com/us-en/storagegrid/harden/index.html["StorageGRID 強化指南"^]可在官方 https://docs.netapp.com/us-en/storagegrid/["StorageGRID 文件"^]頁。
 
-除了本報告中所述的功能外， StorageGRID 還遵循 https://www.netapp.com/us/legal/vulnerability-response.aspx["NetApp 產品安全性弱點回應與通知原則"^]。報告的弱點會根據產品安全性事件回應程序進行驗證及回應。
+除了本報告中描述的功能外， StorageGRID 也遵循  https://security.netapp.com/policy/["NetApp 產品安全性弱點回應與通知原則"^]。已報告的漏洞將根據產品安全性事件回應流程進行驗證和回應。
 
 NetApp StorageGRID 為要求嚴苛的企業物件儲存使用案例提供進階安全功能。
 

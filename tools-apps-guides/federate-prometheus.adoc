@@ -260,7 +260,7 @@ Aug 22 15:14:24 aj-deb-prom01 prometheus[6498]: ts=2022-08-22T19:14:24.832Z call
 Aug 22 15:14:24 aj-deb-prom01 prometheus[6498]: ts=2022-08-22T19:14:24.832Z caller=main.go:961 level=info msg="Server is ready to receive web requests."
 Aug 22 15:14:24 aj-deb-prom01 prometheus[6498]: ts=2022-08-22T19:14:24.832Z caller=manager.go:941 level=info component="rule manager" msg="Starting rule manager..."
 ----
-. 您現在應該可以瀏覽至Prometheus伺服器的UI http://Prometheus-server:9090[] 並查看UI
+. 現在您應該能夠瀏覽至 prometheus 伺服器的 UI \http://<prometheus-server-ip>:9090 並看到 UI
 +
 image:prometheus/prometheus_ui.png["Prometheus UI頁面"]
 
@@ -318,7 +318,7 @@ sudo systemctl daemon-reload
 sudo systemctl start grafana-server
 sudo systemctl enable grafana-server.service
 ----
-. Grafana現已安裝並執行。當您開啟瀏覽器以存取HTTP：//Prometheus-server:3000時、您將會看到Grafana登入頁面。
+. Grafana 現在已安裝並執行中。當您開啟瀏覽器前往 \http://<prometheus-server-ip>:3000 時，將會看到 Grafana 登入頁面。
 . 預設的登入認證為admin/admin、您應該在提示時設定新密碼。
 
 
