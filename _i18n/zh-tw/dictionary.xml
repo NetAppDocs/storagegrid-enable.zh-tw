@@ -180,13 +180,7 @@
   <block id="6ed9ef1283f8a665ad7dbfe450f4616c" category="paragraph">若要建立Eon內部部署資料庫、請遵循下列步驟：</block>
   <block id="c8fac0ae7f28a985c6f7041e704cb9e9" category="list-text">若要建立資料庫、請使用「admintooles create_db]工具。</block>
   <block id="ba1f54172ea851b435ebad930979214e" category="paragraph">下列清單提供本範例中使用之引數的簡短說明。如需所有必要和選用引數的詳細說明、請參閱Vertica文件。</block>
-  <block id="d560ea5a8e684843d3e61026f97988ea" category="inline-xref">「建立授權檔案以存取S3端點」</block>
-  <block id="49231ccf7e1f2892d02e363b3996f6b1" category="list-text">-x &lt;在中建立之授權檔案的路徑/檔名 <block ref="ff01d755c02cf9eac8acabe776f4ae31" category="inline-xref-macro-rx"></block> &gt;。</block>
   <block id="f405bc9fea0f983aec86bf3b39598931" category="paragraph">授權詳細資料會在成功建立後儲存在資料庫內。您可以移除此檔案、以避免公開S3秘密金鑰。</block>
-  <block id="8bb92892cb170f0a2e9faa38b08707d2" category="list-text">公用儲存位置&lt;S3：//storagegrid Bucketname&gt;</block>
-  <block id="730286a138b893db744ec9b6d5eb53cc" category="list-text">s &lt;用於此資料庫的Vertica節點以逗號分隔的清單&gt;</block>
-  <block id="ff3ce7ef8f8faa42ab218e0e6a952005" category="list-text">-d &lt;要建立的資料庫名稱&gt;</block>
-  <block id="cbfebf618a39b6eebd458ebccb35811d" category="list-text">p &lt;要為此新資料庫設定的密碼&gt;。例如、請參閱下列命令範例：</block>
   <block id="f0f9a3849fe5730a2c9d6f1fec222ca3" category="paragraph">根據資料庫的節點數、建立新資料庫需要幾分鐘的時間。第一次建立資料庫時、系統會提示您接受授權合約。</block>
   <block id="3b8065a08e54f4e0956f3b822ffb8a91" category="paragraph">例如、請參閱下列授權檔案範例和「create db]命令：</block>
   <block id="011babd6bb6bec44f7f5c42f6c3e7a38" category="cell">物件大小（位元組）</block>
@@ -3458,4 +3452,10 @@ StorageGRID 可為儲存節點使用較高效能的節點、或是執行負載�
   <block id="77a99c68d4a1bcc489efaedf2f81d8ac" category="list-text">更新並套用最新的 Enterprise Vault 組態檔案，以啟用受支援的儲存設備解決方案，例如 NetApp StorageGRID。如需詳細資訊，請參閱此<block ref="5906a7358f9e1d2351926b6621eb4acd" category="inline-link-rx"></block>。</block>
   <block id="00a090a871a0df6adc9219e75e6aed51" category="list-text">現在您應該能夠瀏覽至 prometheus 伺服器的 UI \http://&lt;prometheus-server-ip&gt;:9090 並看到 UI</block>
   <block id="973ed7db4a25bc3f01fccde97b27c7a1" category="list-text">Grafana 現在已安裝並執行中。當您開啟瀏覽器前往 \http://&lt;prometheus-server-ip&gt;:3000 時，將會看到 Grafana 登入頁面。</block>
+  <block id="e64c46bb4ce9a526df258e7f1272a8bf" category="list-text"><block ref="6c54c99ba9534ff26f0be55aca43ba88" prefix="" category="inline-code"></block></block>
+  <block id="27e5401a5432522c4a59659b79949bda" category="paragraph">有關授權檔案的詳細資訊，請參閱<block ref="5652bb278cd06b6326f440573e03522e" category="inline-xref-macro-rx"></block>。</block>
+  <block id="deef0d341b8cf5253a456575b59ad3ce" category="list-text"><block ref="399fa6cc0d3e7718be729c48c6cbd287" prefix="" category="inline-code"></block></block>
+  <block id="9bcef99ac69179506104bc1a219370b4" category="list-text"><block ref="778e8289811af1130cb32a43d9f5bebf" prefix="" category="inline-code"></block></block>
+  <block id="85d18b76832b43fb6d1cbc2dbcbb077d" category="list-text"><block ref="b601ce715bcbacbaf5adf14ea523938a" prefix="" category="inline-code"></block></block>
+  <block id="1ea1e8a4588340cf0e25df3c8bc69bb7" category="list-text"><block ref="09f7639dfb26383ef118c948a1c0001b" prefix="" category="inline-code"></block> 例如，請參閱以下範例命令：</block>
 </blocks>

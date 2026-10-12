@@ -196,14 +196,17 @@ NOTE: 在正式作業環境中、客戶應在StorageGRID 一個S3負載平衡器
 下列清單提供本範例中使用之引數的簡短說明。如需所有必要和選用引數的詳細說明、請參閱Vertica文件。
 
 +
-** -x <在中建立之授權檔案的路徑/檔名 <<createauthorization,「建立授權檔案以存取S3端點」>> >。
+** `-x <path/filename of authorization file>`
++
+有關授權檔案的詳細資訊，請參閱<<createauthorization,建立授權檔案以存取S3端點>>。
+
 +
 授權詳細資料會在成功建立後儲存在資料庫內。您可以移除此檔案、以避免公開S3秘密金鑰。
 
-** 公用儲存位置<S3：//storagegrid Bucketname>
-** s <用於此資料庫的Vertica節點以逗號分隔的清單>
-** -d <要建立的資料庫名稱>
-** p <要為此新資料庫設定的密碼>。例如、請參閱下列命令範例：
+** `--communal-storage-location <s3://storagegrid bucketname>`
+** `-s <comma-separated list of Vertica nodes to be used for this database>`
+** `-d <name of database to be created>`
+** `-p <password to be set for this new database>` 例如，請參閱以下範例命令：
 +
 [listing]
 ----
